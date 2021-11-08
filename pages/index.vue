@@ -1,7 +1,71 @@
 <template>
-  <Tutorial/>
+<main>
+  <div class="wrapper">
+    <section class="construction">
+      <a-row type="flex" justify="middle" align="top" :gutter="[24, 60]">
+        <a-col  :lg="{span: 12, order: 1}" :md="{span: 24, order: 2}" :sm="{span: 24, order: 2}" :xs="{span: 24, order: 2}">
+          <h1>
+            WEBSITE UNDER<br>CONSTRUCTION
+          </h1>
+          <!-- <p>We apologize for the inconvenience. Please check back soon!</p> -->
+          <h1>
+            我们的网站<br>将尽快与您相见
+          </h1>
+        </a-col>
+        <a-col  :lg="{span: 12, order: 2}" :md="{span: 24, order: 1}"  :sm="{span: 24, order: 1}" :xs="{span: 24, order: 1}">
+          <div class="imgContainer">
+            <img src="/img/construction.png" alt="Under Construction">
+          </div>
+        </a-col>
+      </a-row>
+    </section>
+  </div>
+</main>
 </template>
 
 <script>
 export default {}
 </script>
+<style lang="scss" scoped>
+h1, p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: $navy;
+}
+
+p {
+  color: $darkGrey;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  // max-width: 500px;
+}
+
+.construction {
+  padding: 150px 0;
+}
+
+@media (max-width: 991px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  img {
+    max-width: 400px;
+  }
+}
+</style>
