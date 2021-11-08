@@ -15,6 +15,10 @@ export default {
 <style lang="scss" scoped>
 h5 {
   text-align: center;
-  color: $darkGrey;
+  color: $navy;
 }
+
+// a {
+//   color: $gold;
+// }
 </style>
