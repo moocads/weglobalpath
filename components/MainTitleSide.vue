@@ -24,11 +24,7 @@ header {
   align-items: flex-start;
   margin-bottom: 50px;
 }
-h1 {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 0;
-}
+
 // h1::before {
 //   content: "";
 //   background: url("/img/logos/logo-small-blue.png");
@@ -52,5 +48,23 @@ img {
   margin-top: -50px;
   display: flex;
   align-items: center;
+}
+@media all and (max-width: 600px) {
+  p {
+    font-size: 50px;
+    color: #f1f1f1;
+    font-family: $Mont;
+    font-weight: 800;
+    margin: 0;
+    margin-left: 30px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .title-wrap {
+    margin-top: -40px;
+  }
 }
 </style>

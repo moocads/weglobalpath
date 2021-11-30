@@ -38,7 +38,6 @@ export default {};
 <style lang="scss" scoped>
 #topbar {
   height: 120px;
-  border-bottom: 1px solid red;
 }
 .topbar-wrap {
   display: flex;
@@ -62,6 +61,35 @@ export default {};
 .social-media-wrap {
   a {
     margin-right: 15px;
+  }
+}
+@media all and (max-width: 600px) {
+  #topbar {
+    height: auto;
+  }
+  .topbar-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav_logo {
+      max-height: 80px;
+    }
+  }
+  .social-media-wrap {
+    display: none;
+  }
+  .phone-wrap {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 5px;
+      height: 20px;
+      width: 20px;
+    }
+    a {
+      font-weight: 900;
+      font-size: 14px;
+    }
   }
 }
 </style>

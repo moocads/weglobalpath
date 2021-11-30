@@ -28,23 +28,35 @@ header {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+
+  p {
+    font-size: 70px;
+    // color: #f1f1f1;
+    font-family: $Mont;
+    font-weight: 800;
+    margin: 0;
+  }
+  img {
+    margin-top: -15px;
+    width: 30px;
+    transform: rotate(90deg);
+  }
+  @media all and (max-width: 600px) {
+    p {
+      font-size: 50px;
+    }
+  }
+  h1 {
+    font-size: 28px;
+    margin-top: -35px;
+  }
+  img {
+    margin-top: -35px;
+  }
 }
-h1 {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 0;
-  margin-top: -50px;
-}
-p {
-  font-size: 70px;
-  // color: #f1f1f1;
-  font-family: $Mont;
-  font-weight: 800;
-  margin: 0;
-}
-img {
-  margin-top: -15px;
-  width: 30px;
-  transform: rotate(90deg);
+@media all and (max-width: 600px) {
+  header {
+    margin-bottom: 30px;
+  }
 }
 </style>

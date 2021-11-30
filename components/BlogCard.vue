@@ -76,4 +76,17 @@ export default {
     color: $navy;
   }
 }
+@media all and (max-width: 600px) {
+  .card-wrap {
+    height: 350px;
+    width: 100%;
+    max-width: 100%;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 </style>

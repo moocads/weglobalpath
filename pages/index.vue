@@ -82,24 +82,24 @@
           <h1>选择我们 选择放心</h1>
           <img src="/img/logos/logo-small-white.png" alt="" />
         </div>
-        <div class="counter-grid">
-          <div class="counter-item">
+        <a-row :gutter="[16, 16]">
+          <a-col :xs="12" :md="6" class="counter-item">
             <h2>100+</h2>
             <p>全球合作校园</p>
-          </div>
-          <div class="counter-item">
+          </a-col>
+          <a-col :xs="12" :md="6" class="counter-item">
             <h2>600+</h2>
             <p>移民申请成功案例</p>
-          </div>
-          <div class="counter-item">
+          </a-col>
+          <a-col :xs="12" :md="6" class="counter-item">
             <h2>98.1%</h2>
             <p>移民申请通过率</p>
-          </div>
-          <div class="counter-item">
+          </a-col>
+          <a-col :xs="12" :md="6" class="counter-item">
             <h2>1000+</h2>
             <p>海外优质雇主资源</p>
-          </div>
-        </div>
+          </a-col>
+        </a-row>
       </div>
     </section>
     <section id="home-about">
@@ -173,13 +173,22 @@
     <section id="home-testimonial">
       <div class="wrapper">
         <MainTitle title="客户评价" titleEN="FEEDBACK" />
-        <a-carousel arrows :slidesToShow="3" :autoplay="true">
+        <a-carousel arrows :slidesToShow="3" :autoplay="true" class="slider-lg">
           <div slot="prevArrow" class="custom-slick-arrow">
             <img src="/img/Home/left-arrow.png" alt="" />
           </div>
           <div slot="nextArrow" class="custom-slick-arrow">
             <img src="/img/Home/right-arrow.png" alt="" />
           </div>
+          <div v-for="(fb, index) in feedbackData" :key="index">
+            <TestimonialCard
+              :name="fb.name"
+              :avatar="fb.avatar"
+              :content="fb.content"
+            />
+          </div>
+        </a-carousel>
+        <a-carousel :slidesToShow="1" :autoplay="true" class="slider-sm">
           <div v-for="(fb, index) in feedbackData" :key="index">
             <TestimonialCard
               :name="fb.name"
@@ -323,6 +332,8 @@ export default {
     background: $red !important;
   }
 }
+@media all and (max-width: 600px) {
+}
 </style>
 <style lang="scss" scoped>
 /* ------------------------------------------------------ */
@@ -380,7 +391,44 @@ header .info-wrap {
     margin-left: 50px;
   }
 }
-
+@media all and (max-width: 600px) {
+  header {
+    height: 100vh;
+    img {
+      object-fit: cover;
+      object-position: 90% center;
+      height: 100vh;
+    }
+  }
+  header .info-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    max-width: 1440px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    p {
+      text-align: center;
+    }
+    .banner-text {
+      height: 30px;
+      width: 200px;
+    }
+    .banner-text1 {
+      height: 50px;
+      margin-bottom: 20px;
+      width: 220px;
+    }
+    .banner-text2 {
+      margin-left: 50px;
+      width: 220px;
+      height: auto;
+    }
+  }
+}
 /* ------------------------------------------------------ */
 /*                ANCHOR HOME SERVICE STYLE               */
 /* ------------------------------------------------------ */
@@ -489,6 +537,33 @@ header .info-wrap {
     background: none;
   }
 }
+@media all and (max-width: 600px) {
+  #home-services {
+    padding: 30px 0;
+  }
+  .projects-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "project-1"
+      "project-2"
+      "project-3"
+      "project-4"
+      "project-5"
+      "project-6";
+  }
+  .project-item {
+    max-height: 150px;
+    h2 {
+      font-size: 18px;
+      left: 10px;
+      bottom: 10px;
+    }
+  }
+}
 /* ------------------------------------------------------ */
 /*                  ANCHOR COUNTER STYLE                  */
 /* ------------------------------------------------------ */
@@ -516,25 +591,48 @@ header .info-wrap {
     transform: rotate(90deg);
   }
 }
-#home-counter .counter-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  .counter-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h2,
-    p {
-      color: #c4c4c4;
-    }
-    h2 {
-      font-size: 54px;
+
+#home-counter .counter-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2,
+  p {
+    color: #c4c4c4;
+  }
+  h2 {
+    font-size: 54px;
+    font-weight: 700;
+  }
+  p {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 600px) {
+  #home-counter .title-wrap {
+    margin-bottom: 30px;
+    h1 {
+      color: #fff;
+      font-size: 36px;
       font-weight: 700;
+      margin-bottom: 0;
+    }
+    img {
+      width: 30px;
+      transform: rotate(90deg);
+    }
+  }
+  #home-counter .counter-item {
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 3px;
     }
     p {
       margin: 0;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }
@@ -546,9 +644,18 @@ header .info-wrap {
   .about-img {
     border-radius: 10px;
   }
+}
+@media all and (max-width: 600px) {
   .about-btn {
     padding: 15px 40px;
-    margin-right: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .button-wrap {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 /* ------------------------------------------------------ */
@@ -563,12 +670,39 @@ header .info-wrap {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
 }
+@media all and (max-width: 600px) {
+  #home-cases {
+    padding: 30px 0;
+  }
+  #home-cases .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+  }
+}
 
 /* ------------------------------------------------------ */
 /*                 ANCHOR TESTMONIAL STYLE                */
 /* ------------------------------------------------------ */
 #home-testimonial {
   padding: 100px 0;
+  .slider-lg {
+    display: block;
+  }
+  .slider-sm {
+    display: none;
+  }
+}
+@media all and (max-width: 600px) {
+  #home-testimonial {
+    padding: 50px 0;
+    .slider-lg {
+      display: none;
+    }
+    .slider-sm {
+      display: block;
+    }
+  }
 }
 /* ------------------------------------------------------ */
 /*                   ANCHOR BLOGS STYLE                   */
@@ -581,5 +715,11 @@ header .info-wrap {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 30px;
+}
+@media all and (max-width: 600px) {
+  #home-blogs .blogs-grid {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+  }
 }
 </style>
