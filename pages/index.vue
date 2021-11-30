@@ -218,6 +218,16 @@
 
 <script>
 export default {
+  head: {
+    title: "加彼岸出国咨询 | 首页",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "加彼岸出国咨询 | 首页",
+      },
+    ],
+  },
   data() {
     return {
       feedbackData: [
@@ -249,28 +259,28 @@ export default {
       blogsData: [
         {
           thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "安省境外雇主担保",
+          title: "中文文章标题测试",
+          date: "2021-11-13",
+          description:
+            "加拿大在不同省份都有相对的紧缺行业，医护、科技、护工等等的就不用多说，但相信你最没想到的，是卡车司机！加拿大和美国面临着大量的货柜车司机短缺，在未来五年内的缺口达到5万个工作岗位之上。卡车司机属于C类岗位（NOC 7511），在很多省份中都属于紧缺职业，可以通过获得省提名后递交联邦移民申请，获得永久居民身份。",
+        },
+        {
+          thumbnail: "url('/img/Home/about-img.jpg')",
+          title: "中文文章标题测试",
           date: "2021-11-13",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
         },
         {
           thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "安省境外雇主担保",
+          title: "English Blogs Title",
           date: "2021-11-13",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
         },
         {
           thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "安省境外雇主担保",
-          date: "2021-11-13",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
-        },
-        {
-          thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "安省境外雇主担保",
+          title: "English Blogs Title",
           date: "2021-11-13",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
