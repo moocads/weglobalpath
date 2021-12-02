@@ -13,7 +13,7 @@
           titleENColor="#DADADA"
         />
         <p>
-          曼省提名企业家移民针对企业主和高级管理人员，适用于打算去曼省开办新企业或者收购现有企业的申请人。申请人先申请工签到曼省建立并经营企业，MPNP商业投资类别将取代PNP-B商业移民类别，新的商业投资者类别要求申请人在抵达加拿大的前24个月内在曼省开启或购买生意，成功经营企业12个月后即可申请省提名获得枫叶卡。新政下申请人不再需要向曼省政府交纳10万加币的保证金了。
+          {{ data.introduction }}
         </p>
       </div>
     </section>
@@ -26,12 +26,15 @@
           <a-col :md="12" :sm="24" class="highlight-info-wrap">
             <MainTitleSide title="项目优势" titleEN="HIGHLIGHTS" />
             <p>
-              曼省提名企业家移民针对企业主和高级管理人员，适用于打算去曼省开办新企业或者收购现有企业的申请人。申请人先申请工签到曼省建立并经营企业，MPNP商业投资类别将取代PNP-B商业移民类别，新的商业投资者类别要求申请人在抵达加拿大的前24个月内在曼省开启或购买生意，成功经营企业12个月后即可申请省提名获得枫叶卡。新政下申请人不再需要向曼省政府交纳10万加币的保证金了。
+              {{ data.highlight_intro }}
             </p>
             <ul>
-              <li>家庭净资产要求较低，最低投资额较低</li>
-              <li>该资金完全用于投资自己名下的生意</li>
-              <li>取得工签子女就可以享受免费教育</li>
+              <li
+                v-for="(highlight, index) in data.hightlight_points"
+                :key="index"
+              >
+                {{ highlight.point }}
+              </li>
             </ul>
             <NuxtLink to="/contact">
               <button class="main-btn main-btn_red main-btn_round-5">
@@ -52,12 +55,19 @@
           <h1>申请要求</h1>
         </div>
         <div class="requirement-grid">
-          <div class="requirement-item">
-            <div
-              key="1"
+          <div
+            class="requirement-item"
+            v-for="(item, index) in data.requirements"
+            :key="index"
+          >
+            <RequirementItem
+              :title="item.title"
+              :requirementsData="item.requirement_points"
+            />
+            <!-- <div
               :class="[
                 { 'requirement-info-wrap-expand': isExpanded },
-                { 'requirement-info-wrap-closed': isClosed },
+                { 'requirement-info-wrap-closed': !isExpanded },
               ]"
             >
               <h2>年龄要求</h2>
@@ -70,11 +80,11 @@
               </ul>
             </div>
             <button
-              @click="(isExpanded = !isExpanded), (isClosed = !isClosed)"
+              @click="isExpanded = !isExpanded"
               :class="[{ 'expand-btn': isExpanded }]"
             >
               展开全部
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -128,7 +138,23 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
+  async asyncData({ $axios }) {
+    const projectData = await $axios.$get(`/projects/1`);
+    const data = projectData;
+    return {
+      data,
+    };
+    // return axios
+    //   .get(`https://beyond-canada-back-staging.herokuapp.com/projects/1`)
+    //   .then((res) => {
+    //     return {
+    //       data: res.data,
+    //     };
+    //   });
+  },
   data() {
     return {
       isExpanded: false,
@@ -179,12 +205,13 @@ header {
     font-size: 60px;
     font-weight: bold;
     position: relative;
+    margin-left: 20px;
   }
   h1::before {
     content: "";
     position: absolute;
     top: 55%;
-    left: -10px;
+    left: -20px;
     transform: translateY(-50%);
     background-color: $red;
     width: 6px;
@@ -291,16 +318,8 @@ header {
     &::after {
       content: "";
       position: absolute;
-      z-index: 99999;
-      background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        from(#eeeeee),
-        to(transparent)
-      );
-      background-image: -webkit-linear-gradient(bottom, #eeeeee, transparent);
-      background-image: linear-gradient(to top, #eeeeee, transparent);
+      z-index: 10;
+      background: linear-gradient(0deg, #1b2854 0%, rgba(27, 40, 84, 0) 100%);
       height: 20px;
       width: 100%;
       left: 0;

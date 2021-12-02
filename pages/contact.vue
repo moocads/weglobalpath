@@ -50,34 +50,36 @@
               </div>
             </a-col>
             <a-col :xs="24" :md="12">
-              <form action="">
+              <form @submit.prevent="handleSubmit">
                 <div class="contact-name contact-input">
                   <label for="name">名字（必填）</label>
-                  <input type="text" required />
+                  <input type="text" v-model="userName" required />
                 </div>
                 <div class="contact-dob contact-input">
                   <label for="dob">出生日期</label>
-                  <input type="text" />
+                  <input type="text" v-model="userDOB" />
                 </div>
                 <div class="contact-phone contact-input">
                   <label for="phone">电话</label>
-                  <input type="text" />
+                  <input type="text" v-model="userPhone" />
                 </div>
                 <div class="contact-email contact-input">
                   <label for="email">邮箱（必填）</label>
-                  <input type="text" />
+                  <input type="text" v-model="userEmail" required />
                 </div>
                 <div class="contact-message contact-input">
                   <label for="dob">留言（必填）</label>
 
-                  <textarea></textarea>
+                  <textarea v-model="userMessage" required></textarea>
                 </div>
                 <div class="contact-checkbox contact-input">
-                  <a-checkbox @change="onChange">
+                  <a-checkbox v-model="userSubscription">
                     希望通过邮箱或短信接收更多加彼岸留学移民最新政策资讯。
                   </a-checkbox>
                 </div>
-                <button class="submit-btn main-btn main-btn_blue">发送</button>
+                <button type="submit" class="submit-btn main-btn main-btn_blue">
+                  发送
+                </button>
               </form>
             </a-col>
           </a-row>
@@ -88,7 +90,36 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      userName: "",
+      userPhone: "",
+      userDOB: "",
+      userEmail: "",
+      userMessage: "",
+      userSubscription: false,
+    };
+  },
+  methods: {
+    handleSubmit(e) {
+      this.$axios
+        .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
+          name: this.userName,
+          phone: this.userPhone,
+          email: this.userEmail,
+          message: this.userMessage,
+          dob: this.userDOB,
+          subscription: this.userSubscription,
+        })
+        .then((response) => {
+          console.log("submited");
+        });
+      e.preventDefault();
+    },
+  },
+};
 </script>
 <style lang="scss">
 #contact-page {
