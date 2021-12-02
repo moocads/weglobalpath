@@ -19,7 +19,7 @@ export default {};
 .navbar-sm {
   display: none;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 1000px) {
   .navbar-lg {
     display: none;
   }

@@ -24,6 +24,18 @@
                     >加拿大创业人才</NuxtLink
                   >
                 </li>
+                <li>
+                  <NuxtLink to="/">加拿大雇主担保</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/">加拿大留学移民</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/">加拿大雇团聚移民</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/">新移民服务</NuxtLink>
+                </li>
               </ul>
             </div>
           </li>
@@ -37,7 +49,7 @@
             <NuxtLink to="/">加拿大投资</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">联系我们</NuxtLink>
+            <NuxtLink to="/contact">联系我们</NuxtLink>
           </li>
         </ul>
       </div>
@@ -103,7 +115,6 @@ nav {
     width: 100%;
     padding: 10px 15px;
     max-height: 40px;
-    border-bottom: 1px solid $navy;
     a {
       padding: 0px;
       height: 100%;

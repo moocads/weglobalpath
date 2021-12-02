@@ -54,6 +54,7 @@
         <div class="requirement-grid">
           <div class="requirement-item">
             <div
+              key="1"
               :class="[
                 { 'requirement-info-wrap-expand': isExpanded },
                 { 'requirement-info-wrap-closed': isClosed },
@@ -70,7 +71,7 @@
             </div>
             <button
               @click="(isExpanded = !isExpanded), (isClosed = !isClosed)"
-              :class="[{ 'expand-btn': !isExpanded }]"
+              :class="[{ 'expand-btn': isExpanded }]"
             >
               展开全部
             </button>
@@ -285,7 +286,28 @@ header {
     overflow: hidden;
     max-height: 150px;
     transition: all 0.3s ease-in-out;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 99999;
+      background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(#eeeeee),
+        to(transparent)
+      );
+      background-image: -webkit-linear-gradient(bottom, #eeeeee, transparent);
+      background-image: linear-gradient(to top, #eeeeee, transparent);
+      height: 20px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+    }
   }
+
   .requirement-info-wrap-expand {
     overflow: hidden;
     transition: all 0.3s ease-in-out;
