@@ -10,10 +10,10 @@
             <NuxtLink to="/about">关于我们</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">中国区招生计划</NuxtLink>
+            <NuxtLink to="/recruiting">中国区招生计划</NuxtLink>
           </li>
           <li class="hot-project-link">
-            <NuxtLink to="/">热门项目</NuxtLink>
+            <NuxtLink to="/projects">热门项目</NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <ul>
                 <li>
@@ -40,13 +40,13 @@
             </div>
           </li>
           <li>
-            <NuxtLink to="/">成功案例</NuxtLink>
+            <NuxtLink to="/cases">成功案例</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">移民省份</NuxtLink>
+            <NuxtLink to="/provinces">移民省份</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">加拿大投资</NuxtLink>
+            <NuxtLink to="/investment">加拿大投资</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/contact">联系我们</NuxtLink>

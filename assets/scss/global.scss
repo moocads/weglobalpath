@@ -44,3 +44,14 @@ a:hover {
     background-color: #c42222;
   }
 }
+
+// ant timeline
+
+.ant-timeline-item-head {
+  background-color: transparent;
+}
+
+.ant-timeline-item-tail {
+  border-color: $navy;
+  left: 0;
+}
