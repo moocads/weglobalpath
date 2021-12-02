@@ -26,22 +26,22 @@
             <NuxtLink to="/about">
               <li @click="isToggle = !isToggle">关于我们</li>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/recruiting">
               <li @click="isToggle = !isToggle">中国区招生计划</li>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/projects">
               <li @click="isToggle = !isToggle">热门项目</li>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/cases">
               <li @click="isToggle = !isToggle">成功案例</li>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/provinces">
               <li @click="isToggle = !isToggle">移民省份</li>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/investment">
               <li @click="isToggle = !isToggle">加拿大投资</li>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/contact">
               <li @click="isToggle = !isToggle">联系我们</li>
             </NuxtLink>
             <li>

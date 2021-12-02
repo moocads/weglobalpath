@@ -83,42 +83,40 @@
       <div class="wrapper">
         <MainTitle title="申请流程" titleEN="PROCESS" titleENColor="#E5E5E5" />
         <div class="process-wrap">
-          <ul>
-            <li>
-              <div class="step-num">1</div>
-              <p>评估客户背景后，签订曼省企业家投资移民合同</p>
-            </li>
-            <li>
-              <div class="step-num">2</div>
-              <p>对曼省进行考察并研究申请人的商业理念</p>
-            </li>
-            <li>
-              <div class="step-num">3</div>
-              <p>
-                向MPNP提交自我评估和商业理念表（收到MPNP的邮件回复，如不符最低要求者将不会被审理）
-              </p>
-            </li>
-            <li>
-              <div class="step-num">4</div>
-              <p>向MPNP提交完整申请</p>
-            </li>
-            <li>
-              <div class="step-num">5</div>
-              <p>MPNP评估完整的申请，有可能需要申请人进行一次面试</p>
-            </li>
-            <li>
-              <div class="step-num">6</div>
-              <p>申请人签署商业表现协议，MPNP出具工作许可支持函</p>
-            </li>
-            <li>
-              <div class="step-num">7</div>
-              <p>在曼省经营生意，收到MPNP提名</p>
-            </li>
-            <li>
-              <div class="step-num">8</div>
-              <p>向IRCC提交永居，获得永久居民身</p>
-            </li>
-          </ul>
+          <a-timeline>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">1</div>
+              评估客户背景后，签订曼省企业家投资移民合同
+            </a-timeline-item>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">2</div>
+              对曼省进行考察并研究申请人的商业理念
+            </a-timeline-item>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">3</div>
+              向MPNP提交自我评估和商业理念表（收到MPNP的邮件回复，如不符最低要求者将不会被审理）
+            </a-timeline-item>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">4</div>
+              向MPNP提交完整申请
+            </a-timeline-item>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">5</div>
+              MPNP评估完整的申请，有可能需要申请人进行一次面试
+            </a-timeline-item>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">6</div>
+              申请人签署商业表现协议，MPNP出具工作许可支持函
+            </a-timeline-item>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">7</div>
+              在曼省经营生意，收到MPNP提名
+            </a-timeline-item>
+            <a-timeline-item>
+              <div slot="dot" class="step-num">8</div>
+              向IRCC提交永居，获得永久居民身
+            </a-timeline-item>
+          </a-timeline>
         </div>
       </div>
     </section>
@@ -424,31 +422,7 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    font-weight: normal;
-    margin-right: 10px;
-    position: relative;
-    z-index: 99;
-    flex-shrink: 0;
-  }
-  .step-num::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    height: 30px;
-    background-color: $navy;
-  }
-  li:last-child {
-    .step-num::before {
-      height: 0px;
-    }
-  }
-  li:nth-child(3) {
-    .step-num::before {
-      height: 50px;
-    }
+    margin-right: 9px;
   }
 }
 @media all and (max-width: 600px) {
