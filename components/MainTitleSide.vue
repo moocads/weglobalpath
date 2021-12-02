@@ -1,12 +1,12 @@
 <template>
   <div>
-    <header>
+    <div class="main-title-side-wrap">
       <p>{{ titleEN }}</p>
       <div class="title-wrap">
         <img src="/img/logos/logo-small-blue.png" alt="" />
         <h1>{{ title }}</h1>
       </div>
-    </header>
+    </div>
   </div>
 </template>
 
@@ -16,22 +16,18 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.main-title-side-wrap {
+  margin-bottom: 50px;
+}
+</style>
 <style lang="scss" scoped>
-header {
+.main-title-side-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 50px;
 }
-
-// h1::before {
-//   content: "";
-//   background: url("/img/logos/logo-small-blue.png");
-//   background-size: 30px 50px;
-//   width: 30px;
-//   height: 50px;
-// }
 p {
   font-size: 70px;
   color: #f1f1f1;
@@ -40,7 +36,14 @@ p {
   margin: 0;
   margin-left: 50px;
 }
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: -5px;
+  margin-bottom: 0;
+}
 img {
+  margin-top: -5px;
   width: 30px;
   // transform: rotate(90deg);
 }

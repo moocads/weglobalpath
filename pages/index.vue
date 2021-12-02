@@ -88,7 +88,7 @@
             <p>全球合作校园</p>
           </a-col>
           <a-col :xs="12" :md="6" class="counter-item">
-            <h2>600+</h2>
+            <h2>6000+</h2>
             <p>移民申请成功案例</p>
           </a-col>
           <a-col :xs="12" :md="6" class="counter-item">
