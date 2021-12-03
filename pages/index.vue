@@ -142,7 +142,7 @@
         </a-row>
       </div>
     </section>
-    <section id="home-cases">
+    <!-- <section id="home-cases">
       <MainTitle title="成功案例" titleEN="OUR CASES" titleENColor="#c4c4c4" />
       <div class="wrapper">
         <div class="cases-grid">
@@ -169,8 +169,8 @@
           </div>
         </div>
       </div>
-    </section>
-    <section id="home-testimonial">
+    </section> -->
+    <!-- <section id="home-testimonial">
       <div class="wrapper">
         <MainTitle title="客户评价" titleEN="FEEDBACK" />
         <a-carousel arrows :slidesToShow="3" :autoplay="true" class="slider-lg">
@@ -198,8 +198,8 @@
           </div>
         </a-carousel>
       </div>
-    </section>
-    <section id="home-blogs">
+    </section> -->
+    <!-- <section id="home-blogs">
       <div class="wrapper">
         <MainTitle
           title="加彼岸热讯"
@@ -221,7 +221,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

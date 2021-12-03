@@ -1,10 +1,11 @@
 <template>
   <div>
-    <header>
+    <!-- <header>
       <div class="wrapper">
         <h1>关于我们</h1>
       </div>
-    </header>
+    </header> -->
+    <Construction />
   </div>
 </template>
 

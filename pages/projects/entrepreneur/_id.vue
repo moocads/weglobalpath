@@ -93,7 +93,7 @@
         </div>
       </div>
     </section>
-    <CasesSection />
+    <!-- <CasesSection /> -->
     <OtherProjectsSection />
   </div>
 </template>
