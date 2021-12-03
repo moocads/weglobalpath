@@ -62,4 +62,17 @@ export default {
     margin: 0;
   }
 }
+@media all and (max-width: 600px) {
+  .card-wrap {
+    height: 300px;
+    width: 100%;
+    max-width: 350px;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 </style>

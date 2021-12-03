@@ -2,14 +2,14 @@
   <div>
     <header>
       <div class="wrapper">
-        <h1>加拿大企业家投资移民</h1>
+        <h1>加拿大创业人才移民</h1>
       </div>
     </header>
     <section class="codex-section">
       <div class="wrapper">
         <ul class="codex-grid">
           <li v-for="(p, index) in projects" :key="index" class="codex-item">
-            <NuxtLink :to="'/projects/entrepreneur/' + p.id">
+            <NuxtLink :to="'/projects/startup/' + p.id">
               <img :src="p.thumbnail && p.thumbnail.url" alt="" />
               <h2>{{ p.project_name }}</h2>
             </NuxtLink>
@@ -35,8 +35,8 @@ export default {
   async asyncData({ $axios }) {
     const projectData = await $axios.$get(`/projects`, {
       params: {
-        //category = entrepreneur id:1
-        project_category: 1,
+        //category = startup id:2
+        project_category: 2,
       },
     });
     const projects = projectData;

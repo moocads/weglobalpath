@@ -6,10 +6,9 @@
           <a-col :md="{ span: 7, offset: 0 }" :xs="24">
             <img src="/img/logos/logo-white.png" alt="" class="footer-logo" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
-              libero sagittis quis phasellus. Tellus dolor eu integer egestas
-              nulla mauris nec cras. Lorem quam sed tempus, est pharetra. Amet
-              amet, gravida
+              加彼岸旗下有加彼岸出国咨询（BEYONDCANADA
+              CONSULTING），彼森教育（BISON EDUCATION）和彼岸投资（BEYONDCANADA
+              INVESTMENT）三家子公司，均为加拿大联邦注册公司，分别由自身移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
             </p>
           </a-col>
           <a-col :md="{ span: 7, offset: 2 }" :xs="24">
@@ -34,22 +33,24 @@
             <div class="projects-wrap">
               <ul>
                 <li>
-                  <NuxtLink to="/">加拿大企业家移民</NuxtLink>
+                  <NuxtLink to="/projects/entrepreneur"
+                    >加拿大企业家移民</NuxtLink
+                  >
                 </li>
                 <li>
-                  <NuxtLink to="/">加拿大创业移民</NuxtLink>
+                  <NuxtLink to="/projects/startup">加拿大创业移民</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/">加拿大雇主担保移民</NuxtLink>
+                  <NuxtLink to="/projects/nominee">加拿大雇主担保移民</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/">加拿大留学移民</NuxtLink>
+                  <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/">加拿大团聚移民</NuxtLink>
+                  <NuxtLink to="/projects/reunion">加拿大团聚移民</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/">新移民服务</NuxtLink>
+                  <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
                 </li>
               </ul>
             </div>
@@ -130,6 +131,22 @@ footer {
   a {
     font-size: 16px;
     color: #fff;
+  }
+}
+@media all and (max-width: 600px) {
+  footer {
+    padding: 30px 0;
+  }
+  .contact-info-wrap {
+    a,
+    p {
+      font-size: 14px;
+    }
+    img {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+    }
   }
 }
 </style>

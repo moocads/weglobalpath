@@ -33,6 +33,7 @@ export default {
   align-items: center;
 
   p {
+    text-align: center;
     font-size: 70px;
     // color: #f1f1f1;
     font-family: $Mont;
@@ -45,14 +46,10 @@ export default {
     width: 30px;
     transform: rotate(90deg);
   }
-  @media all and (max-width: 600px) {
-    p {
-      font-size: 50px;
-    }
-  }
+
   h1 {
-    font-weight: 900;
-    font-size: 36px;
+    font-weight: 700;
+    font-size: 32px;
     margin-top: -45px;
   }
   img {
@@ -66,6 +63,9 @@ export default {
       font-weight: normal;
       font-size: 28px;
       margin-top: -35px;
+    }
+    p {
+      font-size: 40px;
     }
   }
 }

@@ -29,7 +29,7 @@
         <MainTitle title="热门项目" titleEN="SERVICES" />
         <div class="projects-wrap">
           <div class="project-1 project-item">
-            <NuxtLink to="/about">
+            <NuxtLink to="/projects/nominee">
               <div class="proj1-overlay proj-overlay"></div>
               <img src="/img/Home/projects/project1.png" alt="" />
               <h2>
@@ -39,35 +39,35 @@
             </NuxtLink>
           </div>
           <div class="project-2 project-item">
-            <NuxtLink to="/about">
+            <NuxtLink to="/projects/new-immigrant">
               <div class="proj2-overlay proj-overlay"></div>
               <img src="/img/Home/projects/project2.png" alt="" />
               <h2>新移民服务</h2>
             </NuxtLink>
           </div>
           <div class="project-3 project-item">
-            <NuxtLink to="/about">
+            <NuxtLink to="/projects/education">
               <div class="proj3-overlay proj-overlay"></div>
               <img src="/img/Home/projects/project3.png" alt="" />
               <h2>加拿大名校申请<br />留学移民</h2>
             </NuxtLink>
           </div>
           <div class="project-4 project-item">
-            <NuxtLink to="/about">
+            <NuxtLink to="/projects/startup">
               <div class="proj4-overlay proj-overlay"></div>
               <img src="/img/Home/projects/project4.png" alt="" />
               <h2>加拿大创业移民</h2>
             </NuxtLink>
           </div>
           <div class="project-5 project-item">
-            <NuxtLink to="/about">
+            <NuxtLink to="/projects/entrepreneur">
               <div class="proj5-overlay proj-overlay"></div>
               <img src="/img/Home/projects/project5.png" alt="" />
               <h2>加拿大企业家移民</h2>
             </NuxtLink>
           </div>
           <div class="project-6 project-item">
-            <NuxtLink to="/about">
+            <NuxtLink to="/projects/reunion">
               <div class="proj6-overlay proj-overlay"></div>
               <img src="/img/Home/projects/project6.png" alt="" />
               <h2>加拿大团聚移民</h2>
@@ -123,7 +123,7 @@
                   了解更多
                 </button>
               </NuxtLink>
-              <NuxtLink to="/about">
+              <NuxtLink to="/contact">
                 <button
                   class="about-btn main-btn main-btn_red main-btn_round-5"
                 >
@@ -644,6 +644,9 @@ header .info-wrap {
   .about-img {
     border-radius: 10px;
   }
+}
+.about-btn {
+  margin-right: 15px;
 }
 @media all and (max-width: 600px) {
   .about-btn {

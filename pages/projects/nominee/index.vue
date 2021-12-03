@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>ONTARION</h1>
+    <Construction />
   </div>
 </template>
 

@@ -44,7 +44,11 @@ a:hover {
     background-color: #c42222;
   }
 }
-
+@media all and (max-width: 600px) {
+  .main-btn_mobile_w100 {
+    width: 100%;
+  }
+}
 // ant timeline
 
 .ant-timeline-item-head {
@@ -54,4 +58,37 @@ a:hover {
 .ant-timeline-item-tail {
   border-color: $navy;
   left: 0;
+}
+
+/* ------------------------------------------------------ */
+/*           ANCHOR hot project page CODEX STYLE          */
+/* ------------------------------------------------------ */
+.codex-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  // padding: 100px 0;
+}
+.codex-item {
+  img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    color: $navy;
+  }
+}
+.codex-section {
+  padding: 100px 0;
+}
+@media all and (max-width: 600px) {
+  .codex-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .codex-section {
+    padding: 30px 0;
+  }
 }

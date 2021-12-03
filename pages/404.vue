@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>saskatchewan</h1>
+    <Construction />
   </div>
 </template>
 

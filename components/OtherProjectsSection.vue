@@ -9,36 +9,44 @@
         />
         <a-row :gutter="[16, 16]">
           <a-col :sm="12" :md="6" :lg="6">
-            <div
-              class="project"
-              style="background-image: url(/img/Home/about-img.jpg)"
-            >
-              <p>萨省企业家</p>
-            </div>
+            <NuxtLink to="/projects/startup">
+              <div
+                class="project"
+                style="background-image: url(/img/Home/about-img.jpg)"
+              >
+                <p>加拿大创业人才移民</p>
+              </div>
+            </NuxtLink>
           </a-col>
           <a-col :sm="12" :md="6" :lg="6">
-            <div
-              class="project"
-              style="background-image: url(/img/Home/about-img.jpg)"
-            >
-              <p>萨省企业家</p>
-            </div>
+            <NuxtLink to="/projects/nominee">
+              <div
+                class="project"
+                style="background-image: url(/img/Home/about-img.jpg)"
+              >
+                <p>加拿大雇主担保</p>
+              </div>
+            </NuxtLink>
           </a-col>
           <a-col :sm="12" :md="6" :lg="6">
-            <div
-              class="project"
-              style="background-image: url(/img/Home/about-img.jpg)"
-            >
-              <p>萨省企业家</p>
-            </div>
+            <NuxtLink to="/projects/education">
+              <div
+                class="project"
+                style="background-image: url(/img/Home/about-img.jpg)"
+              >
+                <p>加拿大留学移民</p>
+              </div>
+            </NuxtLink>
           </a-col>
           <a-col :sm="12" :md="6" :lg="6">
-            <div
-              class="project"
-              style="background-image: url(/img/Home/about-img.jpg)"
-            >
-              <p>萨省企业家</p>
-            </div>
+            <NuxtLink to="/projects/reunion">
+              <div
+                class="project"
+                style="background-image: url(/img/Home/about-img.jpg)"
+              >
+                <p>加拿大团聚服务</p>
+              </div>
+            </NuxtLink>
           </a-col>
         </a-row>
       </div>

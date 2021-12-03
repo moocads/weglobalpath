@@ -17,24 +17,24 @@
             <div class="hot-project-dropdown dropdown-wrap">
               <ul>
                 <li>
-                  <NuxtLink to="/">加拿大企业家移民</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/projects/entrepreneur/manitoba"
-                    >加拿大创业人才</NuxtLink
+                  <NuxtLink to="/projects/entrepreneur"
+                    >加拿大企业家移民</NuxtLink
                   >
                 </li>
                 <li>
-                  <NuxtLink to="/">加拿大雇主担保</NuxtLink>
+                  <NuxtLink to="/projects/startup">加拿大创业人才移民</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/">加拿大留学移民</NuxtLink>
+                  <NuxtLink to="/projects/nominee">加拿大雇主担保</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/">加拿大雇团聚移民</NuxtLink>
+                  <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/">新移民服务</NuxtLink>
+                  <NuxtLink to="/projects/nominee">加拿大雇团聚移民</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
                 </li>
               </ul>
             </div>

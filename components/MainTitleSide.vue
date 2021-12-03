@@ -37,7 +37,7 @@ p {
   margin-left: 50px;
 }
 h1 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   margin-top: -5px;
   margin-bottom: 0;
@@ -54,7 +54,7 @@ img {
 }
 @media all and (max-width: 600px) {
   p {
-    font-size: 50px;
+    font-size: 40px;
     color: #f1f1f1;
     font-family: $Mont;
     font-weight: 800;
@@ -63,8 +63,9 @@ img {
   }
   h1 {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
+    margin-top: 10px;
   }
   .title-wrap {
     margin-top: -40px;

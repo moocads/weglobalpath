@@ -41,7 +41,11 @@
               </li>
             </ul>
             <NuxtLink to="/contact">
-              <button class="main-btn main-btn_red main-btn_round-5">
+              <button
+                class="
+                  main-btn main-btn_red main-btn_round-5 main-btn_mobile_w100
+                "
+              >
                 联系我们
               </button>
             </NuxtLink>
@@ -98,13 +102,20 @@
 import axios from "axios";
 
 export default {
-  async asyncData({ $axios }) {
-    const projectData = await $axios.$get(`/projects/1`);
+  async asyncData({ $axios, params }) {
+    const projectData = await $axios.$get(`/projects/${params.id}`);
     const data = projectData;
     return {
       data,
     };
   },
+  // async asyncData({ $axios, route }) {
+  //   const projectData = await $axios.$get(`/projects?id=` + route.params.id);
+  //   const data = projectData;
+  //   return {
+  //     data,
+  //   };
+  // },
   data() {
     return {
       hasButton: [],

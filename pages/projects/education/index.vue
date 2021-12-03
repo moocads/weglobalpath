@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>prince edward</h1>
+    <Construction />
   </div>
 </template>
 

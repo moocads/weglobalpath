@@ -2,28 +2,24 @@
   <div>
     <header>
       <div class="wrapper">
-        <h1>加拿大企业家投资移民</h1>
+        <h1>热门项目</h1>
       </div>
     </header>
     <section class="codex-section">
       <div class="wrapper">
         <ul class="codex-grid">
-          <li v-for="(p, index) in projects" :key="index" class="codex-item">
-            <NuxtLink :to="'/projects/entrepreneur/' + p.id">
-              <img :src="p.thumbnail && p.thumbnail.url" alt="" />
-              <h2>{{ p.project_name }}</h2>
+          <li class="codex-item">
+            <NuxtLink to="/projects/entrepreneur">
+              <img src="/img/Home/projects/project5.png" alt="" />
+              <h2>加拿大企业家投资移民</h2>
             </NuxtLink>
           </li>
-          <!-- <li>
-            <NuxtLink to="/projects/entrepreneur/manitoba">
-              曼省投资移民
+          <li class="codex-item">
+            <NuxtLink to="/projects/startup">
+              <img src="/img/Home/projects/project4.png" alt="" />
+              <h2>加拿大创业人才移民</h2>
             </NuxtLink>
           </li>
-          <li>
-            <NuxtLink to="/projects/entrepreneur/new-brunswick">
-              NB省企业家移民</NuxtLink
-            >
-          </li> -->
         </ul>
       </div>
     </section>
@@ -31,20 +27,7 @@
 </template>
 
 <script>
-export default {
-  async asyncData({ $axios }) {
-    const projectData = await $axios.$get(`/projects`, {
-      params: {
-        //category = entrepreneur id:1
-        project_category: 1,
-      },
-    });
-    const projects = projectData;
-    return {
-      projects,
-    };
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -84,7 +67,7 @@ header {
   header {
     height: 300px;
     h1 {
-      font-size: 32px;
+      font-size: 35px;
     }
     h1::before {
       width: 6px;

@@ -45,9 +45,9 @@
                   <a href="mailto:info@beyondcanda.ca">info@beyondcanda.ca</a>
                 </div>
               </div>
-              <div class="gmap-wrap info-wrap">
+              <!-- <div class="gmap-wrap info-wrap">
                 <img src="/img/gamp.png" alt="" />
-              </div>
+              </div> -->
             </a-col>
             <a-col :xs="24" :md="12">
               <form @submit.prevent="handleSubmit">

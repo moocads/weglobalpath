@@ -17,13 +17,13 @@
         <a href="https://www.facebook.com/">
           <img src="/img/icons/fb.png" alt="Social Media Facebook Icon" />
         </a>
-        <a href="https://www.moocads.com/">
+        <a href="https://www.instagram.com/">
           <img src="/img/icons/ins.png" alt="Social Media Instagram Icon" />
         </a>
-        <a href="https://www.moocads.com/">
+        <a href="https://www.twitter.com/">
           <img src="/img/icons/twitter.png" alt="Social Media Twitter Icon" />
         </a>
-        <a href="https://www.moocads.com/">
+        <a href="https://www.wechat.com/">
           <img src="/img/icons/wechat.png" alt="Social Media Wechat Icon" />
         </a>
       </div>

@@ -14,12 +14,15 @@
         </li>
       </ul>
     </div>
-    <button
+    <!-- <button
+      :key="randomKey"
       @click="isExpanded = !isExpanded"
-      :class="[{ 'expand-btn': isExpanded }]"
+      :class="[
+        { 'expand-btn': isExpanded, 'requirement-expand-btn': hasButtonProp },
+      ]"
     >
       展开全部
-    </button>
+    </button> -->
   </div>
 </template>
 
@@ -28,13 +31,17 @@ export default {
   data() {
     return {
       isExpanded: false,
+      randomKey: 1,
     };
   },
   props: {
     title: String,
     requirementsData: Object,
+    hasButtonProp: {
+      type: Boolean,
+      required: true,
+    },
   },
-  mounted() {},
 };
 </script>
 
@@ -43,7 +50,7 @@ export default {
   position: relative;
   .requirement-info-wrap-closed {
     overflow: hidden;
-    max-height: 150px;
+    // max-height: 150px;
     transition: all 0.3s ease-in-out;
     position: relative;
 
@@ -92,10 +99,15 @@ export default {
     transform: translateX(-50%);
     color: #6ab6ff;
     font-size: 13px;
+    display: none;
   }
   button::after {
     content: url("/img/Projects/expand.png");
     margin-left: 5px;
+  }
+
+  .requirement-expand-btn {
+    display: block !important;
   }
   .expand-btn {
     transition: all 0.2s ease-in-out;

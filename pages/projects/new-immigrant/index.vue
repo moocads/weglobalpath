@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>NEW BRUNSWICK</h1>
+    <Construction />
   </div>
 </template>
 
