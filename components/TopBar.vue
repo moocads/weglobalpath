@@ -26,7 +26,7 @@
           <p>多伦多免费咨询热线</p>
         </div>
       </div>
-      <div class="social-media-wrap">
+      <!-- <div class="social-media-wrap">
         <a href="https://www.facebook.com/">
           <img src="/img/icons/fb.png" alt="Social Media Facebook Icon" />
         </a>
@@ -39,7 +39,7 @@
         <a href="https://www.wechat.com/">
           <img src="/img/icons/wechat.png" alt="Social Media Wechat Icon" />
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
