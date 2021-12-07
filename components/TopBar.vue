@@ -6,7 +6,7 @@
         alt="加彼岸 Navbar Logo"
         class="nav_logo"
       />
-      <div class="phone-wrap">
+      <!-- <div class="phone-wrap">
         <img
           src="/img/icons/topbar-phone.png"
           alt="加彼岸 Navbar Phone Call Logo"
@@ -15,7 +15,7 @@
           <a href="tel:+12049638886">204-963-8886</a>
           <p>中国地区免费咨询热线</p>
         </div>
-      </div>
+      </div> -->
       <div class="phone-wrap">
         <img
           src="/img/icons/topbar-phone.png"

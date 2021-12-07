@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <header>
       <div class="wrapper">
         <h1>成功案例</h1>
@@ -17,7 +17,8 @@
         </div>
       </div>
     </section>
-  </div>
+  </div> -->
+  <Construction />
 </template>
 
 <script>

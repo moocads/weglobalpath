@@ -37,7 +37,6 @@
                     ><span>加拿大温尼伯：</span>180 Main St, Winnipeg, MB R3C
                     1A6 (Robertson College)
                   </a>
-                  <a href="javascript:void(0)"><span>中国服务办公室:</span></a>
                 </div>
               </div>
               <div class="email-wrap info-wrap">
