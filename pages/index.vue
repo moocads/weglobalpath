@@ -170,7 +170,7 @@
         </div>
       </div>
     </section> -->
-    <!-- <section id="home-testimonial">
+    <section id="home-testimonial">
       <div class="wrapper">
         <MainTitle title="客户评价" titleEN="FEEDBACK" />
         <a-carousel arrows :slidesToShow="3" :autoplay="true" class="slider-lg">
@@ -198,7 +198,7 @@
           </div>
         </a-carousel>
       </div>
-    </section> -->
+    </section>
     <!-- <section id="home-blogs">
       <div class="wrapper">
         <MainTitle
@@ -241,28 +241,34 @@ export default {
     return {
       feedbackData: [
         {
-          name: "Lorem Lee",
+          name: "张同学",
           avatar: "/img/Home/avatar.png",
           content:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, libero inventore nobis provident veniam accusantium ea natus magni delectus odit ipsa beatae, iure officiis? In iusto eius ullam voluptate.",
+            "非常感谢加彼岸出国咨询公司，办事效率高，认真负责，让我和我老婆顺利拿到PR。在办理的过程中，对材料的整理和格式文件的要求认真负责，细心到位，他们的公司的工作效率高，文案能力强，公司的实力和能力，也让我着实放心，让我毫无困扰，轻轻松松走上移民之路。",
         },
         {
-          name: "Lorem Lee2",
+          name: "王女士",
           avatar: "/img/Home/avatar.png",
           content:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, libero inventore nobis provident veniam accusantium ea natus magni delectus odit ipsa beatae, iure officiis? In iusto eius ullam voluptate.",
+            "非常感谢Luna和Lisa对我和女儿签证的帮助。先给出了准确的移民方案，然后帮我们一步步操作，从陪读签到我小女儿的学签，准备材料很充分，申请步骤很清晰，解答问题很耐心。由于疫情，被拒签的情况很多，我当时非常焦虑，Luna和Lisa会解除我的顾虑，在她们的帮助下，我们的签证不到1个月全部顺利获批，非常感谢加彼岸，让我们能够快速顺利入境加拿大。",
         },
         {
-          name: "Lorem Lee3",
+          name: "戴同学",
           avatar: "/img/Home/avatar.png",
           content:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, libero inventore nobis provident veniam accusantium ea natus magni delectus odit ipsa beatae, iure officiis? In iusto eius ullam voluptate.",
+            "在我毕业后第一时间金老师就帮我安排工作培训，在提交毕业工签后我就开始正式工作积累移民要求的工作时间，而且那时我已经对工作内容都已经熟悉，工作起来得心应手。雇主资源这一块的保障是非常重要的，在我的省提名审理中只有雇主接到电话，自己没被要求过任何材料。我的移民之路上，从未有过任何烦恼。衷心感谢加彼岸！",
         },
         {
-          name: "Lorem Le4",
+          name: "张女士",
           avatar: "/img/Home/avatar.png",
           content:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, libero inventore nobis provident veniam accusantium ea natus magni delectus odit ipsa beatae, iure officiis? In iusto eius ullam voluptate.",
+            "收到COPR的第二天，还是感觉很惊喜。走完这全程，只能说难以置信的顺利，感谢加彼岸为我保驾护航! 雇主担保当时咨询了很多人，遇到Luna觉得很幸运，经验丰富、做事极有效率且为人真诚的人。在她耐心地帮助下，当时不到一个月就拿到了雇主担保的省提名信，顺利完成人生中的一件重要的事，我真的很幸运，感谢无以言表。",
+        },
+        {
+          name: "陈先生",
+          avatar: "/img/Home/avatar.png",
+          content:
+            "我们全家通过加拿大投资移民上周已经顺利登陆，感谢加彼岸投资团队的服务精神，全程从项目定向，注册公司，选址到后续会计报税，可以说事无巨细的帮我把项目在加拿大境内落地，每个月参加一次视频会议，大家会和我汇报目前企业运营的情况和状态，我基本没有操心，能安心在国内，想说一句你们辛苦了！",
         },
       ],
       blogsData: [

@@ -30,10 +30,14 @@
                 <div class="info">
                   <h2>地址</h2>
                   <a href="javascript:void(0)"
-                    >加拿大多伦多：145 Royal Crest Court, Markham</a
-                  >
-                  <a href="javascript:void(0)">加拿大温尼伯:</a>
-                  <a href="javascript:void(0)">中国服务办公室:</a>
+                    ><span>加拿大多伦多：</span>145 Royal Crest Ct Unit 47-48,
+                    Markham, ON L3R 9Z4
+                  </a>
+                  <a href="javascript:void(0)"
+                    ><span>加拿大温尼伯：</span>180 Main St, Winnipeg, MB R3C
+                    1A6 (Robertson College)
+                  </a>
+                  <a href="javascript:void(0)"><span>中国服务办公室:</span></a>
                 </div>
               </div>
               <div class="email-wrap info-wrap">
@@ -46,7 +50,7 @@
                 </div>
               </div>
               <!-- <div class="gmap-wrap info-wrap">
-                <img src="/img/gamp.png" alt="" />
+                <GMap />
               </div> -->
             </a-col>
             <a-col :xs="24" :md="12">
@@ -191,6 +195,7 @@ header {
   margin-top: -100px;
   margin-bottom: 100px;
 }
+
 .info-wrap {
   display: flex;
   margin-bottom: 40px;
@@ -216,6 +221,7 @@ header {
   a {
     font-size: 16px;
     color: #505050;
+    margin-bottom: 8px;
   }
   .info {
     margin-left: 10px;
@@ -242,11 +248,14 @@ header {
   }
 }
 .gmap-wrap {
+  width: 100%;
+  height: 250px;
+  background-color: #333;
   border-radius: 10px;
-  img {
-    width: 100%;
-    height: 250px;
-  }
+  // img {
+  //   width: 100%;
+  //   height: 250px;
+  // }
 }
 form {
   padding: 0 80px;

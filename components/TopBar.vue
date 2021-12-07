@@ -8,10 +8,23 @@
       />
       <div class="phone-wrap">
         <img
-          src="/img/icons/headphone.png"
+          src="/img/icons/topbar-phone.png"
           alt="加彼岸 Navbar Phone Call Logo"
         />
-        <a href="tel:+12049638886">204-963-8886</a>
+        <div class="phone-box">
+          <a href="tel:+12049638886">204-963-8886</a>
+          <p>中国地区免费咨询热线</p>
+        </div>
+      </div>
+      <div class="phone-wrap">
+        <img
+          src="/img/icons/topbar-phone.png"
+          alt="加彼岸 Navbar Phone Call Logo"
+        />
+        <div class="phone-box">
+          <a href="tel:+12049638886">204-963-8886</a>
+          <p>多伦多免费咨询热线</p>
+        </div>
       </div>
       <div class="social-media-wrap">
         <a href="https://www.facebook.com/">
@@ -55,7 +68,12 @@ export default {};
   }
   a {
     font-weight: 900;
-    font-size: 25px;
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+    color: #757575;
+    margin-bottom: 0;
   }
 }
 .social-media-wrap {

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="card-wrap" :style="{ backgroundImage: thumbnail }">
+    <div
+      class="card-wrap"
+      :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
+    >
       <NuxtLink :to="link">
         <div class="info-box">
           <h1>{{ title }}</h1>

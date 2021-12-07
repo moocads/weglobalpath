@@ -4,9 +4,9 @@
       <p>
         {{ content }}
       </p>
-      <div class="avatar">
+      <!-- <div class="avatar">
         <img :src="avatar" alt="" />
-      </div>
+      </div> -->
       <p class="name">{{ name }}</p>
     </div>
   </div>
@@ -16,7 +16,7 @@
 export default {
   props: {
     content: String,
-    avatar: String,
+    // avatar: String,
     name: String,
   },
 };
@@ -29,6 +29,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 20px;
+  height: 100%;
   p {
     text-align: center;
     font-size: 14px;
@@ -38,6 +39,8 @@ export default {
     color: #000;
     font-weight: bold;
     font-style: italic;
+    margin-bottom: 0;
+    margin-top: auto;
   }
   .avatar {
     width: 50px;

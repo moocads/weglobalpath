@@ -20,7 +20,15 @@
               </li>
               <li>
                 <img src="/img/icons/address.svg" alt="" />
-                <p>Unit 1 - 2100 De Saint Marc , Toronto, ON M3K07B</p>
+                <p>
+                  多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
+                </p>
+              </li>
+              <li>
+                <img src="/img/icons/address.svg" alt="" />
+                <p>
+                  温尼伯：180 Main St, Winnipeg, MB R3C 1A6 (Robertson College)
+                </p>
               </li>
               <li>
                 <img src="/img/icons/email.svg" alt="" />
