@@ -8,11 +8,12 @@
     <section id="cases-wrap">
       <div class="wrapper cases-grid">
         <div v-for="(c, index) in cases" :key="index" class="case-item">
-          <NuxtLink :to="'/cases/' + c.id">{{ c.id }}</NuxtLink>
-          <CaseCard
-            :thumbnail="c.image[0] && c.image[0].url"
-            :title="c.title"
-          />
+          <NuxtLink :to="'/cases/' + c.id">
+            <CaseCard
+              :thumbnail="c.image[0] && c.image[0].url"
+              :title="c.title"
+            />
+          </NuxtLink>
         </div>
       </div>
     </section>
