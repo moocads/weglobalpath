@@ -80,7 +80,7 @@ header {
     height: 70px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   header {
     height: 300px;
     h1 {

@@ -141,7 +141,7 @@ footer {
     color: #fff;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   footer {
     padding: 30px 0;
   }

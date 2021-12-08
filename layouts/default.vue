@@ -20,7 +20,7 @@ export default {};
 .navbar-sm {
   display: none;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 991px) {
   .navbar-lg {
     display: none;
   }

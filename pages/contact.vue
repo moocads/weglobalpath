@@ -168,7 +168,7 @@ header {
     color: #fff;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   header {
     background-position: bottom;
     background-blend-mode: multiply;
@@ -301,7 +301,7 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .contact-wrap {
     padding: 25px 15px;
     margin-top: -60px;

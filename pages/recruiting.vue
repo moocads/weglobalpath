@@ -340,7 +340,7 @@ export default {
     }
   }
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 991px) {
   .ant-table-title {
     font-size: 18px;
     font-weight: bold;
@@ -536,7 +536,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   header {
     height: 300px;
     h1 {

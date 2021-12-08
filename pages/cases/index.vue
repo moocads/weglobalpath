@@ -83,7 +83,7 @@ header {
 .case-item {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 991px) {
   header {
     background-position: bottom;
     background-blend-mode: multiply;

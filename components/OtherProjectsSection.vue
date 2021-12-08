@@ -87,7 +87,7 @@ section {
 // .project:hover {
 //   background-color: transparent;
 // }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   section {
     padding: 30px 0;
   }

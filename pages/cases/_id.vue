@@ -159,7 +159,7 @@ header {
     margin-right: 10px;
   }
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 991px) {
   hr {
     margin: 15px 0;
   }

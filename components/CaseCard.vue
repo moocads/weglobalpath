@@ -65,7 +65,7 @@ export default {
     margin: 0;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .card-wrap {
     height: 300px;
     width: 100%;

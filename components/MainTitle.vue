@@ -56,7 +56,7 @@ export default {
     margin-top: -35px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .main-title-wrap {
     margin-bottom: 30px;
     h1 {

@@ -140,7 +140,7 @@ section {
     font-size: 16px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   section {
     padding: 30px 0;
   }
@@ -177,7 +177,7 @@ header {
     height: 70px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   header {
     height: 300px;
     h1 {
@@ -224,7 +224,7 @@ header {
     margin-right: 15px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .highlight-info-wrap {
   }
 }
@@ -341,7 +341,7 @@ header {
     transform: rotate(180deg);
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .sec-requirements {
     background-color: $navy;
     .title-wrap {
@@ -417,7 +417,7 @@ header {
     margin-right: 9px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .process-wrap {
     padding: 50px 20px 0;
     .step-num::before {
