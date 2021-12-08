@@ -53,7 +53,7 @@ export default {
 section {
   padding: 100px 0;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   section {
     padding: 30px 0;
   }

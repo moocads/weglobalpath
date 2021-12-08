@@ -76,7 +76,7 @@ export default {
     color: $navy;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .card-wrap {
     height: 350px;
     width: 100%;

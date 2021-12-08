@@ -173,7 +173,7 @@
     <section id="home-testimonial">
       <div class="wrapper">
         <MainTitle title="客户评价" titleEN="FEEDBACK" />
-        <a-carousel arrows :slidesToShow="3" :autoplay="true" class="slider-lg">
+        <a-carousel arrows :slidesToShow="2" :autoplay="true" class="slider-lg">
           <div slot="prevArrow" class="custom-slick-arrow">
             <img src="/img/Home/left-arrow.png" alt="" />
           </div>
@@ -307,6 +307,8 @@ export default {
 </script>
 <style lang="scss">
 #home-testimonial {
+  margin-bottom: 50px;
+
   .ant-carousel .custom-slick-arrow {
     width: 20px;
     height: 20px;
@@ -338,7 +340,7 @@ export default {
     background: $red !important;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
 }
 </style>
 <style lang="scss" scoped>
@@ -351,6 +353,7 @@ header {
   overflow: hidden;
   max-height: 800px;
   width: 100%;
+
   img {
     width: 100%;
     z-index: -1;
@@ -397,7 +400,7 @@ header .info-wrap {
     margin-left: 50px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   header {
     height: 100vh;
     img {
@@ -439,7 +442,7 @@ header .info-wrap {
 /*                ANCHOR HOME SERVICE STYLE               */
 /* ------------------------------------------------------ */
 #home-services {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 .projects-wrap {
   display: grid;
@@ -543,7 +546,7 @@ header .info-wrap {
     background: none;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   #home-services {
     padding: 30px 0;
   }
@@ -616,7 +619,7 @@ header .info-wrap {
     font-size: 18px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   #home-counter .title-wrap {
     margin-bottom: 30px;
     h1 {
@@ -646,15 +649,22 @@ header .info-wrap {
 /*                   ANCHOR ABOUT STYLE                   */
 /* ------------------------------------------------------ */
 #home-about {
-  padding: 100px 0;
+  padding: 50px 0;
+
   .about-img {
     border-radius: 10px;
+    margin-top: 50px;
   }
 }
 .about-btn {
   margin-right: 15px;
 }
-@media all and (max-width: 600px) {
+
+.button-wrap {
+  padding-top: 30px;
+}
+
+@media all and (max-width: 768px) {
   .about-btn {
     padding: 15px 40px;
     margin-right: 5px;
@@ -679,7 +689,7 @@ header .info-wrap {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   #home-cases {
     padding: 30px 0;
   }
@@ -694,7 +704,7 @@ header .info-wrap {
 /*                 ANCHOR TESTMONIAL STYLE                */
 /* ------------------------------------------------------ */
 #home-testimonial {
-  padding: 100px 0;
+  padding: 50px 0;
   .slider-lg {
     display: block;
   }
@@ -702,7 +712,7 @@ header .info-wrap {
     display: none;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   #home-testimonial {
     padding: 50px 0;
     .slider-lg {
@@ -725,7 +735,7 @@ header .info-wrap {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 30px;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   #home-blogs .blogs-grid {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 20px;

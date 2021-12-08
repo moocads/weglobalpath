@@ -52,7 +52,7 @@ img {
   display: flex;
   align-items: center;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   p {
     font-size: 40px;
     color: #f1f1f1;

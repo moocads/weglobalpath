@@ -81,7 +81,7 @@ export default {};
     margin-right: 15px;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   #topbar {
     height: auto;
   }

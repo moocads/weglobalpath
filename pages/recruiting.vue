@@ -187,7 +187,7 @@ export default {
     }
   }
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 991px) {
 }
 </style>
 <style lang="scss" scoped>
@@ -364,7 +364,7 @@ header {
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   header {
     height: 300px;
     h1 {
