@@ -92,3 +92,14 @@ a:hover {
     padding: 30px 0;
   }
 }
+.red-square-list-wrap {
+  li {
+    color: #707070;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  li::before {
+    content: url("/img/Projects/list-square.png");
+    margin-right: 15px;
+  }
+}
