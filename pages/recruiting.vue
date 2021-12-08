@@ -93,6 +93,18 @@
           </article>
         </div>
       </section>
+      <section class="coop-schools-sec">
+        <div class="wrapper">
+          <MainTitle title="合作院校" titleEN="COOP SCHOOLS" />
+          <div class="schools-grid">
+            <SchoolCard
+              :schoolsData="d"
+              v-for="(d, index) in schools"
+              :key="index"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -142,11 +154,152 @@ const data = [
     requirement: "根据加拿大签证政策最低只需购买1万加币GIC证明",
   },
 ];
+const schools = [
+  {
+    area: "Ontario",
+    university: [
+      "University of Toronto",
+      "Brock University",
+      "Laurentian University",
+      "UOIT",
+      "University of Guelph",
+      "Carlton University",
+      "University of Western",
+      "University of Windsor",
+      "Lakehead University",
+      "Trent University",
+      "Wilfrid Laurier University",
+    ],
+    college: [
+      "Algonquin College",
+      "Centennial College",
+      "Conestoga College",
+      "Fanshawe College",
+      "George Brown College",
+      "Georgian College",
+      "Humber College",
+      "Niagara College",
+      "St. Lawrence College",
+      "Seneca College",
+      "Sheridan Institute of Tech.",
+      "Mohawk College",
+      "Cambrian College",
+      "Confederation College",
+      "Lambton College",
+      "Durham College",
+      "CIC",
+      "Canadore College",
+      "St. Clair College",
+      "RCC Institute of Tech.",
+    ],
+  },
+  {
+    area: "British Columbia",
+    university: [
+      "Simon Fraser University",
+      "University of Victoria",
+      "BCIT",
+      "KPU",
+      "Vancouver Island University",
+      "Thompson Rivers University",
+      "Trinity Western University",
+      "Royal Roads University",
+      "University of Fraser Valley",
+      "UNBC",
+      "Capilano University",
+      "Fairleigh Dickinson University",
+    ],
+    college: [
+      "Camosun College",
+      "Fraser International College",
+      "Colmbia College",
+      "Langara College",
+      "Douglas College",
+      "Selkirk College",
+      "Vancouver Film School",
+      "North Island College International",
+      "LaSalle College Vancouver Campus",
+      "Corpus Christi College",
+      "Acenda School of Management",
+      "College of New Caledonia",
+      "Alexander College",
+      "Dorset College",
+      "Eton College",
+      "Sprott Shaw College",
+      "Canadian College",
+    ],
+  },
+  {
+    area: "Alberta",
+    university: [
+      "Grant MacEwan University",
+      "University of Lethbridge",
+      "Concordia University of Edmonton",
+      "Mount Royal University",
+    ],
+    college: [
+      "Lethbridge College",
+      "Bow Valley College",
+      "Norquest College",
+      "Lakeland College",
+    ],
+  },
+  {
+    area: "Saskachewan ",
+    university: ["University of Saskachewan", "University of Regina"],
+    college: ["Saskachewan Polytechnic"],
+  },
+  {
+    area: "Manitoba",
+    university: [
+      "University of Manitoba",
+      "University of Winnipeg",
+      "Brandon University",
+    ],
+    college: [
+      "Red Rivers College",
+      "MITT",
+      "Robertson College",
+      "Assiniboine College",
+    ],
+  },
+  {
+    area: "Quebec",
+    university: ["McGill University", "Concordia University"],
+    college: ["LaSalle College"],
+  },
+  {
+    area: "New Brunswick",
+    university: ["Mount Alison University", "University of New Brunswick"],
+    college: ["New Brunswick Community College"],
+  },
+  {
+    area: "Nova Scotia ",
+    university: [
+      "Acadia University",
+      "Saint Mary's University",
+      "Cape Breton University",
+      "Dalhousie University",
+    ],
+    college: [],
+  },
+  {
+    area: "Prince Edward Island",
+    university: ["University of Prince Edward Island"],
+    college: ["Holland College"],
+  },
+  {
+    area: "New foundland & Labrador",
+    university: ["Memorial University of Newfoundland"],
+    college: ["College of North Atlantic"],
+  },
+];
 export default {
   data() {
     return {
       data,
       columns,
+      schools,
     };
   },
 };
@@ -188,6 +341,21 @@ export default {
   }
 }
 @media all and (max-width: 1000px) {
+  .ant-table-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+    background: $red;
+  }
+  .ant-table-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-table-body {
+    width: 100%;
+  }
 }
 </style>
 <style lang="scss" scoped>
@@ -363,7 +531,11 @@ header {
     }
   }
 }
-
+.schools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 @media all and (max-width: 600px) {
   header {
     height: 300px;
@@ -373,6 +545,30 @@ header {
     h1::before {
       width: 6px;
       height: 40px;
+    }
+  }
+  main {
+    padding: 30px 0;
+  }
+  .intro {
+    flex-direction: column;
+    margin-bottom: 30px;
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    img {
+      max-width: 250px;
+    }
+    .info-box {
+      margin-top: 20px;
+      padding: 15px 20px;
+      margin-left: 0px;
+    }
+    p {
+      font-size: 16px;
+      color: #707070;
+      margin-bottom: 5px;
     }
   }
   .map-row {
@@ -391,6 +587,11 @@ header {
   }
   .plan-content {
     flex-direction: column;
+  }
+  .schools-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
   }
 }
 </style>
