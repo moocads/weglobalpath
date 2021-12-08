@@ -3,7 +3,7 @@
     <nav>
       <div class="wrapper nav-wrap">
         <div class="logo-wrap">
-          <NuxtLink to="/">
+          <NuxtLink to="/" style="background: transparent">
             <img src="/img/logos/logo-blue.png" alt="" />
           </NuxtLink>
         </div>
@@ -44,34 +44,6 @@
             <NuxtLink to="/contact">
               <li @click="isToggle = !isToggle">联系我们</li>
             </NuxtLink>
-            <li>
-              <div class="social-media-wrap">
-                <a href="https://www.facebook.com/">
-                  <img
-                    src="/img/icons/fb-white.png"
-                    alt="Social Media Facebook Icon"
-                  />
-                </a>
-                <a href="https://www.moocads.com/">
-                  <img
-                    src="/img/icons/ins-white.png"
-                    alt="Social Media Instagram Icon"
-                  />
-                </a>
-                <a href="https://www.moocads.com/">
-                  <img
-                    src="/img/icons/twitter-white.png"
-                    alt="Social Media Twitter Icon"
-                  />
-                </a>
-                <a href="https://www.moocads.com/">
-                  <img
-                    src="/img/icons/wechat-white.png"
-                    alt="Social Media Wechat Icon"
-                  />
-                </a>
-              </div>
-            </li>
           </ul>
         </div>
       </div>

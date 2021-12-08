@@ -5,6 +5,7 @@
     <Navbar class="navbar-lg" />
     <div class="spacer"></div>
     <Nuxt />
+    <SideBar />
     <Footer />
     <FooterMobile class="navbar-sm" />
   </div>

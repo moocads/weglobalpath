@@ -1,5 +1,5 @@
 <template>
-  <!-- <div>
+  <div>
     <header>
       <div class="wrapper">
         <h1>成功案例</h1>
@@ -9,7 +9,7 @@
       <div class="wrapper cases-grid">
         <div v-for="(c, index) in cases" :key="index" class="case-item">
           <NuxtLink :to="'/cases/' + c.id">
-            <CaseCard
+            <CaseItem
               :thumbnail="c.image[0] && c.image[0].url"
               :title="c.title"
             />
@@ -17,8 +17,8 @@
         </div>
       </div>
     </section>
-  </div> -->
-  <Construction />
+  </div>
+  <!-- <Construction /> -->
 </template>
 
 <script>
@@ -70,10 +70,18 @@ header {
     height: 0px;
   }
 }
+
+#cases-wrap {
+  padding: 100px 0;
+}
 .cases-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 30px;
+  column-gap: 20px;
+}
+.case-item {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 @media all and (max-width: 1000px) {
   header {

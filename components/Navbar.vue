@@ -4,7 +4,7 @@
       <div class="wrapper navbar-wrap">
         <ul>
           <li>
-            <NuxtLink to="/">首页</NuxtLink>
+            <NuxtLink to="/" exact>首页</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/about">关于我们</NuxtLink>
@@ -16,26 +16,14 @@
             <NuxtLink to="/projects">热门项目</NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <ul>
-                <li>
-                  <NuxtLink to="/projects/entrepreneur"
-                    >加拿大企业家移民</NuxtLink
-                  >
-                </li>
-                <li>
-                  <NuxtLink to="/projects/startup">加拿大创业人才移民</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/projects/nominee">加拿大雇主担保</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/projects/nominee">加拿大雇团聚移民</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
-                </li>
+                <NuxtLink to="/projects/entrepreneur"
+                  >加拿大企业家移民</NuxtLink
+                >
+                <NuxtLink to="/projects/startup">加拿大创业人才移民</NuxtLink>
+                <NuxtLink to="/projects/nominee">加拿大雇主担保</NuxtLink>
+                <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
+                <NuxtLink to="/projects/nominee">加拿大雇团聚移民</NuxtLink>
+                <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
               </ul>
             </div>
           </li>
@@ -58,11 +46,30 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+  methods: {
+    // navbarActive:function(){
+    //   this.isActive = !
+    // }
+  },
+};
 </script>
-
+<style lang="scss">
+.nuxt-link-active,
+.nuxt-link-exact-active {
+  background-color: $red;
+}
+</style>
 <style lang="scss" scoped>
 $nav-height: 70px;
+.nav-active {
+  background-color: $red;
+}
 nav {
   height: $nav-height;
   width: 100%;
@@ -108,26 +115,19 @@ nav {
     flex-direction: column;
     align-items: center;
   }
-  li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  a {
+    padding: 0px;
+    height: 100%;
     width: 100%;
-    padding: 10px 15px;
-    max-height: 40px;
-    a {
-      padding: 0px;
-      height: 100%;
-      width: auto;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 21px;
-      white-space: nowrap;
-    }
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    white-space: nowrap;
   }
-  li:hover {
-    background: $red;
+  a:hover {
+    background-color: $red;
   }
 }
 
