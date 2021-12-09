@@ -80,8 +80,10 @@ header {
   row-gap: 30px;
   column-gap: 20px;
 }
-.case-item {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+@media all and (max-width: 1200px) {
+  .cases-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media all and (max-width: 991px) {
   header {
@@ -103,8 +105,13 @@ header {
   }
   .cases-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+}
+@media all and (max-width: 768px) {
+  .cases-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 </style>

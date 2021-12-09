@@ -43,6 +43,7 @@ export default {
     right: 50px;
     top: 35%;
     border-radius: 5px;
+    z-index: 999;
   }
 
   .icon-bar.side {

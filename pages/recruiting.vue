@@ -59,7 +59,7 @@
               >
                 <template slot="title"> 国际留学生学费与入学要求 </template>
                 <template slot="name" slot-scope="text">
-                  <span> {{ text }}</span>
+                  <span v-html="text"></span>
                 </template>
 
                 <!-- <a slot="name" slot-scope="text">{{ text }}</a> -->
@@ -126,7 +126,7 @@ const data = [
   {
     key: "1",
     name: "专业课学费",
-    requirement: "16000加币 - 21000加币/年\n（根据专业不同）",
+    requirement: "16000加币 - 21000加币/年<br>（根据专业不同）",
   },
   {
     key: "2",
@@ -136,12 +136,12 @@ const data = [
   {
     key: "3",
     name: "学历成绩要求",
-    requirement: "高中及同等学历以上\n学术课平均成绩70%以上",
+    requirement: "高中及同等学历以上<br>学术课平均成绩70%以上",
   },
   {
     key: "4",
     name: "语言要求",
-    requirement: "无语言成绩要求\n（双录取，可就读语言课程）",
+    requirement: "无语言成绩要求<br>（双录取，可就读语言课程）",
   },
   {
     key: "5",
@@ -328,7 +328,6 @@ export default {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    white-space: pre;
     td {
       text-align: center;
       background-color: #fff;
@@ -341,20 +340,26 @@ export default {
   }
 }
 @media all and (max-width: 991px) {
-  .ant-table-title {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: #fff;
-    letter-spacing: 1px;
-    background: $red;
-  }
-  .ant-table-row {
-    display: flex;
-    flex-direction: column;
-  }
-  .ant-table-body {
-    width: 100%;
+  #recruiting-page {
+    .ant-table {
+      max-width: 100vw;
+    }
+    .ant-table-title {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      letter-spacing: 1px;
+      background: $red;
+    }
+    .ant-table-row {
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+    .ant-table-body {
+      width: 100%;
+    }
   }
 }
 </style>
@@ -536,6 +541,18 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+@media all and (max-width: 991px) {
+  .map-row .info {
+    height: auto;
+    width: 100%;
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
 @media all and (max-width: 768px) {
   header {
     height: 300px;
@@ -579,11 +596,22 @@ header {
       width: 100%;
     }
   }
+  .table {
+    flex-direction: column;
+  }
+  .certificate-sec {
+    margin-top: 300px;
+  }
   .certificate-sec .content {
+    top: -300px;
     width: 100%;
     img {
       width: 100%;
+      max-width: 484px;
     }
+  }
+  .requirement-sec {
+    padding: 30px 0;
   }
   .plan-content {
     flex-direction: column;

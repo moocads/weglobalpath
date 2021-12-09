@@ -22,7 +22,7 @@
                 <NuxtLink to="/projects/startup">加拿大创业人才移民</NuxtLink>
                 <NuxtLink to="/projects/nominee">加拿大雇主担保</NuxtLink>
                 <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
-                <NuxtLink to="/projects/nominee">加拿大雇团聚移民</NuxtLink>
+                <NuxtLink to="/projects/reunion">加拿大团聚移民</NuxtLink>
                 <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
               </ul>
             </div>
@@ -31,7 +31,7 @@
             <NuxtLink to="/cases">成功案例</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/provinces">移民省份</NuxtLink>
+            <NuxtLink to="/provinces">各省份移民</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/investment">加拿大投资</NuxtLink>
@@ -60,9 +60,11 @@ export default {
 };
 </script>
 <style lang="scss">
-.nuxt-link-active,
-.nuxt-link-exact-active {
-  background-color: $red;
+.navbar-wrap {
+  .nuxt-link-active,
+  .nuxt-link-exact-active {
+    background-color: $red;
+  }
 }
 </style>
 <style lang="scss" scoped>

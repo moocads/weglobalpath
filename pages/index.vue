@@ -105,8 +105,8 @@
     <section id="home-about">
       <div class="wrapper">
         <a-row :gutter="[24, 8]">
-          <MainTitleSide title="关于加彼岸" titleEN="ABOUT US" />
           <a-col :lg="12">
+            <MainTitleSide title="关于加彼岸" titleEN="ABOUT US" />
             <p>
               加彼岸旗下有加彼岸出国咨询（BEYONDCANADA
               CONSULTING），彼森教育（BISON EDUCATION）和彼岸投资（BEYONDCANADA
@@ -134,7 +134,7 @@
           </a-col>
           <a-col :lg="12">
             <img
-              src="/img/Home/about-img.jpg"
+              src="/img/Home/about-img2.jpg"
               alt=""
               class="img-fluid about-img"
             />
@@ -653,7 +653,6 @@ header .info-wrap {
 
   .about-img {
     border-radius: 10px;
-    margin-top: 50px;
   }
 }
 .about-btn {

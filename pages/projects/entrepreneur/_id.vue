@@ -1,6 +1,14 @@
 <template>
   <div>
-    <header>
+    <header
+      :style="{
+        background: `linear-gradient(
+    89.93deg,
+    rgba(34, 52, 92, 0.7) 7.82%,
+    rgba(34, 52, 92, 0) 102.35%
+  ),url(${data.thumbnail.url})`,
+      }"
+    >
       <div class="wrapper">
         <h1>{{ data.project_name }}</h1>
       </div>
@@ -161,12 +169,12 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
-  background: linear-gradient(
-      89.93deg,
-      rgba(34, 52, 92, 0.7) 7.82%,
-      rgba(34, 52, 92, 0) 102.35%
-    ),
-    url("/img/Projects/banner.png");
+  // background: linear-gradient(
+  //     89.93deg,
+  //     rgba(34, 52, 92, 0.7) 7.82%,
+  //     rgba(34, 52, 92, 0) 102.35%
+  //   ),
+  //   url("/img/Projects/banner.png");
 
   background-size: cover;
   background-blend-mode: multiply;

@@ -7,7 +7,7 @@
     </header>
     <section class="case-details-page">
       <div class="wrapper">
-        <NuxtLink to="/cases" class="back-btn">
+        <NuxtLink to="/cases" class="back-btn" exact>
           <img src="/img/icons/back-btn.png" alt="" />
           <span>查看更多案例</span>
         </NuxtLink>

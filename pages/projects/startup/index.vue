@@ -49,21 +49,13 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  height: 500px;
+  height: 300px;
   width: 100%;
   display: flex;
   align-items: center;
-  background: linear-gradient(
-      89.93deg,
-      rgba(34, 52, 92, 0.7) 7.82%,
-      rgba(34, 52, 92, 0) 102.35%
-    ),
-    url("/img/Projects/banner.png");
-
-  background-size: cover;
-  background-blend-mode: multiply;
+  background: #e9e9e9;
   h1 {
-    color: #fff;
+    color: $navy;
     font-size: 60px;
     font-weight: bold;
     position: relative;
@@ -82,9 +74,9 @@ header {
 }
 @media all and (max-width: 768px) {
   header {
-    height: 300px;
+    height: 200px;
     h1 {
-      font-size: 32px;
+      font-size: 28px;
     }
     h1::before {
       width: 6px;
