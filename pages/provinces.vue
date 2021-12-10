@@ -7,13 +7,32 @@
     </header>
     <section>
       <div class="wrapper">
-        <p>{{ projects[0].name }}</p>
-        <p>{{ projects[0].province_project[0].main_category }}</p>
-        <p>{{ projects[0].province_project[0].second_category }}</p>
-        <p>{{ projects[0].province_project[0].content }}</p>
-        <vue-markdown>{{
-          projects[0].province_project[0].content
-        }}</vue-markdown>
+        <div class="tab-grid">
+          <div class="tab-item" v-for="(tab, index) in projects" :key="index">
+            <h2>{{ tab.name }}</h2>
+          </div>
+        </div>
+        <a-collapse accordion>
+          <a-collapse-panel
+            :header="mainCate.main_category"
+            v-for="mainCate in projects.province_project"
+            :key="mainCate.id"
+            class="outer-collapse"
+          >
+            <a-collapse>
+              <a-collapse-panel
+                v-for="proj in mainCate.province_content"
+                :key="'proj' + proj.id"
+                :header="proj.second_category"
+                class="inner-collapse"
+              >
+                <vue-markdown class="province-project-content">
+                  {{ proj.content }}
+                </vue-markdown>
+              </a-collapse-panel>
+            </a-collapse>
+          </a-collapse-panel>
+        </a-collapse>
       </div>
     </section>
   </div>
@@ -24,10 +43,10 @@ import VueMarkdown from "vue-markdown";
 
 export default {
   async asyncData({ $axios }) {
-    const projectData = await $axios.$get(`/province-projects`, {
+    const projectData = await $axios.$get(`/province-projects/1`, {
       params: {
         //category = new immi id:6
-        // project_category: 6,
+        // id: 1,
       },
     });
     const projects = projectData;
@@ -41,7 +60,46 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.province-project-content {
+  padding: 10px;
+  padding-left: 50px;
+  ol {
+    list-style-type: decimal;
+    margin-left: 15px;
+  }
+}
+#province-project-page {
+  .outer-collapse {
+    background-color: $navy;
+    svg {
+      fill: #fff;
+    }
+  }
+  .inner-collapse {
+    svg {
+      fill: $red;
+    }
+  }
+  .outer-collapse > .ant-collapse-header {
+    color: #fff;
+  }
+  .inner-collapse > .ant-collapse-header {
+    color: $navy;
+    padding-left: 50px;
+  }
+  .inner-collapse .ant-collapse-header i {
+    left: 30px;
+  }
+  .ant-collapse-content > .ant-collapse-content-box {
+    padding: 0;
+  }
+}
+</style>
 <style lang="scss" scoped>
+section {
+  padding: 100px 0;
+}
 header {
   height: 500px;
   width: 100%;
@@ -72,6 +130,26 @@ header {
     background-color: $red;
     width: 6px;
     height: 70px;
+  }
+}
+.tab-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.tab-item {
+  width: 200px;
+  height: 40px;
+  background-color: #e9e9e9;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 16px;
+    color: $navy;
+    margin: 0;
   }
 }
 </style>

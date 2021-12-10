@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="project-detail-page">
     <header
       :style="{
         background: `linear-gradient(
@@ -101,6 +101,35 @@
         </div>
       </div>
     </section>
+    <section class="fee-sec">
+      <div class="wrapper">
+        <div class="title-wrap">
+          <div class="title">
+            <img src="/img/logos/logo-trans.png" alt="" />
+            <p>FEE</p>
+          </div>
+          <h1>项目费用</h1>
+        </div>
+        <div class="fee-grid">
+          <div
+            class="fee-card"
+            v-for="(fee, index) in data.fee_comp"
+            :key="index"
+          >
+            <ul>
+              <li><span>类别：</span>{{ fee.cate }}</li>
+              <li><span>收费机构：</span>{{ fee.department }}</li>
+              <li>
+                <span>金额：</span
+                ><vue-markdown class="fee-content">{{
+                  fee.price
+                }}</vue-markdown>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- <CasesSection /> -->
     <OtherProjectsSection />
   </div>
@@ -108,6 +137,7 @@
 
 <script>
 import axios from "axios";
+import VueMarkdown from "vue-markdown";
 
 export default {
   async asyncData({ $axios, params }) {
@@ -140,6 +170,9 @@ export default {
       }
     }
   },
+  components: {
+    VueMarkdown,
+  },
 };
 </script>
 <style lang="scss">
@@ -148,11 +181,14 @@ export default {
     margin-bottom: 20px;
   }
 }
+.fee-content {
+  // padding-left: 15px;
+  p {
+    margin-bottom: 3px;
+  }
+}
 </style>
 <style lang="scss" scoped>
-/* ------------------------------------------------------ */
-/*        ANCHOR Projects Page Detail Page Style          */
-/* ------------------------------------------------------ */
 section {
   padding: 100px 0;
   p {
@@ -162,50 +198,6 @@ section {
 @media all and (max-width: 768px) {
   section {
     padding: 30px 0;
-  }
-}
-header {
-  height: 500px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  // background: linear-gradient(
-  //     89.93deg,
-  //     rgba(34, 52, 92, 0.7) 7.82%,
-  //     rgba(34, 52, 92, 0) 102.35%
-  //   ),
-  //   url("/img/Projects/banner.png");
-
-  background-size: cover;
-  background-blend-mode: multiply;
-  h1 {
-    color: #fff;
-    font-size: 60px;
-    font-weight: bold;
-    position: relative;
-    margin-left: 20px;
-  }
-  h1::before {
-    content: "";
-    position: absolute;
-    top: 55%;
-    left: -20px;
-    transform: translateY(-50%);
-    background-color: $red;
-    width: 6px;
-    height: 70px;
-  }
-}
-@media all and (max-width: 768px) {
-  header {
-    height: 300px;
-    h1 {
-      font-size: 35px;
-    }
-    h1::before {
-      width: 6px;
-      height: 40px;
-    }
   }
 }
 /* ------------------------------------------------------ */
