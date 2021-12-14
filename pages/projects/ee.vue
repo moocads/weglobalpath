@@ -141,6 +141,10 @@
         </section>
       </a-tab-pane>
     </a-tabs>
+    <section class="divider">
+      <h3>连接彼岸，用心服务，帮助海外客户和学生。</h3>
+      <h3>我们，不忘初心。</h3>
+    </section>
   </div>
 </template>
 
@@ -148,20 +152,6 @@
 import VueMarkdown from "vue-markdown";
 
 export default {
-  async asyncData({ $axios}) {
-    const projectData = await $axios.$get(`/projects/1`);
-    const data = projectData;
-    return {
-      data,
-    };
-  },
-  // async asyncData({ $axios, route }) {
-  //   const projectData = await $axios.$get(`/projects?id=` + route.params.id);
-  //   const data = projectData;
-  //   return {
-  //     data,
-  //   };
-  // },
   data() {
     return {
       hasButton: [],
@@ -318,17 +308,6 @@ export default {
 };
 </script>
 <style lang="scss">
-.highlight-info-wrap {
-  .main-title-side-wrap {
-    margin-bottom: 20px;
-  }
-}
-.fee-content {
-  // padding-left: 15px;
-  p {
-    margin-bottom: 3px;
-  }
-}
 .eeTabs {
   .ant-tabs-nav-scroll {
     display: flex;
@@ -566,6 +545,22 @@ section {
     grid-template-rows: auto;
     row-gap: 20px;
     column-gap: 30px;
+  }
+}
+
+.divider {
+  background-color: #e7e7e7;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    text-align: center;
+    font-size: 28px;
+    color: $red;
+    margin-bottom: 0;
+    font-weight: 700;
   }
 }
 </style>
