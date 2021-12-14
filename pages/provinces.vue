@@ -8,18 +8,25 @@
     <section>
       <div class="wrapper">
         <div class="tab-grid">
-          <div class="tab-item" v-for="(tab, index) in projects" :key="index">
+          <div
+            class="tab-item"
+            v-for="(tab, index) in projects"
+            :key="index"
+            @click="tabSelected = tab.id - 1"
+          >
             <h2>{{ tab.name }}</h2>
           </div>
         </div>
+        <hr />
+
         <a-collapse accordion>
           <a-collapse-panel
             :header="mainCate.main_category"
-            v-for="mainCate in projects.province_project"
-            :key="mainCate.id"
+            v-for="(mainCate, index) in projects[tabSelected].province_project"
+            :key="index"
             class="outer-collapse"
           >
-            <a-collapse>
+            <a-collapse accordion>
               <a-collapse-panel
                 v-for="proj in mainCate.province_content"
                 :key="'proj' + proj.id"
@@ -42,11 +49,15 @@
 import VueMarkdown from "vue-markdown";
 
 export default {
+  data() {
+    return {
+      tabSelected: "0",
+    };
+  },
   async asyncData({ $axios }) {
-    const projectData = await $axios.$get(`/province-projects/1`, {
+    const projectData = await $axios.$get(`/province-projects`, {
       params: {
-        //category = new immi id:6
-        // id: 1,
+        _sort: "id:asc",
       },
     });
     const projects = projectData;
@@ -70,6 +81,18 @@ export default {
   }
 }
 #province-project-page {
+  hr {
+    margin: 80px auto;
+    border-top: 1px solid #e9e9e9;
+    position: relative;
+    &::before {
+      content: url("/img/Investment/hr-img.svg");
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
   .outer-collapse {
     background-color: $navy;
     svg {
@@ -137,6 +160,7 @@ header {
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin-bottom: 30px;
+  place-items: center;
 }
 .tab-item {
   width: 200px;
@@ -150,6 +174,13 @@ header {
     font-size: 16px;
     color: $navy;
     margin: 0;
+  }
+  &:hover {
+    cursor: pointer;
+    h2 {
+      color: #fff;
+    }
+    background-color: $red;
   }
 }
 </style>

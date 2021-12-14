@@ -33,14 +33,33 @@
           </div>
         </section>
       </div>
+      <div class="wrapper">
+        <hr />
+      </div>
       <section class="certificate-sec">
         <div class="wrapper">
           <div class="content">
-            <MainTitle title="罗伯森大学授权执照" titleEN="CERTIFICATE" />
-            <img src="/img/Recruiting/certificate.png" alt="" />
+            <MainTitle
+              title="加彼岸TM Beyondcanada是加拿大罗伯森学院指定招生代表"
+              titleEN="CERTIFICATE"
+              titleSize="24px"
+            />
+            <figure>
+              <div class="certification-box">
+                <img src="/img/Recruiting/certificate1.jpg" alt="" />
+                <h3>罗伯森大学授权执照</h3>
+              </div>
+              <div class="certification-box">
+                <img src="/img/Recruiting/certificate2.jpg" alt="" />
+                <h3>罗伯森大学授权执照</h3>
+              </div>
+              <div class="certification-box">
+                <img src="/img/Recruiting/certificate3.jpg" alt="" />
+                <h3>罗伯森大学授权执照</h3>
+              </div>
+            </figure>
             <p>
-              是中国区唯一校方直属合作伙伴 加彼岸
-              Beyondcanada是加拿大罗伯森学院指定招生代表。受ROBERTSON
+              BEYONDCANADA CONSULTING(加彼岸)受ROBERTSON
               COLLEGE(罗伯森学院)委托，<span>是中国区唯一校方直属合作伙伴</span>，为学校处理一切中国区事宜，历经多年的紧密合作，被授予“Most
               Trusted Partner”最值得信赖的合作伙伴荣誉证书。
             </p>
@@ -105,11 +124,34 @@
           </div>
         </div>
       </section>
+      <div class="wrapper">
+        <hr />
+      </div>
+      <section class="cn-coop-schools-sec">
+        <div class="wrapper">
+          <MainTitle title="中国区合作院校" titleEN="partnership" />
+          <ul class="cn-schools-grid">
+            <li v-for="(school, index) in cnSchools" :key="index">
+              {{ school }}
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
   </div>
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      data,
+      columns,
+      schools,
+      cnSchools,
+    };
+  },
+};
 const columns = [
   {
     dataIndex: "name",
@@ -153,6 +195,32 @@ const data = [
     name: "资金担保",
     requirement: "根据加拿大签证政策最低只需购买1万加币GIC证明",
   },
+];
+const cnSchools = [
+  "广州市财经职业学校",
+  "广州市医药职业学校",
+  "容桂职业技术学校",
+  "英德市华粤艺术学校",
+  "广东省食品药品职业技术学校",
+  "佛山市南海卫生学校",
+  "天津医学高等专科学校",
+  "天津海运高等职业学校",
+  "佛山市南海信息技术学校",
+  "佛山市南海盐步职业技术学校",
+  "天津交通高等职业学院",
+  "天津商务高等职业学校",
+  "肇庆理工学校",
+  "肇庆医学高等专科学校",
+  "天津第四十二中学",
+  "天津新华中学",
+  "东菀市信息技术学校",
+  "东菀理工学校",
+  "天津美达菲国际学校",
+  "天津机电工业学校",
+  "新会机电职业技术学校",
+  "佛山市高明职业技术学校",
+  "天津电子信息高等职业学院",
+  "天津空港实验学校",
 ];
 const schools = [
   {
@@ -294,15 +362,6 @@ const schools = [
     college: ["College of North Atlantic"],
   },
 ];
-export default {
-  data() {
-    return {
-      data,
-      columns,
-      schools,
-    };
-  },
-};
 </script>
 <style lang="scss">
 #recruiting-page {
@@ -364,6 +423,19 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+#recruiting-page {
+  hr {
+    border-top: 1px solid #e9e9e9;
+    position: relative;
+    &::before {
+      content: url("/img/Investment/hr-img.svg");
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
 main {
   padding: 100px 0;
 }
@@ -371,21 +443,22 @@ section {
   padding: 40px 0;
 }
 header {
-  height: 500px;
+  height: 300px;
   width: 100%;
   display: flex;
   align-items: center;
-  background: linear-gradient(
-      89.93deg,
-      rgba(34, 52, 92, 0.7) 7.82%,
-      rgba(34, 52, 92, 0) 102.35%
-    ),
-    url("/img/Projects/banner.png");
+  // background: linear-gradient(
+  //     89.93deg,
+  //     rgba(34, 52, 92, 0.7) 7.82%,
+  //     rgba(34, 52, 92, 0) 102.35%
+  //   ),
+  //   url("/img/Projects/banner.png");
 
-  background-size: cover;
-  background-blend-mode: multiply;
+  // background-size: cover;
+  // background-blend-mode: multiply;
+  background-color: #e9e9e9;
   h1 {
-    color: #fff;
+    color: $navy;
     font-size: 60px;
     font-weight: bold;
     position: relative;
@@ -431,6 +504,7 @@ header {
   color: #fff;
   justify-items: center;
   gap: 30px;
+  // min-height: 700px;
 
   .info {
     // width: auto;
@@ -457,14 +531,14 @@ header {
   }
 }
 .certificate-sec {
-  margin-top: 400px;
+  margin-top: 350px;
   background-color: $navy;
   position: relative;
   height: 400px;
 }
 .certificate-sec .content {
   position: relative;
-  top: -400px;
+  top: -350px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -480,12 +554,27 @@ header {
   }
   span {
     color: #ab9269;
+    font-weight: bold;
   }
-  img {
-    max-height: 361px;
-    width: auto;
+  figure {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+    img {
+      max-height: 250px;
+      width: auto;
+    }
+  }
+  .certification-box {
+    h3 {
+      color: #fff;
+      font-size: 16px;
+      margin-top: 15px;
+      text-align: center;
+    }
   }
 }
+
 .requirement-sec {
   padding: 100px 0;
 }
@@ -541,6 +630,14 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.cn-schools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 50px;
+  li {
+    font-size: 16px;
+  }
+}
 @media all and (max-width: 991px) {
   .map-row .info {
     height: auto;
@@ -549,6 +646,14 @@ header {
       font-size: 24px;
     }
     p {
+      font-size: 14px;
+    }
+  }
+  .cn-schools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 50px;
+    li {
       font-size: 14px;
     }
   }
@@ -601,6 +706,7 @@ header {
   }
   .certificate-sec {
     margin-top: 300px;
+    height: 1100px;
   }
   .certificate-sec .content {
     top: -300px;
@@ -608,6 +714,23 @@ header {
     img {
       width: 100%;
       max-width: 484px;
+    }
+    figure {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 50px;
+      img {
+        max-height: 250px;
+        width: auto;
+      }
+    }
+    .certification-box {
+      h3 {
+        color: #fff;
+        font-size: 16px;
+        margin-top: 15px;
+        text-align: center;
+      }
     }
   }
   .requirement-sec {
@@ -620,6 +743,9 @@ header {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+  }
+  .cn-schools-grid {
+    gap: 10px 20px;
   }
 }
 </style>

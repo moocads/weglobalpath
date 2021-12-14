@@ -2,7 +2,7 @@
   <div>
     <div class="main-title-wrap">
       <p :style="{ color: titleENColor }">{{ titleEN }}</p>
-      <h1>{{ title }}</h1>
+      <h1 :style="{ fontSize: titleSize }">{{ title }}</h1>
       <img src="/img/logos/logo-small-blue.png" alt="加彼岸 小型标题 Logo" />
     </div>
   </div>
@@ -16,6 +16,10 @@ export default {
     titleENColor: {
       type: String,
       default: "#f1f1f1",
+    },
+    titleSize: {
+      type: String,
+      default: "32px",
     },
   },
 };
@@ -51,6 +55,7 @@ export default {
     font-weight: 700;
     font-size: 32px;
     margin-top: -45px;
+    text-align: center;
   }
   img {
     margin-top: -35px;
