@@ -24,6 +24,7 @@
                 <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
                 <NuxtLink to="/projects/reunion">加拿大团聚移民</NuxtLink>
                 <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
+                <NuxtLink to="/projects/ee">联邦EE移民项目</NuxtLink>
               </ul>
             </div>
           </li>
