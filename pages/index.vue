@@ -41,7 +41,7 @@
           <div class="project-2 project-item">
             <NuxtLink to="/projects/new-immigrant">
               <div class="proj2-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project2.png" alt="" />
+              <img src="/img/Home/projects/project7.jpeg" alt="" />
               <h2>新移民服务</h2>
             </NuxtLink>
           </div>
@@ -498,7 +498,7 @@ header .info-wrap {
 .project-2 {
   grid-area: project-2;
   .proj2-overlay {
-    background: rgba(171, 146, 105, 0.5);
+    background: rgba(22, 41, 84, 0.5);
   }
   .proj2-overlay:hover {
     background: none;
@@ -518,7 +518,7 @@ header .info-wrap {
 .project-4 {
   grid-area: project-4;
   .proj4-overlay {
-    background: rgba(171, 146, 105, 0.5);
+    background: rgba(22, 41, 84, 0.5);
   }
   .proj4-overlay:hover {
     background: none;
@@ -540,7 +540,7 @@ header .info-wrap {
   // max-height: 320px;
 
   .proj6-overlay {
-    background: rgba(171, 146, 105, 0.5);
+    background: rgba(22, 41, 84, 0.5);
   }
   .proj6-overlay:hover {
     background: none;

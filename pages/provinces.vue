@@ -9,24 +9,25 @@
       <div class="wrapper">
         <div class="tab-grid">
           <div
+            :class="{ 'tab-active': index === activeItem }"
             class="tab-item"
             v-for="(tab, index) in projects"
             :key="index"
-            @click="tabSelected = tab.id - 1"
+            @click="selectItem(index), (tabSelected = tab.id - 1)"
           >
             <h2>{{ tab.name }}</h2>
           </div>
         </div>
         <hr />
 
-        <a-collapse accordion>
+        <a-collapse accordion default-active-key="mainKey0">
           <a-collapse-panel
             :header="mainCate.main_category"
             v-for="(mainCate, index) in projects[tabSelected].province_project"
-            :key="index"
+            :key="'mainKey' + index"
             class="outer-collapse"
           >
-            <a-collapse accordion>
+            <a-collapse accordion default-active-key="proj1">
               <a-collapse-panel
                 v-for="proj in mainCate.province_content"
                 :key="'proj' + proj.id"
@@ -52,6 +53,7 @@ export default {
   data() {
     return {
       tabSelected: "0",
+      activeItem: 0,
     };
   },
   async asyncData({ $axios }) {
@@ -67,6 +69,11 @@ export default {
   },
   components: {
     VueMarkdown,
+  },
+  methods: {
+    selectItem(i) {
+      this.activeItem = i;
+    },
   },
 };
 </script>
@@ -118,6 +125,13 @@ export default {
     padding: 0;
   }
 }
+@media all and (max-width: 768px) {
+  #province-project-page {
+    hr {
+      margin: 30px auto;
+    }
+  }
+}
 </style>
 <style lang="scss" scoped>
 section {
@@ -163,7 +177,8 @@ header {
   place-items: center;
 }
 .tab-item {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: 40px;
   background-color: #e9e9e9;
   border-radius: 3px;
@@ -175,12 +190,38 @@ header {
     color: $navy;
     margin: 0;
   }
+  transition: background-color 0.3s ease-in-out;
   &:hover {
     cursor: pointer;
     h2 {
       color: #fff;
     }
     background-color: $red;
+  }
+}
+.tab-active {
+  h2 {
+    color: #fff;
+  }
+  background-color: $red;
+}
+@media all and (max-width: 768px) {
+  section {
+    padding: 30px 0;
+  }
+  header {
+    height: 300px;
+
+    h1 {
+      font-size: 35px;
+    }
+  }
+  .tab-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .tab-item {
+    width: 100%;
   }
 }
 </style>
