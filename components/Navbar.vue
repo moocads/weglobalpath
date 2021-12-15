@@ -38,6 +38,9 @@
             <NuxtLink to="/investment">加拿大投资</NuxtLink>
           </li>
           <li>
+            <NuxtLink to="/blogs">最新资讯</NuxtLink>
+          </li>
+          <li>
             <NuxtLink to="/contact">联系我们</NuxtLink>
           </li>
         </ul>
