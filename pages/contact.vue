@@ -22,23 +22,6 @@
                   <a href="tel:+12049638886">加拿大: 204-963-8886</a>
                 </div>
               </div>
-
-              <div class="address-wrap info-wrap">
-                <div class="img-wrap">
-                  <img src="/img/icons/address-red.png" alt="" />
-                </div>
-                <div class="info">
-                  <h2>地址</h2>
-                  <a href="javascript:void(0)"
-                    ><span>加拿大多伦多：</span>145 Royal Crest Ct Unit 47-48,
-                    Markham, ON L3R 9Z4
-                  </a>
-                  <a href="javascript:void(0)"
-                    ><span>加拿大温尼伯：</span>180 Main St, Winnipeg, MB R3C
-                    1A6 (Robertson College)
-                  </a>
-                </div>
-              </div>
               <div class="email-wrap info-wrap">
                 <div class="img-wrap">
                   <img src="/img/icons/email-red.png" alt="" />
@@ -48,9 +31,42 @@
                   <a href="mailto:info@beyondcanda.ca">info@beyondcanda.ca</a>
                 </div>
               </div>
-              <!-- <div class="gmap-wrap info-wrap">
-                <GMap />
-              </div> -->
+              <div class="address-wrap info-wrap">
+                <div class="img-wrap">
+                  <img src="/img/icons/address-red.png" alt="" />
+                </div>
+                <div class="info">
+                  <h2>地址</h2>
+                  <a @click="mapLocation(1)" class="location" :class="{active:location===1}"
+                    ><span>加拿大多伦多：</span>145 Royal Crest Ct Unit 47-48,
+                    Markham, ON L3R 9Z4
+                  </a>
+                  <a @click="mapLocation(2)" class="location" :class="{active:location===2}"
+                    ><span>加拿大温尼伯：</span>180 Main St, Winnipeg, MB R3C
+                    1A6 (Robertson College)
+                  </a>
+                  <span class="disclaimer">点击地址切换地图</span>
+                </div>
+              </div>
+              <div class="gmap-wrap info-wrap" v-if="location === 1">
+                <!-- <GMap /> -->
+                <iframe
+                  style="border:0"
+                  loading="lazy"
+                  allowfullscreen
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmW9PcmUOmqS0QeStmfxju4Lgm3yDEnoc
+                    &q=145+Royal+Crest+Ct+Unit+47-48,Markham,ON+L3R+9Z4">
+                </iframe>
+              </div>
+              <div class="gmap-wrap info-wrap" v-if="location === 2">
+                <iframe
+                  style="border:0"
+                  loading="lazy"
+                  allowfullscreen
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmW9PcmUOmqS0QeStmfxju4Lgm3yDEnoc
+                    &q=180+Main+St,Winnipeg,MB+R3C+1A6">
+                </iframe>
+              </div>
             </a-col>
             <a-col :xs="24" :md="12">
               <form @submit.prevent="handleSubmit">
@@ -103,9 +119,13 @@ export default {
       userEmail: "",
       userMessage: "",
       userSubscription: false,
+      location: 1
     };
   },
   methods: {
+    mapLocation(location) {
+      this.location = location
+    },
     handleSubmit(e) {
       this.$axios
         .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
@@ -229,15 +249,6 @@ header {
     justify-content: center;
   }
 }
-
-.address-wrap {
-  .img-wrap {
-    img {
-      width: 21px;
-      height: 30px;
-    }
-  }
-}
 .email-wrap {
   .img-wrap {
     img {
@@ -246,18 +257,47 @@ header {
     }
   }
 }
+.address-wrap {
+  .img-wrap {
+    img {
+      width: 21px;
+      height: 30px;
+    }
+  }
+
+  .location {
+    span {
+      font-weight: 700;
+    }
+
+    &.active {
+      color: $red;
+    }
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  .disclaimer {
+    color: $lightGrey;
+    font-style: italic;
+  }
+}
 .gmap-wrap {
   width: 100%;
-  height: 250px;
+  height: 300px;
   background-color: #333;
   border-radius: 10px;
-  // img {
-  //   width: 100%;
-  //   height: 250px;
-  // }
+  overflow: hidden;
+
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
 }
 form {
-  padding: 0 80px;
+  padding-left: 80px;
   display: grid;
   grid-template-columns: 1fr;
 }
