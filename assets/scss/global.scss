@@ -44,6 +44,13 @@ a:hover {
     background-color: #c42222;
   }
 }
+.main-btn_grey {
+  background-color: #c4c4c4;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: #adadad;
+  }
+}
 @media all and (max-width: 768px) {
   .main-btn_mobile_w100 {
     width: 100%;

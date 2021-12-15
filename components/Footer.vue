@@ -109,7 +109,7 @@ footer {
 .contact-info-wrap {
   a,
   p {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
   }
   p {
@@ -137,7 +137,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   a {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
   }
 }

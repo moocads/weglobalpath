@@ -57,7 +57,7 @@ header {
       rgba(34, 52, 92, 0.7) 7.82%,
       rgba(34, 52, 92, 0) 102.35%
     ),
-    url("/img/Investment/banner.png");
+    url("/img/Banner/blog-banner.jpg");
 
   background-size: cover;
   background-blend-mode: multiply;
@@ -117,7 +117,7 @@ section {
   justify-content: space-between;
   h2 {
     color: $navy;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -144,6 +144,72 @@ section {
     transition: all 0.2s ease;
     &:hover {
       color: $red;
+    }
+  }
+}
+@media all and (max-width: 768px) {
+  header {
+    height: 300px;
+    background: linear-gradient(
+        89.93deg,
+        rgba(34, 52, 92, 0.7) 7.82%,
+        rgba(34, 52, 92, 0) 102.35%
+      ),
+      url("/img/Banner/blog-banner.jpg");
+    background-size: cover;
+    background-position-x: center;
+    h1 {
+      font-size: 35px;
+    }
+    h1::before {
+      height: 40px;
+    }
+  }
+  section {
+    padding: 30px 0;
+  }
+  .blogs-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .blogs-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid rgba(27, 40, 84, 0.5);
+    border-radius: 3px;
+  }
+  .blogs-item figure {
+    max-width: 100%;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+  }
+  .blogs-item article {
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #c5c5c5;
+      margin: 0;
+      display: inline-flex;
+      justify-content: space-between;
+    }
+    span:last-child {
+      transition: all 0.2s ease;
+      &:hover {
+        color: $red;
+      }
     }
   }
 }

@@ -8,16 +8,10 @@
     <section class="codex-section">
       <div class="wrapper">
         <ul class="codex-grid">
-          <li class="codex-item">
-            <NuxtLink to="/projects/entrepreneur">
-              <img src="/img/Home/projects/project5.png" alt="" />
-              <h2>加拿大企业家投资移民</h2>
-            </NuxtLink>
-          </li>
-          <li class="codex-item">
-            <NuxtLink to="/projects/startup">
-              <img src="/img/Home/projects/project4.png" alt="" />
-              <h2>加拿大创业人才移民</h2>
+          <li class="codex-item" v-for="proj in projects" :key="i">
+            <NuxtLink :to="`/projects/${proj.url}`">
+              <img :src="`/img/Home/projects/${proj.thumbnail}`" alt="" />
+              <h2>{{ proj.title }}</h2>
             </NuxtLink>
           </li>
         </ul>
@@ -27,7 +21,50 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      projects,
+    };
+  },
+};
+const projects = [
+  {
+    url: "entrepreneur",
+    thumbnail: "project5.png",
+    title: "加拿大企业家投资移民",
+  },
+  {
+    url: "startup",
+    thumbnail: "project4.png",
+    title: "加拿大创业人才移民",
+  },
+  {
+    url: "nominee",
+    thumbnail: "project1.png",
+    title: "加拿大雇主担保",
+  },
+  {
+    url: "education",
+    thumbnail: "project3.png",
+    title: "加拿大留学移民",
+  },
+  {
+    url: "reunion",
+    thumbnail: "project6.png",
+    title: "加拿大团聚移民",
+  },
+  {
+    url: "new-immigrant",
+    thumbnail: "project7.jpeg",
+    title: "新移民服务",
+  },
+  {
+    url: "ee",
+    thumbnail: "ee2.png",
+    title: "联邦EE移民项目",
+  },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -63,6 +100,15 @@ header {
     height: 70px;
   }
 }
+
+.codex-item a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  img {
+    flex: 1;
+  }
+}
 @media all and (max-width: 768px) {
   header {
     height: 300px;
@@ -72,6 +118,12 @@ header {
     h1::before {
       width: 6px;
       height: 40px;
+    }
+  }
+  .codex-item a {
+    height: 100%;
+    img {
+      height: 200px;
     }
   }
 }

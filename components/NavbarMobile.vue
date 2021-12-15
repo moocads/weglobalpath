@@ -41,6 +41,9 @@
             <NuxtLink to="/investment">
               <li @click="isToggle = !isToggle">加拿大投资</li>
             </NuxtLink>
+            <NuxtLink to="/blogs">
+              <li @click="isToggle = !isToggle">最新资讯</li>
+            </NuxtLink>
             <NuxtLink to="/contact">
               <li @click="isToggle = !isToggle">联系我们</li>
             </NuxtLink>

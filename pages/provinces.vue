@@ -27,10 +27,10 @@
             :key="'mainKey' + index"
             class="outer-collapse"
           >
-            <a-collapse accordion default-active-key="proj1">
+            <a-collapse accordion default-active-key="proj0">
               <a-collapse-panel
-                v-for="proj in mainCate.province_content"
-                :key="'proj' + proj.id"
+                v-for="(proj, index) in mainCate.province_content"
+                :key="'proj' + index"
                 :header="proj.second_category"
                 class="inner-collapse"
               >

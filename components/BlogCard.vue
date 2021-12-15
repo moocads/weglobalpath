@@ -1,13 +1,16 @@
 <template>
   <div>
-    <div class="card-wrap" :style="{ backgroundImage: thumbnail }">
-      <NuxtLink :to="link">
-        <div class="info-box">
+    <div class="card-wrap">
+      <img :src="thumbnail" alt="" />
+
+      <div class="info-box">
+        <NuxtLink :to="link">
           <h1>{{ title }}</h1>
-          <p class="content">{{ description }}</p>
-          <p class="date">{{ date }}</p>
-        </div>
-      </NuxtLink>
+        </NuxtLink>
+
+        <p class="content">{{ description }}</p>
+        <p class="date">{{ date }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -22,7 +25,7 @@ export default {
     date: String,
     link: {
       type: String,
-      default: "/about",
+      default: "/blogs",
     },
     description: String,
   },
@@ -31,31 +34,43 @@ export default {
 
 <style lang="scss" scoped>
 .card-wrap {
-  height: 350px;
+  min-height: 320px;
   width: 100%;
-  max-width: 270px;
-  background-size: cover;
-  position: relative;
+  // max-width: 270px;
   overflow: hidden;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
 }
 .info-box {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   padding: 10px 20px;
-  width: 100%;
+  // width: 100%;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
+  flex: 1;
 
   h1 {
-    font-size: 22px;
+    font-size: 18px;
     margin: 0;
     margin-bottom: 5px;
     color: $navy;
+    display: -webkit-box;
+    line-height: 1.5;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
   .content {
+    height: 0px;
     font-size: 14px;
     color: #c4c4c4;
     margin: 0;
@@ -67,6 +82,7 @@ export default {
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    visibility: hidden;
   }
   .date {
     font-size: 14px;

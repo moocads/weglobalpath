@@ -142,34 +142,34 @@
         </a-row>
       </div>
     </section>
-    <!-- <section id="home-cases">
+    <section id="home-cases">
       <MainTitle title="成功案例" titleEN="OUR CASES" titleENColor="#c4c4c4" />
       <div class="wrapper">
         <div class="cases-grid">
-          <div class="case-item">
+          <div
+            class="case-item"
+            v-for="(homeCase, index) in cases"
+            :key="index"
+          >
             <CaseCard
-              thumbnail="url('/img/Home/about-img.jpg')"
-              title="安省境外雇主担保"
-              date="2021-11-13"
+              :thumbnail="homeCase.image[0] && homeCase.image[0].url"
+              :title="homeCase.title"
+              :date="homeCase.published_at.split('T')[0]"
+              :link="'/cases/' + homeCase.id"
+            />
+            <CaseCardMobile
+              :thumbnail="homeCase.image[0] && homeCase.image[0].url"
+              :title="homeCase.title"
+              :date="homeCase.published_at.split('T')[0]"
+              :link="'/cases/' + homeCase.id"
             />
           </div>
-          <div class="case-item">
-            <CaseCard
-              thumbnail="url('/img/Home/about-img.jpg')"
-              title="安省境外雇主担保"
-              date="2021-11-13"
-            />
-          </div>
-          <div class="case-item">
-            <CaseCard
-              thumbnail="url('/img/Home/about-img.jpg')"
-              title="安省境外雇主担保"
-              date="2021-11-13"
-            />
-          </div>
+          <NuxtLink to="/cases">
+            <button class="cases-btn main-btn main-btn_grey">更多案例</button>
+          </NuxtLink>
         </div>
       </div>
-    </section> -->
+    </section>
     <section id="home-testimonial">
       <div class="wrapper">
         <MainTitle title="客户评价" titleEN="FEEDBACK" />
@@ -199,7 +199,7 @@
         </a-carousel>
       </div>
     </section>
-    <!-- <section id="home-blogs">
+    <section id="home-blogs">
       <div class="wrapper">
         <MainTitle
           title="加彼岸热讯"
@@ -207,21 +207,18 @@
           titleENColor="#c4c4c4"
         />
         <div class="blogs-grid">
-          <div
-            class="blog-item"
-            v-for="(blog, index) in blogsData"
-            :key="index"
-          >
+          <div class="blog-item" v-for="(blog, index) in blogs" :key="index">
             <BlogCard
-              :thumbnail="blog.thumbnail"
-              :title="blog.title"
-              :description="blog.description"
-              :date="blog.date"
+              :thumbnail="blog.thumbnail_cn.url"
+              :title="blog.title_cn"
+              :description="blog.description_cn"
+              :date="blog.published_at.split('T')[0]"
+              :link="'/blogs/' + blog.slug"
             />
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 
@@ -236,6 +233,26 @@ export default {
         content: "加彼岸出国咨询 | 首页",
       },
     ],
+  },
+  async asyncData({ $axios }) {
+    const casesData = await $axios.$get(`/cases`, {
+      params: {
+        _sort: "id:desc",
+        _limit: "3",
+      },
+    });
+    const blogsData = await $axios.$get(`/blogs`, {
+      params: {
+        _sort: "id:desc",
+        _limit: "4",
+      },
+    });
+    const cases = casesData;
+    const blogs = blogsData;
+    return {
+      cases,
+      blogs,
+    };
   },
   data() {
     return {
@@ -400,6 +417,7 @@ header .info-wrap {
     margin-left: 50px;
   }
 }
+
 @media all and (max-width: 768px) {
   header {
     height: 100vh;
@@ -688,6 +706,9 @@ header .info-wrap {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
 }
+.cases-btn {
+  display: none;
+}
 @media all and (max-width: 768px) {
   #home-cases {
     padding: 30px 0;
@@ -696,6 +717,11 @@ header .info-wrap {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 20px;
+  }
+  .cases-btn {
+    display: flex;
+    color: #333;
+    margin: 0px auto;
   }
 }
 

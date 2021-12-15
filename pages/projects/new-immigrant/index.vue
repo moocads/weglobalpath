@@ -83,7 +83,7 @@
         titleENColor="#DADADA"
       />
       <div class="wrapper">
-        <p>
+        <p style="text-align: center">
           加彼岸为新移民安排贴心的安家服务。让你不会在初次登陆时对陌生环境无从下手。
         </p>
       </div>
@@ -216,6 +216,7 @@ section {
     font-size: 16px;
   }
 }
+
 @media all and (max-width: 768px) {
   section {
     padding: 30px 0;

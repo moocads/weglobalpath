@@ -1,5 +1,5 @@
 <template>
-  <div class="project-detail-page">
+  <div class="project-detail-page" id="project-ee-page">
     <header
       :style="{
         background: `linear-gradient(
@@ -17,7 +17,8 @@
       <div class="wrapper">
         <div class="txtContainer">
           <p>
-            <span>加拿大快速通道Express Entry简称EE</span>，是一个进行申请人筛选的在线系统，而不是一个新的移民项目，EE系统根植于传统的加拿大技术员项目。只有符合三类移民申请条件的人才能进入EE，进入EE后又会按照EE的CRS评分标准进行算分。移民部每个月利用EE系统对所有候选人进行邀请，只有高于分数线的申请人才能够被邀请获得递交移民申请资格。这一系统与传统申请流程的区别在于：申请人不能自行提交移民申请，而需要受到加拿大移民部的邀请。这一步骤将有效避免不具备申请资格或是申请材料不充分的申请，缩短申请人的等待时长。
+            <span>加拿大快速通道Express Entry简称EE</span
+            >，是一个进行申请人筛选的在线系统，而不是一个新的移民项目，EE系统根植于传统的加拿大技术员项目。只有符合三类移民申请条件的人才能进入EE，进入EE后又会按照EE的CRS评分标准进行算分。移民部每个月利用EE系统对所有候选人进行邀请，只有高于分数线的申请人才能够被邀请获得递交移民申请资格。这一系统与传统申请流程的区别在于：申请人不能自行提交移民申请，而需要受到加拿大移民部的邀请。这一步骤将有效避免不具备申请资格或是申请材料不充分的申请，缩短申请人的等待时长。
           </p>
         </div>
       </div>
@@ -110,7 +111,10 @@
               titleENColor="#DADADA"
             />
             <p>
-              CEC加拿大经验类移民（Canadian Experience Class）适用于拥有加拿大教育背景的留学生，以及在加拿大境内持临时工作签证的申请人。针对近3年内有1年NOC Skill Type 0，A，B技能级别加拿大工作经验的申请人，可以是全职也可以是对等的兼职。很多申请人因为分数低，需要进一步通过省提名才能成功移民。
+              CEC加拿大经验类移民（Canadian Experience
+              Class）适用于拥有加拿大教育背景的留学生，以及在加拿大境内持临时工作签证的申请人。针对近3年内有1年NOC
+              Skill Type
+              0，A，B技能级别加拿大工作经验的申请人，可以是全职也可以是对等的兼职。很多申请人因为分数低，需要进一步通过省提名才能成功移民。
             </p>
           </div>
         </section>
@@ -145,6 +149,36 @@
       <h3>连接彼岸，用心服务，帮助海外客户和学生。</h3>
       <h3>我们，不忘初心。</h3>
     </section>
+    <section class="fee-sec">
+      <div class="wrapper">
+        <div class="title-wrap">
+          <div class="title">
+            <img src="/img/logos/logo-trans.png" alt="" />
+            <p>FEE</p>
+          </div>
+          <h1>项目费用</h1>
+        </div>
+        <div class="fee-grid">
+          <div
+            class="fee-card"
+            v-for="(fee, index) in eeData.fee_comp"
+            :key="index"
+          >
+            <ul>
+              <li><span>类别：</span>{{ fee.cate }}</li>
+              <li><span>收费机构：</span>{{ fee.department }}</li>
+              <li>
+                <span>金额：</span
+                ><vue-markdown class="fee-content">{{
+                  fee.price
+                }}</vue-markdown>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <OtherProjectsSection />
   </div>
 </template>
 
@@ -152,6 +186,12 @@
 import VueMarkdown from "vue-markdown";
 
 export default {
+  async asyncData({ $axios }) {
+    const eeData = await $axios.$get(`/projects/24`);
+    return {
+      eeData,
+    };
+  },
   data() {
     return {
       hasButton: [],
@@ -160,49 +200,52 @@ export default {
           title: "经验要求",
           requirement_points: [
             {
-              point: "过去10年内至少一年以上的连续的全职（或等同的兼职）工作经验，工作可以是：一份全职：每周30小时，工作12个月，一份兼职：每周15小时，工作24个月，多分兼职：每周累计30小时，工作12个月。"
-            }
-          ]
+              point:
+                "过去10年内至少一年以上的连续的全职（或等同的兼职）工作经验，工作可以是：一份全职：每周30小时，工作12个月，一份兼职：每周15小时，工作24个月，多分兼职：每周累计30小时，工作12个月。",
+            },
+          ],
         },
         {
           title: "语言要求",
           requirement_points: [
             {
-              point: "英语或法语达到CLB7（听说读写4个6）的成绩，成绩两年内有效；"
-            }
-          ]
+              point:
+                "英语或法语达到CLB7（听说读写4个6）的成绩，成绩两年内有效；",
+            },
+          ],
         },
         {
           title: "工作要求",
           requirement_points: [
             {
-              point: "从事同一个职业，在NOC0, A, B类别中；"
-            }
-          ]
+              point: "从事同一个职业，在NOC0, A, B类别中；",
+            },
+          ],
         },
         {
           title: "学历要求",
           requirement_points: [
             {
-              point: "达到加拿大高中以上学历，如果是海外学历需要通过ECA学历认证；"
-            }
-          ]
+              point:
+                "达到加拿大高中以上学历，如果是海外学历需要通过ECA学历认证；",
+            },
+          ],
         },
         {
           title: "EOI要求",
           requirement_points: [
             {
-              point: "满足联邦技术移民评分67分；"
-            }
-          ]
+              point: "满足联邦技术移民评分67分；",
+            },
+          ],
         },
         {
           title: "计划要求",
           requirement_points: [
             {
-              point: "计划居住在魁北克以外的省份。"
-            }
-          ]
+              point: "计划居住在魁北克以外的省份。",
+            },
+          ],
         },
       ],
       tab2: [
@@ -210,41 +253,43 @@ export default {
           title: "经验要求",
           requirement_points: [
             {
-              point: "最近5年内至少2年全职或等同兼职技工类工作经验；"
-            }
-          ]
+              point: "最近5年内至少2年全职或等同兼职技工类工作经验；",
+            },
+          ],
         },
         {
           title: "语言要求",
           requirement_points: [
             {
-              point: "满足最低语言要求：雅思听说CLB5（听5，说5），读写CLB4（读3.5，写4）和法语听说NCLC5，读写NCLC4；"
-            }
-          ]
+              point:
+                "满足最低语言要求：雅思听说CLB5（听5，说5），读写CLB4（读3.5，写4）和法语听说NCLC5，读写NCLC4；",
+            },
+          ],
         },
         {
           title: "学历要求",
           requirement_points: [
             {
-              point: "没有学历要求"
-            }
-          ]
+              point: "没有学历要求",
+            },
+          ],
         },
         {
           title: "计划要求",
           requirement_points: [
             {
-              point: "计划居住在魁北克以外的省份。"
-            }
-          ]
+              point: "计划居住在魁北克以外的省份。",
+            },
+          ],
         },
         {
           title: "其他要求",
           requirement_points: [
             {
-              point: "申请人需要获得雇主支持的LMIA（Labour Market Impact Assessment）或者加拿大省政府颁发的技工证书；"
-            }
-          ]
+              point:
+                "申请人需要获得雇主支持的LMIA（Labour Market Impact Assessment）或者加拿大省政府颁发的技工证书；",
+            },
+          ],
         },
       ],
       tab3: [
@@ -252,41 +297,43 @@ export default {
           title: "经验要求",
           requirement_points: [
             {
-              point: "近三年内至少有一年在加拿大的全职或等同兼职工作经验；"
-            }
-          ]
+              point: "近三年内至少有一年在加拿大的全职或等同兼职工作经验；",
+            },
+          ],
         },
         {
           title: "语言要求",
           requirement_points: [
             {
-              point: "满足工作需要的语言要求：职业类别为NOC0、A，语言需达到CLB7，职业类别为NOCB，语言需达到CLB5；"
-            }
-          ]
+              point:
+                "满足工作需要的语言要求：职业类别为NOC0、A，语言需达到CLB7，职业类别为NOCB，语言需达到CLB5；",
+            },
+          ],
         },
         {
           title: "工作要求",
           requirement_points: [
             {
-              point: "所从事的工作属于NOC0、A、B类别，自雇或者全日制在读期间获得的工作经验不被认可；"
-            }
-          ]
+              point:
+                "所从事的工作属于NOC0、A、B类别，自雇或者全日制在读期间获得的工作经验不被认可；",
+            },
+          ],
         },
         {
           title: "学历要求",
           requirement_points: [
             {
-              point: "没有学历要求"
-            }
-          ]
+              point: "没有学历要求",
+            },
+          ],
         },
         {
           title: "计划要求",
           requirement_points: [
             {
-              point: "计划居住在魁北克以外的省份。"
-            }
-          ]
+              point: "计划居住在魁北克以外的省份。",
+            },
+          ],
         },
       ],
     };
@@ -308,34 +355,36 @@ export default {
 };
 </script>
 <style lang="scss">
-.eeTabs {
-  .ant-tabs-nav-scroll {
-    display: flex;
-    justify-content: center;
-  }
-
-  .ant-tabs-nav .ant-tabs-tab:hover {
-    color: white
-  }
-
-  .ant-tabs-tab {
-    background-color: $navy;
-    color: white;
-    margin-right: 10px;
-
-    &.ant-tabs-tab-active {
-      background-color: $red;
+#project-ee-page {
+  .eeTabs {
+    .ant-tabs-nav-scroll {
+      display: flex;
+      justify-content: center;
     }
-  }
 
-  .ant-tabs-bar {
-    max-width: 1440px;
-    width: 85vw;
-    margin: auto;
-  }
+    .ant-tabs-nav .ant-tabs-tab:hover {
+      color: white;
+    }
 
-  .ant-tabs-ink-bar {
-    background-color: transparent;
+    .ant-tabs-tab {
+      background-color: $navy;
+      color: white;
+      margin-right: 10px;
+
+      &.ant-tabs-tab-active {
+        background-color: $red;
+      }
+    }
+
+    .ant-tabs-bar {
+      max-width: 1440px;
+      width: 85vw;
+      margin: auto;
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: transparent;
+    }
   }
 }
 </style>
@@ -358,7 +407,7 @@ section {
   margin: 100px 0;
   .txtContainer {
     padding: 30px 20px;
-    background-color: #E9E9E9;
+    background-color: #e9e9e9;
 
     p {
       margin-bottom: 0;

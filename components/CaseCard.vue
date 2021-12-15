@@ -24,7 +24,7 @@ export default {
     date: String,
     link: {
       type: String,
-      default: "/about",
+      default: "/cases",
     },
   },
 };
@@ -67,6 +67,7 @@ export default {
 }
 @media all and (max-width: 768px) {
   .card-wrap {
+    display: none;
     height: 300px;
     width: 100%;
     max-width: 350px;
