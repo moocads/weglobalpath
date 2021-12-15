@@ -45,7 +45,7 @@
                     ><span>加拿大温尼伯：</span>180 Main St, Winnipeg, MB R3C
                     1A6 (Robertson College)
                   </a>
-                  <span class="disclaimer">点击切换地图</span>
+                  <span class="disclaimer">点击地址切换地图</span>
                 </div>
               </div>
               <div class="gmap-wrap info-wrap" v-if="location === 1">
