@@ -48,9 +48,16 @@
                   <a href="mailto:info@beyondcanda.ca">info@beyondcanda.ca</a>
                 </div>
               </div>
-              <!-- <div class="gmap-wrap info-wrap">
-                <GMap />
-              </div> -->
+              <div class="gmap-wrap info-wrap">
+                <!-- <GMap /> -->
+                <iframe
+                  style="border:0"
+                  loading="lazy"
+                  allowfullscreen
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmW9PcmUOmqS0QeStmfxju4Lgm3yDEnoc
+                    &q=145+Royal+Crest+Ct+Unit+47-48,Markham,ON+L3R+9Z4">
+                </iframe>
+              </div>
             </a-col>
             <a-col :xs="24" :md="12">
               <form @submit.prevent="handleSubmit">
@@ -248,16 +255,16 @@ header {
 }
 .gmap-wrap {
   width: 100%;
-  height: 250px;
+  height: 300px;
   background-color: #333;
   border-radius: 10px;
-  // img {
-  //   width: 100%;
-  //   height: 250px;
-  // }
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
 }
 form {
-  padding: 0 80px;
+  padding-left: 80px;
   display: grid;
   grid-template-columns: 1fr;
 }
