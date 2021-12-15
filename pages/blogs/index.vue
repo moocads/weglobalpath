@@ -1,0 +1,150 @@
+<template>
+  <div id="blogs-page">
+    <header>
+      <div class="wrapper">
+        <h1>最新资讯</h1>
+      </div>
+    </header>
+    <section class="blogs-wrap">
+      <div class="wrapper blogs-grid">
+        <NuxtLink
+          :to="'/blogs/' + blog.slug"
+          class="blogs-item"
+          v-for="(blog, i) in blogs"
+          :key="i"
+        >
+          <figure>
+            <img :src="blog.thumbnail_cn.url" alt="" />
+          </figure>
+          <article>
+            <h2>{{ blog.title_cn }}</h2>
+            <h3>{{ blog.description_cn }}</h3>
+            <p>
+              <span>{{ blog.published_at.split("T")[0] }}</span
+              ><span>MORE</span>
+            </p>
+          </article>
+        </NuxtLink>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+export default {
+  async asyncData({ $axios }) {
+    const blogsData = await $axios.$get(`/blogs`, {
+      params: {
+        _sort: "id:desc",
+      },
+    });
+    const blogs = blogsData;
+    return {
+      blogs,
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+header {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+      89.93deg,
+      rgba(34, 52, 92, 0.7) 7.82%,
+      rgba(34, 52, 92, 0) 102.35%
+    ),
+    url("/img/Investment/banner.png");
+
+  background-size: cover;
+  background-blend-mode: multiply;
+  h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+    margin-left: 20px;
+  }
+  h1::before {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: -20px;
+    transform: translateY(-50%);
+    background-color: $red;
+    width: 6px;
+    height: 70px;
+  }
+}
+section {
+  padding: 100px 0;
+}
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.blogs-item {
+  display: flex;
+  padding: 10px;
+  border: 1px solid rgba(27, 40, 84, 0.5);
+  border-radius: 3px;
+  // box-shadow: rgba(27, 40, 84, 0.5) 0px 0px 0px 3px;
+  box-shadow: rgba(27, 40, 84, 0.2) 0px 4px 6px -1px,
+    rgba(27, 40, 84, 0.06) 0px 2px 4px -1px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    // box-shadow: rgba(163, 28, 28, 0.5) 0px 0px 0px 3px;
+  }
+}
+.blogs-item figure {
+  margin: 0;
+  max-width: 200px;
+  flex-shrink: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.blogs-item article {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h2 {
+    color: $navy;
+    font-size: 18px;
+    line-height: 1.5;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #a8a8a8;
+    display: -webkit-box;
+    line-height: 1.5;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  p {
+    font-size: 14px;
+    color: #c5c5c5;
+    margin: 0;
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  span:last-child {
+    transition: all 0.2s ease;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+</style>
