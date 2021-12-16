@@ -131,10 +131,10 @@ nav {
       text-transform: uppercase;
       text-align: center;
       width: 100%;
-      font-size: 25px;
+      font-size: 20px;
       color: #fff;
       padding: 10px 0;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 1px;
       list-style-type: none;
     }
