@@ -24,7 +24,7 @@
       </div>
     </div>
     <a-tabs class="eeTabs">
-      <a-tab-pane tab="加拿大联邦技术移民" key="1">
+      <a-tab-pane tab="技术类移民" key="1">
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -63,7 +63,7 @@
           </div>
         </section>
       </a-tab-pane>
-      <a-tab-pane tab="联邦EE技工类移民" key="2">
+      <a-tab-pane tab="技工类移民" key="2">
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -102,7 +102,7 @@
           </div>
         </section>
       </a-tab-pane>
-      <a-tab-pane tab="联邦EE经验类移民" key="3">
+      <a-tab-pane tab="经验类移民" key="3">
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
