@@ -399,6 +399,13 @@ export default {
     }
   }
 }
+@media all and (max-width: 768px) {
+  #project-ee-page {
+    .eeTabs .ant-tabs-nav-scroll {
+      justify-content: flex-start;
+    }
+  }
+}
 </style>
 <style lang="scss" scoped>
 section {
