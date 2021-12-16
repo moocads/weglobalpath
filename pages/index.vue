@@ -69,7 +69,7 @@
           <div class="project-6 project-item">
             <NuxtLink to="/projects/reunion">
               <div class="proj6-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project6.png" alt="" />
+              <img src="/img/Home/projects/project8.jpeg" alt="" />
               <h2>加拿大团聚移民</h2>
             </NuxtLink>
           </div>

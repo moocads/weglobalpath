@@ -63,7 +63,7 @@ const projects = [
   },
   {
     url: "reunion",
-    thumbnail: "project6.png",
+    thumbnail: "project8.jpeg",
     title: "加拿大团聚移民",
   },
   {
@@ -134,6 +134,7 @@ header {
   }
   .codex-item a {
     height: 100%;
+    max-height: 250px;
     img {
       height: 200px;
     }

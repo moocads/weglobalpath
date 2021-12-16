@@ -39,11 +39,21 @@
       <section class="certificate-sec">
         <div class="wrapper">
           <div class="content">
-            <MainTitle
+            <!-- <MainTitle
               title="加彼岸TM Beyondcanada是加拿大罗伯森学院指定招生代表"
               titleEN="CERTIFICATE"
               titleSize="24px"
-            />
+            /> -->
+            <div class="certificate-title-wrap">
+              <h2>CERTIFICATE</h2>
+              <h1>
+                加彼岸<sup>TM</sup> Beyondcanada是加拿大罗伯森学院指定招生代表
+              </h1>
+              <img
+                src="/img/logos/logo-small-blue.png"
+                alt="加彼岸 小型标题 Logo"
+              />
+            </div>
             <figure>
               <div class="certification-box">
                 <img src="/img/Recruiting/certificate1.jpg" alt="" />
@@ -584,7 +594,41 @@ header {
     }
   }
 }
+.certificate-title-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  h2 {
+    text-align: center;
+    font-size: 70px;
+    color: #f1f1f1;
+    font-family: $Mont;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  img {
+    margin-top: -15px;
+    width: 30px !important;
+    transform: rotate(90deg);
+  }
 
+  h1 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-top: -45px;
+    text-align: center;
+  }
+  sup {
+    font-size: 14px;
+    top: -20px;
+  }
+  img {
+    margin-top: -25px;
+  }
+}
 .requirement-sec {
   padding: 100px 0;
 }
@@ -756,6 +800,20 @@ header {
   }
   .cn-schools-grid {
     gap: 10px 20px;
+  }
+  .certificate-title-wrap {
+    margin-bottom: 30px;
+    h1 {
+      font-weight: normal;
+      font-size: 20px;
+      margin-top: -25px;
+    }
+    sup {
+      top: -10px;
+    }
+    h2 {
+      font-size: 40px;
+    }
   }
 }
 </style>

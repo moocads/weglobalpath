@@ -28,7 +28,7 @@
                 </div>
                 <div class="info">
                   <h2>邮箱</h2>
-                  <a href="mailto:info@beyondcanda.ca">info@beyondcanda.ca</a>
+                  <a href="mailto:info@beyondcanda.ca">info@beyondcanada.ca</a>
                 </div>
               </div>
               <div class="address-wrap info-wrap">

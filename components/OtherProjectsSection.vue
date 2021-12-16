@@ -113,7 +113,7 @@ const projects = [
   },
   {
     url: "/projects/reunion",
-    thumbnail: "project6.png",
+    thumbnail: "project8.jpeg",
     title: "加拿大团聚移民",
     route: "/projects/reunion",
   },

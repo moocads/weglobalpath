@@ -4,12 +4,10 @@
       class="card-wrap"
       :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
     >
-      <NuxtLink :to="link">
-        <div class="info-box">
-          <h1>{{ title }}</h1>
-          <p>{{ date }}</p>
-        </div>
-      </NuxtLink>
+      <div class="info-box">
+        <h1>{{ title }}</h1>
+        <p>{{ date }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -22,10 +20,6 @@ export default {
     },
     title: String,
     date: String,
-    link: {
-      type: String,
-      default: "/about",
-    },
   },
 };
 </script>

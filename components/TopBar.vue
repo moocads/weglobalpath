@@ -1,11 +1,13 @@
 <template>
   <div id="topbar">
     <div class="wrapper topbar-wrap">
-      <img
-        src="/img/logos/logo-blue.png"
-        alt="加彼岸 Navbar Logo"
-        class="nav_logo"
-      />
+      <NuxtLink to="/">
+        <img
+          src="/img/logos/logo-blue.png"
+          alt="加彼岸 Navbar Logo"
+          class="nav_logo"
+        />
+      </NuxtLink>
       <!-- <div class="phone-wrap">
         <img
           src="/img/icons/topbar-phone.png"

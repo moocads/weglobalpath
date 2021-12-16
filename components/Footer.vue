@@ -46,7 +46,7 @@
                   >
                 </li>
                 <li>
-                  <NuxtLink to="/projects/startup">加拿大创业移民</NuxtLink>
+                  <NuxtLink to="/projects/startup">加拿大创业人才移民</NuxtLink>
                 </li>
                 <li>
                   <NuxtLink to="/projects/nominee">加拿大雇主担保移民</NuxtLink>

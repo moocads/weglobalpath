@@ -169,6 +169,8 @@ section {
 .seo-tags-wrap {
   display: flex;
   column-gap: 10px;
+  row-gap: 3px;
+  flex-wrap: wrap;
   li {
     color: #fff;
     background-color: $red;
