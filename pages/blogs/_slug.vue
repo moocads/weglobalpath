@@ -30,6 +30,18 @@
 import VueMarkdown from "vue-markdown";
 
 export default {
+  head() {
+    return {
+      title: "加彼岸资讯 | " + this.blog.title_cn,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸资讯 | " + this.blog.description_cn,
+        },
+      ],
+    };
+  },
   async asyncData({ $axios, route }) {
     const blogData = await $axios.$get(`/blogs?slug=` + route.params.slug);
     const blog = blogData[0];

@@ -34,6 +34,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 加拿大投资",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 加拿大投资",
+        },
+      ],
+    };
+  },
   data() {
     return {
       investmentLists,

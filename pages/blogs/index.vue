@@ -32,6 +32,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 最新资讯",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 最新资讯",
+        },
+      ],
+    };
+  },
   async asyncData({ $axios }) {
     const blogsData = await $axios.$get(`/blogs`, {
       params: {

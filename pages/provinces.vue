@@ -49,6 +49,18 @@
 import VueMarkdown from "vue-markdown";
 
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 加拿大各省份移民",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 加拿大各省份移民",
+        },
+      ],
+    };
+  },
   data() {
     return {
       tabSelected: "0",

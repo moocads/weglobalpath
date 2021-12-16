@@ -52,6 +52,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | " + this.data.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | " + this.data.title + "加彼岸成功案例展示",
+        },
+      ],
+    };
+  },
   async asyncData({ $axios, params }) {
     const projectData = await $axios.$get(`/cases/${params.id}`);
     const data = projectData;

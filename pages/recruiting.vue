@@ -143,6 +143,16 @@
 
 <script>
 export default {
+  head: {
+    title: "加彼岸出国咨询 | 中国区招生计划",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "加彼岸出国咨询 | 中国区招生计划",
+      },
+    ],
+  },
   data() {
     return {
       data,

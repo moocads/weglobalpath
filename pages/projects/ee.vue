@@ -186,6 +186,18 @@
 import VueMarkdown from "vue-markdown";
 
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 联邦EE移民项目",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 联邦EE移民项目",
+        },
+      ],
+    };
+  },
   async asyncData({ $axios }) {
     const eeData = await $axios.$get(`/projects/24`);
     return {

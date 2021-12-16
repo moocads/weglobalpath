@@ -124,6 +124,18 @@
 import VueMarkdown from "vue-markdown";
 
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 加拿大新移民服务",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 加拿大新移民服务",
+        },
+      ],
+    };
+  },
   data() {
     return {
       hasButton: [],

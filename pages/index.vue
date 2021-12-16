@@ -224,15 +224,17 @@
 
 <script>
 export default {
-  head: {
-    title: "加彼岸出国咨询 | 首页",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "加彼岸出国咨询 | 首页",
-      },
-    ],
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 首页",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 首页",
+        },
+      ],
+    };
   },
   async asyncData({ $axios }) {
     const casesData = await $axios.$get(`/cases`, {

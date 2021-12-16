@@ -104,7 +104,7 @@
               <!-- <span>{{ item.label }}</span> -->
               <div class="circle"></div>
             </div>
-            <p class="label">{{item.label}}</p>
+            <p class="label">{{ item.label }}</p>
             <p class="text">{{ item.step }}</p>
           </a-timeline-item>
         </a-timeline>
@@ -116,48 +116,58 @@
 
 <script>
 export default {
+  head: {
+    title: "加彼岸出国咨询 | 关于我们",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "加彼岸出国咨询 | 关于我们",
+      },
+    ],
+  },
   data() {
     return {
       steps: [
         {
-          label: '加彼岸™历程: 1',
-          step: '建立中国与北美第一家鲁班工坊桥梁'
+          label: "加彼岸™历程: 1",
+          step: "建立中国与北美第一家鲁班工坊桥梁",
         },
         {
-          label: '加彼岸™历程: 15',
-          step: '缔结多所中加友好学校'
+          label: "加彼岸™历程: 15",
+          step: "缔结多所中加友好学校",
         },
         {
-          label: '加彼岸™历程: 98.1',
-          step: '98.1%+的移民申请通过率'
+          label: "加彼岸™历程: 98.1",
+          step: "98.1%+的移民申请通过率",
         },
         {
-          label: '加彼岸™历程: 100',
-          step: '代理加拿大百所院校'
+          label: "加彼岸™历程: 100",
+          step: "代理加拿大百所院校",
         },
         {
-          label: '加彼岸™历程: 1000',
-          step: '1000+海外优质雇主'
+          label: "加彼岸™历程: 1000",
+          step: "1000+海外优质雇主",
         },
         {
-          label: '加彼岸™历程: 2000',
-          step: '输送上千名学子海外深造'
+          label: "加彼岸™历程: 2000",
+          step: "输送上千名学子海外深造",
         },
         {
-          label: '加彼岸™历程: 6000',
-          step: '6000+各类移民申请成功案例'
+          label: "加彼岸™历程: 6000",
+          step: "6000+各类移民申请成功案例",
         },
         {
-          label: '加彼岸™历程:',
-          step: '实现海外资产配置'
+          label: "加彼岸™历程:",
+          step: "实现海外资产配置",
         },
         {
-          label: '加彼岸™历程:',
-          step: '未来给所有人选择国际化教育的机会'
+          label: "加彼岸™历程:",
+          step: "未来给所有人选择国际化教育的机会",
         },
-      ]
-    }
-  }
+      ],
+    };
+  },
 };
 </script>
 
@@ -366,7 +376,7 @@ header {
 
 .sec-5 {
   padding-bottom: 50px;
-  
+
   .wrapper {
     display: flex;
     justify-content: center;

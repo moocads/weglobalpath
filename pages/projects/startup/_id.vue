@@ -139,6 +139,19 @@
 import axios from "axios";
 
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | " + this.data.project_name,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "加彼岸出国咨询 | " + this.data.project_name + "加拿大创业移民项目",
+        },
+      ],
+    };
+  },
   async asyncData({ $axios, params }) {
     const projectData = await $axios.$get(`/projects/${params.id}`);
     const data = projectData;

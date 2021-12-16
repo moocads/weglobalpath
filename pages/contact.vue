@@ -37,11 +37,17 @@
                 </div>
                 <div class="info">
                   <h2>地址</h2>
-                  <a @click="mapLocation(1)" class="location" :class="{active:location===1}"
+                  <a
+                    @click="mapLocation(1)"
+                    class="location"
+                    :class="{ active: location === 1 }"
                     ><span>加拿大多伦多：</span>145 Royal Crest Ct Unit 47-48,
                     Markham, ON L3R 9Z4
                   </a>
-                  <a @click="mapLocation(2)" class="location" :class="{active:location===2}"
+                  <a
+                    @click="mapLocation(2)"
+                    class="location"
+                    :class="{ active: location === 2 }"
                     ><span>加拿大温尼伯：</span>180 Main St, Winnipeg, MB R3C
                     1A6 (Robertson College)
                   </a>
@@ -51,20 +57,22 @@
               <div class="gmap-wrap info-wrap" v-if="location === 1">
                 <!-- <GMap /> -->
                 <iframe
-                  style="border:0"
+                  style="border: 0"
                   loading="lazy"
                   allowfullscreen
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmW9PcmUOmqS0QeStmfxju4Lgm3yDEnoc
-                    &q=145+Royal+Crest+Ct+Unit+47-48,Markham,ON+L3R+9Z4">
+                    &q=145+Royal+Crest+Ct+Unit+47-48,Markham,ON+L3R+9Z4"
+                >
                 </iframe>
               </div>
               <div class="gmap-wrap info-wrap" v-if="location === 2">
                 <iframe
-                  style="border:0"
+                  style="border: 0"
                   loading="lazy"
                   allowfullscreen
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmW9PcmUOmqS0QeStmfxju4Lgm3yDEnoc
-                    &q=180+Main+St,Winnipeg,MB+R3C+1A6">
+                    &q=180+Main+St,Winnipeg,MB+R3C+1A6"
+                >
                 </iframe>
               </div>
             </a-col>
@@ -111,6 +119,18 @@
 <script>
 import axios from "axios";
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 联系我们",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 联系我们",
+        },
+      ],
+    };
+  },
   data() {
     return {
       userName: "",
@@ -119,12 +139,12 @@ export default {
       userEmail: "",
       userMessage: "",
       userSubscription: false,
-      location: 1
+      location: 1,
     };
   },
   methods: {
     mapLocation(location) {
-      this.location = location
+      this.location = location;
     },
     handleSubmit(e) {
       this.$axios

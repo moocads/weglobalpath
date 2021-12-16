@@ -8,7 +8,7 @@
     <section class="codex-section">
       <div class="wrapper">
         <ul class="codex-grid">
-          <li class="codex-item" v-for="proj in projects" :key="i">
+          <li class="codex-item" v-for="(proj, i) in projects" :key="i">
             <NuxtLink :to="`/projects/${proj.url}`">
               <img :src="`/img/Home/projects/${proj.thumbnail}`" alt="" />
               <h2>{{ proj.title }}</h2>
@@ -22,6 +22,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 热门项目",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 热门项目",
+        },
+      ],
+    };
+  },
   data() {
     return {
       projects,

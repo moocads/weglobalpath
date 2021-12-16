@@ -32,6 +32,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "加彼岸出国咨询 | 加拿大留学移民",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "加彼岸出国咨询 | 加拿大留学移民",
+        },
+      ],
+    };
+  },
   async asyncData({ $axios }) {
     const projectData = await $axios.$get(`/projects`, {
       params: {
