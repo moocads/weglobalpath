@@ -143,7 +143,7 @@ section {
     line-height: 1.5;
     overflow: hidden;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
   }
   p {
     font-size: 14px;
