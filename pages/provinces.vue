@@ -13,13 +13,12 @@
             class="tab-item"
             v-for="(tab, index) in projects"
             :key="index"
-            @click="selectItem(index), (tabSelected = tab.id - 1)"
+            @click="[selectItem(index), (tabSelected = tab.id - 1)]"
           >
             <h2>{{ tab.name }}</h2>
           </div>
         </div>
         <hr />
-
         <a-collapse accordion default-active-key="mainKey0">
           <a-collapse-panel
             :header="mainCate.main_category"
@@ -34,7 +33,7 @@
                 :header="proj.second_category"
                 class="inner-collapse"
               >
-                <vue-markdown class="province-project-content">
+                <vue-markdown class="province-project-content" :key="proj.id">
                   {{ proj.content }}
                 </vue-markdown>
               </a-collapse-panel>
