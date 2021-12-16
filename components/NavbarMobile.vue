@@ -115,8 +115,8 @@ nav {
 .mobile-nav {
   z-index: 999;
   position: fixed;
-  top: -100vh;
-  left: 0;
+  top: 0;
+  right: -100%;
   width: 100vw;
   height: 100vh;
   background-color: $navy;
@@ -142,16 +142,16 @@ nav {
 }
 @keyframes fadeIn {
   from {
-    top: -100vh;
+    right: -100%;
   }
   to {
-    top: 0;
+    right: 0;
   }
 }
 .showMenu {
   animation-name: fadeIn;
   animation-duration: 1s;
-  top: 0;
+  right: 0;
 }
 .social-media-wrap {
   display: flex;
