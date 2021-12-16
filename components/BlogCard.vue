@@ -70,9 +70,9 @@ export default {
     -webkit-line-clamp: 3;
   }
   .content {
-    height: 0px;
+    // height: 0px;
     font-size: 14px;
-    color: #c4c4c4;
+    color: #c4c4c4 !important;
     margin: 0;
     margin-bottom: 10px;
     font-weight: 400;
@@ -81,8 +81,8 @@ export default {
     line-height: 1.5;
     overflow: hidden;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    visibility: hidden;
+    -webkit-line-clamp: 2;
+    // visibility: hidden;
   }
   .date {
     font-size: 14px;
