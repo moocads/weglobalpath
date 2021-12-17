@@ -90,8 +90,9 @@
               </div>
             </figure>
             <p>
-              BEYONDCANADA CONSULTING(加彼岸)受ROBERTSON
-              COLLEGE(罗伯森学院)委托，<span>是中国区唯一校方直属合作伙伴</span>，为学校处理一切中国区事宜，历经多年的紧密合作，被授予“Most
+              BEYOND CANADA CONSULTING (加彼岸) 受 ROBERTSON COLLEGE
+              (罗伯森学院)
+              委托，<span>是中国区唯一校方直属合作伙伴</span>，为学校处理一切中国区事宜，历经多年的紧密合作，被授予“Most
               Trusted Partner”最值得信赖的合作伙伴荣誉证书。
             </p>
           </div>

@@ -22,9 +22,9 @@
                 <NuxtLink to="/projects/startup">加拿大创业人才移民</NuxtLink>
                 <NuxtLink to="/projects/nominee">加拿大雇主担保</NuxtLink>
                 <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
+                <NuxtLink to="/projects/ee">联邦EE快速通道</NuxtLink>
                 <NuxtLink to="/projects/reunion">加拿大团聚移民</NuxtLink>
                 <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
-                <NuxtLink to="/projects/ee">联邦EE移民项目</NuxtLink>
               </ul>
             </div>
           </li>
