@@ -112,6 +112,12 @@ const projects = [
     route: "/projects/education",
   },
   {
+    url: "/projects/ee",
+    thumbnail: "ee2.png",
+    title: "联邦EE快速通道项目",
+    route: "/projects/ee",
+  },
+  {
     url: "/projects/reunion",
     thumbnail: "project8.jpeg",
     title: "加拿大团聚移民",
@@ -122,12 +128,6 @@ const projects = [
     thumbnail: "project7.jpeg",
     title: "新移民服务",
     route: "/projects/new-immigrant",
-  },
-  {
-    url: "/projects/ee",
-    thumbnail: "ee2.png",
-    title: "联邦EE移民项目",
-    route: "/projects/ee",
   },
   {
     url: "/recruiting",
