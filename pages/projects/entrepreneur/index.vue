@@ -61,11 +61,13 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  height: 300px;
+  height: 500px;
   width: 100%;
   display: flex;
   align-items: center;
-  background: #e9e9e9;
+  background: url("/img/Banner/general-banner.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
   h1 {
     color: $navy;
     font-size: 60px;

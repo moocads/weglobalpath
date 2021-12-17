@@ -73,6 +73,7 @@ export default {
 </style>
 <style lang="scss" scoped>
 $nav-height: 70px;
+$nav-dropdown-height: 50px;
 
 .nav-active {
   background-color: $red;
@@ -92,13 +93,11 @@ nav {
     display: flex;
     justify-content: space-between;
   }
-
   li {
     height: $nav-height;
     display: flex;
     justify-content: center;
     align-items: center;
-
     a {
       padding: 0 20px;
       height: 100%;
@@ -107,17 +106,14 @@ nav {
       font-size: 16px;
       font-weight: 400;
       line-height: $nav-height;
-
       @media (max-width: 1200px) {
         padding: 0 15px;
         font-size: 14px;
       }
     }
   }
-
   li:hover {
     background-color: $red;
-
     .dropdown-wrap {
       display: block;
     }
@@ -153,10 +149,22 @@ nav {
 
 .hot-project-link {
   position: relative;
-
   .hot-project-dropdown {
+    a {
+      padding: 0 20px;
+      height: 100%;
+      width: 100%;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: $nav-dropdown-height;
+      @media (max-width: 1200px) {
+        padding: 0 15px;
+        font-size: 14px;
+      }
+    }
     position: absolute;
-    top: 70px;
+    top: $nav-height;
     left: 0;
   }
 }

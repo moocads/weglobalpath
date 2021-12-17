@@ -471,19 +471,13 @@ section {
   padding: 40px 0;
 }
 header {
-  height: 300px;
+  height: 500px;
   width: 100%;
   display: flex;
   align-items: center;
-  // background: linear-gradient(
-  //     89.93deg,
-  //     rgba(34, 52, 92, 0.7) 7.82%,
-  //     rgba(34, 52, 92, 0) 102.35%
-  //   ),
-  //   url("/img/Projects/banner.png");
-
-  // background-size: cover;
-  // background-blend-mode: multiply;
+  background: url("/img/Banner/general-banner.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
   background-color: #e9e9e9;
   h1 {
     color: $navy;
@@ -796,6 +790,10 @@ header {
     h1::before {
       width: 6px;
       height: 40px;
+    }
+    h1::after {
+      font-size: 16px;
+      bottom: -30px;
     }
   }
   main {

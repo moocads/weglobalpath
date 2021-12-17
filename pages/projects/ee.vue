@@ -10,7 +10,7 @@
       }"
     >
       <div class="wrapper">
-        <h1>联邦EE移民项目</h1>
+        <h1>联邦EE快速通道项目</h1>
       </div>
     </header>
     <div class="sec-headline">
