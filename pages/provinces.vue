@@ -97,6 +97,10 @@ export default {
     list-style-type: decimal;
     margin-left: 15px;
   }
+  ul {
+    list-style-type: disc;
+    margin-left: 25px;
+  }
 }
 #province-project-page {
   hr {
