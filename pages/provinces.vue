@@ -2,7 +2,7 @@
   <div id="province-project-page">
     <header>
       <div class="wrapper">
-        <h1>各省份移民项目</h1>
+        <h1>移民省份项目</h1>
       </div>
     </header>
     <section>
@@ -51,12 +51,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | 加拿大各省份移民",
+      title: "加彼岸出国咨询 | 加拿大移民省份",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | 加拿大各省份移民",
+          content: "加彼岸出国咨询 | 加拿大移民省份",
         },
       ],
     };

@@ -32,7 +32,7 @@
             <NuxtLink to="/cases">成功案例</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/provinces">各省份移民</NuxtLink>
+            <NuxtLink to="/provinces">移民省份</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/investment">加拿大投资</NuxtLink>
@@ -111,7 +111,7 @@ nav {
       @media (max-width: 1200px) {
         padding: 0 15px;
         font-size: 14px;
-      };
+      }
     }
   }
 
@@ -129,7 +129,7 @@ nav {
   z-index: 99;
   background: $navy;
 
-ul {
+  ul {
     display: flex;
     flex-direction: column;
     align-items: center;

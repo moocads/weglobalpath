@@ -36,7 +36,7 @@
               <li @click="isToggle = !isToggle">成功案例</li>
             </NuxtLink>
             <NuxtLink to="/provinces">
-              <li @click="isToggle = !isToggle">各省份移民</li>
+              <li @click="isToggle = !isToggle">移民省份</li>
             </NuxtLink>
             <NuxtLink to="/investment">
               <li @click="isToggle = !isToggle">加拿大投资</li>

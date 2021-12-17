@@ -15,7 +15,10 @@
             alt=""
             class="banner-text banner-text2"
           />
-          <p>多年移民留学服务经验 一站式全程规划 衔接加拿大移民的高效途径</p>
+          <p>
+            多年移民留学服务经验 一站式全程规划 衔接加拿大移民的高效途径
+            移民，不走弯路！
+          </p>
           <NuxtLink to="/contact">
             <button class="main-btn main-btn_blue main-btn_round">
               快速咨询
@@ -108,9 +111,10 @@
           <a-col :lg="12">
             <MainTitleSide title="关于加彼岸" titleEN="ABOUT US" />
             <p>
-              加彼岸旗下有加彼岸出国咨询（BEYONDCANADA
-              CONSULTING），彼森教育（BISON EDUCATION）和彼岸投资（BEYONDCANADA
-              INVESTMENT）三家子公司，均为加拿大联邦注册公司，分别由自身移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
+              加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
+              CONSULTING），彼森教育（BISON INTERNATIONAL
+              EDUCATION）和彼岸投资（BEYOND CANADA
+              INVESTMENT）三家子公司，均为加拿大联邦注册公司，分别由资深移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
             </p>
             <p>
               加彼岸出国咨询是权威办理加拿大省提名移民项目的加拿大本地公司。作为加拿大项目方，我们保持独家项目优势，始终保持高市场份额占有率，每位顾问都有多年的在海外的留学生活经验及海外工作经验。最重要的是，我们把每一位客户当作自己亲人来服务，在全加拿大境内的省提名项目中协助您评估现实状况并作出最合适的规划建议。加彼岸出国咨询将一如既往地与国内合作伙伴紧密合作，客户至上的精神，为客户提供最优质最专业的移民咨询服务。

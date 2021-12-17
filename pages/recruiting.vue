@@ -8,17 +8,16 @@
     <main>
       <div class="wrapper">
         <section class="intro">
-          <div>
+          <div class="img-box">
             <h2>加拿大罗伯森学院</h2>
             <img src="/img/Recruiting/robertson.svg" alt="" />
           </div>
           <div class="info-box">
             <p>
-              加拿大罗伯森创立于1911年，是经加拿大政府批准开办，全球12所分校。
+              加拿大罗伯森创立于1911年，是经加拿大政府批准开办，全球12所分校，其中加拿大设立4所校区。
             </p>
-            <p>其中加拿大设立4所校区，隶属于加拿大教育集团的应用型高等院校。</p>
             <p>
-              罗伯森学院提供政府认证和行业紧密相关的教育，重点关注学生的实际操作培训和实践经验。
+              罗伯森学院提供政府认证和行业紧密相关的教育，罗伯森学院在医疗保健，商业，社会工作，法律，旅游和技术等领域提供30多种以职业为中心的研究生文凭和大专文凭。课程由具有多年该领域经验的行业专业人士授课。 重点关注学生的实际操作培训和实践经验。
             </p>
           </div>
         </section>
@@ -33,9 +32,31 @@
           </div>
         </section>
       </div>
-      <div class="wrapper">
-        <hr />
-      </div>
+      <section class="plan-sec">
+        <div class="wrapper plan-content">
+          <figure>
+            <img src="/img/Recruiting/pdf-img.png" alt="" />
+          </figure>
+          <article>
+            <h2>加拿大罗伯森学院在中国</h2>
+            <p>
+              目前，加拿大罗伯森学院在中国区合作学校以达24所。近些年来与中国合作院校保持着长期良好的合作关系。
+            </p>
+            <p>
+              加拿大罗伯森学院中国区招生计划－公立学院直通车项目，结合加彼岸移居咨询方面和职业培训方面的超强实力，目前已成为广大留学生快速获得就业机会及移居身份的最佳选择。罗伯森设有最短8个月的中国加拿大双认证的研究生文凭及大专学历，毕业后年即可获得加拿大工作签证并申请加拿大永居身份，首年年薪可高达20-30万人民币。该项目直属服务花费低、周期短，不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，陪读父母或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳快捷途径。
+            </p>
+            <a
+              href="/img/Recruiting/plan.pdf"
+              class="pdf-download-btn"
+              download="罗伯森学院中国区招生计划完整版"
+            >
+              <img src="/img/Recruiting/download-icon.svg" alt="" />
+              <span>下载罗伯森学院中国区招生计划完整版</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
       <section class="certificate-sec">
         <div class="wrapper">
           <div class="content">
@@ -47,7 +68,7 @@
             <div class="certificate-title-wrap">
               <h2>CERTIFICATE</h2>
               <h1>
-                加彼岸<sup>TM</sup> Beyondcanada是加拿大罗伯森学院指定招生代表
+                BeyondCanada加彼岸<sup>TM</sup> 是加拿大罗伯森学院指定招生代表
               </h1>
               <img
                 src="/img/logos/logo-small-blue.png"
@@ -57,15 +78,15 @@
             <figure>
               <div class="certification-box">
                 <img src="/img/Recruiting/certificate1.jpg" alt="" />
-                <h3>罗伯森大学授权执照</h3>
+                <h3>罗伯森学院授权执照</h3>
               </div>
               <div class="certification-box">
                 <img src="/img/Recruiting/certificate2.jpg" alt="" />
-                <h3>罗伯森大学授权执照</h3>
+                <h3>罗伯森学院授权执照</h3>
               </div>
               <div class="certification-box">
                 <img src="/img/Recruiting/certificate3.jpg" alt="" />
-                <h3>罗伯森大学授权执照</h3>
+                <h3>罗伯森学院授权执照</h3>
               </div>
             </figure>
             <p>
@@ -97,43 +118,7 @@
           </div>
         </div>
       </section>
-      <section class="plan-sec">
-        <div class="wrapper plan-content">
-          <figure>
-            <img src="/img/Recruiting/pdf-img.png" alt="" />
-          </figure>
-          <article>
-            <h2>加拿大罗伯森学院在中国</h2>
-            <p>
-              目前，加拿大罗伯森学院在中国区合作学校以达24所。近些年来与中国合作院校保持着长期良好的合作关系。
-            </p>
-            <p>
-              罗伯森学院在医疗保健，商业，社会工作，法律，旅游和技术等领域提供30多种以职业为中心的证书和大专文凭。课程由具有多年该领域经验的行业专业人士授课。
-              罗伯森还设有18个月中国加拿大双认证大专学历，毕业后年即可获得3年加拿大工作签证并申请加拿大永居身份，首年年薪可高达30万人民币。
-            </p>
-            <a
-              href="/img/Recruiting/plan.pdf"
-              class="pdf-download-btn"
-              download="罗伯森学院中国区招生计划完整版"
-            >
-              <img src="/img/Recruiting/download-icon.svg" alt="" />
-              <span>下载罗伯森学院中国区招生计划完整版</span>
-            </a>
-          </article>
-        </div>
-      </section>
-      <section class="coop-schools-sec">
-        <div class="wrapper">
-          <MainTitle title="合作院校" titleEN="COOP SCHOOLS" />
-          <div class="schools-grid">
-            <SchoolCard
-              :schoolsData="d"
-              v-for="(d, index) in schools"
-              :key="index"
-            />
-          </div>
-        </div>
-      </section>
+
       <div class="wrapper">
         <hr />
       </div>
@@ -145,6 +130,24 @@
               {{ school }}
             </li>
           </ul>
+        </div>
+      </section>
+      <div class="wrapper">
+        <hr />
+      </div>
+      <section class="coop-schools-sec">
+        <div class="wrapper">
+          <MainTitle title="加拿大其他合作院校" titleEN="COOP SCHOOLS" />
+          <div class="schools-grid">
+            <div
+              class="school-item"
+              :class="'area' + (index + 1)"
+              v-for="(d, index) in schools"
+              :key="index"
+            >
+              <SchoolCard :schoolsData="d" />
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -318,6 +321,20 @@ const schools = [
     ],
   },
   {
+    area: "Manitoba",
+    university: [
+      "University of Manitoba",
+      "University of Winnipeg",
+      "Brandon University",
+    ],
+    college: [
+      "Red Rivers College",
+      "MITT",
+      "Robertson College",
+      "Assiniboine College",
+    ],
+  },
+  {
     area: "Alberta",
     university: [
       "Grant MacEwan University",
@@ -337,20 +354,7 @@ const schools = [
     university: ["University of Saskachewan", "University of Regina"],
     college: ["Saskachewan Polytechnic"],
   },
-  {
-    area: "Manitoba",
-    university: [
-      "University of Manitoba",
-      "University of Winnipeg",
-      "Brandon University",
-    ],
-    college: [
-      "Red Rivers College",
-      "MITT",
-      "Robertson College",
-      "Assiniboine College",
-    ],
-  },
+
   {
     area: "Quebec",
     university: ["McGill University", "Concordia University"],
@@ -456,6 +460,9 @@ const schools = [
     }
   }
 }
+figure {
+  margin: 0;
+}
 main {
   padding: 100px 0;
 }
@@ -494,11 +501,23 @@ header {
     width: 6px;
     height: 70px;
   }
+  h1::after {
+    content: "8个月加拿大公立学院研究生文凭移民直通车";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: #919191;
+  }
 }
 .intro {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  .img-box {
+    min-width: 300px;
+  }
   h2 {
     font-size: 24px;
     font-weight: bold;
@@ -679,11 +698,54 @@ header {
     }
   }
 }
+// .schools-grid {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-auto-rows: auto;
+//   gap: 20px;
+// }
 .schools-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 20px 20px;
+  grid-template-areas:
+    "area1 area2 area3"
+    "area1 area2 area4"
+    "area5 area6 area7"
+    "area8 area9 area10";
 }
+.area1 {
+  grid-area: area1;
+}
+.area2 {
+  grid-area: area2;
+}
+.area3 {
+  grid-area: area3;
+}
+.area4 {
+  grid-area: area4;
+}
+.area5 {
+  grid-area: area5;
+}
+.area6 {
+  grid-area: area6;
+}
+.area7 {
+  grid-area: area7;
+}
+.area8 {
+  grid-area: area8;
+}
+.area9 {
+  grid-area: area9;
+}
+.area10 {
+  grid-area: area10;
+}
+
 .cn-schools-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -710,6 +772,18 @@ header {
     li {
       font-size: 14px;
     }
+  }
+  .schools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+    grid-template-areas:
+      "area1 area2"
+      "area3 area4"
+      "area5 area6"
+      "area7 area8"
+      "area9 area10";
   }
 }
 @media all and (max-width: 768px) {
@@ -795,8 +869,20 @@ header {
   }
   .schools-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 10px 10px;
+    grid-template-areas:
+      "area1"
+      "area2"
+      "area3"
+      "area4"
+      "area5"
+      "area6"
+      "area7"
+      "area8"
+      "area9"
+      "area10";
   }
   .cn-schools-grid {
     gap: 10px 20px;

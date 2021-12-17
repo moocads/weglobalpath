@@ -10,7 +10,7 @@
       <a href="tel:1-204-963-8886" class="sidebar-link">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
       </a>
-      <a href="mailto:info@beyondcanada.com" class="sidebar-link">
+      <a href="mailto:info@beyondcanada.ca" class="sidebar-link">
         <img src="/img/icons/sidebar-mail.svg" class="contact-icon" />
       </a>
       <a class="sidebar-link" @click="wechatShow = !wechatShow">
