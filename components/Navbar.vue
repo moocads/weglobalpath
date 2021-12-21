@@ -383,4 +383,9 @@ nav {
     background-color: $red;
   }
 }
+@media all and (max-width: 1200px) {
+  .dropdown-wrap {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 </style>
