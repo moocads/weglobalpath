@@ -295,20 +295,20 @@ nav {
   gap: 5px;
   // place-items: center;
   z-index: 99;
-  background: $navy;
+  background: rgb(54, 65, 99);
   ul {
     display: flex;
     flex-direction: column;
   }
   li {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
   a {
     padding: 0px 10px 5px;
     // height: 100%;
-    width: 100%;
+    width: auto;
     color: #fff;
     font-size: 14px;
     font-weight: 400;
@@ -372,6 +372,15 @@ nav {
     font-size: 16px;
     font-weight: bold;
     // text-align: center;
+    position: relative;
+  }
+  & > .main-cate::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    bottom: -20px;
+    left: 0;
+    background-color: $red;
   }
 }
 </style>
