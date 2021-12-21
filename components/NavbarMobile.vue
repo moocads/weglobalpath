@@ -117,8 +117,8 @@ nav {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: $navy;
   // background-image: url("/img/home/marble-bg.png");
   background-blend-mode: multiply;
