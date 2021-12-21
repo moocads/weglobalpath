@@ -24,7 +24,7 @@
       </div>
     </div>
     <a-tabs class="eeTabs">
-      <a-tab-pane tab="技术类移民" key="1">
+      <a-tab-pane tab="技术类移民" key="eeTab1">
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -63,7 +63,7 @@
           </div>
         </section>
       </a-tab-pane>
-      <a-tab-pane tab="技工类移民" key="2">
+      <a-tab-pane tab="技工类移民" key="eeTab2">
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -102,7 +102,7 @@
           </div>
         </section>
       </a-tab-pane>
-      <a-tab-pane tab="经验类移民" key="3">
+      <a-tab-pane tab="经验类移民" key="eeTab3">
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -204,6 +204,7 @@ export default {
       eeData,
     };
   },
+
   data() {
     return {
       hasButton: [],
@@ -351,15 +352,15 @@ export default {
     };
   },
   mounted() {
-    let reqBox = document.querySelectorAll(".requirement-item");
-    console.log(reqBox);
-    for (let i = 0; i < reqBox.length; i++) {
-      if (reqBox[i].clientHeight > 150) {
-        this.hasButton.push(true);
-      } else {
-        this.hasButton.push(false);
-      }
-    }
+    // let reqBox = document.querySelectorAll(".requirement-item");
+    // console.log(reqBox);
+    // for (let i = 0; i < reqBox.length; i++) {
+    //   if (reqBox[i].clientHeight > 150) {
+    //     this.hasButton.push(true);
+    //   } else {
+    //     this.hasButton.push(false);
+    //   }
+    // }
   },
   components: {
     VueMarkdown,

@@ -180,7 +180,7 @@ header {
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 400px;
+  height: 500px;
   display: flex;
   align-items: center;
   position: relative;
