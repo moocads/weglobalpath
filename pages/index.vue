@@ -16,8 +16,9 @@
             class="banner-text banner-text2"
           />
           <p>
-            多年移民留学服务经验 一站式全程规划
-            衔接加拿大移民的高效途径。移民，不走弯路！
+            多年移民留学服务经验，一站式全程规划，衔接加拿大移民的高效途径。<br
+              class="sm-only"
+            />移民，不走弯路！
           </p>
           <NuxtLink to="/contact">
             <button class="main-btn main-btn_blue main-btn_round">
@@ -367,6 +368,9 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+.sm-only {
+  display: none;
+}
 /* ------------------------------------------------------ */
 /*                ANCHOR HERO BANNER STYLE                */
 /* ------------------------------------------------------ */
@@ -425,6 +429,9 @@ header .info-wrap {
 }
 
 @media all and (max-width: 768px) {
+  .sm-only {
+    display: block;
+  }
   header {
     height: 100vh;
     img {
