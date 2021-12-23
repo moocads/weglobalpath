@@ -7,7 +7,7 @@
       alt="Beyond Canada Wechat"
     />
     <div class="icon-bar side">
-      <a href="tel:1-204-963-8886" class="sidebar-link">
+      <a href="tel:16475233555" class="sidebar-link">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
       </a>
       <a href="mailto:info@beyondcanada.ca" class="sidebar-link">

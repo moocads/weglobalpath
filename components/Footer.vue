@@ -16,21 +16,27 @@
             <h4>联系</h4>
             <ul class="contact-info-wrap">
               <li>
-                <img src="/img/icons/phone.svg" alt="" />
-                <a href="tel:+12049638886">204-963-8886</a>
-              </li>
-              <li>
                 <img src="/img/icons/address.svg" alt="" />
                 <p>
                   多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
+                  <br>
+                  <a href="tel:+16475233555">电话：647-523-3555</a>
                 </p>
               </li>
+              <!-- <li>
+                <img src="/img/icons/phone.svg" alt="" />
+              </li> -->
               <li>
                 <img src="/img/icons/address.svg" alt="" />
                 <p>
                   温尼伯：180 Main St, Winnipeg, MB R3C 1A6 (Robertson College)
+                  <br>
+                  <a href="tel:+12049638886">电话：204-963-8886</a>
                 </p>
               </li>
+              <!-- <li>
+                <img src="/img/icons/phone.svg" alt="" />
+              </li> -->
               <li>
                 <img src="/img/icons/email.svg" alt="" />
                 <a href="mailto:info@beyondcanada.ca">info@beyondcanada.ca</a>

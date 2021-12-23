@@ -8,16 +8,16 @@
           class="nav_logo"
         />
       </NuxtLink>
-      <!-- <div class="phone-wrap">
+      <div class="phone-wrap">
         <img
           src="/img/icons/topbar-phone.png"
           alt="加彼岸 Navbar Phone Call Logo"
         />
         <div class="phone-box">
-          <a href="tel:+12049638886">204-963-8886</a>
-          <p>中国地区免费咨询热线</p>
+          <a href="tel:+16475233555">647-523-3555</a>
+          <p>多伦多免费咨询热线</p>
         </div>
-      </div> -->
+      </div>
       <div class="phone-wrap">
         <img
           src="/img/icons/topbar-phone.png"
@@ -25,7 +25,7 @@
         />
         <div class="phone-box">
           <a href="tel:+12049638886">204-963-8886</a>
-          <p>多伦多免费咨询热线</p>
+          <p>温尼伯免费咨询热线</p>
         </div>
       </div>
       <!-- <div class="social-media-wrap">

@@ -2,7 +2,7 @@
 <main>
   <div class="wrapper">
     <section class="construction">
-      <a-row type="flex" justify="middle" align="top" :gutter="[24, 60]">
+      <a-row type="flex" align="center" :gutter="[24, 60]">
         <a-col  :lg="{span: 12, order: 1}" :md="{span: 24, order: 2}" :sm="{span: 24, order: 2}" :xs="{span: 24, order: 2}">
           <h1>
             PAGE UNDER<br>CONSTRUCTION

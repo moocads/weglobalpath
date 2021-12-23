@@ -19,7 +19,8 @@
                 </div>
                 <div class="info">
                   <h2>电话</h2>
-                  <a href="tel:+12049638886">加拿大: 204-963-8886</a>
+                  <a href="tel:+16475233555">多伦多: 647-523-3555</a>
+                  <a href="tel:+12049638886">温尼伯: 204-963-8886</a>
                 </div>
               </div>
               <div class="email-wrap info-wrap">
@@ -41,14 +42,14 @@
                     @click="mapLocation(1)"
                     class="location"
                     :class="{ active: location === 1 }"
-                    ><span>加拿大多伦多：</span>145 Royal Crest Ct Unit 47-48,
+                    ><span>多伦多：</span>145 Royal Crest Ct Unit 47-48,
                     Markham, ON L3R 9Z4
                   </a>
                   <a
                     @click="mapLocation(2)"
                     class="location"
                     :class="{ active: location === 2 }"
-                    ><span>加拿大温尼伯：</span>180 Main St, Winnipeg, MB R3C
+                    ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C
                     1A6 (Robertson College)
                   </a>
                   <span class="disclaimer">点击地址切换地图</span>
@@ -261,6 +262,10 @@ header {
     font-size: 16px;
     color: #505050;
     margin-bottom: 8px;
+
+    &.active, &:hover {
+      color: $red;
+    }
   }
   .info {
     margin-left: 10px;
@@ -288,14 +293,6 @@ header {
   .location {
     span {
       font-weight: 700;
-    }
-
-    &.active {
-      color: $red;
-    }
-
-    &:hover {
-      color: $red;
     }
   }
 
