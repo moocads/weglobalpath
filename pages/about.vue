@@ -112,16 +112,54 @@
       </div>
     </section>
     <!-- <Construction /> -->
-    <section class="sec-6">
+    <a id="anchor-franchise"></a>
+
+    <section class="sec-franchise">
+      <div class="wrapper">
+        <MainTitle
+          title="加盟招商"
+          titleEN="franchise"
+          titleColor="#fff"
+          titleENColor="#233369"
+        />
+        <article>
+          <div class="title">
+            <img src="/img/logos/logo-small-white.png" alt="" />
+            <h2>品牌优势：</h2>
+          </div>
+          <p>
+            拜森国际是中国连接加拿大重要的国际教育桥梁，拥有多年移民教育精英团队，现有100+所合作学校，帮助3000+以上的家庭获得加拿大永居身份，1000+世界性优质合作资源。目前在中国以及加拿大中心城市成功发展了众多合作伙伴。
+          </p>
+          <div class="title">
+            <img src="/img/logos/logo-small-white.png" alt="" />
+            <h2>运营优势：</h2>
+          </div>
+          <p>
+            拜森国际拥有众多一手，独家移民研学项目，是新型教育理念先驱者。拜森国际用多年累积的经验为加盟/合作商提供一套独创的运营销售方案。成功的运营模式是加盟商/合作伙伴盈利的保障。
+          </p>
+          <div class="title">
+            <img src="/img/logos/logo-small-white.png" alt="" />
+            <h2>服务优势：</h2>
+          </div>
+          <p>
+            拜森国际一直致力于为每一个合作伙伴提供专业化定制服务。拜森国际拥有强大的技术售后支持团队。合作伙伴从前期公司运营到后期的维护售后我们都将提供免费服务，让合作伙伴运营公司无后顾之忧。
+          </p>
+        </article>
+      </div>
+    </section>
+    <a id="anchor-joinUs"></a>
+    <section class="sec-joinUs">
       <div class="wrapper">
         <MainTitle title="加入我们" titleEN="join us" />
         <div class="joinUs-info-row">
           <h3>
-            简历投递邮箱：<a href="mailto:info@beyondcanada.ca"
-              >info@beyondcanada.ca</a
-            >
+            简历投递邮箱：
+            <br /><a href="mailto:info@beyondcanada.ca">info@beyondcanada.ca</a>
           </h3>
-          <h3>咨询电话: <a href="tel:+16475233555">647-523-3555</a></h3>
+          <h3>
+            咨询电话: <br />
+            <a href="tel:+16475233555">647-523-3555</a>
+          </h3>
         </div>
         <div class="joinUs-table-wrap">
           <a-table
@@ -129,6 +167,7 @@
             :data-source="joinUsData"
             bordered
             :pagination="false"
+            :align="center"
           >
           </a-table>
         </div>
@@ -243,6 +282,57 @@ const joinUsData = [
   },
 ];
 </script>
+
+<style lang="scss">
+#aboutTimeline {
+  width: 100%;
+  .ant-timeline-item-tail {
+    border-color: $lightGrey;
+  }
+  .label {
+    color: $red;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+    margin: 0px 5px;
+  }
+  .text {
+    margin: 0px 5px;
+    font-size: 16px;
+    margin-bottom: 0px;
+    color: $grey;
+  }
+  .dot .circle {
+    background-color: $red;
+    height: 15px;
+    width: 15px;
+    // padding: 0px 10px;
+    border-radius: 50%;
+  }
+}
+.joinUs-table-wrap {
+  .ant-table-bordered .ant-table-thead > tr > th {
+    background-color: $navy;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+  .ant-table-tbody > tr > td {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 991px) {
+  .joinUs-table-wrap {
+    .ant-table-bordered .ant-table-thead > tr > th {
+      font-size: 13px;
+    }
+    .ant-table-tbody > tr > td {
+      font-size: 13px;
+    }
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 header {
@@ -457,14 +547,49 @@ header {
     flex-direction: column;
   }
 }
+// ANCHOR 加盟招商 section
+.sec-franchise {
+  padding: 50px 0 80px;
+  background-color: $navy;
+}
+.sec-franchise article {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+    font-size: 16px;
+    color: #c4c4c4;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    img {
+      width: 20px;
+      margin-right: 13px;
+    }
+    h2 {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 0;
+      font-weight: 700;
+    }
+    margin-top: 30px;
+  }
+}
+
 // ANCHOR JOIN US STYLE
-.sec-6 {
+.sec-joinUs {
+  padding: 50px 0;
 }
 .joinUs-info-row {
   margin: 0 auto;
   max-width: 1000px;
   display: flex;
   justify-content: space-around;
+  br {
+    display: none;
+  }
   h3,
   a {
     font-size: 20px;
@@ -558,6 +683,49 @@ header {
     margin: auto;
     padding-bottom: 50px;
   }
+  // ANCHOR 加盟招商 section
+  .sec-franchise {
+    padding: 30px 0;
+  }
+  .sec-franchise article {
+    p {
+      font-size: 14px;
+    }
+    .title {
+      align-items: center;
+      margin-bottom: 10px;
+      img {
+        width: 16px;
+        margin-right: 10px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      margin-top: 30px;
+    }
+  }
+  .sec-joinUs {
+    padding: 30px 0;
+  }
+  .joinUs-info-row {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    br {
+      display: block;
+    }
+    h3,
+    a {
+      font-size: 20px;
+      text-align: center;
+    }
+    a {
+      color: $red;
+    }
+  }
 }
 
 @media (max-width: 576px) {
@@ -566,34 +734,6 @@ header {
     display: block;
     margin: auto;
     padding-bottom: 0px;
-  }
-}
-</style>
-<style lang="scss">
-#aboutTimeline {
-  width: 100%;
-  .ant-timeline-item-tail {
-    border-color: $lightGrey;
-  }
-  .label {
-    color: $red;
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 16px;
-    margin: 0px 5px;
-  }
-  .text {
-    margin: 0px 5px;
-    font-size: 16px;
-    margin-bottom: 0px;
-    color: $grey;
-  }
-  .dot .circle {
-    background-color: $red;
-    height: 15px;
-    width: 15px;
-    // padding: 0px 10px;
-    border-radius: 50%;
   }
 }
 </style>

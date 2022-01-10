@@ -2,7 +2,7 @@
   <div>
     <div class="main-title-wrap">
       <p :style="{ color: titleENColor }">{{ titleEN }}</p>
-      <h1 :style="{ fontSize: titleSize }">{{ title }}</h1>
+      <h1 :style="{ fontSize: titleSize, color: titleColor }">{{ title }}</h1>
       <img src="/img/logos/logo-small-blue.png" alt="加彼岸 小型标题 Logo" />
     </div>
   </div>
@@ -12,6 +12,10 @@
 export default {
   props: {
     title: String,
+    titleColor: {
+      type: String,
+      default: "#000000d9",
+    },
     titleEN: String,
     titleENColor: {
       type: String,

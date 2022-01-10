@@ -8,6 +8,16 @@
           </li>
           <li>
             <NuxtLink to="/about">关于我们</NuxtLink>
+            <div class="general-dropdown">
+              <ul>
+                <li>
+                  <a href="#anchor-franchise">加盟招商</a>
+                </li>
+                <li>
+                  <a href="#anchor-joinUs">加入我们</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li>
             <NuxtLink to="/recruiting">中国区招生计划</NuxtLink>
@@ -261,6 +271,7 @@ nav {
     display: flex;
     justify-content: space-between;
     & > li {
+      position: relative;
       height: $nav-height;
       display: flex;
       justify-content: center;
@@ -286,8 +297,51 @@ nav {
   .dropdown-wrap {
     display: grid;
   }
+  .general-dropdown {
+    display: grid;
+  }
 }
+.general-dropdown {
+  display: none;
+  z-index: 99;
+  position: absolute;
+  top: $nav-height;
+  left: 0;
+  background: rgb(54, 65, 99);
+  padding: 20px;
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  a {
+    padding: 0px 10px 5px;
+    // height: 100%;
+    width: auto;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    white-space: nowrap;
+  }
 
+  a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $red;
+    transition: width 0.3s;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+}
 .dropdown-wrap {
   padding: 30px;
   display: none;
@@ -334,33 +388,11 @@ nav {
 .hot-project-link {
   position: relative;
   .hot-project-dropdown {
-    // a {
-    //   padding: 0 20px;
-    //   height: 100%;
-    //   width: 100%;
-    //   color: #fff;
-    //   font-size: 16px;
-    //   font-weight: 400;
-    //   line-height: $nav-dropdown-height;
-    //   @media (max-width: 1200px) {
-    //     padding: 0 15px;
-    //     font-size: 14px;
-    //   }
-    // }
     position: absolute;
     top: $nav-height;
     left: 50%;
     transform: translateX(-40%);
   }
-
-  // .hot-project-dropdown {
-  //   display: grid;
-  //   grid-template-columns: repeat(7, 1fr);
-  //   gap: 0px 20px;
-  //   position: absolute;
-  //   top: $nav-height;
-  //   left: 0;
-  // }
 }
 .project-col {
   display: flex;
