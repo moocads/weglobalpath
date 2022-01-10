@@ -2,7 +2,7 @@
   <div>
     <header>
       <div class="wrapper">
-        <h1>关于我们Beyondcanada</h1>
+        <h1>关于我们</h1>
       </div>
     </header>
     <section class="sec-1 about-sec">
