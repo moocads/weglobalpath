@@ -11,10 +11,13 @@
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <a href="#anchor-franchise">加盟招商</a>
+                  <NuxtLink to="/about#anchor-franchise">加盟招商</NuxtLink>
+                  <!-- <a href="#anchor-franchise">加盟招商</a> -->
                 </li>
                 <li>
-                  <a href="#anchor-joinUs">加入我们</a>
+                  <NuxtLink to="/about#anchor-joinUs">加入我们</NuxtLink>
+
+                  <!-- <a href="#anchor-joinUs">加入我们</a> -->
                 </li>
               </ul>
             </div>
@@ -245,7 +248,8 @@ const hotProjects = [
     background-color: $red;
   }
 }
-.hot-project-dropdown {
+.hot-project-dropdown,
+.general-dropdown {
   .nuxt-link-active,
   .nuxt-link-exact-active {
     background-color: transparent;
