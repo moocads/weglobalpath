@@ -170,6 +170,8 @@
             :align="center"
           >
           </a-table>
+          <br />
+          <p>*所有职位均有提成绩效奖励</p>
         </div>
       </div>
     </section>
