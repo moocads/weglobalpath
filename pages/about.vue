@@ -112,6 +112,28 @@
       </div>
     </section>
     <!-- <Construction /> -->
+    <section class="sec-6">
+      <div class="wrapper">
+        <MainTitle title="加入我们" titleEN="join us" />
+        <div class="joinUs-info-row">
+          <h3>
+            简历投递邮箱：<a href="mailto:info@beyondcanada.ca"
+              >info@beyondcanada.ca</a
+            >
+          </h3>
+          <h3>咨询电话: <a href="tel:+16475233555">647-523-3555</a></h3>
+        </div>
+        <div class="joinUs-table-wrap">
+          <a-table
+            :columns="joinUsCols"
+            :data-source="joinUsData"
+            bordered
+            :pagination="false"
+          >
+          </a-table>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -167,9 +189,59 @@ export default {
           step: "未来给所有人选择国际化教育的机会",
         },
       ],
+      joinUsCols,
+      joinUsData,
     };
   },
 };
+const joinUsCols = [
+  {
+    title: "职位名称",
+    dataIndex: "jobTitle",
+  },
+  {
+    title: " 招聘人数 ",
+    dataIndex: "number",
+  },
+  {
+    title: "薪资 ",
+    dataIndex: "salary",
+  },
+  {
+    title: "工作地点",
+    dataIndex: "jobPosition",
+  },
+];
+const joinUsData = [
+  {
+    key: "1",
+    jobTitle: "行政助理",
+    number: "2",
+    salary: "面议",
+    jobPosition: "广州",
+  },
+  {
+    key: "2",
+    jobTitle: "留学移民顾问",
+    number: "5",
+    salary: "面议",
+    jobPosition: "广州",
+  },
+  {
+    key: "3",
+    jobTitle: "文案专员",
+    number: "2",
+    salary: "面议",
+    jobPosition: "广州",
+  },
+  {
+    key: "4",
+    jobTitle: "留学移民顾问",
+    number: "5",
+    salary: "面议",
+    jobPosition: "多伦多",
+  },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -385,7 +457,26 @@ header {
     flex-direction: column;
   }
 }
-
+// ANCHOR JOIN US STYLE
+.sec-6 {
+}
+.joinUs-info-row {
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  h3,
+  a {
+    font-size: 20px;
+  }
+  a {
+    color: $red;
+  }
+}
+.joinUs-table-wrap {
+  margin: 20px auto;
+  max-width: 1000px;
+}
 @media all and (max-width: 991px) {
   header {
     background-position: bottom;
