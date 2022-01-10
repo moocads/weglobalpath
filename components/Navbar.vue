@@ -11,7 +11,9 @@
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <NuxtLink to="/about#anchor-franchise">加盟招商</NuxtLink>
+                  <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }"
+                    >加盟招商</NuxtLink
+                  >
                   <!-- <a href="#anchor-franchise">加盟招商</a> -->
                 </li>
                 <li>
@@ -24,6 +26,25 @@
           </li>
           <li>
             <NuxtLink to="/recruiting">中国区招生计划</NuxtLink>
+            <!-- <div class="general-dropdown">
+              <ul>
+                <li>
+                  <NuxtLink to="/recruiting/manitoba"
+                    >曼省人才管培项目</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink to="/recruiting"
+                    >8个月加拿大公立学院研究生文凭移民直通车</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink to="/recruiting/canadian-schools"
+                    >加拿大合作院校</NuxtLink
+                  >
+                </li>
+              </ul>
+            </div> -->
           </li>
           <li class="hot-project-link">
             <NuxtLink to="/projects">热门项目</NuxtLink>
