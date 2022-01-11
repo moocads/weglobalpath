@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <a-tabs class="eeTabs">
+    <a-tabs class="eeTabs" :default-active-key="`eeTab${defaultTab}`">
       <a-tab-pane tab="技术类移民" key="eeTab1">
         <section class="sec-introduction">
           <div class="wrapper">
@@ -55,7 +55,6 @@
                 <RequirementItem
                   :title="item.title"
                   :requirementsData="item.requirement_points"
-                  :hasButtonProp="hasButton[index]"
                 />
                 <!-- {{ hasButton }} -->
               </div>
@@ -94,7 +93,6 @@
                 <RequirementItem
                   :title="item.title"
                   :requirementsData="item.requirement_points"
-                  :hasButtonProp="hasButton[index]"
                 />
                 <!-- {{ hasButton }} -->
               </div>
@@ -136,7 +134,6 @@
                 <RequirementItem
                   :title="item.title"
                   :requirementsData="item.requirement_points"
-                  :hasButtonProp="hasButton[index]"
                 />
                 <!-- {{ hasButton }} -->
               </div>
@@ -208,6 +205,7 @@ export default {
   data() {
     return {
       hasButton: [],
+      defaultTab: this.$store.state.ee || 1,
       tab1: [
         {
           title: "经验要求",
@@ -361,6 +359,9 @@ export default {
     //     this.hasButton.push(false);
     //   }
     // }
+    if (this.$store.state.ee) {
+      this.$store.commit('setEe', undefined)
+    }
   },
   components: {
     VueMarkdown,

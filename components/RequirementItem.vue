@@ -36,10 +36,10 @@ export default {
   },
   props: {
     title: String,
-    requirementsData: Object,
+    requirementsData: Array,
     hasButtonProp: {
       type: Boolean,
-      required: true,
+      default: false
     },
   },
 };

@@ -70,6 +70,23 @@
                 <NuxtLink to="/projects/ee" class="main-cate"
                   >联邦EE快速通道项目</NuxtLink
                 >
+                <ul>
+                  <li>
+                    <a @click="eeLink(1)">
+                      技术类移民
+                    </a>
+                  </li>
+                  <li>
+                    <a @click="eeLink(2)">
+                      技工类移民
+                    </a>
+                  </li>
+                  <li>
+                    <a @click="eeLink(3)">
+                      经验类移民
+                    </a>
+                  </li>
+                </ul>
                 <!-- <ul>
                   <li>
                     <a
@@ -330,6 +347,11 @@ export default {
       this.$store.commit('setProvince', id)
       // console.log(this.$store.state.province)
       this.$router.push('/provinces')
+    },
+    eeLink(id) {
+      this.$store.commit('setEe', id)
+      // console.log(this.$store.state.province)
+      this.$router.push('/projects/ee')
     }
   },
 };
