@@ -11,16 +11,40 @@
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <a href="#anchor-franchise">加盟招商</a>
+                  <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }"
+                    >加盟招商</NuxtLink
+                  >
+                  <!-- <a href="#anchor-franchise">加盟招商</a> -->
                 </li>
                 <li>
-                  <a href="#anchor-joinUs">加入我们</a>
+                  <NuxtLink to="/about#anchor-joinUs">加入我们</NuxtLink>
+
+                  <!-- <a href="#anchor-joinUs">加入我们</a> -->
                 </li>
               </ul>
             </div>
           </li>
           <li>
             <NuxtLink to="/recruiting">中国区招生计划</NuxtLink>
+            <!-- <div class="general-dropdown">
+              <ul>
+                <li>
+                  <NuxtLink to="/recruiting/manitoba"
+                    >曼省人才管培项目</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink to="/recruiting"
+                    >8个月加拿大公立学院研究生文凭移民直通车</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink to="/recruiting/canadian-schools"
+                    >加拿大合作院校</NuxtLink
+                  >
+                </li>
+              </ul>
+            </div> -->
           </li>
           <li class="hot-project-link">
             <NuxtLink to="/projects">热门项目</NuxtLink>
@@ -317,7 +341,8 @@ export default {
     background-color: $red;
   }
 }
-.hot-project-dropdown {
+.hot-project-dropdown,
+.general-dropdown {
   .nuxt-link-active,
   .nuxt-link-exact-active {
     background-color: transparent;

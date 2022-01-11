@@ -107,6 +107,14 @@ export default {
     list-style-type: disc;
     margin-left: 25px;
   }
+  img {
+    max-width: 1000px;
+    width: 100%;
+  }
+  a {
+    color: $navy;
+    text-decoration: underline;
+  }
 }
 #province-project-page {
   hr {
@@ -151,6 +159,9 @@ export default {
     hr {
       margin: 30px auto;
     }
+  }
+  .province-project-content {
+    padding: 10px;
   }
 }
 </style>
