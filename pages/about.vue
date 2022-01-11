@@ -167,7 +167,7 @@
             :data-source="joinUsData"
             bordered
             :pagination="false"
-            :align="center"
+            :align="middle"
           >
           </a-table>
         </div>

@@ -9,10 +9,10 @@
       <div class="wrapper">
         <div class="tab-grid">
           <div
-            :class="{ 'tab-active': index === activeItem }"
             class="tab-item"
             v-for="(tab, index) in projects"
             :key="index"
+            :class="{ 'tab-active': index === activeItem }"
             @click="[selectItem(index), (tabSelected = tab.id - 1)]"
           >
             <h2>{{ tab.name }}</h2>
@@ -63,9 +63,15 @@ export default {
   },
   data() {
     return {
-      tabSelected: "0",
+      tabSelected: this.$store.state.province - 1 || 0,
       activeItem: 0,
     };
+  },
+  created() {
+    if (this.$store.state.province) {
+      this.activeItem = this.tabSelected
+      this.$store.commit('setProvince', undefined)
+    }
   },
   async asyncData({ $axios }) {
     const projectData = await $axios.$get(`/province-projects`, {

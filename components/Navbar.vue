@@ -77,8 +77,26 @@
           <li>
             <NuxtLink to="/cases">成功案例</NuxtLink>
           </li>
-          <li>
+          <li class="hot-project-link">
             <NuxtLink to="/provinces">移民省份</NuxtLink>
+            <div class="hot-project-dropdown dropdown-wrap">
+              <div
+                class="project-col"
+                v-for="(province, index) in provinces"
+                :key="index"
+              >
+                <NuxtLink to="/provinces" class="main-cate">{{
+                  province.main_cate
+                }}</NuxtLink>
+                <ul class="province-list">
+                  <li v-for="subItem in province.second_cate" :key="subItem.id">
+                    <a @click="provinceLink(subItem.id)">
+                      {{ subItem.name }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li>
             <NuxtLink to="/investment">加拿大投资</NuxtLink>
@@ -96,19 +114,54 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      isActive: false,
-      hotProjects,
-    };
+const provinces = [
+  {
+    main_cate: "移民省份项目",
+    url: "/projects/provinces",
+    second_cate: [
+      {
+        id: "1",
+        name: "安大略省",
+      },
+      {
+        id: "2",
+        name: "曼尼托巴省",
+      },
+      {
+        id: "3",
+        name: "爱德华王子岛",
+      },
+      {
+        id: "4",
+        name: "纽芬兰省",
+      },
+      {
+        id: "5",
+        name: "BC省",
+      },
+      {
+        id: "6",
+        name: "阿尔伯塔省",
+      },
+      {
+        id: "7",
+        name: "萨斯喀彻温省",
+      },
+      {
+        id: "8",
+        name: "新不伦瑞克省",
+      },
+      {
+        id: "9",
+        name: "新斯科舍省",
+      },
+      {
+        id: "10",
+        name: "魁北克省",
+      },
+    ],
   },
-  methods: {
-    // navbarActive:function(){
-    //   this.isActive = !
-    // }
-  },
-};
+];
 const hotProjects = [
   {
     main_cate: "加拿大企业家移民",
@@ -237,6 +290,25 @@ const hotProjects = [
     url: "/projects/new-immigrant",
   },
 ];
+export default {
+  data() {
+    return {
+      isActive: false,
+      hotProjects,
+      provinces
+    };
+  },
+  methods: {
+    // navbarActive:function(){
+    //   this.isActive = !
+    // }
+    provinceLink(id) {
+      this.$store.commit('setProvince', id)
+      // console.log(this.$store.state.province)
+      this.$router.push('/provinces')
+    }
+  },
+};
 </script>
 <style lang="scss">
 .navbar-wrap {
@@ -415,6 +487,18 @@ nav {
     background-color: $red;
   }
 }
+
+.dropdown-wrap .province-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 220px;
+  
+  li {
+    width: 110px
+  }
+}
+
 @media all and (max-width: 1200px) {
   .dropdown-wrap {
     grid-template-columns: repeat(5, 1fr);
