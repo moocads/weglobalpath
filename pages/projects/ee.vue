@@ -23,8 +23,9 @@
         </div>
       </div>
     </div>
-    <a-tabs class="eeTabs" :default-active-key="`eeTab${defaultTab}`">
-      <a-tab-pane tab="技术类移民" key="eeTab1">
+    <a-tabs class="eeTabs" :activeKey="`eeTab${defaultTab}`">
+      <a-tab-pane key="eeTab1">
+        <div slot="tab" class="customTab" @click="defaultTab = 1">技术类移民</div>
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -62,7 +63,8 @@
           </div>
         </section>
       </a-tab-pane>
-      <a-tab-pane tab="技工类移民" key="eeTab2">
+      <a-tab-pane key="eeTab2">
+        <div slot="tab" class="customTab" @click="defaultTab = 2">技工类移民</div>
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -100,7 +102,8 @@
           </div>
         </section>
       </a-tab-pane>
-      <a-tab-pane tab="经验类移民" key="eeTab3">
+      <a-tab-pane key="eeTab3">
+        <div slot="tab" class="customTab" @click="defaultTab = 3">经验类移民</div>
         <section class="sec-introduction">
           <div class="wrapper">
             <MainTitle
@@ -201,7 +204,28 @@ export default {
       eeData,
     };
   },
-
+  mounted() {
+    // let reqBox = document.querySelectorAll(".requirement-item");
+    // console.log(reqBox);
+    // for (let i = 0; i < reqBox.length; i++) {
+    //   if (reqBox[i].clientHeight > 150) {
+    //     this.hasButton.push(true);
+    //   } else {
+    //     this.hasButton.push(false);
+    //   }
+    // }
+  },
+  beforeDestroy() {
+    if (this.$store.state.ee) {
+      this.$store.commit('setEe', undefined)
+    }
+  },
+  watch: {
+    '$store.state.ee': function() {
+      // console.log(this.$store.state.ee)
+      this.defaultTab = this.$store.state.ee
+    }
+  },
   data() {
     return {
       hasButton: [],
@@ -349,20 +373,6 @@ export default {
       ],
     };
   },
-  mounted() {
-    // let reqBox = document.querySelectorAll(".requirement-item");
-    // console.log(reqBox);
-    // for (let i = 0; i < reqBox.length; i++) {
-    //   if (reqBox[i].clientHeight > 150) {
-    //     this.hasButton.push(true);
-    //   } else {
-    //     this.hasButton.push(false);
-    //   }
-    // }
-    if (this.$store.state.ee) {
-      this.$store.commit('setEe', undefined)
-    }
-  },
   components: {
     VueMarkdown,
   },
@@ -384,9 +394,14 @@ export default {
       background-color: $navy;
       color: white;
       margin-right: 10px;
+      padding: 0;
 
       &.ant-tabs-tab-active {
         background-color: $red;
+      }
+
+      .customTab {
+        padding: 12px 16px;
       }
     }
 

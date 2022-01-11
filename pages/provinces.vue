@@ -70,7 +70,18 @@ export default {
   created() {
     if (this.$store.state.province) {
       this.activeItem = this.tabSelected
+    }
+  },
+  beforeDestroy() {
+    if (this.$store.state.province) {
       this.$store.commit('setProvince', undefined)
+    }
+  },
+  watch: {
+    '$store.state.province': function() {
+      // console.log(this.$store.state.ee)
+      this.tabSelected = this.$store.state.province - 1
+      this.activeItem = this.tabSelected
     }
   },
   async asyncData({ $axios }) {
