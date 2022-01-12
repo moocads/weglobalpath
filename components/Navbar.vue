@@ -25,7 +25,7 @@
             </div>
           </li>
           <li>
-            <NuxtLink to="/recruiting">中国区招生计划</NuxtLink>
+            <NuxtLink to="/recruiting">快速移民直通车</NuxtLink>
             <!-- <div class="general-dropdown">
               <ul>
                 <li>

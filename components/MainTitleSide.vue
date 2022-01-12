@@ -4,7 +4,7 @@
       <p>{{ titleEN }}</p>
       <div class="title-wrap">
         <img src="/img/logos/logo-small-blue.png" alt="" />
-        <h1>{{ title }}</h1>
+        <h2>{{ title }}</h2>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@ p {
   margin: 0;
   margin-left: 50px;
 }
-h1 {
+h2 {
   font-size: 32px;
   font-weight: 700;
   margin-top: -5px;
@@ -61,7 +61,7 @@ img {
     margin: 0;
     margin-left: 30px;
   }
-  h1 {
+  h2 {
     font-size: 28px;
     font-weight: 500;
     margin: 0;
