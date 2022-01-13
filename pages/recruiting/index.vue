@@ -7,39 +7,36 @@
     </header>
     <main>
       <div class="redDivider">
-        曼省人才管培项目 - 紧缺职业（4.2万包学费、包签证、包职场管理培训，顺利移居加拿大）
+        曼省人才管培项目 -
+        紧缺职业（4.2万包学费、包签证、包职场管理培训，顺利移居加拿大）
       </div>
-      <section class="sec-introduction" style="background-color: #efefef;">
-        <div class="wrapper" >
+      <section class="sec-introduction" style="background-color: #efefef">
+        <div class="wrapper">
           <MainTitle
-              title="项目介绍"
-              titleEN="INTRODUCTION"
-              titleColor="#1b2854"
-              titleENColor="#DADADA"
+            title="项目介绍"
+            titleEN="INTRODUCTION"
+            titleColor="#1b2854"
+            titleENColor="#DADADA"
           />
           加拿大的移民趋势永远是跟着劳动力市场需求走的，准移民申请人们想要成功申请枫叶卡，了解加拿大的人才需求至关重要。加彼岸™独家启动曼省人才管培项目，能够让更多的人才通过紧缺专业学习进入到加拿大本地市场发展。该项目提供紧缺职业的加拿大公立院校一年专业课程且与紧缺行业相关的工作职位。
         </div>
       </section>
       <section class="contactLink">
         <div class="wrapper">
-          <a-row type="flex" align="center" :gutter="[36,36]">
-            <a-col :lg="{span:11}" :md="{span:24}">
+          <a-row type="flex" align="center" :gutter="[36, 36]">
+            <a-col :lg="{ span: 11 }" :md="{ span: 24 }">
               <div class="imgContainer">
-                <img src="/img/recruiting/intro.png" alt="Beyond Canada">
+                <img src="/img/recruiting/intro.png" alt="Beyond Canada" />
               </div>
             </a-col>
-            <a-col :lg="{span:13}" :md="{span:24}">
+            <a-col :lg="{ span: 13 }" :md="{ span: 24 }">
               <div class="txtContainer">
-                <h3>
-                  加拿大紧缺职位更具竞争力
-                </h3>
+                <h3>加拿大紧缺职位更具竞争力</h3>
                 <p>
                   紧缺职业涉及的行业十分广泛，从金融到科学、从建筑到信息技术、从医生到幼教，各行各业都有特定的岗位急需人力填充。在推进移民过程中，不仅是选对合适的移民项目，有时也在于是否选择紧缺职业的雇主，使自己的职业更具竞争力。选择比努力更重要，在移民路上也是一样的。选对了项目、选对了职业的话能一定程度影响申请移民的效率和成功率。
                 </p>
                 <nuxt-link to="/contact">
-                  <a-button>
-                    联系我们
-                  </a-button>
+                  <a-button> 联系我们 </a-button>
                 </nuxt-link>
               </div>
             </a-col>
@@ -55,43 +52,46 @@
             </div>
             <h2>高级合作伙伴</h2>
           </div>
-          <a-row type="flex" align="center" :gutter="[36,36]">
-            <a-col :lg="{span:8}" :md="{span:24}">
+          <a-row type="flex" align="center" :gutter="[36, 36]">
+            <a-col :lg="{ span: 8 }" :md="{ span: 24 }">
               <div class="imgContainer">
-                <img src="/img/recruiting/partner.jpg" alt="Beyond Canada">
-                <p class="name">
-                  Liz Choi
-                </p>
-                <p>
-                  CEO首席执行官
-                </p>
-                <p>
-                  温尼伯商会主席
-                </p>
-                <p>
-                  罗伯森学院执行院长
-                </p>
+                <img src="/img/recruiting/partner.jpg" alt="Beyond Canada" />
+                <p class="name">Liz Choi</p>
+                <p>CEO首席执行官</p>
+                <p>温尼伯商会主席</p>
+                <p>罗伯森学院执行院长</p>
               </div>
             </a-col>
-            <a-col :lg="{span:16}" :md="{span:24}">
+            <a-col :lg="{ span: 16 }" :md="{ span: 24 }">
               <div class="txtContainer">
                 <p>
-                  Liz Choi是高等教育领域公认的领军人物，在开发国际教育的核心渠道方面，取得了巨大的成功，并积累了丰富的经验。她的专长几乎涵盖了发展国际学生的所有关键领域，如营销，招聘，行政以及战略合作，更重要的还有项目的前期开发，后期执行和最终评估。
+                  Liz
+                  Choi是高等教育领域公认的领军人物，在开发国际教育的核心渠道方面，取得了巨大的成功，并积累了丰富的经验。她的专长几乎涵盖了发展国际学生的所有关键领域，如营销，招聘，行政以及战略合作，更重要的还有项目的前期开发，后期执行和最终评估。
                 </p>
                 <p>
-                  凭借她取得的卓越成就，Liz Choi 一再展示了她善于找准时机把握机会的强大能力，并且能够在此基础上把机会，最大化的转变为教育领域的价值; 不断超越学校或者她自己所设定的已经难以企及的目标。作为一个在专业技术教育领域有着创业意识的思想者，Liz Choi以前超前的意识，有前瞻性的远见，和高效的原创解决方案而闻名；再结合她广泛的商业知识和娴熟的执行能力，Liz Choi已经成为高等教育领域的领导者。
+                  凭借她取得的卓越成就，Liz Choi
+                  一再展示了她善于找准时机把握机会的强大能力，并且能够在此基础上把机会，最大化的转变为教育领域的价值;
+                  不断超越学校或者她自己所设定的已经难以企及的目标。作为一个在专业技术教育领域有着创业意识的思想者，Liz
+                  Choi以前超前的意识，有前瞻性的远见，和高效的原创解决方案而闻名；再结合她广泛的商业知识和娴熟的执行能力，Liz
+                  Choi已经成为高等教育领域的领导者。
                 </p>
                 <p>
-                  作为国际教育市场公认的专家，Liz Choi一直是把企业级战略路线应用到教育领域的重要推动力，在政策制定，业务发展和流程开发方面具有成熟的经验。此外，她还是一个高效的问题解决者，面对复杂的挑战，可以正确的分析和解决；创建跨领域的改进，制定战略计划，以及管理和执行企业的各种改变，来提高商业成果。
+                  作为国际教育市场公认的专家，Liz
+                  Choi一直是把企业级战略路线应用到教育领域的重要推动力，在政策制定，业务发展和流程开发方面具有成熟的经验。此外，她还是一个高效的问题解决者，面对复杂的挑战，可以正确的分析和解决；创建跨领域的改进，制定战略计划，以及管理和执行企业的各种改变，来提高商业成果。
                 </p>
                 <p>
-                  作为一个备受尊敬的高管，Liz Choi的自律性以及主动工作能力一直被业界人士所认可；同时，她出色的沟通能力和交流技巧，更让她在自己的领域里取得卓越的成绩。
+                  作为一个备受尊敬的高管，Liz
+                  Choi的自律性以及主动工作能力一直被业界人士所认可；同时，她出色的沟通能力和交流技巧，更让她在自己的领域里取得卓越的成绩。
                 </p>
                 <p>
-                  Liz Choi拥有曼尼托巴大学的学士和硕士学位，专业是教育；核心领域和研究主要是高等教育的国际化-如何将考察转化为专业的视角，如何寻求最佳途径和方法，如何缩小国际化过程中的差异，以及如何通过更有效的综合方法取得更好的成果。
+                  Liz
+                  Choi拥有曼尼托巴大学的学士和硕士学位，专业是教育；核心领域和研究主要是高等教育的国际化-如何将考察转化为专业的视角，如何寻求最佳途径和方法，如何缩小国际化过程中的差异，以及如何通过更有效的综合方法取得更好的成果。
                 </p>
                 <p>
-                  在担任现任职务之前，Liz Choi在曼省第二大公立学院-曼尼托巴科学技术学院担任过多个高级职位，其中包括：副校长；学生和战略伙伴关系部副总裁; 国际部副总裁; 国际教育执行总裁。她还是曼省非营利性机构，曼尼托巴省最大的百年商会“温尼伯商会”的主席。
+                  在担任现任职务之前，Liz
+                  Choi在曼省第二大公立学院-曼尼托巴科学技术学院担任过多个高级职位，其中包括：副校长；学生和战略伙伴关系部副总裁;
+                  国际部副总裁;
+                  国际教育执行总裁。她还是曼省非营利性机构，曼尼托巴省最大的百年商会“温尼伯商会”的主席。
                 </p>
               </div>
             </a-col>
@@ -101,26 +101,30 @@
       <section class="servicesProvided">
         <div class="wrapper">
           <MainTitle
-              title="项目服务概括"
-              titleEN="SERVICES PROVIDED"
-              titleColor="#1b2854"
-              titleENColor="#DADADA"
+            title="项目服务概括"
+            titleEN="SERVICES PROVIDED"
+            titleColor="#1b2854"
+            titleENColor="#DADADA"
           />
           <div class="content">
             <ul>
-              <a-row type="flex" align="center" :gutter="[24,0]">
-                <a-col :lg="{span:8}" :md="{span:12}" :xs="{span:24}">
+              <a-row type="flex" align="center" :gutter="[24, 0]">
+                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
                   <li>一年紧缺专业课程学习＋加拿大职场文化管理培训</li>
                   <li>学生毕业后，直接进入紧缺行业公司</li>
                   <li>2-2.5年时间完成留学+移民</li>
                 </a-col>
-                <a-col :lg="{span:8}" :md="{span:12}" :xs="{span:24}">
+                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
                   <li>加拿大公立院校，毕业后获得毕业工签</li>
-                  <li>提供加拿大企业紧缺工作机会，以及其他本地企业一体化留学工作移居全方位服务</li>
+                  <li>
+                    提供加拿大企业紧缺工作机会，以及其他本地企业一体化留学工作移居全方位服务
+                  </li>
                 </a-col>
-                <a-col :lg="{span:8}" :md="{span:12}" :xs="{span:24}">
+                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
                   <li>为学生提供学生公寓、寄宿家庭、租房等多种选择</li>
-                  <li>抵达曼省后提供专人接机、办理银行卡、电话卡等贴心生活服务</li>
+                  <li>
+                    抵达曼省后提供专人接机、办理银行卡、电话卡等贴心生活服务
+                  </li>
                 </a-col>
               </a-row>
             </ul>
@@ -153,10 +157,10 @@
       <section>
         <div class="wrapper">
           <MainTitle
-              title="项目细节"
-              titleEN="DETAILS"
-              titleColor="#1b2854"
-              titleENColor="#DADADA"
+            title="项目细节"
+            titleEN="DETAILS"
+            titleColor="#1b2854"
+            titleENColor="#DADADA"
           />
         </div>
       </section>
@@ -327,7 +331,7 @@ export default {
       columns,
       schools,
       cnSchools,
-      requirements
+      requirements,
     };
   },
 };
@@ -348,8 +352,7 @@ const requirements = [
     title: "年龄要求",
     requirement_points: [
       {
-        point:
-          "没有年龄限制，但是只有25-49岁的申请人才能获得年龄加分。",
+        point: "没有年龄限制，但是只有25-49岁的申请人才能获得年龄加分。",
       },
     ],
   },
@@ -357,8 +360,7 @@ const requirements = [
     title: "语言水平",
     requirement_points: [
       {
-        point:
-          "至少达到CLB/NCLC5",
+        point: "至少达到CLB/NCLC5",
       },
     ],
   },
@@ -366,8 +368,7 @@ const requirements = [
     title: "学历要求",
     requirement_points: [
       {
-        point:
-          "至少达到加拿大高中学历",
+        point: "至少达到加拿大高中学历",
       },
     ],
   },
@@ -375,7 +376,8 @@ const requirements = [
     title: "商业经验",
     requirement_points: [
       {
-        point: "申请人过去五年中至少有三年全职工作经验，作为企业主经营一个活跃的企业或者在成功企业中担任高管；",
+        point:
+          "申请人过去五年中至少有三年全职工作经验，作为企业主经营一个活跃的企业或者在成功企业中担任高管；",
       },
       {
         point: "与高管相比，申请人的企业主经验将获得更高的分数；",
@@ -389,16 +391,13 @@ const requirements = [
     title: "商业投资",
     requirement_points: [
       {
-        point:
-          "在曼尼托巴首都地区投资企业，投资额至少25万加币；",
+        point: "在曼尼托巴首都地区投资企业，投资额至少25万加币；",
       },
       {
-        point:
-          "在曼尼托巴首都地区以外投资企业，投资额至少15万加币；",
+        point: "在曼尼托巴首都地区以外投资企业，投资额至少15万加币；",
       },
       {
-        point:
-          "商业投资必须用于MPNP指定的合格企业；",
+        point: "商业投资必须用于MPNP指定的合格企业；",
       },
     ],
   },
@@ -406,8 +405,7 @@ const requirements = [
     title: "商业考察访问",
     requirement_points: [
       {
-        point:
-          "作为申请的一部分，商业计划是必需的； ",
+        point: "作为申请的一部分，商业计划是必需的； ",
       },
       {
         point:
@@ -834,7 +832,7 @@ header {
 
     ul {
       list-style-type: disc;
-      
+
       li {
         margin-left: 15px;
         color: $navy;

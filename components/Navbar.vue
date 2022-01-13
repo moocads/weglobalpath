@@ -49,7 +49,7 @@
           <li class="hot-project-link">
             <NuxtLink to="/projects">热门项目</NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
-              <div
+              <!-- <div
                 class="project-col"
                 v-for="(hotProj, index) in hotProjects"
                 :key="index"
@@ -65,6 +65,71 @@
                     >
                   </li>
                 </ul>
+              </div> -->
+
+              <div class="project-col">
+                <NuxtLink :to="hotProjects[0].url" class="main-cate">{{
+                  hotProjects[0].main_cate
+                }}</NuxtLink>
+
+                <ul>
+                  <li
+                    v-for="subItem in hotProjects[0].second_cate"
+                    :key="subItem.id"
+                  >
+                    <NuxtLink :to="`${hotProjects[0].url}/${subItem.id}`">
+                      {{ subItem.name }}</NuxtLink
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <NuxtLink :to="hotProjects[1].url" class="main-cate">{{
+                  hotProjects[1].main_cate
+                }}</NuxtLink>
+
+                <ul>
+                  <li
+                    v-for="subItem in hotProjects[1].second_cate"
+                    :key="subItem.id"
+                  >
+                    <NuxtLink :to="`${hotProjects[1].url}/${subItem.id}`">
+                      {{ subItem.name }}</NuxtLink
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <NuxtLink :to="hotProjects[2].url" class="main-cate">{{
+                  hotProjects[2].main_cate
+                }}</NuxtLink>
+
+                <ul>
+                  <li
+                    v-for="subItem in hotProjects[2].second_cate"
+                    :key="subItem.id"
+                  >
+                    <NuxtLink :to="`${hotProjects[2].url}/${subItem.id}`">
+                      {{ subItem.name }}</NuxtLink
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <NuxtLink :to="hotProjects[3].url" class="main-cate">{{
+                  hotProjects[3].main_cate
+                }}</NuxtLink>
+
+                <ul>
+                  <li
+                    v-for="subItem in hotProjects[3].second_cate"
+                    :key="subItem.id"
+                  >
+                    <NuxtLink :to="`${hotProjects[3].url}/${subItem.id}`">
+                      {{ subItem.name }}</NuxtLink
+                    >
+                  </li>
+                </ul>
               </div>
               <div class="project-col">
                 <NuxtLink to="/projects/ee" class="main-cate"
@@ -72,47 +137,48 @@
                 >
                 <ul>
                   <li>
-                    <a @click="eeLink(1)">
-                      技术类移民
-                    </a>
+                    <a @click="eeLink(1)"> 技术类移民 </a>
                   </li>
                   <li>
-                    <a @click="eeLink(2)">
-                      技工类移民
-                    </a>
+                    <a @click="eeLink(2)"> 技工类移民 </a>
                   </li>
                   <li>
-                    <a @click="eeLink(3)">
-                      经验类移民
-                    </a>
+                    <a @click="eeLink(3)"> 经验类移民 </a>
                   </li>
                 </ul>
-                <!-- <ul>
-                  <li>
-                    <a
-                      @click="
-                        $router.push({
-                          path: '/projects/ee',
-                          params: { id: 'pie' },
-                        })
-                      "
-                    >
-                      tab1
-                    </a>
-                  </li>
-                </ul> -->
               </div>
-              <!-- <ul>
-                <NuxtLink to="/projects/entrepreneur"
-                  >加拿大企业家移民</NuxtLink
-                >
-                <NuxtLink to="/projects/startup">加拿大创业人才移民</NuxtLink>
-                <NuxtLink to="/projects/nominee">加拿大雇主担保</NuxtLink>
-                <NuxtLink to="/projects/education">加拿大留学移民</NuxtLink>
-                <NuxtLink to="/projects/ee">联邦EE快速通道</NuxtLink>
-                <NuxtLink to="/projects/reunion">加拿大团聚移民</NuxtLink>
-                <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
-              </ul> -->
+              <div class="project-col">
+                <NuxtLink :to="hotProjects[4].url" class="main-cate">{{
+                  hotProjects[4].main_cate
+                }}</NuxtLink>
+
+                <ul>
+                  <li
+                    v-for="subItem in hotProjects[4].second_cate"
+                    :key="subItem.id"
+                  >
+                    <NuxtLink :to="`${hotProjects[4].url}/${subItem.id}`">
+                      {{ subItem.name }}</NuxtLink
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <NuxtLink :to="hotProjects[5].url" class="main-cate">{{
+                  hotProjects[5].main_cate
+                }}</NuxtLink>
+
+                <ul>
+                  <li
+                    v-for="subItem in hotProjects[5].second_cate"
+                    :key="subItem.id"
+                  >
+                    <NuxtLink :to="`${hotProjects[5].url}/${subItem.id}`">
+                      {{ subItem.name }}</NuxtLink
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
           <li>
@@ -155,54 +221,30 @@
 </template>
 
 <script>
-const provinces = [
-  {
-    main_cate: "移民省份项目",
-    url: "/projects/provinces",
-    second_cate: [
-      {
-        id: "1",
-        name: "安大略省",
-      },
-      {
-        id: "2",
-        name: "曼尼托巴省",
-      },
-      {
-        id: "3",
-        name: "爱德华王子岛",
-      },
-      {
-        id: "4",
-        name: "纽芬兰省",
-      },
-      {
-        id: "5",
-        name: "BC省",
-      },
-      {
-        id: "6",
-        name: "阿尔伯塔省",
-      },
-      {
-        id: "7",
-        name: "萨斯喀彻温省",
-      },
-      {
-        id: "8",
-        name: "新不伦瑞克省",
-      },
-      {
-        id: "9",
-        name: "新斯科舍省",
-      },
-      {
-        id: "10",
-        name: "魁北克省",
-      },
-    ],
+export default {
+  data() {
+    return {
+      isActive: false,
+      hotProjects,
+      provinces,
+    };
   },
-];
+  methods: {
+    // navbarActive:function(){
+    //   this.isActive = !
+    // }
+    provinceLink(id) {
+      this.$store.commit("setProvince", id);
+      // console.log(this.$store.state.province)
+      this.$router.push("/provinces");
+    },
+    eeLink(id) {
+      this.$store.commit("setEe", id);
+      // console.log(this.$store.state.province)
+      this.$router.push("/projects/ee");
+    },
+  },
+};
 const hotProjects = [
   {
     main_cate: "加拿大企业家移民",
@@ -270,7 +312,7 @@ const hotProjects = [
       },
       {
         id: "14",
-        name: "海洋省雇主担保AIPP",
+        name: "大西洋移民计划AIP",
       },
       {
         id: "15",
@@ -306,6 +348,10 @@ const hotProjects = [
         id: "21",
         name: "NB省留学移民",
       },
+      {
+        id: "25",
+        name: "旅游签转学签",
+      },
     ],
   },
   // {
@@ -331,30 +377,54 @@ const hotProjects = [
     url: "/projects/new-immigrant",
   },
 ];
-export default {
-  data() {
-    return {
-      isActive: false,
-      hotProjects,
-      provinces
-    };
+const provinces = [
+  {
+    main_cate: "移民省份项目",
+    url: "/projects/provinces",
+    second_cate: [
+      {
+        id: "1",
+        name: "安大略省",
+      },
+      {
+        id: "2",
+        name: "曼尼托巴省",
+      },
+      {
+        id: "3",
+        name: "爱德华王子岛",
+      },
+      {
+        id: "4",
+        name: "纽芬兰省",
+      },
+      {
+        id: "5",
+        name: "BC省",
+      },
+      {
+        id: "6",
+        name: "阿尔伯塔省",
+      },
+      {
+        id: "7",
+        name: "萨斯喀彻温省",
+      },
+      {
+        id: "8",
+        name: "新不伦瑞克省",
+      },
+      {
+        id: "9",
+        name: "新斯科舍省",
+      },
+      {
+        id: "10",
+        name: "魁北克省",
+      },
+    ],
   },
-  methods: {
-    // navbarActive:function(){
-    //   this.isActive = !
-    // }
-    provinceLink(id) {
-      this.$store.commit('setProvince', id)
-      // console.log(this.$store.state.province)
-      this.$router.push('/provinces')
-    },
-    eeLink(id) {
-      this.$store.commit('setEe', id)
-      // console.log(this.$store.state.province)
-      this.$router.push('/projects/ee')
-    }
-  },
-};
+];
 </script>
 <style lang="scss">
 .navbar-wrap {
@@ -540,9 +610,9 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   width: 220px;
-  
+
   li {
-    width: 110px
+    width: 110px;
   }
 }
 
