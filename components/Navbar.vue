@@ -17,7 +17,9 @@
                   <!-- <a href="#anchor-franchise">加盟招商</a> -->
                 </li>
                 <li>
-                  <NuxtLink to="/about#anchor-joinUs">加入我们</NuxtLink>
+                  <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }"
+                    >加入我们</NuxtLink
+                  >
 
                   <!-- <a href="#anchor-joinUs">加入我们</a> -->
                 </li>
@@ -206,7 +208,7 @@
             </div>
           </li>
           <li>
-            <NuxtLink to="/investment">加拿大投资</NuxtLink>
+            <NuxtLink to="/investment">签证服务</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/blogs">最新资讯</NuxtLink>

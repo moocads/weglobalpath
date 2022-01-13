@@ -39,7 +39,7 @@
               <li @click="isToggle = !isToggle">移民省份</li>
             </NuxtLink>
             <NuxtLink to="/investment">
-              <li @click="isToggle = !isToggle">加拿大投资</li>
+              <li @click="isToggle = !isToggle">签证服务</li>
             </NuxtLink>
             <NuxtLink to="/blogs">
               <li @click="isToggle = !isToggle">最新资讯</li>
