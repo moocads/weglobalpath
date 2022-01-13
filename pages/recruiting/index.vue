@@ -25,7 +25,7 @@
           <a-row type="flex" align="center" :gutter="[36,36]">
             <a-col :lg="{span:11}" :md="{span:24}">
               <div class="imgContainer">
-                <img src="/img/recruiting/intro.png" alt="Beyond Canada">
+                <img src="/img/Recruiting/intro.png" alt="Beyond Canada">
               </div>
             </a-col>
             <a-col :lg="{span:13}" :md="{span:24}">
@@ -47,56 +47,129 @@
         </div>
       </section>
       <section class="sec-requirements partner">
-        <div class="wrapper">
-          <div class="title-wrap">
-            <div class="title">
-              <img src="/img/logos/logo-trans.png" alt="" />
-              <p>PARTNERS</p>
+        <a-carousel :dots="false" :arrows="true">
+          <div class="slide">
+            <div class="wrapper">
+              <div class="title-wrap">
+                <div class="title">
+                  <img src="/img/logos/logo-trans.png" alt="" />
+                  <p>PARTNERS</p>
+                </div>
+                <h2>高级合作伙伴</h2>
+              </div>
+              <a-row type="flex" align="center" :gutter="[36,36]">
+                <a-col :lg="{span:8}" :md="{span:24}">
+                  <div class="imgContainer">
+                    <img src="/img/Recruiting/partner.jpg" alt="Beyond Canada">
+                    <p class="name">
+                      Liz Choi
+                    </p>
+                    <p>
+                      CEO首席执行官
+                    </p>
+                    <p>
+                      温尼伯商会主席
+                    </p>
+                    <p>
+                      罗伯森学院执行院长
+                    </p>
+                  </div>
+                </a-col>
+                <a-col :lg="{span:16}" :md="{span:24}">
+                  <div class="txtContainer">
+                    <p>
+                      Liz Choi是高等教育领域公认的领军人物，在开发国际教育的核心渠道方面，取得了巨大的成功，并积累了丰富的经验。她的专长几乎涵盖了发展国际学生的所有关键领域，如营销，招聘，行政以及战略合作，更重要的还有项目的前期开发，后期执行和最终评估。
+                    </p>
+                    <p>
+                      凭借她取得的卓越成就，Liz Choi 一再展示了她善于找准时机把握机会的强大能力，并且能够在此基础上把机会，最大化的转变为教育领域的价值; 不断超越学校或者她自己所设定的已经难以企及的目标。作为一个在专业技术教育领域有着创业意识的思想者，Liz Choi以前超前的意识，有前瞻性的远见，和高效的原创解决方案而闻名；再结合她广泛的商业知识和娴熟的执行能力，Liz Choi已经成为高等教育领域的领导者。
+                    </p>
+                    <p>
+                      作为国际教育市场公认的专家，Liz Choi一直是把企业级战略路线应用到教育领域的重要推动力，在政策制定，业务发展和流程开发方面具有成熟的经验。此外，她还是一个高效的问题解决者，面对复杂的挑战，可以正确的分析和解决；创建跨领域的改进，制定战略计划，以及管理和执行企业的各种改变，来提高商业成果。
+                    </p>
+                    <p>
+                      作为一个备受尊敬的高管，Liz Choi的自律性以及主动工作能力一直被业界人士所认可；同时，她出色的沟通能力和交流技巧，更让她在自己的领域里取得卓越的成绩。
+                    </p>
+                    <p>
+                      Liz Choi拥有曼尼托巴大学的学士和硕士学位，专业是教育；核心领域和研究主要是高等教育的国际化-如何将考察转化为专业的视角，如何寻求最佳途径和方法，如何缩小国际化过程中的差异，以及如何通过更有效的综合方法取得更好的成果。
+                    </p>
+                    <p>
+                      在担任现任职务之前，Liz Choi在曼省第二大公立学院-曼尼托巴科学技术学院担任过多个高级职位，其中包括：副校长；学生和战略伙伴关系部副总裁; 国际部副总裁; 国际教育执行总裁。她还是曼省非营利性机构，曼尼托巴省最大的百年商会“温尼伯商会”的主席。
+                    </p>
+                  </div>
+                </a-col>
+              </a-row>
             </div>
-            <h2>高级合作伙伴</h2>
           </div>
-          <a-row type="flex" align="center" :gutter="[36,36]">
-            <a-col :lg="{span:8}" :md="{span:24}">
-              <div class="imgContainer">
-                <img src="/img/recruiting/partner.jpg" alt="Beyond Canada">
-                <p class="name">
-                  Liz Choi
-                </p>
-                <p>
-                  CEO首席执行官
-                </p>
-                <p>
-                  温尼伯商会主席
-                </p>
-                <p>
-                  罗伯森学院执行院长
-                </p>
+          <div class="slide">
+            <div class="wrapper">
+              <div class="title-wrap">
+                <div class="title">
+                  <img src="/img/logos/logo-trans.png" alt="" />
+                  <p>PARTNERS</p>
+                </div>
+                <h2>高级合作伙伴</h2>
               </div>
-            </a-col>
-            <a-col :lg="{span:16}" :md="{span:24}">
-              <div class="txtContainer">
-                <p>
-                  Liz Choi是高等教育领域公认的领军人物，在开发国际教育的核心渠道方面，取得了巨大的成功，并积累了丰富的经验。她的专长几乎涵盖了发展国际学生的所有关键领域，如营销，招聘，行政以及战略合作，更重要的还有项目的前期开发，后期执行和最终评估。
-                </p>
-                <p>
-                  凭借她取得的卓越成就，Liz Choi 一再展示了她善于找准时机把握机会的强大能力，并且能够在此基础上把机会，最大化的转变为教育领域的价值; 不断超越学校或者她自己所设定的已经难以企及的目标。作为一个在专业技术教育领域有着创业意识的思想者，Liz Choi以前超前的意识，有前瞻性的远见，和高效的原创解决方案而闻名；再结合她广泛的商业知识和娴熟的执行能力，Liz Choi已经成为高等教育领域的领导者。
-                </p>
-                <p>
-                  作为国际教育市场公认的专家，Liz Choi一直是把企业级战略路线应用到教育领域的重要推动力，在政策制定，业务发展和流程开发方面具有成熟的经验。此外，她还是一个高效的问题解决者，面对复杂的挑战，可以正确的分析和解决；创建跨领域的改进，制定战略计划，以及管理和执行企业的各种改变，来提高商业成果。
-                </p>
-                <p>
-                  作为一个备受尊敬的高管，Liz Choi的自律性以及主动工作能力一直被业界人士所认可；同时，她出色的沟通能力和交流技巧，更让她在自己的领域里取得卓越的成绩。
-                </p>
-                <p>
-                  Liz Choi拥有曼尼托巴大学的学士和硕士学位，专业是教育；核心领域和研究主要是高等教育的国际化-如何将考察转化为专业的视角，如何寻求最佳途径和方法，如何缩小国际化过程中的差异，以及如何通过更有效的综合方法取得更好的成果。
-                </p>
-                <p>
-                  在担任现任职务之前，Liz Choi在曼省第二大公立学院-曼尼托巴科学技术学院担任过多个高级职位，其中包括：副校长；学生和战略伙伴关系部副总裁; 国际部副总裁; 国际教育执行总裁。她还是曼省非营利性机构，曼尼托巴省最大的百年商会“温尼伯商会”的主席。
-                </p>
-              </div>
-            </a-col>
-          </a-row>
-        </div>
+              <a-row type="flex" align="center" :gutter="[36,36]">
+                <a-col :lg="{span:8}" :md="{span:24}">
+                  <div class="imgContainer">
+                    <img src="/img/Recruiting/partner.jpg" alt="Beyond Canada">
+                    <p class="name">
+                      保罗·霍尔顿 (Paul Holden)
+                    </p>
+                    <p>
+                      总裁
+                    </p>
+                    <p>
+                      执行董事
+                    </p>
+                    <p>
+                      加拿大教育集团
+                    </p>
+                  </div>
+                </a-col>
+                <a-col :lg="{span:16}" :md="{span:24}">
+                  <div class="txtContainer">
+                    <p>
+                      保罗·霍尔顿（Paul Holden）在领导力和成就方面取得了非凡的
+                      记录，这些记录跨越了许多领域 - 从教育和劳动力培训到企业
+                      和政府。 在 2017 年 5 月，他受邀接过了全国最大的私立高等
+                      教育机构之一的总裁头衔，即加拿大教育集团。
+                    </p>
+                    <p>
+                      在担任现任职务之前，保罗是曼省排名第二的公立学院-曼尼
+                      托巴科学技术学院的校长，总裁兼首席执行官。在他任职期
+                      间，学校无论在学生数量还是校区规模，都实现了前所未有
+                      的增长和扩张；一举奠定了保罗在业界内的地位。
+                    </p>
+                    <p>
+                      保罗之所以在教育领域如此成功，是因为他将创新，实用，及结
+                      果导向，融合到教育的管理，以企业级的思维来经营高等教育。
+                      他同时也是一个高调的领导者，凭着果敢的策略将学校转型，并
+                      取得了显著成功。
+                    </p>
+                    <p>
+                      保罗在现代教育与劳动力市场之间架设了完美的桥梁：通过与政
+                      府部门，企业雇主，教育工作者，以及学生之间的沟通与研究，
+                      找出差异，创造出解决方案；为学生提供所需要的技能培训的同
+                      时，也满足劳动力市场的需求，并且与政府部门的经济发展计划
+                      相辅相成，推动整个教育事业。
+                    </p>
+                    <p>
+                      作为曼尼托巴公共服务的资深成员二十年来，保罗与各个领域的
+                      团体合作，开发了很多举足轻重的项目，取得了重大的成功。他
+                      的成功也体现在私立学校教育领域，例如，作为 Cambrian Credit
+                      Union 的董事会主席，保罗帮助他们的资产扩大了十倍。
+                    </p>
+                    <p>
+                      保罗·霍尔顿（Paul Holden）拥有曼尼托巴大学政治学硕士学
+                      位，以及自然资源管理硕士学位。
+                    </p>
+                  </div>
+                </a-col>
+              </a-row>
+            </div>
+          </div>
+        </a-carousel>
       </section>
       <section class="servicesProvided">
         <div class="wrapper">
@@ -158,6 +231,161 @@
               titleColor="#1b2854"
               titleENColor="#DADADA"
           />
+          <a-tabs defaultActiveKey="details1" class="detailsTabs">
+            <a-tab-pane key="details1" class="detailsTab1">
+              <div slot="tab">
+                全包式服务
+              </div>
+              <h3>提供一年紧缺专业课程</h3>
+              <p>4.2万加币包含一年紧缺专业课程学费$15,481.80加币-15,733.80加币</p>
+              <p>一年学生保险$675.00加币</p>
+              <p>国际学生费用$850.00加币</p>
+              <p>书本杂费$2,770.00加币</p>
+
+              <h3>签证服务</h3>
+              <p>学生专享留学许可审批绿色通道，加彼岸™承诺签证不通过全额退费。</p>
+
+              <h3>提供职业文化管理培训</h3>
+              <p>旨在帮助学生获得在加拿大取得学术和职场成功所需的沟通技巧。我们还会辅导学生编辑简历、求职技巧和准备面试。毕业后即可就业，真实就业率达90%，我们会共同在学生的整个职业生涯提供支持和帮助。</p>
+
+              <h3>培训成就</h3>
+              <p>一年紧缺专业课程学习＋加拿大职场文化管理培训以保证接受培训的人成为合格的专业职场人士，专业老师全部具备行业内至少15年以上的从业经验，3年以上的教学经验，使学生从学校步入加拿大社会时能胜任工作，为其顺利移民提供保障。</p>
+            </a-tab-pane>
+            <a-tab-pane key="details2" class="detailsTab2">
+              <div slot="tab">
+                院校专业
+              </div>
+              <h3>ACC 阿西尼博社区学院</h3>
+              <p><span>专业 - </span>市场营销 研究生文凭 8个月</p>
+              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+              <p><span>课程：</span>秋季、冬季、春季</p>
+              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+
+              <h3>ACC 阿西尼博社区学院</h3>
+              <p><span>专业 - </span>会计学 研究生文凭 8个月</p>
+              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+              <p><span>课程：</span>秋季、冬季、春季</p>
+              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+
+              <h3>ACC 阿西尼博社区学院</h3>
+              <p><span>专业 - </span>人力资源 研究生文凭 8个月</p>
+              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+              <p><span>课程：</span>秋季、冬季、春季</p>
+              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+
+              <h3>ACC 阿西尼博社区学院</h3>
+              <p><span>专业 - </span>金融学 研究生文凭 8个月</p>
+              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+              <p><span>课程：</span>秋季、冬季、春季</p>
+              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+              
+              <h3>RC 罗伯森学院</h3>
+              <p><span>专业 - </span>康复理疗 College证书 12个月</p>
+              <p><span>要求：</span>高中（职业高中）毕业 雅思4-5.5（双录取）</p>
+              <p><span>课程：</span>秋季、冬季、春季</p>
+              <p><span>地点：</span>加拿大私立学院，毕业可申请封闭式工签</p>
+            </a-tab-pane>
+            <a-tab-pane key="details3" class="detailsTab3">
+              <div slot="tab">
+                职位薪资
+              </div>
+              <h3>会计（Accounting）年薪</h3>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">会计助理（Accounting Assistant）</a-col>
+                <a-col span="4">$39,541 </a-col>
+                <a-col span="10">Entry-level 职位初始工资$33,150</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">帐务员（Accounting Clerk） </a-col>
+                <a-col span="4">$39,000 </a-col>
+                <a-col span="10">Entry-level 职位初始工资$33,150</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">会计经理（Accounting Manger）</a-col>
+                <a-col span="4">$80,000</a-col>
+                <a-col span="10">Entry-level 职位初始工资$62,500</a-col>
+              </a-row>
+              <h3>市场营销（Marketing）年薪</h3>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">市场营销主管（Marketing Coordinator）</a-col>
+                <a-col span="4">$47,722</a-col>
+                <a-col span="10">Entry-level 职位初始工资$39,969</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">市场助理（Marketing Assistant）</a-col>
+                <a-col span="4">$39,000</a-col>
+                <a-col span="10">Entry-level 职位初始工资$31,200</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">会计经理（Accounting Manger）</a-col>
+                <a-col span="4">$72,500</a-col>
+                <a-col span="10">Entry-level 职位初始工资$52,577</a-col>
+              </a-row>
+              <h3>金融（Finance）年薪</h3>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">金融文员（Finance Clerk）</a-col>
+                <a-col span="4">$43,538</a-col>
+                <a-col span="10">Entry-level 职位初始工资$34,115</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">金融助理（Finance  Assistant）</a-col>
+                <a-col span="4">$46,958</a-col>
+                <a-col span="10">Entry-level 职位初始工资$38,583</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">金融分析师（Finance  Analyst）</a-col>
+                <a-col span="4">$73,125</a-col>
+                <a-col span="10">Entry-level 职位初始工资$57,500</a-col>
+              </a-row>
+              <h3>人力资源管理（HR Mangement）年薪</h3>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">人力资源协调员（Hr Coordinator）</a-col>
+                <a-col span="4">$44,850</a-col>
+                <a-col span="10">Entry-level 职位初始工资$37,050</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">人事专员（Hr Generalist）</a-col>
+                <a-col span="4">$60,000</a-col>
+                <a-col span="10">Entry-level 职位初始工资$50,000</a-col>
+              </a-row>
+              <a-row type="flex" :gutter="[24,24]">
+                <a-col span="10">人力资源经理（Hr Manager）</a-col>
+                <a-col span="4"> $77,077</a-col>
+                <a-col span="10">Entry-level 职位初始工资$56,500</a-col>
+              </a-row>
+            </a-tab-pane>
+            <a-tab-pane key="details4" class="detailsTab4">
+              <div slot="tab">
+                曼省优势
+              </div>
+              <p>温尼伯（Winnipeg）是加拿大第八大城市，也是曼尼托巴省的省会。曼省过半以上的人口都居住于该市，温尼伯在地理上属于西加拿大。</p>
+              <p><span>它是一个集运输、经济、制造业、农业与教育的主要城市之一，同时也是加拿大的重要交通枢纽。</span></p>
+              <p>曼省留学项目近几年的市场认知程度在逐步提升，主要源于曼省具备稳定以及高成功率的移居政策，使得温尼伯一跃成为越来越多的国际留学生的首选城市。</p>
+            </a-tab-pane>
+            <a-tab-pane key="details5" class="detailsTab5">
+              <div slot="tab">
+                合作伙伴及企业
+              </div>
+            </a-tab-pane>
+          </a-tabs>
+        </div>
+      </section>
+      <section class="sec-process">
+        <div class="wrapper">
+          <MainTitle title="申请流程" titleEN="PROCESS" titleENColor="#E5E5E5" />
+          <div class="process-wrap">
+            <a-timeline>
+              <a-timeline-item v-for="(item, index) in recruitProcess" :key="index">
+                <div slot="dot" class="step-num">
+                  <span>{{ index + 1 }}</span>
+                </div>
+                {{ item }}
+              </a-timeline-item>
+            </a-timeline>
+          </div>
+          <div class="disclaimer">
+            <p>* 项目大龄申请人可参考<a>旅游签转学签</a>申请流程</p>
+          </div>
         </div>
       </section>
       <div class="wrapper">
@@ -273,7 +501,6 @@
           </div>
         </div>
       </section>
-
       <div class="wrapper">
         <hr />
       </div>
@@ -327,10 +554,20 @@ export default {
       columns,
       schools,
       cnSchools,
-      requirements
+      requirements,
+      recruitProcess
     };
   },
 };
+const recruitProcess = [
+  "按照院校要求提交Offer申请材料",
+  "提交加拿大学习签证",
+  "入境温尼伯就读专业课",
+  "职场文化管理培训（辅导简历，模拟求职面试）",
+  "毕业后申请毕业工签，入职优质企业机会",
+  "递交省提名及联邦申请",
+  "成为加拿大永久居民（枫叶卡）"
+]
 const columns = [
   {
     dataIndex: "name",
@@ -650,6 +887,53 @@ const schools = [
       font-weight: normal;
     }
   }
+
+  .detailsTabs {
+
+    @media (min-width: 992px) {
+      .ant-tabs-nav-scroll {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .ant-tabs-tab {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .ant-tabs-tab:hover,
+    .ant-tabs-tab-active {
+      color: $red;
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: $red;
+      height: 5px;
+    }
+
+    .detailsTab1, .detailsTab2, .detailsTab3 {
+      h3 {
+        color: $red;
+        margin-top: 30px;
+      }
+
+      p span {
+        font-weight: bold;
+      }
+    }
+
+    .detailsTab4 {
+      p {
+        text-align: center;
+        margin-top: 30px;
+
+        span {
+          color: $red;
+        }
+      }
+    }
+  }
 }
 @media all and (max-width: 991px) {
   #recruiting-page {
@@ -804,7 +1088,9 @@ header {
   }
 
   &.partner {
-    color: white;
+    .txtContainer {
+      color: white;
+    }
 
     .imgContainer {
       img {
@@ -814,6 +1100,7 @@ header {
         border-radius: 10px;
       }
       p {
+        color: white;
         text-align: center;
         font-size: 16px;
 
@@ -824,6 +1111,7 @@ header {
       }
     }
   }
+
 }
 
 .servicesProvided {
@@ -853,6 +1141,83 @@ header {
   grid-template-rows: auto;
   row-gap: 20px;
   column-gap: 30px;
+
+  @media all and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.sec-process {
+  background-image: url("/img/Projects/process-banner.png");
+  background-size: cover;
+
+  .process-wrap {
+    background-color: #ffffff50;
+    padding: 50px;
+    padding-bottom: 0;
+    border-radius: 10px;
+    border: 1px solid $navy;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    li {
+      display: flex;
+      justify-content: flex-start;
+
+      &.ant-timeline-item-last {
+        padding-bottom: 5px;
+      }
+    }
+    span {
+      line-height: 25px;
+      color: #fff;
+    }
+    p {
+      color: #757575;
+      font-size: 16px;
+    }
+    .step-num {
+      width: 25px;
+      height: 25px;
+      background-color: $navy;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-right: 9px;
+    }
+  }
+  .disclaimer {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    
+    p {
+      color: black;
+    }
+
+    a {
+      color: $red
+    }
+  }
+  @media all and (max-width: 768px) {
+    .process-wrap {
+      padding: 50px 20px 0;
+      .step-num::before {
+        height: 30px;
+      }
+      p {
+        font-size: 14px;
+      }
+      li:nth-child(3) {
+        .step-num::before {
+          height: 70px;
+        }
+      }
+    }
+  }
 }
 
 .intro {
