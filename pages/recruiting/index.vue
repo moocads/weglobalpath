@@ -7,39 +7,36 @@
     </header>
     <main>
       <div class="redDivider">
-        曼省人才管培项目 - 紧缺职业（4.2万包学费、包签证、包职场管理培训，顺利移居加拿大）
+        曼省人才管培项目 -
+        紧缺职业（4.2万包学费、包签证、包职场管理培训，顺利移居加拿大）
       </div>
-      <section class="sec-introduction" style="background-color: #efefef;">
-        <div class="wrapper" >
+      <section class="sec-introduction" style="background-color: #efefef">
+        <div class="wrapper">
           <MainTitle
-              title="项目介绍"
-              titleEN="INTRODUCTION"
-              titleColor="#1b2854"
-              titleENColor="#DADADA"
+            title="项目介绍"
+            titleEN="INTRODUCTION"
+            titleColor="#1b2854"
+            titleENColor="#DADADA"
           />
           加拿大的移民趋势永远是跟着劳动力市场需求走的，准移民申请人们想要成功申请枫叶卡，了解加拿大的人才需求至关重要。加彼岸™独家启动曼省人才管培项目，能够让更多的人才通过紧缺专业学习进入到加拿大本地市场发展。该项目提供紧缺职业的加拿大公立院校一年专业课程且与紧缺行业相关的工作职位。
         </div>
       </section>
       <section class="contactLink">
         <div class="wrapper">
-          <a-row type="flex" align="center" :gutter="[36,36]">
-            <a-col :lg="{span:11}" :md="{span:24}">
+          <a-row type="flex" align="center" :gutter="[36, 36]">
+            <a-col :lg="{ span: 11 }" :md="{ span: 24 }">
               <div class="imgContainer">
-                <img src="/img/Recruiting/intro.png" alt="Beyond Canada">
+                <img src="/img/Recruiting/intro.png" alt="Beyond Canada" />
               </div>
             </a-col>
-            <a-col :lg="{span:13}" :md="{span:24}">
+            <a-col :lg="{ span: 13 }" :md="{ span: 24 }">
               <div class="txtContainer">
-                <h3>
-                  加拿大紧缺职位更具竞争力
-                </h3>
+                <h3>加拿大紧缺职位更具竞争力</h3>
                 <p>
                   紧缺职业涉及的行业十分广泛，从金融到科学、从建筑到信息技术、从医生到幼教，各行各业都有特定的岗位急需人力填充。在推进移民过程中，不仅是选对合适的移民项目，有时也在于是否选择紧缺职业的雇主，使自己的职业更具竞争力。选择比努力更重要，在移民路上也是一样的。选对了项目、选对了职业的话能一定程度影响申请移民的效率和成功率。
                 </p>
                 <nuxt-link to="/contact">
-                  <a-button>
-                    联系我们
-                  </a-button>
+                  <a-button> 联系我们 </a-button>
                 </nuxt-link>
               </div>
             </a-col>
@@ -174,26 +171,30 @@
       <section class="servicesProvided">
         <div class="wrapper">
           <MainTitle
-              title="项目服务概括"
-              titleEN="SERVICES PROVIDED"
-              titleColor="#1b2854"
-              titleENColor="#DADADA"
+            title="项目服务概括"
+            titleEN="SERVICES PROVIDED"
+            titleColor="#1b2854"
+            titleENColor="#DADADA"
           />
           <div class="content">
             <ul>
-              <a-row type="flex" align="center" :gutter="[24,0]">
-                <a-col :lg="{span:8}" :md="{span:12}" :xs="{span:24}">
+              <a-row type="flex" align="center" :gutter="[24, 0]">
+                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
                   <li>一年紧缺专业课程学习＋加拿大职场文化管理培训</li>
                   <li>学生毕业后，直接进入紧缺行业公司</li>
                   <li>2-2.5年时间完成留学+移民</li>
                 </a-col>
-                <a-col :lg="{span:8}" :md="{span:12}" :xs="{span:24}">
+                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
                   <li>加拿大公立院校，毕业后获得毕业工签</li>
-                  <li>提供加拿大企业紧缺工作机会，以及其他本地企业一体化留学工作移居全方位服务</li>
+                  <li>
+                    提供加拿大企业紧缺工作机会，以及其他本地企业一体化留学工作移居全方位服务
+                  </li>
                 </a-col>
-                <a-col :lg="{span:8}" :md="{span:12}" :xs="{span:24}">
+                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
                   <li>为学生提供学生公寓、寄宿家庭、租房等多种选择</li>
-                  <li>抵达曼省后提供专人接机、办理银行卡、电话卡等贴心生活服务</li>
+                  <li>
+                    抵达曼省后提供专人接机、办理银行卡、电话卡等贴心生活服务
+                  </li>
                 </a-col>
               </a-row>
             </ul>
@@ -226,10 +227,10 @@
       <section>
         <div class="wrapper">
           <MainTitle
-              title="项目细节"
-              titleEN="DETAILS"
-              titleColor="#1b2854"
-              titleENColor="#DADADA"
+            title="项目细节"
+            titleEN="DETAILS"
+            titleColor="#1b2854"
+            titleENColor="#DADADA"
           />
           <a-tabs defaultActiveKey="details1" class="detailsTabs">
             <a-tab-pane key="details1" class="detailsTab1">
@@ -585,8 +586,7 @@ const requirements = [
     title: "年龄要求",
     requirement_points: [
       {
-        point:
-          "没有年龄限制，但是只有25-49岁的申请人才能获得年龄加分。",
+        point: "没有年龄限制，但是只有25-49岁的申请人才能获得年龄加分。",
       },
     ],
   },
@@ -594,8 +594,7 @@ const requirements = [
     title: "语言水平",
     requirement_points: [
       {
-        point:
-          "至少达到CLB/NCLC5",
+        point: "至少达到CLB/NCLC5",
       },
     ],
   },
@@ -603,8 +602,7 @@ const requirements = [
     title: "学历要求",
     requirement_points: [
       {
-        point:
-          "至少达到加拿大高中学历",
+        point: "至少达到加拿大高中学历",
       },
     ],
   },
@@ -612,7 +610,8 @@ const requirements = [
     title: "商业经验",
     requirement_points: [
       {
-        point: "申请人过去五年中至少有三年全职工作经验，作为企业主经营一个活跃的企业或者在成功企业中担任高管；",
+        point:
+          "申请人过去五年中至少有三年全职工作经验，作为企业主经营一个活跃的企业或者在成功企业中担任高管；",
       },
       {
         point: "与高管相比，申请人的企业主经验将获得更高的分数；",
@@ -626,16 +625,13 @@ const requirements = [
     title: "商业投资",
     requirement_points: [
       {
-        point:
-          "在曼尼托巴首都地区投资企业，投资额至少25万加币；",
+        point: "在曼尼托巴首都地区投资企业，投资额至少25万加币；",
       },
       {
-        point:
-          "在曼尼托巴首都地区以外投资企业，投资额至少15万加币；",
+        point: "在曼尼托巴首都地区以外投资企业，投资额至少15万加币；",
       },
       {
-        point:
-          "商业投资必须用于MPNP指定的合格企业；",
+        point: "商业投资必须用于MPNP指定的合格企业；",
       },
     ],
   },
@@ -643,8 +639,7 @@ const requirements = [
     title: "商业考察访问",
     requirement_points: [
       {
-        point:
-          "作为申请的一部分，商业计划是必需的； ",
+        point: "作为申请的一部分，商业计划是必需的； ",
       },
       {
         point:
@@ -1122,7 +1117,7 @@ header {
 
     ul {
       list-style-type: disc;
-      
+
       li {
         margin-left: 15px;
         color: $navy;
