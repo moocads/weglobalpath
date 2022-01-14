@@ -10,7 +10,7 @@
         曼省人才管培项目 -
         紧缺职业（4.2万包学费、包签证、包职场管理培训，顺利移居加拿大）
       </div>
-      <section class="sec-introduction" style="background-color: #efefef">
+      <section class="sec-introduction">
         <div class="wrapper">
           <MainTitle
             title="项目介绍"
@@ -36,7 +36,7 @@
                   紧缺职业涉及的行业十分广泛，从金融到科学、从建筑到信息技术、从医生到幼教，各行各业都有特定的岗位急需人力填充。在推进移民过程中，不仅是选对合适的移民项目，有时也在于是否选择紧缺职业的雇主，使自己的职业更具竞争力。选择比努力更重要，在移民路上也是一样的。选对了项目、选对了职业的话能一定程度影响申请移民的效率和成功率。
                 </p>
                 <nuxt-link to="/contact">
-                  <a-button> 联系我们 </a-button>
+                  <button class="main-btn main-btn_red main-btn_round-5 main-btn_mobile_w100"> 联系我们 </button>
                 </nuxt-link>
               </div>
             </a-col>
@@ -44,32 +44,42 @@
         </div>
       </section>
       <section class="sec-requirements partner">
-        <a-carousel :dots="false" :arrows="true">
-          <div class="slide">
-            <div class="wrapper">
-              <div class="title-wrap">
-                <div class="title">
-                  <img src="/img/logos/logo-trans.png" alt="" />
-                  <p>PARTNERS</p>
-                </div>
-                <h2>高级合作伙伴</h2>
-              </div>
+        <div class="wrapper">
+          <div class="title-wrap">
+            <div class="title">
+              <img src="/img/logos/logo-trans.png" alt="" />
+              <p>PARTNERS</p>
+            </div>
+            <h2>高级合作伙伴</h2>
+          </div>
+        </div>
+        <div class="wrapper">
+          <a-carousel :dots="true" :arrows="true">
+            <div slot="prevArrow" class="customArrow">
+              <a-icon type="left" />
+            </div>
+            <div slot="nextArrow" class="customArrow">
+              <a-icon type="right" />
+            </div>
+            <div class="slide">
               <a-row type="flex" align="center" :gutter="[36,36]">
                 <a-col :lg="{span:8}" :md="{span:24}">
                   <div class="imgContainer">
                     <img src="/img/Recruiting/partner.jpg" alt="Beyond Canada">
-                    <p class="name">
-                      Liz Choi
-                    </p>
-                    <p>
-                      CEO首席执行官
-                    </p>
-                    <p>
-                      温尼伯商会主席
-                    </p>
-                    <p>
-                      罗伯森学院执行院长
-                    </p>
+                    <div class="partnerTitle">
+                      <p class="name">
+                        Liz Choi
+                      </p>
+                      <p>
+                        CEO首席执行官
+                      </p>
+                      <p>
+                        温尼伯商会主席
+                      </p>
+                      <p>
+                        罗伯森学院执行院长
+                      </p>
+                    </div>
                   </div>
                 </a-col>
                 <a-col :lg="{span:16}" :md="{span:24}">
@@ -96,32 +106,25 @@
                 </a-col>
               </a-row>
             </div>
-          </div>
-          <div class="slide">
-            <div class="wrapper">
-              <div class="title-wrap">
-                <div class="title">
-                  <img src="/img/logos/logo-trans.png" alt="" />
-                  <p>PARTNERS</p>
-                </div>
-                <h2>高级合作伙伴</h2>
-              </div>
+            <div class="slide">
               <a-row type="flex" align="center" :gutter="[36,36]">
                 <a-col :lg="{span:8}" :md="{span:24}">
                   <div class="imgContainer">
-                    <img src="/img/Recruiting/partner.jpg" alt="Beyond Canada">
-                    <p class="name">
-                      保罗·霍尔顿 (Paul Holden)
-                    </p>
-                    <p>
-                      总裁
-                    </p>
-                    <p>
-                      执行董事
-                    </p>
-                    <p>
-                      加拿大教育集团
-                    </p>
+                    <img src="/img/Recruiting/partner2.jpg" alt="Beyond Canada">
+                    <div class="partnerTitle">
+                      <p class="name">
+                        保罗·霍尔顿 (Paul Holden)
+                      </p>
+                      <p>
+                        总裁
+                      </p>
+                      <p>
+                        执行董事
+                      </p>
+                      <p>
+                        加拿大教育集团
+                      </p>
+                    </div>
                   </div>
                 </a-col>
                 <a-col :lg="{span:16}" :md="{span:24}">
@@ -165,8 +168,8 @@
                 </a-col>
               </a-row>
             </div>
-          </div>
-        </a-carousel>
+          </a-carousel>
+        </div>
       </section>
       <section class="servicesProvided">
         <div class="wrapper">
@@ -179,18 +182,18 @@
           <div class="content">
             <ul>
               <a-row type="flex" align="center" :gutter="[24, 0]">
-                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
+                <a-col :lg="{ span: 8 }" :md="{ span: 24 }" :xs="{ span: 24 }">
                   <li>一年紧缺专业课程学习＋加拿大职场文化管理培训</li>
                   <li>学生毕业后，直接进入紧缺行业公司</li>
                   <li>2-2.5年时间完成留学+移民</li>
                 </a-col>
-                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
+                <a-col :lg="{ span: 8 }" :md="{ span: 24 }" :xs="{ span: 24 }">
                   <li>加拿大公立院校，毕业后获得毕业工签</li>
                   <li>
                     提供加拿大企业紧缺工作机会，以及其他本地企业一体化留学工作移居全方位服务
                   </li>
                 </a-col>
-                <a-col :lg="{ span: 8 }" :md="{ span: 12 }" :xs="{ span: 24 }">
+                <a-col :lg="{ span: 8 }" :md="{ span: 24 }" :xs="{ span: 24 }">
                   <li>为学生提供学生公寓、寄宿家庭、租房等多种选择</li>
                   <li>
                     抵达曼省后提供专人接机、办理银行卡、电话卡等贴心生活服务
@@ -291,68 +294,68 @@
                 职位薪资
               </div>
               <h3>会计（Accounting）年薪</h3>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">会计助理（Accounting Assistant）</a-col>
-                <a-col span="4">$39,541 </a-col>
-                <a-col span="10">Entry-level 职位初始工资$33,150</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>会计助理（Accounting Assistant）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$39,541 </a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$33,150</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">帐务员（Accounting Clerk） </a-col>
-                <a-col span="4">$39,000 </a-col>
-                <a-col span="10">Entry-level 职位初始工资$33,150</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>帐务员（Accounting Clerk）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$39,000 </a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$33,150</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">会计经理（Accounting Manger）</a-col>
-                <a-col span="4">$80,000</a-col>
-                <a-col span="10">Entry-level 职位初始工资$62,500</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>会计经理（Accounting Manger）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$80,000</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$62,500</a-col>
               </a-row>
               <h3>市场营销（Marketing）年薪</h3>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">市场营销主管（Marketing Coordinator）</a-col>
-                <a-col span="4">$47,722</a-col>
-                <a-col span="10">Entry-level 职位初始工资$39,969</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>市场营销主管（Marketing Coordinator）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$47,722</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$39,969</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">市场助理（Marketing Assistant）</a-col>
-                <a-col span="4">$39,000</a-col>
-                <a-col span="10">Entry-level 职位初始工资$31,200</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>市场助理（Marketing Assistant）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$39,000</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$31,200</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">会计经理（Accounting Manger）</a-col>
-                <a-col span="4">$72,500</a-col>
-                <a-col span="10">Entry-level 职位初始工资$52,577</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>会计经理（Accounting Manger）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$72,500</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$52,577</a-col>
               </a-row>
               <h3>金融（Finance）年薪</h3>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">金融文员（Finance Clerk）</a-col>
-                <a-col span="4">$43,538</a-col>
-                <a-col span="10">Entry-level 职位初始工资$34,115</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>金融文员（Finance Clerk）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$43,538</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$34,115</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">金融助理（Finance  Assistant）</a-col>
-                <a-col span="4">$46,958</a-col>
-                <a-col span="10">Entry-level 职位初始工资$38,583</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>金融助理（Finance  Assistant）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$46,958</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$38,583</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">金融分析师（Finance  Analyst）</a-col>
-                <a-col span="4">$73,125</a-col>
-                <a-col span="10">Entry-level 职位初始工资$57,500</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>金融分析师（Finance  Analyst）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$73,125</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$57,500</a-col>
               </a-row>
               <h3>人力资源管理（HR Mangement）年薪</h3>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">人力资源协调员（Hr Coordinator）</a-col>
-                <a-col span="4">$44,850</a-col>
-                <a-col span="10">Entry-level 职位初始工资$37,050</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>人力资源协调员（Hr Coordinator）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$44,850</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$37,050</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">人事专员（Hr Generalist）</a-col>
-                <a-col span="4">$60,000</a-col>
-                <a-col span="10">Entry-level 职位初始工资$50,000</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>人事专员（Hr Generalist）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$60,000</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$50,000</a-col>
               </a-row>
-              <a-row type="flex" :gutter="[24,24]">
-                <a-col span="10">人力资源经理（Hr Manager）</a-col>
-                <a-col span="4"> $77,077</a-col>
-                <a-col span="10">Entry-level 职位初始工资$56,500</a-col>
+              <a-row :gutter="[24,0]">
+                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>人力资源经理（Hr Manager）</span></a-col>
+                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}"> $77,077</a-col>
+                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$56,500</a-col>
               </a-row>
             </a-tab-pane>
             <a-tab-pane key="details4" class="detailsTab4">
@@ -883,6 +886,25 @@ const schools = [
     }
   }
 
+  .slick-dots {
+    transform: translateY(50px);
+  }
+
+  .customArrow {
+    i {
+      color: white;
+      font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+      opacity: 0;
+    }
+
+    &.slick-prev {
+      transform:translateX(-25px)
+    }
+  }
+
   .detailsTabs {
 
     @media (min-width: 992px) {
@@ -915,6 +937,22 @@ const schools = [
 
       p span {
         font-weight: bold;
+      }
+    }
+
+    .detailsTab1, .detailsTab2 {
+      p {
+        margin-bottom: 5px;
+      }
+    }
+
+    .detailsTab3 {
+      span {
+        font-weight: bold;
+      }
+
+      .ant-col:last-child {
+        margin-bottom: 10px;
       }
     }
 
@@ -968,6 +1006,7 @@ const schools = [
     }
   }
 }
+
 figure {
   margin: 0;
 }
@@ -1019,11 +1058,22 @@ header {
   padding: 10px 20px;
 }
 
+.sec-introduction {
+  background-color: #efefef; 
+  font-size: 16px
+}
+
 .contactLink {
+  font-size: 16px;
+
   .imgContainer {
     img {
       max-width: 100%;
       object-fit: cover;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 400px;
     }
   }
 
@@ -1031,16 +1081,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 16px;
 
     h3 {
       color: $navy;
-    }
-    .ant-btn {
-      width: 150px;
-      background-color: $red;
-      color: white;
-      outline: none;
-      border: none;
     }
   }
 }
@@ -1065,7 +1109,9 @@ header {
 
       color: #fff;
     }
+
   }
+    
   .title {
     display: flex;
     align-items: center;
@@ -1082,12 +1128,40 @@ header {
     }
   }
 
+  @media (max-width: 768px) {
+    .title-wrap {
+      align-items: center;
+      position: relative;
+      h2 {
+        position: absolute;
+        bottom: 0px;
+        left: 80px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+      }
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      p {
+        color: #233369;
+        font-size: 35px;
+      }
+      img {
+        opacity: 0.2;
+        width: 60px;
+      }
+    }
+  }
+
   &.partner {
     .txtContainer {
       color: white;
     }
 
     .imgContainer {
+
       img {
         max-width: 100%;
         object-fit: contain;
@@ -1102,6 +1176,36 @@ header {
         &.name {
           font-weight: bold;
           font-size: 18px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        display: flex;
+
+        img {
+          max-width: 200px;
+          margin-right: 30px;
+        }
+
+        .partnerTitle {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          p {
+            text-align: left;
+          }
+        }
+      }
+
+      @media (max-width: 578px) {
+        flex-direction: column;
+
+        img {
+          margin-right: 0;
+        }
+
+        .partnerTitle p {
+          text-align: center;
         }
       }
     }
@@ -1121,6 +1225,8 @@ header {
       li {
         margin-left: 15px;
         color: $navy;
+        font-size: 16px;
+        margin-bottom: 10px;
 
         &:not(:last-child) {
           margin-bottom: 10px;

@@ -2,7 +2,7 @@
   <div>
     <div class="main-title-wrap">
       <p :style="{ color: titleENColor }">{{ titleEN }}</p>
-      <h2 :style="{ fontSize: titleSize, color: titleColor }">{{ title }}</h2>
+      <h1 :style="{ fontSize: titleSize, color: titleColor }">{{ title }}</h1>
       <img src="/img/logos/logo-small-blue.png" alt="加彼岸 小型标题 Logo" />
     </div>
   </div>
@@ -55,7 +55,7 @@ export default {
     transform: rotate(90deg);
   }
 
-  h2 {
+  h1 {
     font-weight: 700;
     font-size: 32px;
     margin-top: -45px;
@@ -68,7 +68,7 @@ export default {
 @media all and (max-width: 768px) {
   .main-title-wrap {
     margin-bottom: 30px;
-    h2 {
+    h1 {
       font-weight: normal;
       font-size: 28px;
       margin-top: -35px;
