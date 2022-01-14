@@ -388,7 +388,7 @@
             </a-timeline>
           </div>
           <div class="disclaimer">
-            <p>* 项目大龄申请人可参考<a>旅游签转学签</a>申请流程</p>
+            <p>* 项目大龄申请人可参考<NuxtLink to="">旅游签转学签</NuxtLink>申请流程</p>
           </div>
         </div>
       </section>
@@ -396,7 +396,7 @@
         <section class="intro">
           <div class="img-box">
             <h2>加拿大罗伯森学院</h2>
-            <img src="/img/Recruiting/robertson.svg" alt="" />
+            <img src="/img/Recruiting/robertson.svg" alt="/projects/education/25" />
           </div>
           <div class="info-box">
             <p>
