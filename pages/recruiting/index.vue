@@ -2,7 +2,7 @@
   <div id="recruiting-page">
     <header>
       <div class="wrapper">
-        <h1>中国区招生计划</h1>
+        <h1>快速移民直通车</h1>
       </div>
     </header>
     <main>
@@ -36,7 +36,16 @@
                   紧缺职业涉及的行业十分广泛，从金融到科学、从建筑到信息技术、从医生到幼教，各行各业都有特定的岗位急需人力填充。在推进移民过程中，不仅是选对合适的移民项目，有时也在于是否选择紧缺职业的雇主，使自己的职业更具竞争力。选择比努力更重要，在移民路上也是一样的。选对了项目、选对了职业的话能一定程度影响申请移民的效率和成功率。
                 </p>
                 <nuxt-link to="/contact">
-                  <button class="main-btn main-btn_red main-btn_round-5 main-btn_mobile_w100"> 联系我们 </button>
+                  <button
+                    class="
+                      main-btn
+                      main-btn_red
+                      main-btn_round-5
+                      main-btn_mobile_w100
+                    "
+                  >
+                    联系我们
+                  </button>
                 </nuxt-link>
               </div>
             </a-col>
@@ -62,72 +71,73 @@
               <a-icon type="right" />
             </div>
             <div class="slide">
-              <a-row type="flex" align="center" :gutter="[36,36]">
-                <a-col :lg="{span:8}" :md="{span:24}">
+              <a-row type="flex" align="center" :gutter="[36, 36]">
+                <a-col :lg="{ span: 8 }" :md="{ span: 24 }">
                   <div class="imgContainer">
-                    <img src="/img/Recruiting/partner.jpg" alt="Beyond Canada">
+                    <img
+                      src="/img/Recruiting/partner.jpg"
+                      alt="Beyond Canada"
+                    />
                     <div class="partnerTitle">
-                      <p class="name">
-                        Liz Choi
-                      </p>
-                      <p>
-                        CEO首席执行官
-                      </p>
-                      <p>
-                        温尼伯商会主席
-                      </p>
-                      <p>
-                        罗伯森学院执行院长
-                      </p>
+                      <p class="name">Liz Choi</p>
+                      <p>CEO首席执行官</p>
+                      <p>温尼伯商会主席</p>
+                      <p>罗伯森学院执行院长</p>
                     </div>
                   </div>
                 </a-col>
-                <a-col :lg="{span:16}" :md="{span:24}">
+                <a-col :lg="{ span: 16 }" :md="{ span: 24 }">
                   <div class="txtContainer">
                     <p>
-                      Liz Choi是高等教育领域公认的领军人物，在开发国际教育的核心渠道方面，取得了巨大的成功，并积累了丰富的经验。她的专长几乎涵盖了发展国际学生的所有关键领域，如营销，招聘，行政以及战略合作，更重要的还有项目的前期开发，后期执行和最终评估。
+                      Liz
+                      Choi是高等教育领域公认的领军人物，在开发国际教育的核心渠道方面，取得了巨大的成功，并积累了丰富的经验。她的专长几乎涵盖了发展国际学生的所有关键领域，如营销，招聘，行政以及战略合作，更重要的还有项目的前期开发，后期执行和最终评估。
                     </p>
                     <p>
-                      凭借她取得的卓越成就，Liz Choi 一再展示了她善于找准时机把握机会的强大能力，并且能够在此基础上把机会，最大化的转变为教育领域的价值; 不断超越学校或者她自己所设定的已经难以企及的目标。作为一个在专业技术教育领域有着创业意识的思想者，Liz Choi以前超前的意识，有前瞻性的远见，和高效的原创解决方案而闻名；再结合她广泛的商业知识和娴熟的执行能力，Liz Choi已经成为高等教育领域的领导者。
+                      凭借她取得的卓越成就，Liz Choi
+                      一再展示了她善于找准时机把握机会的强大能力，并且能够在此基础上把机会，最大化的转变为教育领域的价值;
+                      不断超越学校或者她自己所设定的已经难以企及的目标。作为一个在专业技术教育领域有着创业意识的思想者，Liz
+                      Choi以前超前的意识，有前瞻性的远见，和高效的原创解决方案而闻名；再结合她广泛的商业知识和娴熟的执行能力，Liz
+                      Choi已经成为高等教育领域的领导者。
                     </p>
                     <p>
-                      作为国际教育市场公认的专家，Liz Choi一直是把企业级战略路线应用到教育领域的重要推动力，在政策制定，业务发展和流程开发方面具有成熟的经验。此外，她还是一个高效的问题解决者，面对复杂的挑战，可以正确的分析和解决；创建跨领域的改进，制定战略计划，以及管理和执行企业的各种改变，来提高商业成果。
+                      作为国际教育市场公认的专家，Liz
+                      Choi一直是把企业级战略路线应用到教育领域的重要推动力，在政策制定，业务发展和流程开发方面具有成熟的经验。此外，她还是一个高效的问题解决者，面对复杂的挑战，可以正确的分析和解决；创建跨领域的改进，制定战略计划，以及管理和执行企业的各种改变，来提高商业成果。
                     </p>
                     <p>
-                      作为一个备受尊敬的高管，Liz Choi的自律性以及主动工作能力一直被业界人士所认可；同时，她出色的沟通能力和交流技巧，更让她在自己的领域里取得卓越的成绩。
+                      作为一个备受尊敬的高管，Liz
+                      Choi的自律性以及主动工作能力一直被业界人士所认可；同时，她出色的沟通能力和交流技巧，更让她在自己的领域里取得卓越的成绩。
                     </p>
                     <p>
-                      Liz Choi拥有曼尼托巴大学的学士和硕士学位，专业是教育；核心领域和研究主要是高等教育的国际化-如何将考察转化为专业的视角，如何寻求最佳途径和方法，如何缩小国际化过程中的差异，以及如何通过更有效的综合方法取得更好的成果。
+                      Liz
+                      Choi拥有曼尼托巴大学的学士和硕士学位，专业是教育；核心领域和研究主要是高等教育的国际化-如何将考察转化为专业的视角，如何寻求最佳途径和方法，如何缩小国际化过程中的差异，以及如何通过更有效的综合方法取得更好的成果。
                     </p>
                     <p>
-                      在担任现任职务之前，Liz Choi在曼省第二大公立学院-曼尼托巴科学技术学院担任过多个高级职位，其中包括：副校长；学生和战略伙伴关系部副总裁; 国际部副总裁; 国际教育执行总裁。她还是曼省非营利性机构，曼尼托巴省最大的百年商会“温尼伯商会”的主席。
+                      在担任现任职务之前，Liz
+                      Choi在曼省第二大公立学院-曼尼托巴科学技术学院担任过多个高级职位，其中包括：副校长；学生和战略伙伴关系部副总裁;
+                      国际部副总裁;
+                      国际教育执行总裁。她还是曼省非营利性机构，曼尼托巴省最大的百年商会“温尼伯商会”的主席。
                     </p>
                   </div>
                 </a-col>
               </a-row>
             </div>
             <div class="slide">
-              <a-row type="flex" align="center" :gutter="[36,36]">
-                <a-col :lg="{span:8}" :md="{span:24}">
+              <a-row type="flex" align="center" :gutter="[36, 36]">
+                <a-col :lg="{ span: 8 }" :md="{ span: 24 }">
                   <div class="imgContainer">
-                    <img src="/img/Recruiting/partner2.jpg" alt="Beyond Canada">
+                    <img
+                      src="/img/Recruiting/partner2.jpg"
+                      alt="Beyond Canada"
+                    />
                     <div class="partnerTitle">
-                      <p class="name">
-                        保罗·霍尔顿 (Paul Holden)
-                      </p>
-                      <p>
-                        总裁
-                      </p>
-                      <p>
-                        执行董事
-                      </p>
-                      <p>
-                        加拿大教育集团
-                      </p>
+                      <p class="name">保罗·霍尔顿 (Paul Holden)</p>
+                      <p>总裁</p>
+                      <p>执行董事</p>
+                      <p>加拿大教育集团</p>
                     </div>
                   </div>
                 </a-col>
-                <a-col :lg="{span:16}" :md="{span:24}">
+                <a-col :lg="{ span: 16 }" :md="{ span: 24 }">
                   <div class="txtContainer">
                     <p>
                       保罗·霍尔顿（Paul Holden）在领导力和成就方面取得了非凡的
@@ -237,138 +247,262 @@
           />
           <a-tabs defaultActiveKey="details1" class="detailsTabs">
             <a-tab-pane key="details1" class="detailsTab1">
-              <div slot="tab">
-                全包式服务
-              </div>
+              <div slot="tab">全包式服务</div>
               <h3>提供一年紧缺专业课程</h3>
-              <p>4.2万加币包含一年紧缺专业课程学费$15,481.80加币-15,733.80加币</p>
+              <p>
+                4.2万加币包含一年紧缺专业课程学费$15,481.80加币-15,733.80加币
+              </p>
               <p>一年学生保险$675.00加币</p>
               <p>国际学生费用$850.00加币</p>
               <p>书本杂费$2,770.00加币</p>
 
               <h3>签证服务</h3>
-              <p>学生专享留学许可审批绿色通道，加彼岸™承诺签证不通过全额退费。</p>
+              <p>
+                学生专享留学许可审批绿色通道，加彼岸™承诺签证不通过全额退费。
+              </p>
 
               <h3>提供职业文化管理培训</h3>
-              <p>旨在帮助学生获得在加拿大取得学术和职场成功所需的沟通技巧。我们还会辅导学生编辑简历、求职技巧和准备面试。毕业后即可就业，真实就业率达90%，我们会共同在学生的整个职业生涯提供支持和帮助。</p>
+              <p>
+                旨在帮助学生获得在加拿大取得学术和职场成功所需的沟通技巧。我们还会辅导学生编辑简历、求职技巧和准备面试。毕业后即可就业，真实就业率达90%，我们会共同在学生的整个职业生涯提供支持和帮助。
+              </p>
 
               <h3>培训成就</h3>
-              <p>一年紧缺专业课程学习＋加拿大职场文化管理培训以保证接受培训的人成为合格的专业职场人士，专业老师全部具备行业内至少15年以上的从业经验，3年以上的教学经验，使学生从学校步入加拿大社会时能胜任工作，为其顺利移民提供保障。</p>
+              <p>
+                一年紧缺专业课程学习＋加拿大职场文化管理培训以保证接受培训的人成为合格的专业职场人士，专业老师全部具备行业内至少15年以上的从业经验，3年以上的教学经验，使学生从学校步入加拿大社会时能胜任工作，为其顺利移民提供保障。
+              </p>
             </a-tab-pane>
             <a-tab-pane key="details2" class="detailsTab2">
-              <div slot="tab">
-                院校专业
+              <div slot="tab">院校专业</div>
+              <div>
+                <h3>ACC 阿西尼博社区学院</h3>
+                <p><span>专业： </span>市场营销 研究生文凭 8个月</p>
+                <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+                <p><span>课程：</span>秋季、冬季、春季</p>
+                <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
               </div>
-              <h3>ACC 阿西尼博社区学院</h3>
-              <p><span>专业 - </span>市场营销 研究生文凭 8个月</p>
-              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
-              <p><span>课程：</span>秋季、冬季、春季</p>
-              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
 
-              <h3>ACC 阿西尼博社区学院</h3>
-              <p><span>专业 - </span>会计学 研究生文凭 8个月</p>
-              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
-              <p><span>课程：</span>秋季、冬季、春季</p>
-              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+              <div>
+                <h3>ACC 阿西尼博社区学院</h3>
+                <p><span>专业： </span>会计学 研究生文凭 8个月</p>
+                <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+                <p><span>课程：</span>秋季、冬季、春季</p>
+                <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+              </div>
 
-              <h3>ACC 阿西尼博社区学院</h3>
-              <p><span>专业 - </span>人力资源 研究生文凭 8个月</p>
-              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
-              <p><span>课程：</span>秋季、冬季、春季</p>
-              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+              <div>
+                <h3>ACC 阿西尼博社区学院</h3>
+                <p><span>专业： </span>人力资源 研究生文凭 8个月</p>
+                <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+                <p><span>课程：</span>秋季、冬季、春季</p>
+                <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+              </div>
 
-              <h3>ACC 阿西尼博社区学院</h3>
-              <p><span>专业 - </span>金融学 研究生文凭 8个月</p>
-              <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
-              <p><span>课程：</span>秋季、冬季、春季</p>
-              <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
-              
-              <h3>RC 罗伯森学院</h3>
-              <p><span>专业 - </span>康复理疗 College证书 12个月</p>
-              <p><span>要求：</span>高中（职业高中）毕业 雅思4-5.5（双录取）</p>
-              <p><span>课程：</span>秋季、冬季、春季</p>
-              <p><span>地点：</span>加拿大私立学院，毕业可申请封闭式工签</p>
+              <div>
+                <h3>ACC 阿西尼博社区学院</h3>
+                <p><span>专业： </span>金融学 研究生文凭 8个月</p>
+                <p><span>要求：</span>大专／本科毕业 雅思4-5.5（双录取）</p>
+                <p><span>课程：</span>秋季、冬季、春季</p>
+                <p><span>地点：</span>RC学院温尼伯市中心校区内</p>
+              </div>
+
+              <div>
+                <h3>RC 罗伯森学院</h3>
+                <p><span>专业： </span>康复理疗 College证书 12个月</p>
+                <p>
+                  <span>要求：</span>高中（职业高中）毕业 雅思4-5.5（双录取）
+                </p>
+                <p><span>课程：</span>秋季、冬季、春季</p>
+                <p><span>地点：</span>加拿大私立学院，毕业可申请封闭式工签</p>
+              </div>
             </a-tab-pane>
             <a-tab-pane key="details3" class="detailsTab3">
-              <div slot="tab">
-                职位薪资
-              </div>
+              <div slot="tab">职位薪资</div>
               <h3>会计（Accounting）年薪</h3>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>会计助理（Accounting Assistant）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$39,541 </a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$33,150</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>会计助理（Accounting Assistant）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$39,541
+                </a-col>
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$33,150</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>帐务员（Accounting Clerk）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$39,000 </a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$33,150</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>帐务员（Accounting Clerk）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$39,000
+                </a-col>
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$33,150</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>会计经理（Accounting Manger）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$80,000</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$62,500</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>会计经理（Accounting Manger）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$80,000</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$62,500</a-col
+                >
               </a-row>
               <h3>市场营销（Marketing）年薪</h3>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>市场营销主管（Marketing Coordinator）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$47,722</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$39,969</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>市场营销主管（Marketing Coordinator）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$47,722</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$39,969</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>市场助理（Marketing Assistant）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$39,000</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$31,200</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>市场助理（Marketing Assistant）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$39,000</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$31,200</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>会计经理（Accounting Manger）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$72,500</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$52,577</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>会计经理（Accounting Manger）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$72,500</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$52,577</a-col
+                >
               </a-row>
               <h3>金融（Finance）年薪</h3>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>金融文员（Finance Clerk）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$43,538</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$34,115</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>金融文员（Finance Clerk）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$43,538</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$34,115</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>金融助理（Finance  Assistant）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$46,958</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$38,583</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>金融助理（Finance Assistant）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$46,958</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$38,583</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>金融分析师（Finance  Analyst）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$73,125</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$57,500</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>金融分析师（Finance Analyst）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$73,125</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$57,500</a-col
+                >
               </a-row>
               <h3>人力资源管理（HR Mangement）年薪</h3>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>人力资源协调员（Hr Coordinator）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$44,850</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$37,050</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>人力资源协调员（Hr Coordinator）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$44,850</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$37,050</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>人事专员（Hr Generalist）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}">$60,000</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$50,000</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>人事专员（Hr Generalist）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }"
+                  >$60,000</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$50,000</a-col
+                >
               </a-row>
-              <a-row :gutter="[24,0]">
-                <a-col :md="{ span: 10}" :sm="{span: 24}"><span>人力资源经理（Hr Manager）</span></a-col>
-                <a-col :md="{ span: 4}" :sm="{span: 6}" :xs="{span: 6}"> $77,077</a-col>
-                <a-col :md="{ span: 10}" :sm="{span: 18}" :xs="{span: 18}">Entry-level 职位初始工资$56,500</a-col>
+              <a-row :gutter="[24, 0]">
+                <a-col :md="{ span: 10 }" :sm="{ span: 24 }"
+                  ><span>人力资源经理（Hr Manager）</span></a-col
+                >
+                <a-col :md="{ span: 4 }" :sm="{ span: 6 }" :xs="{ span: 6 }">
+                  $77,077</a-col
+                >
+                <a-col :md="{ span: 10 }" :sm="{ span: 18 }" :xs="{ span: 18 }"
+                  >Entry-level 职位初始工资$56,500</a-col
+                >
               </a-row>
             </a-tab-pane>
             <a-tab-pane key="details4" class="detailsTab4">
-              <div slot="tab">
-                曼省优势
-              </div>
-              <p>温尼伯（Winnipeg）是加拿大第八大城市，也是曼尼托巴省的省会。曼省过半以上的人口都居住于该市，温尼伯在地理上属于西加拿大。</p>
-              <p><span>它是一个集运输、经济、制造业、农业与教育的主要城市之一，同时也是加拿大的重要交通枢纽。</span></p>
-              <p>曼省留学项目近几年的市场认知程度在逐步提升，主要源于曼省具备稳定以及高成功率的移居政策，使得温尼伯一跃成为越来越多的国际留学生的首选城市。</p>
+              <div slot="tab">曼省优势</div>
+              <p>
+                温尼伯（Winnipeg）是加拿大第八大城市，也是曼尼托巴省的省会。曼省过半以上的人口都居住于该市，温尼伯在地理上属于西加拿大。
+              </p>
+              <p>
+                <span
+                  >它是一个集运输、经济、制造业、农业与教育的主要城市之一，同时也是加拿大的重要交通枢纽。</span
+                >
+              </p>
+              <p>
+                曼省留学项目近几年的市场认知程度在逐步提升，主要源于曼省具备稳定以及高成功率的移居政策，使得温尼伯一跃成为越来越多的国际留学生的首选城市。
+              </p>
             </a-tab-pane>
             <a-tab-pane key="details5" class="detailsTab5">
-              <div slot="tab">
-                合作伙伴及企业
+              <div slot="tab">合作伙伴及企业</div>
+              <h3>各大企业</h3>
+              <div class="coop-grid">
+                <div
+                  class="coop-item"
+                  v-for="(item, index) in clients"
+                  :key="index"
+                >
+                  <img :src="item.url" alt="" />
+                </div>
+              </div>
+              <h3>五大银行</h3>
+              <div class="coop-grid">
+                <div class="coop-item">
+                  <img src="/img/Recruiting/logos/Color/Color-BMO.png" alt="" />
+                </div>
+                <div class="coop-item">
+                  <img
+                    src="/img/Recruiting/logos/Color/Color-CIBC.png"
+                    alt=""
+                  />
+                </div>
+                <div class="coop-item">
+                  <img src="/img/Recruiting/logos/Color/Color-RBC.png" alt="" />
+                </div>
+                <div class="coop-item">
+                  <img
+                    src="/img/Recruiting/logos/Color/Color-Scotia.png"
+                    alt=""
+                  />
+                </div>
+                <div class="coop-item">
+                  <img src="/img/Recruiting/logos/Color/Color-TD.png" alt="" />
+                </div>
               </div>
             </a-tab-pane>
           </a-tabs>
@@ -376,10 +510,17 @@
       </section>
       <section class="sec-process">
         <div class="wrapper">
-          <MainTitle title="申请流程" titleEN="PROCESS" titleENColor="#E5E5E5" />
+          <MainTitle
+            title="申请流程"
+            titleEN="PROCESS"
+            titleENColor="#E5E5E5"
+          />
           <div class="process-wrap">
             <a-timeline>
-              <a-timeline-item v-for="(item, index) in recruitProcess" :key="index">
+              <a-timeline-item
+                v-for="(item, index) in recruitProcess"
+                :key="index"
+              >
                 <div slot="dot" class="step-num">
                   <span>{{ index + 1 }}</span>
                 </div>
@@ -388,15 +529,26 @@
             </a-timeline>
           </div>
           <div class="disclaimer">
-            <p>* 项目大龄申请人可参考<NuxtLink to="">旅游签转学签</NuxtLink>申请流程</p>
+            <p>
+              * 项目大龄申请人可参考<NuxtLink to="/projects/education/25"
+                >旅游签转学签</NuxtLink
+              >申请流程
+            </p>
           </div>
         </div>
       </section>
+      <div class="redDivider">8个月加拿大公立学院大专/研究生文凭移民直通车</div>
+      <br />
+      <br />
+      <br />
       <div class="wrapper">
         <section class="intro">
           <div class="img-box">
             <h2>加拿大罗伯森学院</h2>
-            <img src="/img/Recruiting/robertson.svg" alt="/projects/education/25" />
+            <img
+              src="/img/Recruiting/robertson.svg"
+              alt="/projects/education/25"
+            />
           </div>
           <div class="info-box">
             <p>
@@ -559,10 +711,97 @@ export default {
       schools,
       cnSchools,
       requirements,
-      recruitProcess
+      recruitProcess,
+      clients,
     };
   },
 };
+const clients = [
+  {
+    url: "/img/Recruiting/logos/Color/Color-Bison-Transport.png",
+    alt: "Bison Transport Logo",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-CAA.png",
+    alt: "CAA logo",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Chatime.png",
+    alt: "Chatime logo",
+  },
+  // {
+  //   url: "/img/Recruiting/logos/Color/Color-Concordia-Hospital.png",
+  // alt:""
+  // },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Crestview-Med.png",
+    alt: "Crestview Med logo",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Gamma-Dynacare.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Great-West-Life.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-HSC-Winnipeg.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-IBEX-Payroll.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Interlake-Eastern.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Loblaws.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-North-West-Lab.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Nygard.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Payworks.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Pizza-Hotline.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Revera.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Sell-off-Vacations.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-South-Beach-Casino.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-St.Amant.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-Tache-Pharmacy.png",
+    alt: "",
+  },
+  {
+    url: "/img/Recruiting/logos/Color/Color-WRHA.png",
+    alt: "",
+  },
+];
 const recruitProcess = [
   "按照院校要求提交Offer申请材料",
   "提交加拿大学习签证",
@@ -570,8 +809,8 @@ const recruitProcess = [
   "职场文化管理培训（辅导简历，模拟求职面试）",
   "毕业后申请毕业工签，入职优质企业机会",
   "递交省提名及联邦申请",
-  "成为加拿大永久居民（枫叶卡）"
-]
+  "成为加拿大永久居民（枫叶卡）",
+];
 const columns = [
   {
     dataIndex: "name",
@@ -901,12 +1140,11 @@ const schools = [
     }
 
     &.slick-prev {
-      transform:translateX(-25px)
+      transform: translateX(-25px);
     }
   }
 
   .detailsTabs {
-
     @media (min-width: 992px) {
       .ant-tabs-nav-scroll {
         display: flex;
@@ -929,7 +1167,9 @@ const schools = [
       height: 5px;
     }
 
-    .detailsTab1, .detailsTab2, .detailsTab3 {
+    .detailsTab1,
+    .detailsTab2,
+    .detailsTab3 {
       h3 {
         color: $red;
         margin-top: 30px;
@@ -940,12 +1180,19 @@ const schools = [
       }
     }
 
-    .detailsTab1, .detailsTab2 {
+    .detailsTab1,
+    .detailsTab2 {
       p {
         margin-bottom: 5px;
       }
     }
-
+    .detailsTab2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @media all and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
     .detailsTab3 {
       span {
         font-weight: bold;
@@ -1039,15 +1286,15 @@ header {
     width: 6px;
     height: 70px;
   }
-  h1::after {
-    content: "8个月加拿大公立学院研究生文凭移民直通车";
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    font-size: 20px;
-    font-weight: 300;
-    color: #919191;
-  }
+  // h1::after {
+  //   content: "8个月加拿大公立学院研究生文凭移民直通车";
+  //   position: absolute;
+  //   bottom: -30px;
+  //   left: 0;
+  //   font-size: 20px;
+  //   font-weight: 300;
+  //   color: #919191;
+  // }
 }
 
 .redDivider {
@@ -1059,8 +1306,8 @@ header {
 }
 
 .sec-introduction {
-  background-color: #efefef; 
-  font-size: 16px
+  background-color: #efefef;
+  font-size: 16px;
 }
 
 .contactLink {
@@ -1085,6 +1332,7 @@ header {
 
     h3 {
       color: $navy;
+      font-size: 22px;
     }
   }
 }
@@ -1109,9 +1357,8 @@ header {
 
       color: #fff;
     }
-
   }
-    
+
   .title {
     display: flex;
     align-items: center;
@@ -1158,10 +1405,14 @@ header {
   &.partner {
     .txtContainer {
       color: white;
+      font-size: 16px;
     }
-
+    @media all and (max-width: 768px) {
+      .txtContainer {
+        font-size: 14px;
+      }
+    }
     .imgContainer {
-
       img {
         max-width: 100%;
         object-fit: contain;
@@ -1178,7 +1429,11 @@ header {
           font-size: 18px;
         }
       }
-
+      .partnerTitle {
+        p {
+          margin-bottom: 5px;
+        }
+      }
       @media (max-width: 992px) {
         display: flex;
 
@@ -1210,7 +1465,6 @@ header {
       }
     }
   }
-
 }
 
 .servicesProvided {
@@ -1294,13 +1548,13 @@ header {
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
-    
+
     p {
       color: black;
     }
 
     a {
-      color: $red
+      color: $red;
     }
   }
   @media all and (max-width: 768px) {
@@ -1711,6 +1965,35 @@ header {
     h2 {
       font-size: 40px;
     }
+  }
+}
+.detailsTab5 {
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: $red;
+  }
+}
+.coop-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  img {
+    width: 90%;
+  }
+  margin-bottom: 30px;
+  .coop-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .coop-item:nth-child(even) {
+    background-color: #eeeeee;
+  }
+  @media all and (max-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media all and (max-width: 578px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>
