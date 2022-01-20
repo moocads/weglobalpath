@@ -7,7 +7,13 @@
             <NuxtLink to="/" exact>首页</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about">关于我们</NuxtLink>
+            <NuxtLink to="/about"
+              >关于我们
+              <img
+                src="/img/icons/down-arrow-white.png"
+                alt="dropdown arrow icon"
+                class="dropdown-arrow"
+            /></NuxtLink>
             <div class="general-dropdown">
               <ul>
                 <li>
@@ -49,7 +55,13 @@
             </div> -->
           </li>
           <li class="hot-project-link">
-            <NuxtLink to="/projects">热门项目</NuxtLink>
+            <NuxtLink to="/projects"
+              >热门项目
+              <img
+                src="/img/icons/down-arrow-white.png"
+                alt="dropdown arrow icon"
+                class="dropdown-arrow"
+            /></NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <!-- <div
                 class="project-col"
@@ -187,7 +199,13 @@
             <NuxtLink to="/cases">成功案例</NuxtLink>
           </li>
           <li class="hot-project-link">
-            <NuxtLink to="/provinces">移民省份</NuxtLink>
+            <NuxtLink to="/provinces"
+              >移民省份
+              <img
+                src="/img/icons/down-arrow-white.png"
+                alt="dropdown arrow icon"
+                class="dropdown-arrow"
+            /></NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <div
                 class="project-col"
@@ -475,6 +493,8 @@ nav {
         font-size: 16px;
         font-weight: 400;
         line-height: $nav-height;
+        display: flex;
+        align-items: center;
         @media (max-width: 1200px) {
           padding: 0 15px;
           font-size: 14px;
@@ -617,7 +637,11 @@ nav {
     width: 110px;
   }
 }
-
+.dropdown-arrow {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
 @media all and (max-width: 1200px) {
   .dropdown-wrap {
     grid-template-columns: repeat(5, 1fr);

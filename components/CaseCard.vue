@@ -48,6 +48,7 @@ export default {
   left: 0;
   padding: 20px 30px;
   width: 100%;
+  font-size: 18px;
 
   background-color: $navy;
   h1,

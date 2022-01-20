@@ -35,7 +35,7 @@
                 <p>
                   紧缺职业涉及的行业十分广泛，从金融到科学、从建筑到信息技术、从医生到幼教，各行各业都有特定的岗位急需人力填充。在推进移民过程中，不仅是选对合适的移民项目，有时也在于是否选择紧缺职业的雇主，使自己的职业更具竞争力。选择比努力更重要，在移民路上也是一样的。选对了项目、选对了职业的话能一定程度影响申请移民的效率和成功率。
                 </p>
-                <nuxt-link to="/contact">
+                <NuxtLink to="/contact">
                   <button
                     class="
                       main-btn
@@ -46,7 +46,7 @@
                   >
                     联系我们
                   </button>
-                </nuxt-link>
+                </NuxtLink>
               </div>
             </a-col>
           </a-row>
@@ -1267,7 +1267,7 @@ figure {
   margin: 0;
 }
 section {
-  padding: 40px 0;
+  padding: 100px 0;
 }
 header {
   height: 500px;
@@ -1332,7 +1332,6 @@ header {
       max-width: 400px;
     }
   }
-
   .txtContainer {
     display: flex;
     flex-direction: column;
@@ -1342,6 +1341,7 @@ header {
     h3 {
       color: $navy;
       font-size: 22px;
+      font-weight: bold;
     }
   }
 }
@@ -1735,7 +1735,7 @@ header {
 }
 .plan-sec {
   background-color: $navy;
-  padding: 60px 0;
+  padding-top: 0;
 }
 .plan-content {
   display: flex;
@@ -1978,7 +1978,7 @@ header {
 }
 .detailsTab5 {
   h3 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     color: $red;
   }
@@ -1989,14 +1989,14 @@ header {
   img {
     width: 90%;
   }
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   .coop-item {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .coop-item:nth-child(even) {
-    background-color: #eeeeee;
+    background-color: #f1f1f1;
   }
   @media all and (max-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
