@@ -84,6 +84,10 @@ export default {
     margin: 20px 0;
     border-radius: 5px;
   }
+  a {
+    color: $navy;
+    text-decoration: underline;
+  }
 }
 @media all and (max-width: 768px) {
   .blog-detail-content {

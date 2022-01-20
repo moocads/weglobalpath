@@ -226,7 +226,7 @@
             </div>
           </li>
           <li>
-            <NuxtLink to="/investment">签证服务</NuxtLink>
+            <NuxtLink to="/investment">加拿大投资</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/blogs">最新资讯</NuxtLink>

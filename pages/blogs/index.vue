@@ -123,10 +123,12 @@ section {
   }
 }
 .blogs-item article {
+  width: 100%;
   padding-left: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
   h2 {
     color: $navy;
     font-size: 16px;
