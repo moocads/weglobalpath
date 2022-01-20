@@ -470,6 +470,15 @@
             </a-tab-pane>
             <a-tab-pane key="details5" class="detailsTab5">
               <div slot="tab">合作伙伴及企业</div>
+              <h3>温尼伯商会</h3>
+              <div class="coop-grid">
+                <div class="coop-item">
+                  <img
+                    src="/img/Recruiting/logos/Color/Color-Chamber-Winnipeg.png"
+                    alt=""
+                  />
+                </div>
+              </div>
               <h3>各大企业</h3>
               <div class="coop-grid">
                 <div
