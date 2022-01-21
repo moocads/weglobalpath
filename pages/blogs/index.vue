@@ -161,7 +161,53 @@ section {
     }
   }
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 1000px) {
+  .blogs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    .blogs-item {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      border: 1px solid rgba(27, 40, 84, 0.5);
+      border-radius: 3px;
+    }
+    .blogs-item figure {
+      max-width: 100%;
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+    }
+    .blogs-item article {
+      padding-left: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+        color: #c5c5c5;
+        margin: 0;
+        display: inline-flex;
+        justify-content: space-between;
+      }
+      span:last-child {
+        transition: all 0.2s ease;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 600px) {
   header {
     height: 300px;
     background: linear-gradient(
@@ -184,47 +230,6 @@ section {
   }
   .blogs-grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-  }
-  .blogs-item {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid rgba(27, 40, 84, 0.5);
-    border-radius: 3px;
-  }
-  .blogs-item figure {
-    max-width: 100%;
-    margin-bottom: 20px;
-    img {
-      width: 100%;
-      height: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-    }
-  }
-  .blogs-item article {
-    padding-left: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    h2 {
-      font-size: 16px;
-    }
-
-    p {
-      font-size: 14px;
-      color: #c5c5c5;
-      margin: 0;
-      display: inline-flex;
-      justify-content: space-between;
-    }
-    span:last-child {
-      transition: all 0.2s ease;
-      &:hover {
-        color: $red;
-      }
-    }
   }
 }
 </style>
