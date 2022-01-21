@@ -72,7 +72,7 @@
             </div>
             <div class="slide">
               <a-row type="flex" align="center" :gutter="[36, 36]">
-                <a-col :lg="{ span: 8 }" :md="{ span: 24 }">
+                <a-col :lg="{ span: 5 }" :md="{ span: 24 }">
                   <div class="imgContainer">
                     <img
                       src="/img/Recruiting/partner.jpg"
@@ -86,7 +86,7 @@
                     </div>
                   </div>
                 </a-col>
-                <a-col :lg="{ span: 16 }" :md="{ span: 24 }">
+                <a-col :lg="{ span: 16, offset: 1 }" :md="{ span: 24 }">
                   <div class="txtContainer">
                     <p>
                       Liz
@@ -123,7 +123,7 @@
             </div>
             <div class="slide">
               <a-row type="flex" align="center" :gutter="[36, 36]">
-                <a-col :lg="{ span: 8 }" :md="{ span: 24 }">
+                <a-col :lg="{ span: 5 }" :md="{ span: 24 }">
                   <div class="imgContainer">
                     <img
                       src="/img/Recruiting/partner2.jpg"
@@ -137,7 +137,7 @@
                     </div>
                   </div>
                 </a-col>
-                <a-col :lg="{ span: 16 }" :md="{ span: 24 }">
+                <a-col :lg="{ span: 16, offset: 1 }" :md="{ span: 24 }">
                   <div class="txtContainer">
                     <p>
                       保罗·霍尔顿（Paul Holden）在领导力和成就方面取得了非凡的
