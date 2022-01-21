@@ -86,7 +86,10 @@
                     </div>
                   </div>
                 </a-col>
-                <a-col :lg="{ span: 16, offset: 1 }" :md="{ span: 24 }">
+                <a-col
+                  :lg="{ span: 16, offset: 1 }"
+                  :md="{ span: 24, offset: 0 }"
+                >
                   <div class="txtContainer">
                     <p>
                       Liz
@@ -137,7 +140,10 @@
                     </div>
                   </div>
                 </a-col>
-                <a-col :lg="{ span: 16, offset: 1 }" :md="{ span: 24 }">
+                <a-col
+                  :lg="{ span: 16, offset: 1 }"
+                  :md="{ span: 24, offset: 0 }"
+                >
                   <div class="txtContainer">
                     <p>
                       保罗·霍尔顿（Paul Holden）在领导力和成就方面取得了非凡的
@@ -1144,12 +1150,13 @@ const schools = [
       font-size: 40px;
     }
 
-    @media (max-width: 768px) {
-      opacity: 0;
-    }
-
     &.slick-prev {
       transform: translateX(-25px);
+    }
+  }
+  @media all and (max-width: 768px) {
+    .customArrow * {
+      display: none;
     }
   }
 
@@ -1447,7 +1454,7 @@ header {
       }
       @media (max-width: 992px) {
         display: flex;
-
+        align-items: center;
         img {
           max-width: 200px;
           margin-right: 30px;
