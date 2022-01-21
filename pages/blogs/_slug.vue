@@ -175,7 +175,7 @@ section {
   height: auto;
   max-height: 400px;
   object-fit: cover;
-  object-position: center;
+  object-position: bottom;
   margin: 20px 0;
 }
 .seo-tags-wrap {
