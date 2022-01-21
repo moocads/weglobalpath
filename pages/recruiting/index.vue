@@ -1162,12 +1162,12 @@ const schools = [
     }
 
     .ant-tabs-tab {
-      font-weight: bold;
       font-size: 18px;
     }
 
     .ant-tabs-tab:hover,
     .ant-tabs-tab-active {
+      text-shadow: none;
       color: $red;
     }
 
@@ -1348,6 +1348,7 @@ header {
 
 .sec-requirements {
   background-color: $navy;
+  padding-top: 30px;
   padding-bottom: 100px;
 
   .title-wrap {
@@ -1413,8 +1414,9 @@ header {
 
   &.partner {
     .txtContainer {
-      color: white;
-      font-size: 16px;
+      color: #c9c9c9;
+      font-size: 14px;
+      font-weight: 300;
     }
     @media all and (max-width: 768px) {
       .txtContainer {
@@ -1643,14 +1645,14 @@ header {
   }
 }
 .certificate-sec {
-  margin-top: 350px;
+  margin-top: 450px;
   background-color: $navy;
   position: relative;
   height: 400px;
 }
 .certificate-sec .content {
   position: relative;
-  top: -350px;
+  top: -450px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1735,7 +1737,6 @@ header {
 }
 .plan-sec {
   background-color: $navy;
-  padding-top: 0;
 }
 .plan-content {
   display: flex;
