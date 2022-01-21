@@ -27,7 +27,7 @@
               <li @click="isToggle = !isToggle">关于我们</li>
             </NuxtLink>
             <NuxtLink to="/recruiting">
-              <li @click="isToggle = !isToggle">中国区招生计划</li>
+              <li @click="isToggle = !isToggle">快速移民直通车</li>
             </NuxtLink>
             <NuxtLink to="/projects">
               <li @click="isToggle = !isToggle">热门项目</li>
