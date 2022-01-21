@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <div class="card-wrap">
-      <img :src="thumbnail" alt="" />
+  <div class="card-wrap">
+    <img :src="thumbnail" alt="" />
 
-      <div class="info-box">
-        <NuxtLink :to="link">
-          <h1>{{ title }}</h1>
-        </NuxtLink>
+    <div class="info-box">
+      <NuxtLink :to="link">
+        <h1>{{ title }}</h1>
+      </NuxtLink>
 
-        <p class="content">{{ description }}</p>
-        <p class="date">{{ date }}</p>
-      </div>
+      <p class="content">{{ description }}</p>
+      <p class="date">{{ date }}</p>
     </div>
   </div>
 </template>
@@ -35,6 +33,7 @@ export default {
 <style lang="scss" scoped>
 .card-wrap {
   min-height: 320px;
+  height: 100%;
   width: 100%;
   // max-width: 270px;
   overflow: hidden;
@@ -50,13 +49,13 @@ export default {
 }
 .info-box {
   padding: 10px 20px;
-  // width: 100%;
-  // height: 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
-  flex: 1;
+  flex-grow: 1;
 
   h1 {
     font-size: 18px;

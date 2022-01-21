@@ -245,7 +245,7 @@ export default {
     const casesData = await $axios.$get(`/cases`, {
       params: {
         _sort: "id:desc",
-        _limit: "3",
+        _limit: "4",
       },
     });
     const blogsData = await $axios.$get(`/blogs`, {
@@ -716,11 +716,17 @@ header .info-wrap {
 }
 #home-cases .cases-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
 }
 .cases-btn {
   display: none;
+}
+@media all and (max-width: 992px) {
+  #home-cases .cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 @media all and (max-width: 768px) {
   #home-cases {
@@ -773,6 +779,7 @@ header .info-wrap {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 30px;
 }
+
 @media all and (max-width: 768px) {
   #home-blogs .blogs-grid {
     grid-template-columns: repeat(1, 1fr);

@@ -11,7 +11,15 @@
         <!-- <p>{{ blog }}</p> -->
         <h2>{{ blog.title_cn }}</h2>
         <h3>{{ blog.published_at.split("T")[0] }}</h3>
-        <img :src="blog.thumbnail_cn.url" alt="" class="blog-thumbnail" />
+        <img
+          v-if="blog.header_img_cn !== null"
+          :src="blog.header_img_cn && blog.header_img_cn.url"
+          :alt="
+            blog.header_img_cn.alternativeText ||
+            '加彼岸加拿大移民资讯头图 Beyond Canada Blogs Header Image'
+          "
+          class="blog-thumbnail"
+        />
         <vue-markdown class="blog-detail-content">
           {{ blog.content_cn }}
         </vue-markdown>

@@ -67,7 +67,7 @@ export default {
       color: #fff;
     }
     h1 {
-      font-size: 20px;
+      font-size: 18px;
       margin: 0;
       margin-bottom: 5px;
     }
