@@ -532,7 +532,7 @@ const governmentResources = [
   .resources-grid li img {
     width: 100%;
     height: auto;
-    max-width: 150px;
+    max-width: 200px;
   }
 }
 /* ------------------------------------------------------ */
