@@ -259,43 +259,43 @@ export default {
 };
 const webResources = [
   {
-    url: "Government-Canada.png",
+    url: "canada-government.png",
     alt: "加拿大政府 Job Bank",
   },
   {
-    url: "LinkedIn.png",
+    url: "linkedin.png",
     alt: "Linkedin Logo",
   },
   {
-    url: "Indeed.png",
+    url: "indeed.png",
     alt: "Indeed Logo",
   },
   {
-    url: "Glassdoor.png",
+    url: "glassdoor.png",
     alt: "Glassdoor Logo",
   },
   {
-    url: "CareerBuilder.png",
+    url: "career-builder.png",
     alt: "Career Builder Logo",
   },
   {
-    url: "ZipRecruiter.png",
+    url: "zip-recruiter.png",
     alt: "Zip Recruiter Logo",
   },
   {
-    url: "Neuvoo.png",
+    url: "neuvoo.png",
     alt: "Neuvoo Logo",
   },
   {
-    url: "Workopolis.png",
+    url: "workopolis.png",
     alt: "Workopolis Logo",
   },
   {
-    url: "ZimplyHired.png",
+    url: "simply-hired.png",
     alt: "Simply Hired Logo",
   },
   {
-    url: "Monster.png",
+    url: "monster.png",
     alt: "Monster",
   },
 ];
