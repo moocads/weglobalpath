@@ -34,7 +34,7 @@ export default {
     requirementsData: Array,
     hasButtonProp: {
       type: Boolean,
-      default: false
+      default: false,
     },
   },
 };
@@ -49,16 +49,16 @@ export default {
     transition: all 0.3s ease-in-out;
     position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 10;
-      background: linear-gradient(0deg, #1b2854 0%, rgba(27, 40, 84, 0) 100%);
-      height: 20px;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   z-index: 10;
+    //   background: linear-gradient(0deg, #1b2854 0%, rgba(27, 40, 84, 0) 100%);
+    //   height: 20px;
+    //   width: 100%;
+    //   left: 0;
+    //   bottom: 0;
+    // }
   }
 
   .requirement-info-wrap-expand {

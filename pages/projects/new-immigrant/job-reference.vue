@@ -6,7 +6,7 @@
         89.93deg,
         rgba(34, 52, 92, 0.7) 7.82%,
         rgba(34, 52, 92, 0) 102.35%
-        ),url('/img/Projects/newImmi/language-header.jpg')`,
+        ),url('/img/Projects/jobRef/job-ref-header.jpg')`,
       }"
     >
       <div class="wrapper">
@@ -58,8 +58,8 @@
         </div>
         <div class="imgContainer">
           <img
-            src="/img/Projects/newImmi/language-row1.jpg"
-            alt="加拿大新移民语言培训图片"
+            src="/img/Projects/jobRef/job-ref-row1.jpg"
+            alt="加拿大新移民职业内部推荐图片"
             class="sec-img"
           />
         </div>
@@ -69,8 +69,8 @@
       <div class="row-grid">
         <div class="imgContainer">
           <img
-            src="/img/Projects/newImmi/language-row2.jpg"
-            alt="加拿大新移民语言培训图片"
+            src="/img/Projects/jobRef/job-ref-row2.jpg"
+            alt="加拿大新移民职业内部推荐图片"
             class="sec-img"
           />
         </div>
@@ -126,8 +126,8 @@
         </div>
         <div class="imgContainer">
           <img
-            src="/img/Projects/newImmi/language-row3.jpg"
-            alt="加拿大新移民语言培训 毕业图片"
+            src="/img/Projects/jobRef/job-ref-row3.jpg"
+            alt="加拿大新移民职业内部推荐图片"
             class="sec-img"
           />
         </div>
@@ -137,8 +137,8 @@
       <div class="row-grid">
         <div class="imgContainer">
           <img
-            src="/img/Projects/newImmi/language-row2.jpg"
-            alt="加拿大新移民语言培训图片"
+            src="/img/Projects/jobRef/job-ref-row4.jpg"
+            alt="加拿大新移民职业内部推荐图片"
             class="sec-img"
           />
         </div>
@@ -168,7 +168,7 @@
         </div>
       </div>
     </section>
-    <section class="sec-requirements">
+    <section class="sec-requirements sec-services">
       <div class="wrapper">
         <div class="title-wrap">
           <div class="title">
@@ -209,38 +209,11 @@
           titleENColor="#DADADA"
         />
         <ul class="resources-grid">
-          <li>
+          <li v-for="(item, index) in webResources" :key="index">
             <img
-              src="/img/Projects/jobRef/logos/canada-government.png"
-              alt=""
+              :src="'/img/Projects/jobRef/logos/' + item.url"
+              :alt="item.alt"
             />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/linkedin.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/indeed.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/glassdoor.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/career-builder.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/ziprecruiter.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/neuvoo.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/workopolis.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/simply-hired.png" alt="" />
-          </li>
-          <li>
-            <img src="/img/Projects/jobRef/logos/monster.png" alt="" />
           </li>
         </ul>
       </div>
@@ -256,59 +229,15 @@
         </div>
         <div class="government-resources-grid">
           <ul>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
-            </li>
-            <li>
-              <h3>加拿大政府</h3>
-              <a href="">点击查看</a>
+            <li v-for="(item, index) in governmentResources" :key="index">
+              <h3>{{ item.title }}</h3>
+              <a :href="item.url" target="_blank">点击查看</a>
             </li>
           </ul>
         </div>
       </div>
     </section>
-    <section class="bg-gray py-50">
+    <section class="sec-summary">
       <div class="wrapper">
         <p>
           总的来说，加拿大作为移民的首选国家，较高的生活质量和较好的福利能够惠及到大多数人。而在加拿大的工作类别和领域也相对丰富，但需要注意的是在加拿大找工作，尽量避免走入误区，同时不断的完善自己的软硬实力，让雇主更加全面的了解你的个人实力。
@@ -320,7 +249,106 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      webResources,
+      governmentResources,
+    };
+  },
+};
+const webResources = [
+  {
+    url: "Government-Canada.png",
+    alt: "加拿大政府 Job Bank",
+  },
+  {
+    url: "LinkedIn.png",
+    alt: "Linkedin Logo",
+  },
+  {
+    url: "Indeed.png",
+    alt: "Indeed Logo",
+  },
+  {
+    url: "Glassdoor.png",
+    alt: "Glassdoor Logo",
+  },
+  {
+    url: "CareerBuilder.png",
+    alt: "Career Builder Logo",
+  },
+  {
+    url: "ZipRecruiter.png",
+    alt: "Zip Recruiter Logo",
+  },
+  {
+    url: "Neuvoo.png",
+    alt: "Neuvoo Logo",
+  },
+  {
+    url: "Workopolis.png",
+    alt: "Workopolis Logo",
+  },
+  {
+    url: "ZimplyHired.png",
+    alt: "Simply Hired Logo",
+  },
+  {
+    url: "Monster.png",
+    alt: "Monster",
+  },
+];
+const governmentResources = [
+  {
+    url: "https://www.jobbank.gc.ca/home",
+    title: "加拿大政府 Job Bank",
+  },
+  {
+    url: "https://www.canada.ca/en/services/jobs/opportunities/government.html",
+    title: "加拿大政府",
+  },
+  {
+    url: "https://www.workbc.ca/jobs-careers/find-jobs/jobs.aspx",
+    title: "BC省政府",
+  },
+  {
+    url: "https://www.bcjobs.ca/burnaby-jobs",
+    title: "本拿比政府",
+  },
+  {
+    url: "https://www.alberta.ca/jobs-alberta.aspx",
+    title: "阿尔伯塔省政府",
+  },
+  {
+    url: "https://www.gov.mb.ca/govjobs/",
+    title: "曼尼托巴省政府",
+  },
+  {
+    url: "https://www.quebec.ca/en/employment",
+    title: "魁北克省政府",
+  },
+  {
+    url: "https://jobs.novascotia.ca/",
+    title: "新斯科舍省政府",
+  },
+  {
+    url: "https://www2.gnb.ca/content/gnb/en/gateways/employment.html",
+    title: "新不伦瑞克省政府",
+  },
+  {
+    url: "https://www.saskatchewan.ca/residents/jobs-working-and-training/find-and-apply-for-jobs",
+    title: "萨斯喀彻温省政府",
+  },
+  {
+    url: "https://www.hiring.gov.nl.ca/Jobs.aspx/Public",
+    title: "纽芬兰和拉布拉多省政府",
+  },
+  {
+    url: "https://www.princeedwardisland.ca/en/information/public-service-commission/provincial-government-job-opportunities",
+    title: "爱德华王子岛政府",
+  },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -429,9 +457,10 @@ export default {};
 /* ------------------------------------------------------ */
 /*               ANCHOR Requirement Section               */
 /* ------------------------------------------------------ */
+
 .sec-requirements {
   background-color: $navy;
-  padding: 40px 0;
+  padding: 40px 0 80px;
   .title-wrap {
     display: flex;
     flex-direction: column;
@@ -503,6 +532,7 @@ export default {};
   .resources-grid li img {
     width: 100%;
     height: auto;
+    max-width: 150px;
   }
 }
 /* ------------------------------------------------------ */
@@ -513,6 +543,7 @@ export default {};
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 35px;
+    margin-left: 100px;
   }
   li {
     h3 {
@@ -535,15 +566,17 @@ export default {};
     }
   }
 }
-.py-50 {
-  padding: 50px 0;
-}
-.bg-gray {
+/* ------------------------------------------------------ */
+/*                 ANCHOR SECTION SUMMARY                 */
+/* ------------------------------------------------------ */
+.sec-summary {
   background-color: #e9e9e9;
+  padding: 50px 0;
   p {
     font-size: 16px;
     text-align: center;
     color: $navy;
+    padding: 0 200px;
   }
 }
 @media all and (max-width: 991px) {
@@ -606,6 +639,129 @@ export default {};
     display: block;
     margin: auto;
     padding-bottom: 50px;
+  }
+  .requirement-grid {
+    margin-left: 0px;
+  }
+  /* ------------------------------------------------------ */
+  /*                 ANCHOR 加拿大政府资源 Section                 */
+  /* ------------------------------------------------------ */
+  .government-resources-grid {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-left: 0px;
+    }
+    li {
+      h3 {
+        font-size: 16px;
+        color: #fff;
+        font-weight: bold;
+      }
+      a {
+        color: #c9c9c9;
+        font-size: 14px;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        position: relative;
+      }
+      a::before {
+        content: url("/img/Projects/jobRef/click.svg");
+        position: relative;
+        top: 8px;
+        left: 0;
+      }
+    }
+  }
+  /* ------------------------------------------------------ */
+  /*                 ANCHOR SECTION SUMMARY                 */
+  /* ------------------------------------------------------ */
+  .sec-summary {
+    background-color: #e9e9e9;
+    padding: 50px 0;
+    p {
+      font-size: 16px;
+      text-align: center;
+      color: $navy;
+      padding: 0px;
+      margin: 0;
+    }
+  }
+}
+@media all and (max-width: 768px) {
+  .sec-introduction {
+    padding: 40px 0;
+    p {
+      font-size: 14px;
+    }
+  }
+  .about-sec .row-grid {
+    .info-wrap {
+      p,
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+  .requirement-item {
+    h2 {
+      font-size: 14px;
+    }
+  }
+  .sec-requirements {
+    .title-wrap {
+      align-items: flex-start;
+      h1 {
+        bottom: 0px;
+        left: 80px;
+        font-size: 26px;
+      }
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      p {
+        color: #233369;
+        font-size: 35px;
+      }
+      img {
+        opacity: 0.2;
+        width: 60px;
+      }
+    }
+  }
+  .sec-resources {
+    padding: 40px 0;
+    .resources-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px 20px;
+    }
+  }
+  /* ------------------------------------------------------ */
+  /*                 ANCHOR 加拿大政府资源 Section                 */
+  /* ------------------------------------------------------ */
+  .government-resources-grid {
+    ul {
+      gap: 15px;
+      margin-left: 0px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    li {
+      h3 {
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+  }
+  /* ------------------------------------------------------ */
+  /*                 ANCHOR SECTION SUMMARY                 */
+  /* ------------------------------------------------------ */
+  .sec-summary {
+    padding: 30px 0;
+    p {
+      font-size: 14px;
+    }
   }
 }
 </style>

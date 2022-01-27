@@ -10,7 +10,7 @@
         <ul class="codex-grid">
           <li class="codex-item" v-for="(proj, i) in projects" :key="i">
             <NuxtLink :to="`/projects/${proj.url}`">
-              <img :src="`/img/Home/projects/${proj.thumbnail}`" alt="" />
+              <img :src="proj.thumbnail" alt="" />
               <h2>{{ proj.title }}</h2>
             </NuxtLink>
           </li>
@@ -43,38 +43,48 @@ export default {
 const projects = [
   {
     url: "entrepreneur",
-    thumbnail: "project5.png",
+    thumbnail: "/img/Home/projects/project5.png",
     title: "加拿大企业家投资移民",
   },
   {
     url: "startup",
-    thumbnail: "project4.png",
+    thumbnail: "/img/Home/projects/project4.png",
     title: "加拿大创业人才移民",
   },
   {
     url: "nominee",
-    thumbnail: "project1.png",
+    thumbnail: "/img/Home/projects/project1.png",
     title: "加拿大雇主担保",
   },
   {
     url: "education",
-    thumbnail: "project3.png",
+    thumbnail: "/img/Home/projects/project3.png",
     title: "加拿大留学移民",
   },
   {
     url: "ee",
-    thumbnail: "ee2.png",
+    thumbnail: "/img/Home/projects/ee2.png",
     title: "联邦EE快速通道",
   },
   {
     url: "reunion",
-    thumbnail: "project8.jpeg",
+    thumbnail: "/img/Home/projects/project8.jpeg",
     title: "加拿大团聚移民",
   },
   {
     url: "new-immigrant",
-    thumbnail: "project7.jpeg",
+    thumbnail: "/img/Home/projects/project7.jpeg",
     title: "新移民服务",
+  },
+  {
+    url: "new-immigrant/language-education",
+    thumbnail: "/img/Projects/newImmi/language-header.jpg",
+    title: "新移民语言培训",
+  },
+  {
+    url: "new-immigrant/job-reference",
+    thumbnail: "/img/Projects/jobRef/job-ref-header.jpg",
+    title: "新移民职业内部推荐",
   },
 ];
 </script>
