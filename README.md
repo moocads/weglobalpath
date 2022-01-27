@@ -1,5 +1,5 @@
 # beyond-canada-staging
-
+Node Version: 14.18.1
 ## Build Setup
 
 ```bash

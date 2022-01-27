@@ -395,6 +395,10 @@ const hotProjects = [
   {
     main_cate: "新移民服务",
     url: "/projects/new-immigrant",
+    second_cate: [
+      { id: "language-education", name: "新移民语言培训" },
+      { id: "job-reference", name: "新移民职业内部推荐" },
+    ],
   },
 ];
 const provinces = [

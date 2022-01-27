@@ -95,6 +95,7 @@ export default {
   a {
     color: $navy;
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }
 @media all and (max-width: 768px) {
