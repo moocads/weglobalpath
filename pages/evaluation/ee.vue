@@ -11,7 +11,7 @@
       }"
     >
       <div class="wrapper">
-        <h1>加拿大移民快速通道（EE）评分系统</h1>
+        <h1>加拿大移民快速通道（EE）评分系统test</h1>
       </div>
     </header>
   </div>
