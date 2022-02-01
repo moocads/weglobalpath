@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>TEST</h1>
     <a-form :form="form" style="max-width: 500px; margin: 40px auto 0;">
       <a-form-item
         label="付款账户"
