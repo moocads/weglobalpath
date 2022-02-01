@@ -35,8 +35,6 @@
               </div>
             </div>
           </div>
-          <br>
-          <br>
           <div class="section">
             <h3>1、基础信息</h3>
             <div class="box">
@@ -96,6 +94,54 @@
               </div>
             </div>
           </div>
+          <div class="section" v-if="marriage == 'married'">
+            <h3>1.5、配偶加分项</h3>
+            <div class="box">
+              <div class="label">
+                学历
+              </div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="eduPartner" >
+                  <a-radio :value="1">
+                    初中以下
+                  </a-radio>
+                  <a-radio :value="2">
+                    高中
+                  </a-radio>
+                  <a-radio :value="3">
+                    1年大专
+                  </a-radio>
+                  <a-radio :value="4">
+                    2年大专
+                  </a-radio>
+                  <a-radio :value="5">
+                    3年以上大专或本科
+                  </a-radio>
+                  <a-radio :value="6">
+                    双专业 (3年以上 + 1年以上)
+                  </a-radio>
+                  <a-radio :value="7">
+                    硕士学位或专业学位（如医学博士）
+                  </a-radio>
+                  <a-radio :value="8">
+                    博士学位
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">
+                {{eduCalcPartner}}
+              </div>
+            </div>
+            <div class="box last">
+              <div class="label">工作经验</div>
+              <div class="question">
+                加拿大工作经验（可以不连续）<a-input-number v-model="expPartner"></a-input-number> 年
+              </div>
+              <div class="result">
+                {{expCalcPartner}}
+              </div>
+            </div>
+          </div>
         </div>
       </a-card>
     </div>
@@ -110,6 +156,8 @@ export default {
       age: 0,
       exp: 0,
       edu: 0,
+      eduPartner: 0,
+      expPartner: 0
     }
   },
   methods: {
@@ -219,9 +267,41 @@ export default {
         return 0
       }
     },
+    eduCalcPartner: function() {
+      this.eduPartner = Math.round(this.eduPartner)
+      if (this.marriage == "married") {
+        return (
+          this.eduPartner == 1 ? 0 :
+          this.eduPartner == 2 ? 2 :
+          this.eduPartner == 3 ? 6 :
+          this.eduPartner == 4 ? 7 :
+          this.eduPartner == 5 ? 8 :
+          this.eduPartner == 6 ? 10 :
+          this.eduPartner == 7 ? 10 :
+          this.eduPartner == 8 ? 10 : 0
+        )
+      } else {
+        return 0
+      }
+    },
+    expCalcPartner: function() {
+      this.expPartner = Math.round(this.expPartner)
+      if (this.marriage == "married") {
+        return (
+          this.expPartner < 1 ? 0 :
+          this.expPartner == 1 ? 5 :
+          this.expPartner == 2 ? 7 :
+          this.expPartner == 3 ? 8 :
+          this.expPartner == 4 ? 9 :
+          this.expPartner > 5 ? 10 : 0
+        )
+      } else {
+        return 0
+      }
+    },
     subtotal: function() {
       return (
-        this.ageCalc + this.eduCalc + this.expCalc
+        this.ageCalc + this.eduCalc + this.expCalc + this.expCalcPartner + this.eduCalcPartner
       )
     }
   }
@@ -236,50 +316,59 @@ export default {
     padding: 100px 0;
   }
 
-  .box {
-    border-top: 1px solid #efefef;
-    border-left: 1px solid #efefef;
-    border-right: 1px solid #efefef;
-    display: flex;
+  .section {
+    margin-bottom: 40px;
 
-    &.last {
-      border-bottom: 1px solid #efefef;
+    h3 {
+      margin-bottom: 20px;
     }
-    
-    .label {
+
+    .box {
+      border-top: 1px solid #efefef;
+      border-left: 1px solid #efefef;
       border-right: 1px solid #efefef;
-      padding: 20px 30px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      width: 150px;
-    }
 
-    .question {
-      padding: 20px 30px;
-      flex-grow: 1;
-
-      .ant-radio-wrapper {
-        margin-right: 30px;
+      &.last {
+        border-bottom: 1px solid #efefef;
+      }
+      
+      .label {
+        border-right: 1px solid #efefef;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        width: 150px;
       }
 
-      &.vertical-radio {
+      .question {
+        padding: 20px 30px;
+        flex-grow: 1;
+
         .ant-radio-wrapper {
-          display: block;
+          margin-right: 30px;
+        }
+
+        &.vertical-radio {
+          .ant-radio-wrapper {
+            display: block;
+          }
         }
       }
-    }
 
-    .result {
-      padding: 20px 30px;
-      width: 100px;
-      border-left: 1px solid #efefef;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      .result {
+        padding: 20px 30px;
+        width: 100px;
+        border-left: 1px solid #efefef;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
+
 }
 </style>
