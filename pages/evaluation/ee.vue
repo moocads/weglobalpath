@@ -84,10 +84,72 @@
                 {{eduCalc}}
               </div>
             </div>
+            <div class="box">
+              <div class="label">第一语言</div>
+              <div class="question lang">
+                <div>
+                  <a-radio-group v-model="langTest1.test" >
+                    <a-radio :value="1">
+                      雅思
+                    </a-radio>
+                    <a-radio :value="2">
+                      思培（CELPIP）
+                    </a-radio>
+                    <a-radio :value="3">
+                      TEF
+                    </a-radio>
+                  </a-radio-group>
+                </div>
+                <div class="input">
+                  听<a-input-number :min="0" v-model="langTest1.l"></a-input-number>
+                  说<a-input-number :min="0" v-model="langTest1.s"></a-input-number>
+                  读<a-input-number :min="0" v-model="langTest1.r"></a-input-number>
+                  写<a-input-number :min="0" v-model="langTest1.w"></a-input-number>
+                </div>
+              </div>
+              <div class="result">
+                {{langTest1Calc}}
+              </div>
+            </div>
+            <div class="box">
+              <div class="label">第二语言</div>
+              <div class="question lang">
+                <div>
+                  <a-radio-group v-model="langTest2.test" >
+                    <a-radio :value="1">
+                      无
+                    </a-radio>
+                    <a-radio :value="2">
+                      雅思
+                    </a-radio>
+                    <a-radio :value="3">
+                      思培（CELPIP）
+                    </a-radio>
+                    <a-radio :value="4">
+                      TEF
+                    </a-radio>
+                  </a-radio-group>
+                </div>
+                <div v-if="langTest2.test !== 1" class="input">
+                  听<a-input-number :min="0" v-model="langTest2.l"></a-input-number>
+                  说<a-input-number :min="0" v-model="langTest2.s"></a-input-number>
+                  读<a-input-number :min="0" v-model="langTest2.r"></a-input-number>
+                  写<a-input-number :min="0" v-model="langTest2.w"></a-input-number>
+                </div>
+              </div>
+              <div class="result">
+                {{langTest2Calc}}
+              </div>
+            </div>
             <div class="box last">
               <div class="label">工作经验</div>
-              <div class="question">
-                加拿大工作经验（可以不连续）<a-input-number v-model="exp"></a-input-number> 年
+              <div class="question exp">
+                <div style="margin-bottom: 30px">
+                  加拿大工作经验（可以不连续）<a-input-number :min="0" :max="100" v-model="exp" style="margin-right: 10px"></a-input-number> 年
+                </div>
+                <div>
+                  加拿大境外工作经验（可以不连续）<a-input-number :min="0" :max="100" v-model="expAbroad" style="margin-right: 10px"></a-input-number> 年
+                </div>
               </div>
               <div class="result">
                 {{expCalc}}
@@ -132,13 +194,198 @@
                 {{eduCalcPartner}}
               </div>
             </div>
+            <div class="box">
+              <div class="label">第一语言</div>
+              <div class="question lang">
+                <div>
+                  <a-radio-group v-model="langTest3.test" >
+                    <a-radio :value="1">
+                      无
+                    </a-radio>
+                    <a-radio :value="2">
+                      雅思
+                    </a-radio>
+                    <a-radio :value="3">
+                      思培（CELPIP）
+                    </a-radio>
+                    <a-radio :value="4">
+                      TEF
+                    </a-radio>
+                  </a-radio-group>
+                </div>
+                <div class="input" v-if="langTest3.test !== 1">
+                  听<a-input-number :min="0" v-model="langTest3.l"></a-input-number>
+                  说<a-input-number :min="0" v-model="langTest3.s"></a-input-number>
+                  读<a-input-number :min="0" v-model="langTest3.r"></a-input-number>
+                  写<a-input-number :min="0" v-model="langTest3.w"></a-input-number>
+                </div>
+              </div>
+              <div class="result">
+                {{langTest3Calc}}
+              </div>
+            </div>
             <div class="box last">
               <div class="label">工作经验</div>
               <div class="question">
-                加拿大工作经验（可以不连续）<a-input-number v-model="expPartner"></a-input-number> 年
+                加拿大工作经验（可以不连续）<a-input-number v-model="expPartner" style="margin-right: 10px"></a-input-number> 年
               </div>
               <div class="result">
                 {{expCalcPartner}}
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <h3>2、适应性加分（无需选择）</h3>
+            <div class="box">
+              <div class="label">
+                学历 & 语言
+              </div>
+              <div class="question">
+                教育背景 & 语言能力 <br>
+                1年大专及以上同时第一语言每一项都有CLB7级（含）以上，可以获得加分 <br>
+                双学位以上或者第一语言每一项都有CLB9级（含）以上，可以获得加分
+              </div>
+              <div class="result">
+                {{eduXlangCalc}}
+              </div>
+            </div>
+            <div class="box">
+              <div class="label">
+                学历 & 经验
+              </div>
+              <div class="question">
+                教育背景 & 加拿大工作经验 <br>
+                1年大专及以上同时加拿大工作过1年，可以获得分数 <br>
+                双学位以上或者加拿大工作两年以上，会有更多分数
+              </div>
+              <div class="result">
+                {{eduXexpCalc}}
+              </div>
+            </div>
+            <div class="box">
+              <div class="label">
+                语言 & 海外经验
+              </div>
+              <div class="question">
+                语言能力 & 海外工作经验 <br>
+                1年海外工作经历同时第一语言每一项都有CLB7级（含）以上，可以获得分数 <br>
+                3年海外工作经历或者第一语言每一项都有CLB9级（含）以上，会有更多分数
+              </div>
+              <div class="result">
+                {{langXexpAbroadCalc}}
+              </div>
+            </div>
+            <div class="box">
+              <div class="label">
+                全部工作经验
+              </div>
+              <div class="question">
+                教育背景 & 加拿大工作经验 <br>
+                1年大专及以上同时加拿大工作过1年，可以获得分数 <br>
+                双学位以上或者加拿大工作两年以上，会有更多分数
+              </div>
+              <div class="result">
+                {{expXexpAbroadCalc}}
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <h3>3、附加分</h3>
+            <div class="box">
+              <div class="label">
+                省提名
+              </div>
+              <div class="question">
+                <a-radio-group v-model="rec" >
+                  <a-radio :value="1">
+                    有
+                  </a-radio>
+                  <a-radio :value="2">
+                    没有
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">
+                {{recCalc}}
+              </div>
+            </div>
+            <div class="box">
+              <div class="label">
+                兄弟姐妹在加拿大
+              </div>
+              <div class="question">
+                <a-radio-group v-model="brothers" >
+                  <a-radio :value="1">
+                    有
+                  </a-radio>
+                  <a-radio :value="2">
+                    没有
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">
+                {{brothersCalc}}
+              </div>
+            </div>
+            <div class="box">
+              <div class="label">
+                雇主Offer
+              </div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="offer" >
+                  <a-radio :value="1">
+                    无
+                  </a-radio>
+                  <a-radio :value="2">
+                    NOC 00 类工作LMIA
+                  </a-radio>
+                  <a-radio :value="3">
+                    其他类工作LMIA
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">
+                {{offerCalc}}
+              </div>
+            </div>
+            <div class="box">
+              <div class="label">
+                英法双语
+              </div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="bilingual" >
+                  <a-radio :value="1">
+                    无
+                  </a-radio>
+                  <a-radio :value="2">
+                    法语NCLC4-7，英语CLB4或以下
+                  </a-radio>
+                  <a-radio :value="3">
+                    法语NCLC 7，英语CLB5或以上
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">
+                {{bilingualCalc}}
+              </div>
+            </div>
+            <div class="box last">
+              <div class="label">加拿大学历</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="caEdu" >
+                  <a-radio :value="1">
+                    无
+                  </a-radio>
+                  <a-radio :value="2">
+                    一年或两年的加拿大高等教育
+                  </a-radio>
+                  <a-radio :value="3">
+                    三年或以上加拿大高等教育
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">
+                {{caEduCalc}}
               </div>
             </div>
           </div>
@@ -155,9 +402,48 @@ export default {
       marriage: "single",
       age: 0,
       exp: 0,
+      expAbroad: 0,
       edu: 0,
+      langTest1: {
+        test: undefined,
+        l: 0,
+        s: 0,
+        r: 0,
+        w: 0,
+        clbL: 0,
+        clbS: 0,
+        clbR: 0,
+        clbW: 0,
+      },
+      langTest2: {
+        test: undefined,
+        l: 0,
+        s: 0,
+        r: 0,
+        w: 0,
+        clbL: 0,
+        clbS: 0,
+        clbR: 0,
+        clbW: 0,
+      },
+      langTest3: {
+        test: undefined,
+        l: 0,
+        s: 0,
+        r: 0,
+        w: 0,
+        clbL: 0,
+        clbS: 0,
+        clbR: 0,
+        clbW: 0,
+      },
       eduPartner: 0,
-      expPartner: 0
+      expPartner: 0,
+      offer:0,
+      rec:0,
+      brothers:0,
+      bilingual:0,
+      caEdu: 0
     }
   },
   methods: {
@@ -216,7 +502,6 @@ export default {
       }
     },
     eduCalc: function() {
-      this.edu = Math.round(this.edu)
       if (this.marriage == "married") {
         return (
           this.edu == 1 ? 0 :
@@ -243,32 +528,439 @@ export default {
         return 0
       }
     },
+    langTest1Calc: function() {
+      if (this.langTest1.test == 1) {
+        this.langTest1.clbL = (
+          this.langTest1.l >= 8.5 ? 10 :
+          this.langTest1.l >= 8 ? 9 :
+          this.langTest1.l >= 7.5 ? 8 :
+          this.langTest1.l >= 6 ? 7 :
+          this.langTest1.l >= 5.5 ? 6 :
+          this.langTest1.l >= 5 ? 5 :
+          this.langTest1.l >= 4.5 ? 4 : 0
+        ) 
+        this.langTest1.clbS = (
+          this.langTest1.s >= 7.5 ? 10 :
+          this.langTest1.s >= 7 ? 9 :
+          this.langTest1.s >= 6.5 ? 8 :
+          this.langTest1.s >= 6 ? 7 :
+          this.langTest1.s >= 5.5 ? 6 :
+          this.langTest1.s >= 5 ? 5 :
+          this.langTest1.s >= 4 ? 4 : 0
+        ) 
+        this.langTest1.clbR = (
+          this.langTest1.r >= 8 ? 10 :
+          this.langTest1.r >= 7.5 ? 9 :
+          this.langTest1.r >= 6.5 ? 8 :
+          this.langTest1.r >= 6 ? 7 :
+          this.langTest1.r >= 5 ? 6 :
+          this.langTest1.r >= 4 ? 5 :
+          this.langTest1.r >= 3.5 ? 4 : 0
+        ) 
+        this.langTest1.clbW = (
+          this.langTest1.w >= 7.5 ? 10 :
+          this.langTest1.w >= 7 ? 9 :
+          this.langTest1.w >= 6.5 ? 8 :
+          this.langTest1.w >= 6 ? 7 :
+          this.langTest1.w >= 5.5 ? 6 :
+          this.langTest1.w >= 5 ? 5 :
+          this.langTest1.w >= 4 ? 4 : 0
+        ) 
+      } else if (this.langTest1.test == 2) {
+        this.langTest1.clbL = this.langTest1.l
+        this.langTest1.clbS = this.langTest1.s
+        this.langTest1.clbR = this.langTest1.r
+        this.langTest1.clbW = this.langTest1.w
+      } else if (this.langTest1.test == 3) {
+        this.langTest1.clbL = (
+          this.langTest1.l >= 316 ? 10 :
+          this.langTest1.l >= 298 ? 9 :
+          this.langTest1.l >= 280 ? 8 :
+          this.langTest1.l >= 249 ? 7 :
+          this.langTest1.l >= 217 ? 6 :
+          this.langTest1.l >= 181 ? 5 :
+          this.langTest1.l >= 145 ? 4 : 0
+        ) 
+        this.langTest1.clbS = (
+          this.langTest1.s >= 393 ? 10 :
+          this.langTest1.s >= 371 ? 9 :
+          this.langTest1.s >= 349 ? 8 :
+          this.langTest1.s >= 310 ? 7 :
+          this.langTest1.s >= 271 ? 6 :
+          this.langTest1.s >= 226 ? 5 :
+          this.langTest1.s >= 181 ? 4 : 0
+        ) 
+        this.langTest1.clbR = (
+          this.langTest1.r >= 263 ? 10 :
+          this.langTest1.r >= 248 ? 9 :
+          this.langTest1.r >= 233 ? 8 :
+          this.langTest1.r >= 207 ? 7 :
+          this.langTest1.r >= 181 ? 6 :
+          this.langTest1.r >= 151 ? 5 :
+          this.langTest1.r >= 121 ? 4 : 0
+        ) 
+        this.langTest1.clbW = (
+          this.langTest1.w >= 393 ? 10 :
+          this.langTest1.w >= 371 ? 9 :
+          this.langTest1.w >= 349 ? 8 :
+          this.langTest1.w >= 310 ? 7 :
+          this.langTest1.w >= 271 ? 6 :
+          this.langTest1.w >= 226 ? 5 :
+          this.langTest1.w >= 181 ? 4 : 0
+        ) 
+      } else {
+        this.langTest1.clbL = 0
+        this.langTest1.clbS = 0
+        this.langTest1.clbR = 0
+        this.langTest1.clbW = 0
+      }
+
+      if (this.marriage == "married") {
+        const clbLPoints = (
+          this.langTest1.clbL >= 10 ? 32 :
+          this.langTest1.clbL >= 9 ? 29 :
+          this.langTest1.clbL >= 8 ? 22 :
+          this.langTest1.clbL >= 7 ? 16 :
+          this.langTest1.clbL >= 6 ? 8 :
+          this.langTest1.clbL >= 4 ? 6 :
+          0
+        )
+        const clbSPoints = (
+          this.langTest1.clbS >= 10 ? 32 :
+          this.langTest1.clbS >= 9 ? 29 :
+          this.langTest1.clbS >= 8 ? 22 :
+          this.langTest1.clbS >= 7 ? 16 :
+          this.langTest1.clbS >= 6 ? 8 :
+          this.langTest1.clbS >= 4 ? 6 :
+          0
+        )
+        const clbRPoints = (
+          this.langTest1.clbR >= 10 ? 32 :
+          this.langTest1.clbR >= 9 ? 29 :
+          this.langTest1.clbR >= 8 ? 22 :
+          this.langTest1.clbR >= 7 ? 16 :
+          this.langTest1.clbR >= 6 ? 8 :
+          this.langTest1.clbR >= 4 ? 6 :
+          0
+        )
+        const clbWPoints = (
+          this.langTest1.clbW >= 10 ? 32 :
+          this.langTest1.clbW >= 9 ? 29 :
+          this.langTest1.clbW >= 8 ? 22 :
+          this.langTest1.clbW >= 7 ? 16 :
+          this.langTest1.clbW >= 6 ? 8 :
+          this.langTest1.clbW >= 4 ? 6 :
+          0
+        )
+        return (
+          clbLPoints + clbSPoints + clbRPoints + clbWPoints
+        )
+      } else if (this.marriage == "single") {
+        const clbLPoints = (
+          this.langTest1.clbL >= 10 ? 34 :
+          this.langTest1.clbL >= 9 ? 31 :
+          this.langTest1.clbL >= 8 ? 23 :
+          this.langTest1.clbL >= 7 ? 17 :
+          this.langTest1.clbL >= 6 ? 9 :
+          this.langTest1.clbL >= 4 ? 6 :
+          0
+        )
+        const clbSPoints = (
+          this.langTest1.clbS >= 10 ? 34 :
+          this.langTest1.clbS >= 9 ? 31 :
+          this.langTest1.clbS >= 8 ? 23 :
+          this.langTest1.clbS >= 7 ? 17 :
+          this.langTest1.clbS >= 6 ? 9 :
+          this.langTest1.clbS >= 4 ? 6 :
+          0
+        )
+        const clbRPoints = (
+          this.langTest1.clbR >= 10 ? 34 :
+          this.langTest1.clbR >= 9 ? 31 :
+          this.langTest1.clbR >= 8 ? 23 :
+          this.langTest1.clbR >= 7 ? 17 :
+          this.langTest1.clbR >= 6 ? 9 :
+          this.langTest1.clbR >= 4 ? 6 :
+          0
+        )
+        const clbWPoints = (
+          this.langTest1.clbW >= 10 ? 34 :
+          this.langTest1.clbW >= 9 ? 31 :
+          this.langTest1.clbW >= 8 ? 23 :
+          this.langTest1.clbW >= 7 ? 17 :
+          this.langTest1.clbW >= 6 ? 9 :
+          this.langTest1.clbW >= 4 ? 6 :
+          0
+        )
+        return (
+          clbLPoints + clbSPoints + clbRPoints + clbWPoints
+        )
+      } else {
+        return 0
+      }
+    },
+    langTest2Calc: function() {
+      if (this.langTest2.test == 2) {
+        this.langTest2.clbL = (
+          this.langTest2.l >= 8.5 ? 10 :
+          this.langTest2.l >= 8 ? 9 :
+          this.langTest2.l >= 7.5 ? 8 :
+          this.langTest2.l >= 6 ? 7 :
+          this.langTest2.l >= 5.5 ? 6 :
+          this.langTest2.l >= 5 ? 5 :
+          this.langTest2.l >= 4.5 ? 4 : 0
+        ) 
+        this.langTest2.clbS = (
+          this.langTest2.s >= 7.5 ? 10 :
+          this.langTest2.s >= 7 ? 9 :
+          this.langTest2.s >= 6.5 ? 8 :
+          this.langTest2.s >= 6 ? 7 :
+          this.langTest2.s >= 5.5 ? 6 :
+          this.langTest2.s >= 5 ? 5 :
+          this.langTest2.s >= 4 ? 4 : 0
+        ) 
+        this.langTest2.clbR = (
+          this.langTest2.r >= 8 ? 10 :
+          this.langTest2.r >= 7.5 ? 9 :
+          this.langTest2.r >= 6.5 ? 8 :
+          this.langTest2.r >= 6 ? 7 :
+          this.langTest2.r >= 5 ? 6 :
+          this.langTest2.r >= 4 ? 5 :
+          this.langTest2.r >= 3.5 ? 4 : 0
+        ) 
+        this.langTest2.clbW = (
+          this.langTest2.w >= 7.5 ? 10 :
+          this.langTest2.w >= 7 ? 9 :
+          this.langTest2.w >= 6.5 ? 8 :
+          this.langTest2.w >= 6 ? 7 :
+          this.langTest2.w >= 5.5 ? 6 :
+          this.langTest2.w >= 5 ? 5 :
+          this.langTest2.w >= 4 ? 4 : 0
+        ) 
+      } else if (this.langTest2.test == 3) {
+        this.langTest2.clbL = this.langTest2.l
+        this.langTest2.clbS = this.langTest2.s
+        this.langTest2.clbR = this.langTest2.r
+        this.langTest2.clbW = this.langTest2.w
+      } else if (this.langTest2.test == 4) {
+        this.langTest2.clbL = (
+          this.langTest2.l >= 316 ? 10 :
+          this.langTest2.l >= 298 ? 9 :
+          this.langTest2.l >= 280 ? 8 :
+          this.langTest2.l >= 249 ? 7 :
+          this.langTest2.l >= 217 ? 6 :
+          this.langTest2.l >= 181 ? 5 :
+          this.langTest2.l >= 145 ? 4 : 0
+        ) 
+        this.langTest2.clbS = (
+          this.langTest2.s >= 393 ? 10 :
+          this.langTest2.s >= 371 ? 9 :
+          this.langTest2.s >= 349 ? 8 :
+          this.langTest2.s >= 310 ? 7 :
+          this.langTest2.s >= 271 ? 6 :
+          this.langTest2.s >= 226 ? 5 :
+          this.langTest2.s >= 181 ? 4 : 0
+        ) 
+        this.langTest2.clbR = (
+          this.langTest2.r >= 263 ? 10 :
+          this.langTest2.r >= 248 ? 9 :
+          this.langTest2.r >= 233 ? 8 :
+          this.langTest2.r >= 207 ? 7 :
+          this.langTest2.r >= 181 ? 6 :
+          this.langTest2.r >= 151 ? 5 :
+          this.langTest2.r >= 121 ? 4 : 0
+        ) 
+        this.langTest2.clbW = (
+          this.langTest2.w >= 393 ? 10 :
+          this.langTest2.w >= 371 ? 9 :
+          this.langTest2.w >= 349 ? 8 :
+          this.langTest2.w >= 310 ? 7 :
+          this.langTest2.w >= 271 ? 6 :
+          this.langTest2.w >= 226 ? 5 :
+          this.langTest2.w >= 181 ? 4 : 0
+        ) 
+      } else {
+        this.langTest2.clbL = 0
+        this.langTest2.clbS = 0
+        this.langTest2.clbR = 0
+        this.langTest2.clbW = 0
+      }
+
+      if (this.marriage == "married" || this.marriage == "single") {
+        const clbLPoints = (
+          this.langTest2.clbL >= 9 ? 6 :
+          this.langTest2.clbL >= 7 ? 3 :
+          this.langTest2.clbL >= 5 ? 1 :
+          0
+        )
+        const clbSPoints = (
+          this.langTest2.clbS >= 9 ? 6 :
+          this.langTest2.clbS >= 7 ? 3 :
+          this.langTest2.clbS >= 5 ? 1 :
+          0
+        )
+        const clbRPoints = (
+          this.langTest2.clbR >= 9 ? 6 :
+          this.langTest2.clbR >= 7 ? 3 :
+          this.langTest2.clbR >= 5 ? 1 :
+          0
+        )
+        const clbWPoints = (
+          this.langTest2.clbW >= 9 ? 6 :
+          this.langTest2.clbW >= 7 ? 3 :
+          this.langTest2.clbW >= 5 ? 1 :
+          0
+        )
+        return (
+          clbLPoints + clbSPoints + clbRPoints + clbWPoints
+        )
+      } else {
+        return 0
+      }
+    },
+    langTest3Calc: function() {
+      if (this.langTest3.test == 2) {
+        this.langTest3.clbL = (
+          this.langTest3.l >= 8.5 ? 10 :
+          this.langTest3.l >= 8 ? 9 :
+          this.langTest3.l >= 7.5 ? 8 :
+          this.langTest3.l >= 6 ? 7 :
+          this.langTest3.l >= 5.5 ? 6 :
+          this.langTest3.l >= 5 ? 5 :
+          this.langTest3.l >= 4.5 ? 4 : 0
+        ) 
+        this.langTest3.clbS = (
+          this.langTest3.s >= 7.5 ? 10 :
+          this.langTest3.s >= 7 ? 9 :
+          this.langTest3.s >= 6.5 ? 8 :
+          this.langTest3.s >= 6 ? 7 :
+          this.langTest3.s >= 5.5 ? 6 :
+          this.langTest3.s >= 5 ? 5 :
+          this.langTest3.s >= 4 ? 4 : 0
+        ) 
+        this.langTest3.clbR = (
+          this.langTest3.r >= 8 ? 10 :
+          this.langTest3.r >= 7.5 ? 9 :
+          this.langTest3.r >= 6.5 ? 8 :
+          this.langTest3.r >= 6 ? 7 :
+          this.langTest3.r >= 5 ? 6 :
+          this.langTest3.r >= 4 ? 5 :
+          this.langTest3.r >= 3.5 ? 4 : 0
+        ) 
+        this.langTest3.clbW = (
+          this.langTest3.w >= 7.5 ? 10 :
+          this.langTest3.w >= 7 ? 9 :
+          this.langTest3.w >= 6.5 ? 8 :
+          this.langTest3.w >= 6 ? 7 :
+          this.langTest3.w >= 5.5 ? 6 :
+          this.langTest3.w >= 5 ? 5 :
+          this.langTest3.w >= 4 ? 4 : 0
+        ) 
+      } else if (this.langTest3.test == 3) {
+        this.langTest3.clbL = this.langTest3.l
+        this.langTest3.clbS = this.langTest3.s
+        this.langTest3.clbR = this.langTest3.r
+        this.langTest3.clbW = this.langTest3.w
+      } else if (this.langTest3.test == 4) {
+        this.langTest3.clbL = (
+          this.langTest3.l >= 316 ? 10 :
+          this.langTest3.l >= 298 ? 9 :
+          this.langTest3.l >= 280 ? 8 :
+          this.langTest3.l >= 249 ? 7 :
+          this.langTest3.l >= 217 ? 6 :
+          this.langTest3.l >= 181 ? 5 :
+          this.langTest3.l >= 145 ? 4 : 0
+        ) 
+        this.langTest3.clbS = (
+          this.langTest3.s >= 393 ? 10 :
+          this.langTest3.s >= 371 ? 9 :
+          this.langTest3.s >= 349 ? 8 :
+          this.langTest3.s >= 310 ? 7 :
+          this.langTest3.s >= 271 ? 6 :
+          this.langTest3.s >= 226 ? 5 :
+          this.langTest3.s >= 181 ? 4 : 0
+        ) 
+        this.langTest3.clbR = (
+          this.langTest3.r >= 263 ? 10 :
+          this.langTest3.r >= 248 ? 9 :
+          this.langTest3.r >= 233 ? 8 :
+          this.langTest3.r >= 207 ? 7 :
+          this.langTest3.r >= 181 ? 6 :
+          this.langTest3.r >= 151 ? 5 :
+          this.langTest3.r >= 121 ? 4 : 0
+        ) 
+        this.langTest3.clbW = (
+          this.langTest3.w >= 393 ? 10 :
+          this.langTest3.w >= 371 ? 9 :
+          this.langTest3.w >= 349 ? 8 :
+          this.langTest3.w >= 310 ? 7 :
+          this.langTest3.w >= 271 ? 6 :
+          this.langTest3.w >= 226 ? 5 :
+          this.langTest3.w >= 181 ? 4 : 0
+        ) 
+      } else {
+        this.langTest3.clbL = 0
+        this.langTest3.clbS = 0
+        this.langTest3.clbR = 0
+        this.langTest3.clbW = 0
+      }
+
+      if (this.marriage == "married") {
+        const clbLPoints = (
+          this.langTest3.clbL >= 9 ? 5 :
+          this.langTest3.clbL >= 7 ? 3 :
+          this.langTest3.clbL >= 5 ? 1 :
+          0
+        )
+        const clbSPoints = (
+          this.langTest3.clbS >= 9 ? 5 :
+          this.langTest3.clbS >= 7 ? 3 :
+          this.langTest3.clbS >= 5 ? 1 :
+          0
+        )
+        const clbRPoints = (
+          this.langTest3.clbR >= 9 ? 5 :
+          this.langTest3.clbR >= 7 ? 3 :
+          this.langTest3.clbR >= 5 ? 1 :
+          0
+        )
+        const clbWPoints = (
+          this.langTest3.clbW >= 9 ? 5 :
+          this.langTest3.clbW >= 7 ? 3 :
+          this.langTest3.clbW >= 5 ? 1 :
+          0
+        )
+        return (
+          clbLPoints + clbSPoints + clbRPoints + clbWPoints
+        )
+      } else {
+        return 0
+      }
+    },
     expCalc: function() {
-      this.exp = Math.round(this.exp)
       if (this.marriage == "married") {
         return (
-          this.exp < 1 ? 0 :
-          this.exp == 1 ? 35 :
-          this.exp == 2 ? 46 :
-          this.exp == 3 ? 56 :
-          this.exp == 4 ? 63 :
-          this.exp > 5 ? 70 : 0
+          this.exp >= 5 ? 70 : 
+          this.exp >= 4 ? 63 :
+          this.exp >= 3 ? 56 :
+          this.exp >= 2 ? 46 :
+          this.exp >= 1 ? 35 :
+          0
         )
       } else if (this.marriage == "single") {
         return (
-          this.exp < 1 ? 0 :
-          this.exp == 1 ? 40 :
-          this.exp == 2 ? 53 :
-          this.exp == 3 ? 64 :
-          this.exp == 4 ? 72 :
-          this.exp > 5 ? 80 : 0
+          this.exp >= 5 ? 80 :
+          this.exp >= 4 ? 72 :
+          this.exp >= 3 ? 64 :
+          this.exp >= 2 ? 53 :
+          this.exp >= 1 ? 40 :
+          0
         )
       } else {
         return 0
       }
     },
     eduCalcPartner: function() {
-      this.eduPartner = Math.round(this.eduPartner)
       if (this.marriage == "married") {
         return (
           this.eduPartner == 1 ? 0 :
@@ -285,23 +977,113 @@ export default {
       }
     },
     expCalcPartner: function() {
-      this.expPartner = Math.round(this.expPartner)
       if (this.marriage == "married") {
         return (
-          this.expPartner < 1 ? 0 :
-          this.expPartner == 1 ? 5 :
-          this.expPartner == 2 ? 7 :
-          this.expPartner == 3 ? 8 :
-          this.expPartner == 4 ? 9 :
-          this.expPartner > 5 ? 10 : 0
+          this.expPartner >= 5 ? 10 :
+          this.expPartner >= 4 ? 9 :
+          this.expPartner >= 3 ? 8 :
+          this.expPartner >= 2 ? 7 :
+          this.expPartner >= 1 ? 5 :
+          0
         )
+      } else {
+        return 0
+      }
+    },
+    eduXexpCalc: function() {
+      return (
+        this.exp >= 2 && this.edu >= 6 ? 50 :
+        this.exp >= 1 && this.exp < 2 && this.edu >= 6 ? 25 :
+        this.exp >= 2 && this.edu < 5 && this.edu >= 3 ? 25 :
+        this.exp >= 1 && this.exp < 2 && this.edu < 6 && this.edu >=3 ? 13 :
+        0
+      )
+    },
+    eduXlangCalc: function() {
+      return (
+        this.langTest1.clbL >= 9 && this.langTest1.clbS >= 9 && this.langTest1.clbR >= 9 && this.langTest1.clbW >= 9 && this.edu >= 6 ? 50 :
+        this.langTest1.clbL >= 9 && this.langTest1.clbS >= 9 && this.langTest1.clbR >= 9 && this.langTest1.clbW >= 9 && this.edu < 6 && this.edu >=3 ? 25 :
+        this.langTest1.clbL >= 7 && this.langTest1.clbS >= 7 && this.langTest1.clbR >= 7 && this.langTest1.clbW >= 7 && this.edu >= 6 ? 25 :
+        this.langTest1.clbL >= 7 && this.langTest1.clbS >= 7 && this.langTest1.clbR >= 7 && this.langTest1.clbW >= 7 && this.edu < 6 && this.edu >=3 ? 13 :
+        0
+      )
+    },
+    langXexpAbroadCalc: function() {
+      return (
+        this.langTest1.clbL >= 9 && this.langTest1.clbS >= 9 && this.langTest1.clbR >= 9 && this.langTest1.clbW >= 9 && this.expAbroad >= 3 ? 50 :
+        this.langTest1.clbL >= 9 && this.langTest1.clbS >= 9 && this.langTest1.clbR >= 9 && this.langTest1.clbW >= 9 && this.expAbroad < 3 && this.expAbroad >=1 ? 25 :
+        this.langTest1.clbL >= 7 && this.langTest1.clbS >= 7 && this.langTest1.clbR >= 7 && this.langTest1.clbW >= 7 && this.expAbroad >= 3 ? 25 :
+        this.langTest1.clbL >= 7 && this.langTest1.clbS >= 7 && this.langTest1.clbR >= 7 && this.langTest1.clbW >= 7 && this.expAbroad < 3 && this.expAbroad >=1 ? 13 :
+        0
+      )
+    },
+    expXexpAbroadCalc: function() {
+      return (
+        this.exp >= 2 && this.expAbroad >= 3 ? 50 :
+        this.exp >= 1 && this.exp < 2 && this.expAbroad >= 3 ? 25 :
+        this.exp >= 2 && this.expAbroad < 3 && this.expAbroad >=1 ? 25 :
+        this.exp >= 1 && this.exp < 2 && this.expAbroad < 3 && this.expAbroad >=1 ? 13 :
+        0
+      )
+    },
+    recCalc: function() {
+      return (
+        this.rec == 1 ? 600 : 0
+      )
+    },
+    brothersCalc: function() {
+      return (
+        this.rec !== 1 && this.brothers == 1 ? 15 : 0
+      )
+    },
+    offerCalc: function() {
+      if (this.rec !== 1) {
+        return (
+          this.offer == 2 ? 200 :
+          this.offer == 3 ? 50 : 0
+        ) 
+      } else {
+        return 0
+      }
+    },
+    bilingualCalc: function() {
+      if (this.rec !== 1) {
+        return (
+          this.bilingual == 2 ? 25 :
+          this.bilingual == 3 ? 50 : 0
+        ) 
+      } else {
+        return 0
+      }
+    },
+    caEduCalc: function() {
+      if (this.rec !== 1) {
+        return (
+          this.caEdu == 2 ? 15 :
+          this.caEdu == 3 ? 30 : 0
+        ) 
       } else {
         return 0
       }
     },
     subtotal: function() {
       return (
-        this.ageCalc + this.eduCalc + this.expCalc + this.expCalcPartner + this.eduCalcPartner
+        this.ageCalc + 
+        this.eduCalc + 
+        this.langTest1Calc + 
+        this.langTest2Calc + 
+        this.langTest3Calc + 
+        this.expCalc + 
+        this.expCalcPartner + 
+        this.eduCalcPartner + 
+        this.brothersCalc + 
+        this.offerCalc + 
+        this.bilingualCalc + 
+        this.caEduCalc + 
+        this.eduXexpCalc + 
+        this.eduXlangCalc + 
+        this.langXexpAbroadCalc + 
+        this.expXexpAbroadCalc
       )
     }
   }
@@ -341,11 +1123,14 @@ export default {
         align-items: center;
         font-weight: bold;
         width: 150px;
+        text-align: center;
       }
 
       .question {
         padding: 20px 30px;
         flex-grow: 1;
+        display: flex;
+        align-items: center;
 
         .ant-radio-wrapper {
           margin-right: 30px;
@@ -354,6 +1139,23 @@ export default {
         &.vertical-radio {
           .ant-radio-wrapper {
             display: block;
+          }
+        }
+
+        &.lang, &.exp {
+          flex-direction: column;
+        
+          & > div {
+            width: 100%;
+
+            .ant-input-number {
+              margin-right: 30px;
+              margin-left: 10px;
+            }
+
+            &.input {
+              margin-top: 30px;
+            }
           }
         }
       }
