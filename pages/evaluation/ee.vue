@@ -16,7 +16,12 @@
     </header>
     <div class="wrapper">
       <a-card>
-        <h2>Points: {{subtotal}}</h2>
+        <a-affix :offset-top="0">
+          <div class="pointsCounter">
+            <h3>最新邀请分为：<strong>745分</strong></h3>
+            <h2>您目前EE评分为：<strong>{{subtotal}}分</strong></h2>
+          </div>
+        </a-affix>
         <div class="form">
           <div class="section">
             <div class="box last">
@@ -147,8 +152,15 @@
                 <div style="margin-bottom: 30px">
                   加拿大工作经验（可以不连续）<a-input-number :min="0" :max="100" v-model="exp" style="margin-right: 10px"></a-input-number> 年
                 </div>
-                <div>
+                <div style="margin-bottom: 30px">
                   加拿大境外工作经验（可以不连续）<a-input-number :min="0" :max="100" v-model="expAbroad" style="margin-right: 10px"></a-input-number> 年
+                </div>
+                <div>
+                  是否持有加拿大技工文凭？
+                  <a-radio-group v-model="tech">
+                    <a-radio :value="1">有</a-radio>
+                    <a-radio :value="2">没有</a-radio>
+                  </a-radio-group>
                 </div>
               </div>
               <div class="result">
@@ -288,6 +300,19 @@
                 {{expXexpAbroadCalc}}
               </div>
             </div>
+            <div class="box last">
+              <div class="label">
+                语言 & 技工文凭
+              </div>
+              <div class="question">
+                语言能力 & 加拿大技工文凭 <br>
+                持有加拿大技工文凭以及第一官方语言单项得分等于或高于CLB5但单项或多项低于CLB7，可以获得分数 <br>
+                第一官方语言单项得分等于或高于CLB7，会有更多分数
+              </div>
+              <div class="result">
+                {{langXtechCalc}}
+              </div>
+            </div>
           </div>
           <div class="section">
             <h3>3、附加分</h3>
@@ -404,6 +429,7 @@ export default {
       exp: 0,
       expAbroad: 0,
       edu: 0,
+      tech: 0,
       langTest1: {
         test: undefined,
         l: 0,
@@ -1026,6 +1052,17 @@ export default {
         0
       )
     },
+    langXtechCalc: function() {
+      if (this.tech == 1) {
+        return (
+          this.langTest1.clbL >= 7 && this.langTest1.clbS >= 7 && this.langTest1.clbR >= 7 && this.langTest1.clbW >= 7 ? 50 :
+          this.langTest1.clbL >= 5 && this.langTest1.clbS >= 5 && this.langTest1.clbR >= 5 && this.langTest1.clbW >= 5 ? 25 :
+          0
+        )
+      } else {
+        return 0
+      }
+    },
     recCalc: function() {
       return (
         this.rec == 1 ? 600 : 0
@@ -1083,19 +1120,40 @@ export default {
         this.eduXexpCalc + 
         this.eduXlangCalc + 
         this.langXexpAbroadCalc + 
-        this.expXexpAbroadCalc
+        this.expXexpAbroadCalc + 
+        this.recCalc +
+        this.langXtechCalc
       )
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #eeForm {
   background-color: #efefef;
 
   .wrapper {
     padding: 100px 0;
+  }
+
+  .ant-card-body {
+    padding-top: 0;
+  }
+
+  .pointsCounter {
+    background-color: $navy;
+    padding: 15px 0;
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-bottom: 30px;
+
+    h2, h3 {
+      color: white;
+      margin: 0;
+      text-align: center;
+      font-weight: 400
+    }
   }
 
   .section {

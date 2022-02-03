@@ -7,11 +7,21 @@
     </header>
     <section class="case-details-page">
       <div class="wrapper">
+        <a-breadcrumb>
+          <a-breadcrumb-item href="/blogs">
+            成功案例
+          </a-breadcrumb-item>
+          <a-breadcrumb-item href="#">
+            {{data.title}}
+          </a-breadcrumb-item>
+        </a-breadcrumb>
+        <br>
+        <br>
         <NuxtLink to="/cases" class="back-btn" exact>
           <img src="/img/icons/back-btn.png" alt="" />
           <span>查看更多案例</span>
         </NuxtLink>
-
+        <br>
         <div class="case-wrap">
           <article>
             <div class="main-title">
