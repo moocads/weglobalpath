@@ -19,7 +19,7 @@
       <br>
       <div class="blog-wrap">
         <!-- <p>{{ blog }}</p> -->
-        <h2>{{ blog.title_cn }}</h2>
+        <h1>{{ blog.title_cn }}</h1>
         <h3>{{ blog.published_at.split("T")[0] }}</h3>
         <img
           v-if="blog.header_img_cn !== null"
@@ -171,7 +171,7 @@ section {
   img {
     border-radius: 5px;
   }
-  h2 {
+  h1 {
     font-size: 28px;
     text-align: center;
   }
