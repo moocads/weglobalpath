@@ -2,11 +2,21 @@
   <div id="blog-detail-page">
     <section>
       <div class="wrapper">
+        <a-breadcrumb>
+          <a-breadcrumb-item href="/blogs">
+            最新资讯
+          </a-breadcrumb-item>
+          <a-breadcrumb-item href="#">
+            {{blog.title_cn}}
+          </a-breadcrumb-item>
+        </a-breadcrumb>
+        <br><br>
         <NuxtLink to="/blogs" class="back-btn" exact>
           <img src="/img/icons/back-btn.png" alt="" />
           <span>返回最新资讯</span>
         </NuxtLink>
       </div>
+      <br>
       <div class="blog-wrap">
         <!-- <p>{{ blog }}</p> -->
         <h2>{{ blog.title_cn }}</h2>
