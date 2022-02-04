@@ -64,12 +64,12 @@
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | " + this.data.title,
+      title: `加彼岸出国咨询 | ${this.data.title} - ${this.data.client_name}`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | " + this.data.title + "加彼岸成功案例展示",
+          content: `加彼岸出国咨询 | ${this.data.title} - ${this.data.client_name} - 加彼岸成功案例展示`,
         },
       ],
     };
