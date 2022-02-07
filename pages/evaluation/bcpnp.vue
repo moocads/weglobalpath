@@ -11,11 +11,18 @@
       }"
     >
       <div class="wrapper">
-        <h1>加拿大移民快速通道（EE）评分系统</h1>
+        <h1>不列颠哥伦比亚省省提名(BCPNP)评分表</h1>
       </div>
     </header>
     <div class="wrapper">
       <a-card>
+        <a-affix :offset-top="0">
+          <div class="pointsCounter">
+            <h2>
+              您目前评分为：<strong>{{ totalPoints }}分</strong>
+            </h2>
+          </div>
+        </a-affix>
         <div class="form">
           <section class="section">
             <div class="box">
@@ -31,7 +38,7 @@
               <div class="result">{{ workCategoryCalc }}</div>
             </div>
             <div class="box">
-              <div class="label">工作类别额外加分</div>
+              <div class="label">工作类别<br />（额外加分）</div>
               <div class="question vertical-radio">
                 <a-radio-group v-model="workCategoryBonus">
                   <a-radio :value="1"> 00开头的高级管理类工作 </a-radio>
@@ -44,6 +51,32 @@
                 </a-radio-group>
               </div>
               <div class="result">{{ workCategoryBonusCalc }}</div>
+            </div>
+          </section>
+          <section class="section">
+            <div class="box">
+              <div class="label">工作经验</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="workExp">
+                  <a-radio :value="1">5年以上 </a-radio>
+                  <a-radio :value="2">4-5年 </a-radio>
+                  <a-radio :value="3">3-4年 </a-radio>
+                  <a-radio :value="4">2-3年 </a-radio>
+                  <a-radio :value="5">1-2年 </a-radio>
+                  <a-radio :value="6">不到1年 </a-radio>
+                  <a-radio :value="7">无经验 </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ workExpCalc }}</div>
+            </div>
+            <div class="box last">
+              <div class="label">工作经验<br />（额外加分）</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="workExpBonus">
+                  <a-radio :value="1">至少1年加拿大工作经验 </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ workExpBonusCalc }}</div>
             </div>
           </section>
           <section class="section">
@@ -183,22 +216,22 @@
                     Skeena-Queen Charlotte, Powell River, Sunshine Coast,
                     Kootenay-Boundary, AlberniClayoquot
                   </a-radio>
-                  <a-radio :value="2">
-                    Kitimat-Stikine, Bulkley-Nechako, Squamish-Lillooet,
+                  <a-radio :value="2"
+                    >Kitimat-Stikine, Bulkley-Nechako, Squamish-Lillooet,
                     Strathcona, ColumbiaShuswap, East Kootenay
                   </a-radio>
-                  <a-radio :value="3">
-                    Peace River, Comox Valley, Cariboo, Central Kootenay
+                  <a-radio :value="3"
+                    >Peace River, Comox Valley, Cariboo, Central Kootenay
                   </a-radio>
-                  <a-radio :value="4">
-                    Okanagan-Similkameen, Cowichan Valley, North Okanagan,
+                  <a-radio :value="4"
+                    >Okanagan-Similkameen, Cowichan Valley, North Okanagan,
                     Fraser-Fort George
                   </a-radio>
-                  <a-radio :value="5">
-                    Thompson-Nicola, Nanaimo, Central Okanagan
+                  <a-radio :value="5"
+                    >Thompson-Nicola, Nanaimo, Central Okanagan
                   </a-radio>
-                  <a-radio :value="6"> Capital, Fraser Valley </a-radio>
-                  <a-radio :value="7"> Greater Vancouver </a-radio>
+                  <a-radio :value="6">Capital, Fraser Valley </a-radio>
+                  <a-radio :value="7">Greater Vancouver </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ workRegionCalc }}</div>
@@ -210,17 +243,50 @@
               <div class="question vertical-radio">
                 <a-radio-group v-model="edu">
                   <a-radio :value="1">硕士或博士学位 </a-radio>
-                  <a-radio :value="2"> 研究生 </a-radio>
-                  <a-radio :value="3"> 本科学士 </a-radio>
-                  <a-radio :value="4"> 技工类大专或证书 </a-radio>
-                  <a-radio :value="5">
-                    Thompson-Nicola, Nanaimo, Central Okanagan
-                  </a-radio>
-                  <a-radio :value="6"> Capital, Fraser Valley </a-radio>
-                  <a-radio :value="7"> Greater Vancouver </a-radio>
+                  <a-radio :value="2">研究生 </a-radio>
+                  <a-radio :value="3">本科学士 </a-radio>
+                  <a-radio :value="4">技工类大专或证书 </a-radio>
+                  <a-radio :value="5">副学士学位 </a-radio>
+                  <a-radio :value="6">非技工类大专或证书 </a-radio>
+                  <a-radio :value="7">高中及以下 </a-radio>
                 </a-radio-group>
               </div>
-              <div class="result">{{ workRegionCalc }}</div>
+              <div class="result">{{ eduCalc }}</div>
+            </div>
+            <div class="box last">
+              <div class="label">学历<br />（额外加分）</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="eduBonus">
+                  <a-radio :value="1">在BC完成高中以及以上学历 </a-radio>
+                  <a-radio :value="2"
+                    >在加拿大其他省完成高中及以上学历
+                  </a-radio>
+                  <a-radio :value="3">在指定机构完成ECA学历认证评估 </a-radio>
+                  <a-radio :value="4"
+                    >成功完成行业培训机构认证的行业证书
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ eduBonusCalc }}</div>
+            </div>
+          </section>
+          <section class="section">
+            <div class="box">
+              <div class="label">语言</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="language">
+                  <a-radio :value="1">CLB 10+ </a-radio>
+                  <a-radio :value="2">CLB 9</a-radio>
+                  <a-radio :value="3">CLB 8</a-radio>
+                  <a-radio :value="4">CLB 7</a-radio>
+                  <a-radio :value="5">CLB 6</a-radio>
+                  <a-radio :value="6">CLB 5</a-radio>
+                  <a-radio :value="7">CLB 4</a-radio>
+                  <a-radio :value="8">CLB 4以下</a-radio>
+                  <a-radio :value="9">无成绩</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ languageCalc }}</div>
             </div>
           </section>
         </div>
@@ -237,11 +303,18 @@ export default {
       workCategoryBonus: 0,
       salary: 0,
       workRegion: 0,
+      edu: 0,
+      eduBonus: 0,
+      workExp: 0,
+      workExpBonus: 0,
+      language: 0,
     };
   },
   computed: {
     workCategoryCalc: function () {
       switch (this.workCategory) {
+        case 0:
+          return 0;
         case 1:
           return 25;
         case 2:
@@ -253,6 +326,8 @@ export default {
     },
     workCategoryBonusCalc: function () {
       switch (this.workCategoryBonus) {
+        case 0:
+          return 0;
         case 1:
           return 15;
         case 2:
@@ -264,6 +339,8 @@ export default {
     salaryCalc: function () {
       for (let i = 2; i < 38; i++) {
         switch (this.salary) {
+          case 0:
+            return 0;
           case 1:
             return 0;
           case i:
@@ -275,6 +352,8 @@ export default {
     },
     workRegionCalc: function () {
       switch (this.workRegion) {
+        case 0:
+          return 0;
         case 1:
           return 10;
         case 2:
@@ -290,14 +369,125 @@ export default {
           return 0;
       }
     },
+    eduCalc: function () {
+      switch (this.edu) {
+        case 0:
+          return 0;
+        case 1:
+          return 17;
+        case 2:
+        case 3:
+        case 4:
+          return 11;
+        case 5:
+          return 4;
+        case 6:
+          return 2;
+        case 7:
+          return 0;
+      }
+    },
+    eduBonusCalc: function () {
+      switch (this.eduBonus) {
+        case 0:
+          return 0;
+        case 1:
+          return 8;
+        case 2:
+          return 6;
+        case 3:
+        case 4:
+          return 4;
+      }
+    },
+    workExpCalc: function () {
+      switch (this.workExp) {
+        case 0:
+          return 0;
+        case 1:
+          return 15;
+        case 2:
+          return 12;
+        case 3:
+          return 9;
+        case 4:
+          return 6;
+        case 5:
+          return 3;
+        case 6:
+          return 1;
+        case 7:
+          return 0;
+      }
+    },
+    workExpBonusCalc: function () {
+      switch (this.workExpBonus) {
+        case 0:
+          return 0;
+        case 1:
+          return 10;
+      }
+    },
+    languageCalc: function () {
+      for (let i = 1; i < 8; i++) {
+        let pts = 30;
+        switch (this.language) {
+          case 0:
+            return 0;
+          case i:
+            return pts - (i - 1) * 4;
+          case 8:
+          case 9:
+            return 0;
+        }
+      }
+    },
+    totalPoints: function () {
+      return (
+        this.workCategoryCalc +
+        this.workCategoryBonusCalc +
+        this.salaryCalc +
+        this.workRegionCalc +
+        this.eduCalc +
+        this.eduBonusCalc +
+        this.workExpCalc +
+        this.workExpBonusCalc +
+        this.languageCalc
+      );
+    },
   },
 };
 </script>
-
+<style lang="scss">
+#bcpnp-evaluation-form {
+  .ant-card-body {
+    padding-top: 0;
+  }
+  .ant-radio-wrapper {
+    white-space: normal;
+  }
+}
+</style>
 <style lang="scss" scoped>
+$boxBorder: 1px solid #efefef;
 #bcpnp-evaluation-form {
   background-color: #efefef;
 
+  .pointsCounter {
+    background-color: $navy;
+    padding: 15px 0;
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-bottom: 30px;
+
+    h2,
+    h3 {
+      color: white;
+      margin: 0;
+      text-align: center;
+      font-weight: 400;
+    }
+  }
   .wrapper {
     padding: 100px 0;
   }
@@ -328,6 +518,7 @@ export default {
         font-weight: bold;
         width: 150px;
         text-align: center;
+        flex-shrink: 0;
       }
 
       .question {
@@ -373,6 +564,42 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+      }
+    }
+    .box:last-child {
+      border-bottom: 1px solid #efefef;
+    }
+  }
+}
+@media all and (max-width: 1000px) {
+  #bcpnp-evaluation-form {
+    .wrapper {
+      width: 98vw;
+      padding: 30px 0;
+    }
+    .section {
+      .box {
+        flex-direction: column;
+        .label {
+          border-right: none;
+          border-bottom: $boxBorder;
+          width: 100%;
+          justify-content: flex-start;
+        }
+        .question {
+          .ant-radio-wrapper {
+            margin-right: 0px;
+          }
+          label {
+            margin-bottom: 5px;
+          }
+        }
+        .result {
+          width: 100%;
+          border-left: none;
+          border-top: $boxBorder;
+          align-items: flex-start;
+        }
       }
     }
   }

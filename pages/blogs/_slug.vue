@@ -3,20 +3,18 @@
     <section>
       <div class="wrapper">
         <a-breadcrumb>
-          <a-breadcrumb-item href="/blogs">
-            最新资讯
-          </a-breadcrumb-item>
+          <a-breadcrumb-item href="/blogs"> 最新资讯 </a-breadcrumb-item>
           <a-breadcrumb-item href="#">
-            {{blog.title_cn}}
+            {{ blog.title_cn }}
           </a-breadcrumb-item>
         </a-breadcrumb>
-        <br><br>
+        <br /><br />
         <NuxtLink to="/blogs" class="back-btn" exact>
           <img src="/img/icons/back-btn.png" alt="" />
           <span>返回最新资讯</span>
         </NuxtLink>
       </div>
-      <br>
+      <br />
       <div class="blog-wrap">
         <!-- <p>{{ blog }}</p> -->
         <h2>{{ blog.title_cn }}</h2>
@@ -136,7 +134,7 @@ section {
   padding: 30px 0 50px;
 }
 .wrapper {
-  max-width: 1000px;
+  max-width: 900px;
 }
 .seo-divider {
   margin: 30px 0;
@@ -163,7 +161,7 @@ section {
   }
 }
 .blog-wrap {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   border: 1px solid $navy;
   padding: 20px 40px;
@@ -187,7 +185,7 @@ section {
   max-height: 400px;
   object-fit: cover;
   object-position: bottom;
-  margin: 20px 0;
+  margin: 20px 0 80px;
 }
 .seo-tags-wrap {
   display: flex;
