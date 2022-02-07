@@ -79,7 +79,6 @@
             <RequirementItem
               :title="item.title"
               :requirementsData="item.requirement_points"
-              :hasButtonProp="hasButton[index]"
             />
             <!-- {{ hasButton }} -->
           </div>
@@ -137,6 +136,7 @@
 
 <script>
 import axios from "axios";
+import VueMarkdown from "vue-markdown";
 
 export default {
   head() {
@@ -147,7 +147,9 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "加彼岸出国咨询 | " + this.data.project_name + "加拿大创业移民项目",
+            "加彼岸出国咨询 | " +
+            this.data.project_name +
+            "加拿大企业家移民项目",
         },
       ],
     };
@@ -171,16 +173,19 @@ export default {
       hasButton: [],
     };
   },
-  mounted() {
-    let reqBox = document.querySelectorAll(".requirement-anchor ul");
-    console.log(reqBox);
-    for (let i = 0; i < reqBox.length; i++) {
-      if (reqBox[i].clientHeight > 100) {
-        this.hasButton.push(true);
-      } else {
-        this.hasButton.push(false);
-      }
-    }
+  // mounted() {
+  //   let reqBox = document.querySelectorAll(".requirement-anchor ul");
+  //   console.log(reqBox);
+  //   for (let i = 0; i < reqBox.length; i++) {
+  //     if (reqBox[i].clientHeight > 100) {
+  //       this.hasButton.push(true);
+  //     } else {
+  //       this.hasButton.push(false);
+  //     }
+  //   }
+  // },
+  components: {
+    VueMarkdown,
   },
 };
 </script>
@@ -190,11 +195,14 @@ export default {
     margin-bottom: 20px;
   }
 }
+.fee-content {
+  // padding-left: 15px;
+  p {
+    margin-bottom: 3px;
+  }
+}
 </style>
 <style lang="scss" scoped>
-/* ------------------------------------------------------ */
-/*        ANCHOR Projects Page Detail Page Style          */
-/* ------------------------------------------------------ */
 section {
   padding: 100px 0;
   p {
@@ -206,7 +214,6 @@ section {
     padding: 30px 0;
   }
 }
-
 /* ------------------------------------------------------ */
 /*              ANCHOR introduction section X             */
 /* ------------------------------------------------------ */

@@ -205,10 +205,10 @@ export default {
     };
   },
   mounted() {
-    // let reqBox = document.querySelectorAll(".requirement-item");
+    // let reqBox = document.querySelectorAll(".requirement-anchor ul");
     // console.log(reqBox);
     // for (let i = 0; i < reqBox.length; i++) {
-    //   if (reqBox[i].clientHeight > 150) {
+    //   if (reqBox[i].clientHeight > 100) {
     //     this.hasButton.push(true);
     //   } else {
     //     this.hasButton.push(false);

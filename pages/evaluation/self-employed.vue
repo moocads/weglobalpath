@@ -186,7 +186,10 @@
               <div class="label">
                 加拿大亲戚
               </div>
-              <div class="question">
+              <div class="question yes-no">
+                <div style="margin-bottom: 10px;">
+                  在加拿大有加拿大PR或公民的亲属（包括父母、祖父母、孩子、孙子孙女、本人及配偶的兄弟姐妹、叔叔阿姨、侄子侄女）  申请人或配偶在加拿大完成至少2年学习经验（无需获得学位或文凭）
+                </div>
                 <a-radio-group v-model="brothers" >
                   <a-radio :value="1">
                     有
@@ -431,6 +434,7 @@ export default {
         font-weight: bold;
         width: 150px;
         text-align: center;
+        flex-shrink: 0;
 
         span {
           font-weight: 400;
@@ -488,6 +492,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        flex-shrink: 0;
       }
     }
   }
