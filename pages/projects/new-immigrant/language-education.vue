@@ -85,7 +85,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head() {
+    return {
+      title: `加彼岸出国咨询 | 新移民语言培训`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `加彼岸出国咨询 | 加彼岸™提供的新移民语言培训课程主要针对刚刚登陆加拿大的新移民，提高实用英语沟通能力，以方便他们更好地过渡和享受在加拿大的工作与生活。`,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
