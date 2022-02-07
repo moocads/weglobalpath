@@ -1,28 +1,22 @@
 <template>
   <div>
     <div
-      class="requirement-anchor"
-      :class="[
-        { 'requirement-info-wrap-expand': isExpanded },
-        { 'requirement-info-wrap-closed': !isExpanded },
-      ]"
+      class="requirement-anchor expandable"
+      :class="{active: isExpanded}"
     >
       <h2>{{ title }}</h2>
-      <ul>
-        <li v-for="(list, index) in requirementsData" :key="index">
-          {{ list.point }}
-        </li>
-      </ul>
+      <div >
+        <ul>
+          <li v-for="(list, index) in requirementsData" :key="index">
+            {{ list.point }}
+          </li>
+        </ul>
+      </div>
     </div>
-    <!-- <button
-      :key="randomKey"
-      @click="isExpanded = !isExpanded"
-      :class="[
-        { 'expand-btn': isExpanded, 'requirement-expand-btn': hasButtonProp },
-      ]"
-    >
-      展开全部
-    </button> -->
+    <!-- <p>{{hasButtonProp}}</p> -->
+    <div class="expandBtn" v-if="hasButtonProp" :class="{active: isExpanded}" @click="isExpanded = !isExpanded">
+      <a-icon type="caret-down" /> 展开全部
+    </div>
   </div>
 </template>
 
@@ -31,7 +25,6 @@ export default {
   data() {
     return {
       isExpanded: false,
-      randomKey: 1,
     };
   },
   props: {
@@ -44,34 +37,8 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.requirement-item {
-  position: relative;
-  .requirement-info-wrap-closed {
-    overflow: hidden;
-    // max-height: 150px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   z-index: 10;
-    //   background: linear-gradient(0deg, #1b2854 0%, rgba(27, 40, 84, 0) 100%);
-    //   height: 20px;
-    //   width: 100%;
-    //   left: 0;
-    //   bottom: 0;
-    // }
-  }
-
-  .requirement-info-wrap-expand {
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    max-height: auto;
-  }
-  h2 {
+<style lang="scss" scoped>
+h2 {
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -92,32 +59,54 @@ export default {
   li {
     margin-bottom: 10px;
   }
-  button {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #6ab6ff;
-    font-size: 13px;
-    display: none;
-  }
-  button::after {
-    content: url("/img/Projects/expand.png");
-    margin-left: 5px;
+
+  .expandable {
+    max-height: 150px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    &.active {
+      max-height: 500px;
+    }
   }
 
-  .requirement-expand-btn {
-    display: block !important;
+  .expandBtn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px 0;
+    color: white;
+    position: relative;
+    
+    &:hover {
+      cursor: pointer;    
+    }
+
+    &.active {
+      i {
+        transform: rotate(180deg);
+      }
+
+      &::before {
+        opacity: 0;
+      }
+    }
+
+    i {
+      font-size: 20px;
+      transition: all 0.5s ease;
+      margin-right: 10px;
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 30px;
+      background-image: linear-gradient(to top, $navy, transparent);
+      position: absolute;
+      bottom: 100%;
+      pointer-events: none;
+      transition: all 0.5s ease;
+    }
   }
-  .expand-btn {
-    transition: all 0.2s ease-in-out;
-  }
-  .expand-btn::after {
-    display: inline-block;
-    content: url("/img/Projects/expand.png");
-    margin-left: 5px;
-    transform: rotate(180deg);
-  }
-}
 </style>
-<style lang="scss" scoped></style>

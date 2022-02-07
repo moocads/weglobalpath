@@ -20,7 +20,9 @@
           titleEN="INTRODUCTION"
           titleENColor="#DADADA"
         />
-        <vue-markdown>{{ data.introduction_richtext }}</vue-markdown>
+        <p>
+          {{ data.introduction }}
+        </p>
       </div>
     </section>
     <section class="sec-highlights">
@@ -77,7 +79,6 @@
             <RequirementItem
               :title="item.title"
               :requirementsData="item.requirement_points"
-              :hasButtonProp="hasButton[index]"
             />
             <!-- {{ hasButton }} -->
           </div>
@@ -146,7 +147,9 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "加彼岸出国咨询 | " + this.data.project_name + "加拿大留学移民项目",
+            "加彼岸出国咨询 | " +
+            this.data.project_name +
+            "加拿大企业家移民项目",
         },
       ],
     };
@@ -158,7 +161,6 @@ export default {
       data,
     };
   },
-
   // async asyncData({ $axios, route }) {
   //   const projectData = await $axios.$get(`/projects?id=` + route.params.id);
   //   const data = projectData;
@@ -171,19 +173,19 @@ export default {
       hasButton: [],
     };
   },
+  // mounted() {
+  //   let reqBox = document.querySelectorAll(".requirement-anchor ul");
+  //   console.log(reqBox);
+  //   for (let i = 0; i < reqBox.length; i++) {
+  //     if (reqBox[i].clientHeight > 100) {
+  //       this.hasButton.push(true);
+  //     } else {
+  //       this.hasButton.push(false);
+  //     }
+  //   }
+  // },
   components: {
     VueMarkdown,
-  },
-  mounted() {
-    let reqBox = document.querySelectorAll(".requirement-anchor ul");
-    console.log(reqBox);
-    for (let i = 0; i < reqBox.length; i++) {
-      if (reqBox[i].clientHeight > 100) {
-        this.hasButton.push(true);
-      } else {
-        this.hasButton.push(false);
-      }
-    }
   },
 };
 </script>
@@ -191,6 +193,12 @@ export default {
 .highlight-info-wrap {
   .main-title-side-wrap {
     margin-bottom: 20px;
+  }
+}
+.fee-content {
+  // padding-left: 15px;
+  p {
+    margin-bottom: 3px;
   }
 }
 </style>
