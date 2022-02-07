@@ -20,9 +20,7 @@
           titleEN="INTRODUCTION"
           titleENColor="#DADADA"
         />
-        <p>
-          {{ data.introduction }}
-        </p>
+        <vue-markdown>{{ data.introduction_richtext }}</vue-markdown>
       </div>
     </section>
     <section class="sec-highlights">
@@ -137,6 +135,7 @@
 
 <script>
 import axios from "axios";
+import VueMarkdown from "vue-markdown";
 
 export default {
   head() {
@@ -170,6 +169,9 @@ export default {
     return {
       hasButton: [],
     };
+  },
+  components: {
+    VueMarkdown,
   },
   mounted() {
     let reqBox = document.querySelectorAll(".requirement-item");

@@ -25,6 +25,7 @@
         </a-affix>
         <div class="form">
           <section class="section">
+            <h3>1.基础信息</h3>
             <div class="box">
               <div class="label">年龄</div>
               <div class="question vertical-radio">
@@ -114,6 +115,52 @@
               <div class="result">{{ secondLanguageCalc }}</div>
             </div>
           </section>
+          <section class="section">
+            <h3>2.与萨省劳动力市场的联系和适应能力</h3>
+            <div class="box">
+              <div class="label">持有萨省雇主信</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="haveJobOffer">
+                  <a-radio :value="1">有</a-radio>
+                  <a-radio :value="2">无</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ haveJobOfferCalc }}</div>
+            </div>
+          </section>
+          <section class="section">
+            <h3>以下分数仅适用于萨省紧缺职业和快速通道申请</h3>
+            <div class="box">
+              <div class="label">萨省有近亲（加拿大公民/永久居民）</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="haveCloseRelative">
+                  <a-radio :value="1">有</a-radio>
+                  <a-radio :value="2">无</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ haveCloseRelativeCalc }}</div>
+            </div>
+            <div class="box">
+              <div class="label">过去五年有12个月萨省工作经验</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="haveJobExp">
+                  <a-radio :value="1">有</a-radio>
+                  <a-radio :value="2">无</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ haveJobExpCalc }}</div>
+            </div>
+            <div class="box">
+              <div class="label">有萨省一年教育经历</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="haveOneYearEdu">
+                  <a-radio :value="1">有</a-radio>
+                  <a-radio :value="2">无</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ haveOneYearEduCalc }}</div>
+            </div>
+          </section>
         </div>
       </a-card>
     </div>
@@ -130,6 +177,10 @@ export default {
       workExp10: 0,
       firstLanguage: 0,
       secondLanguage: 0,
+      haveJobOffer: 0,
+      haveCloseRelative: 0,
+      haveJobExp: 0,
+      haveOneYearEdu: 0,
     };
   },
   computed: {
@@ -236,6 +287,18 @@ export default {
           return 0;
       }
     },
+    haveJobOfferCalc: function () {
+      return this.haveJobOffer === 1 ? 30 : 0;
+    },
+    haveCloseRelativeCalc: function () {
+      return this.haveCloseRelative === 1 ? 20 : 0;
+    },
+    haveJobExpCalc: function () {
+      return this.haveJobExp === 1 ? 5 : 0;
+    },
+    haveOneYearEduCalc: function () {
+      return this.haveOneYearEdu === 1 ? 5 : 0;
+    },
     totalPoints: function () {
       return (
         this.eduCalc +
@@ -243,7 +306,11 @@ export default {
         this.workExp10Calc +
         this.firstLanguageCalc +
         this.secondLanguageCalc +
-        this.ageCalc
+        this.ageCalc +
+        this.haveJobOfferCalc +
+        this.haveCloseRelativeCalc +
+        this.haveJobExpCalc +
+        this.haveOneYearEduCalc
       );
     },
   },

@@ -14,6 +14,24 @@
         <h1>加拿大移民打分自测</h1>
       </div>
     </header>
+    <section>
+      <div class="wrapper">
+        <ul>
+          <li>
+            <NuxtLink to="/evaluation/ee">EE</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/evaluation/bcpnp">bcpnp</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/evaluation/self-employed">self employment</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/evaluation/sinp">sinp</NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </section>
   </div>
 </template>
 
