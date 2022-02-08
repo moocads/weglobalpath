@@ -20,7 +20,9 @@
           titleEN="INTRODUCTION"
           titleENColor="#DADADA"
         />
-        <vue-markdown>{{ data.introduction_richtext }}</vue-markdown>
+        <vue-markdown class="intro-markdown">{{
+          data.introduction_richtext
+        }}</vue-markdown>
       </div>
     </section>
     <section class="sec-highlights">

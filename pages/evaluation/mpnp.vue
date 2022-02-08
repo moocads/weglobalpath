@@ -40,6 +40,20 @@
               </div>
               <div class="result">{{ mainLangCalc }}</div>
             </div>
+            <div class="box">
+              <div class="label">第二语言</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="secondLang">
+                  <a-radio :value="1">CLB 8或以上 </a-radio>
+                  <a-radio :value="2">CLB 7 </a-radio>
+                  <a-radio :value="3">CLB 6 </a-radio>
+                  <a-radio :value="4">CLB 5 </a-radio>
+                  <a-radio :value="4">CLB 4 </a-radio>
+                  <a-radio :value="4">CLB 3或以下 </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ secondLangCalc }}</div>
+            </div>
           </section>
         </div>
       </a-card>
