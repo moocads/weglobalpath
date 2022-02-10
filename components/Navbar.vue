@@ -271,23 +271,23 @@ const hotProjects = [
     url: "/projects/entrepreneur",
     second_cate: [
       {
-        id: "1",
+        id: "manitoba-investment",
         name: "曼省企业家投资移民",
       },
       {
-        id: "2",
+        id: "new-brunswick-investment",
         name: "NB省企业家投资移民",
       },
       {
-        id: "3",
+        id: "ontario-investment",
         name: "安省企业家投资移民",
       },
       {
-        id: "4",
+        id: "saskatchewan-investment",
         name: "萨省企业家投资移民",
       },
       {
-        id: "6",
+        id: "PEI-investment",
         name: "爱德华王子岛企业家投资移民",
       },
     ],
@@ -297,23 +297,23 @@ const hotProjects = [
     url: "/projects/startup",
     second_cate: [
       {
-        id: "7",
+        id: "owner-operator-work-permit",
         name: "企业主工签",
       },
       {
-        id: "8",
+        id: "start-up-visa",
         name: "联邦创业投资（SUV）",
       },
       {
-        id: "9",
+        id: "self-employment",
         name: "联邦自雇移民",
       },
       {
-        id: "10",
+        id: "global-talent-stream",
         name: "全球人才计划",
       },
       {
-        id: "11",
+        id: "intra-company-transfer",
         name: "ICT跨国公司高管签证",
       },
     ],
@@ -323,27 +323,27 @@ const hotProjects = [
     url: "/projects/nominee",
     second_cate: [
       {
-        id: "12",
+        id: "ontario-immigrat-nominee-program",
         name: "安省境外雇主担保",
       },
       {
-        id: "13",
+        id: "BC-provincial-nominee-program",
         name: "BC省雇主担保",
       },
       {
-        id: "14",
+        id: "atlantic-immigration-pilot-program",
         name: "大西洋移民计划AIP",
       },
       {
-        id: "15",
+        id: "quebec-skilled-worker",
         name: "魁省雇主担保",
       },
       {
-        id: "16",
+        id: "agri-food-immigration-pilot",
         name: "农业试点",
       },
       {
-        id: "17",
+        id: "care-giver-program",
         name: "联邦护理移民",
       },
     ],
@@ -353,23 +353,23 @@ const hotProjects = [
     url: "/projects/education",
     second_cate: [
       {
-        id: "18",
+        id: "manitoba-education",
         name: "曼省留学移民",
       },
       {
-        id: "19",
+        id: "ontario-master-education",
         name: "安省研究生移民",
       },
       {
-        id: "20",
+        id: "BC-education",
         name: "BC省留学就业移民",
       },
       {
-        id: "21",
+        id: "new-brunswick-education",
         name: "NB省留学移民",
       },
       {
-        id: "25",
+        id: "visit-visa-to-study-permit",
         name: "旅游签转学签",
       },
     ],
@@ -383,11 +383,11 @@ const hotProjects = [
     url: "/projects/reunion",
     second_cate: [
       {
-        id: "22",
+        id: "reunion-program",
         name: "配偶及子女团聚",
       },
       {
-        id: "23",
+        id: "parents-and-grandparents-reunion",
         name: "父母/祖父母团聚",
       },
     ],

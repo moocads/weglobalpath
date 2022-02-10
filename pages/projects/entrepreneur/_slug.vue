@@ -81,7 +81,7 @@
               :requirementsData="item.requirement_points"
               :hasButtonProp="hasButton[index]"
             />
-            <!-- {{ hasButton }} -->
+            <!-- {{ hasButton[index] }} -->
           </div>
         </div>
       </div>
@@ -148,14 +148,18 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "加彼岸出国咨询 | " + this.data.project_name + "加拿大创业移民项目",
+            "加彼岸出国咨询 | " +
+            this.data.project_name +
+            "加拿大企业家移民项目",
         },
       ],
     };
   },
-  async asyncData({ $axios, params }) {
-    const projectData = await $axios.$get(`/projects/${params.id}`);
-    const data = projectData;
+  async asyncData({ $axios, route }) {
+    const projectData = await $axios.$get(
+      `/projects?slug=` + route.params.slug
+    );
+    const data = projectData[0];
     return {
       data,
     };
@@ -172,9 +176,6 @@ export default {
       hasButton: [],
     };
   },
-  components: {
-    VueMarkdown,
-  },
   mounted() {
     let reqBox = document.querySelectorAll(".requirement-anchor ul");
     console.log(reqBox);
@@ -186,6 +187,9 @@ export default {
       }
     }
   },
+  components: {
+    VueMarkdown,
+  },
 };
 </script>
 <style lang="scss">
@@ -194,11 +198,14 @@ export default {
     margin-bottom: 20px;
   }
 }
+.fee-content {
+  // padding-left: 15px;
+  p {
+    margin-bottom: 3px;
+  }
+}
 </style>
 <style lang="scss" scoped>
-/* ------------------------------------------------------ */
-/*        ANCHOR Projects Page Detail Page Style          */
-/* ------------------------------------------------------ */
 section {
   padding: 100px 0;
   p {
@@ -210,7 +217,6 @@ section {
     padding: 30px 0;
   }
 }
-
 /* ------------------------------------------------------ */
 /*              ANCHOR introduction section X             */
 /* ------------------------------------------------------ */
@@ -246,10 +252,7 @@ section {
     margin-right: 15px;
   }
 }
-@media all and (max-width: 768px) {
-  .highlight-info-wrap {
-  }
-}
+
 /* ------------------------------------------------------ */
 /*               ANCHOR Requirement Section               */
 /* ------------------------------------------------------ */
@@ -295,75 +298,7 @@ section {
   row-gap: 20px;
   column-gap: 30px;
 }
-.requirement-item {
-  position: relative;
-  .requirement-info-wrap-closed {
-    overflow: hidden;
-    max-height: 150px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 10;
-      background: linear-gradient(0deg, #1b2854 0%, rgba(27, 40, 84, 0) 100%);
-      height: 20px;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-    }
-  }
-
-  .requirement-info-wrap-expand {
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    max-height: auto;
-  }
-  h2 {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-  }
-  h2::before {
-    content: url("/img/Projects/checkmark.png");
-    position: relative;
-    top: 2px;
-    left: 0;
-    margin-right: 10px;
-  }
-  ul {
-    list-style-type: disc;
-    margin-left: 50px;
-    color: #dadada;
-  }
-  li {
-    margin-bottom: 10px;
-  }
-  button {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #6ab6ff;
-    font-size: 13px;
-  }
-  button::after {
-    content: url("/img/Projects/expand.png");
-    margin-left: 5px;
-  }
-  .expand-btn {
-    transition: all 0.2s ease-in-out;
-  }
-  .expand-btn::after {
-    display: inline-block;
-    content: url("/img/Projects/expand.png");
-    margin-left: 5px;
-    transform: rotate(180deg);
-  }
-}
-@media all and (max-width: 768px) {
+@media all and (max-width: 992px) {
   .sec-requirements {
     background-color: $navy;
     .title-wrap {

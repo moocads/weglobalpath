@@ -148,14 +148,16 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "加彼岸出国咨询 | " + this.data.project_name + "加拿大团聚移民项目",
+            "加彼岸出国咨询 | " + this.data.project_name + "加拿大创业移民项目",
         },
       ],
     };
   },
-  async asyncData({ $axios, params }) {
-    const projectData = await $axios.$get(`/projects/${params.id}`);
-    const data = projectData;
+  async asyncData({ $axios, route }) {
+    const projectData = await $axios.$get(
+      `/projects?slug=` + route.params.slug
+    );
+    const data = projectData[0];
     return {
       data,
     };
@@ -210,18 +212,7 @@ section {
     padding: 30px 0;
   }
 }
-@media all and (max-width: 768px) {
-  header {
-    height: 300px;
-    h1 {
-      font-size: 35px;
-    }
-    h1::before {
-      width: 6px;
-      height: 40px;
-    }
-  }
-}
+
 /* ------------------------------------------------------ */
 /*              ANCHOR introduction section X             */
 /* ------------------------------------------------------ */

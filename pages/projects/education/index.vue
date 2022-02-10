@@ -9,7 +9,7 @@
       <div class="wrapper">
         <ul class="codex-grid">
           <li v-for="(p, index) in projects" :key="index" class="codex-item">
-            <NuxtLink :to="'/projects/education/' + p.id">
+            <NuxtLink :to="'/projects/education/' + p.slug">
               <img :src="p.thumbnail && p.thumbnail.url" alt="" />
               <h2>{{ p.project_name }}</h2>
             </NuxtLink>

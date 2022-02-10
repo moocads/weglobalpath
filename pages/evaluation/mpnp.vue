@@ -29,30 +29,173 @@
             <div class="box">
               <div class="label">第一语言</div>
               <div class="question vertical-radio">
-                <a-radio-group v-model="mainLang">
-                  <a-radio :value="1">CLB 8或以上 </a-radio>
-                  <a-radio :value="2">CLB 7 </a-radio>
-                  <a-radio :value="3">CLB 6 </a-radio>
-                  <a-radio :value="4">CLB 5 </a-radio>
-                  <a-radio :value="4">CLB 4 </a-radio>
-                  <a-radio :value="4">CLB 3或以下 </a-radio>
-                </a-radio-group>
+                <p>按听，说，读，写，单项算分</p>
+                <br />
+                <div class="language-wrap">
+                  <div class="lang-item">
+                    <label>听</label>
+                    <a-select v-model="langTest.listening" style="width: 150px">
+                      <a-select-option :value="1">CLB 8或以上 </a-select-option>
+                      <a-select-option :value="2">CLB 7 </a-select-option>
+                      <a-select-option :value="3">CLB 6 </a-select-option>
+                      <a-select-option :value="4">CLB 5 </a-select-option>
+                      <a-select-option :value="5">CLB 4 </a-select-option>
+                      <a-select-option :value="6">CLB 3或以下 </a-select-option>
+                    </a-select>
+                  </div>
+                  <div class="lang-item">
+                    <label>说</label>
+                    <a-select v-model="langTest.speaking" style="width: 150px">
+                      <a-select-option :value="1">CLB 8或以上 </a-select-option>
+                      <a-select-option :value="2">CLB 7 </a-select-option>
+                      <a-select-option :value="3">CLB 6 </a-select-option>
+                      <a-select-option :value="4">CLB 5 </a-select-option>
+                      <a-select-option :value="5">CLB 4 </a-select-option>
+                      <a-select-option :value="6">CLB 3或以下 </a-select-option>
+                    </a-select>
+                  </div>
+                  <div class="lang-item">
+                    <label>读</label>
+                    <a-select v-model="langTest.reading" style="width: 150px">
+                      <a-select-option :value="1">CLB 8或以上 </a-select-option>
+                      <a-select-option :value="2">CLB 7 </a-select-option>
+                      <a-select-option :value="3">CLB 6 </a-select-option>
+                      <a-select-option :value="4">CLB 5 </a-select-option>
+                      <a-select-option :value="5">CLB 4 </a-select-option>
+                      <a-select-option :value="6">CLB 3或以下 </a-select-option>
+                    </a-select>
+                  </div>
+                  <div class="lang-item">
+                    <label>写</label>
+                    <a-select v-model="langTest.writing" style="width: 150px">
+                      <a-select-option :value="1">CLB 8或以上 </a-select-option>
+                      <a-select-option :value="2">CLB 7 </a-select-option>
+                      <a-select-option :value="3">CLB 6 </a-select-option>
+                      <a-select-option :value="4">CLB 5 </a-select-option>
+                      <a-select-option :value="5">CLB 4 </a-select-option>
+                      <a-select-option :value="6">CLB 3或以下 </a-select-option>
+                    </a-select>
+                  </div>
+                </div>
               </div>
               <div class="result">{{ mainLangCalc }}</div>
             </div>
             <div class="box">
               <div class="label">第二语言</div>
               <div class="question vertical-radio">
+                <p>第二语言需要全部单项都打到CLB5才能算分</p>
                 <a-radio-group v-model="secondLang">
-                  <a-radio :value="1">CLB 8或以上 </a-radio>
-                  <a-radio :value="2">CLB 7 </a-radio>
-                  <a-radio :value="3">CLB 6 </a-radio>
-                  <a-radio :value="4">CLB 5 </a-radio>
-                  <a-radio :value="4">CLB 4 </a-radio>
-                  <a-radio :value="4">CLB 3或以下 </a-radio>
+                  <a-radio :value="1">CLB 5或以上 </a-radio>
+                  <a-radio :value="2">CLB 4或以下 </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ secondLangCalc }}</div>
+            </div>
+          </section>
+          <section class="section">
+            <h3>2.工作经验</h3>
+            <div class="box">
+              <div class="label">工作时长</div>
+              <div class="question vertical-radio">
+                <p>
+                  全职工作需每周至少工作30
+                  hours+。连续工作经验累计超过6个月以上的工作经历才会被承认
+                </p>
+                <a-radio-group v-model="workTime">
+                  <a-radio :value="1">1年以下 </a-radio>
+                  <a-radio :value="2">1年 </a-radio>
+                  <a-radio :value="3">1年 </a-radio>
+                  <a-radio :value="4">1年 </a-radio>
+                  <a-radio :value="5">1年或以上 </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ workTimeCalc }}</div>
+            </div>
+            <div class="box">
+              <div class="label">工作（额外加分）</div>
+              <div class="question vertical-radio">
+                <!-- <a-checkbox-group v-model="workTimeBonus" @change="onChange()">
+                  <a-checkbox :value="1">
+                    通过曼省政府资格许可的工作
+                  </a-checkbox>
+                </a-checkbox-group> -->
+                <a-radio-group v-model="workTimeBonus">
+                  <p>是否为通过曼省政府资格许可的工作</p>
+                  <a-radio :value="1">是</a-radio>
+                  <a-radio :value="2">否</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ workTimeBonusCalc }}</div>
+            </div>
+          </section>
+          <section class="section">
+            <h3>3.教育</h3>
+            <div class="box">
+              <div class="label">教育水平</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="edu">
+                  <a-radio :value="1">硕士学位或博士学位 </a-radio>
+                  <a-radio :value="2">2个两年学制的专上学历 </a-radio>
+                  <a-radio :value="3">1个三年学制的专上学历 </a-radio>
+                  <a-radio :value="4">1个两年学制的专上学历 </a-radio>
+                  <a-radio :value="5">1个一年学制的专上学历 </a-radio>
+                  <a-radio :value="6">技工证书 </a-radio>
+                  <a-radio :value="7">无专上学历 </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ eduCalc }}</div>
+            </div>
+          </section>
+          <section class="section">
+            <h3>4.适应能力</h3>
+            <div class="box">
+              <div class="label">适应能力</div>
+              <div class="question vertical-radio">
+                <p>
+                  只能选择得分最高的一项进行打分，目的地为outside of
+                  Winnipeg的有额外加分
+                </p>
+                <a-radio-group v-model="extra">
+                  <a-radio :value="1">有曼省近亲 </a-radio>
+                  <a-radio :value="2"
+                    >以前在曼省有6个月及以上的工作经验
+                  </a-radio>
+                  <a-radio :value="3">在曼省完成过至少2年的专上学历 </a-radio>
+                  <a-radio :value="4">在曼省完成过至少1年的专上学历 </a-radio>
+                  <a-radio :value="5">有曼省朋友或远亲 </a-radio>
+                  <a-radio :value="6"
+                    >在曼省连续全职工作6个月并获得曼省同一雇主签发的长期job
+                    offer
+                  </a-radio>
+                  <a-radio :value="7">获得曼省战略主动招聘邀请函 </a-radio>
+                  <a-radio :value="8"
+                    >申请人移民局目的地为Winnipeg以外
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ extraCalc }}</div>
+            </div>
+            <div class="box">
+              <div class="label">风险评估</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="risk">
+                  <p>在外省有学习背景</p>
+                  <a-radio :value="1">是</a-radio>
+                  <a-radio :value="2">否</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ riskCalc }}</div>
+            </div>
+            <div class="box">
+              <div class="label">风险评估</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="riskWork">
+                  <p>在外省有工作背景</p>
+                  <a-radio :value="1">是</a-radio>
+                  <a-radio :value="2">否</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ riskWorkCalc }}</div>
             </div>
           </section>
         </div>
@@ -66,17 +209,208 @@ export default {
   data() {
     return {
       mainLang: 0,
+      secondLang: 0,
+      workTime: 0,
+      workTimeBonus: 0,
+      edu: 0,
+      extra: 0,
+      risk: 0,
+      riskWork: 0,
+      langTest: {
+        listening: "",
+        speaking: "",
+        reading: "",
+        writing: "",
+      },
     };
   },
+
   computed: {
     mainLangCalc: function () {
-      switch (this.mainLang) {
+      let listeningPts,
+        speakingPts,
+        readingPts,
+        writingPts,
+        totalPts = 0;
+      //语言成绩 听力
+      if (this.langTest.listening == 1) {
+        listeningPts = 25;
+      } else if (this.langTest.listening == 2) {
+        listeningPts = 22;
+      } else if (this.langTest.listening == 3) {
+        listeningPts = 20;
+      } else if (this.langTest.listening == 4) {
+        listeningPts = 17;
+      } else if (this.langTest.listening == 5) {
+        listeningPts = 12;
+      } else if (this.langTest.listening == 6) {
+        listeningPts = 0;
+      } else {
+        listeningPts = 0;
+      }
+      //语言成绩 口语
+      if (this.langTest.speaking == 1) {
+        speakingPts = 25;
+      } else if (this.langTest.speaking == 2) {
+        speakingPts = 22;
+      } else if (this.langTest.speaking == 3) {
+        speakingPts = 20;
+      } else if (this.langTest.speaking == 4) {
+        speakingPts = 17;
+      } else if (this.langTest.speaking == 5) {
+        speakingPts = 12;
+      } else if (this.langTest.speaking == 6) {
+        speakingPts = 0;
+      } else {
+        speakingPts = 0;
+      }
+      //语言成绩 阅读
+      if (this.langTest.reading == 1) {
+        readingPts = 25;
+      } else if (this.langTest.reading == 2) {
+        readingPts = 22;
+      } else if (this.langTest.reading == 3) {
+        readingPts = 20;
+      } else if (this.langTest.reading == 4) {
+        readingPts = 17;
+      } else if (this.langTest.reading == 5) {
+        readingPts = 12;
+      } else if (this.langTest.reading == 6) {
+        readingPts = 0;
+      } else {
+        readingPts = 0;
+      }
+      //语言成绩 写作
+      if (this.langTest.writing == 1) {
+        writingPts = 25;
+      } else if (this.langTest.writing == 2) {
+        writingPts = 22;
+      } else if (this.langTest.writing == 3) {
+        writingPts = 20;
+      } else if (this.langTest.writing == 4) {
+        writingPts = 17;
+      } else if (this.langTest.writing == 5) {
+        writingPts = 12;
+      } else if (this.langTest.writing == 6) {
+        writingPts = 0;
+      } else {
+        writingPts = 0;
+      }
+      totalPts = listeningPts + speakingPts + readingPts + writingPts;
+      // console.log("听力：" + listeningPts);
+      // console.log("口语：" + speakingPts);
+      // console.log(totalPts);
+      return totalPts;
+    },
+    secondLangCalc: function () {
+      switch (this.secondLang) {
         case 0:
+          return 0;
+        case 1:
+          return 25;
+        case 2:
+          return 0;
+      }
+    },
+    workTimeCalc: function () {
+      switch (this.workTime) {
+        case 0:
+          return 0;
+        case 1:
+          return 0;
+        case 2:
+          return 40;
+        case 3:
+          return 50;
+        case 4:
+          return 60;
+        case 5:
+          return 75;
+      }
+    },
+    workTimeBonusCalc: function () {
+      switch (this.workTimeBonus) {
+        case 0:
+          return 0;
+        case 1:
+          return 100;
+        case 2:
+          return 0;
+      }
+    },
+    eduCalc: function () {
+      switch (this.edu) {
+        case 0:
+          return 0;
+        case 1:
+          return 125;
+        case 2:
+          return 115;
+        case 3:
+          return 110;
+        case 4:
+          return 100;
+        case 5:
+          return 70;
+        case 6:
+          return 70;
+        case 7:
+          return 0;
+      }
+    },
+    extraCalc: function () {
+      switch (this.extra) {
+        case 0:
+          return 0;
+        case 1:
+          return 200;
+        case 2:
+          return 100;
+        case 3:
+          return 100;
+        case 4:
+          return 50;
+        case 5:
+          return 50;
+        case 6:
+          return 500;
+        case 7:
+          return 500;
+        case 8:
+          return 50;
+      }
+    },
+    riskCalc: function () {
+      switch (this.risk) {
+        case 0:
+          return 0;
+        case 1:
+          return -100;
+        case 2:
+          return 0;
+      }
+    },
+    riskWorkCalc: function () {
+      switch (this.riskWork) {
+        case 0:
+          return 0;
+        case 1:
+          return -100;
+        case 2:
           return 0;
       }
     },
     totalPoints: function () {
-      return this.mainLangCalc;
+      return (
+        this.mainLangCalc +
+        this.secondLangCalc +
+        this.workTimeCalc +
+        this.workTimeBonusCalc +
+        this.eduCalc +
+        this.extraCalc +
+        this.riskCalc +
+        this.riskWorkCalc
+      );
     },
   },
 };
@@ -197,6 +531,14 @@ $boxBorder: 1px solid #efefef;
       border-bottom: 1px solid #efefef;
     }
   }
+  .language-wrap {
+    label {
+      margin-right: 10px;
+    }
+
+    display: flex;
+    column-gap: 20px;
+  }
 }
 @media all and (max-width: 1000px) {
   #mpnp-evaluation-form {
@@ -229,6 +571,16 @@ $boxBorder: 1px solid #efefef;
           align-items: flex-start;
         }
       }
+    }
+    .language-wrap {
+      label {
+        margin-right: 10px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      column-gap: 20px;
+      row-gap: 20px;
     }
   }
 }

@@ -153,9 +153,11 @@ export default {
       ],
     };
   },
-  async asyncData({ $axios, params }) {
-    const projectData = await $axios.$get(`/projects/${params.id}`);
-    const data = projectData;
+  async asyncData({ $axios, route }) {
+    const projectData = await $axios.$get(
+      `/projects?slug=` + route.params.slug
+    );
+    const data = projectData[0];
     return {
       data,
     };
