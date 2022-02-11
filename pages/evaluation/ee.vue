@@ -15,6 +15,15 @@
       </div>
     </header>
     <div class="wrapper">
+      <a-breadcrumb>
+        <a-breadcrumb-item><NuxtLink to="/">首页</NuxtLink></a-breadcrumb-item>
+        <a-breadcrumb-item
+          ><NuxtLink to="/evaluation">移民评分</NuxtLink></a-breadcrumb-item
+        >
+        <a-breadcrumb-item>加拿大移民快速通道（EE）评分系统</a-breadcrumb-item>
+      </a-breadcrumb>
+      <br />
+      <br />
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -37,7 +46,7 @@
             </div>
           </div>
           <div class="section">
-            <h3>1、基础信息</h3>
+            <h3>1.基础信息</h3>
             <div class="box">
               <div class="label">年龄</div>
               <div class="question">
@@ -57,9 +66,9 @@
                 <a-radio-group v-model="edu">
                   <a-radio :value="1"> 初中以下 </a-radio>
                   <a-radio :value="2"> 高中 </a-radio>
-                  <a-radio :value="3"> 1年大专 </a-radio>
-                  <a-radio :value="4"> 2年大专 </a-radio>
-                  <a-radio :value="5"> 3年以上大专或本科 </a-radio>
+                  <a-radio :value="3"> 1年高等教育 </a-radio>
+                  <a-radio :value="4"> 2年高等教育 </a-radio>
+                  <a-radio :value="5"> 3年以上高等教育 </a-radio>
                   <a-radio :value="6"> 双专业 (3年以上 + 1年以上) </a-radio>
                   <a-radio :value="7">
                     硕士学位或专业学位（如医学博士）
@@ -173,7 +182,7 @@
             </div>
           </div>
           <div class="section" v-if="marriage == 'married'">
-            <h3>1.5、配偶加分项</h3>
+            <h3>1.5.配偶加分项</h3>
             <div class="box">
               <div class="label">学历</div>
               <div class="question vertical-radio">
@@ -243,7 +252,7 @@
             </div>
           </div>
           <div class="section">
-            <h3>2、适应性加分（无需选择）</h3>
+            <h3>2.适应性加分（无需选择）</h3>
             <div class="box">
               <div class="label">学历 & 语言</div>
               <div class="question">
@@ -304,7 +313,7 @@
             </div>
           </div>
           <div class="section">
-            <h3>3、附加分</h3>
+            <h3>3.附加分</h3>
             <div class="box">
               <div class="label">省提名</div>
               <div class="question">
@@ -486,7 +495,7 @@ export default {
           : this.age == 31
           ? 99
           : this.age == 32
-          ? 84
+          ? 94
           : this.age == 33
           ? 88
           : this.age == 34
@@ -1407,6 +1416,7 @@ export default {
 <style lang="scss">
 #eeForm {
   background-color: #efefef;
+
   .wrapper {
     padding: 100px 0;
   }
@@ -1499,6 +1509,49 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+      }
+    }
+  }
+}
+@media all and (max-width: 1000px) {
+  #eeForm {
+    .ant-affix {
+      top: 80px !important;
+    }
+    .pointsCounter {
+      h2,
+      h3 {
+        font-size: 14px;
+      }
+    }
+    .wrapper {
+      width: 98vw;
+      padding: 30px 0;
+    }
+    .section {
+      .box {
+        flex-direction: column;
+        .label {
+          border-right: none;
+          border-bottom: 1px solid #efefef;
+          width: 100%;
+          justify-content: flex-start;
+          padding: 10px 20px;
+        }
+        .question {
+          .ant-radio-wrapper {
+            margin-right: 0px;
+          }
+          label {
+            margin-bottom: 5px;
+          }
+        }
+        .result {
+          width: 100%;
+          border-left: none;
+          border-top: 1px solid #efefef;
+          align-items: flex-start;
+        }
       }
     }
   }

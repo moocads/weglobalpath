@@ -15,6 +15,15 @@
       </div>
     </header>
     <div class="wrapper">
+      <a-breadcrumb>
+        <a-breadcrumb-item><NuxtLink to="/">首页</NuxtLink></a-breadcrumb-item>
+        <a-breadcrumb-item
+          ><NuxtLink to="/evaluation">移民评分</NuxtLink></a-breadcrumb-item
+        >
+        <a-breadcrumb-item>安省提名 境内留学生 EOI评分系统</a-breadcrumb-item>
+      </a-breadcrumb>
+      <br />
+      <br />
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -97,8 +106,6 @@
                 <a-radio-group v-model="jobExpSalary">
                   <a-radio :value="1">$40,000/年 或以上 </a-radio>
                   <a-radio :value="2">少于$40,000/年 </a-radio>
-                  <a-radio :value="3">一种加拿大学历 </a-radio>
-                  <a-radio :value="4">一种语言 </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ jobExpSalaryCalc }}</div>
@@ -439,6 +446,19 @@ export default {
   }
   .ant-radio-wrapper {
     white-space: normal;
+  }
+}
+@media all and (max-width: 1000px) {
+  #ontario-student-evaluation-form {
+    .ant-affix {
+      top: 80px !important;
+    }
+    .pointsCounter {
+      h2,
+      h3 {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>

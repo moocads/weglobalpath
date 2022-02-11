@@ -15,6 +15,17 @@
       </div>
     </header>
     <div class="wrapper">
+      <a-breadcrumb>
+        <a-breadcrumb-item><NuxtLink to="/">首页</NuxtLink></a-breadcrumb-item>
+        <a-breadcrumb-item
+          ><NuxtLink to="/evaluation">移民评分</NuxtLink></a-breadcrumb-item
+        >
+        <a-breadcrumb-item
+          >不列颠哥伦比亚省省提名(BCPNP)评分表</a-breadcrumb-item
+        >
+      </a-breadcrumb>
+      <br />
+      <br />
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -40,7 +51,20 @@
             <div class="box">
               <div class="label">工作类别<br />（额外加分）</div>
               <div class="question vertical-radio">
-                <a-radio-group v-model="workCategoryBonus">
+                <a-checkbox-group
+                  v-model="workCategoryBonus"
+                  @change="onChange"
+                  style="display: flex; flex-direction: column"
+                >
+                  <a-checkbox :value="1">00开头的高级管理类工作</a-checkbox>
+                  <a-checkbox :value="2"
+                    >BC省2018-2028劳动力市场前景签一百名职位</a-checkbox
+                  >
+                  <a-checkbox :value="3"
+                    >目前全职为BC省雇主工作，每周至少工作30小时，并且工作的职位与你申请BC省提名用的移民职业NOC代码相同</a-checkbox
+                  >
+                </a-checkbox-group>
+                <!-- <a-radio-group v-model="workCategoryBonus">
                   <a-radio :value="1"> 00开头的高级管理类工作 </a-radio>
                   <a-radio :value="2">
                     BC省2018-2028劳动力市场前景签一百名职位
@@ -48,9 +72,9 @@
                   <a-radio :value="3">
                     目前全职为BC省雇主工作，每周至少工作30小时，并且工作的职位与你申请BC省提名用的移民职业NOC代码相同
                   </a-radio>
-                </a-radio-group>
+                </a-radio-group> -->
               </div>
-              <div class="result">{{ workCategoryBonusCalc }}</div>
+              <div class="result">{{ this.workCategoryBonusResult }}</div>
             </div>
           </section>
           <section class="section">
@@ -73,7 +97,9 @@
               <div class="label">工作经验<br />（额外加分）</div>
               <div class="question vertical-radio">
                 <a-radio-group v-model="workExpBonus">
-                  <a-radio :value="1">至少1年加拿大工作经验 </a-radio>
+                  <p>至少1年加拿大工作经验</p>
+                  <a-radio :value="1">是 </a-radio>
+                  <a-radio :value="2">否 </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ workExpBonusCalc }}</div>
@@ -300,7 +326,8 @@ export default {
   data() {
     return {
       workCategory: 0,
-      workCategoryBonus: 0,
+      workCategoryBonus: [],
+      workCategoryBonusResult: 0,
       salary: 0,
       workRegion: 0,
       edu: 0,
@@ -309,6 +336,29 @@ export default {
       workExpBonus: 0,
       language: 0,
     };
+  },
+  methods: {
+    onChange() {
+      let pts1,
+        pts2,
+        pts3 = 0;
+      if (this.workCategoryBonus.includes(1)) {
+        pts1 = 15;
+      } else {
+        pts1 = 0;
+      }
+      if (this.workCategoryBonus.includes(2)) {
+        pts2 = 10;
+      } else {
+        pts2 = 0;
+      }
+      if (this.workCategoryBonus.includes(3)) {
+        pts3 = 10;
+      } else {
+        pts3 = 0;
+      }
+      return (this.workCategoryBonusResult = pts1 + pts2 + pts3);
+    },
   },
   computed: {
     workCategoryCalc: function () {
@@ -426,6 +476,8 @@ export default {
           return 0;
         case 1:
           return 10;
+        case 2:
+          return 0;
       }
     },
     languageCalc: function () {
@@ -445,14 +497,15 @@ export default {
     totalPoints: function () {
       return (
         this.workCategoryCalc +
-        this.workCategoryBonusCalc +
+        // this.workCategoryBonusCalc +
         this.salaryCalc +
         this.workRegionCalc +
         this.eduCalc +
         this.eduBonusCalc +
         this.workExpCalc +
         this.workExpBonusCalc +
-        this.languageCalc
+        this.languageCalc +
+        this.workCategoryBonusResult
       );
     },
   },
@@ -465,6 +518,22 @@ export default {
   }
   .ant-radio-wrapper {
     white-space: normal;
+  }
+  .vertical-radio .ant-checkbox-wrapper {
+    margin-left: 0;
+  }
+}
+@media all and (max-width: 1000px) {
+  #bcpnp-evaluation-form {
+    .ant-affix {
+      top: 80px !important;
+    }
+    .pointsCounter {
+      h2,
+      h3 {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>

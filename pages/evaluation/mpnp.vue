@@ -15,6 +15,15 @@
       </div>
     </header>
     <div class="wrapper">
+      <a-breadcrumb>
+        <a-breadcrumb-item><NuxtLink to="/">首页</NuxtLink></a-breadcrumb-item>
+        <a-breadcrumb-item
+          ><NuxtLink to="/evaluation">移民评分</NuxtLink></a-breadcrumb-item
+        >
+        <a-breadcrumb-item>曼省提名（MPNP）EOI评分系统</a-breadcrumb-item>
+      </a-breadcrumb>
+      <br />
+      <br />
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -104,9 +113,9 @@
                 <a-radio-group v-model="workTime">
                   <a-radio :value="1">1年以下 </a-radio>
                   <a-radio :value="2">1年 </a-radio>
-                  <a-radio :value="3">1年 </a-radio>
-                  <a-radio :value="4">1年 </a-radio>
-                  <a-radio :value="5">1年或以上 </a-radio>
+                  <a-radio :value="3">2年 </a-radio>
+                  <a-radio :value="4">3年 </a-radio>
+                  <a-radio :value="5">4年或以上 </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ workTimeCalc }}</div>
@@ -422,6 +431,19 @@ export default {
   }
   .ant-radio-wrapper {
     white-space: normal;
+  }
+}
+@media all and (max-width: 1000px) {
+  #mpnp-evaluation-form {
+    .ant-affix {
+      top: 80px !important;
+    }
+    .pointsCounter {
+      h2,
+      h3 {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>

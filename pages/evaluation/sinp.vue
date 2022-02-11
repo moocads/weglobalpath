@@ -15,6 +15,15 @@
       </div>
     </header>
     <div class="wrapper">
+      <a-breadcrumb>
+        <a-breadcrumb-item><NuxtLink to="/">首页</NuxtLink></a-breadcrumb-item>
+        <a-breadcrumb-item
+          ><NuxtLink to="/evaluation">移民评分</NuxtLink></a-breadcrumb-item
+        >
+        <a-breadcrumb-item>萨省省提名（SINP）EOI评分系统</a-breadcrumb-item>
+      </a-breadcrumb>
+      <br />
+      <br />
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -323,6 +332,19 @@ export default {
   }
   .ant-radio-wrapper {
     white-space: normal;
+  }
+}
+@media all and (max-width: 1000px) {
+  #bcpnp-evaluation-form {
+    .ant-affix {
+      top: 80px !important;
+    }
+    .pointsCounter {
+      h2,
+      h3 {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>

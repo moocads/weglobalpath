@@ -75,8 +75,17 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
+    "@nuxtjs/robots",
+    "@nuxtjs/sitemap",
   ],
-
+  robots: {
+    /* module options */
+    Sitemap: "https://beyondcanada.ca/sitemap.xml",
+  },
+  sitemap: {
+    hostname: "https://beyondcanada.ca",
+    i18n: true,
+  },
   styleResources: {
     scss: ["./assets/scss/variables.scss", "./assets/scss/projects.scss"],
   },
