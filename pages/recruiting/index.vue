@@ -520,7 +520,8 @@
           </div>
           <div class="disclaimer">
             <p>
-              * 项目大龄申请人可参考<NuxtLink to="/projects/education/25"
+              * 项目大龄申请人可参考<NuxtLink
+                to="/projects/education/visit-visa-to-study-permit"
                 >旅游签转学签</NuxtLink
               >申请流程
             </p>
@@ -535,10 +536,7 @@
         <section class="intro">
           <div class="img-box">
             <h2>加拿大罗伯森学院</h2>
-            <img
-              src="/img/Recruiting/robertson.svg"
-              alt="/projects/education/25"
-            />
+            <img src="/img/Recruiting/robertson.svg" alt="" />
           </div>
           <div class="info-box">
             <p>
