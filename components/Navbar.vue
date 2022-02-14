@@ -487,7 +487,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  filter: drop-shadow(5px 5px 10px rgba(96, 96, 96, 0.308));
+  box-shadow: (5px 5px 10px rgba(96, 96, 96, 0.308));
 }
 .logo-wrap {
   img {
