@@ -7,6 +7,12 @@
       alt="Beyond Canada Wechat"
     />
     <div class="icon-bar side">
+      <!-- <NuxtLink to="/evaluation" class="sidebar-link">
+        <img src="/img/icons/calculator.png" class="contact-icon" />
+      </NuxtLink>
+      <NuxtLink to="/evaluation" class="sidebar-link">
+        <img src="/img/icons/aplus.png" class="contact-icon" />
+      </NuxtLink> -->
       <a href="tel:16475233555" class="sidebar-link">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
       </a>

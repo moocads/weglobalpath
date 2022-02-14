@@ -10,7 +10,6 @@
         <ul class="codex-grid">
           <li v-for="(p, index) in projects" :key="index" class="codex-item">
             <NuxtLink :to="'/projects/entrepreneur/' + p.slug">
-              <p>{{ p.slug }}</p>
               <img :src="p.thumbnail && p.thumbnail.url" alt="" />
               <h2>{{ p.project_name }}</h2>
             </NuxtLink>

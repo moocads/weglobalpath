@@ -1,7 +1,16 @@
 <template>
   <div>
     <nav>
-      <div class="wrapper navbar-wrap">
+      <div class="logo-wrap">
+        <NuxtLink to="/">
+          <img
+            src="/img/logos/logo-blue.png"
+            alt="加彼岸 Navbar Logo"
+            class="nav_logo"
+          />
+        </NuxtLink>
+      </div>
+      <div class="navbar-wrap">
         <ul class="main-nav">
           <li>
             <NuxtLink to="/" exact>首页</NuxtLink>
@@ -9,11 +18,12 @@
           <li>
             <NuxtLink to="/about"
               >关于我们
-              <img
-                src="/img/icons/down-arrow-white.png"
-                alt="dropdown arrow icon"
+              <a-icon
+                type="down"
                 class="dropdown-arrow"
-            /></NuxtLink>
+                alt="dropdown arrow icon"
+              />
+            </NuxtLink>
             <div class="general-dropdown">
               <ul>
                 <li>
@@ -57,10 +67,10 @@
           <li class="hot-project-link">
             <NuxtLink to="/projects"
               >热门项目
-              <img
-                src="/img/icons/down-arrow-white.png"
-                alt="dropdown arrow icon"
+              <a-icon
+                type="down"
                 class="dropdown-arrow"
+                alt="dropdown arrow icon"
             /></NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <!-- <div
@@ -201,10 +211,10 @@
           <li class="hot-project-link">
             <NuxtLink to="/provinces"
               >移民省份
-              <img
-                src="/img/icons/down-arrow-white.png"
-                alt="dropdown arrow icon"
+              <a-icon
+                type="down"
                 class="dropdown-arrow"
+                alt="dropdown arrow icon"
             /></NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <div
@@ -454,7 +464,7 @@ const provinces = [
 .navbar-wrap {
   .nuxt-link-active,
   .nuxt-link-exact-active {
-    background-color: $red;
+    background-color: transparent;
   }
 }
 .hot-project-dropdown,
@@ -469,20 +479,25 @@ const provinces = [
 <style lang="scss" scoped>
 $nav-height: 70px;
 $nav-dropdown-height: 50px;
-
+$nav-gray: rgba(0, 0, 0, 0.5);
 nav {
   height: $nav-height;
   width: 100%;
-  background-color: $navy;
+  background-color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
-
+.logo-wrap {
+  img {
+    height: auto;
+    width: 180px;
+  }
+}
 .navbar-wrap {
   .main-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     & > li {
       position: relative;
       height: $nav-height;
@@ -490,17 +505,16 @@ nav {
       justify-content: center;
       align-items: center;
       & > a {
-        padding: 0 20px;
+        padding: 0 15px;
         height: 100%;
         width: 100%;
-        color: #fff;
+        color: $nav-gray;
         font-size: 16px;
         font-weight: 400;
         line-height: $nav-height;
         display: flex;
         align-items: center;
         @media (max-width: 1200px) {
-          padding: 0 15px;
           font-size: 14px;
         }
       }
@@ -508,7 +522,7 @@ nav {
   }
 }
 .navbar-wrap > .main-nav > li:hover {
-  background-color: $red;
+  background-color: transparent;
   .dropdown-wrap {
     display: grid;
   }
@@ -522,7 +536,7 @@ nav {
   position: absolute;
   top: $nav-height;
   left: 0;
-  background: rgb(54, 65, 99);
+  background: #fff;
   padding: 20px;
   ul {
     display: flex;
@@ -537,7 +551,7 @@ nav {
     padding: 0px 10px 5px;
     // height: 100%;
     width: auto;
-    color: #fff;
+    color: $nav-gray;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -549,7 +563,7 @@ nav {
     display: block;
     width: 0;
     height: 2px;
-    background: $red;
+    background: $nav-gray;
     transition: width 0.3s;
   }
 
@@ -564,7 +578,7 @@ nav {
   gap: 5px;
   // place-items: center;
   z-index: 99;
-  background: rgb(54, 65, 99);
+  background: #fff;
   ul {
     display: flex;
     flex-direction: column;
@@ -578,7 +592,7 @@ nav {
     padding: 0px 10px 5px;
     // height: 100%;
     width: auto;
-    color: #fff;
+    color: $nav-gray;
     font-size: 14px;
     font-weight: 400;
     line-height: 30px;
@@ -590,7 +604,7 @@ nav {
     display: block;
     width: 0;
     height: 2px;
-    background: $red;
+    background: $nav-gray;
     transition: width 0.3s;
   }
 
@@ -606,7 +620,7 @@ nav {
     position: absolute;
     top: $nav-height;
     left: 50%;
-    transform: translateX(-40%);
+    transform: translateX(-50%);
   }
 }
 .project-col {
@@ -627,7 +641,7 @@ nav {
     height: 3px;
     bottom: -20px;
     left: 0;
-    background-color: $red;
+    background-color: $nav-gray;
   }
 }
 

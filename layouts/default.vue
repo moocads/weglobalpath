@@ -2,7 +2,7 @@
   <div id="page">
     <!-- <TopBar class="navbar-lg" /> -->
     <NavbarMobile class="navbar-sm" />
-    <NavbarNew class="navbar-lg" />
+    <Navbar class="navbar-lg" />
     <div class="spacer"></div>
     <Nuxt />
     <SideBar />
