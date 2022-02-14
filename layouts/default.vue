@@ -1,8 +1,8 @@
 <template>
   <div id="page">
-    <TopBar class="navbar-lg" />
+    <!-- <TopBar class="navbar-lg" /> -->
     <NavbarMobile class="navbar-sm" />
-    <Navbar class="navbar-lg" />
+    <NavbarNew class="navbar-lg" />
     <div class="spacer"></div>
     <Nuxt />
     <SideBar />

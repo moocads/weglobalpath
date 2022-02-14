@@ -378,7 +378,7 @@ export default {
 header {
   position: relative;
   overflow: hidden;
-  max-height: 800px;
+  max-height: 500px;
   width: 100%;
 
   img {
@@ -415,13 +415,13 @@ header .info-wrap {
     margin-bottom: 50px;
   }
   .banner-text {
-    height: 80px;
-    width: 370px;
+    height: 60px;
+    width: 310px;
   }
   .banner-text1 {
-    height: 90px;
+    height: 60px;
     margin-bottom: 20px;
-    width: 400px;
+    width: 310px;
   }
   .banner-text2 {
     margin-left: 50px;
