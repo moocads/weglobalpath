@@ -28,10 +28,9 @@
           "
           class="blog-thumbnail"
         />
-        <!-- <vue-markdown class="blog-detail-content">
-          {{ blogContent }}
-        </vue-markdown> -->
-        <div v-html="markdownToHtml" class="blog-detail-content"></div>
+        <vue-markdown class="blog-detail-content">
+          {{ blog.content_cn }}
+        </vue-markdown>
         <hr class="seo-divider" />
         <ul class="seo-tags-wrap">
           <li v-for="(tag, i) in blog.seo_tags_cn.split(/,|，/)" :key="i">
@@ -45,7 +44,6 @@
 
 <script>
 import VueMarkdown from "vue-markdown";
-import { marked } from "marked";
 
 export default {
   head() {
@@ -65,21 +63,7 @@ export default {
     const blog = blogData[0];
     return {
       blog,
-      blogContent: blog.content_cn,
     };
-  },
-  data() {
-    return {
-      // blogContent: blog,
-    };
-  },
-  computed: {
-    markdownToHtml() {
-      return marked(this.blogContent);
-    },
-  },
-  mounted() {
-    console.log(this.blog);
   },
   components: {
     VueMarkdown,
