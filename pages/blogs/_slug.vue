@@ -3,7 +3,9 @@
     <section>
       <div class="wrapper">
         <a-breadcrumb>
-          <a-breadcrumb-item href="/blogs"> 最新资讯 </a-breadcrumb-item>
+          <a-breadcrumb-item
+            ><nuxt-link to="/blogs"> 最新资讯</nuxt-link>
+          </a-breadcrumb-item>
           <a-breadcrumb-item href="#">
             {{ blog.title_cn }}
           </a-breadcrumb-item>
