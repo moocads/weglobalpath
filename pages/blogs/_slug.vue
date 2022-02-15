@@ -80,9 +80,6 @@ export default {
       return marked(this.blogContent);
     },
   },
-  mounted() {
-    console.log(this.blog);
-  },
   components: {
     VueMarkdown,
   },
