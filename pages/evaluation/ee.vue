@@ -251,7 +251,7 @@
             </div>
           </div>
           <div class="section">
-            <h3>2.适应性加分（最高100分）{{ adaptPointsTotalCalc }}</h3>
+            <h3>2.适应性加分（最高100分）</h3>
             <div class="box">
               <div class="label">学历 & 语言</div>
               <div class="question">
