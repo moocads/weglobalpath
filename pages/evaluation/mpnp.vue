@@ -181,7 +181,32 @@
                   只能选择得分最高的一项进行打分，目的地为outside of
                   Winnipeg的有额外加分
                 </p>
-                <a-radio-group v-model="extra">
+                <a-checkbox-group
+                  v-model="adaptPoints"
+                  @change="adaptPointsSelect"
+                  style="display: flex; flex-direction: column"
+                >
+                  <a-checkbox :value="1">有曼省近亲</a-checkbox>
+                  <a-checkbox :value="2"
+                    >以前在曼省有6个月及以上的工作经验</a-checkbox
+                  >
+                  <a-checkbox :value="3"
+                    >在曼省完成过至少2年的专上学历</a-checkbox
+                  >
+                  <a-checkbox :value="4"
+                    >在曼省完成过至少1年的专上学历</a-checkbox
+                  >
+                  <a-checkbox :value="5">有曼省朋友或远亲</a-checkbox>
+                  <a-checkbox :value="6"
+                    >在曼省连续全职工作6个月并获得曼省同一雇主签发的长期job
+                    offer</a-checkbox
+                  >
+                  <a-checkbox :value="7">获得曼省战略主动招聘邀请函</a-checkbox>
+                  <a-checkbox :value="8"
+                    >申请人移民局目的地为Winnipeg以外</a-checkbox
+                  >
+                </a-checkbox-group>
+                <!-- <a-radio-group v-model="extra">
                   <a-radio :value="1">有曼省近亲 </a-radio>
                   <a-radio :value="2"
                     >以前在曼省有6个月及以上的工作经验
@@ -197,9 +222,9 @@
                   <a-radio :value="8"
                     >申请人移民局目的地为Winnipeg以外
                   </a-radio>
-                </a-radio-group>
+                </a-radio-group> -->
               </div>
-              <div class="result">{{ extraCalc }}</div>
+              <div class="result">{{ adaptPointsTotal }}</div>
             </div>
             <div class="box">
               <div class="label">风险评估</div>
@@ -245,6 +270,8 @@ export default {
       workTimeBonus: 0,
       edu: 0,
       extra: 0,
+      adaptPoints: [],
+      adaptPointsTotal: 0,
       risk: 0,
       riskWork: 0,
       langTest: {
@@ -255,7 +282,66 @@ export default {
       },
     };
   },
-
+  methods: {
+    adaptPointsSelect() {
+      let option1,
+        option2,
+        option3,
+        option4,
+        option5,
+        option6,
+        option7,
+        option8 = 0;
+      if (this.adaptPoints.includes(1)) {
+        option1 = 200;
+      } else {
+        option1 = 0;
+      }
+      if (this.adaptPoints.includes(2)) {
+        option2 = 100;
+      } else {
+        option2 = 0;
+      }
+      if (this.adaptPoints.includes(3)) {
+        option3 = 100;
+      } else {
+        option3 = 0;
+      }
+      if (this.adaptPoints.includes(4)) {
+        option4 = 50;
+      } else {
+        option4 = 0;
+      }
+      if (this.adaptPoints.includes(5)) {
+        option5 = 50;
+      } else {
+        option5 = 0;
+      }
+      if (this.adaptPoints.includes(6)) {
+        option6 = 500;
+      } else {
+        option6 = 0;
+      }
+      if (this.adaptPoints.includes(7)) {
+        option7 = 500;
+      } else {
+        option7 = 0;
+      }
+      if (this.adaptPoints.includes(8)) {
+        option8 = 50;
+      } else {
+        option8 = 0;
+      }
+      let edu = Math.max(option3, option4);
+      let total =
+        option1 + option2 + edu + option5 + option6 + option7 + option8;
+      if (total >= 500) {
+        return (this.adaptPointsTotal = 500);
+      } else {
+        return (this.adaptPointsTotal = total);
+      }
+    },
+  },
   computed: {
     ageCalc: function () {
       this.age = Math.round(this.age);
@@ -474,6 +560,9 @@ export default {
   }
   .ant-radio-wrapper {
     white-space: normal;
+  }
+  .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin-left: 0;
   }
 }
 @media all and (max-width: 1000px) {
