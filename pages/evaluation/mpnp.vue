@@ -34,7 +34,24 @@
         </a-affix>
         <div class="form">
           <section class="section">
-            <h3>1.语言</h3>
+            <h3>1.年龄</h3>
+            <div class="box">
+              <div class="label">年龄</div>
+              <div class="question">
+                <a-input-number
+                  v-model="age"
+                  :min="1"
+                  :max="100"
+                ></a-input-number>
+              </div>
+              <div class="result">
+                {{ ageCalc }}
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h3>2.语言</h3>
             <div class="box">
               <div class="label">第一语言</div>
               <div class="question vertical-radio">
@@ -102,7 +119,7 @@
             </div>
           </section>
           <section class="section">
-            <h3>2.工作经验</h3>
+            <h3>3.工作经验</h3>
             <div class="box">
               <div class="label">工作时长</div>
               <div class="question vertical-radio">
@@ -138,7 +155,7 @@
             </div>
           </section>
           <section class="section">
-            <h3>3.教育</h3>
+            <h3>4.教育</h3>
             <div class="box">
               <div class="label">教育水平</div>
               <div class="question vertical-radio">
@@ -156,7 +173,7 @@
             </div>
           </section>
           <section class="section">
-            <h3>4.适应能力</h3>
+            <h3>5.适应能力</h3>
             <div class="box">
               <div class="label">适应能力</div>
               <div class="question vertical-radio">
@@ -209,6 +226,10 @@
           </section>
         </div>
       </a-card>
+      <NuxtLink to="/evaluation" class="back-btn" exact style="margintop: 20px">
+        <img src="/img/icons/back-btn.png" alt="" />
+        <span>返回上一页</span>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -217,6 +238,7 @@
 export default {
   data() {
     return {
+      age: 0,
       mainLang: 0,
       secondLang: 0,
       workTime: 0,
@@ -235,6 +257,26 @@ export default {
   },
 
   computed: {
+    ageCalc: function () {
+      this.age = Math.round(this.age);
+      return this.age == 18
+        ? 20
+        : this.age == 19
+        ? 30
+        : this.age == 20
+        ? 40
+        : this.age > 20 && this.age < 46
+        ? 75
+        : this.age == 46
+        ? 40
+        : this.age == 47
+        ? 30
+        : this.age == 48
+        ? 20
+        : this.age == 49
+        ? 10
+        : 0;
+    },
     mainLangCalc: function () {
       let listeningPts,
         speakingPts,
@@ -411,6 +453,7 @@ export default {
     },
     totalPoints: function () {
       return (
+        this.ageCalc +
         this.mainLangCalc +
         this.secondLangCalc +
         this.workTimeCalc +

@@ -27,7 +27,6 @@
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
-            <h3>最新邀请分为：<strong>745分</strong></h3>
             <h2>
               您目前EE评分为：<strong>{{ subtotal }}分</strong>
             </h2>
@@ -252,37 +251,42 @@
             </div>
           </div>
           <div class="section">
-            <h3>2.适应性加分（无需选择）</h3>
+            <h3>2.适应性加分（最高100分）{{ adaptPointsTotalCalc }}</h3>
             <div class="box">
               <div class="label">学历 & 语言</div>
               <div class="question">
-                教育背景 & 语言能力 <br />
-                1年大专及以上同时第一语言每一项都有CLB7级（含）以上，可以获得加分
+                第一语言CLB7级以上，同时有1年及以上高等教育（最高25分）
                 <br />
-                双学位以上或者第一语言每一项都有CLB9级（含）以上，可以获得加分
+                第一语言CLB9级以上，同时有1年及以上高等教育（最高50分）
               </div>
               <div class="result">
                 {{ eduXlangCalc }}
               </div>
             </div>
             <div class="box">
-              <div class="label">学历 & 经验</div>
+              <div class="label">
+                学历 <br />
+                & <br />
+                工作经验
+              </div>
               <div class="question">
-                教育背景 & 加拿大工作经验 <br />
-                1年大专及以上同时加拿大工作过1年，可以获得分数 <br />
-                双学位以上或者加拿大工作两年以上，会有更多分数
+                1年加拿大工作经验，同时有1年及以上高等教育（最高25分）
+                <br />
+                2年加拿大工作经验，同时有1年及以上高等教育（最高50分）
               </div>
               <div class="result">
                 {{ eduXexpCalc }}
               </div>
             </div>
             <div class="box">
-              <div class="label">语言 & 海外经验</div>
+              <div class="label">
+                语言 <br />&<br />
+                海外工作经验
+              </div>
               <div class="question">
-                语言能力 & 海外工作经验 <br />
-                1年海外工作经历同时第一语言每一项都有CLB7级（含）以上，可以获得分数
+                第一语言CLB7级以上，同时有1年以上海外工作经验（最高25分）
                 <br />
-                3年海外工作经历或者第一语言每一项都有CLB9级（含）以上，会有更多分数
+                第一语言CLB9级以上，同时有1年以上海外工作经验（最高50分）
               </div>
               <div class="result">
                 {{ langXexpAbroadCalc }}
@@ -291,21 +295,23 @@
             <div class="box">
               <div class="label">全部工作经验</div>
               <div class="question">
-                教育背景 & 加拿大工作经验 <br />
-                1年大专及以上同时加拿大工作过1年，可以获得分数 <br />
-                双学位以上或者加拿大工作两年以上，会有更多分数
+                1年加拿大国内工作经验 + 1年以上海外工作经验（最高25分）<br />
+                2年以上加拿大国内工作经验 + 1年以上海外工作经验（最高50分）
               </div>
               <div class="result">
                 {{ expXexpAbroadCalc }}
               </div>
             </div>
             <div class="box last">
-              <div class="label">语言 & 技工文凭</div>
+              <div class="label">
+                语言 <br />
+                & <br />
+                技工文凭
+              </div>
               <div class="question">
-                语言能力 & 加拿大技工文凭 <br />
-                持有加拿大技工文凭以及第一官方语言单项得分等于或高于CLB5但单项或多项低于CLB7，可以获得分数
+                第一语言CLB5以上，CLB7以下且持有加拿大技工文凭（25分）
                 <br />
-                第一官方语言单项得分等于或高于CLB7，会有更多分数
+                第一语言CLB7及以上且持有加拿大技工文凭（50分）
               </div>
               <div class="result">
                 {{ langXtechCalc }}
@@ -327,7 +333,7 @@
               </div>
             </div>
             <div class="box">
-              <div class="label">兄弟姐妹在加拿大</div>
+              <div class="label">兄弟姐妹是PR或公民居住在加拿大</div>
               <div class="question">
                 <a-radio-group v-model="brothers">
                   <a-radio :value="1"> 有 </a-radio>
@@ -380,6 +386,10 @@
           </div>
         </div>
       </a-card>
+      <NuxtLink to="/evaluation" class="back-btn" exact style="margintop: 20px">
+        <img src="/img/icons/back-btn.png" alt="" />
+        <span>返回上一页</span>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -434,6 +444,7 @@ export default {
       brothers: 0,
       bilingual: 0,
       caEdu: 0,
+      adaptPoints: 0,
     };
   },
   methods: {
@@ -1364,27 +1375,29 @@ export default {
       return this.rec == 1 ? 600 : 0;
     },
     brothersCalc: function () {
-      return this.rec !== 1 && this.brothers == 1 ? 15 : 0;
+      return this.brothers == 1 ? 15 : 0;
     },
     offerCalc: function () {
-      if (this.rec !== 1) {
-        return this.offer == 2 ? 200 : this.offer == 3 ? 50 : 0;
-      } else {
-        return 0;
-      }
+      return this.offer == 2 ? 200 : this.offer == 3 ? 50 : 0;
     },
     bilingualCalc: function () {
-      if (this.rec !== 1) {
-        return this.bilingual == 2 ? 25 : this.bilingual == 3 ? 50 : 0;
-      } else {
-        return 0;
-      }
+      return this.bilingual == 2 ? 25 : this.bilingual == 3 ? 50 : 0;
     },
     caEduCalc: function () {
-      if (this.rec !== 1) {
-        return this.caEdu == 2 ? 15 : this.caEdu == 3 ? 30 : 0;
+      return this.caEdu == 2 ? 15 : this.caEdu == 3 ? 30 : 0;
+    },
+    adaptPointsTotalCalc: function () {
+      let total = this.adaptPoints;
+      total =
+        this.eduXlangCalc +
+        this.eduXexpCalc +
+        this.langXexpAbroadCalc +
+        this.expXexpAbroadCalc +
+        this.langXtechCalc;
+      if (total >= 100) {
+        return (this.adaptPoints = 100);
       } else {
-        return 0;
+        return (this.adaptPoints = total);
       }
     },
     subtotal: function () {
@@ -1401,12 +1414,8 @@ export default {
         this.offerCalc +
         this.bilingualCalc +
         this.caEduCalc +
-        this.eduXexpCalc +
-        this.eduXlangCalc +
-        this.langXexpAbroadCalc +
-        this.expXexpAbroadCalc +
         this.recCalc +
-        this.langXtechCalc
+        this.adaptPoints
       );
     },
   },
@@ -1435,6 +1444,9 @@ export default {
       margin: 0;
       text-align: center;
       font-weight: 400;
+    }
+    strong {
+      color: #34ff48;
     }
   }
 

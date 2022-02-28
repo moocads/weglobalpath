@@ -198,6 +198,10 @@
           </div>
         </div>
       </a-card>
+      <NuxtLink to="/evaluation" class="back-btn" exact style="margintop: 20px">
+        <img src="/img/icons/back-btn.png" alt="" />
+        <span>返回上一页</span>
+      </NuxtLink>
     </div>
   </div>
 </template>

@@ -205,3 +205,41 @@ a:hover {
   font-size: 14px;
   color: #c4c4c4;
 }
+#eeForm,
+#bcpnp-evaluation-form,
+#selfEmployedForm,
+#ontario-student-evaluation-form,
+#ontario-employee-evaluation-form,
+#mpnp-evaluation-form {
+  .back-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    width: fit-content;
+    span {
+      font-size: 20px;
+    }
+    img {
+      width: 22px;
+      margin-right: 10px;
+    }
+  }
+  .pointsCounter strong {
+    color: #34ff48;
+  }
+}
+@media all and (max-width: 768px) {
+  #eeForm {
+    .back-btn {
+      margin-left: -8px;
+      margin-top: 10px;
+      width: 100%;
+      span {
+        font-size: 16px;
+      }
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
+}

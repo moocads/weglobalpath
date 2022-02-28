@@ -40,10 +40,10 @@
               <div class="label">工作类别</div>
               <div class="question vertical-radio">
                 <a-radio-group v-model="workCategory">
-                  <a-radio :value="1"> NOC0/A类工作 </a-radio>
-                  <a-radio :value="2"> B类工作 </a-radio>
-                  <a-radio :value="3"> C类工作 </a-radio>
-                  <a-radio :value="4"> D类工作 </a-radio>
+                  <a-radio :value="1"> NOC 0/A类工作 </a-radio>
+                  <a-radio :value="2"> NOC B类工作 </a-radio>
+                  <a-radio :value="3"> NOC C类工作 </a-radio>
+                  <a-radio :value="4"> NOC D类工作 </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ workCategoryCalc }}</div>
@@ -317,6 +317,10 @@
           </section>
         </div>
       </a-card>
+      <NuxtLink to="/evaluation" class="back-btn" exact style="margintop: 20px">
+        <img src="/img/icons/back-btn.png" alt="" />
+        <span>返回上一页</span>
+      </NuxtLink>
     </div>
   </div>
 </template>
