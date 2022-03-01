@@ -362,8 +362,8 @@
               <div class="question vertical-radio">
                 <a-radio-group v-model="bilingual">
                   <a-radio :value="1"> 无 </a-radio>
-                  <a-radio :value="2"> 法语NCLC4-7，英语CLB4或以下 </a-radio>
-                  <a-radio :value="3"> 法语NCLC 7，英语CLB5或以上 </a-radio>
+                  <a-radio :value="2"> 法语达到CLB7 + 英语CLB4或以下（25分） </a-radio>
+                  <a-radio :value="3"> 法语达到CLB7 + 英语CLB5或以上（50分）  </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">
