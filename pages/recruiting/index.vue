@@ -844,14 +844,14 @@ const requirements = [
       },
     ],
   },
-  {
-    title: "其他要求",
-    requirement_points: [
-      {
-        point: "可以考虑25-35岁英语较好的申请人（须进行二次评估）",
-      },
-    ],
-  },
+  // {
+  //   title: "其他要求",
+  //   requirement_points: [
+  //     {
+  //       point: "可以考虑25-35岁英语较好的申请人（须进行二次评估）",
+  //     },
+  //   ],
+  // },
 ];
 const data = [
   {
