@@ -9,11 +9,11 @@
       <div>
         <label for="">edu</label>
         <a-select v-model="edu" style="width: 200px">
-          <a-select-option value="highSchool"> 高中及以下 </a-select-option>
-          <a-select-option value="college"> 大专 </a-select-option>
-          <a-select-option value="bachelor"> 本科 </a-select-option>
-          <a-select-option value="master"> 硕士 </a-select-option>
-          <a-select-option value="doctor"> 博士 </a-select-option>
+          <a-select-option value="0"> 高中及以下 </a-select-option>
+          <a-select-option value="1"> 大专 </a-select-option>
+          <a-select-option value="2"> 本科 </a-select-option>
+          <a-select-option value="3"> 硕士 </a-select-option>
+          <a-select-option value="4"> 博士 </a-select-option>
         </a-select>
         {{ edu }}
       </div>
@@ -79,11 +79,24 @@
         </a-select>
         {{ region }}
       </div>
+      <div>
+        <label for="">purpose</label>
+        <a-select v-model="purpose" style="width: 300px">
+          <a-select-option value="childrenEdu">子女教育</a-select-option>
+          <a-select-option value="workStudy">工作/教育</a-select-option>
+          <a-select-option value="investment">投资置业</a-select-option>
+          <a-select-option value="living">居住环境</a-select-option>
+        </a-select>
+        {{ purpose }}
+      </div>
+      {{ recommendProgram }}
     </div>
   </div>
 </template>
 
 <script>
+var _ = require("lodash");
+
 export default {
   data() {
     return {
@@ -93,7 +106,113 @@ export default {
       job: "",
       title: "",
       region: "",
+      purpose: "",
+      recommend: [],
+      jobResult: [],
+      ageResult: [],
+      eduResult: [],
+      firstLangResult: [],
+      titleResult: [],
     };
+  },
+  methods: {
+    jobSelection: function () {
+      if (this.job === "job1") {
+        this.jobResult = ["安省雇主担保", "BC省雇主担保", "全球人才计划"];
+      }
+      if (this.job === "job2") {
+        this.jobResult = ["安省雇主担保", "BC省雇主担保", "快速移民直通车"];
+      }
+      if (this.job === "job3") {
+        this.jobResult = ["安省雇主担保", "快速移民直通车", "曼省留学移民"];
+      }
+      if (this.job === "job4") {
+        this.jobResult = ["安省雇主担保", "BC省雇主担保", "快速移民直通车"];
+      }
+      if (this.job === "job5") {
+        this.jobResult = ["联邦创业投资移民（SUV）", "企业主工签"];
+      }
+      if (this.job === "job6") {
+        this.jobResult = ["联邦护理移民", "快速移民直通车", "曼省留学移民"];
+      }
+      if (this.job === "job7") {
+        this.jobResult = ["联邦自雇移民", "安省雇主担保", "企业主工签"];
+      }
+      if (this.job === "job8") {
+        this.jobResult = ["联邦自雇移民", "企业主工签"];
+      }
+      if (this.job === "job9") {
+        this.jobResult = ["安省雇主担保", "企业主工签"];
+      }
+      if (this.job === "job10") {
+        this.jobResult = ["安省雇主担保", "萨省雇主担保", "快速移民直通车"];
+      }
+      if (this.job === "job11") {
+        this.jobResult = ["联邦创业投资移民（SUV）", "企业主工签"];
+      }
+      if (this.job === "job12") {
+        this.jobResult = ["联邦农业试点", "萨省雇主担保"];
+      }
+      if (this.job === "job13") {
+        this.jobResult = ["快速移民直通车", "安省硕博通道", "曼省留学移民"];
+      }
+    },
+    ageSelection: function () {
+      if (this.age < 45) {
+        this.ageResult = ["快速移民直通车", "曼省留学移民"];
+      } else {
+        this.ageResult = ["安省雇主担保"];
+      }
+    },
+    eduSelection: function () {
+      if (this.edu > 1) {
+        this.eduResult = ["安省硕博通道"];
+      } else {
+        this.eduResult = [];
+      }
+    },
+    firstLangSelection: function () {
+      if (this.firstLang === "none") {
+        this.firstLangResult = ["安省雇主担保", "联邦自雇移民"];
+      } else if (this.firstLang === "lvl34") {
+        this.firstLangResult = [""];
+      } else if (this.firstLang === "lvl5") {
+        this.firstLangResult = ["快速移民直通车"];
+      } else if (this.firstLang === "lvl6") {
+        this.firstLangResult = ["BC省雇主担保"];
+      } else if (this.firstLang === "lvl7") {
+        this.firstLangResult = ["联邦EE快速通道"];
+      } else {
+        this.firstLangResult = [];
+      }
+    },
+    titleSelection: function () {
+      if (this.title === "selfEmployment") {
+        this.titleResult = ["联邦自雇移民", "企业主工签"];
+      } else {
+        this.titleResult = [];
+      }
+    },
+  },
+  computed: {
+    recommendProgram: function () {
+      this.jobSelection();
+      this.ageSelection();
+      this.eduSelection();
+      this.firstLangSelection();
+      this.titleSelection();
+      this.recommend = _.concat(
+        this.jobResult,
+        this.ageResult,
+        this.eduResult,
+        this.firstLangResult,
+        this.titleResult
+      );
+      this.recommend = _.uniq(this.recommend);
+
+      console.log(this.recommend);
+      return this.recommend;
+    },
   },
 };
 </script>
