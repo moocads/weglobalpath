@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-title-side-wrap">
-      <p>{{ titleEN }}</p>
+      <p :style="{ color: titleENColor }">{{ titleEN }}</p>
       <div class="title-wrap">
         <img src="/img/logos/logo-small-blue.png" alt="" />
         <h2>{{ title }}</h2>
@@ -12,7 +12,14 @@
 
 <script>
 export default {
-  props: { title: String, titleEN: String },
+  props: {
+    title: String,
+    titleEN: String,
+    titleENColor: {
+      type: String,
+      default: "#f1f1f1",
+    },
+  },
 };
 </script>
 

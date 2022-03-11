@@ -32,50 +32,70 @@
       <div class="wrapper">
         <MainTitle title="热门项目" titleEN="SERVICES" />
         <div class="projects-wrap">
-          <div class="project-1 project-item">
-            <NuxtLink to="/projects/nominee">
-              <div class="proj1-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project1.png" alt="" />
-              <h2>
-                加拿大免雅思<br />
-                雇主担保移民
-              </h2>
-            </NuxtLink>
+          <div class="project-item project-1">
+            <div class="img-wrap">
+              <img
+                src="/img/Home/projects/home-project1.jpg"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="content-wrap">
+              <h2>加拿大移民</h2>
+              <p>
+                加拿大联邦创业投资SUV，加拿大雇主担保移民，加拿大安省、曼省、BC省、萨省、加拿大海洋四省PNP省提名移民，加拿大留学经验类移民，加拿大企业家移民，加拿大文体自雇移民，联邦农业试点，海洋四省AIP雇主担保，加拿大联邦快速通道，EE加分５０、EE加分２００，加拿大家庭团聚移民。加彼岸覆盖加拿大各省份项目资源，我们以客户条件为优先级匹配适合的项目。
+              </p>
+              <nuxt-link to="/projects/nominee">了解详情</nuxt-link>
+            </div>
           </div>
-          <div class="project-2 project-item">
-            <NuxtLink to="/projects/new-immigrant">
-              <div class="proj2-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project7.jpeg" alt="" />
-              <h2>新移民服务</h2>
-            </NuxtLink>
+          <div class="project-item project-2">
+            <div class="img-wrap">
+              <img
+                src="/img/Home/projects/home-project2.jpg"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="content-wrap">
+              <h2>加拿大签证</h2>
+              <p>
+                加拿大学签、境内旅游签转学签，加拿大工签、境内旅游签转工签，加拿大高管创业LMIA，加拿大公司高管派遣工签，加拿大企业家工签，加拿大LMIA劳工批文，加拿大旅游签，加拿大旅游签境内续签Visitor
+                Record，加拿大超级签证。加彼岸提供加拿大各类签证检查案件Review的服务，为我们的客户提供最优性价比。
+              </p>
+              <nuxt-link to="/projects/nominee">了解详情</nuxt-link>
+            </div>
           </div>
-          <div class="project-3 project-item">
-            <NuxtLink to="/projects/education">
-              <div class="proj3-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project3.png" alt="" />
-              <h2>加拿大名校申请<br />留学移民</h2>
-            </NuxtLink>
+          <div class="project-item project-3">
+            <div class="img-wrap">
+              <img
+                src="/img/Home/projects/home-project3.jpg"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="content-wrap">
+              <h2>加拿大留学</h2>
+              <p>
+                大学保录取孵化社区，为学生进行背景评估、选择学校/专业、递交申请斩获名校OFFER。学生青春十年计划，从加拿大落地后的接待安置服务，到留学期间的有效身份。加彼岸提供留学后续服务，职业就业、移民详尽规划。
+              </p>
+              <nuxt-link to="/projects/nominee">了解详情</nuxt-link>
+            </div>
           </div>
-          <div class="project-4 project-item">
-            <NuxtLink to="/projects/startup">
-              <div class="proj4-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project4.png" alt="" />
-              <h2>加拿大创业移民</h2>
-            </NuxtLink>
-          </div>
-          <div class="project-5 project-item">
-            <NuxtLink to="/projects/entrepreneur">
-              <div class="proj5-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project5.png" alt="" />
-              <h2>加拿大企业家移民</h2>
-            </NuxtLink>
-          </div>
-          <div class="project-6 project-item">
-            <NuxtLink to="/projects/reunion">
-              <div class="proj6-overlay proj-overlay"></div>
-              <img src="/img/Home/projects/project8.jpeg" alt="" />
-              <h2>加拿大团聚移民</h2>
-            </NuxtLink>
+          <div class="project-item project-4">
+            <div class="img-wrap">
+              <img
+                src="/img/Home/projects/home-project4.jpg"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="content-wrap">
+              <h2>加拿大新移民服务</h2>
+              <p>
+                加彼岸为新移民安排贴心的安家服务。让您不会在初次登陆时对陌生环境无从下手。我们提供临时住所安顿、租房、买房协助，登陆接机，个人保险，银行开户办理信用卡，协助申请驾照，税务咨询介绍等服务。连接彼岸，用心服务，帮助海外客户和学生。
+              </p>
+              <nuxt-link to="/projects/nominee">了解详情</nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -477,104 +497,48 @@ header .info-wrap {
 }
 .projects-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 300px 150px 300px;
-  gap: 20px 20px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "project-1 project-1 project-2 project-3"
-    "project-4 project-5 project-2 project-3"
-    "project-4 project-5 project-6 project-6";
+  grid-template-columns: 1fr;
+  row-gap: 150px;
 }
 .project-item {
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 30px 30px;
+}
+.project-item .img-wrap {
   img {
-    z-index: -1;
     object-fit: cover;
-    width: 100%;
-    height: 100%;
+    max-height: 350px;
+    border-radius: 5px;
   }
+}
+.project-item .content-wrap {
   h2 {
     font-size: 22px;
+    color: $navy;
+  }
+  p {
+    font-size: 16px;
+    color: #707070;
+  }
+  a {
+    display: block;
+    width: fit-content;
+    background-color: $red;
     color: #fff;
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    z-index: 9;
+    padding: 5px 15px;
+    border-radius: 25px;
+    margin-top: 35px;
   }
 }
-.proj-overlay {
-  transition: all 0.3s ease-in-out;
-  z-index: 5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.project-1 {
-  grid-area: project-1;
-  position: relative;
-  max-height: 300px;
-  .proj1-overlay {
-    background: rgba(22, 41, 84, 0.5);
-  }
-  .proj1-overlay:hover {
-    background: none;
-  }
-}
-
-.project-2 {
-  grid-area: project-2;
-  .proj2-overlay {
-    background: rgba(22, 41, 84, 0.5);
-  }
-  .proj2-overlay:hover {
-    background: none;
-  }
-}
-
-.project-3 {
-  grid-area: project-3;
-  .proj3-overlay {
-    background: rgba(22, 41, 84, 0.5);
-  }
-  .proj3-overlay:hover {
-    background: none;
-  }
-}
-
+.project-2,
 .project-4 {
-  grid-area: project-4;
-  .proj4-overlay {
-    background: rgba(22, 41, 84, 0.5);
+  .content-wrap {
+    order: 1;
   }
-  .proj4-overlay:hover {
-    background: none;
-  }
-}
-
-.project-5 {
-  grid-area: project-5;
-  .proj5-overlay {
-    background: rgba(22, 41, 84, 0.5);
-  }
-  .proj5-overlay:hover {
-    background: none;
-  }
-}
-
-.project-6 {
-  grid-area: project-6;
-  // max-height: 320px;
-
-  .proj6-overlay {
-    background: rgba(22, 41, 84, 0.5);
-  }
-  .proj6-overlay:hover {
-    background: none;
+  .img-wrap {
+    order: 2;
   }
 }
 @media all and (max-width: 768px) {
@@ -582,25 +546,39 @@ header .info-wrap {
     padding: 30px 0;
   }
   .projects-wrap {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 150px;
-    gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "project-1"
-      "project-2"
-      "project-3"
-      "project-4"
-      "project-5"
-      "project-6";
+    row-gap: 30px;
   }
   .project-item {
-    max-height: 150px;
-    h2 {
-      font-size: 18px;
-      left: 10px;
-      bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    gap: 10px 30px;
+  }
+  .project-item .img-wrap {
+    order: 2;
+    img {
+      object-fit: cover;
+      max-height: 350px;
+      border-radius: 5px;
+    }
+  }
+  .project-item .content-wrap {
+    order: 1;
+    p {
+      font-size: 14px;
+    }
+    a {
+      margin-top: 15px;
+    }
+  }
+  .project-2,
+  .project-4 {
+    .content-wrap {
+      order: 1;
+    }
+    .img-wrap {
+      order: 2;
     }
   }
 }
