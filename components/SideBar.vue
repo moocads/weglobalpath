@@ -70,7 +70,7 @@ export default {
       color: $navy;
       background: $navy;
       font-size: 20px;
-      border-bottom: 1px solid #343e5e;
+      border-bottom: 1px solid #5f6886;
       &.top {
         background: $navy;
         padding: 0;
