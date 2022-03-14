@@ -47,7 +47,7 @@ export default {
   async asyncData({ $axios }) {
     const blogsData = await $axios.$get(`/blogs`, {
       params: {
-        _sort: "id:desc",
+        _sort: "published_at:desc",
       },
     });
     const blogs = blogsData;
