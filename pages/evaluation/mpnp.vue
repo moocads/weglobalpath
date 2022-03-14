@@ -547,7 +547,8 @@ export default {
         this.eduCalc +
         this.extraCalc +
         this.riskCalc +
-        this.riskWorkCalc
+        this.riskWorkCalc +
+        this.adaptPointsTotal
       );
     },
   },

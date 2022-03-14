@@ -7,8 +7,10 @@
       alt="Beyond Canada Wechat"
     />
     <div class="icon-bar side">
-      <NuxtLink to="/evaluation" class="sidebar-link">
-        <img src="/img/icons/calculator.png" class="contact-icon" />
+      <NuxtLink to="/evaluation" class="sidebar-link sidebar-evaluation">
+        <p>评分</p>
+        <p>系统</p>
+        <!-- <img src="/img/icons/calculator.png" class="contact-icon" /> -->
       </NuxtLink>
       <!-- <NuxtLink to="/evaluation" class="sidebar-link">
         <img src="/img/icons/aplus.png" class="contact-icon" />
@@ -97,7 +99,18 @@ export default {
     }
   }
 }
-
+.sidebar-evaluation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+}
 @media (max-width: 991px) {
   #sidebar {
     display: none;
