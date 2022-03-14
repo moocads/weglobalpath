@@ -8,8 +8,8 @@
     />
     <div class="icon-bar side">
       <NuxtLink to="/evaluation" class="sidebar-link sidebar-evaluation">
-        <p>评分</p>
-        <p>系统</p>
+        <p>移民</p>
+        <p>打分</p>
         <!-- <img src="/img/icons/calculator.png" class="contact-icon" /> -->
       </NuxtLink>
       <!-- <NuxtLink to="/evaluation" class="sidebar-link">
