@@ -109,7 +109,6 @@
               <a-select-option value="selfEmployment"> 自雇 </a-select-option>
               <a-select-option value="other"> 其他 </a-select-option>
             </a-select>
-            {{ title }}
           </div>
           <div class="option-wrap">
             <label for="">偏好目的地</label>
