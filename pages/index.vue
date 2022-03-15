@@ -20,9 +20,9 @@
               class="sm-only"
             />移民，不走弯路！
           </p>
-          <NuxtLink to="/contact">
+          <NuxtLink to="/evaluation">
             <button class="main-btn main-btn_blue main-btn_round">
-              快速咨询
+              移民打分
             </button>
           </NuxtLink>
         </div>
