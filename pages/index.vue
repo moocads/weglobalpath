@@ -557,10 +557,10 @@ header .info-wrap {
   .project-item {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     align-items: center;
     padding: 30px 0;
-    row-gap: 10px;
+    row-gap: 30px;
   }
   .project-item .img-wrap {
     order: 2;
