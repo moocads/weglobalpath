@@ -498,18 +498,26 @@ header .info-wrap {
 .projects-wrap {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 150px;
+  // row-gap: 150px;
 }
 .project-item {
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  gap: 30px 30px;
+  padding: 100px 0;
+  column-gap: 50px;
+}
+.project-item:first-child {
+  padding-top: 0;
+}
+.project-item:not(:last-child) {
+  border-bottom: 1px dashed #ddd;
 }
 .project-item .img-wrap {
   img {
     object-fit: cover;
-    max-height: 350px;
+    max-height: 300px;
+    width: 500px;
     border-radius: 5px;
   }
 }
@@ -545,26 +553,27 @@ header .info-wrap {
   #home-services {
     padding: 30px 0;
   }
-  .projects-wrap {
-    row-gap: 30px;
-  }
+
   .project-item {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
-    gap: 10px 30px;
+    padding: 30px 0;
+    row-gap: 10px;
   }
   .project-item .img-wrap {
     order: 2;
     img {
       object-fit: cover;
-      max-height: 350px;
+      max-height: 300px;
+      width: 100%;
       border-radius: 5px;
     }
   }
   .project-item .content-wrap {
     order: 1;
+    align-self: flex-start;
     p {
       font-size: 14px;
     }
