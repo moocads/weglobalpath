@@ -504,7 +504,7 @@ header .info-wrap {
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-  padding: 100px 0;
+  padding: 50px 0;
   column-gap: 50px;
 }
 .project-item:first-child {
