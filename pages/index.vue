@@ -523,8 +523,9 @@ header .info-wrap {
 }
 .project-item .content-wrap {
   h2 {
-    font-size: 22px;
+    font-size: 24px;
     color: $navy;
+    font-weight: bold;
   }
   p {
     font-size: 16px;
@@ -574,6 +575,9 @@ header .info-wrap {
   .project-item .content-wrap {
     order: 1;
     align-self: flex-start;
+    h2 {
+      font-size: 20px;
+    }
     p {
       font-size: 14px;
     }
