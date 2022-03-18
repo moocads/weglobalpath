@@ -465,6 +465,7 @@ const provinces = [
   .nuxt-link-active,
   .nuxt-link-exact-active {
     background-color: transparent;
+    color: $navy !important;
   }
 }
 .hot-project-dropdown,
@@ -472,6 +473,7 @@ const provinces = [
   .nuxt-link-active,
   .nuxt-link-exact-active {
     background-color: transparent;
+    color: rgba(0, 0, 0, 0.5) !important;
     // border-bottom: 3px solid $red;
   }
 }
