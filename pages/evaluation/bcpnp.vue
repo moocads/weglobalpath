@@ -57,9 +57,9 @@
                   style="display: flex; flex-direction: column"
                 >
                   <a-checkbox :value="1">00开头的高级管理类工作</a-checkbox>
-                  <a-checkbox :value="2"
+                  <!-- <a-checkbox :value="2"
                     >BC省2018-2028劳动力市场前景签一百名职位</a-checkbox
-                  >
+                  > -->
                   <a-checkbox :value="3"
                     >目前全职为BC省雇主工作，每周至少工作30小时，并且工作的职位与你申请BC省提名用的移民职业NOC代码相同</a-checkbox
                   >

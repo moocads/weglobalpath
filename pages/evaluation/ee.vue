@@ -253,26 +253,25 @@
           <div class="section">
             <h3>2.适应性加分（最高100分）</h3>
             <div class="box">
-              <div class="label">学历 & 语言</div>
-              <div class="question">
-                第一语言CLB7级以上，同时有1年及以上高等教育（最高25分）
-                <br />
-                第一语言CLB9级以上，同时有1年及以上高等教育（最高50分）
+              <div class="box">
+                <div class="label">学历 & 语言</div>
+                <div class="question">
+                  第一语言CLB7级以上，同时有1年及以上高等教育（最高25分）
+                  <br />
+                  第一语言CLB9级以上，同时有1年及以上高等教育（最高50分）
+                </div>
               </div>
-              <div class="result">
-                {{ eduXlangCalc }}
-              </div>
-            </div>
-            <div class="box">
-              <div class="label">
-                学历 <br />
-                & <br />
-                工作经验
-              </div>
-              <div class="question">
-                1年加拿大工作经验，同时有1年及以上高等教育（最高25分）
-                <br />
-                2年加拿大工作经验，同时有1年及以上高等教育（最高50分）
+              <div class="box">
+                <div class="label">
+                  学历 <br />
+                  & <br />
+                  工作经验
+                </div>
+                <div class="question">
+                  1年加拿大工作经验，同时有1年及以上高等教育（最高25分）
+                  <br />
+                  2年加拿大工作经验，同时有1年及以上高等教育（最高50分）
+                </div>
               </div>
               <div class="result">
                 {{ eduXexpCalc }}
@@ -362,8 +361,12 @@
               <div class="question vertical-radio">
                 <a-radio-group v-model="bilingual">
                   <a-radio :value="1"> 无 </a-radio>
-                  <a-radio :value="2"> 法语达到CLB7 + 英语CLB4或以下（25分） </a-radio>
-                  <a-radio :value="3"> 法语达到CLB7 + 英语CLB5或以上（50分）  </a-radio>
+                  <a-radio :value="2">
+                    法语达到CLB7 + 英语CLB4或以下（25分）
+                  </a-radio>
+                  <a-radio :value="3">
+                    法语达到CLB7 + 英语CLB5或以上（50分）
+                  </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">
@@ -445,6 +448,8 @@ export default {
       bilingual: 0,
       caEdu: 0,
       adaptPoints: 0,
+      eduTotalPts: 0,
+      expTotalPts: 0,
     };
   },
   methods: {
@@ -1388,12 +1393,25 @@ export default {
     },
     adaptPointsTotalCalc: function () {
       let total = this.adaptPoints;
-      total =
-        this.eduXlangCalc +
-        this.eduXexpCalc +
-        this.langXexpAbroadCalc +
-        this.expXexpAbroadCalc +
-        this.langXtechCalc;
+      let eduTotal = this.eduXlangCalc + this.eduXexpCalc;
+      let expTotal = this.langXexpAbroadCalc + this.expXexpAbroadCalc;
+      if (eduTotal >= 50) {
+        eduTotal = 50;
+      } else {
+        eduTotal = eduTotal;
+      }
+      if (expTotal >= 50) {
+        expTotal = 50;
+      } else {
+        expTotal = expTotal;
+      }
+      this.eduTotalPts = eduTotal;
+      this.expTotalPts = expTotal;
+      total = eduTotal + expTotal + this.langXtechCalc;
+      // this.eduXlangCalc +
+      // this.eduXexpCalc +
+      // this.langXexpAbroadCalc +
+      // this.expXexpAbroadCalc +
       if (total >= 100) {
         return (this.adaptPoints = 100);
       } else {
@@ -1406,16 +1424,16 @@ export default {
         this.eduCalc +
         this.langTest1Calc +
         this.langTest2Calc +
-        this.langTest3Calc +
         this.expCalc +
-        this.expCalcPartner +
         this.eduCalcPartner +
+        this.langTest3Calc +
+        this.expCalcPartner +
         this.brothersCalc +
         this.offerCalc +
         this.bilingualCalc +
         this.caEduCalc +
         this.recCalc +
-        this.adaptPoints
+        this.adaptPointsTotalCalc
       );
     },
   },
@@ -1514,6 +1532,7 @@ export default {
       }
 
       .result {
+        margin-left: auto;
         padding: 20px 30px;
         width: 100px;
         border-left: 1px solid #efefef;
