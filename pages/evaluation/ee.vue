@@ -252,55 +252,57 @@
           </div>
           <div class="section">
             <h3>2.适应性加分（最高100分）</h3>
-            <div class="box">
-              <div class="box">
+            <div class="combo-box">
+              <div class="box box1">
                 <div class="label">学历 & 语言</div>
                 <div class="question">
-                  第一语言CLB7级以上，同时有1年及以上高等教育（最高25分）
+                  第一语言CLB7级以上，同时有1年及以上高等教育
                   <br />
-                  第一语言CLB9级以上，同时有1年及以上高等教育（最高50分）
+                  第一语言CLB9级以上，同时有1年及以上高等教育
                 </div>
               </div>
-              <div class="box">
+              <div class="box box2 last">
                 <div class="label">
                   学历 <br />
                   & <br />
                   工作经验
                 </div>
                 <div class="question">
-                  1年加拿大工作经验，同时有1年及以上高等教育（最高25分）
+                  1年加拿大工作经验，同时有1年及以上高等教育
                   <br />
-                  2年加拿大工作经验，同时有1年及以上高等教育（最高50分）
+                  2年加拿大工作经验，同时有1年及以上高等教育
                 </div>
               </div>
               <div class="result">
                 {{ eduXexpCalc }}
               </div>
             </div>
-            <div class="box">
-              <div class="label">
-                语言 <br />&<br />
-                海外工作经验
+
+            <div class="combo-box">
+              <div class="box box1">
+                <div class="label">
+                  语言 <br />&<br />
+                  海外工作经验
+                </div>
+                <div class="question">
+                  第一语言CLB7级以上，同时有1年以上海外工作经验
+                  <br />
+                  第一语言CLB9级以上，同时有1年以上海外工作经验
+                </div>
               </div>
-              <div class="question">
-                第一语言CLB7级以上，同时有1年以上海外工作经验（最高25分）
-                <br />
-                第一语言CLB9级以上，同时有1年以上海外工作经验（最高50分）
+              <div class="box box2 last">
+                <div class="label">全部工作经验</div>
+                <div class="question">
+                  1年加拿大国内工作经验 + 1年以上海外工作经验<br />
+                  2年以上加拿大国内工作经验 + 1年以上海外工作经验
+                </div>
               </div>
               <div class="result">
-                {{ langXexpAbroadCalc }}
+                {{ expTotalPts }}
               </div>
             </div>
-            <div class="box">
-              <div class="label">全部工作经验</div>
-              <div class="question">
-                1年加拿大国内工作经验 + 1年以上海外工作经验（最高25分）<br />
-                2年以上加拿大国内工作经验 + 1年以上海外工作经验（最高50分）
-              </div>
-              <div class="result">
-                {{ expXexpAbroadCalc }}
-              </div>
-            </div>
+
+            <div class="box"></div>
             <div class="box last">
               <div class="label">
                 语言 <br />
@@ -308,9 +310,9 @@
                 技工文凭
               </div>
               <div class="question">
-                第一语言CLB5以上，CLB7以下且持有加拿大技工文凭（25分）
+                第一语言CLB5以上，CLB7以下且持有加拿大技工文凭
                 <br />
-                第一语言CLB7及以上且持有加拿大技工文凭（50分）
+                第一语言CLB7及以上且持有加拿大技工文凭
               </div>
               <div class="result">
                 {{ langXtechCalc }}
@@ -582,7 +584,9 @@ export default {
         return 0;
       }
     },
+    //First Language Function
     langTest1Calc: function () {
+      //IELTS
       if (this.langTest1.test == 1) {
         this.langTest1.clbL =
           this.langTest1.l >= 8.5
@@ -619,7 +623,7 @@ export default {
         this.langTest1.clbR =
           this.langTest1.r >= 8
             ? 10
-            : this.langTest1.r >= 7.5
+            : this.langTest1.r >= 7
             ? 9
             : this.langTest1.r >= 6.5
             ? 8
@@ -649,11 +653,13 @@ export default {
             ? 4
             : 0;
       } else if (this.langTest1.test == 2) {
+        //CELPIP
         this.langTest1.clbL = this.langTest1.l;
         this.langTest1.clbS = this.langTest1.s;
         this.langTest1.clbR = this.langTest1.r;
         this.langTest1.clbW = this.langTest1.w;
       } else if (this.langTest1.test == 3) {
+        //TEF Canada
         this.langTest1.clbL =
           this.langTest1.l >= 316
             ? 10
@@ -882,7 +888,7 @@ export default {
         this.langTest2.clbR =
           this.langTest2.r >= 8
             ? 10
-            : this.langTest2.r >= 7.5
+            : this.langTest2.r >= 7
             ? 9
             : this.langTest2.r >= 6.5
             ? 8
@@ -1584,6 +1590,55 @@ export default {
           align-items: flex-start;
         }
       }
+    }
+  }
+}
+</style>
+<style lang="scss" scoped>
+.combo-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "box1 result"
+    "box2 result";
+  margin-bottom: 15px;
+  .box1 {
+    grid-area: box1;
+  }
+  .box2 {
+    grid-area: box2;
+  }
+  .result {
+    grid-area: result;
+    margin-left: auto;
+    padding: 20px 30px;
+    width: 100px;
+    border: 1px solid #efefef;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media all and (max-width: 1000px) {
+  .combo-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      "box1"
+      "box2"
+      "result";
+    .result {
+      margin-left: 0;
+      align-items: flex-start;
+      width: 100%;
+      border-top: none;
+      border-left: 1px solid #efefef;
     }
   }
 }
