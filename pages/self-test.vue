@@ -33,11 +33,11 @@
           <h3>* 为必选选项</h3>
           <div class="option-wrap">
             <label for=""><span>*</span>年龄</label>
-            <a-input-number v-model="age" :min="1" :max="100" />
+            <a-input-number v-model="age" :min="0" :max="100" />
           </div>
           <div class="option-wrap">
             <label for=""><span>*</span>学历</label>
-            <a-select v-model="edu" style="width: 300px">
+            <a-select v-model="edu">
               <a-select-option value="0"> 高中及以下 </a-select-option>
               <a-select-option value="1"> 大专 </a-select-option>
               <a-select-option value="2"> 本科 </a-select-option>
@@ -47,7 +47,7 @@
           </div>
           <div class="option-wrap">
             <label for=""><span>*</span>英语水平</label>
-            <a-select v-model="firstLang" style="width: 300px">
+            <a-select v-model="firstLang">
               <a-select-option value="none"> 完全不会 </a-select-option>
               <a-select-option value="lvl34"> 雅思3-4分 </a-select-option>
               <a-select-option value="lvl5"> 雅思5分 </a-select-option>
@@ -57,7 +57,7 @@
           </div>
           <div class="option-wrap">
             <label for="">法语水平</label>
-            <a-select v-model="frenchLang" style="width: 300px">
+            <a-select v-model="frenchLang">
               <a-select-option value="none"> 完全不会 </a-select-option>
               <a-select-option value="general">一般</a-select-option>
               <a-select-option value="expert">精通</a-select-option>
@@ -65,7 +65,7 @@
           </div>
           <div class="option-wrap">
             <label for=""><span>*</span>工作行业</label>
-            <a-select v-model="job" style="width: 300px">
+            <a-select v-model="job">
               <a-select-option value="job1">
                 计算机／互联网／通信／电子
               </a-select-option>
@@ -103,7 +103,7 @@
           </div>
           <div class="option-wrap">
             <label for=""><span>*</span>工作职位</label>
-            <a-select v-model="title" style="width: 300px">
+            <a-select v-model="title">
               <a-select-option value="nonManager"> 非管理 </a-select-option>
               <a-select-option value="manager"> 管理 </a-select-option>
               <a-select-option value="selfEmployment"> 自雇 </a-select-option>
@@ -112,7 +112,7 @@
           </div>
           <div class="option-wrap">
             <label for="">偏好目的地</label>
-            <a-select v-model="region" style="width: 300px">
+            <a-select v-model="region">
               <a-select-option value="ontario">安大略省</a-select-option>
               <a-select-option value="manitoba">曼尼托巴省</a-select-option>
               <a-select-option value="pei">爱德华王子岛</a-select-option>
@@ -131,13 +131,17 @@
           </div>
           <div class="option-wrap">
             <label for="">移民目的</label>
-            <a-select v-model="purpose" style="width: 300px">
+            <a-select v-model="purpose">
               <a-select-option value="childrenEdu">子女教育</a-select-option>
               <a-select-option value="workStudy">工作/教育</a-select-option>
               <a-select-option value="investment">投资置业</a-select-option>
               <a-select-option value="living">居住环境</a-select-option>
             </a-select>
           </div>
+          <a-button icon="redo" @click="reset" class="reset-btn">
+            重新评估
+          </a-button>
+          <!-- <button @click="reset" class="reset-btn">重新评估</button> -->
         </div>
         <div class="self-test-results">
           <!-- {{ recommendProgram }} -->
@@ -149,6 +153,13 @@
             </li>
           </ul>
         </div>
+        <nuxt-link to="/">
+          <img
+            src="/img/evaluation/vertical-banner.jpg"
+            alt=""
+            class="self-test-v-banner img-fluid"
+          />
+        </nuxt-link>
       </div>
     </section>
   </div>
@@ -160,7 +171,7 @@ var _ = require("lodash");
 export default {
   data() {
     return {
-      age: "",
+      age: "0",
       edu: "",
       firstLang: "",
       frenchLang: "",
@@ -178,6 +189,18 @@ export default {
     };
   },
   methods: {
+    reset: function () {
+      this.age = "0";
+      this.edu = "";
+      this.firstLang = "";
+      this.frenchLang = "";
+      this.job = "";
+      this.title = "";
+      this.region = "";
+      this.purpose = "";
+      this.recommend = [];
+      console.log(this.recommend);
+    },
     jobSelection: function () {
       if (this.job === "job1") {
         this.jobResult = [
@@ -367,9 +390,14 @@ export default {
           },
         ];
       }
+      if (this.job === "") {
+        this.jobResult = [];
+      }
     },
     ageSelection: function () {
-      if (this.age < 45) {
+      if (this.age === "0") {
+        this.ageResult = [];
+      } else if (this.age < "45") {
         this.ageResult = [
           {
             title: "快速移民直通车",
@@ -514,7 +542,26 @@ export default {
   },
 };
 </script>
-
+<style lang="scss">
+#page-self-test {
+  .self-test-wrap .ant-select {
+    width: 300px !important;
+  }
+}
+@media all and (max-width: 992px) {
+  #page-self-test {
+    .self-test-wrap .ant-select {
+      width: 100% !important;
+    }
+    .option-wrap {
+      padding: 10px 0;
+    }
+    .option-wrap label {
+      flex-shrink: 0;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 #page-self-test {
   background-color: #efefef;
@@ -524,13 +571,13 @@ section {
 }
 .self-test-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 20px;
   padding: 50px 80px;
   background-color: #fff;
   border: 1px solid #c4c4c4;
 }
-.self-test-wrap {
-}
+
 .self-test-wrap h3 {
   color: $red;
 }
@@ -550,13 +597,14 @@ section {
     margin-bottom: 12px;
   }
   li a {
+    color: $red;
     font-size: 18px;
     border-bottom: 1px solid $red;
   }
 }
 .option-wrap {
   display: flex;
-  column-gap: 0px;
+
   padding: 20px 0;
   label {
     width: 120px;
@@ -564,6 +612,26 @@ section {
   }
   label span {
     color: $red;
+  }
+}
+.reset-btn {
+  margin-top: 15px;
+  background-color: $navy;
+  color: #fff;
+}
+.reset-btn:hover {
+  outline: none;
+}
+@media all and (max-width: 991px) {
+  section {
+    padding: 30px 0;
+  }
+  .wrapper {
+    width: 90vw;
+  }
+  .self-test-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
   }
 }
 </style>

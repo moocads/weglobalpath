@@ -12,6 +12,11 @@
         <p>打分</p>
         <!-- <img src="/img/icons/calculator.png" class="contact-icon" /> -->
       </NuxtLink>
+      <NuxtLink to="/self-test" class="sidebar-link sidebar-evaluation">
+        <p>移民</p>
+        <p>自测</p>
+        <!-- <img src="/img/icons/calculator.png" class="contact-icon" /> -->
+      </NuxtLink>
       <!-- <NuxtLink to="/evaluation" class="sidebar-link">
         <img src="/img/icons/aplus.png" class="contact-icon" />
       </NuxtLink> -->

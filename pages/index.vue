@@ -20,11 +20,18 @@
               class="sm-only"
             />移民，不走弯路！
           </p>
-          <NuxtLink to="/evaluation">
-            <button class="main-btn main-btn_blue main-btn_round">
-              移民打分
-            </button>
-          </NuxtLink>
+          <div class="header-btn-wrap">
+            <NuxtLink to="/evaluation">
+              <button class="main-btn main-btn_blue main-btn_round">
+                移民打分
+              </button>
+            </NuxtLink>
+            <NuxtLink to="/self-test">
+              <button class="main-btn main-btn_blue main-btn_round">
+                移民自测
+              </button>
+            </NuxtLink>
+          </div>
         </div>
       </header>
     </div>
@@ -447,7 +454,11 @@ header .info-wrap {
     margin-left: 50px;
   }
 }
-
+.header-btn-wrap {
+  a {
+    margin-right: 10px;
+  }
+}
 @media all and (max-width: 768px) {
   .sm-only {
     display: block;
