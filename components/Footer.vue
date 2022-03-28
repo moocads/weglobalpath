@@ -19,7 +19,7 @@
                 <img src="/img/icons/address.svg" alt="" />
                 <p>
                   多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
-                  <br>
+                  <br />
                   <a href="tel:+16475233555">电话：647-523-3555</a>
                 </p>
               </li>
@@ -30,7 +30,7 @@
                 <img src="/img/icons/address.svg" alt="" />
                 <p>
                   温尼伯：180 Main St, Winnipeg, MB R3C 1A6 (Robertson College)
-                  <br>
+                  <br />
                   <a href="tel:+12049638886">电话：204-963-8886</a>
                 </p>
               </li>
@@ -75,6 +75,10 @@
           </a-col>
         </a-row>
       </div>
+      <small class="copy-right"
+        >Ⓒ {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
+        Reserved.</small
+      >
     </footer>
   </div>
 </template>
@@ -87,6 +91,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
+  position: relative;
   background-color: $navy;
   display: flex;
   justify-content: space-between;
@@ -151,9 +156,17 @@ footer {
     color: #fff;
   }
 }
+.copy-right {
+  position: absolute;
+  color: #fff;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
 @media all and (max-width: 768px) {
   footer {
-    padding: 30px 0;
+    padding: 30px 0 50px;
   }
   .contact-info-wrap {
     a,
