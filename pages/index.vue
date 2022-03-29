@@ -26,11 +26,11 @@
                 移民打分
               </button>
             </NuxtLink>
-            <!-- <NuxtLink to="/self-test">
+            <NuxtLink to="/self-test">
               <button class="main-btn main-btn_blue main-btn_round">
                 移民自测
               </button>
-            </NuxtLink> -->
+            </NuxtLink>
           </div>
         </div>
       </header>
