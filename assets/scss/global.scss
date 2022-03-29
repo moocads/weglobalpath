@@ -18,6 +18,16 @@ a:hover {
   width: 100%;
   height: auto;
 }
+@mixin background-img-with-div($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0px;
+  // background-attachment: fixed;
+  // padding-top: percentage(image-height($url) / image-width($url));
+  //padding-top: height/width*100 %
+}
 /* ------------------ Main Button Style ----------------- */
 .main-btn {
   color: #fff;

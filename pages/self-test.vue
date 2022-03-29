@@ -138,8 +138,8 @@
               <a-select-option value="living">居住环境</a-select-option>
             </a-select>
           </div>
-          <a-button icon="redo" @click="reset" class="reset-btn">
-            重新评估
+          <a-button @click="showResults" class="reset-btn">
+            获取评估结果
           </a-button>
           <!-- <button @click="reset" class="reset-btn">重新评估</button> -->
         </div>
@@ -147,19 +147,29 @@
           <!-- {{ recommendProgram }} -->
           <h3>推荐给您的项目为：</h3>
           <h4>点击连接跳转到对应项目</h4>
-          <ul>
-            <li v-for="(i, index) in recommendProgram" :key="index">
-              <nuxt-link :to="i.url" target="_blank">{{ i.title }}</nuxt-link>
-            </li>
+          <ul v-show="isShowed">
+            <!-- <nuxt-link :to="i.url" target="_blank">{{ i.title }}</nuxt-link> -->
+            <nuxt-link
+              :to="i.url"
+              target="_blank"
+              v-for="(i, index) in recommendProgram"
+              :key="index"
+              class="self-result-item"
+            >
+              <p>
+                {{ i.title }}
+              </p>
+              <!-- <img src="/img/evaluation/evaluation-header.jpg" alt="" /> -->
+            </nuxt-link>
           </ul>
         </div>
-        <nuxt-link to="/">
+        <!-- <nuxt-link to="/">
           <img
             src="/img/evaluation/vertical-banner.jpg"
             alt=""
             class="self-test-v-banner img-fluid"
           />
-        </nuxt-link>
+        </nuxt-link> -->
       </div>
     </section>
   </div>
@@ -167,7 +177,6 @@
 
 <script>
 var _ = require("lodash");
-
 export default {
   data() {
     return {
@@ -186,6 +195,7 @@ export default {
       firstLangResult: [],
       titleResult: [],
       frenchLangResult: [],
+      isShowed: false,
     };
   },
   methods: {
@@ -516,6 +526,23 @@ export default {
         this.frenchLangResult = [];
       }
     },
+    showResults: function () {
+      this.isShowed = true;
+      gsap.from(".self-result-item", {
+        y: -50,
+        duration: 0.5,
+        stagger: 0.2,
+        opacity: 0,
+      });
+    },
+  },
+  beforeUpdated() {
+    gsap.from(".self-result-item", {
+      y: 50,
+      duration: 0.5,
+      stagger: 0.2,
+      opacity: 0,
+    });
   },
   computed: {
     recommendProgram: function () {
@@ -571,7 +598,7 @@ section {
 }
 .self-test-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 20px 20px;
   padding: 50px 80px;
   background-color: #fff;
@@ -593,13 +620,27 @@ section {
     font-weight: normal;
     margin-bottom: 30px;
   }
-  li {
-    margin-bottom: 12px;
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
-  li a {
-    color: $red;
-    font-size: 18px;
-    border-bottom: 1px solid $red;
+  a {
+    width: 100%;
+    min-width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background: url("/img/evaluation/evaluation-header.jpg"), #33333390;
+    background-size: cover;
+    background-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a p {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
   }
 }
 .option-wrap {
