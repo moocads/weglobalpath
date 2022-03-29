@@ -154,11 +154,18 @@
               target="_blank"
               v-for="(i, index) in recommendProgram"
               :key="index"
-              class="self-result-item"
             >
-              <p>
-                {{ i.title }}
-              </p>
+              <li class="self-result-item">
+                <img
+                  :src="i.imgUrl || '/img/evaluation/evaluation-header.jpg'"
+                  alt=""
+                />
+                <div class="overlay">
+                  <p>
+                    {{ i.title }}
+                  </p>
+                </div>
+              </li>
               <!-- <img src="/img/evaluation/evaluation-header.jpg" alt="" /> -->
             </nuxt-link>
           </ul>
@@ -199,7 +206,12 @@ export default {
     };
   },
   methods: {
-    reset: function () {
+    provinceLink(id) {
+      this.$store.commit("setProvince", id);
+      // console.log(this.$store.state.province)
+      this.$router.push("/provinces");
+    },
+    reset() {
       this.age = "0";
       this.edu = "";
       this.firstLang = "";
@@ -211,20 +223,26 @@ export default {
       this.recommend = [];
       console.log(this.recommend);
     },
-    jobSelection: function () {
+    jobSelection() {
       if (this.job === "job1") {
         this.jobResult = [
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "BC省雇主担保",
             url: "/projects/nominee/BC-provincial-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/BC_8e2a801451.jpg",
           },
           {
             title: "全球人才计划",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_921a606418.jpg",
           },
         ];
       }
@@ -233,14 +251,19 @@ export default {
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "BC省雇主担保",
             url: "/projects/nominee/BC-provincial-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/BC_8e2a801451.jpg",
           },
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
         ];
       }
@@ -249,14 +272,19 @@ export default {
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
           {
             title: "曼省留学移民",
             url: "/projects/education/manitoba-education",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_085486e518.jpg",
           },
         ];
       }
@@ -265,14 +293,19 @@ export default {
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "BC省雇主担保",
             url: "/projects/nominee/BC-provincial-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/BC_8e2a801451.jpg",
           },
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
         ];
       }
@@ -281,10 +314,14 @@ export default {
           {
             title: "联邦创业投资移民（SUV）",
             url: "/projects/startup/start-up-visa",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/SUV_cccd356739.jpg",
           },
           {
             title: "企业主工签",
             url: "/projects/startup/owner-operator-work-permit",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9b756675da.jpg",
           },
         ];
       }
@@ -293,14 +330,19 @@ export default {
           {
             title: "联邦护理移民",
             url: "/projects/nominee/care-giver-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_82a7c0ea5c.jpg",
           },
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
           {
             title: "曼省留学移民",
             url: "/projects/education/manitoba-education",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_085486e518.jpg",
           },
         ];
       }
@@ -309,14 +351,20 @@ export default {
           {
             title: "联邦自雇移民",
             url: "/projects/startup/self-employment",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_da92fc6f49.jpg",
           },
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "企业主工签",
             url: "/projects/startup/owner-operator-work-permit",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9b756675da.jpg",
           },
         ];
       }
@@ -325,10 +373,14 @@ export default {
           {
             title: "联邦自雇移民",
             url: "/projects/startup/self-employment",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_da92fc6f49.jpg",
           },
           {
             title: "企业主工签",
             url: "/projects/startup/owner-operator-work-permit",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9b756675da.jpg",
           },
         ];
       }
@@ -337,10 +389,14 @@ export default {
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "企业主工签",
             url: "/projects/startup/owner-operator-work-permit",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9b756675da.jpg",
           },
         ];
       }
@@ -349,14 +405,17 @@ export default {
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "萨省雇主担保",
-            url: "/projects/nominee/quebec-skilled-worker",
+            url: "/provinces",
           },
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
         ];
       }
@@ -365,10 +424,14 @@ export default {
           {
             title: "联邦创业投资移民（SUV）",
             url: "/projects/startup/start-up-visa",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/SUV_cccd356739.jpg",
           },
           {
             title: "企业主工签",
             url: "/projects/startup/owner-operator-work-permit",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9b756675da.jpg",
           },
         ];
       }
@@ -377,10 +440,12 @@ export default {
           {
             title: "联邦农业试点",
             url: "/projects/nominee/agri-food-immigration-pilot",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_586031eb09.jpg",
           },
           {
             title: "萨省雇主担保",
-            url: "/projects/nominee/quebec-skilled-worker",
+            url: "/provinces",
           },
         ];
       }
@@ -389,6 +454,7 @@ export default {
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
           {
             title: "安省硕博通道",
@@ -397,6 +463,8 @@ export default {
           {
             title: "曼省留学移民",
             url: "/projects/education/manitoba-education",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_085486e518.jpg",
           },
         ];
       }
@@ -404,7 +472,7 @@ export default {
         this.jobResult = [];
       }
     },
-    ageSelection: function () {
+    ageSelection() {
       if (this.age === "0") {
         this.ageResult = [];
       } else if (this.age < "45") {
@@ -412,10 +480,13 @@ export default {
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
           {
             title: "曼省留学移民",
             url: "/projects/education/manitoba-education",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_085486e518.jpg",
           },
         ];
       } else {
@@ -423,11 +494,13 @@ export default {
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
         ];
       }
     },
-    eduSelection: function () {
+    eduSelection() {
       if (this.edu > 1) {
         this.eduResult = [
           {
@@ -439,16 +512,20 @@ export default {
         this.eduResult = [];
       }
     },
-    firstLangSelection: function () {
+    firstLangSelection() {
       if (this.firstLang === "none") {
         this.firstLangResult = [
           {
             title: "安省雇主担保",
             url: "/projects/nominee/ontario-immigrat-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_631b7f55e5.jpg",
           },
           {
             title: "联邦自雇移民",
             url: "/projects/startup/self-employment",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_da92fc6f49.jpg",
           },
         ];
       } else if (this.firstLang === "lvl34") {
@@ -463,6 +540,7 @@ export default {
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
         ];
       } else if (this.firstLang === "lvl6") {
@@ -470,6 +548,8 @@ export default {
           {
             title: "BC省雇主担保",
             url: "/projects/nominee/BC-provincial-nominee-program",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/BC_8e2a801451.jpg",
           },
         ];
       } else if (this.firstLang === "lvl7") {
@@ -477,22 +557,27 @@ export default {
           {
             title: "联邦EE快速通道",
             url: "/projects/ee",
+            imgUrl: "/img/Projects/ee/visa.png",
           },
         ];
       } else {
         this.firstLangResult = [];
       }
     },
-    titleSelection: function () {
+    titleSelection() {
       if (this.title === "selfEmployment") {
         this.titleResult = [
           {
             title: "联邦自雇移民",
             url: "/projects/startup/self-employment",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_da92fc6f49.jpg",
           },
           {
             title: "企业主工签",
             url: "/projects/startup/owner-operator-work-permit",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9b756675da.jpg",
           },
         ];
       } else if (this.title === "other") {
@@ -500,6 +585,7 @@ export default {
           {
             title: "快速移民直通车",
             url: "/recruiting",
+            imgUrl: "/img/Recruiting/intro.png",
           },
           {
             title: "安省硕博通道",
@@ -508,25 +594,29 @@ export default {
           {
             title: "曼省留学移民",
             url: "/projects/education/manitoba-education",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_085486e518.jpg",
           },
         ];
       } else {
         this.titleResult = [];
       }
     },
-    frenchLangSelection: function () {
+    frenchLangSelection() {
       if (this.frenchLang === "general" || this.frenchLang === "expert") {
         this.frenchLangResult = [
           {
             title: "魁省雇主担保",
             url: "/projects/nominee/quebec-skilled-worker",
+            imgUrl:
+              "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_17f1031510.jpg",
           },
         ];
       } else {
         this.frenchLangResult = [];
       }
     },
-    showResults: function () {
+    showResults() {
       this.isShowed = true;
       gsap.from(".self-result-item", {
         y: -50,
@@ -545,7 +635,7 @@ export default {
     });
   },
   computed: {
-    recommendProgram: function () {
+    recommendProgram() {
       this.jobSelection();
       this.ageSelection();
       this.eduSelection();
@@ -625,17 +715,33 @@ section {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  a {
-    width: 100%;
-    min-width: 100%;
-    height: 200px;
+
+  .self-result-item {
+    position: relative;
     border-radius: 10px;
-    background: url("/img/evaluation/evaluation-header.jpg"), #33333390;
-    background-size: cover;
-    background-blend-mode: multiply;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
+    img {
+      width: 100%;
+      min-width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #33333380;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      color: #fff;
+      font-size: 20px;
+      margin: 0;
+    }
   }
   a p {
     color: #fff;
@@ -673,6 +779,12 @@ section {
   .self-test-grid {
     grid-template-columns: 1fr;
     padding: 15px;
+  }
+  .self-test-results {
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
   }
 }
 </style>
