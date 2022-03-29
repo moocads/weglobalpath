@@ -33,7 +33,7 @@
           <h3>* 为必选选项</h3>
           <div class="option-wrap">
             <label for=""><span>*</span>年龄</label>
-            <a-input-number v-model="age" :min="0" :max="100" />
+            <a-input-number v-model="age" :min="0" :max="100" :step="1" />
           </div>
           <div class="option-wrap">
             <label for=""><span>*</span>学历</label>
@@ -187,7 +187,7 @@ var _ = require("lodash");
 export default {
   data() {
     return {
-      age: "0",
+      age: "",
       edu: "",
       firstLang: "",
       frenchLang: "",
@@ -206,13 +206,8 @@ export default {
     };
   },
   methods: {
-    provinceLink(id) {
-      this.$store.commit("setProvince", id);
-      // console.log(this.$store.state.province)
-      this.$router.push("/provinces");
-    },
     reset() {
-      this.age = "0";
+      this.age = "";
       this.edu = "";
       this.firstLang = "";
       this.frenchLang = "";
@@ -473,7 +468,7 @@ export default {
       }
     },
     ageSelection() {
-      if (this.age === "0") {
+      if (this.age === "") {
         this.ageResult = [];
       } else if (this.age < "45") {
         this.ageResult = [
