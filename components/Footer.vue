@@ -76,7 +76,7 @@
         </a-row>
       </div>
       <small class="copy-right"
-        >Ⓒ {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
+        >© {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
         Reserved.</small
       >
     </footer>
