@@ -36,6 +36,7 @@ export default {
   width: 100%;
   max-width: 350px;
   background-size: cover;
+  background-position: center;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
