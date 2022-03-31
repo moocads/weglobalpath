@@ -174,7 +174,7 @@
         </a-row>
       </div>
     </section>
-    <!-- <HomeProcess /> -->
+    <HomeProcess />
     <section id="home-cases">
       <MainTitle title="成功案例" titleEN="OUR CASES" titleENColor="#c4c4c4" />
       <div class="wrapper">

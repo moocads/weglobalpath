@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  
+<g transform="matrix(1.25,0,0,1.25,0,0)"><g>
+    <path d="M3.75,13.94v8.25h6v-6a1.5,1.5,0,0,1,1.5-1.5h1.5a1.5,1.5,0,0,1,1.5,1.5v6h6V13.94" style="fill: none;stroke: #ffffff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"></path>
+    <path d="M.75,12.44,10.94,2.25a1.49,1.49,0,0,1,2.12,0L23.25,12.44" style="fill: none;stroke: #ffffff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"></path>
+    <polyline points="16.5 5.69 16.5 2.77 20.25 2.77 20.25 9.44" style="fill: none;stroke: #ffffff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1.5px"></polyline>
+  </g></g></svg>
