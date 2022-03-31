@@ -97,18 +97,38 @@
           </div>
           <h1>各类服务为您保驾护航</h1>
         </div>
-        <div class="requirement-grid">
-          <div
-            class="requirement-item"
-            v-for="(item, index) in services"
-            :key="index"
-          >
-            <RequirementItem
-              :title="item.title"
-              :requirementsData="item.requirement_points"
-              :hasButtonProp="hasButton[index]"
-            />
-            <!-- {{ hasButton }} -->
+        <div class="services-grid">
+          <div class="service-item item1">
+            <h3>国内·行前服务</h3>
+            <ul>
+              <li v-for="(i, index) in inChina" :key="index">
+                {{ i.text }}
+              </li>
+            </ul>
+            <br />
+            <br />
+            <h3>加拿大·签证服务</h3>
+            <ul>
+              <li v-for="(i, index) in inCanada" :key="index">
+                {{ i.text }}
+              </li>
+            </ul>
+          </div>
+          <div class="service-item item2">
+            <h3>加拿大·生活服务</h3>
+            <ul>
+              <li v-for="(i, index) in inCanadaLife" :key="index">
+                {{ i.text }}
+              </li>
+            </ul>
+          </div>
+          <div class="service-item item3">
+            <h3>加拿大·生活服务</h3>
+            <ul>
+              <li v-for="(i, index) in inCanadaLife2" :key="index">
+                {{ i.text }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -196,6 +216,10 @@ export default {
           title: "旅游行程安排、机票预定",
         },
       ],
+      inChina,
+      inCanada,
+      inCanadaLife,
+      inCanadaLife2,
     };
   },
   mounted() {
@@ -213,6 +237,131 @@ export default {
     VueMarkdown,
   },
 };
+const inChina = [
+  {
+    text: "加拿大登陆辅导",
+  },
+  {
+    text: "落地行程安排",
+  },
+  {
+    text: "子女学校咨询",
+  },
+  {
+    text: "大学预报名",
+  },
+  {
+    text: "加拿大银行开户",
+  },
+  {
+    text: "国际集装箱搬运",
+  },
+  {
+    text: "准备入境文件",
+  },
+  {
+    text: "机票与酒店预订",
+  },
+];
+const inCanada = [
+  {
+    text: "了解各州政府及移民局最新动向",
+  },
+  {
+    text: "提供入籍服务解答",
+  },
+  {
+    text: "提供办理中国签证咨询",
+  },
+  {
+    text: "父母签证/旅游签证咨询服务",
+  },
+  {
+    text: "枫叶卡更新服务",
+  },
+];
+const inCanadaLife = [
+  {
+    text: "机场接载服务",
+  },
+  {
+    text: "境外账户激活",
+  },
+  {
+    text: "税号申请",
+  },
+  {
+    text: "社会安全卡申请（SIN）",
+  },
+  {
+    text: "政府医疗保险卡申请（MSP）",
+  },
+  {
+    text: "儿童税务福利金申领（CTB)",
+  },
+  {
+    text: "儿童教育基金办理（RESP)",
+  },
+  {
+    text: "手机卡号开户办理",
+  },
+  {
+    text: "免费提供公立和私立学校信息",
+  },
+  {
+    text: "协助申请人子女入学",
+  },
+  {
+    text: "协助购买私人医疗保险",
+  },
+  {
+    text: "推荐会计师事务所",
+  },
+  {
+    text: "协助联系加拿大律师",
+  },
+  {
+    text: "推荐生意中介机构",
+  },
+  {
+    text: "协助联系加拿大金融换汇公司",
+  },
+  {
+    text: "代约州政府官员",
+  },
+];
+const inCanadaLife2 = [
+  {
+    text: "推荐房产代理机构",
+  },
+  {
+    text: "协助提供推荐信",
+  },
+  {
+    text: "介绍知名房产经纪",
+  },
+  {
+    text: "联系房产过户律师",
+  },
+  {
+    text: "协助联系家庭医生",
+  },
+  {
+    text: "邮件或信件转发代收服务",
+  },
+  {
+    text: "协助翻译中国驾照",
+  },
+  {
+    text: "协助办理加拿大驾照",
+  },
+  {
+    text: "协助当地购车",
+  },
+  {
+    text: "协助购买车险",
+  },
+];
 </script>
 <style lang="scss">
 .highlight-info-wrap {
@@ -343,72 +492,47 @@ section {
   row-gap: 20px;
   column-gap: 30px;
 }
-.requirement-item {
-  position: relative;
-  .requirement-info-wrap-closed {
-    overflow: hidden;
-    max-height: 150px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 10;
-      background: linear-gradient(0deg, #1b2854 0%, rgba(27, 40, 84, 0) 100%);
-      height: 20px;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-    }
-  }
-
-  .requirement-info-wrap-expand {
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    max-height: auto;
-  }
-  h2 {
-    color: #fff;
-    font-size: 18px;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  row-gap: 20px;
+  column-gap: 30px;
+}
+.service-item {
+  border: 12px solid #505e8b;
+  background-color: #f3f3f3;
+  padding: 20px 25px;
+  h3 {
+    font-size: 24px;
     font-weight: bold;
-    position: relative;
-  }
-  h2::before {
-    content: url("/img/Projects/checkmark.png");
-    position: relative;
-    top: 2px;
-    left: 0;
-    margin-right: 10px;
+    color: $navy;
   }
   ul {
     list-style-type: disc;
-    margin-left: 50px;
-    color: #dadada;
   }
-  li {
-    margin-bottom: 10px;
+  ul li {
+    font-size: 16px;
+    margin-left: 18px;
   }
-  button {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #6ab6ff;
-    font-size: 13px;
+}
+@media all and (max-width: 992px) {
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 20px;
   }
-  button::after {
-    content: url("/img/Projects/expand.png");
-    margin-left: 5px;
-  }
-  .expand-btn {
-    transition: all 0.2s ease-in-out;
-  }
-  .expand-btn::after {
-    display: inline-block;
-    content: url("/img/Projects/expand.png");
-    margin-left: 5px;
-    transform: rotate(180deg);
+  .service-item {
+    border: 8px solid #505e8b;
+    padding: 20px 25px;
+    h3 {
+      font-size: 18px;
+    }
+    ul li {
+      font-size: 14px;
+      margin-left: 18px;
+    }
   }
 }
 @media all and (max-width: 768px) {
@@ -461,6 +585,15 @@ section {
     color: $red;
     margin-bottom: 0;
     font-weight: 700;
+  }
+}
+@media all and (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+  }
+  .service-item {
+    border: 8px solid #505e8b;
   }
 }
 </style>
