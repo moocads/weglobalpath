@@ -222,20 +222,14 @@
         </section>
       </a-tab-pane>
     </a-tabs>
-    <section class="divider">
+    <!-- <section class="divider">
       <h3>连接彼岸，用心服务，帮助海外客户和学生。</h3>
       <h3>我们，不忘初心。</h3>
-    </section>
-    <section class="fee-sec">
+    </section> -->
+    <section class="fee-sec sec-bg-gray sec-general">
       <div class="wrapper">
-        <div class="title-wrap">
-          <!-- <div class="title">
-            <img src="/img/logos/logo-trans.png" alt="" />
-            <p>FEE</p>
-          </div>
-          <h1>项目费用</h1> -->
-          <MainTitleSide title="项目费用" titleEN="FEE" />
-        </div>
+        <h2>项目优势</h2>
+
         <div class="fee-grid">
           <div
             class="fee-card"
@@ -256,7 +250,7 @@
         </div>
       </div>
     </section>
-    <OtherProjectsSection />
+    <OtherProjectsSection bgWhite="true" />
   </div>
 </template>
 

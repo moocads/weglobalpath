@@ -121,13 +121,15 @@
       <div class="wrapper">
         <h2>申请条件</h2>
         <ul>
-          <li v-for="(item, index) in data.requirements" :key="index">
-            <img
-              src="/img/Projects/checkmark.png"
-              alt="projects list checkmark icon"
-            />
-            {{ item.requirement_points[0].point }}
-          </li>
+          <div v-for="(items, index) in requirementsData" :key="index">
+            <li v-for="(i, index) in items.requirement_points" :key="index">
+              <img
+                src="/img/Projects/checkmark.png"
+                alt="projects list checkmark icon"
+              />
+              {{ i.point }}
+            </li>
+          </div>
         </ul>
       </div>
     </section>
@@ -200,9 +202,11 @@ export default {
       `/projects?slug=` + route.params.slug
     );
     const data = projectData[0];
+    const requirementsData = data.requirements;
 
     return {
       data,
+      requirementsData,
     };
   },
   components: {
