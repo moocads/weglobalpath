@@ -42,9 +42,9 @@
           <div class="project-item project-1">
             <div class="img-wrap">
               <img
-                src="/img/Home/projects/home-project1.jpg"
+                data-src="/img/Home/projects/home-project1.jpg"
                 alt=""
-                class="img-fluid"
+                class="img-fluid lazyload"
               />
             </div>
             <div class="content-wrap">
@@ -58,9 +58,9 @@
           <div class="project-item project-2">
             <div class="img-wrap">
               <img
-                src="/img/Home/projects/home-project2.jpg"
+                data-src="/img/Home/projects/home-project2.jpg"
                 alt=""
-                class="img-fluid"
+                class="img-fluid lazyload"
               />
             </div>
             <div class="content-wrap">
@@ -75,9 +75,9 @@
           <div class="project-item project-3">
             <div class="img-wrap">
               <img
-                src="/img/Home/projects/home-project3.jpg"
+                data-src="/img/Home/projects/home-project3.jpg"
                 alt=""
-                class="img-fluid"
+                class="img-fluid lazyload"
               />
             </div>
             <div class="content-wrap">
@@ -91,9 +91,9 @@
           <div class="project-item project-4">
             <div class="img-wrap">
               <img
-                src="/img/Home/projects/home-project4.jpg"
+                data-src="/img/Home/projects/home-project4.jpg"
                 alt=""
-                class="img-fluid"
+                class="img-fluid lazyload"
               />
             </div>
             <div class="content-wrap">

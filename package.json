@@ -15,6 +15,7 @@
     "@nuxtjs/style-resources": "^1.2.1",
     "ant-design-vue": "^1.7.6",
     "core-js": "^3.15.1",
+    "lazysizes": "^5.3.2",
     "marked": "^4.0.12",
     "nuxt": "^2.15.7",
     "sass": "^1.49.4",

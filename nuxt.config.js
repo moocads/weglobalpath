@@ -75,7 +75,11 @@ export default {
   css: ["ant-design-vue/dist/antd.css", "~assets/scss/global.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["@/plugins/antd-ui", { src: "~/plugins/gmap", ssr: false }],
+  plugins: [
+    { src: "~/plugins/lazysizes", ssr: false },
+    "@/plugins/antd-ui",
+    { src: "~/plugins/gmap", ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
