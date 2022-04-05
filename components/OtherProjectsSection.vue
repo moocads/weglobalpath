@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section>
+    <section :class="{ 'bg-white': bgWhite === 'true' }">
       <div class="wrapper">
         <MainTitle
           title="其他项目"
@@ -69,6 +69,12 @@ export default {
     return {
       projects,
     };
+  },
+  props: {
+    bgWhite: {
+      type: String,
+      default: true,
+    },
   },
   // mounted() {
   //   const currPath = $nuxt.$route.path;
@@ -142,6 +148,9 @@ const projects = [
 section {
   padding: 100px 0;
   background-color: #efefef;
+}
+.bg-white {
+  background-color: #fff !important;
 }
 .project {
   // min-width: 320px;

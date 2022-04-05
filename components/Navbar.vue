@@ -483,6 +483,10 @@ $nav-height: 70px;
 $nav-dropdown-height: 50px;
 $nav-gray: rgba(0, 0, 0, 0.5);
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
   height: $nav-height;
   width: 100%;
   background-color: #fff;
@@ -490,6 +494,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   box-shadow: (5px 5px 10px rgba(96, 96, 96, 0.308));
+  border-bottom: 1px solid #efefef;
 }
 .logo-wrap {
   img {

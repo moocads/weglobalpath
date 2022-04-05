@@ -1,5 +1,8 @@
 <template>
-  <div class="project-detail-page" id="project-ee-page">
+  <div
+    class="project-detail-page hot-projects-detail-page"
+    id="project-ee-page"
+  >
     <header
       :style="{
         background: `linear-gradient(
@@ -13,6 +16,7 @@
         <h1>联邦EE快速通道项目</h1>
       </div>
     </header>
+
     <div class="sec-headline">
       <div class="wrapper">
         <div class="txtContainer">
@@ -25,92 +29,175 @@
     </div>
     <a-tabs class="eeTabs" :activeKey="`eeTab${defaultTab}`">
       <a-tab-pane key="eeTab1">
-        <div slot="tab" class="customTab" @click="defaultTab = 1">技术类移民</div>
-        <section class="sec-introduction">
+        <div slot="tab" class="customTab" @click="defaultTab = 1">
+          技术类移民
+        </div>
+
+        <section class="sec-main">
           <div class="wrapper">
-            <MainTitle
-              title="项目介绍"
-              titleEN="INTRODUCTION"
-              titleENColor="#DADADA"
-            />
+            <div class="image-16-9">
+              <img
+                src="/img/Projects/ee/ee-skill-img.jpg"
+                alt="Express Entry Skill Immigration | 加拿大EE技术类移民"
+              />
+            </div>
+            <div class="main-info">
+              <div>
+                <h4>所属省份</h4>
+                <p>任一省份</p>
+              </div>
+              <div>
+                <h4>移民类型</h4>
+                <p>技术移民</p>
+              </div>
+              <div>
+                <h4>居住要求</h4>
+                <p>无居住要求</p>
+              </div>
+              <div>
+                <h4>办理周期</h4>
+                <p>3个月提交，6个月拿永居</p>
+              </div>
+              <div>
+                <h4>身份卡类别</h4>
+                <p>枫叶卡（永久居民）</p>
+              </div>
+              <div>
+                <h4>办理费用</h4>
+                <p>7000加币</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="sec-intro sec-general sec-bg-gray anchor">
+          <div class="wrapper">
+            <h2>项目介绍</h2>
             <p>
               FSW加拿大联邦技术移民适合学历高、年纪轻、英语或法语好的申请人。加拿大移民局为申请人设置了两道评分关卡，申请人首先要在联邦技术移民打分表中得到67分，证明有资格递交EE申请并被移民局筛选；其次，递交EE之后申请人要通过CRS评分体系，该体系没有通过分限制，移民局按照高分原则发出签证邀请，CRS评分体系决定了申请人获得邀请的几率和周期。
             </p>
           </div>
         </section>
-        <section class="sec-requirements">
+        <section class="sec-advantages sec-general anchor">
           <div class="wrapper">
-            <div class="title-wrap">
-              <div class="title">
-                <img src="/img/logos/logo-trans.png" alt="" />
-                <p>REQUIREMENTS</p>
-              </div>
-              <h1>申请要求</h1>
-            </div>
-            <div class="requirement-grid">
-              <div
-                class="requirement-item"
-                v-for="(item, index) in tab1"
-                :key="index"
-              >
-                <RequirementItem
-                  :title="item.title"
-                  :requirementsData="item.requirement_points"
+            <h2>项目优势</h2>
+            <ul>
+              <li v-for="(item, index) in tab1" :key="index">
+                <img
+                  src="/img/Projects/list-square.png"
+                  alt="projects list square icon"
                 />
-                <!-- {{ hasButton }} -->
-              </div>
-            </div>
+                {{ item.requirement_points[0].point }}
+              </li>
+            </ul>
           </div>
         </section>
       </a-tab-pane>
       <a-tab-pane key="eeTab2">
-        <div slot="tab" class="customTab" @click="defaultTab = 2">技工类移民</div>
-        <section class="sec-introduction">
+        <div slot="tab" class="customTab" @click="defaultTab = 2">
+          技工类移民
+        </div>
+        <section class="sec-main">
           <div class="wrapper">
-            <MainTitle
-              title="项目介绍"
-              titleEN="INTRODUCTION"
-              titleENColor="#DADADA"
-            />
+            <div class="image-16-9">
+              <img
+                src="/img/Projects/ee/technician.jpg"
+                alt="Express Entry Technical Immigration | 加拿大EE技工类移民"
+              />
+            </div>
+            <div class="main-info">
+              <div>
+                <h4>所属省份</h4>
+                <p>任一省份</p>
+              </div>
+              <div>
+                <h4>移民类型</h4>
+                <p>技术移民</p>
+              </div>
+              <div>
+                <h4>居住要求</h4>
+                <p>无居住要求</p>
+              </div>
+              <div>
+                <h4>办理周期</h4>
+                <p>3个月提交，6个月拿永居</p>
+              </div>
+              <div>
+                <h4>身份卡类别</h4>
+                <p>枫叶卡（永久居民）</p>
+              </div>
+              <div>
+                <h4>办理费用</h4>
+                <p>4.5万加币起</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="sec-intro sec-general sec-bg-gray anchor">
+          <div class="wrapper">
+            <h2>项目介绍</h2>
             <p>
               FST加拿大技工移民适用于职业为NOCB类的申请人，需要有雇主offer，满足语言、工作经验等基本申请条件后就可以直接提交申请进入EE候选池。对于中国申请人来说此类签证的难点在于职业列表中绝大部分职业需要强制认证，申请人需要获得加拿大某省颁发的技工职业证书。
             </p>
           </div>
         </section>
-        <section class="sec-requirements">
+        <section class="sec-advantages sec-general anchor">
           <div class="wrapper">
-            <div class="title-wrap">
-              <div class="title">
-                <img src="/img/logos/logo-trans.png" alt="" />
-                <p>REQUIREMENTS</p>
-              </div>
-              <h1>申请要求</h1>
-            </div>
-            <div class="requirement-grid">
-              <div
-                class="requirement-item"
-                v-for="(item, index) in tab2"
-                :key="index"
-              >
-                <RequirementItem
-                  :title="item.title"
-                  :requirementsData="item.requirement_points"
+            <h2>项目优势</h2>
+            <ul>
+              <li v-for="(item, index) in tab2" :key="index">
+                <img
+                  src="/img/Projects/list-square.png"
+                  alt="projects list square icon"
                 />
-                <!-- {{ hasButton }} -->
-              </div>
-            </div>
+                {{ item.requirement_points[0].point }}
+              </li>
+            </ul>
           </div>
         </section>
       </a-tab-pane>
       <a-tab-pane key="eeTab3">
-        <div slot="tab" class="customTab" @click="defaultTab = 3">经验类移民</div>
-        <section class="sec-introduction">
+        <div slot="tab" class="customTab" @click="defaultTab = 3">
+          经验类移民
+        </div>
+        <section class="sec-main">
           <div class="wrapper">
-            <MainTitle
-              title="项目介绍"
-              titleEN="INTRODUCTION"
-              titleENColor="#DADADA"
-            />
+            <div class="image-16-9">
+              <img
+                src="/img/Projects/ee/exp.jpg"
+                alt="Express Entry Experience Immigration | 加拿大EE经验类移民"
+              />
+            </div>
+            <div class="main-info">
+              <div>
+                <h4>所属省份</h4>
+                <p>任一省份</p>
+              </div>
+              <div>
+                <h4>移民类型</h4>
+                <p>留学后工作移民</p>
+              </div>
+              <div>
+                <h4>居住要求</h4>
+                <p>完成专业课，毕业后工作满1年即可入池</p>
+              </div>
+              <div>
+                <h4>办理周期</h4>
+                <p>48个月拿枫叶卡</p>
+              </div>
+              <div>
+                <h4>身份卡类别</h4>
+                <p>枫叶卡（永久居民）</p>
+              </div>
+              <div>
+                <h4>办理费用</h4>
+                <p>1.5万加币起</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="sec-intro sec-general sec-bg-gray anchor">
+          <div class="wrapper">
+            <h2>项目介绍</h2>
             <p>
               CEC加拿大经验类移民（Canadian Experience
               Class）适用于拥有加拿大教育背景的留学生，以及在加拿大境内持临时工作签证的申请人。针对近3年内有1年NOC
@@ -119,28 +206,18 @@
             </p>
           </div>
         </section>
-        <section class="sec-requirements">
+        <section class="sec-advantages sec-general anchor">
           <div class="wrapper">
-            <div class="title-wrap">
-              <div class="title">
-                <img src="/img/logos/logo-trans.png" alt="" />
-                <p>REQUIREMENTS</p>
-              </div>
-              <h1>申请要求</h1>
-            </div>
-            <div class="requirement-grid">
-              <div
-                class="requirement-item"
-                v-for="(item, index) in tab3"
-                :key="index"
-              >
-                <RequirementItem
-                  :title="item.title"
-                  :requirementsData="item.requirement_points"
+            <h2>项目优势</h2>
+            <ul>
+              <li v-for="(item, index) in tab3" :key="index">
+                <img
+                  src="/img/Projects/list-square.png"
+                  alt="projects list square icon"
                 />
-                <!-- {{ hasButton }} -->
-              </div>
-            </div>
+                {{ item.requirement_points[0].point }}
+              </li>
+            </ul>
           </div>
         </section>
       </a-tab-pane>
@@ -152,11 +229,12 @@
     <section class="fee-sec">
       <div class="wrapper">
         <div class="title-wrap">
-          <div class="title">
+          <!-- <div class="title">
             <img src="/img/logos/logo-trans.png" alt="" />
             <p>FEE</p>
           </div>
-          <h1>项目费用</h1>
+          <h1>项目费用</h1> -->
+          <MainTitleSide title="项目费用" titleEN="FEE" />
         </div>
         <div class="fee-grid">
           <div
@@ -217,14 +295,14 @@ export default {
   },
   beforeDestroy() {
     if (this.$store.state.ee) {
-      this.$store.commit('setEe', undefined)
+      this.$store.commit("setEe", undefined);
     }
   },
   watch: {
-    '$store.state.ee': function() {
+    "$store.state.ee": function () {
       // console.log(this.$store.state.ee)
-      this.defaultTab = this.$store.state.ee
-    }
+      this.defaultTab = this.$store.state.ee;
+    },
   },
   data() {
     return {
@@ -379,6 +457,8 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "~/assets/scss/hot-projects/general.scss";
+
 #project-ee-page {
   .eeTabs {
     .ant-tabs-nav-scroll {
@@ -646,6 +726,143 @@ section {
     color: $red;
     margin-bottom: 0;
     font-weight: 700;
+  }
+}
+@media all and (max-width: $md) {
+  .divider {
+    background-color: #e7e7e7;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      font-size: 20px;
+    }
+  }
+}
+.fee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.fee-card {
+  border: 1px solid $red;
+  border-radius: 5px;
+  padding: 20px 40px;
+
+  color: $red;
+  font-size: 16px;
+  span {
+    font-weight: bold;
+  }
+  li {
+    display: flex;
+    span {
+      flex-shrink: 0;
+    }
+    // align-items: center;
+  }
+  transition: all 0.3 ease-in-out;
+}
+.fee-card:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+@media all and (max-width: 991px) {
+  .fee-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media all and (max-width: 768px) {
+  .fee-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.sec-main {
+  padding: 50px 0 80px;
+}
+.sec-main > .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 120px;
+  .image-16-9 {
+    position: relative;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-bottom: 56.25%;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .main-info {
+    div {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    h4,
+    p {
+      font-size: 16px;
+    }
+    h4 {
+      color: $red;
+      width: 120px;
+    }
+  }
+}
+@media all and (max-width: $md) {
+  .sec-main > .wrapper {
+    column-gap: 60px;
+
+    .main-info {
+      div {
+        display: flex;
+        margin-bottom: 0px;
+      }
+      h4,
+      p {
+        font-size: 14px;
+      }
+      h4 {
+        flex-shrink: 0;
+        color: $red;
+        width: 85px;
+      }
+    }
+  }
+}
+@media all and (max-width: $sm) {
+  .sec-main > .wrapper {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    .main-info {
+      div {
+        display: flex;
+        margin-bottom: 0px;
+      }
+      h4,
+      p {
+        font-size: 14px;
+      }
+      h4 {
+        flex-shrink: 0;
+        color: $red;
+        width: 85px;
+      }
+    }
   }
 }
 </style>
