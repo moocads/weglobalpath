@@ -274,7 +274,7 @@
                 </div>
               </div>
               <div class="result">
-                {{ eduXexpCalc }}
+                {{ eduTotalPts }}
               </div>
             </div>
 
