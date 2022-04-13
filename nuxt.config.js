@@ -90,6 +90,7 @@ export default {
     "@nuxtjs/style-resources",
     "@nuxtjs/robots",
     "@nuxtjs/sitemap",
+    "@nuxtjs/recaptcha",
   ],
   robots: {
     /* module options */
@@ -108,7 +109,10 @@ export default {
     baseURL:
       process.env.API_URL || "https://beyond-canada-back-staging.herokuapp.com", // Used as fallback if no runtime config is provided
   },
-
+  recaptcha: {
+    siteKey: "6LefjHAfAAAAAJLPpUuFaJkXEkOnXTQsWuuzxzds", // Site key for requests
+    version: 2,
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 

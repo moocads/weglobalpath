@@ -49,8 +49,8 @@
                     @click="mapLocation(2)"
                     class="location"
                     :class="{ active: location === 2 }"
-                    ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C
-                    1A6 (Robertson College)
+                    ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C 1A6
+                    (Robertson College)
                   </a>
                   <span class="disclaimer">点击地址切换地图</span>
                 </div>
@@ -105,6 +105,8 @@
                     希望通过邮箱或短信接收更多加彼岸留学移民最新政策资讯。
                   </a-checkbox>
                 </div>
+                <recaptcha />
+                <br />
                 <button type="submit" class="submit-btn main-btn main-btn_blue">
                   发送
                 </button>
@@ -143,11 +145,23 @@ export default {
       location: 1,
     };
   },
+
   methods: {
     mapLocation(location) {
       this.location = location;
     },
-    handleSubmit(e) {
+    async handleSubmit(e) {
+      try {
+        const token = await this.$recaptcha.getResponse();
+        console.log("ReCaptcha token:", token);
+
+        // send token to server alongside your form data
+
+        // at the end you need to reset recaptcha
+        await this.$recaptcha.reset();
+      } catch (error) {
+        console.log("Login error:", error);
+      }
       this.$axios
         .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
           name: this.userName,
@@ -263,7 +277,8 @@ header {
     color: #505050;
     margin-bottom: 8px;
 
-    &.active, &:hover {
+    &.active,
+    &:hover {
       color: $red;
     }
   }
