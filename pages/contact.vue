@@ -153,27 +153,24 @@ export default {
     async handleSubmit(e) {
       try {
         const token = await this.$recaptcha.getResponse();
-        console.log("ReCaptcha token:", token);
-
-        // send token to server alongside your form data
-
-        // at the end you need to reset recaptcha
+        // console.log("ReCaptcha token:", token);
+        this.$axios
+          .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
+            name: this.userName,
+            phone: this.userPhone,
+            email: this.userEmail,
+            message: this.userMessage,
+            dob: this.userDOB,
+            subscription: this.userSubscription,
+          })
+          .then((response) => {
+            console.log("submited");
+          });
         await this.$recaptcha.reset();
       } catch (error) {
-        console.log("Login error:", error);
+        this.$message.warning("请勾选reCAPTCHA验证");
       }
-      this.$axios
-        .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
-          name: this.userName,
-          phone: this.userPhone,
-          email: this.userEmail,
-          message: this.userMessage,
-          dob: this.userDOB,
-          subscription: this.userSubscription,
-        })
-        .then((response) => {
-          console.log("submited");
-        });
+
       e.preventDefault();
     },
   },
