@@ -164,7 +164,13 @@ export default {
             subscription: this.userSubscription,
           })
           .then((response) => {
+            this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
             console.log("submited");
+            this.userName = undefined;
+            this.userPhone = undefined;
+            this.userEmail = undefined;
+            this.userMessage = undefined;
+            this.userDOB = undefined;
           });
         await this.$recaptcha.reset();
       } catch (error) {
