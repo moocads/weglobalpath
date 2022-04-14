@@ -49,8 +49,8 @@
                     @click="mapLocation(2)"
                     class="location"
                     :class="{ active: location === 2 }"
-                    ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C
-                    1A6 (Robertson College)
+                    ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C 1A6
+                    (Robertson College)
                   </a>
                   <span class="disclaimer">点击地址切换地图</span>
                 </div>
@@ -105,6 +105,8 @@
                     希望通过邮箱或短信接收更多加彼岸留学移民最新政策资讯。
                   </a-checkbox>
                 </div>
+                <recaptcha />
+                <br />
                 <button type="submit" class="submit-btn main-btn main-btn_blue">
                   发送
                 </button>
@@ -143,23 +145,38 @@ export default {
       location: 1,
     };
   },
+
   methods: {
     mapLocation(location) {
       this.location = location;
     },
-    handleSubmit(e) {
-      this.$axios
-        .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
-          name: this.userName,
-          phone: this.userPhone,
-          email: this.userEmail,
-          message: this.userMessage,
-          dob: this.userDOB,
-          subscription: this.userSubscription,
-        })
-        .then((response) => {
-          console.log("submited");
-        });
+    async handleSubmit(e) {
+      try {
+        const token = await this.$recaptcha.getResponse();
+        // console.log("ReCaptcha token:", token);
+        this.$axios
+          .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
+            name: this.userName,
+            phone: this.userPhone,
+            email: this.userEmail,
+            message: this.userMessage,
+            dob: this.userDOB,
+            subscription: this.userSubscription,
+          })
+          .then((response) => {
+            this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
+            console.log("submited");
+            this.userName = undefined;
+            this.userPhone = undefined;
+            this.userEmail = undefined;
+            this.userMessage = undefined;
+            this.userDOB = undefined;
+          });
+        await this.$recaptcha.reset();
+      } catch (error) {
+        this.$message.warning("请勾选reCAPTCHA验证");
+      }
+
       e.preventDefault();
     },
   },
@@ -263,7 +280,8 @@ header {
     color: #505050;
     margin-bottom: 8px;
 
-    &.active, &:hover {
+    &.active,
+    &:hover {
       color: $red;
     }
   }
