@@ -20,6 +20,10 @@ export default {};
 .navbar-sm {
   display: none;
 }
+.spacer {
+  width: 100%;
+  height: 70px;
+}
 @media all and (max-width: 991px) {
   .navbar-lg {
     display: none;

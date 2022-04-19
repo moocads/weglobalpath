@@ -1,5 +1,5 @@
 <template>
-  <div class="project-detail-page">
+  <div class="hot-projects-detail-page">
     <header
       :style="{
         background: `linear-gradient(
@@ -13,82 +13,129 @@
         <h1>{{ data.project_name }}</h1>
       </div>
     </header>
-    <section class="sec-introduction">
+    <div class="nav-wrap">
       <div class="wrapper">
-        <MainTitle
-          title="项目介绍"
-          titleEN="INTRODUCTION"
-          titleENColor="#DADADA"
-        />
+        <ul>
+          <a href="#edu-sec-intro">
+            <li :class="{ tabActive: activeTab === 1 }" @click="activeTab = 1">
+              项目介绍
+            </li>
+          </a>
+          <a href="#edu-sec-advantages">
+            <li :class="{ tabActive: activeTab === 2 }" @click="activeTab = 2">
+              项目优势
+            </li>
+          </a>
+          <a href="#edu-sec-requirements">
+            <li :class="{ tabActive: activeTab === 3 }" @click="activeTab = 3">
+              申请条件
+            </li>
+          </a>
+          <a href="#edu-sec-process">
+            <li :class="{ tabActive: activeTab === 4 }" @click="activeTab = 4">
+              申请流程
+            </li>
+          </a>
+          <a href="#edu-sec-fee">
+            <li :class="{ tabActive: activeTab === 5 }" @click="activeTab = 5">
+              项目费用
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <section class="sec-main">
+      <div class="wrapper">
+        <div class="image-16-9">
+          <img :src="data.thumbnail.url" alt="" />
+        </div>
+        <div class="main-info">
+          <div v-if="data.project_header_info !== null">
+            <h4>所属省份</h4>
+            <p>
+              {{ data.project_header_info.province }}
+            </p>
+          </div>
+          <div v-if="data.project_header_info !== null">
+            <h4>移民类型</h4>
+            <p>
+              {{ data.project_header_info.type }}
+            </p>
+          </div>
+          <div v-if="data.project_header_info !== null">
+            <h4>居住要求</h4>
+            <p>
+              {{ data.project_header_info.requirement }}
+            </p>
+          </div>
+          <div v-if="data.project_header_info !== null">
+            <h4>办理周期</h4>
+            <p>
+              {{ data.project_header_info.duration }}
+            </p>
+          </div>
+          <div v-if="data.project_header_info !== null">
+            <h4>身份卡类别</h4>
+            <p>
+              {{ data.project_header_info.id_type }}
+            </p>
+          </div>
+          <div v-if="data.project_header_info !== null">
+            <h4>办理费用</h4>
+            <p>
+              {{ data.project_header_info.fee }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="edu-sec-intro"
+      class="sec-intro sec-general sec-bg-gray anchor"
+    >
+      <div class="wrapper">
+        <h2>项目介绍</h2>
         <vue-markdown class="intro-markdown">{{
           data.introduction_richtext
         }}</vue-markdown>
       </div>
     </section>
-    <section class="sec-highlights">
+    <section id="edu-sec-advantages" class="sec-advantages sec-general anchor">
       <div class="wrapper">
-        <a-row :gutter="[32, 16]">
-          <a-col :md="12" :sm="24" class="highlight-image-wrap">
-            <img :src="data.thumbnail.url" alt="" />
-          </a-col>
-          <a-col
-            :md="{ span: 11, offset: 1 }"
-            :sm="24"
-            class="highlight-info-wrap"
-          >
-            <MainTitleSide title="项目优势" titleEN="HIGHLIGHTS" />
-            <p>
-              {{ data.highlight_intro }}
-            </p>
-            <ul>
-              <li
-                v-for="(highlight, index) in data.hightlight_points"
-                :key="index"
-              >
-                {{ highlight.point }}
-              </li>
-            </ul>
-            <NuxtLink to="/contact">
-              <button
-                class="
-                  main-btn main-btn_red main-btn_round-5 main-btn_mobile_w100
-                "
-              >
-                联系我们
-              </button>
-            </NuxtLink>
-          </a-col>
-        </a-row>
-      </div>
-    </section>
-    <section class="sec-requirements">
-      <div class="wrapper">
-        <div class="title-wrap">
-          <div class="title">
-            <img src="/img/logos/logo-trans.png" alt="" />
-            <p>REQUIREMENTS</p>
-          </div>
-          <h1>申请要求</h1>
-        </div>
-        <div class="requirement-grid">
-          <div
-            class="requirement-item"
-            v-for="(item, index) in data.requirements"
-            :key="index"
-          >
-            <RequirementItem
-              :title="item.title"
-              :requirementsData="item.requirement_points"
-              :hasButtonProp="hasButton[index]"
+        <h2>项目优势</h2>
+        <ul>
+          <li v-for="(highlight, index) in data.hightlight_points" :key="index">
+            <img
+              src="/img/Projects/list-square.png"
+              alt="projects list square icon"
             />
-            <!-- {{ hasButton[index] }} -->
-          </div>
-        </div>
+            {{ highlight.point }}
+          </li>
+        </ul>
       </div>
     </section>
-    <section class="sec-process">
+    <section
+      id="edu-sec-requirements"
+      class="sec-requirements sec-general sec-bg-gray anchor"
+    >
       <div class="wrapper">
-        <MainTitle title="申请流程" titleEN="PROCESS" titleENColor="#E5E5E5" />
+        <h2>申请条件</h2>
+        <ul>
+          <div v-for="(items, index) in requirementsData" :key="index">
+            <li v-for="(i, index) in items.requirement_points" :key="index">
+              <img
+                src="/img/Projects/checkmark.png"
+                alt="projects list checkmark icon"
+              />
+              {{ i.point }}
+            </li>
+          </div>
+        </ul>
+      </div>
+    </section>
+    <section id="edu-sec-process" class="sec-process sec-general anchor">
+      <div class="wrapper">
+        <h2>申请流程</h2>
         <div class="process-wrap">
           <a-timeline>
             <a-timeline-item v-for="(item, index) in data.process" :key="index">
@@ -101,15 +148,9 @@
         </div>
       </div>
     </section>
-    <section class="fee-sec">
+    <section id="edu-sec-fee" class="sec-fee sec-general sec-bg-gray anchor">
       <div class="wrapper">
-        <div class="title-wrap">
-          <div class="title">
-            <img src="/img/logos/logo-trans.png" alt="" />
-            <p>FEE</p>
-          </div>
-          <h1>项目费用</h1>
-        </div>
+        <h2>项目费用</h2>
         <div class="fee-grid">
           <div
             class="fee-card"
@@ -130,14 +171,13 @@
         </div>
       </div>
     </section>
-    <!-- <CasesSection /> -->
-    <OtherProjectsSection />
+    <OtherProjectsSection bgWhite="true" />
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import VueMarkdown from "vue-markdown";
+var _ = require("lodash");
 
 export default {
   head() {
@@ -148,11 +188,14 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "加彼岸出国咨询 | " +
-            this.data.project_name +
-            "加拿大企业家移民项目",
+            "加彼岸出国咨询 | " + this.data.project_name + "加拿大留学移民项目",
         },
       ],
+    };
+  },
+  data() {
+    return {
+      activeTab: 1,
     };
   },
   async asyncData({ $axios, route }) {
@@ -160,32 +203,11 @@ export default {
       `/projects?slug=` + route.params.slug
     );
     const data = projectData[0];
+    const requirementsData = data.requirements;
     return {
       data,
+      requirementsData,
     };
-  },
-  // async asyncData({ $axios, route }) {
-  //   const projectData = await $axios.$get(`/projects?id=` + route.params.id);
-  //   const data = projectData;
-  //   return {
-  //     data,
-  //   };
-  // },
-  data() {
-    return {
-      hasButton: [],
-    };
-  },
-  mounted() {
-    let reqBox = document.querySelectorAll(".requirement-anchor ul");
-    console.log(reqBox);
-    for (let i = 0; i < reqBox.length; i++) {
-      if (reqBox[i].clientHeight > 100) {
-        this.hasButton.push(true);
-      } else {
-        this.hasButton.push(false);
-      }
-    }
   },
   components: {
     VueMarkdown,
@@ -193,201 +215,5 @@ export default {
 };
 </script>
 <style lang="scss">
-.highlight-info-wrap {
-  .main-title-side-wrap {
-    margin-bottom: 20px;
-  }
-}
-.fee-content {
-  // padding-left: 15px;
-  p {
-    margin-bottom: 3px;
-  }
-}
-</style>
-<style lang="scss" scoped>
-section {
-  padding: 100px 0;
-  p {
-    font-size: 16px;
-  }
-}
-@media all and (max-width: 768px) {
-  section {
-    padding: 30px 0;
-  }
-}
-/* ------------------------------------------------------ */
-/*              ANCHOR introduction section X             */
-/* ------------------------------------------------------ */
-.sec-introduction {
-  background-color: #efefef;
-}
-/* ------------------------------------------------------ */
-/*                ANCHOR Highlight section                */
-/* ------------------------------------------------------ */
-
-.highlight-image-wrap {
-  border-radius: 10px;
-  overflow: hidden;
-  img {
-    border-radius: 10px;
-
-    object-fit: cover;
-    width: 100%;
-  }
-}
-.highlight-info-wrap {
-  p {
-    margin-bottom: 20px;
-  }
-
-  li {
-    color: #707070;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  li::before {
-    content: url("/img/Projects/list-square.png");
-    margin-right: 15px;
-  }
-}
-
-/* ------------------------------------------------------ */
-/*               ANCHOR Requirement Section               */
-/* ------------------------------------------------------ */
-.sec-requirements {
-  background-color: $navy;
-  .title-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    margin-bottom: 50px;
-    h1 {
-      position: absolute;
-      bottom: 35px;
-      left: 100px;
-      font-size: 36px;
-      font-weight: 700;
-
-      color: #fff;
-    }
-  }
-  .title {
-    display: flex;
-    align-items: center;
-    p {
-      color: #233369;
-      font-size: 70px;
-      font-family: $Mont;
-      font-weight: 800;
-      margin: 0;
-      margin-left: 0px;
-    }
-    img {
-      opacity: 0.2;
-    }
-  }
-}
-.requirement-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  row-gap: 20px;
-  column-gap: 30px;
-}
-@media all and (max-width: 992px) {
-  .sec-requirements {
-    background-color: $navy;
-    .title-wrap {
-      align-items: center;
-      position: relative;
-      h1 {
-        position: absolute;
-        bottom: 0px;
-        left: 80px;
-        font-size: 26px;
-        font-weight: 700;
-        color: #fff;
-      }
-    }
-    .title {
-      display: flex;
-      align-items: center;
-      p {
-        color: #233369;
-        font-size: 35px;
-      }
-      img {
-        opacity: 0.2;
-        width: 60px;
-      }
-    }
-  }
-  .requirement-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: auto;
-    row-gap: 20px;
-    column-gap: 30px;
-  }
-}
-/* ------------------------------------------------------ */
-/*                 ANCHORE PROCESS SECTION                */
-/* ------------------------------------------------------ */
-.sec-process {
-  background-image: url("/img/Projects/process-banner.png");
-  background-size: cover;
-}
-.process-wrap {
-  background-color: #ffffff50;
-  padding: 50px;
-  padding-bottom: 0;
-  border-radius: 10px;
-  border: 1px solid $navy;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  li {
-    display: flex;
-    justify-content: flex-start;
-  }
-  span {
-    line-height: 25px;
-    color: #fff;
-  }
-  p {
-    color: #757575;
-    font-size: 16px;
-  }
-  .step-num {
-    width: 25px;
-    height: 25px;
-    background-color: $navy;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin-right: 9px;
-  }
-}
-@media all and (max-width: 768px) {
-  .process-wrap {
-    padding: 50px 20px 0;
-    .step-num::before {
-      height: 30px;
-    }
-    p {
-      font-size: 14px;
-    }
-    li:nth-child(3) {
-      .step-num::before {
-        height: 70px;
-      }
-    }
-  }
-}
+@import "~/assets/scss/hot-projects/general.scss";
 </style>

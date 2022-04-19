@@ -14,7 +14,7 @@
         >
           <h4>{{ step.title }}</h4>
           <div class="icon-wrap">
-            <img :src="step.iconUrl" alt="" />
+            <img :data-src="step.iconUrl" alt="" class="lazyload" />
           </div>
           <p class="content">
             {{ step.content }}
