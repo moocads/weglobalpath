@@ -42,7 +42,7 @@ const serviceSteps = [
   {
     title: "提交简历",
     iconUrl: "/img/icons/process/upload_file_icon.SVG",
-    content: " 提交您的简历至星辰，我司严格遵守保密协议",
+    content: " 提交您的简历至加彼岸，我司严格遵守保密协议",
   },
   {
     title: "个案评估",
