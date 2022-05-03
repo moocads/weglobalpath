@@ -62,7 +62,7 @@ export default {
     position: fixed;
     width: 150px;
     right: 50px;
-    top: 35%;
+    top: 25%;
     border-radius: 5px;
     z-index: 999;
   }
@@ -70,7 +70,7 @@ export default {
   .icon-bar.side {
     position: fixed;
     z-index: 999999;
-    top: 35%;
+    top: 25%;
     right: 0;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
