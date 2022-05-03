@@ -9,33 +9,28 @@
     <div class="icon-bar side">
       <NuxtLink to="/evaluation" class="sidebar-link sidebar-evaluation">
         <img src="/img/icons/calculator.png" />
-        <p>移民</p>
-        <p>打分</p>
+        <p>移民打分</p>
       </NuxtLink>
       <NuxtLink to="/self-test" class="sidebar-link sidebar-evaluation">
         <img src="/img/icons/aplus.png" />
-        <p>移民</p>
-        <p>自测</p>
+        <p>移民自测</p>
       </NuxtLink>
       <!-- <NuxtLink to="/evaluation" class="sidebar-link">
       </NuxtLink> -->
       <a href="tel:16475233555" class="sidebar-link">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
-        <p>立即</p>
-        <p>回电</p>
+        <p>立即回电</p>
       </a>
       <a href="mailto:info@beyondcanada.ca" class="sidebar-link">
         <img src="/img/icons/sidebar-mail.svg" class="contact-icon" />
-        <p>邮件</p>
-        <p>咨询</p>
+        <p>邮件咨询</p>
       </a>
       <a
         class="sidebar-link sidebar-link_wechat"
         @click="wechatShow = !wechatShow"
       >
         <img src="/img/icons/sidebar-wechat.svg" class="contact-icon" />
-        <p>微信</p>
-        <p>咨询</p>
+        <p>微信咨询</p>
       </a>
       <a class="sidebar-link top">
         <a-back-top>
@@ -78,7 +73,7 @@ export default {
     .sidebar-link {
       display: block;
       text-align: center;
-      padding: 5px 10px;
+      padding: 5px;
       transition: all 0.3s ease;
       color: $navy;
       background: $navy;
