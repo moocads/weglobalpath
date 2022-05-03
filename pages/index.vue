@@ -464,6 +464,15 @@ header .info-wrap {
   .sm-only {
     display: block;
   }
+  .header-btn-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+      margin: 0;
+    }
+  }
   header {
     height: 100vh;
     img {
