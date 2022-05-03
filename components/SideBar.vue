@@ -83,7 +83,6 @@ export default {
       color: $navy;
       background: $navy;
       font-size: 20px;
-      border-bottom: 1px solid #5f6886;
       &.top {
         background: $navy;
         padding: 0;
@@ -114,6 +113,13 @@ export default {
     }
   }
 }
+.sidebar-link:nth-child(1),
+.sidebar-link:nth-child(2),
+.sidebar-link:nth-child(3),
+.sidebar-link:nth-child(4) {
+  border-bottom: 1px solid #5f6886;
+}
+
 .sidebar-link p {
   font-size: 12px;
   color: #fff;
@@ -134,7 +140,7 @@ export default {
   }
   p {
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1;
     margin-bottom: 3px;
   }
