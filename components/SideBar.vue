@@ -19,7 +19,7 @@
       </NuxtLink> -->
       <a href="tel:16475233555" class="sidebar-link">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
-        <p>立即回电</p>
+        <p>立即致电</p>
       </a>
       <a href="mailto:info@beyondcanada.ca" class="sidebar-link">
         <img src="/img/icons/sidebar-mail.svg" class="contact-icon" />
@@ -56,7 +56,7 @@ export default {
   .wechat-code {
     position: fixed;
     width: 150px;
-    right: 50px;
+    right: 65px;
     top: 25%;
     border-radius: 5px;
     z-index: 999;
