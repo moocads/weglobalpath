@@ -8,25 +8,34 @@
     />
     <div class="icon-bar side">
       <NuxtLink to="/evaluation" class="sidebar-link sidebar-evaluation">
+        <img src="/img/icons/calculator.png" />
         <p>移民</p>
         <p>打分</p>
-        <!-- <img src="/img/icons/calculator.png" class="contact-icon" /> -->
       </NuxtLink>
       <NuxtLink to="/self-test" class="sidebar-link sidebar-evaluation">
+        <img src="/img/icons/aplus.png" />
         <p>移民</p>
         <p>自测</p>
       </NuxtLink>
       <!-- <NuxtLink to="/evaluation" class="sidebar-link">
-        <img src="/img/icons/aplus.png" class="contact-icon" />
       </NuxtLink> -->
       <a href="tel:16475233555" class="sidebar-link">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
+        <p>立即</p>
+        <p>回电</p>
       </a>
       <a href="mailto:info@beyondcanada.ca" class="sidebar-link">
         <img src="/img/icons/sidebar-mail.svg" class="contact-icon" />
+        <p>邮件</p>
+        <p>咨询</p>
       </a>
-      <a class="sidebar-link" @click="wechatShow = !wechatShow">
+      <a
+        class="sidebar-link sidebar-link_wechat"
+        @click="wechatShow = !wechatShow"
+      >
         <img src="/img/icons/sidebar-wechat.svg" class="contact-icon" />
+        <p>微信</p>
+        <p>咨询</p>
       </a>
       <a class="sidebar-link top">
         <a-back-top>
@@ -69,7 +78,7 @@ export default {
     .sidebar-link {
       display: block;
       text-align: center;
-      padding: 5px;
+      padding: 5px 10px;
       transition: all 0.3s ease;
       color: $navy;
       background: $navy;
@@ -78,7 +87,9 @@ export default {
       &.top {
         background: $navy;
         padding: 0;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .ant-back-top {
           position: static;
           width: 40px;
@@ -94,7 +105,7 @@ export default {
       }
 
       .contact-icon {
-        width: 30px;
+        width: 25px;
       }
     }
 
@@ -103,11 +114,24 @@ export default {
     }
   }
 }
+.sidebar-link p {
+  font-size: 12px;
+  color: #fff;
+  margin: 0;
+}
+.sidebar-link_wechat {
+  background: #09b83e !important;
+}
+
 .sidebar-evaluation {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  img {
+    width: 25px;
+    margin-bottom: 3px;
+  }
   p {
     color: #fff;
     font-size: 14px;
