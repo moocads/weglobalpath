@@ -6,10 +6,7 @@
       </div>
     </header>
     <main>
-      <div class="redDivider">
-        曼省人才管培项目 -
-        紧缺职业（4.2万包学费、包签证、包职场管理培训，顺利移居加拿大）
-      </div>
+      <div class="redDivider">曼省人才管培项目 - 紧缺职业</div>
       <section class="sec-introduction">
         <div class="wrapper">
           <MainTitle
@@ -230,9 +227,9 @@
             <a-tab-pane key="details1" class="detailsTab1">
               <div slot="tab">全包式服务</div>
               <h3>提供一年紧缺专业课程</h3>
-              <p>
+              <!-- <p>
                 4.2万加币包含一年紧缺专业课程学费$15,481.80加币-15,733.80加币
-              </p>
+              </p> -->
               <p>一年学生保险$675.00加币</p>
               <p>国际学生费用$850.00加币</p>
               <p>书本杂费$2,770.00加币</p>
