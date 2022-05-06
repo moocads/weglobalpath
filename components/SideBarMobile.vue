@@ -28,6 +28,7 @@
         <div
           class="sidebar-item sidebar-item-wechat"
           @click="wechatShow = !wechatShow"
+          v-click-outside="closeWechatQRCode"
         >
           <img
             src="/img/icons/wechat-white.png"
@@ -53,6 +54,12 @@ export default {
     return {
       wechatShow: false,
     };
+  },
+  methods: {
+    closeWechatQRCode() {
+      this.wechatShow = false;
+      return this.wechatShow;
+    },
   },
 };
 </script>
