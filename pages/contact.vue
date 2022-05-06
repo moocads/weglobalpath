@@ -19,8 +19,12 @@
                 </div>
                 <div class="info">
                   <h2>电话</h2>
-                  <a href="tel:+16475233555">多伦多: 647-523-3555</a>
-                  <a href="tel:+12049638886">温尼伯: 204-963-8886</a>
+                  <a href="tel:+16475233555" class="ga-phone-trigger"
+                    >多伦多: 647-523-3555</a
+                  >
+                  <a href="tel:+12049638886" class="ga-phone-trigger"
+                    >温尼伯: 204-963-8886</a
+                  >
                 </div>
               </div>
               <div class="email-wrap info-wrap">

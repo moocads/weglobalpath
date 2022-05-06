@@ -20,7 +20,9 @@
                 <p>
                   多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
                   <br />
-                  <a href="tel:+16475233555">电话：647-523-3555</a>
+                  <a href="tel:+16475233555" class="ga-phone-trigger"
+                    >电话：647-523-3555</a
+                  >
                 </p>
               </li>
               <!-- <li>
@@ -31,7 +33,9 @@
                 <p>
                   温尼伯：180 Main St, Winnipeg, MB R3C 1A6 (Robertson College)
                   <br />
-                  <a href="tel:+12049638886">电话：204-963-8886</a>
+                  <a href="tel:+12049638886" class="ga-phone-trigger"
+                    >电话：204-963-8886</a
+                  >
                 </p>
               </li>
               <!-- <li>

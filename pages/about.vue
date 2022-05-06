@@ -159,7 +159,7 @@
           </h3>
           <h3>
             咨询电话: <br />
-            <a href="tel:+16475233555">647-523-3555</a>
+            <a href="tel:+16475233555" class="ga-phone-trigger">647-523-3555</a>
           </h3>
         </div>
         <div class="joinUs-table-wrap">

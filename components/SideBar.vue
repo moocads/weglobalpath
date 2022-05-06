@@ -17,7 +17,7 @@
       </NuxtLink>
       <!-- <NuxtLink to="/evaluation" class="sidebar-link">
       </NuxtLink> -->
-      <a href="tel:16475233555" class="sidebar-link">
+      <a href="tel:16475233555" class="sidebar-link ga-phone-trigger">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
         <p>立即致电</p>
       </a>

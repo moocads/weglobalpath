@@ -15,7 +15,7 @@
             alt="加彼岸 Navbar Phone Call Logo"
           />
           <div class="phone-box">
-            <a href="tel:+16475233555">647-523-3555</a>
+            <a href="tel:+16475233555" class="ga-phone-trigger">647-523-3555</a>
             <p>多伦多免费咨询热线</p>
           </div>
         </div>
@@ -25,7 +25,7 @@
             alt="加彼岸 Navbar Phone Call Logo"
           />
           <div class="phone-box">
-            <a href="tel:+12049638886">204-963-8886</a>
+            <a href="tel:+12049638886" class="ga-phone-trigger">204-963-8886</a>
             <p>温尼伯免费咨询热线</p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default {};
   display: flex;
   align-items: center;
   margin-left: 30px;
-  
+
   img {
     margin-right: 15px;
   }

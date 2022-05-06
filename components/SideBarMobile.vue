@@ -8,7 +8,10 @@
         alt="Beyond Canada Wechat"
       />
       <div class="sidebar-grid">
-        <a href="tel:16475233555" class="sidebar-item sidebar-item-phone">
+        <a
+          href="tel:16475233555"
+          class="sidebar-item sidebar-item-phone ga-phone-trigger"
+        >
           <img
             src="/img/icons/phone.svg"
             alt="Sidebar phone call button icon"
