@@ -98,7 +98,6 @@ export default {
     "@nuxtjs/recaptcha",
   ],
   robots: {
-    /* module options */
     Sitemap: "https://beyondcanada.ca/sitemap.xml",
   },
   sitemap: {

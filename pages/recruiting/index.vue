@@ -165,7 +165,6 @@
             title="项目服务概括"
             titleEN="SERVICES PROVIDED"
             titleColor="#1b2854"
-            titleENColor="#DADADA"
           />
           <div class="content">
             <ul>
@@ -217,12 +216,7 @@
       </section>
       <section>
         <div class="wrapper">
-          <MainTitle
-            title="项目细节"
-            titleEN="DETAILS"
-            titleColor="#1b2854"
-            titleENColor="#DADADA"
-          />
+          <MainTitle title="项目细节" titleEN="DETAILS" titleColor="#1b2854" />
           <a-tabs defaultActiveKey="details1" class="detailsTabs">
             <a-tab-pane key="details1" class="detailsTab1">
               <div slot="tab">全包式服务</div>

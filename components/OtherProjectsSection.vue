@@ -2,11 +2,7 @@
   <div>
     <section :class="{ 'bg-white': bgWhite === 'true' }">
       <div class="wrapper">
-        <MainTitle
-          title="其他项目"
-          titleEN="OTHER projects"
-          titleENColor="#E5E5E5"
-        />
+        <MainTitle title="其他项目" titleEN="OTHER projects" />
         <a-row :gutter="[16, 16]">
           <a-col
             :sm="12"

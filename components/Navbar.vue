@@ -484,7 +484,7 @@ $nav-dropdown-height: 50px;
 $nav-gray: rgba(0, 0, 0, 0.5);
 nav {
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
   z-index: 99;
   height: $nav-height;

@@ -107,6 +107,7 @@
         </div>
       </div>
     </section>
+    <HomeProcess />
     <section id="home-counter">
       <div class="wrapper">
         <div class="title-wrap">
@@ -174,7 +175,6 @@
         </a-row>
       </div>
     </section>
-    <HomeProcess />
     <section id="home-cases">
       <MainTitle title="成功案例" titleEN="OUR CASES" titleENColor="#c4c4c4" />
       <div class="wrapper">
@@ -406,7 +406,7 @@ export default {
 header {
   position: relative;
   overflow: hidden;
-  max-height: 500px;
+  max-height: 550px;
   width: 100%;
 
   img {
@@ -513,6 +513,7 @@ header .info-wrap {
 /* ------------------------------------------------------ */
 /*                ANCHOR HOME SERVICE STYLE               */
 /* ------------------------------------------------------ */
+
 #home-services {
   padding: 50px 0;
 }
@@ -626,6 +627,7 @@ header .info-wrap {
   background-blend-mode: multiply;
   padding: 100px 0;
 }
+
 #home-counter .title-wrap {
   display: flex;
   flex-direction: column;

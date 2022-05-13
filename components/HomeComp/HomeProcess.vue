@@ -1,11 +1,7 @@
 <template>
   <section id="home-process">
     <div class="wrapper">
-      <MainTitle
-        title="移民服务流程"
-        titleEN="SERVICE PROCESS"
-        titleENColor="#c4c4c4"
-      />
+      <MainTitle title="移民服务流程" titleEN="SERVICE PROCESS" />
       <ul class="service-process-grid">
         <li
           class="service-process-item"

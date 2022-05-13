@@ -1,6 +1,7 @@
 <template>
   <div id="page">
     <!-- <TopBar class="navbar-lg" /> -->
+    <WorldTime class="navbar-lg" />
     <NavbarMobile class="navbar-sm" />
     <Navbar class="navbar-lg" />
     <div class="spacer"></div>
@@ -24,7 +25,7 @@ export default {};
 }
 .spacer {
   width: 100%;
-  height: 70px;
+  height: 100px;
 }
 .footer-spacer {
   height: 60px;
