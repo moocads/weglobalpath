@@ -13,6 +13,7 @@
         <h1>{{ data.project_name }}</h1>
       </div>
     </header>
+    <Breadcrumb project-url="reunion" :project-data="data" />
     <div class="nav-wrap">
       <div class="wrapper">
         <ul>

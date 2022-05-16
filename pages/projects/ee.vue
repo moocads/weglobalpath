@@ -16,6 +16,7 @@
         <h1>联邦EE快速通道项目</h1>
       </div>
     </header>
+    <Breadcrumb project-url="ee" />
 
     <div class="sec-headline">
       <div class="wrapper">

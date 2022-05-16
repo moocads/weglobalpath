@@ -13,6 +13,8 @@
         <h1>新移民服务</h1>
       </div>
     </header>
+    <Breadcrumb project-url="new-immigrant" />
+
     <section class="sec-introduction">
       <div class="wrapper">
         <div class="headlineBlock">

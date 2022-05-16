@@ -5,6 +5,7 @@
         <h1>加拿大团聚移民</h1>
       </div>
     </header>
+    <Breadcrumb project-url="reunion" :project-data="data" />
     <section class="codex-section">
       <div class="wrapper">
         <ul class="codex-grid">

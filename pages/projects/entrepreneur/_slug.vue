@@ -13,6 +13,7 @@
         <h1>{{ data.project_name }}</h1>
       </div>
     </header>
+    <Breadcrumb project-url="entrepreneur" :project-data="data" />
     <div class="nav-wrap">
       <div class="wrapper">
         <ul>
@@ -182,7 +183,7 @@ var _ = require("lodash");
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | " + this.data.project_name,
+      title: "加拿大移民 | " + this.data.project_name + " | 加彼岸出国咨询",
       meta: [
         {
           hid: "description",

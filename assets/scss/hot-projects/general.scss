@@ -71,7 +71,7 @@
   z-index: 98;
 }
 .hot-projects-detail-page .nav-wrap > .wrapper {
-  margin-top: 70px;
+  margin-top: 40px;
   margin-bottom: 30px;
   ul {
     display: grid;
@@ -382,4 +382,11 @@
 // 热门项目scroll anchor top margin
 .hot-projects-detail-page .anchor {
   scroll-margin-top: 120px;
+}
+// breadcrumb Style
+.breadcrumb-wrap {
+  margin-top: 30px;
+  .ant-breadcrumb a:hover {
+    color: $navy;
+  }
 }
