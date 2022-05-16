@@ -5,11 +5,11 @@
         <div class="toronto">
           <p>多伦多时间：{{ torontoTime }}</p>
         </div>
-        <div class="vancouver">
-          <p>温哥华时间：{{ vancouverTime }}</p>
-        </div>
         <div class="manitoba">
           <p>曼尼托巴时间：{{ manitobaTime }}</p>
+        </div>
+        <div class="vancouver">
+          <p>温哥华时间：{{ vancouverTime }}</p>
         </div>
       </div>
     </div>
@@ -32,19 +32,19 @@ export default {
     this.interval = setInterval(() => {
       this.torontoTime = moment()
         .tz("America/Toronto")
-        .format("YYYY-MM-DD hh:mm:ss");
+        .format("YYYY-MM-DD HH:MM:SS");
     }, 1000);
     // 温哥华时间
     this.interval = setInterval(() => {
       this.vancouverTime = moment()
         .tz("America/Vancouver")
-        .format("YYYY-MM-DD hh:mm:ss");
+        .format("YYYY-MM-DD HH:MM:SS");
     }, 1000);
     // 曼尼托巴时间
     this.interval = setInterval(() => {
       this.manitobaTime = moment()
         .tz("America/Winnipeg")
-        .format("YYYY-MM-DD hh:mm:ss");
+        .format("YYYY-MM-DD HH:MM:SS");
     }, 1000);
   },
 };
