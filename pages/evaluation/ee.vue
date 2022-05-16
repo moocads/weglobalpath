@@ -401,6 +401,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `加拿大移民 | 加拿大移民快速通道（EE）评分系统 | 加彼岸出国咨询`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `加拿大移民 | 加拿大移民快速通道（EE）评分系统 | 加彼岸出国咨询`,
+        },
+      ],
+    };
+  },
   data() {
     return {
       marriage: "single",

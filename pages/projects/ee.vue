@@ -261,12 +261,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | 联邦EE移民项目",
+      title: `加拿大移民 | 联邦EE移民项目 | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | 联邦EE移民项目",
+          content: `加拿大移民 | 联邦EE移民项目 | 加彼岸出国咨询`,
         },
       ],
     };

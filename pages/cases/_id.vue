@@ -8,20 +8,18 @@
     <section class="case-details-page">
       <div class="wrapper">
         <a-breadcrumb>
-          <a-breadcrumb-item href="/blogs">
-            成功案例
-          </a-breadcrumb-item>
+          <a-breadcrumb-item href="/blogs"> 成功案例 </a-breadcrumb-item>
           <a-breadcrumb-item href="#">
-            {{data.title}}
+            {{ data.title }}
           </a-breadcrumb-item>
         </a-breadcrumb>
-        <br>
-        <br>
+        <br />
+        <br />
         <NuxtLink to="/cases" class="back-btn" exact>
           <img src="/img/icons/back-btn.png" alt="" />
           <span>查看更多案例</span>
         </NuxtLink>
-        <br>
+        <br />
         <div class="case-wrap">
           <article>
             <div class="main-title">
@@ -64,12 +62,12 @@
 export default {
   head() {
     return {
-      title: `加彼岸出国咨询 | ${this.data.title} - ${this.data.client_name}`,
+      title: `加拿大移民 | ${this.data.title} - ${this.data.client_name}| 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加彼岸出国咨询 | ${this.data.title} - ${this.data.client_name} - 加彼岸成功案例展示`,
+          content: `加拿大移民 | ${this.data.title} - ${this.data.client_name} | 加彼岸出国咨询 - 加彼岸成功案例展示`,
         },
       ],
     };

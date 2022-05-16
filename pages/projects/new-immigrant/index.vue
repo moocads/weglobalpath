@@ -148,12 +148,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | 加拿大新移民服务",
+      title: `加拿大移民 | 加拿大新移民服务 | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | 加拿大新移民服务",
+          content: `加拿大移民 | 加拿大新移民服务 | 加彼岸出国咨询`,
         },
       ],
     };

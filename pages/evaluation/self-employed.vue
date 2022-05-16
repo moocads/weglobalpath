@@ -208,6 +208,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `加拿大移民 | 加拿大联邦自雇移民评分系统 | 加彼岸出国咨询`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `加拿大移民 | 加拿大联邦自雇移民评分系统 | 加彼岸出国咨询`,
+        },
+      ],
+    };
+  },
   data() {
     return {
       age: 0,

@@ -182,13 +182,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | " + this.data.project_name,
+      title: `加拿大移民 | ${this.data.project_name} | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            "加彼岸出国咨询 | " + this.data.project_name + "加拿大留学移民项目",
+          content: `加拿大移民 | ${this.data.project_name} | 加彼岸出国咨询`,
         },
       ],
     };

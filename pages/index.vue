@@ -259,12 +259,12 @@
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | 首页",
+      title: `加拿大移民 | 首页 | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | 首页",
+          content: `加拿大移民 | 首页 | 加彼岸出国咨询`,
         },
       ],
     };

@@ -182,6 +182,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `加拿大移民 | 萨省省提名（SINP）EOI评分系统 | 加彼岸出国咨询`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `加拿大移民 | 萨省省提名（SINP）EOI评分系统 | 加彼岸出国咨询`,
+        },
+      ],
+    };
+  },
   data() {
     return {
       edu: 0,

@@ -51,12 +51,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | 加拿大移民省份",
+      title: `加拿大移民 | 加拿大移民省份 | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | 加拿大移民省份",
+          content: `加拿大移民 | 加拿大移民省份 | 加彼岸出国咨询`,
         },
       ],
     };
@@ -69,20 +69,20 @@ export default {
   },
   created() {
     if (this.$store.state.province) {
-      this.activeItem = this.tabSelected
+      this.activeItem = this.tabSelected;
     }
   },
   beforeDestroy() {
     if (this.$store.state.province) {
-      this.$store.commit('setProvince', undefined)
+      this.$store.commit("setProvince", undefined);
     }
   },
   watch: {
-    '$store.state.province': function() {
+    "$store.state.province": function () {
       // console.log(this.$store.state.ee)
-      this.tabSelected = this.$store.state.province - 1
-      this.activeItem = this.tabSelected
-    }
+      this.tabSelected = this.$store.state.province - 1;
+      this.activeItem = this.tabSelected;
+    },
   },
   async asyncData({ $axios }) {
     const projectData = await $axios.$get(`/province-projects`, {

@@ -34,12 +34,12 @@
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | 加拿大雇主担保移民",
+      title: `加拿大移民 | 加拿大雇主担保移民 | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | 加拿大雇主担保移民",
+          content: `加拿大移民 | 加拿大雇主担保移民 | 加彼岸出国咨询`,
         },
       ],
     };

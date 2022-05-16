@@ -52,7 +52,7 @@ import { marked } from "marked";
 export default {
   head() {
     return {
-      title: "加彼岸资讯 | " + this.blog.title_cn,
+      title: `加拿大移民 | ${this.blog.title_cn} | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",

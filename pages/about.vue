@@ -182,12 +182,12 @@
 <script>
 export default {
   head: {
-    title: "加彼岸出国咨询 | 关于我们",
+    title: `加拿大移民 | 关于我们 | 加彼岸出国咨询`,
     meta: [
       {
         hid: "description",
         name: "description",
-        content: "加彼岸出国咨询 | 关于我们",
+        content: `加拿大移民 | 关于我们 | 加彼岸出国咨询`,
       },
     ],
   },

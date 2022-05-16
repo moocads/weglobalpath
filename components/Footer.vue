@@ -72,6 +72,24 @@
                   <NuxtLink to="/projects/reunion">加拿大团聚移民</NuxtLink>
                 </li>
                 <li>
+                  <NuxtLink to="/projects/entrepreneur/manitoba-investment"
+                    >曼省企业家投资移民</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink to="/projects/education/manitoba-education"
+                    >曼省留学移民</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink to="/recruiting">曼省人才管培项目</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/projects/startup/start-up-visa"
+                    >联邦创业投资（SUV）</NuxtLink
+                  >
+                </li>
+                <li>
                   <NuxtLink to="/projects/new-immigrant">新移民服务</NuxtLink>
                 </li>
               </ul>
@@ -146,15 +164,15 @@ footer {
   }
 }
 .projects-wrap {
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 15px;
+  }
   li {
     display: flex;
-    align-items: center;
-    margin: 0 auto 10px;
+    align-items: flex-start;
   }
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   a {
     font-size: 14px;
     color: #fff;

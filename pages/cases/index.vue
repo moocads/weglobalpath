@@ -25,12 +25,12 @@
 export default {
   head() {
     return {
-      title: "加彼岸出国咨询 | 成功案例",
+      title: `加拿大移民 | 成功案例 | 加彼岸出国咨询`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸出国咨询 | 成功案例",
+          content: `加拿大移民 | 成功案例 | 加彼岸出国咨询`,
         },
       ],
     };

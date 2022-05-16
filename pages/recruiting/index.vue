@@ -674,12 +674,12 @@
 <script>
 export default {
   head: {
-    title: "加彼岸出国咨询 | 中国区招生计划",
+    title: `加拿大移民 | 曼省人才管培项目 | 快速移民直通车 | 加彼岸出国咨询`,
     meta: [
       {
         hid: "description",
         name: "description",
-        content: "加彼岸出国咨询 | 中国区招生计划",
+        content: `加拿大移民 | 曼省人才管培项目 | 快速移民直通车 | 加彼岸出国咨询`,
       },
     ],
   },

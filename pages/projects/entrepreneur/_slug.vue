@@ -189,7 +189,7 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "加彼岸出国咨询 | " + this.data.project_name + "加拿大留学移民项目",
+            "加拿大移民 | " + this.data.project_name + " | 加彼岸出国咨询",
         },
       ],
     };

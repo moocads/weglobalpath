@@ -155,6 +155,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `加拿大移民 | 安省提名 海外劳工 EOI评分系统 | 加彼岸出国咨询`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `加拿大移民 | 安省提名 海外劳工 EOI评分系统 | 加彼岸出国咨询`,
+        },
+      ],
+    };
+  },
   data() {
     return {
       jobType: 0,
