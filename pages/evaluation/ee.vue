@@ -1299,7 +1299,7 @@ export default {
         ? 50
         : this.exp >= 1 && this.exp < 2 && this.edu >= 6
         ? 25
-        : this.exp >= 2 && this.edu < 5 && this.edu >= 3
+        : this.exp >= 2 && this.edu < 6 && this.edu >= 3
         ? 25
         : this.exp >= 1 && this.exp < 2 && this.edu < 6 && this.edu >= 3
         ? 13
