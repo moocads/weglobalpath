@@ -72,6 +72,11 @@ const projects = [
     title: "加拿大团聚移民",
   },
   {
+    url: "usa",
+    thumbnail: "/img/Projects/usa.jpeg",
+    title: "美国移民项目",
+  },
+  {
     url: "new-immigrant",
     thumbnail: "/img/Home/projects/project7.jpeg",
     title: "新移民服务",
