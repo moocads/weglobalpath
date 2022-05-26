@@ -2,6 +2,7 @@
 @import "./assets/scss/reset.scss";
 html {
   scroll-behavior: smooth;
+  user-select: none;
 }
 body {
   font-family: $Noto;

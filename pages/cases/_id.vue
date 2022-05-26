@@ -8,7 +8,9 @@
     <section class="case-details-page">
       <div class="wrapper">
         <a-breadcrumb>
-          <a-breadcrumb-item href="/blogs"> 成功案例 </a-breadcrumb-item>
+          <a-breadcrumb-item>
+            <nuxt-link to="/cases">成功案例</nuxt-link>
+          </a-breadcrumb-item>
           <a-breadcrumb-item href="#">
             {{ data.title }}
           </a-breadcrumb-item>
@@ -33,12 +35,12 @@
               <img src="/img/logos/logo-small-blue.png" alt="" />
               <h3>客户情况</h3>
             </div>
-            <p>{{ `客户姓名：${data.client_name}` }}</p>
-            <p>{{ `职业背景：${data.working_background}` }}</p>
-            <p>{{ `移民背景：${data.immi_background}` }}</p>
-            <p>{{ `材料准备时间：${data.prep_time}` }}</p>
-            <p>{{ `审理周期：${data.process_time}` }}</p>
-            <p>{{ `案例简介：${data.brief_intro}` }}</p>
+            <p>{{ `客户姓名：${data.client_name || "N/A"}` }}</p>
+            <p>{{ `职业背景：${data.working_background || "N/A"}` }}</p>
+            <p>{{ `移民背景：${data.immi_background || "N/A"}` }}</p>
+            <p>{{ `材料准备时间：${data.prep_time || "N/A"}` }}</p>
+            <p>{{ `审理周期：${data.process_time || "N/A"}` }}</p>
+            <p>{{ `案例简介：${data.brief_intro || "N/A"}` }}</p>
           </article>
           <hr v-if="data.image.length !== 0" />
           <div class="sub-title" v-if="data.image.length !== 0">
