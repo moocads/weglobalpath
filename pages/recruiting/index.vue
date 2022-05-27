@@ -562,14 +562,26 @@
             <p>
               加拿大罗伯森学院中国区招生计划－公立学院直通车项目，结合加彼岸移居咨询方面和职业培训方面的超强实力，目前已成为广大留学生快速获得就业机会及移居身份的最佳选择。罗伯森设有最短8个月的中国加拿大双认证的研究生文凭及大专学历，毕业后年即可获得加拿大工作签证并申请加拿大永居身份，首年年薪可高达20-30万人民币。该项目直属服务花费低、周期短，不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，陪读父母或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳快捷途径。
             </p>
-            <a
-              href="/img/Recruiting/plan.pdf"
-              class="pdf-download-btn"
-              download="罗伯森学院中国区招生计划完整版"
-            >
-              <img src="/img/Recruiting/download-icon.svg" alt="" />
-              <span>下载罗伯森学院中国区招生计划完整版</span>
-            </a>
+            <div class="files-download-wrap">
+              <a
+                href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_c9bff56166.pdf"
+                class="pdf-download-btn"
+                target="_blank"
+                download="RC加拿大专课程直通车项目推广手册"
+              >
+                <img src="/img/Recruiting/download-icon.svg" alt="" />
+                <span>RC加拿大专课程直通车项目推广手册</span>
+              </a>
+              <a
+                href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_e886bacbb2.pdf"
+                class="pdf-download-btn"
+                target="_blank"
+                download="RC加拿大研文课程直通车项目推广手册"
+              >
+                <img src="/img/Recruiting/download-icon.svg" alt="" />
+                <span>RC加拿大研文课程直通车项目推广手册</span>
+              </a>
+            </div>
           </article>
         </div>
       </section>
@@ -1950,6 +1962,14 @@ header {
   }
   @media all and (max-width: 578px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+.files-download-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  a {
+    margin-right: 15px;
+    white-space: nowrap;
   }
 }
 </style>

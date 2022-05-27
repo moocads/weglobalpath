@@ -7,5 +7,6 @@ const hotProjectsBreadcrumb = {
   reunion: "加拿大团聚移民",
   "new-immigrant": "新移民服务",
   usa: "美国移民项目",
+  euro: "欧洲移民项目",
 };
 export default hotProjectsBreadcrumb;

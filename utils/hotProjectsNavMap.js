@@ -125,12 +125,21 @@ const hotProjectsNavMap = [
       },
     ],
   },
+  // {
+  //   main_cate: "新移民服务",
+  //   url: "/projects/new-immigrant",
+  //   second_cate: [
+  //     { id: "language-education", name: "新移民语言培训" },
+  //     { id: "job-reference", name: "新移民职业内部推荐" },
+  //   ],
+  // },
   {
-    main_cate: "新移民服务",
-    url: "/projects/new-immigrant",
+    main_cate: "欧洲移民项目",
+    url: "/projects/euro",
     second_cate: [
-      { id: "language-education", name: "新移民语言培训" },
-      { id: "job-reference", name: "新移民职业内部推荐" },
+      { id: "portugal-golden-plan-28w", name: "葡萄牙黄金居留移民项目-28万欧" },
+      { id: "portugal-golden-plan-50w", name: "葡萄牙黄金居留移民项目-50万欧" },
+      { id: "ireland-investment", name: "爱尔兰投资移民项目" },
     ],
   },
   {
