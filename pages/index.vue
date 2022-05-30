@@ -197,10 +197,10 @@
               :link="'/cases/' + homeCase.id"
             />
           </div>
-          <NuxtLink to="/cases">
-            <button class="cases-btn main-btn main-btn_grey">更多案例</button>
-          </NuxtLink>
         </div>
+        <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
+          <NuxtLink to="/cases"> 更多案例 </NuxtLink>
+        </button>
       </div>
     </section>
     <section id="home-testimonial">
@@ -734,7 +734,8 @@ header .info-wrap {
   column-gap: 20px;
 }
 .cases-btn {
-  display: none;
+  display: flex;
+  margin: 20px auto;
 }
 @media all and (max-width: 992px) {
   #home-cases .cases-grid {
@@ -753,8 +754,6 @@ header .info-wrap {
   }
   .cases-btn {
     display: flex;
-    color: #333;
-    margin: 0px auto;
   }
 }
 

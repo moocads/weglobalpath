@@ -221,9 +221,57 @@
               </div>
             </div>
           </li>
-          <li>
-            <NuxtLink to="/cases">成功案例</NuxtLink>
+          <li class="euro-usa-link">
+            <NuxtLink to="/projects"
+              >欧美移民
+              <a-icon
+                type="down"
+                class="dropdown-arrow"
+                alt="dropdown arrow icon"
+            /></NuxtLink>
+            <div class="hot-project-dropdown dropdown-wrap">
+              <div class="project-col">
+                <NuxtLink to="/projects/euro" class="main-cate"
+                  >欧洲移民项目</NuxtLink
+                >
+                <ul>
+                  <li>
+                    <NuxtLink to="/projects/euro/portugal-golden-plan-28w">
+                      葡萄牙黄金居留计划-28万欧</NuxtLink
+                    >
+                  </li>
+                  <li>
+                    <NuxtLink to="/projects/euro/portugal-golden-plan-50w">
+                      葡萄牙黄金居留计划-50万欧</NuxtLink
+                    >
+                  </li>
+                  <li>
+                    <NuxtLink to="/projects/euro/ireland-investment">
+                      爱尔兰投资移民项目</NuxtLink
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <NuxtLink to="/projects/usa" class="main-cate"
+                  >美国移民项目</NuxtLink
+                >
+                <ul>
+                  <li
+                    v-for="subItem in hotProjects[6].second_cate"
+                    :key="subItem.id"
+                  >
+                    <NuxtLink :to="`${hotProjects[6].url}/${subItem.id}`">
+                      {{ subItem.name }}</NuxtLink
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
+          <!-- <li>
+            <NuxtLink to="/cases">成功案例</NuxtLink>
+          </li> -->
           <li class="hot-project-link">
             <NuxtLink to="/provinces"
               >移民省份
@@ -455,7 +503,8 @@ nav {
   }
 }
 
-.hot-project-link {
+.hot-project-link,
+.euro-usa-link {
   position: relative;
   .hot-project-dropdown {
     position: absolute;
@@ -464,6 +513,7 @@ nav {
     transform: translateX(-50%);
   }
 }
+
 .project-col {
   display: flex;
   flex-direction: column;
