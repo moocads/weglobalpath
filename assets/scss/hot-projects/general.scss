@@ -391,3 +391,64 @@
     color: $navy;
   }
 }
+.mobile-only{
+  display: none;
+}
+
+.scroll-wrapper {
+  overflow-x: none;
+  table.fee-table {
+    min-width: $sm;
+    text-align: center;
+    &,
+    th,
+    td {
+      border: 1px solid $navy;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      padding: 10px;
+      white-space: nowrap;
+    }
+    thead > th {
+      font-size: 16px;
+    }
+    .table-section-title {
+      text-align: center;
+      padding: 20px 0;
+      background-color: $red;
+      color: white;
+    }
+    .wrap{
+      white-space: initial;
+    }
+  }
+
+}
+
+.detail-highlight {
+  color: $red;
+}
+
+@media all and (max-width: $sm) {
+  .mobile-only{
+    display: block;
+  }
+  .scroll-wrapper {
+    overflow-x: scroll;
+    table.fee-table {
+      thead > th {
+        font-size: 14px;
+      }
+      font-size: 12px;
+      th,
+      td {
+        padding: 5px;
+      }
+      th{
+        white-space: nowrap;
+      }
+    }
+  }
+}

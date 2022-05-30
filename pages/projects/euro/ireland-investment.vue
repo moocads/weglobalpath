@@ -149,29 +149,14 @@
         </div>
       </div>
     </section>
-    <!-- <section id="edu-sec-fee" class="sec-fee sec-general sec-bg-gray anchor">
+    <section id="edu-sec-fee" class="sec-fee sec-general sec-bg-gray anchor">
       <div class="wrapper">
         <h2>项目费用</h2>
-        <div class="fee-grid">
-          <div
-            class="fee-card"
-            v-for="(fee, index) in data.fee_comp"
-            :key="index"
-          >
-            <ul>
-              <li><span>类别：</span>{{ fee.cate }}</li>
-              <li><span>收费机构：</span>{{ fee.department }}</li>
-              <li>
-                <span>金额：</span
-                ><vue-markdown class="fee-content">{{
-                  fee.price
-                }}</vue-markdown>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <img data-fancybox="price" class="img-fluid" src="/img/ireland-1.jpeg" alt="">
+        <img data-fancybox="price" class="img-fluid" src="/img/ireland-2.jpeg" alt="">
+
       </div>
-    </section> -->
+    </section>
     <OtherProjectsSection bgWhite="true" />
   </div>
 </template>
