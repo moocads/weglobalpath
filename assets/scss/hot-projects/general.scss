@@ -395,6 +395,7 @@
   display: none;
 }
 
+// fee table
 .scroll-wrapper {
   overflow-x: none;
   table.fee-table {
@@ -403,7 +404,7 @@
     &,
     th,
     td {
-      border: 1px solid $navy;
+      border: 0.5px solid $navy;
       border-collapse: collapse;
     }
     th,
