@@ -1,7 +1,7 @@
 import hotProjectsBreadcrumb from "./hotProjectsBreadcrumb";
 import hotProjectsNavMap from "./hotProjectsNavMap";
 import provincesMap from "./provincesMap";
-import { portugal28wFee, portugal50wFee } from "./euroFee";
+import { portugal28wFee, portugal50wFee, portugal50wFundFee } from "./euroFee";
 
 export {
   hotProjectsBreadcrumb,
@@ -9,4 +9,5 @@ export {
   provincesMap,
   portugal28wFee,
   portugal50wFee,
+  portugal50wFundFee
 };

@@ -231,39 +231,35 @@
             /></NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <div class="project-col">
-                <NuxtLink to="/projects/euro" class="main-cate"
-                  >欧洲移民项目</NuxtLink
-                >
+                <NuxtLink to="/projects/euro" class="main-cate">欧洲移民项目</NuxtLink>
                 <ul>
                   <li>
                     <NuxtLink to="/projects/euro/portugal-golden-plan-28w">
-                      葡萄牙黄金居留计划-28万欧</NuxtLink
-                    >
+                      葡萄牙黄金居留计划-28万欧</NuxtLink>
                   </li>
                   <li>
                     <NuxtLink to="/projects/euro/portugal-golden-plan-50w">
-                      葡萄牙黄金居留计划-50万欧</NuxtLink
-                    >
+                      葡萄牙黄金居留计划-50万欧</NuxtLink>
+                  </li>
+                  <li>
+                    <NuxtLink to="/projects/euro/portugal-golden-plan-50w-fund">
+                      葡萄牙黄金居留计划-投资50万欧基金</NuxtLink>
                   </li>
                   <li>
                     <NuxtLink to="/projects/euro/ireland-investment">
-                      爱尔兰投资移民项目</NuxtLink
-                    >
+                      爱尔兰投资移民项目</NuxtLink>
                   </li>
                 </ul>
               </div>
               <div class="project-col">
-                <NuxtLink to="/projects/usa" class="main-cate"
-                  >美国移民项目</NuxtLink
-                >
+                <NuxtLink to="/projects/usa" class="main-cate">美国移民项目</NuxtLink>
                 <ul>
                   <li
                     v-for="subItem in hotProjects[6].second_cate"
                     :key="subItem.id"
                   >
                     <NuxtLink :to="`${hotProjects[6].url}/${subItem.id}`">
-                      {{ subItem.name }}</NuxtLink
-                    >
+                      {{ subItem.name }}</NuxtLink>
                   </li>
                 </ul>
               </div>
