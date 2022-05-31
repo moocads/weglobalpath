@@ -184,18 +184,8 @@
             v-for="(homeCase, index) in cases"
             :key="index"
           >
-            <CaseCard
-              :thumbnail="homeCase.image[0] && homeCase.image[0].url"
-              :title="homeCase.title"
-              :date="homeCase.published_at.split('T')[0]"
-              :link="'/cases/' + homeCase.id"
-            />
-            <CaseCardMobile
-              :thumbnail="homeCase.image[0] && homeCase.image[0].url"
-              :title="homeCase.title"
-              :date="homeCase.published_at.split('T')[0]"
-              :link="'/cases/' + homeCase.id"
-            />
+            <CaseCard :data="homeCase"/>
+            <CaseCardMobile :data="homeCase"/>
           </div>
         </div>
         <button class="cases-btn main-btn main-btn_blue main-btn_round-5">

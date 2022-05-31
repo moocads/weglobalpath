@@ -2,12 +2,17 @@
   <div>
     <div class="card-wrap">
       <div class="thumbnail">
-        <img :src="thumbnail" alt="" />
+        <img :src="getThumbnailUrl()" alt="" />
       </div>
-      <NuxtLink :to="link">
+      <NuxtLink :to="'/cases/' + data.id">
         <div class="info-box">
-          <h1>{{ title }}</h1>
-          <p>{{ date }}</p>
+          <div>
+            <h1>{{ data.client_name }} {{ data.working_background }}</h1>
+          </div>
+          <div class="project-title">
+            <h1>{{ data.title }}</h1>
+            <p>{{ data.published_at.split("T")[0] }}</p>
+          </div>
         </div>
       </NuxtLink>
     </div>
@@ -17,14 +22,17 @@
 <script>
 export default {
   props: {
-    thumbnail: {
-      type: String,
-    },
-    title: String,
-    date: String,
-    link: {
-      type: String,
-      default: "/cases",
+    data: Object,
+  },
+  methods: {
+    getThumbnailUrl() {
+      if (this.data.thumbnail) {
+        return this.data.thumbnail.url;
+      }
+      if (this.data.image) {
+        return this.data.image[0].url;
+      }
+      return "/img/case-placeholder.jpg";
     },
   },
 };
@@ -76,6 +84,9 @@ export default {
       color: #c4c4c4;
       margin: 0;
     }
+  }
+  .project-title {
+    border-top: 1px solid #c4c4c4;
   }
 }
 </style>
