@@ -24,6 +24,13 @@
       </a-breadcrumb>
       <br />
       <br />
+      <div class="recent-scores">
+        <div>
+          <div v-for="(s, i) in scores" :key="i" :class="i === 0 && 'first'">
+            日期：{{ s.date }} | 分数：<span class="mark">{{ s.score }}</span>
+          </div>
+        </div>
+      </div>
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -412,6 +419,18 @@ export default {
         },
       ],
     };
+  },
+  async asyncData({ $axios }) {
+    const scores = await $axios.$get(`/ee-scores`, {
+      params: {
+        _sort: "published_at:desc",
+      },
+      pagination: {
+        pageSize: 3,
+      },
+    });
+
+    return { scores };
   },
   data() {
     return {
@@ -1635,6 +1654,22 @@ export default {
     align-items: center;
   }
 }
+.recent-scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  border: 1px solid $navy;
+  margin-bottom: 30px;
+  font-size: 16px;
+  padding: 24px;
+  .first {
+    font-weight: bold;
+    color: $navy;
+    .mark {
+      text-decoration: underline;
+    }
+  }
+}
 @media all and (max-width: 1000px) {
   .combo-box {
     display: grid;
@@ -1652,6 +1687,11 @@ export default {
       border-top: none;
       border-left: 1px solid #efefef;
     }
+  }
+}
+@media all and (max-width: $sm) {
+  .recent-scores {
+    grid-template-columns: 1fr;
   }
 }
 </style>

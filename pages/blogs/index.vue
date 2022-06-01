@@ -6,25 +6,35 @@
       </div>
     </header>
     <section class="blogs-wrap">
-      <div class="wrapper blogs-grid">
-        <NuxtLink
-          :to="'/blogs/' + blog.slug"
-          class="blogs-item"
-          v-for="(blog, i) in blogs"
-          :key="i"
-        >
-          <figure>
-            <img :src="blog.thumbnail_cn.url" alt="" />
-          </figure>
-          <article>
-            <h2>{{ blog.title_cn }}</h2>
-            <h3>{{ blog.description_cn }}</h3>
-            <p>
-              <span>{{ blog.published_at.split("T")[0] }}</span
-              ><span>MORE</span>
-            </p>
-          </article>
-        </NuxtLink>
+      <div class="wrapper">
+        <a-tabs class="blog-tabs" default-active-key="tab-0">
+          <a-tab-pane
+            v-for="(blog, key, i) in blogs"
+            :key="'tab-' + i"
+            :tab="key"
+          >
+            <div class="blogs-grid">
+              <NuxtLink
+                :to="'/blogs/' + blog.slug"
+                class="blogs-item"
+                v-for="(blog, i) in blog"
+                :key="i"
+              >
+                <figure>
+                  <img :src="blog.thumbnail_cn.url" alt="" />
+                </figure>
+                <article>
+                  <h2>{{ blog.title_cn }}</h2>
+                  <h3>{{ blog.description_cn }}</h3>
+                  <p>
+                    <span>{{ blog.published_at.split("T")[0] }}</span
+                    ><span>MORE</span>
+                  </p>
+                </article>
+              </NuxtLink>
+            </div>
+          </a-tab-pane>
+        </a-tabs>
       </div>
     </section>
   </div>
@@ -45,12 +55,48 @@ export default {
     };
   },
   async asyncData({ $axios }) {
-    const blogsData = await $axios.$get(`/blogs`, {
+    const all = await $axios.$get(`/blogs`, {
       params: {
         _sort: "published_at:desc",
       },
     });
-    const blogs = blogsData;
+    const news = await $axios.$get(`/blogs?categories.category=news`, {
+      params: {
+        _sort: "published_at:desc",
+      },
+    });
+    const policy = await $axios.$get(`/blogs?categories.category=policy`, {
+      params: {
+        _sort: "published_at:desc",
+      },
+    });
+    const visa = await $axios.$get(`/blogs?categories.category=visa`, {
+      params: {
+        _sort: "published_at:desc",
+      },
+    });
+    const edu = await $axios.$get(`/blogs?categories.category=edu`, {
+      params: {
+        _sort: "published_at:desc",
+      },
+    });
+    const aboutUs = await $axios.$get(`/blogs?categories.category=aboutUs`, {
+      params: {
+        _sort: "published_at:desc",
+      },
+    });
+    const data = {
+      所有资讯: all,
+      热点新闻: news,
+      签证百科: policy,
+      签证百科: visa,
+      留学指南: edu,
+      加彼岸动态: aboutUs,
+    };
+    // hide categories which have 0 blog
+    const arr = Object.entries(data);
+    const filtered = arr.filter(([key, value]) => value.length > 0);
+    const blogs = Object.fromEntries(filtered);
     return {
       blogs,
     };

@@ -237,3 +237,19 @@ a:hover {
     }
   }
 }
+
+/*Ant*/
+.blog-tabs {
+  .ant-tabs-tab{
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .ant-tabs-nav-scroll {
+    .ant-tabs-ink-bar{
+      background-color: $navy;
+    }
+    .ant-tabs-tab-active{
+      color: $navy;
+    }
+  }
+}
