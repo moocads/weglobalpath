@@ -137,9 +137,6 @@ header {
   height: 100%;
   display: flex;
   flex-direction: column;
-  img {
-    flex: 1;
-  }
 }
 @media all and (max-width: 768px) {
   header {

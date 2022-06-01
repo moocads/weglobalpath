@@ -248,8 +248,18 @@ a:hover {
     .ant-tabs-ink-bar{
       background-color: $navy;
     }
+    .ant-tabs-tab:hover{
+      color: $navy;
+    }
     .ant-tabs-tab-active{
       color: $navy;
+    }
+  }
+}
+@media all and (max-width: $sm){
+  .blog-tabs{
+    .ant-tabs-tab{
+      font-size: 14px;
     }
   }
 }
