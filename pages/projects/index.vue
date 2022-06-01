@@ -91,6 +91,11 @@ const projects = [
     thumbnail: "/img/Projects/jobRef/job-ref-header.jpg",
     title: "新移民职业内部推荐",
   },
+    {
+    url: "euro",
+    thumbnail: "https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/50_44fbe14e4e.jpg",
+    title: "欧洲移民项目",
+  },
 ];
 </script>
 

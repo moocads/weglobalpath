@@ -267,4 +267,9 @@ header {
     width: 100%;
   }
 }
+@media all and (max-width: $sm) {
+  .tab-item > h2{
+    font-size: 14px;
+  }
+}
 </style>

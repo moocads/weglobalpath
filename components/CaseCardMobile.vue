@@ -10,7 +10,7 @@
             <h1>{{ data.client_name }} {{ data.working_background }}</h1>
           </div>
           <div class="project-title">
-            <h1>{{ data.title }}</h1>
+            <h1>项目 {{ data.title }}</h1>
             <p>{{ data.published_at.split("T")[0] }}</p>
           </div>
         </div>
@@ -73,11 +73,13 @@ export default {
     h1,
     p {
       color: #fff;
+      @include text-ellipsis(1);
     }
     h1 {
-      font-size: 18px;
+      font-size: 14px;
       margin: 0;
       margin-bottom: 5px;
+      @include text-ellipsis(2);
     }
     p {
       font-size: 14px;
@@ -85,8 +87,10 @@ export default {
       margin: 0;
     }
   }
-  .project-title {
-    border-top: 1px solid #c4c4c4;
-  }
+.project-title{
+  border-top: 1px solid #666977b3;
+  margin-top: 5px;
+  padding-top: 5px;
+}
 }
 </style>

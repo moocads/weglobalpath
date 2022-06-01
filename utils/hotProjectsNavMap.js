@@ -139,6 +139,7 @@ const hotProjectsNavMap = [
     second_cate: [
       { id: "portugal-golden-plan-28w", name: "葡萄牙黄金居留移民项目-28万欧" },
       { id: "portugal-golden-plan-50w", name: "葡萄牙黄金居留移民项目-50万欧" },
+      { id: "portugal-golden-plan-50w-fund", name: "葡萄牙黄金居留计划-投资50万欧基金" },
       { id: "ireland-investment", name: "爱尔兰投资移民项目" },
     ],
   },

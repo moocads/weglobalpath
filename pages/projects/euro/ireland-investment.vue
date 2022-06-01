@@ -153,8 +153,7 @@
       <div class="wrapper">
         <h2>项目费用</h2>
         <img data-fancybox="price" class="img-fluid" src="/img/ireland-1.jpeg" alt="">
-        <img data-fancybox="price" class="img-fluid" src="/img/ireland-2.jpeg" alt="">
-
+        <img data-fancybox="price" class="img-fluid" style="margin-top: 70px;" src="/img/ireland-2.jpeg" alt="">
       </div>
     </section>
     <OtherProjectsSection bgWhite="true" />
