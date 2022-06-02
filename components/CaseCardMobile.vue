@@ -88,7 +88,6 @@ export default {
     }
   }
 .project-title{
-  border-top: 1px solid #666977b3;
   margin-top: 5px;
   padding-top: 5px;
 }
