@@ -17,17 +17,17 @@
               <NuxtLink
                 :to="'/blogs/' + blog.slug"
                 class="blogs-item"
-                v-for="(blog, i) in blog"
+                v-for="(b, i) in blog"
                 :key="i"
               >
                 <figure>
-                  <img :src="blog.thumbnail_cn.url" alt="" />
+                  <img :src="b.thumbnail_cn.url" alt="" />
                 </figure>
                 <article>
-                  <h2>{{ blog.title_cn }}</h2>
-                  <h3>{{ blog.description_cn }}</h3>
+                  <h2>{{ b.title_cn }}</h2>
+                  <h3>{{ b.description_cn }}</h3>
                   <p>
-                    <span>{{ blog.published_at.split("T")[0] }}</span
+                    <span>{{ b.published_at.split("T")[0] }}</span
                     ><span>MORE</span>
                   </p>
                 </article>
@@ -154,9 +154,6 @@ section {
   box-shadow: rgba(27, 40, 84, 0.2) 0px 4px 6px -1px,
     rgba(27, 40, 84, 0.06) 0px 2px 4px -1px;
   transition: all 0.3s ease-in-out;
-  &:hover {
-    // box-shadow: rgba(163, 28, 28, 0.5) 0px 0px 0px 3px;
-  }
 }
 .blogs-item figure {
   margin: 0;

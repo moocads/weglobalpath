@@ -184,8 +184,8 @@
             v-for="(homeCase, index) in cases"
             :key="index"
           >
-            <CaseCard :data="homeCase"/>
-            <CaseCardMobile :data="homeCase"/>
+            <CaseCard :data="homeCase" />
+            <CaseCardMobile :data="homeCase" />
           </div>
         </div>
         <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
@@ -229,8 +229,8 @@
           titleEN="ARTICLES"
           titleENColor="#c4c4c4"
         />
-        <div class="blogs-grid">
-          <div class="blog-item" v-for="(blog, index) in blogs" :key="index">
+        <!-- <div class="blogs-grid">
+          <div class="blog-item" v-for="(blog, index) in blogs.所有资讯" :key="index">
             <BlogCard
               :thumbnail="blog.thumbnail_cn.url"
               :title="blog.title_cn"
@@ -239,7 +239,30 @@
               :link="'/blogs/' + blog.slug"
             />
           </div>
-        </div>
+        </div> -->
+        <a-tabs class="blog-tabs" default-active-key="tab-0">
+          <a-tab-pane
+            v-for="(blog, key, i) in blogs"
+            :key="'tab-' + i"
+            :tab="key"
+          >
+            <div class="blogs-grid">
+              <div
+                class="blog-item"
+                v-for="(b, index) in blog"
+                :key="index"
+              >
+                <BlogCard
+                  :thumbnail="b.thumbnail_cn.url"
+                  :title="b.title_cn"
+                  :description="bdescription_cn"
+                  :date="b.published_at.split('T')[0]"
+                  :link="'/blogs/' + b.slug"
+                />
+              </div>
+            </div>
+          </a-tab-pane>
+        </a-tabs>
       </div>
     </section>
   </div>
@@ -266,14 +289,61 @@ export default {
         _limit: "4",
       },
     });
-    const blogsData = await $axios.$get(`/blogs`, {
+    // const blogsData = await $axios.$get(`/blogs`, {
+    //   params: {
+    //     _sort: "id:desc",
+    //     _limit: "4",
+    //   },
+    // });
+    const all = await $axios.$get(`/blogs`, {
       params: {
-        _sort: "id:desc",
+        _sort: "published_at:desc",
         _limit: "4",
       },
     });
+    const news = await $axios.$get(`/blogs?categories.category=news`, {
+      params: {
+        _sort: "published_at:desc",
+        _limit: "4",
+      },
+    });
+    const policy = await $axios.$get(`/blogs?categories.category=policy`, {
+      params: {
+        _sort: "published_at:desc",
+        _limit: "4",
+      },
+    });
+    const visa = await $axios.$get(`/blogs?categories.category=visa`, {
+      params: {
+        _sort: "published_at:desc",
+        _limit: "4",
+      },
+    });
+    const edu = await $axios.$get(`/blogs?categories.category=edu`, {
+      params: {
+        _sort: "published_at:desc",
+        _limit: "4",
+      },
+    });
+    const aboutUs = await $axios.$get(`/blogs?categories.category=aboutUs`, {
+      params: {
+        _sort: "published_at:desc",
+        _limit: "4",
+      },
+    });
+    const data = {
+      所有资讯: all,
+      热点新闻: news,
+      签证百科: policy,
+      签证百科: visa,
+      留学指南: edu,
+      加彼岸动态: aboutUs,
+    };
     const cases = casesData;
-    const blogs = blogsData;
+    // const blogs = blogsData;
+    const arr = Object.entries(data);
+    const filtered = arr.filter(([key, value]) => value.length > 0);
+    const blogs = Object.fromEntries(filtered);
     return {
       cases,
       blogs,

@@ -53,7 +53,7 @@ export default {
   margin-right: auto;
 }
 .info-box {
-  min-height: 170px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,7 +75,7 @@ export default {
     font-size: 14px;
     color: #c4c4c4;
     margin: 0;
-    @include text-ellipsis(2);
+    @include text-ellipsis(1);
   }
 }
 .project-title {
