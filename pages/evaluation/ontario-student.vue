@@ -24,6 +24,11 @@
       </a-breadcrumb>
       <br />
       <br />
+      <div class="recent-scores">
+        <div v-for="(s, i) in scores" :key="i">
+          {{ s.date }} | 邀请分数：{{ s.score }}
+        </div>
+      </div>
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -267,6 +272,17 @@ export default {
       bilang: 0,
       eduRegion: 0,
     };
+  },
+  async asyncData({ $axios }) {
+    const scores = await $axios.$get(`/scores-oinp-students`, {
+      params: {
+        _sort: "published_at:desc",
+      },
+      pagination: {
+        pageSize: 3,
+      },
+    });
+    return { scores };
   },
   computed: {
     jobTypeCalc: function () {

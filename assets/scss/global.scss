@@ -263,3 +263,20 @@ a:hover {
     }
   }
 }
+
+/* score listing for /evaluation */
+.recent-scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  border: 1px solid $navy;
+  margin-bottom: 30px;
+  font-size: 16px;
+  padding: 24px;
+}
+
+@media all and (max-width: $sm) {
+  .recent-scores {
+    grid-template-columns: 1fr;
+  }
+}

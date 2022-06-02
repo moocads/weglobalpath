@@ -26,6 +26,11 @@
       </a-breadcrumb>
       <br />
       <br />
+      <div class="recent-scores">
+        <div v-for="(s, i) in scores" :key="i">
+          {{ s.type }}：{{ s.date }} | 邀请分数：{{ s.score }}
+        </div>
+      </div>
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -352,6 +357,17 @@ export default {
       workExpBonus: 0,
       language: 0,
     };
+  },
+  async asyncData({ $axios }) {
+    const scores = await $axios.$get(`/bcpnp-scores`, {
+      params: {
+        _sort: "published_at",
+      },
+      pagination: {
+        pageSize: 3,
+      },
+    });
+    return { scores };
   },
   methods: {
     onChange() {

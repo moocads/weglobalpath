@@ -157,7 +157,7 @@
               </div>
               <div class="project-col">
                 <NuxtLink to="/projects/ee" class="main-cate"
-                  >联邦EE快速通道项目</NuxtLink
+                  >联邦快速通道</NuxtLink
                 >
                 <ul>
                   <li>
@@ -253,6 +253,11 @@
                   <li>
                     <NuxtLink to="/projects/euro/ireland-investment">
                       爱尔兰投资移民项目</NuxtLink
+                    >
+                  </li>
+                                    <li>
+                    <NuxtLink to="/projects/euro/turkey-investment-passport-program-for-25w-property">
+                      土耳其投资25万美元房产护照项目</NuxtLink
                     >
                   </li>
                 </ul>
@@ -556,7 +561,7 @@ nav {
   height: 15px;
   margin-left: 5px;
 }
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1400px) {
   .dropdown-wrap {
     grid-template-columns: repeat(5, 1fr);
   }

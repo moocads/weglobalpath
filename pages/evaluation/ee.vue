@@ -25,8 +25,8 @@
       <br />
       <br />
       <div class="recent-scores">
-        <div v-for="(s, i) in scores" :key="i" :class="i === 0 && 'first'">
-          日期：{{ s.date }} | 分数：<span class="mark">{{ s.score }}</span>
+        <div v-for="(s, i) in scores" :key="i">
+          {{s.type}}：{{ s.date }} | 邀请分数：{{ s.score }}
         </div>
       </div>
       <a-card>
@@ -420,9 +420,6 @@ export default {
   },
   async asyncData({ $axios }) {
     const scores = await $axios.$get(`/ee-scores`, {
-      params: {
-        _sort: "published_at:desc",
-      },
       pagination: {
         pageSize: 3,
       },
