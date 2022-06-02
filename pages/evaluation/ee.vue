@@ -25,10 +25,8 @@
       <br />
       <br />
       <div class="recent-scores">
-        <div>
-          <div v-for="(s, i) in scores" :key="i" :class="i === 0 && 'first'">
-            日期：{{ s.date }} | 分数：<span class="mark">{{ s.score }}</span>
-          </div>
+        <div v-for="(s, i) in scores" :key="i" :class="i === 0 && 'first'">
+          日期：{{ s.date }} | 分数：<span class="mark">{{ s.score }}</span>
         </div>
       </div>
       <a-card>
