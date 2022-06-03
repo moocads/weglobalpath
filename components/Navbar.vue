@@ -237,7 +237,7 @@
                 <ul>
                   <li>
                     <NuxtLink to="/projects/euro/portugal-golden-plan-28w">
-                      葡萄牙28万购房欧黄金居留</NuxtLink
+                      葡萄牙28万欧购房黄金居留</NuxtLink
                     >
                   </li>
                   <li>
