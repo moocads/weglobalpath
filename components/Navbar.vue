@@ -255,9 +255,9 @@
                       爱尔兰投资移民项目</NuxtLink
                     >
                   </li>
-                                    <li>
+                  <li>
                     <NuxtLink to="/projects/euro/turkey-investment-passport-program-for-25w-property">
-                      土耳其40万美元购房护照项目</NuxtLink
+                      土耳其25万美元购房护照项目</NuxtLink
                     >
                   </li>
                 </ul>
