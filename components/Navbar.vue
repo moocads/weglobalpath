@@ -237,17 +237,17 @@
                 <ul>
                   <li>
                     <NuxtLink to="/projects/euro/portugal-golden-plan-28w">
-                      葡萄牙黄金居留计划-28万欧</NuxtLink
+                      葡萄牙28万购房欧黄金居留</NuxtLink
                     >
                   </li>
                   <li>
                     <NuxtLink to="/projects/euro/portugal-golden-plan-50w">
-                      葡萄牙黄金居留计划-50万欧</NuxtLink
+                      葡萄牙50万欧购房黄金居留</NuxtLink
                     >
                   </li>
                   <li>
                     <NuxtLink to="/projects/euro/portugal-golden-plan-50w-fund">
-                      葡萄牙黄金居留计划-投资50万欧基金</NuxtLink
+                      葡萄牙50万欧基金黄金居留</NuxtLink
                     >
                   </li>
                   <li>
@@ -257,7 +257,7 @@
                   </li>
                                     <li>
                     <NuxtLink to="/projects/euro/turkey-investment-passport-program-for-25w-property">
-                      土耳其投资25万美元房产护照项目</NuxtLink
+                      土耳其40万美元购房护照项目</NuxtLink
                     >
                   </li>
                 </ul>

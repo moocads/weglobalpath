@@ -137,11 +137,11 @@ const hotProjectsNavMap = [
     main_cate: "欧洲移民项目",
     url: "/projects/euro",
     second_cate: [
-      { id: "portugal-golden-plan-28w", name: "葡萄牙黄金居留移民项目-28万欧" },
-      { id: "portugal-golden-plan-50w", name: "葡萄牙黄金居留移民项目-50万欧" },
-      { id: "portugal-golden-plan-50w-fund", name: "葡萄牙黄金居留计划-投资50万欧基金" },
+      { id: "portugal-golden-plan-28w", name: "葡萄牙28万购房欧黄金居留" },
+      { id: "portugal-golden-plan-50w", name: "葡萄牙50万欧购房黄金居留" },
+      { id: "portugal-golden-plan-50w-fund", name: "葡萄牙50万欧基金黄金居留" },
       { id: "ireland-investment", name: "爱尔兰投资移民项目" },
-      { id: "turkey-investment-passport-program-for-25w-property", name: "土耳其投资25万美元房产护照项目" },
+      { id: "turkey-investment-passport-program-for-25w-property", name: "土耳其40万美元购房护照项目" },
     ],
   },
   {

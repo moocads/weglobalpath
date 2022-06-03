@@ -255,7 +255,7 @@
                 <BlogCard
                   :thumbnail="b.thumbnail_cn.url"
                   :title="b.title_cn"
-                  :description="bdescription_cn"
+                  :description="b.description_cn"
                   :date="b.published_at.split('T')[0]"
                   :link="'/blogs/' + b.slug"
                 />

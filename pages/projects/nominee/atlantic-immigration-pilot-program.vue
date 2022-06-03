@@ -132,6 +132,13 @@
             </li>
           </div>
         </ul>
+        <!-- <ol>
+          <li>工作经验</li>
+          <li>语言要求</li>
+          <li>教育经历</li>
+          <li>有足够俺家经费（如在加拿大境内工作则豁免）</li>
+          <li>获得四个省份指定雇主的job offer</li>
+        </ol> -->
       </div>
     </section>
     <section id="edu-sec-process" class="sec-process sec-general anchor">
