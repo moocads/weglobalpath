@@ -132,13 +132,23 @@
             </li>
           </div>
         </ul>
-        <!-- <ol>
-          <li>工作经验</li>
+        <!-- <div class="aip-list">
+        <ol>
+          <li>
+            <dl>
+              <dt>工作经验</dt>
+              <dd>过去5年中积累1560小时的工作经历（一年每周工作至少30小时）</dd>
+            </dl>
+            
+
+          </li>
           <li>语言要求</li>
           <li>教育经历</li>
           <li>有足够俺家经费（如在加拿大境内工作则豁免）</li>
           <li>获得四个省份指定雇主的job offer</li>
-        </ol> -->
+        </ol>
+        </div> -->
+
       </div>
     </section>
     <section id="edu-sec-process" class="sec-process sec-general anchor">
@@ -223,4 +233,14 @@ export default {
 </script>
 <style lang="scss">
 @import "~/assets/scss/hot-projects/general.scss";
+</style>
+<style lang="scss" scoped>
+.aip-list{
+  ol{
+    list-style-type: auto;
+    li{
+      display: list-item;
+    }
+  }
+}
 </style>

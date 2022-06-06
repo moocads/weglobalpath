@@ -125,10 +125,16 @@ const projects = [
     title: "加拿大团聚移民",
     route: "/projects/reunion",
   },
+  // {
+  //   url: "/projects/new-immigrant",
+  //   thumbnail: "project7.jpeg",
+  //   title: "新移民服务",
+  //   route: "/projects/new-immigrant",
+  // },
   {
-    url: "/projects/new-immigrant",
+    url: "/projects/euro-and-usa",
     thumbnail: "project7.jpeg",
-    title: "新移民服务",
+    title: "欧美移民",
     route: "/projects/new-immigrant",
   },
   {
