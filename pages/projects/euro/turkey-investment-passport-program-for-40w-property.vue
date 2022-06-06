@@ -181,7 +181,7 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    const projectData = await $axios.$get(`/projects?slug=turkey-investment-passport-program-for-25w-property`);
+    const projectData = await $axios.$get(`/projects?slug=turkey-investment-passport-program-for-40w-property`);
     const data = projectData[0];
     const requirementsData = data.requirements;
 
