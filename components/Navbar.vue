@@ -222,7 +222,7 @@
             </div>
           </li>
           <li class="euro-usa-link">
-            <NuxtLink to="/projects/euro-and-usa"
+            <NuxtLink to="/euro-and-usa"
               >欧美移民
               <a-icon
                 type="down"

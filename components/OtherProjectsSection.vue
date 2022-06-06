@@ -132,7 +132,7 @@ const projects = [
   //   route: "/projects/new-immigrant",
   // },
   {
-    url: "/projects/euro-and-usa",
+    url: "/euro-and-usa",
     thumbnail: "project7.jpeg",
     title: "欧美移民",
     route: "/projects/new-immigrant",
