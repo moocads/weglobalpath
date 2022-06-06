@@ -173,6 +173,13 @@ section {
 // .project:hover {
 //   background-color: transparent;
 // }
+@media all and (max-width: $md) {
+  .project {
+    p {
+      font-size: 16px;
+    }
+  }
+}
 @media all and (max-width: 768px) {
   section {
     padding: 30px 0;

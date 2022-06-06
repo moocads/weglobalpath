@@ -152,7 +152,8 @@
     <section id="edu-sec-fee" class="sec-fee sec-general sec-bg-gray anchor">
       <div class="wrapper">
         <h2>项目费用</h2>
-        <img data-fancybox="price" class="img-fluid" src="/img/turkey-1.jpeg" alt="">
+        <img data-fancybox="price" class="img-fluid" src="/img/greece-1.jpeg" alt="">
+        <img data-fancybox="price" class="img-fluid" src="/img/greece-2.jpeg" alt="">
       </div>
     </section>
     <OtherProjectsSection bgWhite="true" />
@@ -181,7 +182,7 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    const projectData = await $axios.$get(`/projects?slug=turkey-investment-passport-program-for-40w-property`);
+    const projectData = await $axios.$get(`/projects?slug=greece-permanent-residence-program`);
     const data = projectData[0];
     const requirementsData = data.requirements;
 
