@@ -469,7 +469,7 @@ nav {
     color: $nav-gray;
     font-size: 16px;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 20px;
     white-space: nowrap;
   }
 
@@ -487,7 +487,7 @@ nav {
   }
 }
 .dropdown-wrap {
-  padding: 30px;
+  padding: 20px;
   display: none;
   grid-template-columns: repeat(8, 1fr);
   gap: 5px;
@@ -510,7 +510,7 @@ nav {
     color: $nav-gray;
     font-size: 14px;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 20px;
     white-space: nowrap;
   }
 
@@ -551,6 +551,7 @@ nav {
     font-weight: bold;
     // text-align: center;
     position: relative;
+    line-height: 30px;
   }
   & > .main-cate::after {
     content: "";
