@@ -68,8 +68,8 @@ const hotProjectsNavMap = [
         name: "大西洋移民计划AIP",
       },
       {
-        id: "quebec-skilled-worker",
-        name: "魁省雇主担保",
+        id: "sinp-skilled-worker",
+        name: "萨省雇主担保",
       },
       {
         id: "agri-food-immigration-pilot",
@@ -141,8 +141,14 @@ const hotProjectsNavMap = [
       { id: "portugal-golden-plan-50w", name: "葡萄牙50万欧购房黄金居留" },
       { id: "portugal-golden-plan-50w-fund", name: "葡萄牙50万欧基金黄金居留" },
       { id: "ireland-investment", name: "爱尔兰投资移民项目" },
-      { id: "turkey-investment-passport-program-for-40w-property", name: "土耳其40万美元购房护照项目" },
-      { id: "malta-permanent-residency-program", name: "马耳他永久居留计划（MPRP）" },
+      {
+        id: "turkey-investment-passport-program-for-40w-property",
+        name: "土耳其40万美元购房护照项目",
+      },
+      {
+        id: "malta-permanent-residency-program",
+        name: "马耳他永久居留计划（MPRP）",
+      },
       { id: "greece-permanent-residence-program", name: "希腊永久居留项目" },
     ],
   },
