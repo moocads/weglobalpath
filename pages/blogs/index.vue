@@ -15,7 +15,7 @@
           >
             <div class="blogs-grid">
               <NuxtLink
-                :to="'/blogs/' + blog.slug"
+                :to="'/blogs/' + b.slug"
                 class="blogs-item"
                 v-for="(b, i) in blog"
                 :key="i"

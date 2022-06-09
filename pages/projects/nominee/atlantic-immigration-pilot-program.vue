@@ -134,22 +134,29 @@
         </ul> -->
         <div class="aip-list">
           <ol>
-            <li>工作经验</li>
-            <ul>
-              <li>
-                技术工人类别:
-                过去5年中积累1560小时的工作经历（一年每周工作至少30小时）
-                <ol class="sub-list">
-                  <li>兼职和全职皆可</li>
-                  <li>志愿者服务和没有收入的实习均不算</li>
-                  <li>自雇经历不算</li>
-                  <li>加拿大境内外经历皆可</li>
-                  <li>学习时的兼职可算</li>
-                  <li>NOC 0ABC 职位皆可算</li>
-                </ol>
-              </li>
-              <li>国际毕业生类别: 国际留学生无需任何工作经验</li>
-            </ul>
+            <li>
+              工作经验
+              <ul class="content-list">
+                <li>
+                  <span class="underline">
+                    技术工人类别:
+                    过去5年中积累1560小时的工作经历（一年每周工作至少30小时）
+                  </span>
+                  <ul class="sub-list">
+                    <li>兼职和全职皆可</li>
+                    <li>志愿者服务和没有收入的实习均不算</li>
+                    <li>自雇经历不算</li>
+                    <li>加拿大境内外经历皆可</li>
+                    <li>学习时的兼职可算</li>
+                    <li>NOC 0ABC 职位皆可算</li>
+                  </ul>
+                </li>
+                <li class="underline">
+                  国际毕业生类别: 国际留学生无需任何工作经验
+                </li>
+              </ul>
+            </li>
+
             <li>
               语言要求
               <ul class="sub-list">
@@ -159,9 +166,9 @@
             </li>
             <li>
               教育经历
-              <ul>
+              <ul class="content-list">
                 <li>
-                  技术工人类别，至少满足以下一条
+                  <span class="underline">技术工人类别，至少满足以下一条</span>
                   <ul class="sub-list">
                     <li>在加拿大境内至少高中毕业</li>
                     <li>
@@ -179,7 +186,7 @@
                   </ul>
                 </li>
                 <li>
-                  国际毕业生类别
+                  <span class="underline">国际毕业生类别</span>
                   <ul class="sub-list">
                     <li>
                       毕业于New Brunswick, Nova Scotia, Prince Edward Island, or
@@ -192,13 +199,17 @@
                 </li>
               </ul>
             </li>
-            <li>有足够安家经费（如在加拿大境内工作则豁免）</li>
-            <img
-              data-fancybox="gallery"
-              class="img-fluid"
-              src="/img/aip-1.png"
-              alt=""
-            />
+            <li>
+              有足够安家经费（如在加拿大境内工作则豁免）
+              <img
+                data-fancybox="gallery"
+                class="img-fluid"
+                src="/img/aip-1.png"
+                style="width: 100%; height: auto"
+                alt=""
+              />
+            </li>
+
             <li>
               获得四个省份指定雇主的job offer
               <ul class="sub-list">
@@ -210,7 +221,6 @@
                 <li>申请人自己或配偶的公司不可给自己发job offer</li>
                 <img
                   data-fancybox="gallery"
-                  class="img-fluid"
                   src="/img/aip-2.png"
                   alt=""
                   style="width: 100%; height: auto"
@@ -239,28 +249,18 @@
                   不违反移民和难民保护法 (IRPA) 或移民和难民保护条例 (IRPR)；
                 </li>
                 <li>信誉良好并遵守就业标准和职业健康与安全法规；</li>
-                <li>不得招聘或雇用工人是以建立一个候选人库作为目的，这些候选人后来可以转移或外包给单独的企业用于人员配置的目的；</li>
-                <li>在大西洋省份，在同一个管理下，持续、积极地运营至少 2 年，并获批成为指定雇主；</li>
+                <li>
+                  不得招聘或雇用工人是以建立一个候选人库作为目的，这些候选人后来可以转移或外包给单独的企业用于人员配置的目的；
+                </li>
+                <li>
+                  在大西洋省份，在同一个管理下，持续、积极地运营至少 2
+                  年，并获批成为指定雇主；
+                </li>
                 <li>承诺参加免费的资格培训；</li>
                 <li>承诺参加免费的跨文化能力培训。</li>
               </ul>
             </li>
           </ol>
-          <!-- <dl>
-            <dt>雇主要求（如何成为指定雇主）</dt>
-            <dd>
-              <ul class="sub-list">
-                <li>
-                  不违反移民和难民保护法 (IRPA) 或移民和难民保护条例 (IRPR)；
-                </li>
-                <li>信誉良好并遵守就业标准和职业健康与安全法规；</li>
-                <li>不得招聘或雇用工人是以建立一个候选人库作为目的，这些候选人后来可以转移或外包给单独的企业用于人员配置的目的；</li>
-                <li>在大西洋省份，在同一个管理下，持续、积极地运营至少 2 年，并获批成为指定雇主；</li>
-                <li>承诺参加免费的资格培训；</li>
-                <li>承诺参加免费的跨文化能力培训。</li>
-              </ul>
-            </dd>
-          </dl> -->
         </div>
       </div>
     </section>
@@ -350,34 +350,68 @@ export default {
 <style lang="scss" scoped>
 .aip-list {
   margin-left: 18px;
+  .img-fluid {
+    margin: 20px 0;
+  }
+  li {
+    margin-bottom: 10px;
+  }
   ol {
     list-style-type: auto;
     li {
       display: list-item;
       font-size: 18px;
       font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+  .content-list {
+    li {
+      font-weight: normal;
+      margin-bottom: 5px;
     }
   }
   .sub-list {
     list-style-type: disc;
-    margin-left: 20px;
+    margin: 0 0 10px 20px;
+    text-decoration: none;
+    color: #777777;
     li {
-      margin-bottom: 0;
       font-size: 16px;
       font-weight: normal;
       display: list-item;
+      text-decoration: none;
+      margin-bottom: 5px;
     }
   }
   .sub-list-roman {
     list-style-type: lower-roman;
-    margin-left: 40px;
+    margin-left: 20px;
     ol {
-      margin-left: 60px;
+      margin-left: 20px;
     }
   }
   dl {
     font-size: 18px;
     font-weight: bold;
+  }
+  .underline {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+@media all and (max-width: $sm) {
+  .aip-list {
+    ol {
+      li {
+        font-size: 16px;
+      }
+    }
+    .sub-list {
+      li {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>

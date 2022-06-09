@@ -79,6 +79,10 @@ const hotProjectsNavMap = [
         id: "care-giver-program",
         name: "联邦护理移民",
       },
+      {
+        id: "NS-skilled-worker",
+        name: "NS省雇主担保",
+      },
     ],
   },
   {

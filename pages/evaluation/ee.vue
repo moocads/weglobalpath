@@ -26,7 +26,7 @@
       <br />
       <div class="recent-scores">
         <div v-for="(s, i) in scores" :key="i">
-          {{s.type}}：{{ s.date }} | 邀请分数：{{ s.score }}
+          <span>{{s.type}}：{{ s.date }}</span><span>|</span><span>邀请分数：{{ s.score }}</span>
         </div>
       </div>
       <a-card>
@@ -1588,7 +1588,7 @@ export default {
       }
     }
     .wrapper {
-      width: 98vw;
+      width: 95vw;
       padding: 30px 0;
     }
     .section {
@@ -1657,12 +1657,11 @@ export default {
   margin-bottom: 30px;
   font-size: 16px;
   padding: 24px;
-  .first {
-    font-weight: bold;
-    color: $navy;
-    .mark {
-      text-decoration: underline;
-    }
+  width: 100%;
+  div{
+    display: grid;
+    grid-template-columns: 1fr auto 0.8fr;
+    text-align: center;
   }
 }
 @media all and (max-width: 1000px) {
@@ -1684,9 +1683,17 @@ export default {
     }
   }
 }
+@media all and (max-width: $md){
+  .recent-scores {
+    padding: 15px 5px;
+    gap: 5px;
+    font-size:14px;
+    grid-template-columns: 1fr;
+  }
+}
 @media all and (max-width: $sm) {
   .recent-scores {
-    grid-template-columns: 1fr;
+    font-size: 14px;
   }
 }
 </style>
