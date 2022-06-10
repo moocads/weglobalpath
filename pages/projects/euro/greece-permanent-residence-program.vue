@@ -152,8 +152,8 @@
     <section id="edu-sec-fee" class="sec-fee sec-general sec-bg-gray anchor">
       <div class="wrapper">
         <h2>项目费用</h2>
-        <img data-fancybox="price" class="img-fluid" src="/img/greece-1.jpeg" alt="">
-        <img data-fancybox="price" class="img-fluid" src="/img/greece-2.jpeg" alt="">
+        <img data-fancybox="price" class="img-fluid" src="/img/greece-1.jpg" alt="">
+        <img data-fancybox="price" class="img-fluid" src="/img/greece-2.jpg" alt="">
       </div>
     </section>
     <OtherProjectsSection bgWhite="true" />
