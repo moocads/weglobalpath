@@ -280,3 +280,23 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/*Fancybox*/
+.fancybox__nav {
+  .carousel__button.is-prev{
+    left: 55px;
+  }
+  .carousel__button.is-next{
+    right: 55px;
+  }
+}
+@media all and (max-width: $md) {
+  .fancybox__nav {
+    .carousel__button.is-prev{
+      left: 8px;
+    }
+    .carousel__button.is-next{
+      right: 8px;
+    }
+  }
+}
