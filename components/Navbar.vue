@@ -276,6 +276,13 @@
                       希腊永久居留项目</NuxtLink
                     >
                   </li>
+                  <li>
+                    <NuxtLink
+                      to="/projects/euro/spain-permanent-residence-50w"
+                    >
+                      西班牙50万欧购房永久居留</NuxtLink
+                    >
+                  </li>
                 </ul>
               </div>
               <div class="project-col">

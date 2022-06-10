@@ -136,12 +136,12 @@
           <ol>
             <li>
               工作经验
-              <ul class="content-list">
+              <ul>
                 <li>
-                  <span class="underline">
+                  <h5 class="underline">
                     技术工人类别:
                     过去5年中积累1560小时的工作经历（一年每周工作至少30小时）
-                  </span>
+                  </h5>
                   <ul class="sub-list">
                     <li>兼职和全职皆可</li>
                     <li>志愿者服务和没有收入的实习均不算</li>
@@ -152,7 +152,7 @@
                   </ul>
                 </li>
                 <li class="underline">
-                  国际毕业生类别: 国际留学生无需任何工作经验
+                  <h5>国际毕业生类别: 国际留学生无需任何工作经验</h5>
                 </li>
               </ul>
             </li>
@@ -166,9 +166,9 @@
             </li>
             <li>
               教育经历
-              <ul class="content-list">
+              <ul>
                 <li>
-                  <span class="underline">技术工人类别，至少满足以下一条</span>
+                  <h5 class="underline">技术工人类别，至少满足以下一条</h5>
                   <ul class="sub-list">
                     <li>在加拿大境内至少高中毕业</li>
                     <li>
@@ -186,7 +186,7 @@
                   </ul>
                 </li>
                 <li>
-                  <span class="underline">国际毕业生类别</span>
+                  <h5 class="underline">国际毕业生类别</h5>
                   <ul class="sub-list">
                     <li>
                       毕业于New Brunswick, Nova Scotia, Prince Edward Island, or
@@ -223,6 +223,7 @@
                   data-fancybox="gallery"
                   src="/img/aip-2.png"
                   alt=""
+                  class="img-fluid"
                   style="width: 100%; height: auto"
                 />
                 <li>
@@ -350,6 +351,13 @@ export default {
 <style lang="scss" scoped>
 .aip-list {
   margin-left: 18px;
+  h5 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #777777;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   .img-fluid {
     margin: 20px 0;
   }
@@ -362,12 +370,6 @@ export default {
       display: list-item;
       font-size: 18px;
       font-weight: bold;
-      margin-bottom: 5px;
-    }
-  }
-  .content-list {
-    li {
-      font-weight: normal;
       margin-bottom: 5px;
     }
   }
@@ -394,10 +396,6 @@ export default {
   dl {
     font-size: 18px;
     font-weight: bold;
-  }
-  .underline {
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 }
 @media all and (max-width: $sm) {

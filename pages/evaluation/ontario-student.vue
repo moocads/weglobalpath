@@ -24,11 +24,7 @@
       </a-breadcrumb>
       <br />
       <br />
-      <div class="recent-scores">
-        <div v-for="(s, i) in scores" :key="i">
-          <span>{{ s.date }}</span><span>|</span><span>邀请分数：{{ s.score }}</span>
-        </div>
-      </div>
+      <RecentScores :scores="scores"/>
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -601,21 +597,6 @@ $boxBorder: 1px solid #efefef;
     }
   }
 }
-.recent-scores {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  border: 1px solid $navy;
-  margin-bottom: 30px;
-  font-size: 16px;
-  padding: 24px;
-  width: 100%;
-  div{
-    display: grid;
-    grid-template-columns: 1fr auto 0.8fr;
-    text-align: center;
-  }
-}
 @media all and (max-width: 1000px) {
   #ontario-student-evaluation-form {
     .wrapper {
@@ -648,19 +629,6 @@ $boxBorder: 1px solid #efefef;
         }
       }
     }
-  }
-}
-@media all and (max-width: $md){
-  .recent-scores {
-    padding: 15px 5px;
-    gap: 5px;
-    font-size:14px;
-    grid-template-columns: 1fr;
-  }
-}
-@media all and (max-width: $sm) {
-  .recent-scores {
-    font-size: 14px;
   }
 }
 </style>
