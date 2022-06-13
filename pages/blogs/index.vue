@@ -88,11 +88,12 @@ export default {
     const data = {
       所有资讯: all,
       热点新闻: news,
-      签证百科: policy,
+      政策解读: policy,
       签证百科: visa,
       留学指南: edu,
       加彼岸动态: aboutUs,
     };
+    console.log()
     // hide categories which have 0 blog
     const arr = Object.entries(data);
     const filtered = arr.filter(([key, value]) => value.length > 0);
