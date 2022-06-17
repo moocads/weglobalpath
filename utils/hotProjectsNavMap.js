@@ -102,6 +102,10 @@ const hotProjectsNavMap = [
         name: "BC省留学就业移民",
       },
       {
+        id: "canada-early-childhood-education-immigration",
+        name: "BC省幼教类留学移民",
+      },
+      {
         id: "new-brunswick-education",
         name: "NB省留学移民",
       },
