@@ -7,7 +7,7 @@
     </header>
     <section class="blogs-wrap">
       <div class="wrapper">
-        <a-tabs class="blog-tabs" default-active-key="tab-0">
+        <a-tabs class="blog-tabs" :default-active-key="`tab-${tabIndex}`">
           <a-tab-pane
             v-for="(blog, key, i) in blogs"
             :key="'tab-' + i"
@@ -15,10 +15,10 @@
           >
             <div class="blogs-grid">
               <NuxtLink
-                :to="'/blogs/' + b.slug"
+                :to="`/blogs/${b.slug}${i != 0?'?category=' + i:''}`"
                 class="blogs-item"
-                v-for="(b, i) in blog"
-                :key="i"
+                v-for="(b, j) in blog"
+                :key="j"
               >
                 <figure>
                   <img :src="b.thumbnail_cn.url" alt="" />
@@ -53,6 +53,11 @@ export default {
         },
       ],
     };
+  },
+  data(){
+    return {
+      tabIndex: this.$route.query.category || "0"
+    }
   },
   async asyncData({ $axios }) {
     const all = await $axios.$get(`/blogs`, {
@@ -93,7 +98,6 @@ export default {
       留学指南: edu,
       加彼岸动态: aboutUs,
     };
-    console.log()
     // hide categories which have 0 blog
     const arr = Object.entries(data);
     const filtered = arr.filter(([key, value]) => value.length > 0);

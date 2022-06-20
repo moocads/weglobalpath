@@ -4,9 +4,14 @@
       <div class="wrapper">
         <a-breadcrumb>
           <a-breadcrumb-item
-            ><nuxt-link to="/blogs"> 最新资讯</nuxt-link>
+            ><nuxt-link to="/blogs">最新资讯</nuxt-link>
           </a-breadcrumb-item>
-          <a-breadcrumb-item href="#">
+          <a-breadcrumb-item
+            ><nuxt-link :to="`/blogs?category=${cateID}`">
+              {{ categories[category] }}
+            </nuxt-link>
+          </a-breadcrumb-item>
+          <a-breadcrumb-item>
             {{ blog.title_cn }}
           </a-breadcrumb-item>
         </a-breadcrumb>
@@ -62,17 +67,39 @@ export default {
       ],
     };
   },
+  data() {
+    return {
+      categories: {
+        news: "热点新闻",
+        policy: "政策解读",
+        visa: "签证百科",
+        edu: "留学指南",
+        aboutUs: "加彼岸动态",
+      },
+      selectedCategory: this.$route.query.category || "0",
+    };
+  },
   async asyncData({ $axios, route }) {
     const blogData = await $axios.$get(`/blogs?slug=` + route.params.slug);
     const blog = blogData[0];
+    let category = "";
+    let cateID = 1;
+    if (blog.categories.length > 1 && route.query.category) {
+      for (let i = 0; i < blog.categories.length; i++) {
+        if (blog.categories[i].id == route.query.category) {
+          category = blog.categories[i].category;
+          cateID = blog.categories[i].id;
+        }
+      }
+    } else {
+      cateID = blog.categories[0].id;
+      category = blog.categories[0].category;
+    }
     return {
       blog,
       blogContent: blog.content_cn,
-    };
-  },
-  data() {
-    return {
-      // blogContent: blog,
+      category,
+      cateID
     };
   },
   computed: {
