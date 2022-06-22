@@ -30,39 +30,17 @@
                   <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }"
                     >加盟招商</NuxtLink
                   >
-                  <!-- <a href="#anchor-franchise">加盟招商</a> -->
                 </li>
                 <li>
                   <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }"
                     >加入我们</NuxtLink
                   >
-
-                  <!-- <a href="#anchor-joinUs">加入我们</a> -->
                 </li>
               </ul>
             </div>
           </li>
           <li>
             <NuxtLink to="/recruiting">快速移民直通车</NuxtLink>
-            <!-- <div class="general-dropdown">
-              <ul>
-                <li>
-                  <NuxtLink to="/recruiting/manitoba"
-                    >曼省人才管培项目</NuxtLink
-                  >
-                </li>
-                <li>
-                  <NuxtLink to="/recruiting"
-                    >8个月加拿大公立学院研究生文凭移民直通车</NuxtLink
-                  >
-                </li>
-                <li>
-                  <NuxtLink to="/recruiting/canadian-schools"
-                    >加拿大合作院校</NuxtLink
-                  >
-                </li>
-              </ul>
-            </div> -->
           </li>
           <li class="hot-project-link">
             <NuxtLink to="/projects"
@@ -73,24 +51,6 @@
                 alt="dropdown arrow icon"
             /></NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
-              <!-- <div
-                class="project-col"
-                v-for="(hotProj, index) in hotProjects"
-                :key="index"
-              >
-                <NuxtLink :to="hotProj.url" class="main-cate">{{
-                  hotProj.main_cate
-                }}</NuxtLink>
-
-                <ul>
-                  <li v-for="subItem in hotProj.second_cate" :key="subItem.id">
-                    <NuxtLink :to="`${hotProj.url}/${subItem.id}`">
-                      {{ subItem.name }}</NuxtLink
-                    >
-                  </li>
-                </ul>
-              </div> -->
-
               <div class="project-col">
                 <NuxtLink :to="hotProjects[0].url" class="main-cate">{{
                   hotProjects[0].main_cate
@@ -277,9 +237,7 @@
                     >
                   </li>
                   <li>
-                    <NuxtLink
-                      to="/projects/euro/spain-permanent-residence-50w"
-                    >
+                    <NuxtLink to="/projects/euro/spain-permanent-residence-50w">
                       西班牙50万欧购房永久居留</NuxtLink
                     >
                   </li>
@@ -302,9 +260,6 @@
               </div>
             </div>
           </li>
-          <!-- <li>
-            <NuxtLink to="/cases">成功案例</NuxtLink>
-          </li> -->
           <li class="hot-project-link">
             <NuxtLink to="/provinces"
               >移民省份
@@ -332,8 +287,37 @@
               </div>
             </div>
           </li>
-          <li>
+          <!-- <li>
             <NuxtLink to="/investment">加拿大投资</NuxtLink>
+          </li> -->
+          <li>
+            <NuxtLink to="/visa-services"
+              >签证服务
+              <a-icon
+                type="down"
+                class="dropdown-arrow"
+                alt="dropdown arrow icon"
+              />
+            </NuxtLink>
+            <div class="general-dropdown">
+              <ul>
+                <li>
+                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-0' }"
+                    >境内签证服务</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-1' }"
+                    >赴加签证</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-review' }"
+                    >检查签证移民申请</NuxtLink
+                  >
+                </li>
+              </ul>
+            </div>
           </li>
           <li>
             <NuxtLink to="/blogs">最新资讯</NuxtLink>

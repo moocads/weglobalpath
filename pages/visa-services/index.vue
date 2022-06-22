@@ -14,21 +14,33 @@
       </div>
     </header>
     <section
-      v-for="(service, i) in serviceData"
+      v-for="(category, i) in categories"
       :key="i"
       :id="`service-${i}`"
       class="sec-intro sec-general sec-bg-gray anchor"
     >
       <div class="wrapper">
-        <h2>{{ service.title }}</h2>
-        <div v-for="(section, j) in service.sections" :key="j">
-          <h3>{{ section.title }}</h3>
-          <!-- <vue-markdown class="intro-markdown">{{
-          data.introduction_richtext
-        }}</vue-markdown> -->
-        </div>
+        <h2>{{ category.name }}</h2>
+        <ul>
+          <li v-for="(service, j) in category.services" :key="j">
+            <nuxt-link
+              :to="`/visa-services/${service.slug}`"
+              class="single-service-link"
+            >
+              <p>{{ service.title }}</p>
+            </nuxt-link>
+          </li>
+        </ul>
       </div>
     </section>
+    <!-- <section
+      id="service-review"
+      class="sec-intro sec-general sec-bg-gray anchor"
+    >
+      <div class="wrapper">
+        <h2>检查签证移民申请</h2>
+      </div>
+    </section> -->
   </div>
 </template>
 <script>
@@ -48,10 +60,10 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    const serviceData = await $axios.$get(`/visa-services`);
+    const data = await $axios.$get(`/visa-service-categories`);
 
     return {
-      serviceData,
+      categories: data,
     };
   },
   components: {
@@ -61,4 +73,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "~/assets/scss/hot-projects/general.scss";
+.visa-richtext {
+  ul {
+    list-style: auto;
+  }
+}
 </style>

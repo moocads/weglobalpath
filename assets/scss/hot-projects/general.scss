@@ -404,34 +404,34 @@
 // fee table
 .scroll-wrapper {
   overflow-x: none;
-  table.fee-table {
-    min-width: $sm;
-    text-align: center;
-    &,
-    th,
-    td {
-      border: 0.5px solid $navy;
-      border-collapse: collapse;
-    }
-    th,
-    td {
-      padding: 10px;
-      white-space: nowrap;
-    }
-    thead > th {
-      font-size: 16px;
-    }
-    .table-section-title {
-      text-align: center;
-      padding: 20px 0;
-      background-color: $red;
-      color: white;
-    }
-    .wrap{
-      white-space: initial;
-    }
-  }
+}
 
+.fee-table {
+  min-width: $sm;
+  text-align: center;
+  &,
+  th,
+  td {
+    border: 0.5px solid $navy;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: 10px;
+    white-space: nowrap;
+  }
+  thead > th {
+    font-size: 16px;
+  }
+  .table-section-title {
+    text-align: center;
+    padding: 20px 0;
+    background-color: $red;
+    color: white;
+  }
+  .wrap{
+    white-space: initial;
+  }
 }
 
 .detail-highlight {
@@ -444,18 +444,89 @@
   }
   .scroll-wrapper {
     overflow-x: scroll;
-    table.fee-table {
-      thead > th {
-        font-size: 14px;
-      }
-      font-size: 12px;
-      th,
-      td {
-        padding: 5px;
-      }
-      th{
-        white-space: nowrap;
-      }
+  }
+  .fee-table {
+    thead > th {
+      font-size: 14px;
+    }
+    font-size: 12px;
+    th,
+    td {
+      padding: 5px;
+    }
+    th{
+      white-space: nowrap;
     }
   }
 }
+
+/*visa services*/
+.single-service-link{
+  &:hover{
+    color: $red;
+  }
+  p{
+    display: inline;
+  }
+}
+.service-richtext {
+  font-size: 16px;
+  h2{
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-left: 40px;
+    li::before {
+      content: "\2022";
+      color: $red; 
+      font-weight: bold; 
+      display: inline-block;
+      width: 1em; 
+      margin-left: -1em;
+      font-size: 20px;
+    }
+  }
+  table{
+    width: 100%;
+    text-align: center;
+    &,
+    th,
+    td {
+      border: 0.5px solid $navy;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      padding: 10px;
+      white-space: normal;
+    }
+    thead > th {
+      font-size: 16px;
+    }
+  }
+  a{
+    color: $red;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
+// .service-table {
+//   width: 100%;
+//   text-align: center;
+//   &,
+//   th,
+//   td {
+//     border: 0.5px solid $navy;
+//     border-collapse: collapse;
+//   }
+//   th,
+//   td {
+//     padding: 10px;
+//     white-space: normal;
+//   }
+//   thead > th {
+//     font-size: 16px;
+//   }
+// }
