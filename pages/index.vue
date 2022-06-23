@@ -2,8 +2,31 @@
   <div>
     <div id="home-wrap">
       <header>
-        <div class="banner-overlay"></div>
-        <img src="/img/Home/banner.png" alt="" />
+        <div class="home-swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="banner-overlay"></div>
+              <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-overlay"></div>
+              <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-overlay"></div>
+              <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+        </div>
+        <!-- <img src="/img/Home/banner.png" alt="Beyond Canada Banner" /> -->
         <div class="info-wrap">
           <img
             src="/img/Home/banner-text.png"
@@ -247,11 +270,7 @@
             :tab="key"
           >
             <div class="blogs-grid">
-              <div
-                class="blog-item"
-                v-for="(b, index) in blog"
-                :key="index"
-              >
+              <div class="blog-item" v-for="(b, index) in blog" :key="index">
                 <BlogCard
                   :thumbnail="b.thumbnail_cn.url"
                   :title="b.title_cn"
@@ -289,12 +308,6 @@ export default {
         _limit: "4",
       },
     });
-    // const blogsData = await $axios.$get(`/blogs`, {
-    //   params: {
-    //     _sort: "id:desc",
-    //     _limit: "4",
-    //   },
-    // });
     const all = await $axios.$get(`/blogs`, {
       params: {
         _sort: "published_at:desc",
@@ -414,6 +427,28 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    const swiper = new Swiper(".home-swiper", {
+      speed: 400,
+      spaceBetween: 100,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      // navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+    });
   },
 };
 </script>

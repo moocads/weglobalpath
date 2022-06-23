@@ -20,6 +20,10 @@ export default {
         rel: "stylesheet",
         href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css",
       },
+      {
+        rel: "stylesheet",
+        href: "https://unpkg.com/swiper@8/swiper-bundle.min.css",
+      },
     ],
     script: [
       {
@@ -35,6 +39,10 @@ export default {
         src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js",
         type: "text/javascript",
         body: true,
+      },
+      {
+        src: "https://unpkg.com/swiper@8/swiper-bundle.min.js",
+        type: "text/javascript",
       },
     ],
   },

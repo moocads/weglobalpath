@@ -47,9 +47,9 @@
           style="margin-bottom: 30px"
         >
           <a-tab-pane class="tab-content" key="1" tab="电子转账EMT">
-            Content of Tab Pane 1
+            <p>电子转账EMT: info@beyondcanada.ca</p>
           </a-tab-pane>
-          <a-tab-pane class="tab-content" key="2" tab="当面支付" force-render>
+          <a-tab-pane class="tab-content" key="2" tab="当面支付（现金/支票）" force-render>
             <div class="pay-grid">
               <iframe
                 style="border: 0"
@@ -59,21 +59,34 @@
                     &q=145+Royal+Crest+Ct+Unit+47-48,Markham,ON+L3R+9Z4"
               >
               </iframe>
-              <p>
-                多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
-                <br />
-                <a href="tel:+16475233555" class="ga-phone-trigger"
-                  >电话：647-523-3555</a
-                >
-              </p>
+              <div>
+                <p>
+                  多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
+                  <br />
+                  <a href="tel:+16475233555" class="ga-phone-trigger"
+                    >电话：647-523-3555</a
+                  >
+                  <br/>
+                  支票支付对象请填：Beyond Canada International Consulting Corp.
+                </p>
+
+              </div>
             </div>
           </a-tab-pane>
-          <a-tab-pane class="tab-content" key="3" tab="微信/支付宝/银联支付">
+          <a-tab-pane class="tab-content" key="3" tab="微信/支付宝支付">
             <a href="/img/payment-code.jpg" data-fancybox="payment">
               <img
                 style="margin: 0 auto; width: 100%; max-width: 480px"
                 src="/img/payment-code.jpg"
                 alt="Payment QR Code"
+              />
+            </a>
+          </a-tab-pane>
+          <a-tab-pane class="tab-content" key="4" tab="WIRE TRANSFER">
+            <a href="/img/wire-transfer.jpeg" data-fancybox="payment">
+              <img
+                src="/img/wire-transfer.jpeg"
+                alt="Beyond Canada Wire Transfer"
               />
             </a>
           </a-tab-pane>
