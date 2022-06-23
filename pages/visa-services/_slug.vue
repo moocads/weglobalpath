@@ -49,7 +49,12 @@
           <a-tab-pane class="tab-content" key="1" tab="电子转账EMT">
             <p>电子转账EMT: info@beyondcanada.ca</p>
           </a-tab-pane>
-          <a-tab-pane class="tab-content" key="2" tab="当面支付（现金/支票）" force-render>
+          <a-tab-pane
+            class="tab-content"
+            key="2"
+            tab="当面支付（现金/支票）"
+            force-render
+          >
             <div class="pay-grid">
               <iframe
                 style="border: 0"
@@ -66,10 +71,9 @@
                   <a href="tel:+16475233555" class="ga-phone-trigger"
                     >电话：647-523-3555</a
                   >
-                  <br/>
+                  <br />
                   支票支付对象请填：Beyond Canada International Consulting Corp.
                 </p>
-
               </div>
             </div>
           </a-tab-pane>
@@ -89,6 +93,9 @@
                 alt="Beyond Canada Wire Transfer"
               />
             </a>
+            <table>
+              <tr></tr>
+            </table>
           </a-tab-pane>
         </a-tabs>
       </div>
@@ -104,7 +111,10 @@
         >
           <div class="evaluation-form-grid">
             <div>
-              <a-form-item label=" 咨询的服务项目">
+              <a-form-item label="检查签证移民申请Review">
+                <p class="minor-text">
+                  加彼岸™提供检查签证和移民案件的服务。如果您已经准备好全套申请及材料，我们可以为您检查签证或移民申请的完整性、逻辑和细节。检查服务会指出材料中存在的问题及缺失的材料，不会补充实质性的内容，不会修改或撰写解释信、雇主信等。
+                </p>
                 <a-select
                   v-decorator="['service']"
                   placeholder=" 请选择咨询的服务项目"
@@ -176,7 +186,7 @@
                   v-decorator="[
                     'wechat',
                     {
-                      rules: [{ required: true, message: '请输入你的微信' }],
+                      rules: [{ message: '请输入你的微信' }],
                     },
                   ]"
                 />
@@ -302,7 +312,7 @@ export default {
   margin-bottom: 20px;
   label {
     font-size: 16px;
-    color: $navy;
+    color: $red;
     margin-bottom: 10px;
   }
   input {
@@ -316,6 +326,12 @@ export default {
   input:focus {
     box-shadow: none;
   }
+}
+.minor-text {
+  font-size: 12px;
+  color: $navy;
+  line-height: 1.5;
+  font-weight: 300;
 }
 @media all and (max-width: $sm) {
   .evaluation-form-grid {
