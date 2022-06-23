@@ -216,6 +216,15 @@
     width: 6px;
     height: 30px;
   }
+  .declaration{
+    background-color: $navy;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    h2{
+      color: white;
+    }
+  }
 }
 .hot-projects-detail-page .sec-bg-gray {
   background-color: #efefef;
@@ -406,7 +415,7 @@
   overflow-x: none;
 }
 
-.fee-table {
+.scroll-table {
   min-width: $sm;
   text-align: center;
   &,
@@ -445,7 +454,7 @@
   .scroll-wrapper {
     overflow-x: scroll;
   }
-  .fee-table {
+  .scroll-table {
     thead > th {
       font-size: 14px;
     }
@@ -476,7 +485,7 @@
     margin-bottom: 10px;
   }
   ul {
-    margin-left: 40px;
+    margin-left: 1em;
     li::before {
       content: "\2022";
       color: $red; 
@@ -489,6 +498,7 @@
   }
   table{
     width: 100%;
+    min-width: $sm;
     text-align: center;
     &,
     th,
@@ -504,6 +514,9 @@
     thead > th {
       font-size: 16px;
     }
+    tr>th:first-child{
+      width: 190px;
+    }
   }
   a{
     color: $red;
@@ -512,21 +525,8 @@
     text-decoration: underline;
   }
 }
-// .service-table {
-//   width: 100%;
-//   text-align: center;
-//   &,
-//   th,
-//   td {
-//     border: 0.5px solid $navy;
-//     border-collapse: collapse;
-//   }
-//   th,
-//   td {
-//     padding: 10px;
-//     white-space: normal;
-//   }
-//   thead > th {
-//     font-size: 16px;
-//   }
-// }
+@media all and (max-width: $sm) {
+  .service-richtext{
+    font-size: 14px;
+  }
+}

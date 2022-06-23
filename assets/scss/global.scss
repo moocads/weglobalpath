@@ -240,27 +240,54 @@ a:hover {
 
 /*Ant*/
 .blog-tabs {
-  .ant-tabs-tab{
+  .ant-tabs-tab {
     font-size: 18px;
     line-height: 21px;
   }
   .ant-tabs-nav-scroll {
-    .ant-tabs-ink-bar{
+    .ant-tabs-ink-bar {
       background-color: $navy;
     }
-    .ant-tabs-tab:hover{
+    .ant-tabs-tab:hover {
       color: $navy;
     }
-    .ant-tabs-tab-active{
+    .ant-tabs-tab-active {
       color: $navy;
     }
   }
+  &.mb-0 .ant-tabs-bar {
+    margin-bottom: 0;
+  }
 }
-@media all and (max-width: $sm){
-  .blog-tabs{
-    .ant-tabs-tab{
+@media all and (max-width: $sm) {
+  .blog-tabs {
+    .ant-tabs-tab {
       font-size: 14px;
     }
+  }
+}
+#evaluation-form {
+  .ant-form-item-label > label {
+    font-size: 16px;
+    color: $navy;
+  }
+  .ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin-left: 0;
+  }
+  .ant-select-selection {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: #e9e9e9;
+  }
+  .ant-select-selection:focus{
+    box-shadow: none;
   }
 }
 
@@ -283,19 +310,19 @@ a:hover {
 
 /*Fancybox*/
 .fancybox__nav {
-  .carousel__button.is-prev{
+  .carousel__button.is-prev {
     left: 55px;
   }
-  .carousel__button.is-next{
+  .carousel__button.is-next {
     right: 55px;
   }
 }
 @media all and (max-width: $md) {
   .fancybox__nav {
-    .carousel__button.is-prev{
+    .carousel__button.is-prev {
       left: 8px;
     }
-    .carousel__button.is-next{
+    .carousel__button.is-next {
       right: 8px;
     }
   }

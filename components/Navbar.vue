@@ -311,11 +311,6 @@
                     >赴加签证</NuxtLink
                   >
                 </li>
-                <li>
-                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-review' }"
-                    >检查签证移民申请</NuxtLink
-                  >
-                </li>
               </ul>
             </div>
           </li>

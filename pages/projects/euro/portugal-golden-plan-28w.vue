@@ -154,7 +154,7 @@
         <h2>项目费用</h2>
         <p class="mobile-only">* 左右滑动来查看表格</p>
         <div class="scroll-wrapper">
-          <table class="fee-table">
+          <table class="scroll-table">
             <thead>
               <th>费用项目</th>
               <th>金额及说明</th>

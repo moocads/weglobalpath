@@ -169,7 +169,7 @@ export default {
           })
           .then((response) => {
             this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
-            console.log("submited");
+            console.log("submitted");
             this.userName = undefined;
             this.userPhone = undefined;
             this.userEmail = undefined;

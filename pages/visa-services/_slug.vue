@@ -13,7 +13,7 @@
         <h1>{{ service.title }}</h1>
       </div>
     </header>
-    <section class="sec-general sec-bg-gray anchor">
+    <section class="sec-general anchor">
       <div class="wrapper declaration">
         <h2>特别声明</h2>
         <p>
@@ -43,83 +43,140 @@
         <h2>服务支付方式</h2>
         <a-tabs
           default-active-key="1"
-          class="blog-tabs"
+          class="blog-tabs mb-0"
           style="margin-bottom: 30px"
         >
-          <a-tab-pane key="1" tab="电子转账EMT">
+          <a-tab-pane class="tab-content" key="1" tab="电子转账EMT">
             Content of Tab Pane 1
           </a-tab-pane>
-          <a-tab-pane key="2" tab="当面支付" force-render>
-            Content of Tab Pane 2
+          <a-tab-pane class="tab-content" key="2" tab="当面支付" force-render>
+            <div class="pay-grid">
+              <iframe
+                style="border: 0"
+                loading="lazy"
+                allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmW9PcmUOmqS0QeStmfxju4Lgm3yDEnoc
+                    &q=145+Royal+Crest+Ct+Unit+47-48,Markham,ON+L3R+9Z4"
+              >
+              </iframe>
+              <p>
+                多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
+                <br />
+                <a href="tel:+16475233555" class="ga-phone-trigger"
+                  >电话：647-523-3555</a
+                >
+              </p>
+            </div>
           </a-tab-pane>
-          <a-tab-pane key="3" tab="微信/支付宝/银联支付">
-            <img
-              style="margin: 0 auto"
-              src="/img/payment-code.jpg"
-              alt="Payment QR Code"
-            />
+          <a-tab-pane class="tab-content" key="3" tab="微信/支付宝/银联支付">
+            <a href="/img/payment-code.jpg" data-fancybox="payment">
+              <img
+                style="margin: 0 auto; width: 100%; max-width: 480px"
+                src="/img/payment-code.jpg"
+                alt="Payment QR Code"
+              />
+            </a>
           </a-tab-pane>
         </a-tabs>
+      </div>
+    </section>
+    <section class="sec-general anchor">
+      <div class="wrapper">
         <h2>免费咨询</h2>
-        <a-form :form="form" id="evaluation-form" class="contact-name contact-input">
-          <a-form-item label="名字">
-            <a-input
-              v-decorator="[
-                'inputName',
-                {
-                  rules: [
+        <a-form
+          :form="form"
+          @submit="handleSubmit"
+          id="evaluation-form"
+          class="contact-name contact-input"
+        >
+          <div class="evaluation-form-grid">
+            <div>
+              <a-form-item label=" 咨询的服务项目">
+                <a-select
+                  v-decorator="['service']"
+                  placeholder=" 请选择咨询的服务项目"
+                  style="margin-bottom: 20px"
+                >
+                  <a-select-option value="境内签证续签案件"
+                    >检查境内签证续签案件：50 加元</a-select-option
+                  >
+                  <a-select-option value="旅游签案件"
+                    >检查旅游签案件：100 加元</a-select-option
+                  >
+                  <a-select-option value="移民案件"
+                    >检查移民案件：900 加元</a-select-option
+                  >
+                </a-select>
+                <a-checkbox-group v-decorator="['optional_services']">
+                  <a-checkbox value="寄宿家庭服务"> 寄宿家庭服务 </a-checkbox>
+                  <a-checkbox value="监护人服务"> 监护人服务 </a-checkbox>
+                  <a-checkbox value="其他"> 其他 </a-checkbox>
+                </a-checkbox-group>
+              </a-form-item>
+            </div>
+            <div>
+              <a-form-item label="名字">
+                <a-input
+                  v-decorator="[
+                    'name',
                     {
-                      required: true,
-                      message: '请输入你的名字',
+                      rules: [
+                        {
+                          required: true,
+                          message: '请输入你的名字',
+                        },
+                      ],
                     },
-                  ],
-                },
-              ]"
-            />
-          </a-form-item>
-          <a-form-item label="邮箱">
-            <a-input
-              v-decorator="[
-                'email',
-                {
-                  rules: [
-                    { required: true, message: '请输入你的邮箱' },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item label="邮箱">
+                <a-input
+                  v-decorator="[
+                    'email',
                     {
-                      pattern: emailRegex,
-                      message: '请输入有效的邮箱',
+                      rules: [
+                        { required: true, message: '请输入你的邮箱' },
+                        {
+                          pattern: emailRegex,
+                          message: '请输入有效的邮箱',
+                        },
+                      ],
                     },
-                  ],
-                },
-              ]"
-            />
-          </a-form-item>
-          <a-form-item label="联系号码">
-            <a-input
-              v-decorator="[
-                'phone',
-                {
-                  rules: [{ required: true, message: '请输入你的联系号码' }],
-                },
-              ]"
-            />
-          </a-form-item>
-          <a-form-item label="微信">
-            <a-input
-              v-decorator="[
-                'phone',
-                {
-                  rules: [{ required: true, message: '请输入你的微信' }],
-                },
-              ]"
-            />
-          </a-form-item>
-          <a-button
-            html-type="submit"
-            :class="{ disableBtn: isSubmitting }"
-            class="main-btn_red"
-          >
-            {{ isSubmitting ? "提交中" : "提交" }}
-          </a-button>
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item label="联系号码">
+                <a-input
+                  v-decorator="[
+                    'phone',
+                    {
+                      rules: [
+                        { required: true, message: '请输入你的联系号码' },
+                      ],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-form-item label="微信">
+                <a-input
+                  v-decorator="[
+                    'wechat',
+                    {
+                      rules: [{ required: true, message: '请输入你的微信' }],
+                    },
+                  ]"
+                />
+              </a-form-item>
+              <a-button
+                html-type="submit"
+                :class="{ disableBtn: isSubmitting }"
+                class="main-btn_red"
+              >
+                {{ isSubmitting ? "提交中" : "提交" }}
+              </a-button>
+            </div>
+          </div>
         </a-form>
       </div>
     </section>
@@ -160,20 +217,100 @@ export default {
       service: data[0],
     };
   },
+  methods: {
+    handleSubmit(e) {
+      e.preventDefault();
+      this.isSubmitting = true;
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          console.log("Received values of form: ", values);
+          const data = values;
+          data.optional_services = values.optional_services.join();
+          this.$axios.post("/evaluations", data).then((res) => {
+            if (res.error) {
+              console.log(res.error);
+              this.$notification.open({
+                message: "提交失败",
+                description: "请稍后再试",
+                placement: "bottomRight",
+              });
+            } else {
+              this.form.resetFields();
+              this.$notification.open({
+                message: "提交成功",
+                description: "感谢您的提交",
+                placement: "bottomRight",
+              });
+            }
+          });
+        }
+        this.isSubmitting = false;
+      });
+    },
+  },
   components: {
     VueMarkdown,
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~/assets/scss/hot-projects/general.scss";
+// @import "~/assets/scss/hot-projects/general.scss";
+.evaluation-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 .main-btn_red {
   padding: 10px 20px;
   color: white;
   border-radius: 10px;
   height: auto;
 }
-.disableBtn{
+.disableBtn {
   pointer-events: none;
+}
+.tab-content {
+  padding: 20px;
+  color: $navy;
+}
+.pay-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  p {
+    align-self: center;
+  }
+}
+
+.contact-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+  label {
+    font-size: 16px;
+    color: $navy;
+    margin-bottom: 10px;
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: #e9e9e9;
+  }
+  input:focus {
+    box-shadow: none;
+  }
+}
+@media all and (max-width: $sm) {
+  .evaluation-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .pay-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
