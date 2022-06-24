@@ -304,7 +304,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-// @import "~/assets/scss/hot-projects/general.scss";
+@import "~/assets/scss/hot-projects/general.scss";
 .evaluation-form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
