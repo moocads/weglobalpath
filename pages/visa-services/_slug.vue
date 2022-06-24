@@ -13,7 +13,7 @@
         <h1>{{ service.title }}</h1>
       </div>
     </header>
-    <section class="sec-general anchor">
+    <section class="sec-general anchor" style="padding-bottom: 0">
       <div class="wrapper declaration">
         <h2>特别声明</h2>
         <p>
@@ -47,7 +47,7 @@
           style="margin-bottom: 30px"
         >
           <a-tab-pane class="tab-content" key="1" tab="电子转账EMT">
-            <p>电子转账EMT: info@beyondcanada.ca</p>
+            <p>电子转账EMT: <br />info@beyondcanada.ca</p>
           </a-tab-pane>
           <a-tab-pane
             class="tab-content"
@@ -86,15 +86,42 @@
               />
             </a>
           </a-tab-pane>
-          <a-tab-pane class="tab-content" key="4" tab="WIRE TRANSFER">
-            <a href="/img/wire-transfer.jpeg" data-fancybox="payment">
+          <a-tab-pane class="tab-content" key="4" tab="电汇（WIRE TRANSFER）">
+            <!-- <a href="/img/wire-transfer.jpeg" data-fancybox="payment">
               <img
                 src="/img/wire-transfer.jpeg"
                 alt="Beyond Canada Wire Transfer"
               />
-            </a>
-            <table>
-              <tr></tr>
+            </a> -->
+            <table class="pay-table">
+              <tr>
+                <th>银行名<br />Beneficiary Bank</th>
+                <td>Canadian Imperial Bank of Commerce (CIBC)</td>
+              </tr>
+              <tr>
+                <th>银行地址<br />Address of the Beneficiary Bank</th>
+                <td>85 Ellesmere road, Unit 19, Scarborough, ON, M1R 4B7</td>
+              </tr>
+              <tr>
+                <th>收款人<br />Name of Payee</th>
+                <td>Beyond Canada International Consulting Corp.</td>
+              </tr>
+              <tr>
+                <th>银行转账号<br />Bank Transit</th>
+                <td>07832</td>
+              </tr>
+              <tr>
+                <th>银行账户号<br />Bank Account No.</th>
+                <td>4072111</td>
+              </tr>
+              <tr>
+                <th>银行机构号<br />Bank Institution No.</th>
+                <td>010</td>
+              </tr>
+              <tr>
+                <th>Swift Code</th>
+                <td>CIBCCATT</td>
+              </tr>
             </table>
           </a-tab-pane>
         </a-tabs>
@@ -286,7 +313,7 @@ export default {
 .main-btn_red {
   padding: 10px 20px;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   height: auto;
 }
 .disableBtn {
@@ -304,7 +331,15 @@ export default {
     align-self: center;
   }
 }
-
+.pay-table {
+  width: 100%;
+  text-align: center;
+  & th,
+  & td {
+    border: 0.5px solid black;
+    padding: 10px;
+  }
+}
 .contact-input {
   display: flex;
   flex-direction: column;
@@ -340,6 +375,11 @@ export default {
   }
   .pay-grid {
     grid-template-columns: 1fr;
+  }
+  .contact-input {
+    label {
+      font-size: 14px;
+    }
   }
 }
 </style>

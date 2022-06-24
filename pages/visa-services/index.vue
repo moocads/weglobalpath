@@ -73,9 +73,4 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "~/assets/scss/hot-projects/general.scss";
-.visa-richtext {
-  ul {
-    list-style: auto;
-  }
-}
 </style>

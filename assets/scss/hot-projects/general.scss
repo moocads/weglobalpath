@@ -37,7 +37,7 @@
       height: 70px;
     }
   }
-  p{
+  p {
     font-size: 16px;
   }
 }
@@ -173,7 +173,7 @@
       }
     }
   }
-  .hot-projects-detail-page p{
+  .hot-projects-detail-page p {
     font-size: 14px;
   }
 }
@@ -216,12 +216,12 @@
     width: 6px;
     height: 30px;
   }
-  .declaration{
+  .declaration {
     background-color: $navy;
     color: white;
     border-radius: 10px;
     padding: 20px;
-    h2{
+    h2 {
       color: white;
     }
   }
@@ -406,7 +406,7 @@
     color: $navy;
   }
 }
-.mobile-only{
+.mobile-only {
   display: none;
 }
 
@@ -438,7 +438,7 @@
     background-color: $red;
     color: white;
   }
-  .wrap{
+  .wrap {
     white-space: initial;
   }
 }
@@ -448,7 +448,7 @@
 }
 
 @media all and (max-width: $sm) {
-  .mobile-only{
+  .mobile-only {
     display: block;
   }
   .scroll-wrapper {
@@ -463,24 +463,24 @@
     td {
       padding: 5px;
     }
-    th{
+    th {
       white-space: nowrap;
     }
   }
 }
 
 /*visa services*/
-.single-service-link{
-  &:hover{
+.single-service-link {
+  &:hover {
     color: $red;
   }
-  p{
+  p {
     display: inline;
   }
 }
 .service-richtext {
   font-size: 16px;
-  h2{
+  h2 {
     margin-top: 30px;
     margin-bottom: 10px;
   }
@@ -488,15 +488,23 @@
     margin-left: 1em;
     li::before {
       content: "\2022";
-      color: $red; 
-      font-weight: bold; 
+      color: $red;
+      font-weight: bold;
       display: inline-block;
-      width: 1em; 
+      width: 1em;
       margin-left: -1em;
       font-size: 20px;
     }
   }
-  table{
+  ol {
+    list-style: decimal;
+    margin-left: 1em;
+  }
+  ol + ul {
+    margin-bottom: 20px;
+    margin-left: 2em;
+  }
+  table {
     width: 100%;
     min-width: $sm;
     text-align: center;
@@ -514,20 +522,26 @@
     thead > th {
       font-size: 16px;
     }
-    tr>:first-child{
+    tr > :first-child {
       width: 190px;
       font-weight: bold;
     }
   }
-  a{
+  a {
     color: $red;
   }
-  a:hover{
+  a:hover {
     text-decoration: underline;
   }
 }
 @media all and (max-width: $sm) {
-  .service-richtext{
+  .service-richtext {
     font-size: 14px;
+    table {
+      tr > :first-child {
+        width: 120px;
+        font-weight: bold;
+      }
+    }
   }
 }

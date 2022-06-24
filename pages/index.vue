@@ -6,28 +6,51 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">
-              <div class="banner-overlay"></div>
-              <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
+            <div
+              class="swiper-slide"
+              v-for="(slide, i) in homeSlideData"
+              :key="i"
+            >
+              <div class="slide-info">
+                <h1>{{ slide.title }}</h1>
+                <p>
+                  {{ slide.info }}
+                </p>
+                <NuxtLink :to="slide.slug">
+                  <button class="main-btn main-btn_blue main-btn_round">
+                    {{ slide.btn ? slide.btn : "查看项目详情" }}
+                  </button>
+                </NuxtLink>
+              </div>
             </div>
             <div class="swiper-slide">
-              <div class="banner-overlay"></div>
-              <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
-            </div>
-            <div class="swiper-slide">
-              <div class="banner-overlay"></div>
-              <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
+              <div class="slide-info">
+                <h1>连接彼岸 用心服务</h1>
+                <p>
+                  加彼岸，您的私人移民规划师，衔接加拿大移民的高效途径，一站式全程规划。移民，不走弯路！
+                </p>
+                <div class="header-btn-wrap">
+                  <NuxtLink to="/evaluation">
+                    <button class="main-btn main-btn_blue main-btn_round">
+                      移民打分
+                    </button>
+                  </NuxtLink>
+                  <NuxtLink to="/self-test">
+                    <button class="main-btn main-btn_blue main-btn_round">
+                      移民自测
+                    </button>
+                  </NuxtLink>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- If we need pagination -->
           <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <!-- <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div> -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
-        <!-- <img src="/img/Home/banner.png" alt="Beyond Canada Banner" /> -->
-        <div class="info-wrap">
+        <div class="banner-overlay"></div>
+        <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
+        <!-- <div class="info-wrap">
           <img
             src="/img/Home/banner-text.png"
             alt=""
@@ -55,7 +78,7 @@
               </button>
             </NuxtLink>
           </div>
-        </div>
+        </div> -->
       </header>
     </div>
     <section id="home-services">
@@ -364,6 +387,34 @@ export default {
   },
   data() {
     return {
+      homeSlideData: [
+        {
+          title: "加拿大联邦创业投资移民SUV",
+          info: "不用提供资金来源证明｜中国境内等待永居卡获批｜商业运营结果不影响审批｜100%获得支持信承诺",
+          slug: "/projects/startup/start-up-visa",
+        },
+        {
+          title: "加拿大安省雇主担保移民",
+          info: "无语言要求｜申请条件宽松｜一人申请全家移民｜一步到位落地安省｜加拿大教育资源最好的省份",
+          slug: "/projects/nominee/ontario-immigrat-nominee-program",
+        },
+        {
+          title: "曼省留学移民",
+          info: "5万加币起｜最快速留学+就业移民途径｜一步到位全家移民｜真实带薪工作",
+          slug: "/projects/education/manitoba-education",
+        },
+        {
+          title: "企业主创业工签",
+          info: "EE快速通道＋200分｜办理速度快｜定居任意省份｜入境加拿大获得事业基础｜总费用性价比最高",
+          slug: "/projects/startup/owner-operator-work-permit",
+        },
+        {
+          title: "美国杰出人才EB1A",
+          info: "最快5天审批｜无需语言要求｜前期评估确保成功率｜50万人民币起｜最快获得美国绿卡移民项目",
+          btn: "快速移民美国",
+          slug: "/projects/usa/eb-1a",
+        },
+      ],
       feedbackData: [
         {
           name: "张同学",
@@ -433,26 +484,105 @@ export default {
       speed: 400,
       spaceBetween: 100,
       loop: true,
-      autoplay: {
-        delay: 3000,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      // },
       effect: "fade",
       fadeEffect: {
         crossFade: true,
       },
-      // navigation: {
-      //   nextEl: ".swiper-button-next",
-      //   prevEl: ".swiper-button-prev",
-      // },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
       pagination: {
         el: ".swiper-pagination",
         type: "bullets",
+        clickable: true,
       },
     });
   },
 };
 </script>
 <style lang="scss">
+.home-swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    color: white;
+    left: 60px;
+  }
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    color: white;
+    right: 60px;
+  }
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: rgb(199, 199, 199);
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide-info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 48px;
+      color: white;
+      margin: 0;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+@media all and (max-width: $md) {
+  .home-swiper {
+    .slide-info {
+      h1 {
+        font-size: 28px;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+      left: 10px;
+    }
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+      right: 10px;
+    }
+  }
+}
+@media all and (max-width: $sm) {
+  .home-swiper {
+    .slide-info {
+      padding: 20px;
+      h1 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next,
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+      display: none;
+    }
+  }
+}
+
 #home-testimonial {
   margin-bottom: 50px;
 
