@@ -6,7 +6,7 @@
     89.93deg,
     rgba(34, 52, 92, 0.7) 7.82%,
     rgba(34, 52, 92, 0) 102.35%
-  )`,
+  ), url('/img/visa-banner.jpg')`,
       }"
     >
       <div class="wrapper">

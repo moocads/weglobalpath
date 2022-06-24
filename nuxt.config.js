@@ -113,7 +113,7 @@ export default {
     i18n: true,
   },
   styleResources: {
-    scss: ["./assets/scss/variables.scss", "./assets/scss/projects.scss", "./assets/scss/util.scss"],
+    scss: ["./assets/scss/variables.scss", "./assets/scss/projects.scss", "./assets/scss/util.scss", "./assets/scss/hot-projects/general.scss"],
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
