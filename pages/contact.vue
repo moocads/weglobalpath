@@ -220,6 +220,7 @@ header {
   height: 400px;
   display: flex;
   align-items: center;
+  z-index: -1;
   h1 {
     font-size: 35px;
     color: #fff;
