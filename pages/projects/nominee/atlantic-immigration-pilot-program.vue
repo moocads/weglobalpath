@@ -132,7 +132,7 @@
             </li>
           </div>
         </ul> -->
-        <div class="aip-list">
+        <div id="aip-list">
           <ol>
             <li>
               工作经验
@@ -345,11 +345,9 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "~/assets/scss/hot-projects/general.scss";
-</style>
+
 <style lang="scss" scoped>
-.aip-list {
+#aip-list {
   margin-left: 18px;
   h5 {
     font-size: 16px;
@@ -399,7 +397,7 @@ export default {
   }
 }
 @media all and (max-width: $sm) {
-  .aip-list {
+  #aip-list {
     ol {
       li {
         font-size: 16px;

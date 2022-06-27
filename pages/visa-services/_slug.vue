@@ -51,8 +51,8 @@
               <li>电子转账EMT:</li>
               <li>
                 <svg
-                  width="25"
-                  height="18"
+                  width="30"
+                  height="30"
                   viewBox="0 0 25 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,13 +82,13 @@
               >
               </iframe>
               <div>
-                <table class="pay-list">
-                  <tr>
-                    <td>
+                <ul class="pay-list">
+                  <li>
+                    <span class="icon-wrapper">
                       <svg
-                        width="28"
-                        height="28"
                         viewBox="0 0 28 28"
+                        width="30"
+                        height="30"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -101,19 +101,18 @@
                           fill="#a31c1c"
                         />
                       </svg>
-                    </td>
-                    <td>
-                      <span
-                        >多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R
-                        9Z4</span
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                    </span>
+
+                    <span
+                      >多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R
+                      9Z4
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-wrapper">
                       <svg
-                        width="28"
-                        height="28"
+                        width="30"
+                        height="30"
                         viewBox="0 0 28 28"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -123,15 +122,13 @@
                           fill="#a31c1c"
                         />
                       </svg>
-                    </td>
-                    <td>
-                      <a href="tel:+16475233555" class="ga-phone-trigger"
-                        >电话：647-523-3555</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
+                    </span>
+                    <a href="tel:+16475233555" class="ga-phone-trigger"
+                      >电话：647-523-3555</a
+                    >
+                  </li>
+                  <li>
+                    <span class="icon-wrapper">
                       <svg
                         width="30"
                         height="30"
@@ -144,23 +141,60 @@
                           fill="#A31C1C"
                         />
                       </svg>
-                    </td>
-                    <td>
-                      <span
-                        >支票支付：Beyond Canada International Consulting
-                        Corp.</span
-                      >
-                    </td>
-                  </tr>
-                </table>
+                    </span>
+                    <span
+                      >支票支付：Beyond Canada International Consulting
+                      Corp.</span
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
           </a-tab-pane>
           <a-tab-pane class="tab-content" key="3" tab="微信/支付宝支付">
-            <a href="/img/payment-code.jpg" data-fancybox="payment">
+            <ul class="pay-list">
+              <li>
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.9313 11.2413L11.6825 18.2513L11.595 18.3088C11.4787 18.3669 11.35 18.396 11.22 18.3938C11.0715 18.3946 10.9256 18.355 10.7979 18.2792C10.6702 18.2035 10.5655 18.0944 10.495 17.9638L10.4375 17.8488L8.15 12.9113C8.12 12.8538 8.12 12.7963 8.12 12.7388C8.12 12.5088 8.29375 12.3375 8.525 12.3375C8.6125 12.3375 8.7 12.3663 8.78625 12.4238L11.48 14.3175C11.6825 14.4325 11.915 14.5187 12.175 14.5187C12.3242 14.518 12.4718 14.4887 12.61 14.4325L22.9538 9.8725C21.1675 7.84125 18.2925 6.5 15 6.5C9.475 6.5 5.125 10.2775 5.125 14.75C5.125 16.4575 5.75 18.0913 6.915 19.4763C6.975 19.5475 7.065 19.6475 7.1825 19.77C7.67384 20.2817 8.05067 20.8921 8.28796 21.5606C8.52524 22.2292 8.61755 22.9405 8.55875 23.6475L8.5275 24.0187L9.4225 23.4737C10.4345 22.8567 11.6329 22.6192 12.8037 22.8038C13.0687 22.845 13.2863 22.8775 13.4538 22.8988C13.9613 22.9663 14.4787 23 15 23C20.525 23 24.875 19.2225 24.875 14.75C24.875 13.505 24.5375 12.3125 23.9313 11.2413V11.2413ZM7.74 27.4288C7.54323 27.5516 7.31616 27.6172 7.0842 27.6184C6.85224 27.6195 6.62454 27.556 6.42658 27.4351C6.22862 27.3142 6.06821 27.1406 5.96329 26.9338C5.85837 26.7269 5.81309 26.4949 5.8325 26.2637L6.0675 23.44C6.09698 23.0866 6.05093 22.7309 5.93239 22.3966C5.81386 22.0624 5.62556 21.7572 5.38 21.5013C5.24889 21.3666 5.12216 21.2278 5 21.085C3.5075 19.3088 2.625 17.1188 2.625 14.75C2.625 8.8125 8.165 4 15 4C21.835 4 27.375 8.8125 27.375 14.75C27.375 20.6875 21.835 25.5 15 25.5C14.3625 25.5 13.7375 25.4587 13.1263 25.3775C12.8888 25.3454 12.6516 25.3104 12.415 25.2725C11.8294 25.1801 11.2299 25.2988 10.7238 25.6075L7.74 27.4275V27.4288Z"
+                    fill="#A31C1C"
+                  />
+                </svg>
+                <span>微信</span>
+                <span style="margin: 0 10px">/</span>
+                <svg
+                  height="30px"
+                  weight="30px"
+                  style="enable-background: new 0 0 512 512"
+                  version="1.1"
+                  viewBox="0 0 512 512"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <g id="_x31_3-alipay">
+                    <g>
+                      <path
+                        d="M413.858,26.001H98.143c-39.892,0-72.141,32.251-72.141,72.142v315.715    c0,39.89,32.249,72.142,72.141,72.142h315.716c39.551,0,71.628-31.911,72.14-71.463c-47.189-26.308-113.55-61.955-176.194-90.809    c-32.928,45.146-86.394,83.169-152.6,83.169c-72.482,0-96.24-46.513-99.641-78.416c-4.075-40.056,15.279-83.683,102.186-83.683    c36.328,0,81.476,10.524,130.537,25.629c16.972-30.896,27.156-61.956,27.156-61.956H134.471v-17.147h94.546v-32.077H116.645    v-19.519h112.372V87.957h52.284v51.771h112.371v19.519H281.289v32.077h91.148c0,0-15.617,47.868-39.378,93.355    c50.24,17.147,102.688,37.006,152.601,54.151V98.143C485.826,58.417,453.584,26.001,413.858,26.001z M74.547,324.742    c1.018,20.711,10.524,55.171,71.803,55.171c53.464,0,95.061-40.744,121.027-74.852c-45.824-19.182-86.742-32.252-112.372-32.252    C85.749,272.81,73.531,306.752,74.547,324.742z"
+                        style="fill: #a31c1c"
+                      />
+                    </g>
+                  </g>
+                  <g id="Layer_1" />
+                </svg>
+                <span>支付宝</span>
+              </li>
+            </ul>
+            <a href="/img/qr-code.jpg" data-fancybox="payment">
               <img
                 style="margin: 0 auto; width: 100%; max-width: 480px"
-                src="/img/payment-code.jpg"
+                src="/img/qr-code.jpg"
                 alt="Payment QR Code"
               />
             </a>
@@ -403,14 +437,6 @@ export default {
   color: $navy;
   font-size: 16px;
 }
-.pay-list {
-  svg {
-    margin-right: 5px;
-  }
-  li {
-    margin-bottom: 10px;
-  }
-}
 .pay-grid {
   display: grid;
   grid-template-columns: auto auto;
@@ -418,6 +444,18 @@ export default {
   p {
     align-self: center;
   }
+}
+.pay-list {
+  li {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+}
+.icon-wrapper {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
 }
 .pay-table {
   width: 100%;
@@ -464,8 +502,19 @@ export default {
     grid-template-columns: 1fr;
     gap: 0;
   }
+  .tab-content {
+    padding: 10px;
+    font-size: 14px;
+  }
   .pay-grid {
     grid-template-columns: 1fr;
+  }
+  .pay-table {
+    font-size: 14px;
+    th,
+    td {
+      padding: 5px;
+    }
   }
   .contact-input {
     label {

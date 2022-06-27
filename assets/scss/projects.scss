@@ -61,6 +61,13 @@
     list-style-type: decimal;
   }
 }
+.intro-markdown {
+  font-size: 16px;
+  ul{
+    list-style-image: url("/img/Projects/list-square.png");
+    margin-left: 22px;
+  }
+}
 @media all and (max-width: 1000px) {
   .project-detail-page .sec-introduction .intro-markdown {
     p,
@@ -69,6 +76,11 @@
     li {
       font-size: 14px;
     }
+  }
+}
+@media all and (max-width: $sm) {
+  .intro-markdown {
+    font-size: 14px;
   }
 }
 

@@ -3,26 +3,7 @@
     <div id="home-wrap">
       <header>
         <div class="home-swiper">
-          <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div
-              class="swiper-slide"
-              v-for="(slide, i) in homeSlideData"
-              :key="i"
-            >
-              <div class="slide-info">
-                <h1>{{ slide.title }}</h1>
-                <p>
-                  {{ slide.info }}
-                </p>
-                <NuxtLink :to="slide.slug">
-                  <button class="main-btn main-btn_blue main-btn_round">
-                    {{ slide.btn ? slide.btn : "查看项目详情" }}
-                  </button>
-                </NuxtLink>
-              </div>
-            </div>
             <div class="swiper-slide">
               <div class="slide-info">
                 <h1>连接彼岸 用心服务</h1>
@@ -42,14 +23,35 @@
                   </NuxtLink>
                 </div>
               </div>
+              <div class="banner-overlay"></div>
+              <img src="/img/Home/banner.png" alt="Beyond Canada Banner-1" />
+            </div>
+            <div
+              class="swiper-slide"
+              v-for="(slide, i) in homeSlideData"
+              :key="i"
+            >
+              <div class="slide-info">
+                <h1>{{ slide.title }}</h1>
+                <p>
+                  {{ slide.info }}
+                </p>
+                <NuxtLink :to="slide.slug">
+                  <button class="main-btn main-btn_blue main-btn_round">
+                    {{ slide.btn ? slide.btn : "查看项目详情" }}
+                  </button>
+                </NuxtLink>
+              </div>
+              <div class="banner-overlay"></div>
+              <img :src="slide.img" :alt="`Beyond Canada Banner-${i+1}`" />
             </div>
           </div>
           <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
-        <div class="banner-overlay"></div>
-        <img src="/img/Home/banner.png" alt="Beyond Canada Banner" />
+        <!-- <div class="banner-overlay"></div>
+        <img src="/img/Home/banner.png" alt="Beyond Canada Banner" /> -->
         <!-- <div class="info-wrap">
           <img
             src="/img/Home/banner-text.png"
@@ -275,17 +277,6 @@
           titleEN="ARTICLES"
           titleENColor="#c4c4c4"
         />
-        <!-- <div class="blogs-grid">
-          <div class="blog-item" v-for="(blog, index) in blogs.所有资讯" :key="index">
-            <BlogCard
-              :thumbnail="blog.thumbnail_cn.url"
-              :title="blog.title_cn"
-              :description="blog.description_cn"
-              :date="blog.published_at.split('T')[0]"
-              :link="'/blogs/' + blog.slug"
-            />
-          </div>
-        </div> -->
         <a-tabs class="blog-tabs" default-active-key="tab-0">
           <a-tab-pane
             v-for="(blog, key, i) in blogs"
@@ -392,27 +383,32 @@ export default {
           title: "加拿大联邦创业投资移民SUV",
           info: "不用提供资金来源证明｜中国境内等待永居卡获批｜商业运营结果不影响审批｜100%获得支持信承诺",
           slug: "/projects/startup/start-up-visa",
+          img: "/img/Home/创业投资.jpg"
         },
         {
           title: "加拿大安省雇主担保移民",
           info: "无语言要求｜申请条件宽松｜一人申请全家移民｜一步到位落地安省｜加拿大教育资源最好的省份",
           slug: "/projects/nominee/ontario-immigrat-nominee-program",
+          img: "/img/Home/安省境外雇主担保.jpg"
         },
         {
           title: "曼省留学移民",
           info: "5万加币起｜最快速留学+就业移民途径｜一步到位全家移民｜真实带薪工作",
           slug: "/projects/education/manitoba-education",
+          img: "/img/Home/曼省留学.jpg"
         },
         {
           title: "企业主创业工签",
           info: "EE快速通道＋200分｜办理速度快｜定居任意省份｜入境加拿大获得事业基础｜总费用性价比最高",
           slug: "/projects/startup/owner-operator-work-permit",
+          img: "/img/Home/企业主人才.jpg"
         },
         {
           title: "美国杰出人才EB1A",
           info: "最快5天审批｜无需语言要求｜前期评估确保成功率｜50万人民币起｜最快获得美国绿卡移民项目",
           btn: "快速移民美国",
           slug: "/projects/usa/eb-1a",
+          img: "/img/Home/USA绿卡项目.jpg"
         },
       ],
       feedbackData: [
@@ -485,7 +481,7 @@ export default {
       spaceBetween: 100,
       loop: true,
       // autoplay: {
-      //   delay: 3000,
+      //   delay: 4000,
       // },
       effect: "fade",
       fadeEffect: {
@@ -506,12 +502,12 @@ export default {
 </script>
 <style lang="scss">
 .home-swiper {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  bottom: 0;
+  // bottom: 0;
   right: 0;
-  z-index: 20;
+  max-height: 550px;
   .swiper-button-prev,
   .swiper-rtl .swiper-button-next {
     color: white;
@@ -526,9 +522,8 @@ export default {
     background: rgb(199, 199, 199);
   }
   .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    max-height: 550px;
   }
   .slide-info {
     color: white;
@@ -536,9 +531,16 @@ export default {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
     h1 {
       font-size: 48px;
       color: white;
+      font-weight: bold;
       margin: 0;
     }
     p {
@@ -565,6 +567,11 @@ export default {
 }
 @media all and (max-width: $sm) {
   .home-swiper {
+    max-height: calc(100vh - 140px);
+    .swiper-slide {
+      position: relative;
+      max-height: calc(100vh - 140px);
+    }
     .slide-info {
       padding: 20px;
       h1 {
@@ -573,6 +580,11 @@ export default {
       p {
         font-size: 14px;
       }
+    }
+    .main-btn_blue {
+      padding: 10px 25px;
+      font-size: 16px;
+      font-weight: 500;
     }
     .swiper-button-prev,
     .swiper-rtl .swiper-button-next,
@@ -691,7 +703,7 @@ header .info-wrap {
   }
   .header-btn-wrap {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: center;
     align-items: center;
     a {
@@ -703,7 +715,7 @@ header .info-wrap {
     img {
       object-fit: cover;
       object-position: 90% center;
-      height: 100vh;
+      height: calc(100vh - 140px);
     }
   }
   header .info-wrap {
