@@ -121,7 +121,7 @@
                 加拿大学签、境内旅游签转学签，加拿大工签、境内旅游签转工签，加拿大高管创业LMIA，加拿大公司高管派遣工签，加拿大企业家工签，加拿大LMIA劳工批文，加拿大旅游签，加拿大旅游签境内续签Visitor
                 Record，加拿大超级签证。加彼岸提供加拿大各类签证检查案件Review的服务，为我们的客户提供最优性价比。
               </p>
-              <!-- <nuxt-link to="/projects/nominee">了解详情</nuxt-link> -->
+              <nuxt-link to="/visa-services">了解详情</nuxt-link>
             </div>
           </div>
           <div class="project-item project-3">
