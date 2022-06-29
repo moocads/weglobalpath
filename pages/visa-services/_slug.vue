@@ -245,7 +245,7 @@
     </section>
     <section class="sec-general anchor">
       <div class="wrapper">
-        <h2>免费咨询</h2>
+        <h2>专业咨询</h2>
         <a-form
           :form="form"
           @submit="handleSubmit"
