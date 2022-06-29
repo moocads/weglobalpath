@@ -9,8 +9,9 @@
   ), url('/img/visa-banner.jpg')`,
       }"
     >
-      <div class="wrapper">
+      <div class="wrapper visa-header">
         <h1>签证服务</h1>
+        <p class="highlight">*提供检查签证移民申请Review服务</p>
       </div>
     </header>
     <section
@@ -33,14 +34,6 @@
         </ul>
       </div>
     </section>
-    <!-- <section
-      id="service-review"
-      class="sec-intro sec-general sec-bg-gray anchor"
-    >
-      <div class="wrapper">
-        <h2>检查签证移民申请</h2>
-      </div>
-    </section> -->
   </div>
 </template>
 <script>
@@ -72,5 +65,44 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~/assets/scss/hot-projects/general.scss";
+.visa-header {
+  h1 {
+    margin-bottom: -5px;
+  }
+  p {
+    margin-bottom: 0;
+    color: white;
+    padding-left: 20px;
+  }
+}
+.single-service-link {
+  display: inline-block;
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $red;
+    transition: width 0.3s;
+  }
+  &:hover {
+    color: $red;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+  p {
+    display: inline;
+  }
+}
+@media all and (max-width: $sm) {
+  .visa-header {
+    h1 {
+      margin-bottom: 0px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}
 </style>

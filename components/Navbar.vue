@@ -16,8 +16,8 @@
             <NuxtLink to="/" exact>首页</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about"
-              >关于我们
+            <NuxtLink to="/visa-services"
+              >签证服务
               <a-icon
                 type="down"
                 class="dropdown-arrow"
@@ -27,13 +27,13 @@
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }"
-                    >加盟招商</NuxtLink
+                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-0' }"
+                    >境内签证服务</NuxtLink
                   >
                 </li>
                 <li>
-                  <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }"
-                    >加入我们</NuxtLink
+                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-1' }"
+                    >赴加签证</NuxtLink
                   >
                 </li>
               </ul>
@@ -287,12 +287,12 @@
               </div>
             </div>
           </li>
-          <!-- <li>
+          <!-- <li></li>
             <NuxtLink to="/investment">加拿大投资</NuxtLink>
           </li> -->
           <li>
-            <NuxtLink to="/visa-services"
-              >签证服务
+            <NuxtLink to="/about"
+              >关于我们
               <a-icon
                 type="down"
                 class="dropdown-arrow"
@@ -302,18 +302,19 @@
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-0' }"
-                    >境内签证服务</NuxtLink
+                  <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }"
+                    >加盟招商</NuxtLink
                   >
                 </li>
                 <li>
-                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-1' }"
-                    >赴加签证</NuxtLink
+                  <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }"
+                    >加入我们</NuxtLink
                   >
                 </li>
               </ul>
             </div>
           </li>
+
           <li>
             <NuxtLink to="/blogs">最新资讯</NuxtLink>
           </li>

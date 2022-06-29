@@ -23,9 +23,10 @@
             <NuxtLink to="/">
               <li @click="isToggle = !isToggle">首页</li>
             </NuxtLink>
-            <NuxtLink to="/about">
-              <li @click="isToggle = !isToggle">关于我们</li>
+            <NuxtLink to="/visa-services">
+              <li @click="isToggle = !isToggle">签证服务</li>
             </NuxtLink>
+
             <NuxtLink to="/recruiting">
               <li @click="isToggle = !isToggle">快速移民直通车</li>
             </NuxtLink>
@@ -38,8 +39,8 @@
             <NuxtLink to="/provinces">
               <li @click="isToggle = !isToggle">移民省份</li>
             </NuxtLink>
-            <NuxtLink to="/visa-services">
-              <li @click="isToggle = !isToggle">签证服务</li>
+            <NuxtLink to="/about">
+              <li @click="isToggle = !isToggle">关于我们</li>
             </NuxtLink>
             <NuxtLink to="/blogs">
               <li @click="isToggle = !isToggle">最新资讯</li>

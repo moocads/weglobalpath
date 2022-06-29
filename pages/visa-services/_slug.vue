@@ -264,19 +264,27 @@
                   style="margin-bottom: 20px"
                 >
                   <a-select-option value="境内签证续签案件"
-                    >检查境内签证续签案件：50 加元</a-select-option
+                    >检查境内签证续签案件：50 加元+HST</a-select-option
                   >
                   <a-select-option value="旅游签案件"
-                    >检查旅游签案件：100 加元</a-select-option
+                    >检查旅游签案件：100 加元+HST</a-select-option
                   >
                   <a-select-option value="移民案件"
-                    >检查移民案件：900 加元</a-select-option
+                    >检查移民案件：900 加元+HST</a-select-option
                   >
                 </a-select>
                 <a-checkbox-group v-decorator="['optional_services']">
-                  <a-checkbox value="寄宿家庭服务"> 寄宿家庭服务 </a-checkbox>
-                  <a-checkbox value="监护人服务"> 监护人服务 </a-checkbox>
-                  <a-checkbox value="其他"> 其他 </a-checkbox>
+                  <a-checkbox value="移民咨询规划评估（30分钟）"> 
+                    移民咨询规划评估（30分钟）100加元咨询费<br/>
+                    <span class="minor-text">适用于已有明确移民计划及目标，希望就具体问题得到解答，或了解加彼岸签约和服务流程的客户。</span>
+                    </a-checkbox>
+                  <a-checkbox value="移民咨询规划评估（60分钟）">
+                    移民咨询规划评估（60分钟）180加元咨询费<br/>
+                    <span class="minor-text">适用于没有明确的移民方向，需要深入分析个人及家庭情况，制定完善移民计划的客户。</span>
+                     </a-checkbox>
+                  <a-checkbox value="留学咨询规划评估（60分钟）">
+                    留学咨询规划评估（60分钟）150加元咨询费
+                    </a-checkbox>
                 </a-checkbox-group>
               </a-form-item>
             </div>
@@ -497,6 +505,10 @@ export default {
     color: $navy;
     line-height: 1.5;
     font-weight: 300;
+  }
+  span.minor-text{
+    display: block;
+    margin-left: 27px;
   }
 }
 
