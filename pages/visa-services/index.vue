@@ -34,6 +34,7 @@
         </ul>
       </div>
     </section>
+    <EvaluationForm />
   </div>
 </template>
 <script>

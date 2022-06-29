@@ -172,6 +172,7 @@
         </div>
       </div>
     </section>
+    <EvaluationForm />
     <OtherProjectsSection bgWhite="true" />
   </div>
 </template>
