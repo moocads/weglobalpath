@@ -134,6 +134,9 @@ export default {
         if (!err) {
           console.log("Received values of form: ", values);
           const data = values;
+          if (!values.service) {
+            data.service = "";
+          } 
           if (values.optional_services) {
             data.optional_services = values.optional_services.join();
           } else {
@@ -174,7 +177,7 @@ export default {
   color: white;
   border-radius: 5px;
   height: auto;
-  &:focus{
+  &:focus {
     color: $red;
     background-color: #fff;
     border: 1px solid #fff;
