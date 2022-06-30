@@ -134,7 +134,11 @@ export default {
         if (!err) {
           console.log("Received values of form: ", values);
           const data = values;
-          data.optional_services = values.optional_services.join();
+          if (values.optional_services) {
+            data.optional_services = values.optional_services.join();
+          } else {
+            data.optional_services = "";
+          }
           this.$axios.post("/evaluations", data).then((res) => {
             if (res.error) {
               console.log(res.error);
@@ -170,6 +174,11 @@ export default {
   color: white;
   border-radius: 5px;
   height: auto;
+  &:focus{
+    color: $red;
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
 }
 .disableBtn {
   pointer-events: none;
