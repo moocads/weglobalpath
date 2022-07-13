@@ -24,7 +24,7 @@
           根据加拿大联邦相关法律及法规：任何涉及签证申请或续签、移民咨询或申请的相关业务，在聘请有偿专业代理人时须在《授权代理人表格
           Use of A Representative IMM5476》上签字。
         </p>
-        <a href="/IMM5476_Ge.pdf" target="_blank">
+        <a href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/IMM_5476_Ge_ab89aebb4d.pdf" target="_blank">
           <button class="main-btn_red">
             下载授权代理人表格 Use of A Representative IMM5476
           </button>

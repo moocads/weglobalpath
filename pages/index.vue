@@ -298,6 +298,9 @@
                 />
               </div>
             </div>
+            <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
+              <NuxtLink :to="`/blogs${i != 0?'?category=' + i:''}`"> 更多资讯 </NuxtLink>
+            </button>
           </a-tab-pane>
         </a-tabs>
       </div>
@@ -365,7 +368,7 @@ export default {
     const data = {
       所有资讯: all,
       热点新闻: news,
-      签证百科: policy,
+      政策解读: policy,
       签证百科: visa,
       留学指南: edu,
       加彼岸动态: aboutUs,
