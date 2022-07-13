@@ -567,10 +567,10 @@
                 href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_c9bff56166.pdf"
                 class="pdf-download-btn"
                 target="_blank"
-                download="RC加拿大专课程直通车项目推广手册"
+                download="RC加拿大大专课程直通车项目推广手册"
               >
                 <img src="/img/Recruiting/download-icon.svg" alt="" />
-                <span>RC加拿大专课程直通车项目推广手册</span>
+                <span>RC加拿大大专课程直通车项目推广手册</span>
               </a>
               <a
                 href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_e886bacbb2.pdf"
