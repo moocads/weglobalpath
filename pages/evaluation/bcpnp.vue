@@ -26,7 +26,7 @@
       </a-breadcrumb>
       <br />
       <br />
-      <RecentScores :scores="scores"/>
+      <RecentScores :scores="scores" />
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">

@@ -2,9 +2,9 @@
   <div class="recent-scores">
     <div class="score-row" v-for="(s, i) in scores" :key="i">
       <div>
-        <span v-if="s.type">{{ s.type }}：</span><span>{{ s.date }}</span>
+        <span v-if="s.type">{{ s.type }}：<br/></span><span>{{ s.date }}</span>
       </div>
-      <div>邀请分数：{{ s.score }}</div>
+      <div>邀请分数：<br v-if="s.type"/>{{ s.score }}</div>
     </div>
   </div>
 </template>

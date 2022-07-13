@@ -24,7 +24,7 @@
       </a-breadcrumb>
       <br />
       <br />
-      <RecentScores :scores="scores"/>
+      <RecentScores :scores="scores" />
       <a-card>
         <a-affix :offset-top="0">
           <div class="pointsCounter">
@@ -184,9 +184,7 @@ export default {
     const scores = await $axios.$get(`/scores-oinp-works`, {
       params: {
         _sort: "published_at:desc",
-      },
-      pagination: {
-        pageSize: 3,
+        _limit: 3,
       },
     });
     return { scores };
