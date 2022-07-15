@@ -159,6 +159,7 @@
         </div>
       </div>
     </section>
+    <!-- <HomeDrawer /> -->
     <HomeProcess />
     <section id="home-counter">
       <div class="wrapper">
@@ -240,9 +241,11 @@
             <CaseCardMobile :data="homeCase" />
           </div>
         </div>
-        <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
-          <NuxtLink to="/cases"> 更多案例 </NuxtLink>
-        </button>
+        <NuxtLink to="/cases">
+          <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
+            更多案例
+          </button>
+        </NuxtLink>
       </div>
     </section>
     <section id="home-testimonial">
@@ -298,9 +301,11 @@
                 />
               </div>
             </div>
-            <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
-              <NuxtLink :to="`/blogs${i != 0?'?category=' + i:''}`"> 更多资讯 </NuxtLink>
-            </button>
+            <NuxtLink :to="`/blogs${i != 0 ? '?category=' + i : ''}`">
+              <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
+                更多资讯
+              </button>
+            </NuxtLink>
           </a-tab-pane>
         </a-tabs>
       </div>
