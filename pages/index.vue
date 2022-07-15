@@ -159,7 +159,7 @@
         </div>
       </div>
     </section>
-    <!-- <HomeDrawer /> -->
+    <HomeDrawer :data="drawerData"/>
     <HomeProcess />
     <section id="home-counter">
       <div class="wrapper">
@@ -483,6 +483,32 @@ export default {
           date: "2021-11-13",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
+        },
+      ],
+      drawerData: [
+        {
+          category: "技术类",
+          items: [
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+          ],
+        },
+        {
+          category: "商业类",
+          items: [
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+          ],
+        },
+        {
+          category: "留学类",
+          items: [
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+          ],
         },
       ],
     };

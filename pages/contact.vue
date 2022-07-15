@@ -12,53 +12,81 @@
       <div class="wrapper">
         <section class="contact-wrap">
           <a-row :gutter="[16, 16]">
-            <a-col :xs="24" :md="12">
-              <div class="phone-wrap info-wrap">
-                <div class="img-wrap">
-                  <img src="/img/icons/phone-red.png" alt="" />
+            <a-col :xs="24" :lg="12">
+              <div class="detail-grid">
+                <div>
+                  <div class="phone-wrap info-wrap">
+                    <div class="img-wrap">
+                      <img src="/img/icons/phone-red.png" alt="" />
+                    </div>
+                    <div class="info">
+                      <h2>电话</h2>
+                      <a href="tel:+16475233555" class="ga-phone-trigger"
+                        >多伦多: 647-523-3555</a
+                      >
+                      <a href="tel:+12049638886" class="ga-phone-trigger"
+                        >温尼伯: 204-963-8886</a
+                      >
+                    </div>
+                  </div>
+                  <div class="email-wrap info-wrap">
+                    <div class="img-wrap">
+                      <img src="/img/icons/email-red.png" alt="" />
+                    </div>
+                    <div class="info">
+                      <h2>邮箱</h2>
+                      <a href="mailto:info@beyondcanda.ca"
+                        >info@beyondcanada.ca</a
+                      >
+                    </div>
+                  </div>
                 </div>
-                <div class="info">
-                  <h2>电话</h2>
-                  <a href="tel:+16475233555" class="ga-phone-trigger"
-                    >多伦多: 647-523-3555</a
-                  >
-                  <a href="tel:+12049638886" class="ga-phone-trigger"
-                    >温尼伯: 204-963-8886</a
-                  >
+                <div class="wechat-wrap info-wrap">
+                  <div class="img-wrap">
+                    <img
+                      style="
+                        filter: brightness(0) saturate(100%) invert(14%)
+                          sepia(80%) saturate(2858%) hue-rotate(346deg)
+                          brightness(98%) contrast(97%);
+                      "
+                      src="/img/icons/wechat-white.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="info">
+                    <h2>客户咨询微信</h2>
+                    <img
+                      src="/img/wechat-qrcode.jpeg"
+                      class="wechat-code"
+                      alt="Beyond Canada Wechat"
+                    />
+                  </div>
+                </div>
+                <div class="address-wrap info-wrap">
+                  <div class="img-wrap">
+                    <img src="/img/icons/address-red.png" alt="" />
+                  </div>
+                  <div class="info">
+                    <h2>地址</h2>
+                    <a
+                      @click="mapLocation(1)"
+                      class="location"
+                      :class="{ active: location === 1 }"
+                      ><span>多伦多：</span>145 Royal Crest Ct Unit 47-48,
+                      Markham, ON L3R 9Z4
+                    </a>
+                    <a
+                      @click="mapLocation(2)"
+                      class="location"
+                      :class="{ active: location === 2 }"
+                      ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C 1A6
+                      (Robertson College)
+                    </a>
+                    <span class="disclaimer">点击地址切换地图</span>
+                  </div>
                 </div>
               </div>
-              <div class="email-wrap info-wrap">
-                <div class="img-wrap">
-                  <img src="/img/icons/email-red.png" alt="" />
-                </div>
-                <div class="info">
-                  <h2>邮箱</h2>
-                  <a href="mailto:info@beyondcanda.ca">info@beyondcanada.ca</a>
-                </div>
-              </div>
-              <div class="address-wrap info-wrap">
-                <div class="img-wrap">
-                  <img src="/img/icons/address-red.png" alt="" />
-                </div>
-                <div class="info">
-                  <h2>地址</h2>
-                  <a
-                    @click="mapLocation(1)"
-                    class="location"
-                    :class="{ active: location === 1 }"
-                    ><span>多伦多：</span>145 Royal Crest Ct Unit 47-48,
-                    Markham, ON L3R 9Z4
-                  </a>
-                  <a
-                    @click="mapLocation(2)"
-                    class="location"
-                    :class="{ active: location === 2 }"
-                    ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C 1A6
-                    (Robertson College)
-                  </a>
-                  <span class="disclaimer">点击地址切换地图</span>
-                </div>
-              </div>
+
               <div class="gmap-wrap info-wrap" v-if="location === 1">
                 <!-- <GMap /> -->
                 <iframe
@@ -81,7 +109,7 @@
                 </iframe>
               </div>
             </a-col>
-            <a-col :xs="24" :md="12">
+            <a-col :xs="24" :lg="12">
               <form @submit.prevent="handleSubmit">
                 <div class="contact-name contact-input">
                   <label for="name">名字（必填）</label>
@@ -257,7 +285,19 @@ header {
   margin-top: -100px;
   margin-bottom: 100px;
 }
-
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  .address-wrap {
+    grid-column: span 2 / span 2;
+  }
+}
+.wechat-code {
+  width: 170px;
+  margin: auto;
+  display: block;
+}
 .info-wrap {
   display: flex;
   margin-bottom: 40px;
@@ -295,6 +335,19 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+.wechat-wrap {
+  .img-wrap {
+    display: none;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b2854;
+    position: relative;
+    text-align: center;
   }
 }
 .email-wrap {
@@ -381,7 +434,7 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: $md) {
   .contact-wrap {
     padding: 25px 15px;
     margin-top: -60px;
@@ -389,6 +442,24 @@ form {
   }
   form {
     padding: 0 0;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+    .address-wrap {
+      grid-column: 1;
+    }
+  }
+  .wechat-wrap {
+    .img-wrap {
+      display: block;
+    }
+    h2 {
+      text-align: left;
+    }
+  }
+  .wechat-code {
+    margin: 0;
+    margin-left: -10px;
   }
 }
 </style>
