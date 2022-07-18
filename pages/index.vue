@@ -159,7 +159,7 @@
         </div>
       </div>
     </section>
-    <HomeDrawer :data="drawerData"/>
+    <!-- <HomeDrawer :data="drawerData"/> -->
     <HomeProcess />
     <section id="home-counter">
       <div class="wrapper">

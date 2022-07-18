@@ -106,7 +106,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-    filter: blur(1px);
+    filter: blur(2px);
   }
   &:first-child::before {
     background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/depositphotos_15656821_stock_photo_vancouver_dac3a8e8d0.jpg");
