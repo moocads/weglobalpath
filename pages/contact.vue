@@ -298,10 +298,13 @@ header {
     grid-column: span 2 / span 2;
   }
 }
+
 .wechat-code {
   width: 170px;
   margin: auto;
   display: block;
+  margin: 0;
+  margin-left: -10px;
 }
 .info-wrap {
   display: flex;
@@ -344,15 +347,11 @@ header {
 }
 
 .wechat-wrap {
-  .img-wrap {
-    display: none;
-  }
   h2 {
     font-size: 18px;
     font-weight: bold;
     color: #1b2854;
     position: relative;
-    text-align: center;
   }
 }
 .email-wrap {

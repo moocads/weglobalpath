@@ -20,7 +20,7 @@
             <div>{{ item.title }}</div>
             <div class="description">
               <div v-for="(d, o) in item.des" :key="o">
-                {{d}}
+                {{ d }}
               </div>
             </div>
           </NuxtLink>
@@ -107,6 +107,9 @@ export default {
     background-size: cover;
     background-position: 50%;
     filter: blur(2px);
+    transform: skewX(-4deg);
+    overflow: hidden;
+    z-index: 2;
   }
   &:first-child::before {
     background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/depositphotos_15656821_stock_photo_vancouver_dac3a8e8d0.jpg");
@@ -123,11 +126,12 @@ export default {
 }
 
 .content-container {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
   padding: 30px 20%;
+  z-index: 3;
   h1 {
     font-size: 36px;
     font-weight: 700;
@@ -161,16 +165,16 @@ export default {
   &:hover {
     background-color: #0000004a;
   }
-  >:first-child {
+  > :first-child {
     border-right: 1px solid #fff;
   }
 }
-.description{
+.description {
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 14px;
   font-weight: 400;
-  >div::before{
+  > div::before {
     content: "*";
   }
 }
@@ -199,9 +203,15 @@ export default {
       display: none;
     }
   }
-  .content-container h1 {
-    margin-top: 0;
-    font-size: 24px;
+  .drawer-item::before{
+    transform: none;
+  }
+  .content-container {
+    position: relative;
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+    }
   }
   .content-item {
     padding: 10px;
