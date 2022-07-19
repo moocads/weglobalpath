@@ -99,7 +99,8 @@
       </div>
       <small class="copy-right"
         >© {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
-        Reserved.</small
+        Reserved. Designed by
+        <a href="https://moocads.com/">Mooc Creative</a></small
       >
     </footer>
   </div>

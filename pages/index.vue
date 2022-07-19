@@ -4,12 +4,14 @@
       <header>
         <div class="home-swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="slide-info">
-                <h1>连接彼岸 用心服务</h1>
-                <p>
-                  加彼岸，您的私人移民规划师，衔接加拿大移民的高效途径，一站式全程规划。移民，不走弯路！
-                </p>
+            <div class="swiper-slide swiper-slide-1">
+              <div class="slide-info wrapper">
+                <h1>连接彼岸</h1>
+                <h1>用心服务</h1>
+                <figure>
+                  <p>加彼岸，您的私人移民规划师，衔接加拿大移民的高效途径</p>
+                  <p>一站式全程规划。移民，不走弯路！</p>
+                </figure>
                 <div class="header-btn-wrap">
                   <NuxtLink to="/evaluation">
                     <button class="main-btn main-btn_blue main-btn_round">
@@ -24,7 +26,10 @@
                 </div>
               </div>
               <div class="banner-overlay"></div>
-              <img src="/img/Home/banner.png" alt="Beyond Canada Banner-1" />
+              <img
+                src="/img/Home/home-banner.jpg"
+                alt="Beyond Canada Banner-1"
+              />
             </div>
             <div
               class="swiper-slide"
@@ -489,25 +494,61 @@ export default {
         {
           category: "技术类",
           items: [
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
           ],
         },
         {
           category: "商业类",
           items: [
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
           ],
         },
         {
           category: "留学类",
           items: [
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
-            { title: "安省境外雇主担保", des: ["申请快","一年内完成"], url: "" },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
+            {
+              title: "安省境外雇主担保",
+              des: ["申请快", "一年内完成"],
+              url: "",
+            },
           ],
         },
       ],
@@ -562,11 +603,11 @@ header {
     z-index: 5;
     width: 100vw;
     height: 100%;
-    background: linear-gradient(
-      90.4deg,
-      #22345c 0.37%,
-      rgba(251, 251, 251, 0) 99.69%
-    );
+    // background: linear-gradient(
+    //   90.4deg,
+    //   #22345c 0.37%,
+    //   rgba(251, 251, 251, 0) 99.69%
+    // );
   }
 }
 header .info-wrap {
@@ -621,6 +662,13 @@ header .info-wrap {
       object-fit: cover;
       object-position: 90% center;
       height: calc(100vh - 140px);
+    }
+    .banner-overlay {
+      background: linear-gradient(
+        90.4deg,
+        #22345c 0.37%,
+        rgba(251, 251, 251, 0) 99.69%
+      );
     }
   }
   header .info-wrap {
@@ -706,7 +754,30 @@ header .info-wrap {
       margin-bottom: 20px;
     }
   }
+  .swiper-slide-1 {
+    .slide-info {
+      margin-left: 100px;
+      align-items: start;
+      h1 {
+        color: $navy;
+        font-weight: 300;
+        line-height: 3.5rem;
+      }
+      h1:nth-child(2) {
+        margin-left: 80px;
+      }
+      figure {
+        margin: 20px 0;
+      }
+      p {
+        color: $navy;
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
+
 @media all and (max-width: $md) {
   .home-swiper {
     .slide-info {
@@ -721,6 +792,28 @@ header .info-wrap {
     .swiper-button-next,
     .swiper-rtl .swiper-button-prev {
       right: 10px;
+    }
+    .swiper-slide-1 {
+      .slide-info {
+        margin-left: 0px;
+        align-items: center;
+        h1 {
+          color: #fff;
+          font-weight: bold;
+          line-height: normal;
+        }
+        h1:nth-child(2) {
+          margin-left: 0px;
+        }
+        figure {
+          margin: 20px 0;
+        }
+        p {
+          color: #fff;
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
