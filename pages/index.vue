@@ -816,6 +816,15 @@ header .info-wrap {
       }
     }
   }
+  header {
+    .banner-overlay {
+      background: linear-gradient(
+        90.4deg,
+        #22345c 0.37%,
+        rgba(251, 251, 251, 0) 99.69%
+      );
+    }
+  }
 }
 @media all and (max-width: $sm) {
   .home-swiper {
