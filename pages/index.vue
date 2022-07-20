@@ -164,7 +164,7 @@
         </div>
       </div>
     </section>
-    <!-- <HomeDrawer :data="drawerData"/> -->
+    <HomeDrawer :data="drawerData" />
     <HomeProcess />
     <section id="home-counter">
       <div class="wrapper">
@@ -197,6 +197,10 @@
         <a-row :gutter="[24, 8]">
           <a-col :lg="12">
             <MainTitleSide title="关于加彼岸" titleEN="ABOUT US" />
+            <div class="slogen">
+              加彼岸致力于：帮助您和家人规划最符合您需求的移民项目，定制您的移民方案，让您和家人在彼岸顺利安家，享受到更好的教育、医疗、社会福利以及家庭资产的稳步升值。
+              <br />加彼岸，家彼岸。
+            </div>
             <p>
               加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
               CONSULTING），彼森教育（BISON INTERNATIONAL
@@ -1086,6 +1090,12 @@ header .info-wrap {
 
   .about-img {
     border-radius: 10px;
+  }
+  .slogen {
+    margin-bottom: 30px;
+    font-size: 18px;
+    background-color: $navy;
+    color: #fff;
   }
 }
 .about-btn {

@@ -17,7 +17,7 @@
             :key="j"
             to="/projects/nominee/ontario-immigrat-nominee-program"
           >
-            <div>{{ item.title }}</div>
+            <div class="title">{{ item.title }}</div>
             <div class="description">
               <div v-for="(d, o) in item.des" :key="o">
                 {{ d }}
@@ -96,7 +96,7 @@ export default {
       display: none;
     }
   }
-  &::before {
+  &::after {
     content: "";
     position: absolute;
     top: 0;
@@ -111,14 +111,14 @@ export default {
     overflow: hidden;
     z-index: 2;
   }
-  &:first-child::before {
+  &:first-child::after {
     background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/depositphotos_15656821_stock_photo_vancouver_dac3a8e8d0.jpg");
   }
-  &:nth-child(2)::before {
+  &:nth-child(2)::after {
     background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/SUV_a8eaab8723.png");
   }
-  &:nth-child(3)::before {
-    background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_366cda4454.jpg");
+  &:nth-child(3)::after {
+    background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9ea8ae2af6.jpg");
   }
   h1 {
     color: #fff;
@@ -159,6 +159,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   transition: background-color 0.4s;
   padding: 0;
+  position: relative;
   > div {
     padding: 20px;
   }
@@ -168,6 +169,17 @@ export default {
   > :first-child {
     border-right: 1px solid #fff;
   }
+}
+.title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 80px;
+  top: 0;
+  right: 0;
+  background: #fff;
+  transform: rotate(10deg);
 }
 .description {
   display: grid;
@@ -203,7 +215,7 @@ export default {
       display: none;
     }
   }
-  .drawer-item::before{
+  .drawer-item::before {
     transform: none;
   }
   .content-container {
