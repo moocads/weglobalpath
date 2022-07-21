@@ -10,12 +10,13 @@
     >
       <div class="content-container">
         <h1>{{ d.category }}</h1>
+        <h2>{{ d.categoryEN }}</h2>
         <div class="content">
           <NuxtLink
             class="content-item"
             v-for="(item, j) in d.items"
             :key="j"
-            to="/projects/nominee/ontario-immigrat-nominee-program"
+            :to="item.url"
           >
             <div class="title">{{ item.title }}</div>
             <div class="description">
@@ -35,7 +36,7 @@
             class="content-item"
             v-for="(item, j) in d.items"
             :key="j"
-            to="/projects/nominee/ontario-immigrat-nominee-program"
+            :to="item.url"
           >
             <div>{{ item.title }}</div>
           </NuxtLink>
@@ -44,6 +45,35 @@
               移民自测
             </button>
           </NuxtLink>
+        </div>
+        <div class="arrow">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 512 512"
+            width="50"
+            height="50"
+            style="enable-background: new 0 0 512 512; fill: #fff"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                d="M256,5.333C114.88,5.333,0,117.76,0,256s114.88,250.667,256,250.667S512,394.24,512,256S397.12,5.333,256,5.333z
+				 M256,485.333C126.613,485.333,21.333,382.4,21.333,256S126.613,26.667,256,26.667S490.667,129.493,490.667,256
+				S385.387,485.333,256,485.333z"
+              />
+              <path
+                d="M369.28,247.467l-181.653-133.44c-4.693-3.627-11.307-2.773-14.933,1.92c-3.627,4.693-2.773,11.307,1.92,14.933
+				c0.107,0.107,0.32,0.213,0.427,0.32L344.96,256L175.04,380.693c-4.8,3.52-5.76,10.133-2.24,14.933
+				c3.52,4.8,10.133,5.76,14.933,2.24L369.387,264.64c4.8-3.52,5.76-10.133,2.24-14.933
+				C370.88,248.853,370.133,248.107,369.28,247.467z"
+              />
+            </g>
+          </svg>
         </div>
       </div>
     </div>
@@ -76,6 +106,19 @@ export default {
   background-size: cover;
   background-position: 100%;
   position: relative;
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   &:hover {
     flex: 2;
     .preview-content {
@@ -95,6 +138,9 @@ export default {
     .preview-content {
       display: none;
     }
+    .arrow {
+      display: block;
+    }
   }
   &::after {
     content: "";
@@ -106,19 +152,27 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-    filter: blur(2px);
-    transform: skewX(-4deg);
-    overflow: hidden;
-    z-index: 2;
+    // filter: blur(2px);
   }
   &:first-child::after {
-    background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/depositphotos_15656821_stock_photo_vancouver_dac3a8e8d0.jpg");
+    background-image: url("/img/drawer-1.png");
   }
-  &:nth-child(2)::after {
-    background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/SUV_a8eaab8723.png");
+  &:nth-child(2) {
+    .content-container {
+      z-index: 5;
+      position: absolute;
+    }
+    &::after {
+      transform: skewX(-4deg);
+      overflow: hidden;
+      z-index: 4;
+      left: -12%;
+      width: 124%;
+      background-image: url("/img/drawer-2.png");
+    }
   }
   &:nth-child(3)::after {
-    background-image: url("https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/_9ea8ae2af6.jpg");
+    background-image: url("/img/drawer-3.png");
   }
   h1 {
     color: #fff;
@@ -135,6 +189,11 @@ export default {
   h1 {
     font-size: 36px;
     font-weight: 700;
+    margin: 0;
+  }
+  h2 {
+    color: #fff;
+    margin-bottom: 30px;
   }
 }
 
@@ -144,8 +203,12 @@ export default {
   grid-template-columns: 1fr;
   gap: 15px;
 }
+.preview-content {
+  width: 300px;
+}
 .content {
   display: none;
+  width: 500px;
 }
 .content-item {
   border: 1px solid #fff;
@@ -166,20 +229,20 @@ export default {
   &:hover {
     background-color: #0000004a;
   }
-  > :first-child {
-    border-right: 1px solid #fff;
-  }
 }
-.title::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 1px;
-  height: 80px;
-  top: 0;
-  right: 0;
-  background: #fff;
-  transform: rotate(10deg);
+.title {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #fff;
+    transform: rotate(10deg);
+  }
 }
 .description {
   display: grid;
@@ -187,9 +250,42 @@ export default {
   font-size: 14px;
   font-weight: 400;
   > div::before {
-    content: "*";
+    content: "★";
   }
 }
+@media all and (max-width: $md) {
+  .drawer {
+    height: auto;
+    flex-direction: column;
+    .desktop-btn {
+      display: none;
+    }
+  }
+  .drawer-item {
+    &:nth-child(2){
+      .content-container{
+        position: relative;
+      }
+      &::after {
+      width: 100%;
+      transform: none;
+      left: 0;
+    }
+    }
+  }
+  .content-container {
+    position: relative;
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+  }
+  .content-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
 @keyframes show {
   0% {
     opacity: 0;
@@ -204,30 +300,6 @@ export default {
   }
   100% {
     opacity: 0;
-  }
-}
-
-@media all and (max-width: $sm) {
-  .drawer {
-    height: auto;
-    flex-direction: column;
-    .desktop-btn {
-      display: none;
-    }
-  }
-  .drawer-item::before {
-    transform: none;
-  }
-  .content-container {
-    position: relative;
-    h1 {
-      margin-top: 0;
-      font-size: 24px;
-    }
-  }
-  .content-item {
-    padding: 10px;
-    font-size: 14px;
   }
 }
 </style>

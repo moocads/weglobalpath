@@ -192,15 +192,16 @@
         </a-row>
       </div>
     </section>
+    <!-- <section id="home-slogen">
+      <div class="wrapper">
+        加彼岸致力于：帮助您和家人规划最符合您需求的移民项目，定制您的移民方案，让您和家人在彼岸顺利安家，享受到更好的教育、医疗、社会福利以及家庭资产的稳步升值。加彼岸，家彼岸。
+      </div>
+    </section> -->
     <section id="home-about">
       <div class="wrapper">
         <a-row :gutter="[24, 8]">
           <a-col :lg="12">
             <MainTitleSide title="关于加彼岸" titleEN="ABOUT US" />
-            <div class="slogen">
-              加彼岸致力于：帮助您和家人规划最符合您需求的移民项目，定制您的移民方案，让您和家人在彼岸顺利安家，享受到更好的教育、医疗、社会福利以及家庭资产的稳步升值。
-              <br />加彼岸，家彼岸。
-            </div>
             <p>
               加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
               CONSULTING），彼森教育（BISON INTERNATIONAL
@@ -257,7 +258,7 @@
         </NuxtLink>
       </div>
     </section>
-    <section id="home-testimonial">
+    <!-- <section id="home-testimonial">
       <div class="wrapper">
         <MainTitle title="客户评价" titleEN="FEEDBACK" />
         <a-carousel arrows :slidesToShow="2" :autoplay="true" class="slider-lg">
@@ -285,7 +286,7 @@
           </div>
         </a-carousel>
       </div>
-    </section>
+    </section> -->
     <section id="home-blogs">
       <div class="wrapper">
         <MainTitle
@@ -497,61 +498,64 @@ export default {
       drawerData: [
         {
           category: "技术类",
+          categoryEN: "Skilled Worker",
           items: [
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "省提名雇主担保",
+              des: ["要求简", "获批快"],
+              url: "/projects/nominee",
             },
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "联邦快速通道",
+              des: ["审核快", "费用低"],
+              url: "/projects/ee",
             },
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "联邦农业试点",
+              des: ["无年龄限制", "审核快"],
+              url: "/projects/nominee/agri-food-immigration-pilot",
             },
           ],
         },
         {
           category: "商业类",
+          categoryEN: "Business",
           items: [
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "联邦创投（SUV）",
+              des: ["周期短", "风险低"],
+              url: "/projects/startup/start-up-visa",
             },
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "企业主工签",
+              des: ["无名额限制", "速度快"],
+              url: "/projects/startup/owner-operator-work-permit",
             },
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "萨省投资移民",
+              des: ["要求低", "周期短"],
+              url: "/projects/entrepreneur/saskatchewan-investment",
             },
           ],
         },
         {
           category: "留学类",
+          categoryEN: "Experience",
           items: [
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "曼省留学移民",
+              des: ["门槛低", "费用低"],
+              url: "/projects/education/manitoba-education",
             },
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "安省留学移民",
+              des: ["要求低", "全家移民"],
+              url: "/projects/education/ontario-master-education",
             },
             {
-              title: "安省境外雇主担保",
-              des: ["申请快", "一年内完成"],
-              url: "",
+              title: "BC省留学移民",
+              des: ["无限制", "速度快"],
+              url: "/projects/education/BC-education",
             },
           ],
         },
@@ -668,6 +672,7 @@ header .info-wrap {
       height: calc(100vh - 140px);
     }
     .banner-overlay {
+      height: 550px;
       background: linear-gradient(
         90.4deg,
         #22345c 0.37%,
@@ -1081,6 +1086,13 @@ header .info-wrap {
       font-size: 16px;
     }
   }
+}
+#home-slogen{
+  padding: 50px 0;
+  color: $navy;
+  background-color: #efefef;
+  font-size: 18px;
+  text-align: center;
 }
 /* ------------------------------------------------------ */
 /*                   ANCHOR ABOUT STYLE                   */
