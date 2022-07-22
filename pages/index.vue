@@ -323,10 +323,10 @@
         </div>
         <div class="titles">
           Luna Wang
-          <small>
+          <div class="small">
             <br />加彼岸出国咨询创始人 <br />C101青年创业会联合创始人
             <br />朗博天使投资人联盟董事会成员
-          </small>
+          </div>
         </div>
       </div>
     </section>
@@ -1152,6 +1152,10 @@ header .info-wrap {
     .titles {
       text-align: left;
       border-left: 2px solid #efefef;
+    }
+    .small{
+      font-size: 11px;
+      font-style: italic;
     }
     &::before {
       top: 0;
