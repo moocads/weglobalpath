@@ -99,8 +99,10 @@
       </div>
       <small class="copy-right"
         >© {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
-        Reserved. Designed by
-        <a href="https://moocads.com/">Mooc Creative</a></small
+        Reserved.
+        <span
+          >Designed by <a href="https://moocads.com/">Mooc Creative</a></span
+        ></small
       >
     </footer>
   </div>
@@ -186,6 +188,9 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  span{
+    color: $navy;
+  }
 }
 @media all and (max-width: 768px) {
   footer {
