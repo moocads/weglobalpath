@@ -118,6 +118,8 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media all and (max-width: $md) {
+    }
   }
   &:hover {
     flex: 2;
@@ -205,10 +207,19 @@ export default {
 }
 .preview-content {
   width: 300px;
+  @media all and (max-width: 1220px) {
+    width: 240px;
+  }
+  @media all and (max-width: $sm) {
+    width: 100%;
+  }
 }
 .content {
   display: none;
   width: 500px;
+  @media all and (max-width: $sm) {
+    width: 100%;
+  }
 }
 .content-item {
   border: 1px solid #fff;
@@ -262,15 +273,15 @@ export default {
     }
   }
   .drawer-item {
-    &:nth-child(2){
-      .content-container{
+    &:nth-child(2) {
+      .content-container {
         position: relative;
       }
       &::after {
-      width: 100%;
-      transform: none;
-      left: 0;
-    }
+        width: 100%;
+        transform: none;
+        left: 0;
+      }
     }
   }
   .content-container {
