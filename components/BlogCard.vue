@@ -41,6 +41,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 4px 4px 15px 0px rgb(0 0 0 / 30%);
   img {
     width: 100%;
     height: auto;

@@ -166,37 +166,7 @@
     </section>
     <HomeDrawer :data="drawerData" />
     <HomeProcess />
-    <section id="home-counter">
-      <div class="wrapper">
-        <div class="title-wrap">
-          <h1>选择我们 选择放心</h1>
-          <img src="/img/logos/logo-small-white.png" alt="" />
-        </div>
-        <a-row :gutter="[16, 16]">
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>100+</h2>
-            <p>全球合作校园</p>
-          </a-col>
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>6000+</h2>
-            <p>移民申请成功案例</p>
-          </a-col>
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>98.1%</h2>
-            <p>移民申请通过率</p>
-          </a-col>
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>1000+</h2>
-            <p>海外优质雇主资源</p>
-          </a-col>
-        </a-row>
-      </div>
-    </section>
-    <!-- <section id="home-slogen">
-      <div class="wrapper">
-        加彼岸致力于：帮助您和家人规划最符合您需求的移民项目，定制您的移民方案，让您和家人在彼岸顺利安家，享受到更好的教育、医疗、社会福利以及家庭资产的稳步升值。加彼岸，家彼岸。
-      </div>
-    </section> -->
+
     <section id="home-about">
       <div class="wrapper">
         <a-row :gutter="[24, 8]">
@@ -236,6 +206,39 @@
             />
           </a-col>
         </a-row>
+      </div>
+    </section>
+    <section id="home-blogs">
+      <div class="wrapper">
+        <MainTitle
+          title="加彼岸热讯"
+          titleEN="ARTICLES"
+          titleENColor="#f1f1f1"
+        />
+        <a-tabs class="blog-tabs" default-active-key="tab-0">
+          <a-tab-pane
+            v-for="(blog, key, i) in blogs"
+            :key="'tab-' + i"
+            :tab="key"
+          >
+            <div class="blogs-grid">
+              <div class="blog-item" v-for="(b, index) in blog" :key="index">
+                <BlogCard
+                  :thumbnail="b.thumbnail_cn.url"
+                  :title="b.title_cn"
+                  :description="b.description_cn"
+                  :date="b.published_at.split('T')[0]"
+                  :link="'/blogs/' + b.slug"
+                />
+              </div>
+            </div>
+            <NuxtLink :to="`/blogs${i != 0 ? '?category=' + i : ''}`">
+              <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
+                更多资讯
+              </button>
+            </NuxtLink>
+          </a-tab-pane>
+        </a-tabs>
       </div>
     </section>
     <section id="home-cases">
@@ -287,39 +290,62 @@
         </a-carousel>
       </div>
     </section> -->
-    <section id="home-blogs">
+    <section id="home-counter">
       <div class="wrapper">
-        <MainTitle
-          title="加彼岸热讯"
-          titleEN="ARTICLES"
-          titleENColor="#c4c4c4"
-        />
-        <a-tabs class="blog-tabs" default-active-key="tab-0">
-          <a-tab-pane
-            v-for="(blog, key, i) in blogs"
-            :key="'tab-' + i"
-            :tab="key"
-          >
-            <div class="blogs-grid">
-              <div class="blog-item" v-for="(b, index) in blog" :key="index">
-                <BlogCard
-                  :thumbnail="b.thumbnail_cn.url"
-                  :title="b.title_cn"
-                  :description="b.description_cn"
-                  :date="b.published_at.split('T')[0]"
-                  :link="'/blogs/' + b.slug"
-                />
-              </div>
-            </div>
-            <NuxtLink :to="`/blogs${i != 0 ? '?category=' + i : ''}`">
-              <button class="cases-btn main-btn main-btn_blue main-btn_round-5">
-                更多资讯
-              </button>
-            </NuxtLink>
-          </a-tab-pane>
-        </a-tabs>
+        <div class="title-wrap">
+          <h1>选择我们 选择放心</h1>
+          <img src="/img/logos/logo-small-white.png" alt="" />
+        </div>
+        <a-row :gutter="[16, 16]">
+          <a-col :xs="12" :md="6" class="counter-item">
+            <h2>100+</h2>
+            <p>全球合作校园</p>
+          </a-col>
+          <a-col :xs="12" :md="6" class="counter-item">
+            <h2>6000+</h2>
+            <p>移民申请成功案例</p>
+          </a-col>
+          <a-col :xs="12" :md="6" class="counter-item">
+            <h2>98.1%</h2>
+            <p>移民申请通过率</p>
+          </a-col>
+          <a-col :xs="12" :md="6" class="counter-item">
+            <h2>1000+</h2>
+            <p>海外优质雇主资源</p>
+          </a-col>
+        </a-row>
       </div>
     </section>
+    <section id="home-slogen">
+      <div class="wrapper">
+        <div>
+          加彼岸致力于：帮助您和家人规划最符合您需求的移民项目，定制您的移民方案，让您和家人在彼岸顺利安家，享受到更好的教育、医疗、社会福利以及家庭资产的稳步升值。加彼岸，家彼岸。
+        </div>
+        <div class="titles">
+          Luna Wang
+          <small>
+            <br />加彼岸出国咨询创始人 <br />C101青年创业会联合创始人
+            <br />朗博天使投资人联盟董事会成员
+          </small>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="home-evaluation">
+      <div class="wrapper">
+        <div class="content">
+          <div class="title">
+            <h1>加彼岸，家彼岸</h1>
+            <h2>为您量身定制整体移居方案</h2>
+          </div>
+          <form class="evaluation-form" @submit.prevent="handleSubmit">
+            <input type="text" v-model="contactInfo" placeholder="输入邮箱或微信号" required />
+            <button type="submit" class="submit-btn main-btn main-btn_blue">
+              免费评估
+            </button>
+          </form>
+        </div>
+      </div>
+    </section> -->
   </div>
 </template>
 
@@ -560,7 +586,30 @@ export default {
           ],
         },
       ],
+      contactInfo: "",
     };
+  },
+  methods: {
+    async handleSubmit(e) {
+      e.preventDefault();
+      try {
+        this.$axios
+          .post(
+            `https://beyond-canada-back-staging.herokuapp.com/free-evaluations`,
+            {
+              contact_info: this.contactInfo,
+            }
+          )
+          .then((response) => {
+            this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
+            console.log("submitted");
+            this.contactInfo = "";
+          });
+      } catch (error) {
+        this.$message.info("出现错误，请稍后再试。");
+        console.log(error);
+      }
+    },
   },
   mounted() {
     const swiper = new Swiper(".home-swiper", {
@@ -1087,19 +1136,74 @@ header .info-wrap {
     }
   }
 }
-#home-slogen{
-  padding: 50px 0;
+#home-slogen {
+  padding: 100px 0;
+  background-color: #fff;
   color: $navy;
-  background-color: #efefef;
   font-size: 18px;
   text-align: center;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    position: relative;
+    > div {
+      padding: 35px 60px;
+    }
+    .titles {
+      text-align: left;
+      border-left: 2px solid #efefef;
+    }
+    &::before {
+      top: 0;
+      left: -40px;
+    }
+    &::after {
+      bottom: 0;
+      right: -40px;
+      transform: rotate(180deg);
+    }
+  }
+  .wrapper::before,
+  .wrapper::after {
+    background-image: url("/img/quote.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    content: "";
+    height: 30px;
+    width: 40px;
+    opacity: 0.3;
+    position: absolute;
+  }
+}
+@media all and (max-width: $sm) {
+  #home-slogen {
+    padding: 60px 0;
+    font-size: 16px;
+    .wrapper {
+      grid-template-columns: 1fr;
+      > div {
+        padding: 40px 10px;
+      }
+      .titles {
+        border-left: none;
+        border-top: 2px solid #efefef;
+      }
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+  }
 }
 /* ------------------------------------------------------ */
 /*                   ANCHOR ABOUT STYLE                   */
 /* ------------------------------------------------------ */
 #home-about {
   padding: 50px 0;
-
+  background-color: #efefef;
   .about-img {
     border-radius: 10px;
   }
@@ -1195,18 +1299,56 @@ header .info-wrap {
 /* ------------------------------------------------------ */
 #home-blogs {
   padding: 100px 0;
-  background-color: #efefef;
-}
-#home-blogs .blogs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 30px;
+  background-color: #fff;
+  .blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+  }
+  .blog-tabs {
+    overflow: visible;
+  }
 }
 
 @media all and (max-width: 768px) {
   #home-blogs .blogs-grid {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 20px;
+  }
+}
+
+#home-evaluation {
+  padding: 100px 0;
+  background-color: #efefef;
+  .title {
+    margin-bottom: 30px;
+  }
+  .content {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 900px;
+    h1,
+    h2 {
+      margin: 0;
+      color: $navy;
+    }
+  }
+  form {
+    display: flex;
+    justify-content: flex-start;
+    input {
+      border: none;
+      border-radius: 10px 0 0 10px;
+      padding: 10px 20px;
+      width: 350px;
+    }
+    .submit-btn {
+      margin-bottom: 0;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 0 10px 10px 0;
+    }
   }
 }
 </style>
