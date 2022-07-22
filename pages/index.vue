@@ -318,7 +318,7 @@
     </section>
     <section id="home-slogen">
       <div class="wrapper">
-        <div>
+        <div class="content">
           加彼岸致力于：帮助您和家人规划最符合您需求的移民项目，定制您的移民方案，让您和家人在彼岸顺利安家，享受到更好的教育、医疗、社会福利以及家庭资产的稳步升值。加彼岸，家彼岸。
         </div>
         <div class="titles">
@@ -1149,14 +1149,6 @@ header .info-wrap {
     > div {
       padding: 35px 60px;
     }
-    .titles {
-      text-align: left;
-      border-left: 2px solid #efefef;
-    }
-    .small{
-      font-size: 11px;
-      font-style: italic;
-    }
     &::before {
       top: 0;
       left: -40px;
@@ -1166,18 +1158,28 @@ header .info-wrap {
       right: -40px;
       transform: rotate(180deg);
     }
+    &::before,
+    &::after {
+      background-image: url("/img/quote.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      content: "";
+      height: 30px;
+      width: 40px;
+      opacity: 0.3;
+      position: absolute;
+    }
   }
-  .wrapper::before,
-  .wrapper::after {
-    background-image: url("/img/quote.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: inline-block;
-    content: "";
-    height: 30px;
-    width: 40px;
-    opacity: 0.3;
-    position: absolute;
+  .content {
+    font-style: italic;
+  }
+  .titles {
+    text-align: left;
+    border-left: 2px solid #efefef;
+  }
+  .small {
+    font-size: 11px;
   }
 }
 @media all and (max-width: $sm) {
