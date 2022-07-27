@@ -330,7 +330,7 @@
         </div>
       </div>
     </section>
-    <!-- <section id="home-evaluation">
+    <section id="home-evaluation">
       <div class="wrapper">
         <div class="content">
           <div class="title">
@@ -338,14 +338,19 @@
             <h2>为您量身定制整体移居方案</h2>
           </div>
           <form class="evaluation-form" @submit.prevent="handleSubmit">
-            <input type="text" v-model="contactInfo" placeholder="输入邮箱或微信号" required />
+            <input
+              type="text"
+              v-model="contactInfo"
+              placeholder="输入邮箱或微信号"
+              required
+            />
             <button type="submit" class="submit-btn main-btn main-btn_blue">
               免费评估
             </button>
           </form>
         </div>
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 
@@ -1326,6 +1331,19 @@ header .info-wrap {
 #home-evaluation {
   padding: 100px 0;
   background-color: #efefef;
+  position: relative;
+  background-image: url("/img/banner-bg.png");
+  background-repeat: no-repeat;
+  @media all and (max-width: $md) {
+    background-position: center;
+  }
+  @media all and (max-width: $sm) {
+    background-position: 35% center;
+  }
+
+  .wrapper {
+    position: relative;
+  }
   .title {
     margin-bottom: 30px;
   }
@@ -1339,6 +1357,9 @@ header .info-wrap {
       margin: 0;
       color: $navy;
     }
+    @media all and (max-width: $sm) {
+      width: 100%;
+    }
   }
   form {
     display: flex;
@@ -1348,6 +1369,13 @@ header .info-wrap {
       border-radius: 10px 0 0 10px;
       padding: 10px 20px;
       width: 350px;
+    }
+    @media all and (max-width: $sm) {
+      display: grid;
+      grid-template-columns: auto 100px;
+      input {
+        width: 100%;
+      }
     }
     .submit-btn {
       margin-bottom: 0;

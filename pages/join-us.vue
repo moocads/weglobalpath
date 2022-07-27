@@ -90,7 +90,17 @@
               <a-form :form="form" @submit="handleSubmit" id="joinus-form">
                 <a-form-item class="contact-input" label="申请职位">
                   <a-select
-                    v-decorator="['department']"
+                    v-decorator="[
+                      'department',
+                      {
+                        rules: [
+                          {
+                            required: true,
+                            message: '请选择想申请的职位',
+                          },
+                        ],
+                      },
+                    ]"
                     placeholder=" 请选择申请的职位"
                     style="margin-bottom: 20px"
                   >
@@ -146,46 +156,68 @@
                   />
                 </a-form-item>
                 <a-form-item class="contact-input" label="出生日期">
-                  <a-date-picker v-decorator="['birthday']" />
-                </a-form-item>
-                <a-form-item class="contact-input" label="名字（必填）">
-                  <a-input
+                  <a-date-picker
                     v-decorator="[
-                      'name',
+                      'birthday',
                       {
                         rules: [
                           {
                             required: true,
-                            message: '请输入你的名字',
+                            message: '请选择你的生日',
                           },
                         ],
                       },
                     ]"
+                    placeholder="选择日期"
                   />
                 </a-form-item>
-                <!-- <div class="contact-dob contact-input">
-                  <label for="dob">出生日期</label>
-                  <input type="text" v-model="userDOB" />
-                </div>
-                <div class="contact-phone contact-input">
-                  <label for="phone">电话</label>
-                  <input type="text" v-model="userPhone" />
-                </div>
-                <div class="contact-email contact-input">
-                  <label for="email">邮箱（必填）</label>
-                  <input type="text" v-model="userEmail" required />
-                </div>
-                <div class="contact-message contact-input">
-                  <label for="dob">留言（必填）</label>
-
-                  <textarea v-model="userMessage" required></textarea>
-                </div>
-                <div class="contact-checkbox contact-input">
-                  <a-checkbox v-model="userSubscription">
-                    希望通过邮箱或短信接收更多加彼岸留学移民最新政策资讯。
-                  </a-checkbox>
-                </div> -->
-                <recaptcha />
+                <a-form-item class="contact-input" label="毕业院校">
+                  <a-input v-decorator="['school', { initialValue: '' }]" />
+                </a-form-item>
+                <!-- <label for="resume" class="ant-form-item-required resume"
+                  >简历</label
+                >
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  accept="application/pdf"
+                  @change="handleFileChange"
+                /> -->
+                <a-form-item
+                  class="contact-input"
+                  label="简历"
+                  extra="仅限一个PDF文件，其大小不可大于5MB"
+                >
+                  <a-upload
+                    v-decorator="[
+                      'resume',
+                      {
+                        rules: [
+                          {
+                            required: true,
+                            message: '请上传你的简历',
+                          },
+                        ],
+                      },
+                    ]"
+                    :file-list="resume"
+                    :multiple="false"
+                    accept="application/pdf"
+                    listType="text"
+                    @change="handleFileChange"
+                  >
+                    <a-button> <a-icon type="upload" /> 点击上传 </a-button>
+                  </a-upload>
+                </a-form-item>
+                <a-form-item class="contact-input" label="留言">
+                  <a-textarea
+                    v-decorator="['message', { initialValue: '' }]"
+                    placeholder="输入你的留言"
+                    :auto-size="{ minRows: 2, maxRows: 7 }"
+                  />
+                </a-form-item>
+                <!-- <recaptcha /> -->
                 <br />
                 <button type="submit" class="submit-btn main-btn main-btn_blue">
                   发送
@@ -221,6 +253,7 @@ export default {
       emailRegex:
         /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
       location: 1,
+      resume: null,
     };
   },
 
@@ -228,22 +261,46 @@ export default {
     mapLocation(location) {
       this.location = location;
     },
+    handleFileChange({ fileList, file }) {
+      const isOversize = file.size / 1024 / 1024 > 1;
+      if (!isOversize) {
+        this.resume = fileList;
+      } else {
+        this.$notification.open({
+          message: "文件过大",
+          description: "文件大小不可超过5MB",
+          placement: "bottomRight",
+        });
+      }
+    },
     async handleSubmit(e) {
       try {
         e.preventDefault();
         this.isSubmitting = true;
-        const token = await this.$recaptcha.getResponse();
+        // const token = await this.$recaptcha.getResponse();
         this.form.validateFields((err, values) => {
           if (!err) {
-            console.log("Received values of form: ", values);
             const data = values;
+            data.birthday = data.birthday.toString();
+            data.resume = this.resume[0];
+            console.log("Received values of form: ", data);
             this.$axios.post("/join-uses", data).then((res) => {
               if (res.error) {
                 console.log(res.error);
-                this.$message.info("提交失败，请稍后再试。");
+                this.form.resetFields();
+                this.$notification.open({
+                  message: "提交失败",
+                  description: "请稍后再试。",
+                  placement: "bottomRight",
+                });
               } else {
                 this.form.resetFields();
-                this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
+                this.$notification.open({
+                  message: "提交成功",
+                  description: "感谢您提供联系信息。我们会尽快和您联系。",
+                  placement: "bottomRight",
+                });
+                this.$message.info("");
               }
             });
           }
@@ -266,7 +323,7 @@ export default {
         //     this.userMessage = undefined;
         //     this.userDOB = undefined;
         //   });
-        await this.$recaptcha.reset();
+        // await this.$recaptcha.reset();
       } catch (error) {
         this.$message.warning("请勾选reCAPTCHA验证");
         console.log(error);
@@ -304,11 +361,33 @@ export default {
       font-size: 16px;
       color: $navy;
       margin-bottom: 10px;
+      @media all and (max-width: $sm) {
+        font-size: 14px;
+      }
     }
+  }
+  .ant-calendar-picker-input {
+    height: 40px;
+    background-color: #e9e9e9;
+  }
+  .ant-select-selection {
+    height: 40px;
+    background-color: #e9e9e9;
+  }
+}
+#joinus-form_department {
+  margin-bottom: 0 !important;
+  .ant-select-selection__rendered {
+    height: 100%;
   }
 }
 </style>
 <style lang="scss" scoped>
+.resume {
+  font-size: 16px;
+  color: #1b2854;
+  margin-bottom: 10px;
+}
 header {
   background-image: url("/img/About/banner.png");
   background-color: rgba(34, 52, 92, 0.5);
@@ -530,6 +609,11 @@ form {
   .wechat-code {
     margin: 0;
     margin-left: -10px;
+  }
+}
+@media all and (max-width: $sm) {
+  .submit-btn {
+    font-size: 16px;
   }
 }
 </style>
