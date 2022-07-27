@@ -1334,6 +1334,7 @@ header .info-wrap {
   position: relative;
   background-image: url("/img/banner-bg.png");
   background-repeat: no-repeat;
+  background-size: cover;
   @media all and (max-width: $md) {
     background-position: center;
   }
