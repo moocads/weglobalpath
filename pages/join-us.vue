@@ -262,9 +262,13 @@ export default {
       this.location = location;
     },
     handleFileChange({ fileList, file }) {
-      const isOversize = file.size / 1024 / 1024 > 1;
+      const isOversize = file.size / 1024 / 1024 > 5;
       if (!isOversize) {
-        this.resume = fileList;
+        let arr = fileList;
+        if (fileList.length > 1) {
+          arr.shift();
+        }
+        this.resume = arr;
       } else {
         this.$notification.open({
           message: "文件过大",
@@ -282,27 +286,39 @@ export default {
           if (!err) {
             const data = values;
             data.birthday = data.birthday.toString();
-            data.resume = this.resume[0];
-            console.log("Received values of form: ", data);
-            this.$axios.post("/join-uses", data).then((res) => {
-              if (res.error) {
-                console.log(res.error);
-                this.form.resetFields();
-                this.$notification.open({
-                  message: "提交失败",
-                  description: "请稍后再试。",
-                  placement: "bottomRight",
+            // upload file to cms
+            const files = new FormData();
+            files.append(
+              "files",
+              this.resume[0].originFileObj,
+              this.resume[0].name
+            );
+            this.$axios
+              .post("/upload", files)
+              .then((res) => {
+                data.resume = res.data[0].id;
+                console.log("Received values of form: ", data);
+              })
+              .then(() => {
+                this.$axios.post("/join-uses", data).then((res) => {
+                  if (res.error) {
+                    console.log(res.error);
+                    this.form.resetFields();
+                    this.$notification.open({
+                      message: "提交失败",
+                      description: "请稍后再试。",
+                      placement: "bottomRight",
+                    });
+                  } else {
+                    this.form.resetFields();
+                    this.$notification.open({
+                      message: "提交成功",
+                      description: "感谢您提供联系信息。我们会尽快和您联系。",
+                      placement: "bottomRight",
+                    });
+                  }
                 });
-              } else {
-                this.form.resetFields();
-                this.$notification.open({
-                  message: "提交成功",
-                  description: "感谢您提供联系信息。我们会尽快和您联系。",
-                  placement: "bottomRight",
-                });
-                this.$message.info("");
-              }
-            });
+              });
           }
         });
         // this.$axios
