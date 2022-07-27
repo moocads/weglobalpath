@@ -1184,7 +1184,7 @@ header .info-wrap {
     border-left: 2px solid #efefef;
   }
   .small {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 @media all and (max-width: $sm) {
