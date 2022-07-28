@@ -281,7 +281,6 @@
           <button
             type="submit"
             class="submit-btn main-btn main-btn_blue"
-            :class="{ disabled: isSubmitting }"
             :disabled="isSubmitting"
           >
             发送
