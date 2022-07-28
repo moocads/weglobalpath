@@ -1,27 +1,30 @@
 .wrapper {
-    max-width: 1440px;
-    width: 85vw;
-    margin: auto;
+  max-width: 1440px;
+  width: 85vw;
+  margin: auto;
 }
 .img-fluid {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+}
+.disabled {
+  pointer-events: none;
 }
 @mixin background-img-with-div($url) {
-    background-image: url($url);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 0px;
-    // background-attachment: fixed;
-    // padding-top: percentage(image-height($url) / image-width($url));
-    //padding-top: height/width*100 %
+  background-image: url($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0px;
+  // background-attachment: fixed;
+  // padding-top: percentage(image-height($url) / image-width($url));
+  //padding-top: height/width*100 %
 }
 
 @mixin text-ellipsis($lineNum) {
-    display: -webkit-box;
-    line-height: 1.5;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: $lineNum;
+  display: -webkit-box;
+  line-height: 1.5;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineNum;
 }

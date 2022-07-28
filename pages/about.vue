@@ -152,7 +152,7 @@
     <section class="sec-joinUs">
       <div class="wrapper">
         <MainTitle title="加入我们" titleEN="join us" />
-        <a-form :form="form" @submit="handleSubmit" id="joinus-form">
+        <a-form :form="form" @submit="handleSubmit" id="join-us-form">
           <a-form-item class="contact-input" label="申请职位">
             <a-select
               v-decorator="[
@@ -278,7 +278,12 @@
             />
           </a-form-item>
           <!-- <recaptcha /> -->
-          <button type="submit" class="submit-btn main-btn main-btn_blue">
+          <button
+            type="submit"
+            class="submit-btn main-btn main-btn_blue"
+            :class="{ disabled: isSubmitting }"
+            :disabled="isSubmitting"
+          >
             发送
           </button>
         </a-form>
@@ -325,7 +330,7 @@ export default {
   },
   data() {
     return {
-      form: this.$form.createForm(this, { name: "joinus-form" }),
+      form: this.$form.createForm(this, { name: "join-us-form" }),
       isSubmitting: false,
       emailRegex:
         /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
@@ -383,6 +388,9 @@ export default {
           // only accept newest uploaded file
           arr.shift();
         }
+        if (fileList.length === 1) {
+          arr[0].status = "done";
+        }
         this.resume = arr;
       } else {
         this.$notification.open({
@@ -393,15 +401,16 @@ export default {
       }
     },
     async handleSubmit(e) {
+      e.preventDefault();
+      this.isSubmitting = true;
       try {
-        e.preventDefault();
-        this.isSubmitting = true;
         // const token = await this.$recaptcha.getResponse();
         this.form.validateFields((err, values) => {
           if (!err) {
+            
             const data = values;
             data.birthday = data.birthday.format("YYYY-MM-DD");
-            console.log(data);
+            console.log(this.isSubmitting);
             // upload file to cms
             const files = new FormData();
             files.append(
@@ -419,7 +428,6 @@ export default {
                 this.$axios.post("/join-uses", data).then((res) => {
                   if (res.error) {
                     console.log(res.error);
-                    this.form.resetFields();
                     this.$notification.open({
                       message: "提交失败",
                       description: "请稍后再试。",
@@ -434,15 +442,21 @@ export default {
                     });
                   }
                 });
+                this.isSubmitting = false;
               });
           }
         });
         // await this.$recaptcha.reset();
       } catch (error) {
-        this.$message.warning("请勾选reCAPTCHA验证");
         console.log(error);
+        this.$notification.open({
+          message: "提交失败",
+          description: "请稍后再试。",
+          placement: "bottomRight",
+        });
+        this.isSubmitting = false;
       }
-      this.isSubmitting = false;
+      
     },
   },
 };
@@ -522,7 +536,7 @@ const joinUsData = [
     border-radius: 50%;
   }
 }
-#joinus-form {
+#join-us-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0 30px;
