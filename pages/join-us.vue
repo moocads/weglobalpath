@@ -134,6 +134,10 @@
                             required: true,
                             message: '请输入你的联系电话',
                           },
+                          {
+                            pattern: numRegex,
+                            message: '请输入有效的电话号码',
+                          },
                         ],
                       },
                     ]"
@@ -157,6 +161,7 @@
                 </a-form-item>
                 <a-form-item class="contact-input" label="出生日期">
                   <a-date-picker
+                    style="width: 100%"
                     v-decorator="[
                       'birthday',
                       {
@@ -174,16 +179,6 @@
                 <a-form-item class="contact-input" label="毕业院校">
                   <a-input v-decorator="['school', { initialValue: '' }]" />
                 </a-form-item>
-                <!-- <label for="resume" class="ant-form-item-required resume"
-                  >简历</label
-                >
-                <input
-                  type="file"
-                  id="resume"
-                  name="resume"
-                  accept="application/pdf"
-                  @change="handleFileChange"
-                /> -->
                 <a-form-item
                   class="contact-input"
                   label="简历"
@@ -232,7 +227,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import moment from "moment";
 export default {
   head() {
     return {
@@ -252,12 +247,14 @@ export default {
       isSubmitting: false,
       emailRegex:
         /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+      numRegex: /^[0-9]+$/,
       location: 1,
       resume: null,
     };
   },
 
   methods: {
+    moment,
     mapLocation(location) {
       this.location = location;
     },
@@ -266,6 +263,7 @@ export default {
       if (!isOversize) {
         let arr = fileList;
         if (fileList.length > 1) {
+          // only accept newest uploaded file
           arr.shift();
         }
         this.resume = arr;
@@ -285,7 +283,8 @@ export default {
         this.form.validateFields((err, values) => {
           if (!err) {
             const data = values;
-            data.birthday = data.birthday.toString();
+            data.birthday = data.birthday.format("YYYY-MM-DD");
+            console.log(data);
             // upload file to cms
             const files = new FormData();
             files.append(
@@ -321,24 +320,6 @@ export default {
               });
           }
         });
-        // this.$axios
-        //   .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
-        //     name: this.userName,
-        //     phone: this.userPhone,
-        //     email: this.userEmail,
-        //     message: this.userMessage,
-        //     dob: this.userDOB,
-        //     subscription: this.userSubscription,
-        //   })
-        //   .then((response) => {
-        //     this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
-        //     console.log("submitted");
-        //     this.userName = undefined;
-        //     this.userPhone = undefined;
-        //     this.userEmail = undefined;
-        //     this.userMessage = undefined;
-        //     this.userDOB = undefined;
-        //   });
         // await this.$recaptcha.reset();
       } catch (error) {
         this.$message.warning("请勾选reCAPTCHA验证");
@@ -351,6 +332,11 @@ export default {
 </script>
 <style lang="scss">
 #joinus-page {
+  .ant-select-selection-selected-value{
+    height: 100%;
+    display: flex!important;
+    align-items: center;
+  }
   .ant-checkbox-checked .ant-checkbox-inner {
     background-color: #e9e9e9;
     border-color: #e9e9e9;

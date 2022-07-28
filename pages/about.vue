@@ -152,7 +152,137 @@
     <section class="sec-joinUs">
       <div class="wrapper">
         <MainTitle title="加入我们" titleEN="join us" />
-        <div class="joinUs-info-row">
+        <a-form :form="form" @submit="handleSubmit" id="joinus-form">
+          <a-form-item class="contact-input" label="申请职位">
+            <a-select
+              v-decorator="[
+                'department',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请选择想申请的职位',
+                    },
+                  ],
+                },
+              ]"
+              placeholder=" 请选择申请的职位"
+              style="margin-bottom: 20px"
+            >
+              <a-select-option value="持牌顾问">持牌顾问</a-select-option>
+              <a-select-option value="销售">销售</a-select-option>
+              <a-select-option value="市场">市场</a-select-option>
+            </a-select>
+          </a-form-item>
+          <a-form-item class="contact-input" label="名字（必填）">
+            <a-input
+              v-decorator="[
+                'name',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请输入你的名字',
+                    },
+                  ],
+                },
+              ]"
+            />
+          </a-form-item>
+          <a-form-item class="contact-input" label="电话（必填）">
+            <a-input
+              v-decorator="[
+                'phone',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请输入你的联系电话',
+                    },
+                    {
+                      pattern: numRegex,
+                      message: '请输入有效的电话号码',
+                    },
+                  ],
+                },
+              ]"
+            />
+          </a-form-item>
+          <a-form-item class="contact-input" label="邮箱">
+            <a-input
+              v-decorator="[
+                'email',
+                {
+                  rules: [
+                    { required: true, message: '请输入你的邮箱' },
+                    {
+                      pattern: emailRegex,
+                      message: '请输入有效的邮箱',
+                    },
+                  ],
+                },
+              ]"
+            />
+          </a-form-item>
+          <a-form-item class="contact-input" label="出生日期">
+            <a-date-picker
+              style="width: 100%"
+              v-decorator="[
+                'birthday',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请选择你的生日',
+                    },
+                  ],
+                },
+              ]"
+              placeholder="选择日期"
+            />
+          </a-form-item>
+          <a-form-item class="contact-input" label="毕业院校">
+            <a-input v-decorator="['school', { initialValue: '' }]" />
+          </a-form-item>
+          <a-form-item
+            class="contact-input"
+            label="简历"
+            extra="仅限一个PDF文件，其大小不可大于5MB"
+          >
+            <a-upload
+              v-decorator="[
+                'resume',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请上传你的简历',
+                    },
+                  ],
+                },
+              ]"
+              :file-list="resume"
+              :multiple="false"
+              accept="application/pdf"
+              listType="text"
+              @change="handleFileChange"
+            >
+              <a-button> <a-icon type="upload" /> 点击上传 </a-button>
+            </a-upload>
+          </a-form-item>
+          <a-form-item class="contact-input" label="留言">
+            <a-textarea
+              v-decorator="['message', { initialValue: '' }]"
+              placeholder="输入你的留言"
+              :auto-size="{ minRows: 2, maxRows: 7 }"
+            />
+          </a-form-item>
+          <!-- <recaptcha /> -->
+          <button type="submit" class="submit-btn main-btn main-btn_blue">
+            发送
+          </button>
+        </a-form>
+        <!-- <div class="joinUs-info-row">
           <h3>
             简历投递邮箱：
             <br /><a href="mailto:info@beyondcanada.ca">info@beyondcanada.ca</a>
@@ -173,13 +303,15 @@
           </a-table>
           <br />
           <p>*所有职位均有提成绩效奖励</p>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   head: {
     title: `加拿大移民 | 关于我们 | 加彼岸出国咨询`,
@@ -193,6 +325,12 @@ export default {
   },
   data() {
     return {
+      form: this.$form.createForm(this, { name: "joinus-form" }),
+      isSubmitting: false,
+      emailRegex:
+        /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+      numRegex: /^[0-9]+$/,
+      resume: null,
       steps: [
         {
           label: "加彼岸™历程: 1",
@@ -234,6 +372,78 @@ export default {
       joinUsCols,
       joinUsData,
     };
+  },
+  methods: {
+    moment,
+    handleFileChange({ fileList, file }) {
+      const isOversize = file.size / 1024 / 1024 > 5;
+      if (!isOversize) {
+        let arr = fileList;
+        if (fileList.length > 1) {
+          // only accept newest uploaded file
+          arr.shift();
+        }
+        this.resume = arr;
+      } else {
+        this.$notification.open({
+          message: "文件过大",
+          description: "文件大小不可超过5MB",
+          placement: "bottomRight",
+        });
+      }
+    },
+    async handleSubmit(e) {
+      try {
+        e.preventDefault();
+        this.isSubmitting = true;
+        // const token = await this.$recaptcha.getResponse();
+        this.form.validateFields((err, values) => {
+          if (!err) {
+            const data = values;
+            data.birthday = data.birthday.format("YYYY-MM-DD");
+            console.log(data);
+            // upload file to cms
+            const files = new FormData();
+            files.append(
+              "files",
+              this.resume[0].originFileObj,
+              this.resume[0].name
+            );
+            this.$axios
+              .post("/upload", files)
+              .then((res) => {
+                data.resume = res.data[0].id;
+                console.log("Received values of form: ", data);
+              })
+              .then(() => {
+                this.$axios.post("/join-uses", data).then((res) => {
+                  if (res.error) {
+                    console.log(res.error);
+                    this.form.resetFields();
+                    this.$notification.open({
+                      message: "提交失败",
+                      description: "请稍后再试。",
+                      placement: "bottomRight",
+                    });
+                  } else {
+                    this.form.resetFields();
+                    this.$notification.open({
+                      message: "提交成功",
+                      description: "感谢您提供联系信息。我们会尽快和您联系。",
+                      placement: "bottomRight",
+                    });
+                  }
+                });
+              });
+          }
+        });
+        // await this.$recaptcha.reset();
+      } catch (error) {
+        this.$message.warning("请勾选reCAPTCHA验证");
+        console.log(error);
+      }
+      this.isSubmitting = false;
+    },
   },
 };
 const joinUsCols = [
@@ -309,8 +519,54 @@ const joinUsData = [
     background-color: $red;
     height: 15px;
     width: 15px;
-    // padding: 0px 10px;
     border-radius: 50%;
+  }
+}
+#joinus-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 30px;
+  @media all and (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
+  .ant-select-selection-selected-value {
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+  }
+  nt-checkbox-wrapper:hover .ant-checkbox-inner,
+  .ant-checkbox:hover .ant-checkbox-inner,
+  .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: $navy;
+  }
+  .ant-form-item-label {
+    text-align: left;
+    label {
+      font-size: 16px;
+      color: $navy;
+      margin-bottom: 10px;
+      @media all and (max-width: $sm) {
+        font-size: 14px;
+      }
+    }
+  }
+  .ant-calendar-picker-input,
+  .ant-select-selection {
+    // height: 40px;
+    background-color: #e9e9e9;
+    padding: 19px 10px;
+  }
+  .ant-select {
+    margin-bottom: 0 !important;
+  }
+  .ant-select-selection {
+    .ant-select-selection__rendered {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 .joinUs-table-wrap {
@@ -585,6 +841,40 @@ header {
 .sec-joinUs {
   padding: 50px 0;
 }
+
+.contact-input {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // margin-bottom: 20px;
+  label {
+    font-size: 16px;
+    color: $navy;
+    margin-bottom: 10px;
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: #e9e9e9;
+  }
+  textarea {
+    width: 100%;
+    min-height: 130px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: #e9e9e9;
+  }
+}
+.submit-btn {
+  grid-column: span 2 / span 2;
+  @media all and (max-width: $sm) {
+    grid-column: span 1 / span 1;
+  }
+}
 .joinUs-info-row {
   margin: 0 auto;
   max-width: 1000px;
@@ -710,6 +1000,7 @@ header {
   .sec-joinUs {
     padding: 30px 0;
   }
+
   .joinUs-info-row {
     margin: 0 auto;
     max-width: 1000px;

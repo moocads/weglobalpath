@@ -314,7 +314,6 @@
               </ul>
             </div>
           </li>
-
           <li>
             <NuxtLink to="/blogs">最新资讯</NuxtLink>
           </li>

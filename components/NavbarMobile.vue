@@ -48,6 +48,9 @@
             <NuxtLink to="/contact">
               <li @click="isToggle = !isToggle">联系我们</li>
             </NuxtLink>
+            <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }">
+              <li @click="isToggle = !isToggle">加入我们</li>
+            </NuxtLink>
           </ul>
         </div>
       </div>

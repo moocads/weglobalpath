@@ -79,7 +79,7 @@ export default {
     },
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["ant-design-vue/dist/antd.css", "~assets/scss/global.scss"],
+  css: ["~/assets/ant/main.less", "~assets/scss/global.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -112,7 +112,12 @@ export default {
     i18n: true,
   },
   styleResources: {
-    scss: ["./assets/scss/variables.scss", "./assets/scss/projects.scss", "./assets/scss/util.scss", "./assets/scss/hot-projects/general.scss"],
+    scss: [
+      "./assets/scss/variables.scss",
+      "./assets/scss/projects.scss",
+      "./assets/scss/util.scss",
+      "./assets/scss/hot-projects/general.scss",
+    ],
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -125,7 +130,16 @@ export default {
     version: 2,
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    loaders: {
+      less: {
+        lessOptions: {
+          javascriptEnabled: true,
+          math: "always",
+        },
+      },
+    },
+  },
 
   server: {
     port: process.env.PORT || 3000,
