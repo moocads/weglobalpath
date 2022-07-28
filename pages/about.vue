@@ -174,7 +174,7 @@
               <a-select-option value="市场">市场</a-select-option>
             </a-select>
           </a-form-item>
-          <a-form-item class="contact-input" label="名字（必填）">
+          <a-form-item class="contact-input" label="名字">
             <a-input
               v-decorator="[
                 'name',
@@ -189,7 +189,7 @@
               ]"
             />
           </a-form-item>
-          <a-form-item class="contact-input" label="电话（必填）">
+          <a-form-item class="contact-input" label="电话">
             <a-input
               v-decorator="[
                 'phone',
