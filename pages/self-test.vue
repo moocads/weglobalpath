@@ -13,7 +13,7 @@
                   rules: [
                     {
                       required: true,
-                      message: '请输入你的电话',
+                      message: '请输入您的电话',
                     },
                     {
                       pattern: numRegex,
@@ -32,7 +32,7 @@
                   rules: [
                     {
                       required: true,
-                      message: '请输入你的微信',
+                      message: '请输入您的微信',
                     },
                   ],
                 },
@@ -764,10 +764,10 @@ export default {
 }
 #self-test-form {
   .ant-form-item {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .ant-form-item:first-child {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 }
 @media all and (max-width: 992px) {
@@ -792,6 +792,7 @@ export default {
   width: 100vw;
   height: 100vh;
   background-color: #1b285469;
+  z-index: 20;
   .popup-form {
     width: 350px;
     position: relative;
@@ -801,6 +802,7 @@ export default {
     background-color: #fff;
     padding: 60px 30px;
     border-radius: 10px;
+    z-index: 20;
     .close-btn {
       position: absolute;
       right: 20px;
@@ -815,13 +817,20 @@ export default {
     }
     .main-btn_blue {
       width: 100%;
-      @media all and (max-width: $sm) {
+    }
+    @media all and (max-width: $sm) {
+      max-width: 300px;
+      padding: 30px 20px;
+      .close-btn {
+        right: 10px;
+        top: 5px;
+        font-size: 20px;
+      }
+      h3,.main-btn_blue {
         font-size: 18px;
       }
     }
   }
-
-  z-index: 20;
 }
 #page-self-test {
   background-color: #efefef;
