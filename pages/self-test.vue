@@ -1,5 +1,51 @@
 <template>
   <div id="page-self-test">
+    <div class="self-test-popup" v-if="isPopupShow">
+      <div class="popup-form">
+        <h3>填写以下信息免费获取评估结果</h3>
+        <button class="close-btn" @click="closePopup">x</button>
+        <a-form :form="form" @submit="handleSubmit" id="self-test-form">
+          <a-form-item label="联系电话">
+            <a-input
+              v-decorator="[
+                'phone',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请输入你的电话',
+                    },
+                    {
+                      pattern: numRegex,
+                      message: '请输入有效的电话号码',
+                    },
+                  ],
+                },
+              ]"
+            />
+          </a-form-item>
+          <a-form-item label="微信">
+            <a-input
+              v-decorator="[
+                'wechat',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: '请输入你的微信',
+                    },
+                  ],
+                },
+              ]"
+            />
+          </a-form-item>
+          <button type="submit" class="submit-btn main-btn main-btn_blue">
+            点击获取
+          </button>
+        </a-form>
+      </div>
+    </div>
+
     <header
       class="general-header"
       :style="{
@@ -138,7 +184,7 @@
               <a-select-option value="living">居住环境</a-select-option>
             </a-select>
           </div>
-          <a-button @click="showResults" class="reset-btn">
+          <a-button @click="openPopup" class="reset-btn">
             获取评估结果
           </a-button>
           <!-- <button @click="reset" class="reset-btn">重新评估</button> -->
@@ -199,6 +245,9 @@ export default {
   },
   data() {
     return {
+      form: this.$form.createForm(this, { name: "self-test-form" }),
+      numRegex: /^[0-9]+$/,
+      isPopupShow: false,
       age: "",
       edu: "",
       firstLang: "",
@@ -218,6 +267,47 @@ export default {
     };
   },
   methods: {
+    openPopup() {
+      this.isPopupShow = true;
+    },
+    closePopup() {
+      this.isPopupShow = false;
+    },
+    async handleSubmit(e) {
+      try {
+        e.preventDefault();
+        this.isSubmitting = true;
+        this.form.validateFields((err, values) => {
+          if (!err) {
+            this.$axios.post("/self-test-popups", values).then((res) => {
+              if (res.error) {
+                console.log(res.error);
+                this.form.resetFields();
+                this.$notification.open({
+                  message: "提交失败",
+                  description: "请稍后再试。",
+                  placement: "bottomRight",
+                });
+              } else {
+                this.form.resetFields();
+                this.$notification.open({
+                  message: "提交成功",
+                  description: "感谢您提供联系信息。",
+                  placement: "bottomRight",
+                });
+                this.isPopupShow = false;
+                this.showResults();
+              }
+            });
+          }
+        });
+        // await this.$recaptcha.reset();
+      } catch (error) {
+        this.$message.warning("请勾选reCAPTCHA验证");
+        console.log(error);
+      }
+      this.isSubmitting = false;
+    },
     reset() {
       this.age = "";
       this.edu = "";
@@ -672,6 +762,14 @@ export default {
     width: 300px !important;
   }
 }
+#self-test-form {
+  .ant-form-item {
+    margin-bottom: 20px;
+  }
+  .ant-form-item:first-child {
+    margin-bottom: 10px;
+  }
+}
 @media all and (max-width: 992px) {
   #page-self-test {
     .self-test-wrap .ant-select {
@@ -687,6 +785,44 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+.self-test-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1b285469;
+  .popup-form {
+    width: 350px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 60px 30px;
+    border-radius: 10px;
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      color: $navy;
+      font-weight: bold;
+      font-size: 30px;
+    }
+    h3 {
+      color: $navy;
+      font-size: 20px;
+    }
+    .main-btn_blue {
+      width: 100%;
+      @media all and (max-width: $sm) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  z-index: 20;
+}
 #page-self-test {
   background-color: #efefef;
 }
