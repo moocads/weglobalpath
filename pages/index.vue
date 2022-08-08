@@ -599,12 +599,9 @@ export default {
       e.preventDefault();
       try {
         this.$axios
-          .post(
-            `https://beyond-canada-back-staging.herokuapp.com/free-evaluations`,
-            {
-              contact_info: this.contactInfo,
-            }
-          )
+          .post(`/free-evaluations`, {
+            contact_info: this.contactInfo,
+          })
           .then((response) => {
             this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
             console.log("submitted");

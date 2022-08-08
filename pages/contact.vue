@@ -192,7 +192,7 @@ export default {
         const token = await this.$recaptcha.getResponse();
         // console.log("ReCaptcha token:", token);
         this.$axios
-          .post(`https://beyond-canada-back-staging.herokuapp.com/contacts`, {
+          .post(`/contacts`, {
             name: this.userName,
             phone: this.userPhone,
             email: this.userEmail,
