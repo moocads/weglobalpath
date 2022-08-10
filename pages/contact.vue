@@ -199,6 +199,7 @@ export default {
             message: this.userMessage,
             dob: this.userDOB,
             subscription: this.userSubscription,
+            recaptchaValue: token,
           })
           .then((response) => {
             this.$message.info("感谢您提供联系信息。我们会尽快和您联系。");
