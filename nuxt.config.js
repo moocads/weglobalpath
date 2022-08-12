@@ -90,7 +90,12 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    "~/components",
+    { path: "~/components/HomeComp", extensions: ["vue"] },
+    { path: "~/components/ui", extensions: ["vue"] },
+    { path: "~/components/stepForm", extensions: ["vue"] },
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],

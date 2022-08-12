@@ -1,5 +1,6 @@
 <template>
   <div>
+    <IndexPopup />
     <div id="home-wrap">
       <header>
         <div class="home-swiper">

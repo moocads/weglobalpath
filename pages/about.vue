@@ -91,6 +91,14 @@
               <li>成功保障，持牌律师团队和资深项目团队</li>
               <li>费用保障，申请失败费用全退</li>
               <li>安家保障，专业地产经纪提供贴心生活服务</li>
+              <figure class="cicc-verify">
+                <h3>加拿大联邦政府监管机构成员，加拿大移民部认可的合作机构</h3>
+                <img
+                  src="/img/About/cicc.png"
+                  alt="beyond canada immigration cicc verification and partner"
+                  class="img-fluid"
+                />
+              </figure>
             </ol>
           </article>
         </div>
@@ -406,7 +414,6 @@ export default {
         // const token = await this.$recaptcha.getResponse();
         this.form.validateFields((err, values) => {
           if (!err) {
-            
             const data = values;
             data.birthday = data.birthday.format("YYYY-MM-DD");
             console.log(this.isSubmitting);
@@ -455,7 +462,6 @@ export default {
         });
         this.isSubmitting = false;
       }
-      
     },
   },
 };
@@ -594,6 +600,18 @@ const joinUsData = [
     font-size: 16px;
   }
 }
+.cicc-verify {
+  margin: 18px 0;
+  h3 {
+    font-size: 16px;
+    color: $navy;
+    font-weight: bold;
+  }
+  img {
+    margin-left: -10px;
+    max-width: 280px;
+  }
+}
 @media all and (max-width: 991px) {
   .joinUs-table-wrap {
     .ant-table-bordered .ant-table-thead > tr > th {
@@ -601,6 +619,11 @@ const joinUsData = [
     }
     .ant-table-tbody > tr > td {
       font-size: 13px;
+    }
+  }
+  .cicc-verify {
+    img {
+      margin-left: 0px;
     }
   }
 }
@@ -772,7 +795,7 @@ header {
 }
 .sec-4 {
   // background-color: #e9e9e9;
-
+  padding: 30px 0;
   .row-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
