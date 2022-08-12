@@ -20,7 +20,7 @@
         <input
           v-model="popup_contact_info"
           type="text"
-          placeholder="邮箱或微信"
+          placeholder="请填写邮箱或微信"
           required
         />
         <!-- <input v-model="popupWechat" type="text" placeholder="微信" /> -->
@@ -149,7 +149,7 @@ export default {
     text-align: center;
     margin-top: 18px;
     &::placeholder {
-      font-size: 14px;
+      font-size: 12px;
       color: #b7b7b7;
     }
   }
@@ -161,6 +161,7 @@ export default {
     font-weight: 600;
     padding: 6px 25px;
     transition: all 0.2s ease;
+    margin-top: 8px;
     &:hover {
       box-shadow: rgba(54, 72, 131, 0.212) 0px 8px 12px;
     }

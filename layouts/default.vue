@@ -1,6 +1,7 @@
 <template>
   <div id="page">
     <!-- <TopBar class="navbar-lg" /> -->
+    <IndexPopup />
     <WorldTime class="navbar-lg" />
     <NavbarMobile class="navbar-sm" />
     <Navbar class="navbar-lg" />
