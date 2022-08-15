@@ -43,7 +43,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isOpen = true;
-    }, 8000);
+    }, 13000);
   },
   methods: {
     closePopup() {
