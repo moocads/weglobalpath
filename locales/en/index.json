@@ -1,0 +1,27 @@
+{
+  "popup": {
+    "title-1": "Register Now, Get Free Estimate",
+    "title-2": "Beyond Canada，Your Family",
+    "title-3": "Customized total relocation solutions for you",
+    "email": "Email or Wechat",
+    "submit-btn": "Submit"
+  },
+  "sidebar": {
+    "self-test": "Self Testing",
+    "immi-scroe": "Immigration Scoring"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "homeHeroBanner": {
+    "slide-1-title-1": "Connecting to the other side",
+    "slide-1-title-2": "Serving Wholeheartedly",
+    "slide-1-content-1": "Your personal immigration planner, the efficient way to connect with Canadian immigrants",
+    "slide-1-content-2": "One-stop planning for the whole process. No detours for immigrants!",
+    "immi-score-btn": "Immigration Scoring",
+    "self-test-btn": "Self Testing",
+    "slide-learn-more-btn": "Learn More"
+  }
+}

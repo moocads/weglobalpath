@@ -14,18 +14,18 @@
         alt="加彼岸 加拿大移民 popup"
       />
       <form @submit.prevent="handleSubmit">
-        <h2>现在注册，获得免费评估</h2>
-        <h3>加彼岸，家彼岸</h3>
-        <h4>为您量身定制整体移居方案</h4>
+        <h2>{{ $t("popup.title-1") }}</h2>
+        <h3>{{ $t("popup.title-2") }}</h3>
+        <h4>{{ $t("popup.title-3") }}</h4>
         <input
           v-model="popup_contact_info"
           type="text"
-          placeholder="请填写邮箱或微信"
+          :placeholder="$t('popup.email')"
           required
         />
         <!-- <input v-model="popupWechat" type="text" placeholder="微信" /> -->
         {{ popupEmail }}
-        <button type="submit">提交注册</button>
+        <button type="submit">{{ $t("popup.submit-btn") }}</button>
       </form>
     </div>
   </div>
@@ -124,6 +124,7 @@ export default {
   h3,
   h4 {
     color: $navy;
+    text-align: center;
   }
   h2 {
     font-size: 22px;

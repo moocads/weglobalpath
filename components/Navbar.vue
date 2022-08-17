@@ -2,7 +2,7 @@
   <div>
     <nav>
       <div class="logo-wrap">
-        <NuxtLink to="/">
+        <NuxtLink :to="localePath('/')">
           <img
             src="/img/logos/logo-blue.png"
             alt="加彼岸 Navbar Logo"
@@ -13,10 +13,12 @@
       <div class="navbar-wrap">
         <ul class="main-nav">
           <li>
-            <NuxtLink to="/" exact>首页</NuxtLink>
+            <NuxtLink :to="localePath('/')" exact>{{
+              $t("navbar.home")
+            }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/visa-services"
+            <NuxtLink :to="localePath('/visa-services')"
               >签证服务
               <a-icon
                 type="down"
@@ -27,12 +29,14 @@
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-0' }"
+                  <NuxtLink
+                    :to="{ localePath: '/visa-services', hash: '#service-0' }"
                     >境内签证服务</NuxtLink
                   >
                 </li>
                 <li>
-                  <NuxtLink :to="{ path: '/visa-services', hash: '#service-1' }"
+                  <NuxtLink
+                    :to="{ localePath: '/visa-services', hash: '#service-1' }"
                     >赴加签证</NuxtLink
                   >
                 </li>
@@ -40,10 +44,10 @@
             </div>
           </li>
           <li>
-            <NuxtLink to="/recruiting">快速移民直通车</NuxtLink>
+            <NuxtLink :to="localePath('/recruiting')">快速移民直通车</NuxtLink>
           </li>
           <li class="hot-project-link">
-            <NuxtLink to="/projects"
+            <NuxtLink :to="localePath('/projects')"
               >热门项目
               <a-icon
                 type="down"
@@ -52,32 +56,40 @@
             /></NuxtLink>
             <div class="hot-project-dropdown dropdown-wrap">
               <div class="project-col">
-                <NuxtLink :to="hotProjects[0].url" class="main-cate">{{
-                  hotProjects[0].main_cate
-                }}</NuxtLink>
+                <NuxtLink
+                  :to="localePath(hotProjects[0].url)"
+                  class="main-cate"
+                  >{{ hotProjects[0].main_cate }}</NuxtLink
+                >
 
                 <ul>
                   <li
                     v-for="subItem in hotProjects[0].second_cate"
                     :key="subItem.id"
                   >
-                    <NuxtLink :to="`${hotProjects[0].url}/${subItem.id}`">
+                    <NuxtLink
+                      :to="localePath(`${hotProjects[0].url}/${subItem.id}`)"
+                    >
                       {{ subItem.name }}</NuxtLink
                     >
                   </li>
                 </ul>
               </div>
               <div class="project-col">
-                <NuxtLink :to="hotProjects[1].url" class="main-cate">{{
-                  hotProjects[1].main_cate
-                }}</NuxtLink>
+                <NuxtLink
+                  :to="localePath(hotProjects[1].url)"
+                  class="main-cate"
+                  >{{ hotProjects[1].main_cate }}</NuxtLink
+                >
 
                 <ul>
                   <li
                     v-for="subItem in hotProjects[1].second_cate"
                     :key="subItem.id"
                   >
-                    <NuxtLink :to="`${hotProjects[1].url}/${subItem.id}`">
+                    <NuxtLink
+                      :to="localePath(`${hotProjects[1].url}/${subItem.id}`)"
+                    >
                       {{ subItem.name }}</NuxtLink
                     >
                   </li>
@@ -116,9 +128,9 @@
                 </ul>
               </div>
               <div class="project-col">
-                <NuxtLink to="/projects/ee" class="main-cate"
-                  >联邦快速通道</NuxtLink
-                >
+                <NuxtLink to="/projects/ee" class="main-cate">
+                  联邦快速通道
+                </NuxtLink>
                 <ul>
                   <li>
                     <a @click="eeLink(1)"> 技术类移民 </a>
@@ -132,10 +144,9 @@
                 </ul>
               </div>
               <div class="project-col">
-                <NuxtLink :to="hotProjects[4].url" class="main-cate">{{
-                  hotProjects[4].main_cate
-                }}</NuxtLink>
-
+                <NuxtLink :to="hotProjects[4].url" class="main-cate">
+                  {{ hotProjects[4].main_cate }}
+                </NuxtLink>
                 <ul>
                   <li
                     v-for="subItem in hotProjects[4].second_cate"
@@ -291,8 +302,8 @@
             <NuxtLink to="/investment">加拿大投资</NuxtLink>
           </li> -->
           <li>
-            <NuxtLink to="/about"
-              >关于我们
+            <NuxtLink :to="localePath('/about')">
+              {{ $t("navbar.about") }}
               <a-icon
                 type="down"
                 class="dropdown-arrow"
@@ -302,9 +313,9 @@
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }"
-                    >加盟招商</NuxtLink
-                  >
+                  <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }">
+                    加盟招商
+                  </NuxtLink>
                 </li>
                 <li>
                   <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }"
@@ -318,7 +329,7 @@
             <NuxtLink to="/blogs">最新资讯</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contact">联系我们</NuxtLink>
+            <NuxtLink to="/contact">{{ $t("navbar.contact") }}</NuxtLink>
           </li>
         </ul>
       </div>

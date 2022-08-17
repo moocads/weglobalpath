@@ -1,0 +1,27 @@
+{
+  "popup": {
+    "title-1": "现在注册，获得免费评估",
+    "title-2": "加彼岸，家彼岸",
+    "title-3": "为您量身定制整体移居方案",
+    "email": "请填写邮箱或微信",
+    "submit-btn": "提交注册"
+  },
+  "sidebar": {
+    "self-test": "移民打分",
+    "immi-scroe": "移民自测"
+  },
+  "navbar": {
+    "home": "首页",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "homeHeroBanner": {
+    "slide-1-title-1": "连接彼岸",
+    "slide-1-title-2": "用心服务",
+    "slide-1-content-1": "加彼岸，您的私人移民规划师，衔接加拿大移民的高效途径",
+    "slide-1-content-2": "一站式全程规划。移民，不走弯路！",
+    "immi-score-btn": "移民打分",
+    "self-test-btn": "移民自测",
+    "slide-learn-more-btn": "查看项目详情"
+  }
+}

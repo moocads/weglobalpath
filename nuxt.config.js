@@ -108,7 +108,31 @@ export default {
     "@nuxtjs/robots",
     "@nuxtjs/sitemap",
     "@nuxtjs/recaptcha",
+    "@nuxtjs/i18n",
   ],
+  i18n: {
+    vueI18nLoader: true,
+    locales: [
+      {
+        code: "zh",
+        iso: "zh-CN",
+        file: "zh/index.json",
+      },
+      {
+        code: "en",
+        iso: "en-US",
+        file: "en/index.json",
+      },
+    ],
+    defaultLocale: "zh",
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      alwaysRedirect: false,
+      fallbackLocale: "en",
+    },
+    langDir: "./locales/",
+  },
   robots: {
     Sitemap: "https://beyondcanada.ca/sitemap.xml",
   },

@@ -9,28 +9,33 @@
     <div class="icon-bar side">
       <NuxtLink to="/evaluation" class="sidebar-link sidebar-evaluation">
         <img src="/img/icons/calculator.png" />
-        <p>移民打分</p>
+        <p>{{ $t("sidebar.self-test") }}</p>
       </NuxtLink>
       <NuxtLink to="/self-test" class="sidebar-link sidebar-evaluation">
         <img src="/img/icons/aplus.png" />
-        <p>移民自测</p>
+        <p v-if="$i18n.locale === 'zh'">移民自测</p>
+        <p v-if="$i18n.locale === 'en'">
+          Immigration <br />
+          Scoring
+        </p>
       </NuxtLink>
-      <!-- <NuxtLink to="/evaluation" class="sidebar-link">
-      </NuxtLink> -->
       <a href="tel:16475233555" class="sidebar-link ga-phone-trigger">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
-        <p>立即致电</p>
+        <p v-if="$i18n.locale === 'zh'">立即致电</p>
+        <p v-if="$i18n.locale === 'en'">Call</p>
       </a>
       <a href="mailto:info@beyondcanada.ca" class="sidebar-link">
         <img src="/img/icons/sidebar-mail.svg" class="contact-icon" />
-        <p>邮件咨询</p>
+        <p v-if="$i18n.locale === 'zh'">邮件咨询</p>
+        <p v-if="$i18n.locale === 'en'">Email</p>
       </a>
       <a
         class="sidebar-link sidebar-link_wechat"
         @click="wechatShow = !wechatShow"
       >
         <img src="/img/icons/sidebar-wechat.svg" class="contact-icon" />
-        <p>微信咨询</p>
+        <p v-if="$i18n.locale === 'zh'">微信咨询</p>
+        <p v-if="$i18n.locale === 'en'">Wechat</p>
       </a>
       <a class="sidebar-link top">
         <a-back-top>
@@ -56,7 +61,7 @@ export default {
   .wechat-code {
     position: fixed;
     width: 150px;
-    right: 65px;
+    right: 75px;
     top: 25%;
     border-radius: 5px;
     z-index: 999;
