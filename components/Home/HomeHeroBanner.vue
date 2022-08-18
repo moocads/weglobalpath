@@ -38,11 +38,12 @@
             </p>
             <NuxtLink :to="slide.slug">
               <button class="main-btn main-btn_blue main-btn_round">
-                {{
+                <!-- {{
                   slide.btn
                     ? slide.btn
                     : $t("homeHeroBanner.slide-learn-more-btn")
-                }}
+                }} -->
+                {{ $t("homeHeroBanner.slide-learn-more-btn") }}
               </button>
             </NuxtLink>
           </div>
@@ -96,14 +97,19 @@ export default {
         },
         {
           title: "企业主创业工签",
-          title_en: "",
+          title_en: "Owner Operator Work Permit",
           info: "EE快速通道＋200分｜办理速度快｜定居任意省份｜入境加拿大获得事业基础｜总费用性价比最高",
+          info_en:
+            "EE Fast Track + 200 points｜Fast processing｜Settlement in any province｜Enter Canada to gain a career base｜The most cost-effective total cost",
           slug: "/projects/startup/owner-operator-work-permit",
           img: "/img/Home/企业主人才.jpg",
         },
         {
           title: "美国杰出人才EB1A",
+          title_en: "First Preference Employment Based Immigration",
           info: "最快5天审批｜无需语言要求｜前期评估确保成功率｜50万人民币起｜最快获得美国绿卡移民项目",
+          info_en:
+            "Fastest 5 day approval｜No language requirement｜Pre-assessment to ensure success｜From 500,000 RMB｜Fastest way to get a U.S. green card",
           btn: "快速移民美国",
           slug: "/projects/usa/eb-1a",
           img: "/img/Home/USA绿卡项目.jpg",
