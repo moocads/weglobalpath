@@ -3,19 +3,25 @@
     <!-- <TopBar class="navbar-lg" /> -->
     <!-- <IndexPopup /> -->
     <WorldTime class="navbar-lg" />
+    <Navbar v-if="$i18n.locale === 'zh'" class="navbar-lg" />
     <NavbarMobile class="navbar-sm" />
-    <Navbar class="navbar-lg" />
+    <NavbarEN v-if="$i18n.locale === 'en'" class="navbar-lg" />
     <div class="spacer"></div>
     <Nuxt />
-    <SideBar />
+    <SideBar v-if="$i18n.locale === 'zh'" />
     <SideBarMobile />
-    <Footer />
+    <Footer v-if="$i18n.locale === 'zh'" />
+    <FooterEN v-if="$i18n.locale === 'en'" />
     <div class="footer-spacer"></div>
     <!-- <FooterMobile class="navbar-sm" /> -->
   </div>
 </template>
 <script>
-export default {};
+export default {
+  head() {
+    return this.$nuxtI18nHead({ addSeoAttributes: true });
+  },
+};
 </script>
 <style lang="scss" scoped>
 .navbar-lg {

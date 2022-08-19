@@ -2,51 +2,11 @@
   <div>
     <HomeHeroBanner />
     <HomeServices />
-    <HomeDrawer :data="drawerData" />
+    <HomeDrawer v-if="$i18n.locale === 'zh'" :data="drawerData" />
+    <HomeDrawerEN v-if="$i18n.locale === 'en'" :data="drawerDataEN" />
     <HomeProcess />
-
-    <section id="home-about">
-      <div class="wrapper">
-        <a-row :gutter="[24, 8]">
-          <a-col :lg="12">
-            <MainTitleSide title="关于加彼岸" titleEN="ABOUT US" />
-            <p>
-              加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
-              CONSULTING），彼森教育（BISON INTERNATIONAL
-              EDUCATION）和彼岸投资（BEYOND CANADA
-              INVESTMENT）三家子公司，均为加拿大联邦注册公司，分别由资深移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
-            </p>
-            <p>
-              加彼岸出国咨询是权威办理加拿大省提名移民项目的加拿大本地公司。作为加拿大项目方，我们保持独家项目优势，始终保持高市场份额占有率，每位顾问都有多年的在海外的留学生活经验及海外工作经验。最重要的是，我们把每一位客户当作自己亲人来服务，在全加拿大境内的省提名项目中协助您评估现实状况并作出最合适的规划建议。加彼岸出国咨询将一如既往地与国内合作伙伴紧密合作，客户至上的精神，为客户提供最优质最专业的移民咨询服务。
-            </p>
-            <div class="button-wrap">
-              <NuxtLink to="/about">
-                <button
-                  class="about-btn main-btn main-btn_red main-btn_round-5"
-                >
-                  了解更多
-                </button>
-              </NuxtLink>
-              <NuxtLink to="/contact">
-                <button
-                  class="about-btn main-btn main-btn_red main-btn_round-5"
-                >
-                  联系我们
-                </button>
-              </NuxtLink>
-            </div>
-          </a-col>
-          <a-col :lg="12">
-            <img
-              src="/img/Home/about-img2.jpg"
-              alt=""
-              class="img-fluid about-img"
-            />
-          </a-col>
-        </a-row>
-      </div>
-    </section>
-    <section id="home-blogs">
+    <HomeAbout />
+    <section v-if="$i18n.locale === 'zh'" id="home-blogs">
       <div class="wrapper">
         <MainTitle
           title="加彼岸热讯"
@@ -79,7 +39,7 @@
         </a-tabs>
       </div>
     </section>
-    <section id="home-cases">
+    <section v-if="$i18n.locale === 'zh'" id="home-cases">
       <MainTitle title="成功案例" titleEN="OUR CASES" titleENColor="#c4c4c4" />
       <div class="wrapper">
         <div class="cases-grid">
@@ -128,62 +88,39 @@
         </a-carousel>
       </div>
     </section> -->
-    <section id="home-counter">
-      <div class="wrapper">
-        <div class="title-wrap">
-          <h1>选择我们 选择放心</h1>
-          <img src="/img/logos/logo-small-white.png" alt="" />
-        </div>
-        <a-row :gutter="[16, 16]">
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>100+</h2>
-            <p>全球合作校园</p>
-          </a-col>
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>6000+</h2>
-            <p>移民申请成功案例</p>
-          </a-col>
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>98.1%</h2>
-            <p>移民申请通过率</p>
-          </a-col>
-          <a-col :xs="12" :md="6" class="counter-item">
-            <h2>1000+</h2>
-            <p>海外优质雇主资源</p>
-          </a-col>
-        </a-row>
-      </div>
-    </section>
-    <section id="home-slogen">
-      <div class="wrapper">
-        <div class="content">
-          加彼岸致力于：帮助您和家人规划最符合您需求的移民项目，定制您的移民方案，让您和家人在彼岸顺利安家，享受到更好的教育、医疗、社会福利以及家庭资产的稳步升值。加彼岸，家彼岸。
-        </div>
-        <div class="titles">
-          Luna Wang
-          <div class="small">
-            <br />加彼岸出国咨询创始人 <br />C101青年创业会联合创始人
-            <br />朗博天使投资人联盟董事
-          </div>
-        </div>
-      </div>
-    </section>
+    <HomeCounter />
+    <HomeSlogan />
+
     <section id="home-evaluation">
       <div class="wrapper">
         <div class="content">
           <div class="title">
-            <h1>加彼岸，家彼岸</h1>
-            <h2>为您量身定制整体移居方案</h2>
+            <h1>
+              {{
+                $i18n.locale === "zh"
+                  ? "加彼岸，家彼岸"
+                  : "Beyond Canada，Your Family"
+              }}
+            </h1>
+            <h2>
+              {{
+                $i18n.locale === "zh"
+                  ? "为您量身定制整体移居方案"
+                  : "Customized total relocation solutions for you"
+              }}
+            </h2>
           </div>
           <form class="evaluation-form" @submit.prevent="handleSubmit">
             <input
               type="text"
               v-model="contactInfo"
-              placeholder="输入邮箱或微信号"
+              :placeholder="
+                $i18n.locale === 'zh' ? '输入邮箱或微信号' : 'Email or WeChat'
+              "
               required
             />
             <button type="submit" class="submit-btn main-btn main-btn_blue">
-              免费评估
+              {{ $i18n.locale === "zh" ? "免费评估" : "Enter" }}
             </button>
           </form>
         </div>
@@ -396,6 +333,71 @@ export default {
           ],
         },
       ],
+      drawerDataEN: [
+        {
+          category: "Skilled Worker",
+          categoryEN: "",
+          items: [
+            {
+              title: "Immigration Nominee Program",
+              des: ["Simple Requirements", "Fast Approval"],
+              url: "/projects/nominee",
+            },
+            {
+              title: "Express Entry",
+              des: ["Fast Review", "Low Cost"],
+              url: "/projects/ee",
+            },
+            {
+              title: "Agri-Food Immigration Pilot",
+              des: ["No Age Restriction", "Fast Review"],
+              url: "/projects/nominee/agri-food-immigration-pilot",
+            },
+          ],
+        },
+        {
+          category: "Business",
+          categoryEN: "",
+          items: [
+            {
+              title: "Start-up Program",
+              des: ["Short Cycle Time", "Low Risk"],
+              url: "/projects/startup/start-up-visa",
+            },
+            {
+              title: "Owner Operator Work Permit",
+              des: ["No Quota", "Fast Speed"],
+              url: "/projects/startup/owner-operator-work-permit",
+            },
+            {
+              title: "Saskatchewan Immigrant Investor",
+              des: ["Low requirements", "Short Cycle Time"],
+              url: "/projects/entrepreneur/saskatchewan-investment",
+            },
+          ],
+        },
+        {
+          category: "Experience",
+          categoryEN: "",
+          items: [
+            {
+              title: "Studying in Manitoba",
+              des: ["Low Threshold", "Low Cost"],
+              url: "/projects/education/manitoba-education",
+            },
+            {
+              title: "Studying in Ontario",
+              des: ["Low Requirements", "Whole Family Immigration"],
+              url: "/projects/education/ontario-master-education",
+            },
+            {
+              title: "Studying in BC",
+              des: ["No Restriction", "Fast Speed"],
+              url: "/projects/education/BC-education",
+            },
+          ],
+        },
+      ],
       contactInfo: "",
     };
   },
@@ -463,147 +465,6 @@ export default {
   display: none;
 }
 
-/* ------------------------------------------------------ */
-/*                  ANCHOR COUNTER STYLE                  */
-/* ------------------------------------------------------ */
-#home-counter {
-  background: url("/img/Home/counter-bg.png") no-repeat;
-  background-size: cover;
-  background-color: rgba(22, 41, 84, 0.7);
-  background-blend-mode: multiply;
-  padding: 100px 0;
-}
-
-#home-counter .title-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 80px;
-  h1 {
-    color: #fff;
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 0;
-  }
-  img {
-    width: 30px;
-    transform: rotate(90deg);
-  }
-}
-
-#home-counter .counter-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h2,
-  p {
-    color: #c4c4c4;
-  }
-  h2 {
-    font-size: 54px;
-    font-weight: 700;
-  }
-  p {
-    margin: 0;
-    font-size: 18px;
-  }
-}
-@media all and (max-width: 768px) {
-  #home-counter .title-wrap {
-    margin-bottom: 30px;
-    h1 {
-      color: #fff;
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 0;
-    }
-    img {
-      width: 30px;
-      transform: rotate(90deg);
-    }
-  }
-  #home-counter .counter-item {
-    h2 {
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 3px;
-    }
-    p {
-      margin: 0;
-      font-size: 16px;
-    }
-  }
-}
-#home-slogen {
-  padding: 100px 0;
-  background-color: #fff;
-  color: $navy;
-  font-size: 18px;
-  text-align: center;
-  .wrapper {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    position: relative;
-    > div {
-      padding: 35px 60px;
-    }
-    &::before {
-      top: 0;
-      left: -40px;
-    }
-    &::after {
-      bottom: 0;
-      right: -40px;
-      transform: rotate(180deg);
-    }
-    &::before,
-    &::after {
-      background-image: url("/img/quote.webp");
-      background-size: contain;
-      background-repeat: no-repeat;
-      display: inline-block;
-      content: "";
-      height: 30px;
-      width: 40px;
-      opacity: 0.3;
-      position: absolute;
-    }
-  }
-  .content {
-    font-style: italic;
-  }
-  .titles {
-    text-align: left;
-    border-left: 2px solid #efefef;
-  }
-  .small {
-    font-size: 13px;
-  }
-}
-@media all and (max-width: $sm) {
-  #home-slogen {
-    padding: 60px 0;
-    font-size: 16px;
-    .wrapper {
-      grid-template-columns: 1fr;
-      > div {
-        padding: 40px 10px;
-      }
-      .titles {
-        border-left: none;
-        border-top: 2px solid #efefef;
-      }
-      &::before {
-        left: 0;
-      }
-      &::after {
-        right: 0;
-      }
-    }
-  }
-}
 /* ------------------------------------------------------ */
 /*                   ANCHOR ABOUT STYLE                   */
 /* ------------------------------------------------------ */

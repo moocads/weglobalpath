@@ -3,13 +3,28 @@
     <div class="world-time-wrap">
       <div class="wrapper">
         <div class="toronto">
-          <p>多伦多时间：{{ canadaDate }} {{ torontoTime }}</p>
+          <p>
+            {{ $i18n.locale === "zh" ? "多伦多时间" : "Toronto" }}:{{
+              canadaDate
+            }}
+            {{ torontoTime }}
+          </p>
         </div>
         <div class="manitoba">
-          <p>曼尼托巴时间：{{ canadaDate }} {{ manitobaTime }}</p>
+          <p>
+            {{ $i18n.locale === "zh" ? "曼尼托巴时间" : "Manitoba" }}:{{
+              canadaDate
+            }}
+            {{ manitobaTime }}
+          </p>
         </div>
         <div class="vancouver">
-          <p>温哥华时间：{{ canadaDate }} {{ vancouverTime }}</p>
+          <p>
+            {{ $i18n.locale === "zh" ? "温哥华时间" : "Vancouver" }}：{{
+              canadaDate
+            }}
+            {{ vancouverTime }}
+          </p>
         </div>
       </div>
     </div>

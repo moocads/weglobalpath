@@ -12,39 +12,19 @@
         <h1>{{ d.category }}</h1>
         <h2>{{ d.categoryEN }}</h2>
         <div class="content">
-          <NuxtLink
-            class="content-item"
-            v-for="(item, j) in d.items"
-            :key="j"
-            :to="item.url"
-          >
+          <div class="content-item" v-for="(item, j) in d.items" :key="j">
             <div class="title">{{ item.title }}</div>
             <div class="description">
               <div v-for="(d, o) in item.des" :key="o">
                 {{ d }}
               </div>
             </div>
-          </NuxtLink>
-          <NuxtLink v-if="$i18n.locale === 'zh'" to="/self-test">
-            <button class="main-btn main-btn_blue main-btn_round">
-              {{ $i18n.locale === "zh" ? "移民自测" : "Self Testing" }}
-            </button>
-          </NuxtLink>
+          </div>
         </div>
         <div class="preview-content">
-          <NuxtLink
-            class="content-item"
-            v-for="(item, j) in d.items"
-            :key="j"
-            :to="item.url"
-          >
+          <div class="content-item" v-for="(item, j) in d.items" :key="j">
             <div>{{ item.title }}</div>
-          </NuxtLink>
-          <NuxtLink class="desktop-btn" v-if="i === 1" to="/self-test">
-            <button class="main-btn main-btn_blue main-btn_round">
-              移民自测
-            </button>
-          </NuxtLink>
+          </div>
         </div>
         <div class="arrow">
           <svg

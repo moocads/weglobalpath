@@ -1,14 +1,21 @@
 <template>
   <section id="home-process">
     <div class="wrapper">
-      <MainTitle title="移民服务流程" titleEN="SERVICE PROCESS" />
+      <MainTitle
+        :title="$i18n.locale === 'zh' ? '移民服务流程' : 'Service Process'"
+        titleEN="SERVICE PROCESS"
+      />
       <ul class="service-process-grid">
         <li
           class="service-process-item"
-          v-for="(step, index) in serviceSteps"
+          v-for="(step, index) in $i18n.locale === 'zh'
+            ? serviceSteps
+            : serviceStepsEN"
           :key="index"
         >
-          <h4>{{ step.title }}</h4>
+          <h4>
+            {{ step.title }}
+          </h4>
           <div class="icon-wrap">
             <img :data-src="step.iconUrl" alt="" class="lazyload" />
           </div>
@@ -26,6 +33,7 @@ export default {
   data() {
     return {
       serviceSteps,
+      serviceStepsEN,
     };
   },
 };
@@ -71,6 +79,55 @@ const serviceSteps = [
     content: " 加拿大直营公司提供一站式登陆安家置业服务",
   },
 ];
+const serviceStepsEN = [
+  {
+    title: "Expert Consultation",
+    iconUrl: "/img/icons/process/chat_icon.SVG",
+    content:
+      "Senior immigration consultants provide intimate 1-to-1 consulting services",
+  },
+  {
+    title: "Submit Your Resume",
+    iconUrl: "/img/icons/process/upload_file_icon.SVG",
+    content:
+      "Submit your resume to Beyond Canada, we strictly adhere to the confidentiality agreement",
+  },
+  {
+    title: "Case Assessment",
+    iconUrl: "/img/icons/process/assessment_icon.SVG",
+    content:
+      "Licensed immigration attorneys review client information and match with suitable projects",
+  },
+  {
+    title: "Program Customization",
+    iconUrl: "/img/icons/process/submit_doc_icon.SVG",
+    content:
+      "Our immigration consultants will customize a detailed application plan",
+  },
+  {
+    title: "Preparation of Documents",
+    iconUrl: "/img/icons/process/prepare_materials_icon.SVG",
+    content:
+      "Customer Service Manager collects the required documents for the application, so that nothing is left out",
+  },
+  {
+    title: "Submission of application",
+    iconUrl: "/img/icons/process/plan_icon.SVG",
+    content:
+      "Senior copywriters & lawyers organize the application documents and submit them after multiple reviews",
+  },
+  {
+    title: "Visa approval",
+    iconUrl: "/img/icons/process/approve_icon.SVG",
+    content:
+      "Obtain immigration approval letter, and in case of rejection, the lawyer will assist in reconsideration",
+  },
+  {
+    title: "Arrival and settle down",
+    iconUrl: "/img/icons/process/done_icon.SVG",
+    content: "One-stop services to settle down in Canada",
+  },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -85,13 +142,17 @@ const serviceSteps = [
 
 .service-process-grid .service-process-item {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35px 60px auto;
+  justify-content: center;
+  justify-items: center;
+
   padding: 10px 10px;
   h4 {
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
   }
   .icon-wrap {
     background-color: $navy;
@@ -133,7 +194,11 @@ const serviceSteps = [
     border-right: 8px solid transparent;
     border-bottom: 8px solid #2f2f2f;
   }
+  &:lang(en) {
+    grid-template-rows: 70px 60px auto;
+  }
 }
+
 .service-process-grid .service-process-item:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -143,6 +208,9 @@ const serviceSteps = [
   height: 0;
   border-top: 1px solid #1b285450;
   z-index: -1;
+}
+.service-process-grid .service-process-item:lang(en):not(:last-child)::before {
+  top: 105px;
 }
 @media all and (max-width: 768px) {
   .service-process-grid {

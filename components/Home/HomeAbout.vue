@@ -1,0 +1,49 @@
+<template>
+  <section id="home-about">
+    <div class="wrapper">
+      <a-row :gutter="[24, 8]">
+        <a-col :lg="12">
+          <MainTitleSide
+            :title="
+              $i18n.locale === 'zh' ? '关于加彼岸' : 'About Beyond Canada'
+            "
+            titleEN="ABOUT US"
+          />
+          <p>
+            {{ $t("homeAbout.content-1") }}
+          </p>
+          <p>
+            {{ $t("homeAbout.content-2") }}
+          </p>
+          <div class="button-wrap">
+            <NuxtLink :to="localePath('/about')">
+              <button class="about-btn main-btn main-btn_red main-btn_round-5">
+                {{ $i18n.locale === "zh" ? "了解更多" : "Learn More" }}
+              </button>
+            </NuxtLink>
+            <NuxtLink :to="localePath('/contact')">
+              <button class="about-btn main-btn main-btn_red main-btn_round-5">
+                {{ $i18n.locale === "zh" ? "联系我们" : "Contact Us" }}
+              </button>
+            </NuxtLink>
+          </div>
+        </a-col>
+        <a-col :lg="12">
+          <img
+            src="/img/Home/about-img2.jpg"
+            alt=""
+            class="img-fluid about-img"
+          />
+        </a-col>
+      </a-row>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "HomeAbout",
+};
+</script>
+
+<style lang="scss" scoped></style>

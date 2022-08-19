@@ -1,34 +1,50 @@
 <template>
   <div>
     <header>
-      <div class="wrapper">
-        <h1>关于我们</h1>
-      </div>
+      <Wrapper>
+        <PageHeroTitle>
+          {{ $i18n.locale === "zh" ? "关于我们" : "About Us" }}
+          <template #subtitle>
+            {{ $i18n.locale === "zh" ? "ABOUT" : "" }}
+          </template>
+        </PageHeroTitle>
+      </Wrapper>
     </header>
     <section class="sec-1 about-sec">
       <div class="row-grid">
         <div class="info-wrap">
           <div class="title">
             <img src="/img/logos/logo-small-white.png" alt="" />
-            <h2>加彼岸出国咨询</h2>
+            <h2>{{ $t("About.row-1-title") }}</h2>
           </div>
-          <p>
-            <span
-              >加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
+          <p v-if="$i18n.locale === 'zh'">
+            <span>
+              加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
               CONSULTING），彼森教育（BISON INTERNATIONAL
-              EDUCATION）和彼岸投资（BEYOND CANADA INVESTMENT）三家子公司</span
+              EDUCATION）和彼岸投资（BEYOND CANADA INVESTMENT）三家子公司 </span
             >，均为加拿大联邦注册公司，分别由资深移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
           </p>
-          <p>
+          <p v-if="$i18n.locale === 'zh'">
             加彼岸出国咨询是权威办理加拿大省提名移民项目的加拿大本地公司。作为加拿大项目方，我们保持独家项目优势，始终保持高市场份额占有率，每位顾问都有多年的在海外的留学生活经验及海外工作经验。最重要的是，我们把每一位客户当作自己亲人来服务，在全加拿大境内的省提名项目中协助您评估现实状况并作出最合适的规划建议。加彼岸出国咨询将一如既往地与国内合作伙伴紧密合作，客户至上的精神，为客户提供最优质最专业的移民咨询服务。
+          </p>
+          <p v-if="$i18n.locale === 'en'">
+            <span
+              >Beyond Canada includes BEYONDCANADA CONSULTING, BISON EDUCATION
+              and BEYONDCANADA INVESTMENT </span
+            >which are all federally registered companies in Canada and are
+            staffed by their own immigration lawyers, RCIC (Regulatory Council
+            of Immigration Consultants of Canada) licensed immigration
+            consultants, education consultants, vocational trainers, real estate
+            agents, accountants and business experts. They are composed of their
+            own immigration lawyers, RCIC licensed immigration consultants,
+            education consultants, vocational trainers, real estate agents,
+            accountants and business experts.
           </p>
         </div>
         <div class="imgContainer">
           <img src="/img/About/sec1.png" alt="" class="sec-img" />
         </div>
       </div>
-      <!-- <div class="wrapper">
-      </div> -->
     </section>
     <section class="sec-2 about-sec">
       <div class="row-grid">
@@ -38,14 +54,36 @@
         <div class="info-wrap">
           <div class="title">
             <img src="/img/logos/logo-small-blue.png" alt="" />
-            <h2>彼森教育</h2>
+            <h2>
+              {{ $i18n.locale === "zh" ? "彼森教育" : "Bison Education" }}
+            </h2>
           </div>
-          <p>
+          <p v-if="$i18n.locale === 'zh'">
             <span>彼森教育</span
             >致力于为中国的学子提供高质量的海外留学申请，出国考试咨询及职业规划咨询服务。自2017年与加拿大罗伯森学院深度合作起，我们已为上百名学生办理签证至拿到枫叶卡的所有手续。2021年加彼岸受加拿大罗伯森学院委托，是中国区唯一校方直属合作伙伴，为学校处理一切中国事宜。
           </p>
-          <p>
+          <p v-if="$i18n.locale === 'zh'">
             结合加彼岸移居咨询方面和职业培训方面的超强实力，加拿大罗伯森学院与加彼岸出国咨询联合推出的公立学院直通车项目已成为广大留学生快速获得就业机会及移居身份的最佳选择。该项目不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳途径。
+          </p>
+          <p v-if="$i18n.locale === 'en'">
+            Bison Education is committed to providing high quality overseas
+            study application, examination abroad consultation and career
+            planning consulting services to students in China. Since 2018, we
+            have been working with Robertson College in Canada and have helped
+            hundreds of students from visa to maple leaf card. 2021, Beyond
+            Canada is the only direct partner of Robertson College in China and
+            will handle all Chinese matters for the school.
+          </p>
+          <p v-if="$i18n.locale === 'en'">
+            Combined with the strong strengths in immigration consulting and
+            vocational training, the public college through-train program
+            jointly launched by Robeson College and Beyond Canada Consulting has
+            become the best choice for international students to quickly obtain
+            employment and immigration status. The program is not only suitable
+            for students who are about to graduate from high school or
+            vocational high school, but also for those who have completed
+            university or college courses in the past, or have many years of
+            work experience.
           </p>
         </div>
       </div>
@@ -57,11 +95,23 @@
         <div class="info-wrap">
           <div class="title">
             <img src="/img/logos/logo-small-blue.png" alt="" />
-            <h2>彼岸投资</h2>
+            <h2>
+              {{ $i18n.locale === "zh" ? "彼岸投资" : "Beyond Investment" }}
+            </h2>
           </div>
-          <p>
+          <p v-if="$i18n.locale === 'zh'">
             <span>彼岸投资</span
             >一直致力于为投资者提供专业的海外投资咨询服务。从投资学的角度来说，投资需要对市场深入了解，全面调查，综合行业动向，经济因素，风险与回报等多方面考量，以确保客户获得该行业必须提供的最佳服务和最真实的建议，找到最优的投资方案。
+          </p>
+          <p v-if="$i18n.locale === 'en'">
+            Beyond Investment has been committed to providing professional
+            overseas investment advisory services to investors. From the
+            perspective of investment science, investment requires in-depth
+            understanding of the market, comprehensive investigation, and a
+            combination of industry trends, economic factors, risks and rewards,
+            etc., to ensure that clients receive the best service and the most
+            authentic advice that the industry must provide to find the optimal
+            investment solution.
           </p>
         </div>
         <div class="imgContainer">
@@ -72,8 +122,20 @@
       </div> -->
     </section>
     <section class="divider">
-      <h3>连接彼岸，用心服务，帮助海外客户和学生。</h3>
-      <h3>我们，不忘初心。</h3>
+      <h3>
+        {{
+          $i18n.locale === "zh"
+            ? "连接彼岸，用心服务，帮助海外客户和学生。"
+            : "Connecting the other side and serving with heart to help overseas clients and students."
+        }}
+      </h3>
+      <h3>
+        {{
+          $i18n.locale === "zh"
+            ? "我们，不忘初心。"
+            : "We do not forget the original intention."
+        }}
+      </h3>
     </section>
     <section class="sec-4">
       <div class="wrapper">
@@ -82,17 +144,17 @@
             <img src="/img/About/sec4.png" alt="" />
           </div>
           <article>
-            <h2>我们的使命</h2>
-            <p>脱离传统教育的“生存为本”，给所有人选择国际化教育的机会。</p>
-            <h2>我们的优势</h2>
+            <h2>{{ $t("About.mission-title") }}</h2>
+            <p>{{ $t("About.mission-content") }}</p>
+            <h2>{{ $t("About.advantages-title") }}</h2>
             <ol>
-              <li>加拿大直营，提供中加跨境综合服务</li>
-              <li>持牌移民律师评估，全程把关审核</li>
-              <li>成功保障，持牌律师团队和资深项目团队</li>
-              <li>费用保障，申请失败费用全退</li>
-              <li>安家保障，专业地产经纪提供贴心生活服务</li>
+              <li>{{ $t("About.advantages-1") }}</li>
+              <li>{{ $t("About.advantages-2") }}</li>
+              <li>{{ $t("About.advantages-3") }}</li>
+              <li>{{ $t("About.advantages-4") }}</li>
+              <li>{{ $t("About.advantages-5") }}</li>
               <figure class="cicc-verify">
-                <h3>加拿大联邦政府监管机构成员，加拿大移民部认可的合作机构</h3>
+                <h3>{{ $t("About.cicc") }}</h3>
                 <img
                   src="/img/About/cicc.png"
                   alt="beyond canada immigration cicc verification and partner"
@@ -106,9 +168,17 @@
     </section>
     <section class="sec-5">
       <div class="wrapper">
-        <MainTitle title="加彼岸历程" titleEN="History" />
+        <MainTitle
+          :title="
+            $i18n.locale === 'zh' ? '加彼岸历程' : 'Beyond Canada Milestone'
+          "
+          titleEN="History"
+        />
         <a-timeline id="aboutTimeline" mode="alternate">
-          <a-timeline-item v-for="(item, index) in steps" :key="index">
+          <a-timeline-item
+            v-for="(item, index) in $i18n.locale === 'zh' ? steps : stepsEN"
+            :key="index"
+          >
             <div slot="dot" class="dot">
               <!-- <span>{{ item.label }}</span> -->
               <div class="circle"></div>
@@ -121,16 +191,15 @@
     </section>
     <!-- <Construction /> -->
     <a id="anchor-franchise"></a>
-
     <section class="sec-franchise">
       <div class="wrapper">
         <MainTitle
-          title="加盟招商"
+          :title="$i18n.locale === 'zh' ? '加盟招商' : 'Investment'"
           titleEN="franchise"
           titleColor="#fff"
           titleENColor="#233369"
         />
-        <article>
+        <article v-if="$i18n.locale === 'zh'">
           <div class="title">
             <img src="/img/logos/logo-small-white.png" alt="" />
             <h2>品牌优势：</h2>
@@ -154,176 +223,53 @@
             加彼岸<sup>TM</sup>一直致力于为每一个合作伙伴提供专业化定制服务。加彼岸<sup>TM</sup>拥有强大的技术售后支持团队。合作伙伴从前期公司运营到后期的维护售后我们都将提供免费服务，让合作伙伴运营公司无后顾之忧。
           </p>
         </article>
+
+        <article v-if="$i18n.locale === 'en'">
+          <div class="title">
+            <img src="/img/logos/logo-small-white.png" alt="" />
+            <h2>Brand Advantages:</h2>
+          </div>
+          <p>
+            Beyond Canada<sup>TM</sup> is an important international education
+            bridge between China and Canada, with an elite team of immigrant
+            educators for many years, 100+ partner schools, helping more than
+            3,000+ families to obtain permanent residence status in Canada, and
+            1,000+ worldwide quality partner resources. We have successfully
+            developed many partners in China and central cities in Canada.
+          </p>
+          <div class="title">
+            <img src="/img/logos/logo-small-white.png" alt="" />
+            <h2>Operational Advantages:</h2>
+          </div>
+          <p>
+            Beyond Canada <sup>TM</sup> has many first-hand, exclusive
+            immigration study programs and am a pioneer of new educational
+            concepts. Beyond Canada<sup>TM</sup> uses my years of accumulated
+            experience to provide franchisees/partners with an original set of
+            operational sales programs. The successful operation model is the
+            guarantee of profitability for the franchisee/partner.
+          </p>
+          <div class="title">
+            <img src="/img/logos/logo-small-white.png" alt="" />
+            <h2>Service Advantages:</h2>
+          </div>
+          <p>
+            Beyond Canada <sup>TM</sup>has been committed to providing
+            specialized and customized services to each partner. Beyond
+            Canada<sup>TM</sup> has a strong technical after-sales support team.
+            We will provide free services for partners from the initial
+            operation to the maintenance of the company, so that partners can
+            operate the company without worries.
+          </p>
+        </article>
       </div>
     </section>
     <a id="anchor-joinUs"></a>
-    <section class="sec-joinUs">
-      <div class="wrapper">
-        <MainTitle title="加入我们" titleEN="join us" />
-        <a-form :form="form" @submit="handleSubmit" id="join-us-form">
-          <a-form-item class="contact-input" label="申请职位">
-            <a-select
-              v-decorator="[
-                'department',
-                {
-                  rules: [
-                    {
-                      required: true,
-                      message: '请选择想申请的职位',
-                    },
-                  ],
-                },
-              ]"
-              placeholder=" 请选择申请的职位"
-              style="margin-bottom: 20px"
-            >
-              <a-select-option value="持牌顾问">持牌顾问</a-select-option>
-              <a-select-option value="销售">销售</a-select-option>
-              <a-select-option value="市场">市场</a-select-option>
-            </a-select>
-          </a-form-item>
-          <a-form-item class="contact-input" label="名字">
-            <a-input
-              v-decorator="[
-                'name',
-                {
-                  rules: [
-                    {
-                      required: true,
-                      message: '请输入你的名字',
-                    },
-                  ],
-                },
-              ]"
-            />
-          </a-form-item>
-          <a-form-item class="contact-input" label="电话">
-            <a-input
-              v-decorator="[
-                'phone',
-                {
-                  rules: [
-                    {
-                      required: true,
-                      message: '请输入你的联系电话',
-                    },
-                    {
-                      pattern: numRegex,
-                      message: '请输入有效的电话号码',
-                    },
-                  ],
-                },
-              ]"
-            />
-          </a-form-item>
-          <a-form-item class="contact-input" label="邮箱">
-            <a-input
-              v-decorator="[
-                'email',
-                {
-                  rules: [
-                    { required: true, message: '请输入你的邮箱' },
-                    {
-                      pattern: emailRegex,
-                      message: '请输入有效的邮箱',
-                    },
-                  ],
-                },
-              ]"
-            />
-          </a-form-item>
-          <a-form-item class="contact-input" label="出生日期">
-            <a-date-picker
-              style="width: 100%"
-              v-decorator="[
-                'birthday',
-                {
-                  rules: [
-                    {
-                      required: true,
-                      message: '请选择你的生日',
-                    },
-                  ],
-                },
-              ]"
-              placeholder="选择日期"
-            />
-          </a-form-item>
-          <a-form-item class="contact-input" label="毕业院校">
-            <a-input v-decorator="['school', { initialValue: '' }]" />
-          </a-form-item>
-          <a-form-item
-            class="contact-input"
-            label="简历"
-            extra="仅限一个PDF文件，其大小不可大于5MB"
-          >
-            <a-upload
-              v-decorator="[
-                'resume',
-                {
-                  rules: [
-                    {
-                      required: true,
-                      message: '请上传你的简历',
-                    },
-                  ],
-                },
-              ]"
-              :file-list="resume"
-              :multiple="false"
-              accept="application/pdf"
-              listType="text"
-              @change="handleFileChange"
-            >
-              <a-button> <a-icon type="upload" /> 点击上传 </a-button>
-            </a-upload>
-          </a-form-item>
-          <a-form-item class="contact-input" label="留言">
-            <a-textarea
-              v-decorator="['message', { initialValue: '' }]"
-              placeholder="输入你的留言"
-              :auto-size="{ minRows: 2, maxRows: 7 }"
-            />
-          </a-form-item>
-          <!-- <recaptcha /> -->
-          <button
-            type="submit"
-            class="submit-btn main-btn main-btn_blue"
-            :disabled="isSubmitting"
-          >
-            发送
-          </button>
-        </a-form>
-        <!-- <div class="joinUs-info-row">
-          <h3>
-            简历投递邮箱：
-            <br /><a href="mailto:info@beyondcanada.ca">info@beyondcanada.ca</a>
-          </h3>
-          <h3>
-            咨询电话: <br />
-            <a href="tel:+16475233555" class="ga-phone-trigger">647-523-3555</a>
-          </h3>
-        </div>
-        <div class="joinUs-table-wrap">
-          <a-table
-            :columns="joinUsCols"
-            :data-source="joinUsData"
-            bordered
-            :pagination="false"
-            align="center"
-          >
-          </a-table>
-          <br />
-          <p>*所有职位均有提成绩效奖励</p>
-        </div> -->
-      </div>
-    </section>
+    <JoinUsForm />
   </div>
 </template>
 
 <script>
-import moment from "moment";
-
 export default {
   head: {
     title: `加拿大移民 | 关于我们 | 加彼岸出国咨询`,
@@ -337,12 +283,6 @@ export default {
   },
   data() {
     return {
-      form: this.$form.createForm(this, { name: "join-us-form" }),
-      isSubmitting: false,
-      emailRegex:
-        /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-      numRegex: /^[0-9]+$/,
-      resume: null,
       steps: [
         {
           label: "加彼岸™历程: 1",
@@ -381,138 +321,47 @@ export default {
           step: "未来给所有人选择国际化教育的机会",
         },
       ],
-      joinUsCols,
-      joinUsData,
+      stepsEN: [
+        {
+          label: "Beyond Canada Milestone: 1",
+          step: "Building the first Lupin workshop bridge between China and North America",
+        },
+        {
+          label: "Beyond Canada Milestone: 15",
+          step: "Concluded several Sino-Canadian friendship schools",
+        },
+        {
+          label: "Beyond Canada Milestone: 98.1",
+          step: "98.1% Immigration Application Pass Rate",
+        },
+        {
+          label: "Beyond Canada Milestone: 100",
+          step: "Representing 100 colleges in Canada",
+        },
+        {
+          label: "Beyond Canada Milestone: 1000",
+          step: "1000+ Overseas Quality Employer Resources",
+        },
+        {
+          label: "Beyond Canada Milestone: 2000",
+          step: "Sending thousands of students overseas for further study",
+        },
+        {
+          label: "Beyond Canada Milestone: 6000",
+          step: "6000+ Immigration Application Success Stories",
+        },
+        {
+          label: "Beyond Canada Milestone:",
+          step: "Realize overseas asset allocation",
+        },
+        {
+          label: "Beyond Canada Milestone:",
+          step: "The future gives everyone the opportunity to choose an international education",
+        },
+      ],
     };
   },
-  methods: {
-    moment,
-    handleFileChange({ fileList, file }) {
-      const isOversize = file.size / 1024 / 1024 > 5;
-      if (!isOversize) {
-        let arr = fileList;
-        if (fileList.length > 1) {
-          // only accept newest uploaded file
-          arr.shift();
-        }
-        if (fileList.length === 1) {
-          arr[0].status = "done";
-        }
-        this.resume = arr;
-      } else {
-        this.$notification.open({
-          message: "文件过大",
-          description: "文件大小不可超过5MB",
-          placement: "bottomRight",
-        });
-      }
-    },
-    async handleSubmit(e) {
-      e.preventDefault();
-      this.isSubmitting = true;
-      try {
-        // const token = await this.$recaptcha.getResponse();
-        this.form.validateFields((err, values) => {
-          if (!err) {
-            const data = values;
-            data.birthday = data.birthday.format("YYYY-MM-DD");
-            console.log(this.isSubmitting);
-            // upload file to cms
-            const files = new FormData();
-            files.append(
-              "files",
-              this.resume[0].originFileObj,
-              this.resume[0].name
-            );
-            this.$axios
-              .post("/upload", files)
-              .then((res) => {
-                data.resume = res.data[0].id;
-                console.log("Received values of form: ", data);
-              })
-              .then(() => {
-                this.$axios.post("/join-uses", data).then((res) => {
-                  if (res.error) {
-                    console.log(res.error);
-                    this.$notification.open({
-                      message: "提交失败",
-                      description: "请稍后再试。",
-                      placement: "bottomRight",
-                    });
-                  } else {
-                    this.form.resetFields();
-                    this.$notification.open({
-                      message: "提交成功",
-                      description: "感谢您提供联系信息。我们会尽快和您联系。",
-                      placement: "bottomRight",
-                    });
-                  }
-                });
-                this.isSubmitting = false;
-              });
-          }
-        });
-        // await this.$recaptcha.reset();
-      } catch (error) {
-        console.log(error);
-        this.$notification.open({
-          message: "提交失败",
-          description: "请稍后再试。",
-          placement: "bottomRight",
-        });
-        this.isSubmitting = false;
-      }
-    },
-  },
 };
-const joinUsCols = [
-  {
-    title: "职位名称",
-    dataIndex: "jobTitle",
-  },
-  {
-    title: " 招聘人数 ",
-    dataIndex: "number",
-  },
-  {
-    title: "薪资 ",
-    dataIndex: "salary",
-  },
-  {
-    title: "工作地点",
-    dataIndex: "jobPosition",
-  },
-];
-const joinUsData = [
-  {
-    key: "1",
-    jobTitle: "行政助理",
-    number: "2",
-    salary: "面议",
-    jobPosition: "广州",
-  },
-  {
-    key: "2",
-    jobTitle: "留学移民顾问",
-    number: "5",
-    salary: "面议",
-    jobPosition: "广州",
-  },
-  {
-    key: "3",
-    jobTitle: "文案专员",
-    number: "2",
-    salary: "面议",
-    jobPosition: "广州",
-  },
-  {
-    key: "4",
-    jobTitle: "留学移民顾问",
-    number: "5",
-    salary: "面议",
-    jobPosition: "多伦多",
-  },
-];
 </script>
 
 <style lang="scss">
@@ -541,65 +390,7 @@ const joinUsData = [
     border-radius: 50%;
   }
 }
-#join-us-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 30px;
-  @media all and (max-width: $sm) {
-    grid-template-columns: 1fr;
-  }
-  .ant-select-selection-selected-value {
-    height: 100%;
-    display: flex !important;
-    align-items: center;
-  }
-  nt-checkbox-wrapper:hover .ant-checkbox-inner,
-  .ant-checkbox:hover .ant-checkbox-inner,
-  .ant-checkbox-input:focus + .ant-checkbox-inner {
-    border-color: $navy;
-  }
-  .ant-form-item-label {
-    text-align: left;
-    label {
-      font-size: 16px;
-      color: $navy;
-      margin-bottom: 10px;
-      @media all and (max-width: $sm) {
-        font-size: 14px;
-      }
-    }
-  }
-  .ant-calendar-picker-input,
-  .ant-select-selection {
-    // height: 40px;
-    background-color: #e9e9e9;
-    padding: 19px 10px;
-  }
-  .ant-select {
-    margin-bottom: 0 !important;
-  }
-  .ant-select-selection {
-    .ant-select-selection__rendered {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-.joinUs-table-wrap {
-  .ant-table-bordered .ant-table-thead > tr > th {
-    background-color: $navy;
-    color: #fff;
-    text-align: center;
-    font-size: 16px;
-  }
-  .ant-table-tbody > tr > td {
-    text-align: center;
-    font-size: 16px;
-  }
-}
+
 .cicc-verify {
   margin: 18px 0;
   h3 {
@@ -610,21 +401,6 @@ const joinUsData = [
   img {
     margin-left: -10px;
     max-width: 280px;
-  }
-}
-@media all and (max-width: 991px) {
-  .joinUs-table-wrap {
-    .ant-table-bordered .ant-table-thead > tr > th {
-      font-size: 13px;
-    }
-    .ant-table-tbody > tr > td {
-      font-size: 13px;
-    }
-  }
-  .cicc-verify {
-    img {
-      margin-left: 0px;
-    }
   }
 }
 </style>
@@ -641,26 +417,6 @@ header {
   display: flex;
   align-items: center;
   position: relative;
-  h1 {
-    font-size: 60px;
-    color: #fff;
-    font-weight: bold;
-    position: relative;
-    margin-top: -30px;
-  }
-  h1::after {
-    content: "ABOUT";
-    position: absolute;
-    color: rgba(196, 196, 196, 0.4);
-    font-family: $Mont;
-    font-weight: 900;
-    top: 70%;
-    left: 0;
-    font-size: 85px;
-    // background-color: $red;
-    width: 200px;
-    height: 0px;
-  }
 }
 .sec-img {
   width: 100%;

@@ -3,9 +3,9 @@
     <div id="contact-page">
       <header>
         <div class="wrapper">
-          <h1>联系我们</h1>
+          <h1>{{ $t("Contact.hero-title") }}</h1>
           <p>
-            尊敬的客户您好，我们的专业客服会在24小时内回复您，谢谢您的耐心。
+            {{ $t("Contact.hero-subtitle") }}
           </p>
         </div>
       </header>
@@ -20,12 +20,12 @@
                       <img src="/img/icons/phone-red.png" alt="" />
                     </div>
                     <div class="info">
-                      <h2>电话</h2>
+                      <h2>{{ $t("Contact.phone") }}</h2>
                       <a href="tel:+16475233555" class="ga-phone-trigger"
-                        >多伦多: 647-523-3555</a
+                        >{{ $t("Contact.phone-toronto") }}: 647-523-3555</a
                       >
                       <a href="tel:+12049638886" class="ga-phone-trigger"
-                        >温尼伯: 204-963-8886</a
+                        >{{ $t("Contact.phone-winnipeg") }}: 204-963-8886</a
                       >
                     </div>
                   </div>
@@ -34,7 +34,7 @@
                       <img src="/img/icons/email-red.png" alt="" />
                     </div>
                     <div class="info">
-                      <h2>邮箱</h2>
+                      <h2>{{ $t("Contact.email") }}</h2>
                       <a href="mailto:info@beyondcanda.ca"
                         >info@beyondcanada.ca</a
                       >
@@ -59,7 +59,7 @@
                     </svg>
                   </div>
                   <div class="info">
-                    <h2>客户咨询微信</h2>
+                    <h2>{{ $t("Contact.wechat") }}</h2>
                     <img
                       src="/img/wechat-qrcode.jpeg"
                       class="wechat-code"
@@ -72,22 +72,24 @@
                     <img src="/img/icons/address-red.png" alt="" />
                   </div>
                   <div class="info">
-                    <h2>地址</h2>
+                    <h2>{{ $t("Contact.address") }}</h2>
                     <a
                       @click="mapLocation(1)"
                       class="location"
                       :class="{ active: location === 1 }"
-                      ><span>多伦多：</span>145 Royal Crest Ct Unit 47-48,
-                      Markham, ON L3R 9Z4
+                      ><span>{{ $t("Contact.address-toronto") }}：</span>145
+                      Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
                     </a>
                     <a
                       @click="mapLocation(2)"
                       class="location"
                       :class="{ active: location === 2 }"
-                      ><span>温尼伯：</span>180 Main St, Winnipeg, MB R3C 1A6
-                      (Robertson College)
+                      ><span>{{ $t("Contact.phone-winnipeg") }}：</span>180 Main
+                      St, Winnipeg, MB R3C 1A6 (Robertson College)
                     </a>
-                    <span class="disclaimer">点击地址切换地图</span>
+                    <span class="disclaimer">{{
+                      $t("Contact.address-switch")
+                    }}</span>
                   </div>
                 </div>
               </div>
@@ -117,35 +119,35 @@
             <a-col :xs="24" :lg="12">
               <form @submit.prevent="handleSubmit">
                 <div class="contact-name contact-input">
-                  <label for="name">名字（必填）</label>
+                  <label for="name">{{ $t("Contact.form.name") }}</label>
                   <input type="text" v-model="userName" required />
                 </div>
                 <div class="contact-dob contact-input">
-                  <label for="dob">出生日期</label>
+                  <label for="dob">{{ $t("Contact.form.dob") }}</label>
                   <input type="text" v-model="userDOB" />
                 </div>
                 <div class="contact-phone contact-input">
-                  <label for="phone">电话</label>
+                  <label for="phone">{{ $t("Contact.form.phone") }}</label>
                   <input type="text" v-model="userPhone" />
                 </div>
                 <div class="contact-email contact-input">
-                  <label for="email">邮箱（必填）</label>
+                  <label for="email">{{ $t("Contact.form.email") }}</label>
                   <input type="text" v-model="userEmail" required />
                 </div>
                 <div class="contact-message contact-input">
-                  <label for="dob">留言（必填）</label>
+                  <label for="dob">{{ $t("Contact.form.message") }}</label>
 
                   <textarea v-model="userMessage" required></textarea>
                 </div>
                 <div class="contact-checkbox contact-input">
                   <a-checkbox v-model="userSubscription">
-                    希望通过邮箱或短信接收更多加彼岸留学移民最新政策资讯。
+                    {{ $t("Contact.form.subcription") }}
                   </a-checkbox>
                 </div>
                 <recaptcha />
                 <br />
                 <button type="submit" class="submit-btn main-btn main-btn_blue">
-                  发送
+                  {{ $t("Contact.form.submit") }}
                 </button>
               </form>
             </a-col>
