@@ -130,7 +130,7 @@ export default {
       useCookie: true,
       cookieKey: "i18n_redirected",
       alwaysRedirect: false,
-      fallbackLocale: "en",
+      fallbackLocale: "zh",
     },
     langDir: "./locales/",
   },
