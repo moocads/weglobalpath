@@ -5,7 +5,7 @@
       <br />
       <MainTitle
         :title="$i18n.locale === 'zh' ? '加入我们' : 'Join Us'"
-        :titleEN="$i18n.locale === 'zh' ? 'Join Us' : ''"
+        :titleEN="$i18n.locale === 'zh' ? 'Join Us' : 'Occupation'"
       />
       <a-form :form="form" @submit="handleSubmit" id="joinUsForm">
         <a-form-item

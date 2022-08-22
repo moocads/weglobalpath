@@ -33,9 +33,7 @@
             <p v-if="$i18n.locale === 'zh'">
               {{ slide.info }}
             </p>
-            <p v-if="$i18n.locale === 'en'">
-              {{ slide.info_en }}
-            </p>
+
             <NuxtLink v-if="$i18n.locale === 'zh'" :to="slide.slug">
               <button class="main-btn main-btn_blue main-btn_round">
                 <!-- {{

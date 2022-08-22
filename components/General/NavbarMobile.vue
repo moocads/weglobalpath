@@ -52,6 +52,10 @@
               <li @click="isToggle = !isToggle">加入我们</li>
             </NuxtLink>
           </ul>
+          <div class="lang-switch-wrap">
+            <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
+            <nuxt-link :to="switchLocalePath('zh')">中</nuxt-link>
+          </div>
         </div>
       </div>
     </nav>
@@ -69,6 +73,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.lang-switch-wrap {
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin-bottom: 12px;
+  }
+}
 nav {
   position: fixed;
   top: 0;

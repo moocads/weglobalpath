@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="world-time-wrap">
-      <div class="wrapper">
+  <div class="world-time-wrap">
+    <Wrapper>
+      <div class="time-wrap">
         <div class="toronto">
           <p>
             {{ $i18n.locale === "zh" ? "多伦多时间" : "Toronto" }}:{{
@@ -27,7 +27,11 @@
           </p>
         </div>
       </div>
-    </div>
+      <div class="lang-switch-wrap">
+        <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
+        <nuxt-link :to="switchLocalePath('zh')">中</nuxt-link>
+      </div>
+    </Wrapper>
   </div>
 </template>
 
@@ -82,7 +86,16 @@ export default {
   },
 };
 </script>
-
+<style lang="scss">
+.world-time-wrap {
+  .nuxt-link-active {
+    color: $navy;
+  }
+  a {
+    color: #b0b0b0;
+  }
+}
+</style>
 <style lang="scss" scoped>
 .world-time-wrap {
   position: fixed;
@@ -93,7 +106,11 @@ export default {
   height: 30px;
   background-color: #f3f3f3;
 }
-.world-time-wrap > .wrapper {
+.world-time-wrap .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.world-time-wrap .time-wrap {
   height: 30px;
   display: flex;
   align-items: center;
@@ -106,6 +123,14 @@ export default {
       color: #b4b4b4;
       font-size: 12px;
     }
+  }
+}
+.world-time-wrap .lang-switch-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin-left: 8px;
   }
 }
 </style>

@@ -66,13 +66,13 @@
             结合加彼岸移居咨询方面和职业培训方面的超强实力，加拿大罗伯森学院与加彼岸出国咨询联合推出的公立学院直通车项目已成为广大留学生快速获得就业机会及移居身份的最佳选择。该项目不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳途径。
           </p>
           <p v-if="$i18n.locale === 'en'">
-            Bison Education is committed to providing high quality overseas
-            study application, examination abroad consultation and career
-            planning consulting services to students in China. Since 2018, we
-            have been working with Robertson College in Canada and have helped
-            hundreds of students from visa to maple leaf card. 2021, Beyond
-            Canada is the only direct partner of Robertson College in China and
-            will handle all Chinese matters for the school.
+            <strong>Bison Education</strong> is committed to providing high
+            quality overseas study application, examination abroad consultation
+            and career planning consulting services to students in China. Since
+            2018, we have been working with Robertson College in Canada and have
+            helped hundreds of students from visa to maple leaf card. 2021,
+            Beyond Canada is the only direct partner of Robertson College in
+            China and will handle all Chinese matters for the school.
           </p>
           <p v-if="$i18n.locale === 'en'">
             Combined with the strong strengths in immigration consulting and
@@ -104,14 +104,14 @@
             >一直致力于为投资者提供专业的海外投资咨询服务。从投资学的角度来说，投资需要对市场深入了解，全面调查，综合行业动向，经济因素，风险与回报等多方面考量，以确保客户获得该行业必须提供的最佳服务和最真实的建议，找到最优的投资方案。
           </p>
           <p v-if="$i18n.locale === 'en'">
-            Beyond Investment has been committed to providing professional
-            overseas investment advisory services to investors. From the
-            perspective of investment science, investment requires in-depth
-            understanding of the market, comprehensive investigation, and a
-            combination of industry trends, economic factors, risks and rewards,
-            etc., to ensure that clients receive the best service and the most
-            authentic advice that the industry must provide to find the optimal
-            investment solution.
+            <strong>Beyond Investment</strong> has been committed to providing
+            professional overseas investment advisory services to investors.
+            From the perspective of investment science, investment requires
+            in-depth understanding of the market, comprehensive investigation,
+            and a combination of industry trends, economic factors, risks and
+            rewards, etc., to ensure that clients receive the best service and
+            the most authentic advice that the industry must provide to find the
+            optimal investment solution.
           </p>
         </div>
         <div class="imgContainer">
@@ -417,6 +417,9 @@ header {
   display: flex;
   align-items: center;
   position: relative;
+}
+strong {
+  color: $navy;
 }
 .sec-img {
   width: 100%;
