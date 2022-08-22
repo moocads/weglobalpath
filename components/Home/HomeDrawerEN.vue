@@ -280,6 +280,29 @@ export default {
     padding: 10px;
     font-size: 14px;
   }
+  .title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: #fff;
+      transform: rotate(10deg);
+    }
+  }
+  .description {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    font-size: 12px;
+  }
 }
 
 @keyframes show {

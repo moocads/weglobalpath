@@ -8,6 +8,7 @@
               $i18n.locale === 'zh' ? '关于加彼岸' : 'About Beyond Canada'
             "
             titleEN="ABOUT US"
+            titleENColor="#e9e9e9"
           />
           <p>
             {{ $t("homeAbout.content-1") }}
@@ -46,4 +47,41 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+/* ------------------------------------------------------ */
+/*                   ANCHOR ABOUT STYLE                   */
+/* ------------------------------------------------------ */
+#home-about {
+  padding: 50px 0;
+  background-color: #efefef;
+  .about-img {
+    border-radius: 10px;
+  }
+  .slogen {
+    margin-bottom: 30px;
+    font-size: 18px;
+    background-color: $navy;
+    color: #fff;
+  }
+}
+.about-btn {
+  margin-right: 15px;
+}
+.button-wrap {
+  padding-top: 30px;
+}
+@media all and (max-width: 768px) {
+  .about-btn {
+    font-size: 16px;
+    padding: 8px 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .button-wrap {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+</style>
