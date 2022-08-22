@@ -10,15 +10,21 @@
               <p>{{ $t("homeHeroBanner.slide-1-content-1") }}</p>
               <p>{{ $t("homeHeroBanner.slide-1-content-2") }}</p>
             </figure>
-            <div v-if="$i18n.locale === 'zh'" class="header-btn-wrap">
+            <div class="header-btn-wrap">
               <NuxtLink to="/evaluation">
                 <button class="main-btn main-btn_blue main-btn_round">
                   {{ $t("homeHeroBanner.immi-score-btn") }}
+                  <span v-if="$i18n.locale === 'en'" class="chinese-only"
+                    >Chinese Only</span
+                  >
                 </button>
               </NuxtLink>
               <NuxtLink to="/self-test">
                 <button class="main-btn main-btn_blue main-btn_round">
                   {{ $t("homeHeroBanner.self-test-btn") }}
+                  <span v-if="$i18n.locale === 'en'" class="chinese-only"
+                    >Chinese Only</span
+                  >
                 </button>
               </NuxtLink>
             </div>
@@ -200,8 +206,19 @@ header .info-wrap {
   }
 }
 .header-btn-wrap {
+  display: flex;
   a {
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 12px;
+      font-weight: normal;
+      display: block;
+      margin-top: 8px;
+    }
   }
 }
 @media all and (max-width: 768px) {
