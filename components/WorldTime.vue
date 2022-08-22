@@ -29,7 +29,7 @@
       </div>
       <div class="lang-switch-wrap">
         <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
-        <nuxt-link :to="switchLocalePath('zh')">中</nuxt-link>
+        <nuxt-link :to="switchLocalePath('zh')" exact>中</nuxt-link>
       </div>
     </Wrapper>
   </div>
