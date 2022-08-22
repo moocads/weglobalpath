@@ -82,6 +82,7 @@ export default {
   align-items: center;
   margin-bottom: 80px;
   h1 {
+    text-align: center;
     color: #fff;
     font-size: 36px;
     font-weight: 700;

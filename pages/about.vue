@@ -629,44 +629,6 @@ header {
   }
 }
 
-// ANCHOR JOIN US STYLE
-.sec-joinUs {
-  padding: 50px 0;
-}
-
-.contact-input {
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  // margin-bottom: 20px;
-  label {
-    font-size: 16px;
-    color: $navy;
-    margin-bottom: 10px;
-  }
-  input {
-    width: 100%;
-    height: 40px;
-    outline: none;
-    border: none;
-    padding: 5px 10px;
-    background-color: #e9e9e9;
-  }
-  textarea {
-    width: 100%;
-    min-height: 130px;
-    outline: none;
-    border: none;
-    padding: 5px 10px;
-    background-color: #e9e9e9;
-  }
-}
-.submit-btn {
-  grid-column: span 2 / span 2;
-  @media all and (max-width: $sm) {
-    grid-column: span 1 / span 1;
-  }
-}
 .joinUs-info-row {
   margin: 0 auto;
   max-width: 1000px;
@@ -788,9 +750,6 @@ header {
       }
       margin-top: 30px;
     }
-  }
-  .sec-joinUs {
-    padding: 30px 0;
   }
 
   .joinUs-info-row {

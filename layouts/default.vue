@@ -4,7 +4,8 @@
     <!-- <IndexPopup /> -->
     <WorldTime class="navbar-lg" />
     <Navbar v-if="$i18n.locale === 'zh'" class="navbar-lg" />
-    <NavbarMobile class="navbar-sm" />
+    <NavbarMobile v-if="$i18n.locale === 'zh'" class="navbar-sm" />
+    <NavbarMobileEN v-if="$i18n.locale === 'en'" class="navbar-sm" />
     <NavbarEN v-if="$i18n.locale === 'en'" class="navbar-lg" />
     <div class="spacer"></div>
     <Nuxt />

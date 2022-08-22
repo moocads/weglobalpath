@@ -1,13 +1,15 @@
 <template>
   <div class="sec-joinUs">
     <Wrapper max-width="900px">
+      <br />
+      <br />
       <MainTitle
         :title="$i18n.locale === 'zh' ? '加入我们' : 'Join Us'"
         :titleEN="$i18n.locale === 'zh' ? 'Join Us' : ''"
       />
       <a-form :form="form" @submit="handleSubmit" id="joinUsForm">
         <a-form-item
-          class="contact-input"
+          class="contact-input join-us-position"
           :label="$i18n.locale === 'zh' ? '申请职位' : 'Position'"
         >
           <a-select
@@ -44,7 +46,7 @@
           </a-select>
         </a-form-item>
         <a-form-item
-          class="contact-input"
+          class="contact-input join-us-name"
           :label="$i18n.locale === 'zh' ? '名字' : 'Name'"
         >
           <a-input
@@ -65,7 +67,7 @@
           />
         </a-form-item>
         <a-form-item
-          class="contact-input"
+          class="contact-input join-us-phone"
           :label="$i18n.locale === 'zh' ? '电话' : 'Phone'"
         >
           <a-input
@@ -93,7 +95,7 @@
           />
         </a-form-item>
         <a-form-item
-          class="contact-input"
+          class="contact-input join-us-email"
           :label="$i18n.locale === 'zh' ? '邮箱' : 'Email'"
         >
           <a-input
@@ -121,7 +123,7 @@
           />
         </a-form-item>
         <a-form-item
-          class="contact-input"
+          class="contact-input join-us-dob"
           :label="$i18n.locale === 'zh' ? '出生日期' : 'DOB'"
         >
           <a-date-picker
@@ -144,13 +146,13 @@
           />
         </a-form-item>
         <a-form-item
-          class="contact-input"
-          :label="$i18n.locale === 'zh' ? '毕业院校' : 'Graduated From'"
+          class="contact-input join-us-edu"
+          :label="$i18n.locale === 'zh' ? '毕业院校' : 'Graduated School'"
         >
           <a-input v-decorator="['school', { initialValue: '' }]" />
         </a-form-item>
         <a-form-item
-          class="contact-input"
+          class="contact-input join-us-resume"
           :label="$i18n.locale === 'zh' ? '简历' : 'Resume'"
           :extra="
             $i18n.locale === 'zh'
@@ -186,7 +188,7 @@
           </a-upload>
         </a-form-item>
         <a-form-item
-          class="contact-input"
+          class="contact-input join-us-message"
           :label="$i18n.locale === 'zh' ? '留言' : 'Message'"
         >
           <a-textarea
@@ -195,14 +197,16 @@
             :auto-size="{ minRows: 2, maxRows: 7 }"
           />
         </a-form-item>
+        <a-form-item class="join-us-submit">
+          <button
+            type="submit"
+            class="submit-btn main-btn main-btn_blue join-us-submit"
+            :disabled="isSubmitting"
+          >
+            {{ $i18n.locale === "zh" ? "发送" : "Submit" }}
+          </button>
+        </a-form-item>
         <!-- <recaptcha /> -->
-        <button
-          type="submit"
-          class="submit-btn main-btn main-btn_blue"
-          :disabled="isSubmitting"
-        >
-          {{ $i18n.locale === "zh" ? "发送" : "Submit" }}
-        </button>
       </a-form>
     </Wrapper>
   </div>
@@ -360,16 +364,51 @@ const joinUsData = [
 #joinUsForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0 30px;
-  @media all and (max-width: $sm) {
-    grid-template-columns: 1fr;
+  gap: 0px 20px;
+  grid-template-areas:
+    "join-us-position join-us-name"
+    "join-us-phone join-us-email"
+    "join-us-dob join-us-edu"
+    "join-us-resume join-us-message"
+    "join-us-submit join-us-submit";
+  .join-us-position {
+    grid-area: join-us-position;
+  }
+  .join-us-name {
+    grid-area: join-us-name;
+  }
+  .join-us-phone {
+    grid-area: join-us-phone;
+  }
+  .join-us-email {
+    grid-area: join-us-email;
+  }
+  .join-us-dob {
+    grid-area: join-us-dob;
+  }
+  .join-us-edu {
+    grid-area: join-us-edu;
+  }
+  .join-us-resume {
+    grid-area: join-us-resume;
+  }
+  .join-us-message {
+    grid-area: join-us-message;
+  }
+  .join-us-submit {
+    grid-area: join-us-submit;
+  }
+  .has-error .ant-input,
+  .has-error .ant-input:hover {
+    background-color: #e9e9e9;
+    border-color: #f5222d;
   }
   .ant-select-selection-selected-value {
     height: 100%;
     display: flex !important;
     align-items: center;
   }
-  nt-checkbox-wrapper:hover .ant-checkbox-inner,
+  .ant-checkbox-wrapper:hover .ant-checkbox-inner,
   .ant-checkbox:hover .ant-checkbox-inner,
   .ant-checkbox-input:focus + .ant-checkbox-inner {
     border-color: $navy;
@@ -404,6 +443,25 @@ const joinUsData = [
     }
   }
 }
+@media all and (max-width: $sm) {
+  #joinUsForm {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "join-us-position"
+      "join-us-name"
+      "join-us-phone"
+      "join-us-email"
+      "join-us-dob"
+      "join-us-edu"
+      "join-us-resume"
+      "join-us-message"
+      "join-us-submit";
+    .join-us-submit {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+}
 .joinUs-table-wrap {
   .ant-table-bordered .ant-table-thead > tr > th {
     background-color: $navy;
@@ -416,6 +474,34 @@ const joinUsData = [
     font-size: 16px;
   }
 }
+.contact-input {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // margin-bottom: 20px;
+  label {
+    font-size: 16px;
+    color: $navy;
+    margin-bottom: 10px;
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: #e9e9e9;
+  }
+  textarea {
+    width: 100%;
+    min-height: 130px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: #e9e9e9;
+  }
+}
+
 @media all and (max-width: 991px) {
   .joinUs-table-wrap {
     .ant-table-bordered .ant-table-thead > tr > th {
@@ -432,4 +518,8 @@ const joinUsData = [
   }
 }
 </style>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.sec-joinUs {
+  padding: 60px 0;
+}
+</style>
