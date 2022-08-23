@@ -97,7 +97,7 @@ export default {
           info_en:
             "From $50,000 CAD｜The fastest way to study + employment immigration｜One step to immigration for the whole family｜Real paid jobs",
           slug: "/projects/education/manitoba-education",
-          img: "/img/Home/曼省留学.jpg",
+          img: "/img/Home/home-banner-manitoba.jpeg",
         },
         {
           title: "企业主创业工签",
