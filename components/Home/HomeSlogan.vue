@@ -7,7 +7,10 @@
       <div class="titles">
         Luna Wang
         <div class="small">
-          <br />{{ $t("homeSlogan.tag-1") }} <br />{{ $t("homeSlogan.tag-2") }}
+          <br />{{ $t("homeSlogan.tag-1") }} <br />
+          <a href="https://www.c101.ca/" target="_blank">
+            {{ $t("homeSlogan.tag-2") }}
+          </a>
           <br />{{ $t("homeSlogan.tag-3") }}
         </div>
       </div>
