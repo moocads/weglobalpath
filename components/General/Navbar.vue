@@ -30,13 +30,19 @@
               <ul>
                 <li>
                   <NuxtLink
-                    :to="{ localePath: '/visa-services', hash: '#service-0' }"
+                    :to="{
+                      path: localePath('/visa-services'),
+                      hash: '#service-0',
+                    }"
                     >境内签证服务</NuxtLink
                   >
                 </li>
                 <li>
                   <NuxtLink
-                    :to="{ localePath: '/visa-services', hash: '#service-1' }"
+                    :to="{
+                      path: localePath('/visa-services'),
+                      hash: '#service-1',
+                    }"
                     >赴加签证</NuxtLink
                   >
                 </li>
