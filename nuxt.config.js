@@ -123,6 +123,11 @@ export default {
         iso: "en-US",
         file: "en/index.json",
       },
+      {
+        code: "tw",
+        iso: "zh-TW",
+        file: "tw/index.json",
+      },
     ],
     baseUrl: "https://beyondcanada.ca",
     defaultLocale: "zh",

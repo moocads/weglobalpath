@@ -2,30 +2,28 @@
   <div>
     <nav>
       <div class="logo-wrap">
-        <NuxtLink :to="localePath('/')">
+        <NL18 to="/">
           <img
             src="/img/logos/logo-blue.png"
             alt="加彼岸 Navbar Logo"
             class="nav_logo"
           />
-        </NuxtLink>
+        </NL18>
       </div>
       <div class="navbar-wrap">
         <ul class="main-nav">
           <li>
-            <NuxtLink :to="localePath('/')" exact>{{
-              $t("navbar.home")
-            }}</NuxtLink>
+            <NL18 to="/" exact> {{ $t("navbar.home") }}</NL18>
           </li>
           <li>
-            <NuxtLink :to="localePath('/visa-services')"
-              >签证服务
+            <NL18 to="/visa-services">
+              {{ $t("navbar.visa-services") }}
               <a-icon
                 type="down"
                 class="dropdown-arrow"
                 alt="dropdown arrow icon"
               />
-            </NuxtLink>
+            </NL18>
             <div class="general-dropdown">
               <ul>
                 <li>
@@ -34,7 +32,7 @@
                       path: localePath('/visa-services'),
                       hash: '#service-0',
                     }"
-                    >境内签证服务</NuxtLink
+                    >{{ $t("navbar.visa-services-1") }}</NuxtLink
                   >
                 </li>
                 <li>
@@ -43,23 +41,26 @@
                       path: localePath('/visa-services'),
                       hash: '#service-1',
                     }"
-                    >赴加签证</NuxtLink
+                    >{{ $t("navbar.visa-services-2") }}</NuxtLink
                   >
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <NuxtLink :to="localePath('/recruiting')">快速移民直通车</NuxtLink>
+            <NL18 to="/recruiting">
+              {{ $t("navbar.recruiting") }}
+            </NL18>
           </li>
           <li class="hot-project-link">
-            <NuxtLink :to="localePath('/projects')"
-              >热门项目
+            <NL18 to="/projects">
+              {{ $t("navbar.projects") }}
               <a-icon
                 type="down"
                 class="dropdown-arrow"
                 alt="dropdown arrow icon"
-            /></NuxtLink>
+              />
+            </NL18>
             <div class="hot-project-dropdown dropdown-wrap">
               <div class="project-col">
                 <NuxtLink
@@ -67,7 +68,6 @@
                   class="main-cate"
                   >{{ hotProjects[0].main_cate }}</NuxtLink
                 >
-
                 <ul>
                   <li
                     v-for="subItem in hotProjects[0].second_cate"
@@ -199,143 +199,118 @@
             </div>
           </li>
           <li class="euro-usa-link">
-            <NuxtLink to="/euro-and-usa"
-              >欧美移民
+            <NL18 to="/euro-and-usa">
+              {{ $t("navbar.euro-usa") }}
               <a-icon
                 type="down"
                 class="dropdown-arrow"
                 alt="dropdown arrow icon"
-            /></NuxtLink>
+              />
+            </NL18>
             <div class="hot-project-dropdown dropdown-wrap">
               <div class="project-col">
-                <NuxtLink to="/projects/euro" class="main-cate"
-                  >欧洲移民项目</NuxtLink
-                >
+                <NL18 to="/projects/euro" class="main-cate">
+                  {{ $t("navbar.euro") }}
+                </NL18>
                 <ul>
-                  <li>
-                    <NuxtLink to="/projects/euro/portugal-golden-plan-28w">
-                      葡萄牙28万欧购房黄金居留</NuxtLink
-                    >
-                  </li>
-                  <li>
-                    <NuxtLink to="/projects/euro/portugal-golden-plan-50w">
-                      葡萄牙50万欧购房黄金居留</NuxtLink
-                    >
-                  </li>
-                  <li>
-                    <NuxtLink to="/projects/euro/portugal-golden-plan-50w-fund">
-                      葡萄牙50万欧基金黄金居留</NuxtLink
-                    >
-                  </li>
-                  <li>
-                    <NuxtLink to="/projects/euro/ireland-investment">
-                      爱尔兰投资移民项目</NuxtLink
-                    >
-                  </li>
-                  <li>
-                    <NuxtLink
-                      to="/projects/euro/turkey-investment-passport-program-for-40w-property"
-                    >
-                      土耳其40万美元购房护照项目</NuxtLink
-                    >
-                  </li>
-                  <li>
-                    <NuxtLink
-                      to="/projects/euro/malta-permanent-residency-program"
-                    >
-                      马耳他永久居留计划（MPRP）</NuxtLink
-                    >
-                  </li>
-                  <li>
-                    <NuxtLink
-                      to="/projects/euro/greece-permanent-residence-program"
-                    >
-                      希腊永久居留项目</NuxtLink
-                    >
-                  </li>
-                  <li>
-                    <NuxtLink to="/projects/euro/spain-permanent-residence-50w">
-                      西班牙50万欧购房永久居留</NuxtLink
-                    >
+                  <li v-for="(euro, index) in euroProjects" :key="index">
+                    <NL18 :to="euro.url">
+                      {{ euro.title }}
+                    </NL18>
                   </li>
                 </ul>
               </div>
               <div class="project-col">
-                <NuxtLink to="/projects/usa" class="main-cate"
-                  >美国移民项目</NuxtLink
-                >
+                <NL18 to="/projects/usa" class="main-cate">
+                  {{ $t("navbar.usa") }}
+                </NL18>
                 <ul>
                   <li
                     v-for="subItem in hotProjects[6].second_cate"
                     :key="subItem.id"
                   >
-                    <NuxtLink :to="`${hotProjects[6].url}/${subItem.id}`">
-                      {{ subItem.name }}</NuxtLink
-                    >
+                    <NL18 :to="`${hotProjects[6].url}/${subItem.id}`">
+                      {{ subItem.name }}
+                    </NL18>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
           <li class="hot-project-link">
-            <NuxtLink to="/provinces"
-              >移民省份
+            <NL18 to="/provinces">
+              {{ $t("navbar.provinces") }}
               <a-icon
                 type="down"
                 class="dropdown-arrow"
                 alt="dropdown arrow icon"
-            /></NuxtLink>
+              />
+            </NL18>
             <div class="hot-project-dropdown dropdown-wrap">
               <div
                 class="project-col"
                 v-for="(province, index) in provinces"
                 :key="index"
               >
-                <NuxtLink to="/provinces" class="main-cate">{{
-                  province.main_cate
-                }}</NuxtLink>
+                <NuxtLink :to="localePath(`/provinces`)" class="main-cate">
+                  {{
+                    $i18n.locale === "zh"
+                      ? province.main_cate
+                      : province.main_cate_tw
+                  }}
+                </NuxtLink>
                 <ul class="province-list">
                   <li v-for="subItem in province.second_cate" :key="subItem.id">
                     <a @click="provinceLink(subItem.id)">
-                      {{ subItem.name }}
+                      {{
+                        $i18n.locale === "zh" ? subItem.name : subItem.name_tw
+                      }}
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
-          <!-- <li></li>
-            <NuxtLink to="/investment">加拿大投资</NuxtLink>
-          </li> -->
           <li>
-            <NuxtLink :to="localePath('/about')">
+            <NL18 to="/about">
               {{ $t("navbar.about") }}
               <a-icon
                 type="down"
                 class="dropdown-arrow"
                 alt="dropdown arrow icon"
               />
-            </NuxtLink>
+            </NL18>
             <div class="general-dropdown">
               <ul>
                 <li>
-                  <NuxtLink :to="{ path: '/about', hash: '#anchor-franchise' }">
-                    加盟招商
+                  <NuxtLink
+                    :to="{
+                      path: localePath('/about'),
+                      hash: '#anchor-franchise',
+                    }"
+                  >
+                    {{ $t("navbar.about-franchise") }}
                   </NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }"
-                    >加入我们</NuxtLink
+                  <NuxtLink
+                    :to="{ path: localePath('/about'), hash: '#anchor-joinUs' }"
                   >
+                    {{ $t("navbar.about-join-us") }}
+                  </NuxtLink>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <NuxtLink to="/blogs">最新资讯</NuxtLink>
+            <NL18 to="/blogs">
+              {{ $t("navbar.blog") }}
+            </NL18>
           </li>
           <li>
-            <NuxtLink to="/contact">{{ $t("navbar.contact") }}</NuxtLink>
+            <NL18 to="/contact">
+              {{ $t("navbar.contact") }}
+            </NL18>
           </li>
         </ul>
       </div>
@@ -366,6 +341,46 @@ export default {
       this.$store.commit("setEe", id);
       // console.log(this.$store.state.province)
       this.$router.push("/projects/ee");
+    },
+  },
+  computed: {
+    euroProjects() {
+      return [
+        {
+          url: "/projects/euro/portugal-golden-plan-28w",
+          title: this.$t("navbar.portugal-golden-plan-28w"),
+        },
+        {
+          url: "/projects/euro/portugal-golden-plan-50w",
+          title: this.$t("navbar.portugal-golden-plan-50w"),
+        },
+        {
+          url: "/projects/euro/portugal-golden-plan-50w-fund",
+          title: this.$t("navbar.portugal-golden-plan-50w-fund"),
+        },
+        {
+          url: "/projects/euro/ireland-investment",
+          title: this.$t("navbar.ireland-investment"),
+        },
+        {
+          url: "/projects/euro/turkey-investment-passport-program-for-40w-property",
+          title: this.$t(
+            "navbar.turkey-investment-passport-program-for-40w-property"
+          ),
+        },
+        {
+          url: "/projects/euro/malta-permanent-residency-program",
+          title: this.$t("navbar.malta-permanent-residency-program"),
+        },
+        {
+          url: "/projects/euro/greece-permanent-residence-program",
+          title: this.$t("navbar.greece-permanent-residence-program"),
+        },
+        {
+          url: "/projects/euro/spain-permanent-residence-50w",
+          title: this.$t("navbar.spain-permanent-residence-50w"),
+        },
+      ];
     },
   },
 };

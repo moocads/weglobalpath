@@ -1,0 +1,48 @@
+{
+  "navbar": {
+    "home": "首頁",
+    "visa-services": "簽證服務",
+    "visa-services-1": "境內簽證服務",
+    "visa-services-2": "赴加簽證",
+    "recruiting": "快速移民直通車",
+    "projects": "熱門項目",
+    "euro-usa": "歐美移民",
+    "euro": "歐洲移民項目",
+    "portugal-golden-plan-28w": "葡萄牙28萬歐購房黃金居留",
+    "portugal-golden-plan-50w": "葡萄牙50萬歐購房黃金居留",
+    "portugal-golden-plan-50w-fund": "葡萄牙50萬歐基金黃金居留",
+    "ireland-investment": "愛爾蘭投資移民項目",
+    "turkey-investment-passport-program-for-40w-property": "土耳其40萬美元購房護照項目",
+    "malta-permanent-residency-program": "馬耳他永久居留計劃（MPRP）",
+    "greece-permanent-residence-program": "希臘永久居留項目",
+    "spain-permanent-residence-50w": "西班牙50萬歐購房永久居留",
+    "usa": "美國移民項目",
+    "provinces": "移民省份",
+    "about-franchise": "加盟招商",
+    "about-join-us": "加入我們",
+    "blog": "最新資訊",
+    "about": "關於我們",
+    "contact": "聯繫我們"
+  },
+  "Contact": {
+    "hero-title": "聯繫我們",
+    "hero-subtitle": "尊敬的客戶您好，我們的專業客服會在24小時內回复您，謝謝您的耐心。",
+    "phone": "電話",
+    "phone-toronto": "多倫多",
+    "phone-winnipeg": "溫尼伯",
+    "email": "郵箱",
+    "wechat": "客戶諮詢微信",
+    "address": "地址",
+    "address-toronto": "多倫多",
+    "address-switch": "點擊地址切換地圖",
+    "form": {
+      "name": "名字（必填）",
+      "dob": "出生日期",
+      "phone": "電話",
+      "email": "郵箱（必填）",
+      "message": "留言（必填）",
+      "subcription": "希望通過郵箱或短信接收更多加彼岸留學移民最新政策資訊。",
+      "submit": "發送"
+    }
+  }
+}

@@ -4,33 +4,42 @@
       <div class="time-wrap">
         <div class="toronto">
           <p>
-            {{ $i18n.locale === "zh" ? "多伦多时间" : "Toronto" }}:{{
-              canadaDate
-            }}
+            {{
+              $i18n.locale === "zh"
+                ? "多伦多时间"
+                : $i18n.locale === "tw"
+                ? "多倫多時間"
+                : "Toronto"
+            }}:{{ canadaDate }}
             {{ torontoTime }}
           </p>
         </div>
         <div class="manitoba">
           <p>
-            {{ $i18n.locale === "zh" ? "曼尼托巴时间" : "Manitoba" }}:{{
-              canadaDate
-            }}
+            {{
+              $i18n.locale === "zh"
+                ? "曼尼托巴时间"
+                : $i18n.locale === "tw"
+                ? "曼尼托巴時間"
+                : "Manitoba"
+            }}:{{ canadaDate }}
             {{ manitobaTime }}
           </p>
         </div>
         <div class="vancouver">
           <p>
-            {{ $i18n.locale === "zh" ? "温哥华时间" : "Vancouver" }}：{{
-              canadaDate
-            }}
+            {{
+              $i18n.locale === "zh"
+                ? "温哥华时间"
+                : $i18n.locale === "tw"
+                ? "溫哥華時間"
+                : "Vancouver"
+            }}：{{ canadaDate }}
             {{ vancouverTime }}
           </p>
         </div>
       </div>
-      <div class="lang-switch-wrap">
-        <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
-        <nuxt-link :to="switchLocalePath('zh')" exact>中</nuxt-link>
-      </div>
+      <LangSwitcher />
     </Wrapper>
   </div>
 </template>
@@ -123,14 +132,6 @@ export default {
       color: #b4b4b4;
       font-size: 12px;
     }
-  }
-}
-.world-time-wrap .lang-switch-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  a {
-    margin-left: 8px;
   }
 }
 </style>
