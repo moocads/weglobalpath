@@ -68,6 +68,9 @@ export default {
   }
   .small {
     font-size: 13px;
+    a {
+      border-bottom: 1px solid $navy;
+    }
   }
 }
 @media all and (max-width: $sm) {
