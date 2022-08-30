@@ -2,7 +2,13 @@
   <section id="home-services">
     <div class="wrapper">
       <MainTitle
-        :title="$i18n.locale === 'zh' ? '热门项目' : 'Our Services'"
+        :title="
+          $i18n.locale === 'zh'
+            ? '热门项目'
+            : $i18n.locale === 'tw'
+            ? '熱門項目'
+            : 'Our Services'
+        "
         titleEN="SERVICES"
       />
       <div class="projects-wrap">
@@ -19,9 +25,11 @@
             <p>
               {{ $t("homeServices.row-1-content") }}
             </p>
-            <NuxtLink v-if="$i18n.locale === 'zh'" to="/projects">{{
-              $t("homeServices.learn-morn-btn")
-            }}</NuxtLink>
+            <NuxtLink
+              v-if="$i18n.locale === 'zh'"
+              :to="localePath(`/projects`)"
+              >{{ $t("homeServices.learn-morn-btn") }}</NuxtLink
+            >
           </div>
         </div>
         <div class="project-item project-2">

@@ -5,7 +5,11 @@
         <a-col :lg="12">
           <MainTitleSide
             :title="
-              $i18n.locale === 'zh' ? '关于加彼岸' : 'About Beyond Canada'
+              $i18n.locale === 'zh'
+                ? '关于加彼岸'
+                : $i18n.locale === 'tw'
+                ? '關於加彼岸'
+                : 'About Beyond Canada'
             "
             titleEN="ABOUT US"
             titleENColor="#e9e9e9"
@@ -19,12 +23,24 @@
           <div class="button-wrap">
             <NuxtLink :to="localePath('/about')">
               <button class="about-btn main-btn main-btn_red main-btn_round-5">
-                {{ $i18n.locale === "zh" ? "了解更多" : "Learn More" }}
+                {{
+                  $i18n.locale === "zh"
+                    ? "了解更多"
+                    : $i18n.locale === "tw"
+                    ? "了解更多"
+                    : "Learn More"
+                }}
               </button>
             </NuxtLink>
             <NuxtLink :to="localePath('/contact')">
               <button class="about-btn main-btn main-btn_red main-btn_round-5">
-                {{ $i18n.locale === "zh" ? "联系我们" : "Contact Us" }}
+                {{
+                  $i18n.locale === "zh"
+                    ? "联系我们"
+                    : $i18n.locale === "tw"
+                    ? "聯繫我們"
+                    : "Contact Us"
+                }}
               </button>
             </NuxtLink>
           </div>

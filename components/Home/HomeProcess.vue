@@ -2,7 +2,13 @@
   <section id="home-process">
     <div class="wrapper">
       <MainTitle
-        :title="$i18n.locale === 'zh' ? '移民服务流程' : 'Service Process'"
+        :title="
+          $i18n.locale === 'zh'
+            ? '移民服务流程'
+            : $i18n.locale === 'tw'
+            ? '移民服務流程'
+            : 'Service Process'
+        "
         titleEN="SERVICE PROCESS"
       />
       <ul class="service-process-grid">
@@ -10,6 +16,8 @@
           class="service-process-item"
           v-for="(step, index) in $i18n.locale === 'zh'
             ? serviceSteps
+            : $i18n.locale === 'tw'
+            ? serviceStepsTW
             : serviceStepsEN"
           :key="index"
         >
@@ -34,6 +42,7 @@ export default {
     return {
       serviceSteps,
       serviceStepsEN,
+      serviceStepsTW,
     };
   },
 };
@@ -77,6 +86,48 @@ const serviceSteps = [
     title: "登陆安家",
     iconUrl: "/img/icons/process/done_icon.SVG",
     content: " 加拿大直营公司提供一站式登陆安家置业服务",
+  },
+];
+const serviceStepsTW = [
+  {
+    title: "專家資訊",
+    iconUrl: "/img/icons/process/chat_icon.SVG",
+    content: " 資深移民顧問提供貼心1對1諮詢服務",
+  },
+  {
+    title: "提交簡歷",
+    iconUrl: "/img/icons/process/upload_file_icon.SVG",
+    content: " 提交您的簡歷至加彼岸，我司嚴格遵守保密協議",
+  },
+  {
+    title: "個案評估",
+    iconUrl: "/img/icons/process/assessment_icon.SVG",
+    content: " 持牌移民律師審查客戶資料，匹配合適項目",
+  },
+  {
+    title: "方案製定",
+    iconUrl: "/img/icons/process/submit_doc_icon.SVG",
+    content: " 移民顧問量身定制詳細申請方案",
+  },
+  {
+    title: "準備材料",
+    iconUrl: "/img/icons/process/prepare_materials_icon.SVG",
+    content: " 客服管家收集申請所需資料，絕無遺漏",
+  },
+  {
+    title: "遞交申請",
+    iconUrl: "/img/icons/process/plan_icon.SVG",
+    content: " 資深文案&律師整理申請材料，多重審查後遞交",
+  },
+  {
+    title: "簽證批准",
+    iconUrl: "/img/icons/process/approve_icon.SVG",
+    content: " 獲得移民通過函*如發生拒簽律師將協助复議",
+  },
+  {
+    title: "登陸安家",
+    iconUrl: "/img/icons/process/done_icon.SVG",
+    content: " 加拿大直營公司提供一站式登陸安家置業服務",
   },
 ];
 const serviceStepsEN = [

@@ -36,8 +36,12 @@
           <div class="slide-info">
             <h1 v-if="$i18n.locale === 'zh'">{{ slide.title }}</h1>
             <h1 v-if="$i18n.locale === 'en'">{{ slide.title_en }}</h1>
+            <h1 v-if="$i18n.locale === 'tw'">{{ slide.title_tw }}</h1>
             <p v-if="$i18n.locale === 'zh'">
               {{ slide.info }}
+            </p>
+            <p v-if="$i18n.locale === 'tw'">
+              {{ slide.info_tw }}
             </p>
 
             <NuxtLink v-if="$i18n.locale === 'zh'" :to="slide.slug">
@@ -74,8 +78,11 @@ export default {
       homeSlideData: [
         {
           title: "加拿大联邦创业投资移民SUV",
+          title_tw: "加拿大聯邦創業投資移民SUV",
           title_en: "Start-up Visa Program",
           info: "不用提供资金来源证明｜中国境内等待永居卡获批｜商业运营结果不影响审批｜100%获得支持信承诺",
+          info_tw:
+            "不用提供資金來源證明｜中國境內等待永居卡獲批｜商業運營結果不影響審批｜100%獲得支持信承諾",
           info_en:
             "No need to provide proof of source of funds｜Waiting for permanent resident card approval in China｜Business operation result does not affect approval｜100% support letter promise",
           slug: "/projects/startup/start-up-visa",
@@ -83,8 +90,11 @@ export default {
         },
         {
           title: "加拿大安省雇主担保移民",
+          title_tw: "加拿大安省雇主擔保移民",
           title_en: "Ontario Immigrant Nominee Program (OINP)",
           info: "无语言要求｜申请条件宽松｜一人申请全家移民｜一步到位落地安省｜加拿大教育资源最好的省份",
+          info_tw:
+            "無語言要求｜申請條件寬鬆｜一人申請全家移民｜一步到位落地安省｜加拿大教育資源最好的省份",
           info_en:
             "No language requirement｜Lax application requirements｜One-person application for the whole family｜One-step landing in Ontario｜The best province in Canada in terms of educational resources",
           slug: "/projects/nominee/ontario-immigrat-nominee-program",
@@ -92,8 +102,11 @@ export default {
         },
         {
           title: "曼省留学移民",
+          title_tw: "曼省留學移民",
           title_en: "Study abroad immigration in Manitoba",
           info: "5万加币起｜最快速留学+就业移民途径｜一步到位全家移民｜真实带薪工作",
+          info_tw:
+            "5萬加幣起｜最快速留學+就業移民途徑｜一步到位全家移民｜真實帶薪工作",
           info_en:
             "From $50,000 CAD｜The fastest way to study + employment immigration｜One step to immigration for the whole family｜Real paid jobs",
           slug: "/projects/education/manitoba-education",
@@ -101,8 +114,11 @@ export default {
         },
         {
           title: "企业主创业工签",
+          title_tw: "企業主創業工簽",
           title_en: "Owner Operator Work Permit",
           info: "EE快速通道＋200分｜办理速度快｜定居任意省份｜入境加拿大获得事业基础｜总费用性价比最高",
+          info_tw:
+            "EE快速通道＋200分｜辦理速度快｜定居任意省份｜入境加拿大獲得事業基礎｜總費用性價比最高",
           info_en:
             "EE Fast Track + 200 points｜Fast processing｜Settlement in any province｜Enter Canada to gain a career base｜The most cost-effective total cost",
           slug: "/projects/startup/owner-operator-work-permit",
@@ -110,8 +126,11 @@ export default {
         },
         {
           title: "美国杰出人才EB1A",
+          title_tw: "美國傑出人才EB1A",
           title_en: "First Preference Employment Based Immigration",
           info: "最快5天审批｜无需语言要求｜前期评估确保成功率｜50万人民币起｜最快获得美国绿卡移民项目",
+          info_tw:
+            "最快5天審批｜無需語言要求｜前期評估確保成功率｜50萬人民幣起｜最快獲得美國綠卡移民項目",
           info_en:
             "Fastest 5 day approval｜No language requirement｜Pre-assessment to ensure success｜From 500,000 RMB｜Fastest way to get a U.S. green card",
           btn: "快速移民美国",

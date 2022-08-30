@@ -6,6 +6,8 @@
           {{
             $i18n.locale === "zh"
               ? "选择我们 选择放心"
+              : $i18n.locale === "tw"
+              ? "選擇我們 選擇放心"
               : "Choose Us Choose Confidence"
           }}
         </h1>
@@ -18,6 +20,8 @@
             {{
               $i18n.locale === "zh"
                 ? "全球合作校园"
+                : $i18n.locale === "tw"
+                ? "全球合作校園"
                 : "Global Partner Institutions"
             }}
           </p>
@@ -28,6 +32,8 @@
             {{
               $i18n.locale === "zh"
                 ? "移民申请成功案例"
+                : $i18n.locale === "tw"
+                ? "移民申請成功案例"
                 : " Immigration Application Success Stories"
             }}
           </p>
@@ -38,6 +44,8 @@
             {{
               $i18n.locale === "zh"
                 ? "移民申请通过率"
+                : $i18n.locale === "tw"
+                ? "移民申請通過率"
                 : "Immigration Application Pass Rate"
             }}
           </p>
@@ -48,6 +56,8 @@
             {{
               $i18n.locale === "zh"
                 ? "海外优质雇主资源"
+                : $i18n.locale === "tw"
+                ? "海外優質雇主資源"
                 : "Overseas Quality Employer Resources"
             }}
           </p>

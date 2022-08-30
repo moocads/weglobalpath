@@ -99,6 +99,8 @@
               {{
                 $i18n.locale === "zh"
                   ? "加彼岸，家彼岸"
+                  : $i18n.locale === "tw"
+                  ? "加彼岸，家彼岸"
                   : "Beyond Canada，Your Family"
               }}
             </h1>
@@ -106,6 +108,8 @@
               {{
                 $i18n.locale === "zh"
                   ? "为您量身定制整体移居方案"
+                  : $i18n.locale === "tw"
+                  ? "為您量身定制整體移居方案"
                   : "Customized total relocation solutions for you"
               }}
             </h2>
@@ -115,12 +119,22 @@
               type="text"
               v-model="contactInfo"
               :placeholder="
-                $i18n.locale === 'zh' ? '输入邮箱或微信号' : 'Email or WeChat'
+                $i18n.locale === 'zh'
+                  ? '输入邮箱或微信号'
+                  : $i18n.locale === 'tw'
+                  ? '輸入郵箱或微信號'
+                  : 'Email or WeChat'
               "
               required
             />
             <button type="submit" class="submit-btn main-btn main-btn_blue">
-              {{ $i18n.locale === "zh" ? "免费评估" : "Enter" }}
+              {{
+                $i18n.locale === "zh"
+                  ? "免费评估"
+                  : $i18n.locale === "tw"
+                  ? "免費評估"
+                  : "Enter"
+              }}
             </button>
           </form>
         </div>
