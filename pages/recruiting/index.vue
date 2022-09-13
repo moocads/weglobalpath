@@ -564,7 +564,7 @@
             </p>
             <div class="files-download-wrap">
               <a
-                href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_c9bff56166.pdf"
+                href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_2022_09_13_f80b3e18b8.pdf"
                 class="pdf-download-btn"
                 target="_blank"
                 download="RC加拿大大专课程直通车项目推广手册"
@@ -573,7 +573,7 @@
                 <span>RC加拿大大专课程直通车项目推广手册</span>
               </a>
               <a
-                href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_e886bacbb2.pdf"
+                href="https://beyond-canada-back-staging-mooc.s3.ca-central-1.amazonaws.com/RC_2022_09_13_0d01d92a47.pdf"
                 class="pdf-download-btn"
                 target="_blank"
                 download="RC加拿大研文课程直通车项目推广手册"
