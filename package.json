@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
+    "build": "node --max_old_space_size=2560 node_modules/.bin/nuxt build",
+    "start": "node --max_old_space_size=2560 node_modules/.bin/nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
