@@ -1,5 +1,5 @@
 <template>
-  <div id="ontario-employee-evaluation-form">
+  <div id="ontario-employee-evaluation-form" class="evaluation-wrap">
     <header
       class="general-header"
       :style="{
@@ -35,39 +35,84 @@
         </a-affix>
         <div class="form">
           <section class="section">
-            <h3>1.工作邀请Job Offer</h3>
+            <h3>1.雇佣/劳动力市场要素</h3>
+            <!-- Job Offer:NOC TEER Category 工作录用函分类 -->
             <div class="box">
-              <div class="label">Job Offer<br />职业类别</div>
+              <div class="label">工作录用函分类</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="jobTeer">
+                  <a-radio :value="1">NOC TEER 0 或 1 类</a-radio>
+                  <a-radio :value="2">NOC TEER 2 或 3 类</a-radio>
+                  <a-radio :value="3">NOC TEER 4 类</a-radio>
+                  <a-radio :value="4">NOC TEER 5 类</a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ jobTeerCalc }}</div>
+            </div>
+            <!-- Job Offer: NOC Occupational Category  工作职业类别 -->
+            <div class="box">
+              <div class="label">工作职业类别</div>
               <div class="question vertical-radio">
                 <a-radio-group v-model="jobType">
-                  <a-radio :value="1">NOC A类 </a-radio>
-                  <a-radio :value="2">NOC B类 </a-radio>
-                  <a-radio :value="3">NOC C类 </a-radio>
-                  <a-radio :value="4">NOC D类 </a-radio>
+                  <a-radio :value="1">工作岗位以0/2/3开头</a-radio>
+                  <a-radio :value="2">工作岗位以7开头</a-radio>
+                  <a-radio :value="3">工作岗位以1/9开头</a-radio>
+                  <a-radio :value="4">工作岗位以4/8开头</a-radio>
+                  <a-radio :value="5">工作岗位以5/6开头</a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ jobTypeCalc }}</div>
             </div>
+            <!-- Job Offer: Wage  时薪 -->
             <div class="box">
-              <div class="label">Job Offer<br />职业代码</div>
+              <div class="label">时薪</div>
               <div class="question vertical-radio">
-                <a-radio-group v-model="jobCode">
-                  <a-radio :value="1">NOC 0,1,2,3,9 </a-radio>
-                  <a-radio :value="2">NOC 4,5,6,7,8 </a-radio>
+                <a-radio-group v-model="jobWage">
+                  <a-radio :value="1">时薪40加币以上</a-radio>
+                  <a-radio :value="2">时薪35至39.99加币</a-radio>
+                  <a-radio :value="3">时薪30至34.99加币</a-radio>
+                  <a-radio :value="4">时薪25至29.99加币</a-radio>
+                  <a-radio :value="5">时薪20至24.99加币</a-radio>
+                  <a-radio :value="6">时薪20加币以下</a-radio>
                 </a-radio-group>
               </div>
-              <div class="result">{{ jobCodeCalc }}</div>
+              <div class="result">{{ jobWageCalc }}</div>
             </div>
-            <div class="box last">
-              <div class="label">Job Offer<br />工资水平</div>
+            <!-- Work Permit Status 工作许可状态 -->
+            <div class="box">
+              <div class="label">工作许可状态</div>
               <div class="question vertical-radio">
-                <a-radio-group v-model="jobSalary">
-                  <a-radio :value="1">$40/小时 或以上 </a-radio>
-                  <a-radio :value="2">$20 - $39.99/小时 </a-radio>
-                  <a-radio :value="3">低于$20/小时 </a-radio>
+                <a-radio-group v-model="jobWorkPermit">
+                  <a-radio :value="1">持有效工签</a-radio>
+                  <a-radio :value="2">无有效工签</a-radio>
                 </a-radio-group>
               </div>
-              <div class="result">{{ jobSalaryCalc }}</div>
+              <div class="result">{{ jobWorkPermitCalc }}</div>
+            </div>
+            <!-- 为担保雇主工作时长 -->
+            <div class="box">
+              <div class="label">为担保雇主<br />工作时长</div>
+              <div class="question vertical-radio">
+                <a-radio-group v-model="jobTenureForEmployer">
+                  <a-radio :value="1">为提供担保的雇主工作超过6个月 </a-radio>
+                  <a-radio :value="2"
+                    >为提供担保的雇主工作不满6个月或目前已离职
+                  </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ jobTenureForEmployerCalc }}</div>
+            </div>
+            <!-- 加拿大工作经验薪资历史 -->
+            <div class="box last">
+              <div class="label">加拿大工作经验<br />薪资历史</div>
+              <div class="question vertical-radio">
+                <p>根据加拿大税务局CRA纳税记录，过往5年内</p>
+                <a-radio-group v-model="jobCanadaExp">
+                  <a-radio :value="1">某一年年薪4万加币以上 </a-radio>
+                  <a-radio :value="2">年薪不满4万加币 </a-radio>
+                </a-radio-group>
+              </div>
+              <div class="result">{{ jobCanadaExpCalc }}</div>
             </div>
             <br />
             <a
@@ -78,73 +123,55 @@
             >
           </section>
           <section class="section">
-            <h3>2.加拿大工作经验</h3>
+            <h3>2.语言</h3>
             <div class="box">
-              <div class="label">时长</div>
+              <div class="label">语言水平</div>
               <div class="question vertical-radio">
-                <a-radio-group v-model="jobExpTime">
-                  <a-radio :value="1">12个月或以上 </a-radio>
-                  <a-radio :value="2">少于12个月 </a-radio>
+                <a-radio-group v-model="lang">
+                  <a-radio :value="1">CLB9+ （包含9） </a-radio>
+                  <a-radio :value="2">CLB8 </a-radio>
+                  <a-radio :value="3">CLB7 </a-radio>
+                  <a-radio :value="4">CLB6 </a-radio>
                 </a-radio-group>
               </div>
-              <div class="result">{{ jobExpTimeCalc }}</div>
-            </div>
-            <div class="box">
-              <div class="label">NOC 类别</div>
-              <div class="question vertical-radio">
-                <a-radio-group v-model="jobExpNoc">
-                  <a-radio :value="1">NOC A类 </a-radio>
-                  <a-radio :value="2">NOC B类 </a-radio>
-                  <a-radio :value="3">NOC C类 </a-radio>
-                  <a-radio :value="4">NOC D类 </a-radio>
-                </a-radio-group>
-              </div>
-              <div class="result">{{ jobExpNocCalc }}</div>
+              <div class="result">{{ langCalc }}</div>
             </div>
             <div class="box last">
-              <div class="label">工资水平</div>
+              <div class="label">多语言水平</div>
               <div class="question vertical-radio">
-                <a-radio-group v-model="jobExpSalary">
-                  <a-radio :value="1">$40,000/年 或以上 </a-radio>
-                  <a-radio :value="2">少于$40,000/年 </a-radio>
-                  <a-radio :value="3">一种加拿大学历 </a-radio>
-                  <a-radio :value="4">一种语言 </a-radio>
+                <a-radio-group v-model="biLang">
+                  <a-radio :value="1">两种语言（英语和法语） </a-radio>
+                  <a-radio :value="2">一种语言 </a-radio>
                 </a-radio-group>
               </div>
-              <div class="result">{{ jobExpSalaryCalc }}</div>
+              <div class="result">{{ biLangCalc }}</div>
             </div>
-            <p class="additional-info">
-              可以是用来移民的工作，也可以是其他的加拿大工作
-            </p>
           </section>
           <section class="section">
             <h3>3.区域性</h3>
             <div class="box">
-              <div class="label">Job Offer<br />区域性</div>
+              <div class="label">工作地点</div>
               <div class="question vertical-radio">
                 <a-radio-group v-model="jobRegion">
-                  <a-radio :value="1">大多伦多地区以外 </a-radio>
-                  <a-radio :value="2">大多伦多地区以内 </a-radio>
+                  <a-radio :value="1">安省北部</a-radio>
+                  <a-radio :value="2">除安省北部外的非大多伦多地区 </a-radio>
+                  <a-radio :value="3"
+                    >大多伦多地区以内（不包含多伦多）
+                  </a-radio>
+                  <a-radio :value="4">多伦多地区 </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ jobRegionCalc }}</div>
             </div>
-            <div class="box">
-              <div class="label">战略优先向加分</div>
-              <div class="question vertical-radio">
-                <a-radio-group v-model="jobRegionAddition">
-                  <p>
-                    劳动力市场有限因素Strategic
-                    Priorities：能解决省内或某一地区劳动力市场的即时需求
-                  </p>
-                  <a-radio :value="1">是</a-radio>
-                  <a-radio :value="2">否</a-radio>
-                </a-radio-group>
-              </div>
-              <div class="result">{{ jobRegionAdditionCalc }}</div>
-            </div>
           </section>
         </div>
+        <a-affix :offset-top="0">
+          <div class="pointsCounter">
+            <h2>
+              您目前评分为：<strong>{{ totalPoints }}分</strong>
+            </h2>
+          </div>
+        </a-affix>
       </a-card>
       <NuxtLink to="/evaluation" class="back-btn" exact style="margintop: 20px">
         <img src="/img/icons/back-btn.png" alt="" />
@@ -170,14 +197,15 @@ export default {
   },
   data() {
     return {
+      jobTeer: 0,
       jobType: 0,
-      jobCode: 0,
-      jobSalary: 0,
-      jobExpTime: 0,
-      jobExpNoc: 0,
-      jobExpSalary: 0,
+      jobWage: 0,
+      jobWorkPermit: 0,
+      jobTenureForEmployer: 0,
+      jobCanadaExp: 0,
+      lang: 0,
+      biLang: 0,
       jobRegion: 0,
-      jobRegionAddition: 0,
     };
   },
   async asyncData({ $axios }) {
@@ -190,272 +218,122 @@ export default {
     return { scores };
   },
   computed: {
+    jobTeerCalc: function () {
+      switch (this.jobTeer) {
+        case 1:
+          return 10;
+        case 2:
+          return 8;
+        default:
+          return 0;
+      }
+    },
     jobTypeCalc: function () {
       switch (this.jobType) {
-        case 0:
+        case 1:
+          return 10;
+        case 2:
+          return 7;
+        case 3:
+          return 5;
+        case 4:
+          return 4;
+        case 5:
+          return 3;
+        default:
           return 0;
+      }
+    },
+    jobWageCalc: function () {
+      switch (this.jobWage) {
         case 1:
           return 10;
         case 2:
           return 8;
         case 3:
+          return 7;
         case 4:
+          return 6;
+        case 5:
+          return 5;
+        default:
           return 0;
       }
     },
-    jobCodeCalc: function () {
-      switch (this.jobCode) {
-        case 0:
-          return 0;
+    jobWorkPermitCalc: function () {
+      switch (this.jobWorkPermit) {
         case 1:
           return 10;
-        case 2:
-          return 5;
-      }
-    },
-    jobSalaryCalc: function () {
-      switch (this.jobSalary) {
-        case 0:
-          return 0;
-        case 1:
-          return 10;
-        case 2:
-          return 5;
-        case 3:
+        default:
           return 0;
       }
     },
-    jobExpTimeCalc: function () {
-      switch (this.jobExpTime) {
-        case 0:
-          return 0;
-        case 1:
-          return 4;
-        case 2:
-          return 0;
-      }
-    },
-    jobExpNocCalc: function () {
-      switch (this.jobExpNoc) {
-        case 0:
-        case 2:
-        case 3:
-        case 4:
-          return 0;
+    jobTenureForEmployerCalc: function () {
+      switch (this.jobTenureForEmployer) {
         case 1:
           return 3;
+        default:
+          return 0;
       }
     },
-    jobExpSalaryCalc: function () {
-      switch (this.jobExpSalary) {
-        case 0:
-          return 0;
+    jobCanadaExpCalc: function () {
+      switch (this.jobCanadaExp) {
         case 1:
           return 3;
-        case 2:
+        default:
           return 0;
-        case 3:
-        case 4:
-          return 5;
       }
     },
-    jobRegionCalc: function () {
-      switch (this.jobRegion) {
-        case 0:
-          return 0;
+    langCalc: function () {
+      switch (this.lang) {
         case 1:
           return 10;
         case 2:
           return 6;
+        case 3:
+          return 4;
+        default:
+          return 0;
       }
     },
-    jobRegionAdditionCalc: function () {
-      switch (this.jobRegionAddition) {
-        case 0:
-          return 0;
+    biLangCalc: function () {
+      switch (this.biLang) {
         case 1:
           return 10;
         case 2:
+          return 5;
+        default:
+          return 0;
+      }
+    },
+    jobRegionCalc: function () {
+      switch (this.jobRegion) {
+        case 1:
+          return 10;
+        case 2:
+          return 8;
+        case 3:
+          return 3;
+        default:
           return 0;
       }
     },
     totalPoints: function () {
       return (
+        this.jobTeerCalc +
         this.jobTypeCalc +
-        this.jobCodeCalc +
-        this.jobSalaryCalc +
-        this.jobExpTimeCalc +
-        this.jobExpNocCalc +
-        this.jobExpSalaryCalc +
-        this.jobRegionCalc +
-        this.jobRegionAdditionCalc
+        this.jobWageCalc +
+        this.jobWorkPermitCalc +
+        this.jobTenureForEmployerCalc +
+        this.jobCanadaExpCalc +
+        this.langCalc +
+        this.biLangCalc +
+        this.jobRegionCalc
       );
     },
   },
 };
 </script>
 <style lang="scss">
-#ontario-employee-evaluation-form {
-  .ant-card-body {
-    padding-top: 0;
-  }
-  .ant-radio-wrapper {
-    white-space: normal;
-  }
-}
-@media all and (max-width: 1000px) {
-  #ontario-employee-evaluation-form {
-    .ant-affix {
-      top: 80px !important;
-    }
-    .pointsCounter {
-      h2,
-      h3 {
-        font-size: 14px;
-      }
-    }
-  }
-}
-</style>
-<style lang="scss" scoped>
-$boxBorder: 1px solid #efefef;
-#ontario-employee-evaluation-form {
-  background-color: #efefef;
-
-  .pointsCounter {
-    background-color: $navy;
-    padding: 15px 0;
-    margin-left: -24px;
-    margin-right: -24px;
-    margin-bottom: 30px;
-
-    h2,
-    h3 {
-      color: white;
-      margin: 0;
-      text-align: center;
-      font-weight: 400;
-    }
-  }
-  .wrapper {
-    padding: 100px 0;
-  }
-
-  .section {
-    margin-bottom: 40px;
-
-    h3 {
-      margin-bottom: 20px;
-    }
-
-    .box {
-      border-top: 1px solid #efefef;
-      border-left: 1px solid #efefef;
-      border-right: 1px solid #efefef;
-      display: flex;
-
-      &.last {
-        border-bottom: 1px solid #efefef;
-      }
-
-      .label {
-        border-right: 1px solid #efefef;
-        padding: 0px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        width: 150px;
-        text-align: center;
-        flex-shrink: 0;
-      }
-
-      .question {
-        padding: 20px 30px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        // align-items: center;
-        p {
-          margin-bottom: 0;
-        }
-
-        .ant-radio-wrapper {
-          margin-right: 30px;
-        }
-
-        &.vertical-radio {
-          .ant-radio-wrapper {
-            display: block;
-          }
-        }
-
-        &.lang,
-        &.exp {
-          flex-direction: column;
-
-          & > div {
-            width: 100%;
-
-            .ant-input-number {
-              margin-right: 30px;
-              margin-left: 10px;
-            }
-
-            &.input {
-              margin-top: 30px;
-            }
-          }
-        }
-      }
-
-      .result {
-        padding: 20px 30px;
-        width: 100px;
-        border-left: 1px solid #efefef;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    .box:last-child {
-      border-bottom: 1px solid #efefef;
-    }
-  }
-}
-@media all and (max-width: 1000px) {
-  #ontario-employee-evaluation-form {
-    .wrapper {
-      width: 98vw;
-      padding: 30px 0;
-    }
-    .section {
-      .box {
-        flex-direction: column;
-        .label {
-          border-right: none;
-          border-bottom: $boxBorder;
-          width: 100%;
-          justify-content: flex-start;
-          padding: 10px 20px;
-        }
-        .question {
-          .ant-radio-wrapper {
-            margin-right: 0px;
-          }
-          label {
-            margin-bottom: 5px;
-          }
-        }
-        .result {
-          width: 100%;
-          border-left: none;
-          border-top: $boxBorder;
-          align-items: flex-start;
-        }
-      }
-    }
-  }
-}
+@import "@/assets/scss/evaluation.scss";
 </style>

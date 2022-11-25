@@ -1,5 +1,5 @@
 <template>
-  <div id="ontario-student-evaluation-form">
+  <div id="ontario-student-evaluation-form" class="evaluation-wrap">
     <header
       class="general-header"
       :style="{
@@ -179,7 +179,7 @@
               </div>
               <div class="result">{{ langCalc }}</div>
             </div>
-            <div class="box">
+            <div class="box last">
               <div class="label">多语言水平</div>
               <div class="question vertical-radio">
                 <a-radio-group v-model="biLang">
@@ -447,162 +447,5 @@ export default {
 };
 </script>
 <style lang="scss">
-#ontario-student-evaluation-form {
-  .ant-card-body {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .ant-radio-wrapper {
-    white-space: normal;
-  }
-}
-@media all and (max-width: 1000px) {
-  #ontario-student-evaluation-form {
-    .ant-affix {
-      top: 80px !important;
-    }
-    .pointsCounter {
-      h2,
-      h3 {
-        font-size: 14px;
-      }
-    }
-  }
-}
-</style>
-<style lang="scss" scoped>
-$boxBorder: 1px solid #efefef;
-#ontario-student-evaluation-form {
-  background-color: #efefef;
-  .form {
-    margin: 30px 0;
-  }
-  .pointsCounter {
-    background-color: $navy;
-    padding: 15px 0;
-    margin-left: -24px;
-    margin-right: -24px;
-    h2,
-    h3 {
-      color: white;
-      margin: 0;
-      text-align: center;
-      font-weight: 400;
-    }
-  }
-  .wrapper {
-    padding: 100px 0;
-  }
-  .section {
-    margin-bottom: 40px;
-    h3 {
-      margin-bottom: 20px;
-    }
-    .box {
-      border-top: 1px solid #efefef;
-      border-left: 1px solid #efefef;
-      border-right: 1px solid #efefef;
-      display: flex;
-      &.last {
-        border-bottom: 1px solid #efefef;
-      }
-      .label {
-        border-right: 1px solid #efefef;
-        padding: 0px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        width: 150px;
-        text-align: center;
-        flex-shrink: 0;
-      }
-      .question {
-        padding: 20px 30px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        // align-items: center;
-        p {
-          margin-bottom: 0;
-        }
-
-        .ant-radio-wrapper {
-          margin-right: 30px;
-        }
-
-        &.vertical-radio {
-          .ant-radio-wrapper {
-            display: block;
-          }
-        }
-
-        &.lang,
-        &.exp {
-          flex-direction: column;
-
-          & > div {
-            width: 100%;
-
-            .ant-input-number {
-              margin-right: 30px;
-              margin-left: 10px;
-            }
-
-            &.input {
-              margin-top: 30px;
-            }
-          }
-        }
-      }
-
-      .result {
-        padding: 20px 30px;
-        width: 100px;
-        border-left: 1px solid #efefef;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    .box:last-child {
-      border-bottom: 1px solid #efefef;
-    }
-  }
-}
-@media all and (max-width: 1000px) {
-  #ontario-student-evaluation-form {
-    .wrapper {
-      width: 98vw;
-      padding: 30px 0;
-    }
-    .section {
-      .box {
-        flex-direction: column;
-        .label {
-          border-right: none;
-          border-bottom: $boxBorder;
-          width: 100%;
-          justify-content: flex-start;
-          padding: 10px 20px;
-        }
-        .question {
-          .ant-radio-wrapper {
-            margin-right: 0px;
-          }
-          label {
-            margin-bottom: 5px;
-          }
-        }
-        .result {
-          width: 100%;
-          border-left: none;
-          border-top: $boxBorder;
-          align-items: flex-start;
-        }
-      }
-    }
-  }
-}
+@import "@/assets/scss/evaluation.scss";
 </style>
