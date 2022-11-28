@@ -174,7 +174,7 @@
                   <a-radio :value="1">CLB9+ （包含9） </a-radio>
                   <a-radio :value="2">CLB8 </a-radio>
                   <a-radio :value="3">CLB7 </a-radio>
-                  <a-radio :value="4">CLB6 </a-radio>
+                  <a-radio :value="4">CLB6及以下 </a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ langCalc }}</div>
@@ -184,7 +184,7 @@
               <div class="question vertical-radio">
                 <a-radio-group v-model="biLang">
                   <a-radio :value="1">两种语言（英语和法语） </a-radio>
-                  <a-radio :value="2">一种语言 </a-radio>
+                  <a-radio :value="2">一种语言（英语和法语任一种）</a-radio>
                 </a-radio-group>
               </div>
               <div class="result">{{ biLangCalc }}</div>

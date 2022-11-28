@@ -104,6 +104,9 @@ $boxBorder: 1px solid #efefef;
   .box:last-child {
     border-bottom: $boxBorder;
   }
+  .box.last {
+    border-bottom: $boxBorder;
+  }
 }
 @media all and (max-width: 1000px) {
   .evaluation-wrap {

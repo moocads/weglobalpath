@@ -191,6 +191,13 @@
             </div>
           </section>
         </div>
+        <a-affix :offset-top="0">
+          <div class="pointsCounter">
+            <h2>
+              您目前评分为：<strong>{{ totalPoints }}分</strong>
+            </h2>
+          </div>
+        </a-affix>
       </a-card>
       <NuxtLink to="/evaluation" class="back-btn" exact style="margintop: 20px">
         <img src="/img/icons/back-btn.png" alt="" />
