@@ -53,7 +53,7 @@
               <div class="result">{{ workExpCalc }}</div>
             </div>
             <div class="box last">
-              <div class="label">工作经验<br />（额外加分）</div>
+              <div class="label">工作经验<br />（额外加分-可多选）</div>
               <div class="question vertical-radio">
                 <a-checkbox-group
                   v-model="workExpBonus"
