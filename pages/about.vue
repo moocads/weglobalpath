@@ -29,16 +29,8 @@
           </p>
           <p v-if="$i18n.locale === 'en'">
             <span
-              >Beyond Canada includes BEYONDCANADA CONSULTING, BISON EDUCATION
-              and BEYONDCANADA INVESTMENT </span
-            >which are all federally registered companies in Canada and are
-            staffed by their own immigration lawyers, RCIC (Regulatory Council
-            of Immigration Consultants of Canada) licensed immigration
-            consultants, education consultants, vocational trainers, real estate
-            agents, accountants and business experts. They are composed of their
-            own immigration lawyers, RCIC licensed immigration consultants,
-            education consultants, vocational trainers, real estate agents,
-            accountants and business experts.
+              >Beyond Canada includes BEYOND CANADA CONSULTING, BISON EDUCATION and BEYONDCANADA INCESTMENT </span
+            >which are all federally registered companies in Canada and are partnered with the immigration lawyers, RCIC (Regulatory Council of Immigration Consultants of Canada) licensed immigration consultants, education consultants, vocational trainers, real estate agents, accountants and business experts. 
           </p>
         </div>
         <div class="imgContainer">
