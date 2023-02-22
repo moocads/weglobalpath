@@ -12,9 +12,9 @@
             {{ $t("homeSlogan.tag-2") }}
           </a>
           <br />
-          <a href="https://www.lhangels.com/" target="_blank">
+          <!-- <a href="https://www.lhangels.com/" target="_blank">
             {{ $t("homeSlogan.tag-3") }}
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
