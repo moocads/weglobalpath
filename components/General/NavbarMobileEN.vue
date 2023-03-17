@@ -30,10 +30,10 @@
               <li @click="isToggle = !isToggle">Contact</li>
             </NuxtLink>
           </ul>
-          <!-- <div class="lang-switch-wrap">
+          <div class="lang-switch-wrap">
             <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
             <nuxt-link :to="switchLocalePath('zh')">中</nuxt-link>
-          </div> -->
+          </div>
         </div>
       </div>
     </nav>

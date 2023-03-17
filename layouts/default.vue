@@ -3,8 +3,8 @@
     <!-- <TopBar class="navbar-lg" /> -->
     <!-- <IndexPopup /> -->
     <WorldTime class="navbar-lg" />
-    <!-- <Navbar v-if="$i18n.locale === 'zh' || 'tw'" class="navbar-lg" /> -->
-    <!-- <NavbarMobile v-if="$i18n.locale === 'zh' || 'tw'" class="navbar-sm" /> -->
+    <Navbar v-if="$i18n.locale === 'zh' || $i18n.locale ==='tw'" class="navbar-lg" />
+    <NavbarMobile v-if="$i18n.locale === 'zh' || $i18n.locale ==='tw'" class="navbar-sm" />
     <NavbarMobileEN v-if="$i18n.locale === 'en'" class="navbar-sm" />
     <NavbarEN v-if="$i18n.locale === 'en'" class="navbar-lg" />
     <div class="spacer"></div>

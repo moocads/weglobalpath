@@ -10,7 +10,7 @@
               <p>{{ $t("homeHeroBanner.slide-1-content-1") }}</p>
               <p>{{ $t("homeHeroBanner.slide-1-content-2") }}</p>
             </figure>
-            <!-- <div class="header-btn-wrap">
+            <div class="header-btn-wrap">
               <NuxtLink to="/evaluation">
                 <button class="main-btn main-btn_blue main-btn_round">
                   {{ $t("homeHeroBanner.immi-score-btn") }}
@@ -27,7 +27,7 @@
                   >
                 </button>
               </NuxtLink>
-            </div> -->
+            </div>
           </div>
           <div class="banner-overlay"></div>
           <img src="/img/Home/home-banner.jpg" alt="Beyond Canada Banner-1" />

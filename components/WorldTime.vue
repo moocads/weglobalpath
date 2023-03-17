@@ -39,7 +39,7 @@
           </p>
         </div>
       </div>
-      <!-- <LangSwitcher /> -->
+      <LangSwitcher />
     </Wrapper>
   </div>
 </template>

@@ -39,13 +39,13 @@
             class="sidebar-item-icon"
           />
         </div>
-        <!-- <NuxtLink to="/evaluation" class="sidebar-item sidebar-item-evaluation">
+        <NuxtLink to="/evaluation" class="sidebar-item sidebar-item-evaluation">
           <img
             src="/img/icons/calculator.png"
             alt="Sidebar evaluation button icon"
             class="sidebar-item-icon"
           />
-        </NuxtLink> -->
+        </NuxtLink>
       </div>
     </aside>
   </div>
