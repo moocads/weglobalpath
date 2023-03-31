@@ -18,7 +18,7 @@
               <li>
                 <img src="/img/icons/address.svg" alt="" />
                 <p>
-                  多伦多：145 Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
+                  多伦多：170 West Beaver Creek Rd, #201B, Richmond Hill, ON L4B 1L6
                   <br />
                   <a href="tel:+16475233555" class="ga-phone-trigger"
                     >电话：647-523-3555</a

@@ -77,8 +77,7 @@
                       @click="mapLocation(1)"
                       class="location"
                       :class="{ active: location === 1 }"
-                      ><span>{{ $t("Contact.address-toronto") }}：</span>145
-                      Royal Crest Ct Unit 47-48, Markham, ON L3R 9Z4
+                      ><span>{{ $t("Contact.address-toronto") }}：</span> 170 West Beaver Creek Rd, #201B, Richmond Hill, ON L4B 1L6
                     </a>
                     <a
                       @click="mapLocation(2)"
@@ -96,13 +95,9 @@
 
               <div class="gmap-wrap info-wrap" v-if="location === 1">
                 <!-- <GMap /> -->
-                <iframe
-                  style="border: 0"
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.4184887357296!2d-79.39085688458354!3d43.847154047885375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2b49b312b7a1%3A0x4393401611806682!2s170%20West%20Beaver%20Creek%20Rd%20%23201b%2C%20Richmond%20Hill%2C%20ON%20L4B%201L6!5e0!3m2!1sen!2sca!4v1680284390402!5m2!1sen!2sca" style="border: 0"
                   loading="lazy"
-                  allowfullscreen
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmW9PcmUOmqS0QeStmfxju4Lgm3yDEnoc
-                    &q=145+Royal+Crest+Ct+Unit+47-48,Markham,ON+L3R+9Z4"
-                >
+                  allowfullscreen></iframe>
                 </iframe>
               </div>
               <div class="gmap-wrap info-wrap" v-if="location === 2">

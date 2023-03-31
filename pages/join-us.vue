@@ -49,8 +49,7 @@
                       @click="mapLocation(1)"
                       class="location"
                       :class="{ active: location === 1 }"
-                      ><span>多伦多：</span>145 Royal Crest Ct Unit 47-48,
-                      Markham, ON L3R 9Z4
+                      ><span>多伦多：</span>170 West Beaver Creek Rd, #201B, Richmond Hill, ON L4B 1L6
                     </a>
                     <a
                       @click="mapLocation(2)"
