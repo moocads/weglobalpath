@@ -39,7 +39,7 @@
         </a-tabs>
       </div>
     </section>
-    <section v-if="$i18n.locale === 'zh'" id="home-cases">
+    <!-- <section v-if="$i18n.locale === 'zh'" id="home-cases">
       <MainTitle title="成功案例" titleEN="OUR CASES" titleENColor="#c4c4c4" />
       <div class="wrapper">
         <div class="cases-grid">
@@ -58,7 +58,7 @@
           </button>
         </NuxtLink>
       </div>
-    </section>
+    </section> -->
     <!-- <section id="home-testimonial">
       <div class="wrapper">
         <MainTitle title="客户评价" titleEN="FEEDBACK" />
@@ -88,7 +88,7 @@
         </a-carousel>
       </div>
     </section> -->
-    <HomeCounter />
+    <!-- <HomeCounter /> -->
     <HomeSlogan />
 
     <section id="home-evaluation">
