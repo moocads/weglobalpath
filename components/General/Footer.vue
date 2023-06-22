@@ -101,7 +101,7 @@
         >© {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
         Reserved.<br/>
         <span
-          >Designed by <a href="https://moocads.com/">Mooc Creative</a></span
+          >Powered by <a href="https://moocads.com/">Mooc Creative Lab</a></span
         ></small
       >
     </footer>
@@ -188,9 +188,6 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  span{
-    color: $navy;
-  }
 }
 @media all and (max-width: 768px) {
   footer {
