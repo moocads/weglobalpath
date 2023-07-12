@@ -33,7 +33,6 @@
     "less-loader": "^7.3.0"
   },
   "engines": {
-    "node": ">=12.x.x <=16.x.x",
-    "npm": ">=6.0.0"
+    "node": "16.x.x"
   }
 }

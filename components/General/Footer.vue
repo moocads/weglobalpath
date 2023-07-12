@@ -100,8 +100,7 @@
       <small class="copy-right"
         >© {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
         Reserved.<br/>
-        <span
-          >Powered by <a href="https://moocads.com/">Mooc Creative Lab</a></span
+        <span> <a style="color:#3e539a;" href="https://moocads.com/">Designed by Mooc Creative Lab</a></span
         ></small
       >
     </footer>
