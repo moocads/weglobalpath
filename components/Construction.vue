@@ -55,6 +55,7 @@ img {
 }
 
 .construction {
+  height:100vh;
   padding: 150px 0;
 }
 
