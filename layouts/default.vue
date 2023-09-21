@@ -2,7 +2,7 @@
   <div id="page">
     <!-- <TopBar class="navbar-lg" /> -->
     <!-- <IndexPopup /> -->
-    <!-- <WorldTime class="navbar-lg" />
+    <WorldTime class="navbar-lg" />
     <Navbar v-if="$i18n.locale === 'zh' || $i18n.locale ==='tw'" class="navbar-lg" />
     <NavbarMobile v-if="$i18n.locale === 'zh' || $i18n.locale ==='tw'" class="navbar-sm" />
     <NavbarMobileEN v-if="$i18n.locale === 'en'" class="navbar-sm" />
@@ -13,8 +13,8 @@
     <SideBarMobile />
     <Footer v-if="$i18n.locale === 'zh'" />
     <FooterEN v-if="$i18n.locale === 'en'" />
-    <div class="footer-spacer"></div> -->
-    <Construction/>
+    <div class="footer-spacer"></div>
+    <!-- <Construction/> -->
     <!-- <FooterMobile class="navbar-sm" /> -->
   </div>
 </template>
