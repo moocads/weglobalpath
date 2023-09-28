@@ -8,5 +8,6 @@ const hotProjectsBreadcrumb = {
   "new-immigrant": "新移民服务",
   usa: "美国移民项目",
   euro: "欧洲移民项目",
+  lmia:"LMIA 加分"
 };
 export default hotProjectsBreadcrumb;

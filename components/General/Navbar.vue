@@ -147,6 +147,9 @@
                   <li>
                     <a @click="eeLink(3)"> 经验类移民 </a>
                   </li>
+                   <NuxtLink to="/projects/lmia" class="main-cate">
+                  LMIA 加分
+                </NuxtLink>
                 </ul>
               </div>
               <div class="project-col">

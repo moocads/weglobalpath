@@ -17,12 +17,25 @@
           <CaseCard :data="c" />
           <CaseCardMobile :data="c" />
         </div>
+         
+      </div>
+      <div class="wrapper pagination">
+         <a-pagination
+            show-size-changer
+            v-model="page"
+            :total="totalCount"
+            :page-size="pageSize"
+            :page-size-options="['8', '12', '20']"
+            @showSizeChange="onShowSizeChange"
+          />
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import qs from "qs";
+
 export default {
   head() {
     return {
@@ -36,16 +49,74 @@ export default {
       ],
     };
   },
-  async asyncData({ $axios }) {
-    const casesData = await $axios.$get(`/cases`, {
-      params: {
-        _sort: "id:desc",
-      },
-    });
-    const cases = casesData;
+   data() {
     return {
-      cases,
-    };
+      cases:[],
+      loading: false,
+      pageSize: this.$store.state.pageInfo.pageSize,
+      page: this.$store.state.pageInfo.page,
+        totalCount: 0,
+    }
+  },
+  // async asyncData({ $axios }) {
+  //   const casesData = await $axios.$get(`/cases`, {
+  //     params: {
+  //       _sort: "id:desc",
+  //     },
+  //   });
+  //   const cases = casesData;
+  //   return {
+  //     cases,
+  //   };
+  // },
+  watch: {
+    page(val) {
+      this.handleSearch();
+    }
+  },
+  created() {
+    this.handleSearch();
+  },
+  methods: {
+    fetchData(params) {
+      this.loading = true;
+      const query = qs.stringify(
+        Object.assign({}, params, {
+          _limit: this.pageSize,
+          _start: (this.page - 1) * this.pageSize,
+          _sort: "id:desc",
+        })
+      );
+      this.$axios.get(`cases?${query}`).then(res => {
+        // console.log(res.data);
+        this.cases = res.data;
+        this.loading = false;
+        if (this.page === 1 || !this.totalCount) {
+          this.$axios.get(`cases/count?${query}`).then(res => {
+            this.totalCount = res.data;
+          });
+        }
+      });
+    },
+    onShowSizeChange(current, pageSize) {
+      this.pageSize = pageSize;
+      if (this.page !== 1) {
+        this.page = 1;
+      } else {
+        this.handleSearch();
+      }
+    },
+    handleSearch(newSearch) {
+      if (newSearch && this.page !== 1) {
+        this.page = 1;
+        return;
+      }
+      this.$store.commit("setPageInfo", {
+        pageSize: this.pageSize,
+        page: this.page
+      });
+      this.fetchData(this.$store.state.searchData);
+    },
   },
 };
 </script>
@@ -121,6 +192,11 @@ header {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
 }
 @media all and (max-width: 768px) {
   .cases-grid {

@@ -67,6 +67,11 @@ const projects = [
     title: "联邦EE快速通道",
   },
   {
+    url: "lmia",
+    thumbnail: "/img/Home/projects/LMIA.jpeg",
+    title: "LMIA 加分",
+  },
+  {
     url: "reunion",
     thumbnail: "/img/Home/projects/project8.jpeg",
     title: "加拿大团聚移民",
