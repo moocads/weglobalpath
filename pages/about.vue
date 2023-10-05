@@ -148,8 +148,8 @@
               <figure class="cicc-verify">
                 <h3>{{ $t("About.cicc") }}</h3>
                 <img
-                  src="/img/About/cicc.png"
-                  alt="beyond canada immigration cicc verification and partner"
+                  src="/img/About/rcic.png"
+                  alt="beyond canada immigration rcic verification and partner"
                   class="img-fluid"
                 />
               </figure>
