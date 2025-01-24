@@ -95,10 +95,10 @@
 
               <div class="gmap-wrap info-wrap" v-if="location === 1">
                 <!-- <GMap /> -->
-                <iframe src="https://g.co/kgs/g96tsAn" style="border: 0"
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6015.331087046446!2d-79.35067665826269!3d43.81475003183979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d36f08f032ad%3A0x85ba282d66de5e6b!2s7050%20Woodbine%20Ave%20Suite%20300%2C%20Markham%2C%20ON%20L3R%204G8!5e0!3m2!1sen!2sca!4v1737688772258!5m2!1sen!2sca" style="border: 0"
                   loading="lazy"
                   allowfullscreen></iframe>
-                </iframe>
+           
               </div>
               <div class="gmap-wrap info-wrap" v-if="location === 2">
                 <iframe
