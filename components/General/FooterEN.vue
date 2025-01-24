@@ -24,7 +24,7 @@
               <li>
                 <img src="/img/icons/address.svg" alt="" />
                 <p>
-                  Toronto：170 West Beaver Creek Rd, #201B, Richmond Hill, ON L4B 1L6
+                  Toronto：7050 Woodbine Ave Unit300, Markham, ON L3R 4G8
                   <br />
                   <a href="tel:+16475233555" class="ga-phone-trigger"
                     >Phone：647-523-3555</a
