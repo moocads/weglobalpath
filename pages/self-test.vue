@@ -216,13 +216,7 @@
             </nuxt-link>
           </ul>
         </div>
-        <!-- <nuxt-link to="/">
-          <img
-            src="/img/evaluation/vertical-banner.jpg"
-            alt=""
-            class="self-test-v-banner img-fluid"
-          />
-        </nuxt-link> -->
+
       </div>
     </section>
   </div>
