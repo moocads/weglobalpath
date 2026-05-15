@@ -15,7 +15,7 @@
             <a-col :xs="24" :lg="12">
               <div class="detail-grid">
                 <div>
-                  <div class="phone-wrap info-wrap">
+                  <!-- <div class="phone-wrap info-wrap">
                     <div class="img-wrap">
                       <img src="/img/icons/phone-red.png" alt="" />
                     </div>
@@ -39,11 +39,9 @@
                         >info@beyondcanada.ca</a
                       >
                     </div>
-                  </div>
-                </div>
-                <div class="wechat-wrap info-wrap">
+                  </div> -->
+                      <div class="wechat-wrap info-wrap">
                   <div class="img-wrap">
-                    <!-- <img src="/img/icons/wechat-white.png" alt="" /> -->
                     <svg
                       enable-background="new 0 0 2499.7 2024.2"
                       viewBox="0 0 2499.7 2024.2"
@@ -66,6 +64,8 @@
                       alt="Beyond Canada Wechat"
                     />
                   </div>
+                </div>
+            
                 </div>
                 <div class="address-wrap info-wrap">
                   <div class="img-wrap">

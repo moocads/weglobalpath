@@ -13,9 +13,9 @@
           <p>
             {{ $t("homeAbout.content-1") }}
           </p>
-          <!-- <p>
+          <p>
             {{ $t("homeAbout.content-2") }}
-          </p> -->
+          </p>
           <div class="button-wrap">
             <NuxtLink :to="localePath('/about')">
               <button class="about-btn main-btn main-btn_red main-btn_round-5">

@@ -17,8 +17,10 @@
             <img src="/img/logos/logo-small-white.png" alt="" />
             <h2>{{ $t("About.row-1-title") }}</h2>
           </div>
-          <p>{{ $t("homeAbout.content-1") }}</p>
-          <p>{{ $t("homeAbout.content-2") }}</p>
+          <p>{{ $t("About.about-intro-0") }}</p>
+          <p>{{ $t("About.about-intro-1") }}</p>
+          <p>{{ $t("About.about-intro-2") }}</p>
+          <p>{{ $t("About.about-intro-3") }}</p>
         </div>
         <div class="imgContainer">
           <img src="/img/About/sec1.png" alt="" class="sec-img" />
@@ -32,22 +34,15 @@
         </div>
         <div class="info-wrap">
           <div class="title">
-            <img src="/img/logos/logo-small-blue.png" alt="" />
-            <h2>彼森教育</h2>
+          
+            <h2>专业团队，实力保障 </h2>
           </div>
           <p v-if="$i18n.locale === 'zh'">
-            <span>彼森教育</span
-            >致力于为中国的学子提供高质量的海外留学申请，出国考试咨询及职业规划咨询服务。自2017年与加拿大罗伯森学院深度合作起，我们已为上百名学生办理签证至拿到枫叶卡的所有手续。2021年寰球嘉途受加拿大罗伯森学院委托，是中国区唯一校方直属合作伙伴，为学校处理一切中国事宜。
-          </p>
-          <p v-if="$i18n.locale === 'zh'">
-            结合寰球嘉途移居咨询方面和职业培训方面的超强实力，加拿大罗伯森学院与寰球嘉途联合推出的公立学院直通车项目已成为广大留学生快速获得就业机会及移居身份的最佳选择。该项目不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳途径。
+            团队由10+ 加拿大本地持牌RCIC移民顾问、资深法律及规划顾问组成，熟悉IRCC审理逻辑与加拿大最新移民趋势，提供中英法三语服务与全程一对一跟进。
           </p>
           <p v-if="$i18n.locale === 'tw'">
-            <span>彼森教育</span
-            >致力於為中國的學子提供高質量的海外留學申請，出國考試諮詢及職業規劃諮詢服務。自2017年與加拿大羅伯森學院深度合作起，我們已為上百名學生辦理簽證至拿到楓葉卡的所有手續。2021年寰球嘉途受加拿大羅伯森學院委託，是中國區唯一校方直屬合作夥伴，為學校處理一切中國事宜。
-          </p>
-          <p v-if="$i18n.locale === 'tw'">
-            結合寰球嘉途移居諮詢方面和職業培訓方面的超強實力，加拿大羅伯森學院與寰球嘉途出國諮詢聯合推出的公立學院直通車項目已成為廣大留學生快速獲得就業機會及移居身份的最佳選擇。該項目不僅適合於即將高中或職高畢業的莘莘學子，對於過去已經完成過大學或大專課程，或已有多年工作經驗的群體來說，該項目亦是您獲得加拿大就業移居身份的絕佳途徑。
+            <span>專業團隊，實力保障 </span
+            >團隊由10+ 加拿大本地持牌RCIC移民顧問、資深法律及規劃顧問組成，熟悉IRCC審理邏輯與加拿大最新移民趨勢，提供中英法三語服務與全程一對一跟進。
           </p>
         </div>
       </div>
@@ -58,16 +53,14 @@
       <div class="row-grid">
         <div class="info-wrap">
           <div class="title">
-            <img src="/img/logos/logo-small-blue.png" alt="" />
-            <h2>{{ $i18n.locale === "tw" ? "彼岸投資" : "彼岸投资" }}</h2>
+       
+            <h2>{{ $i18n.locale === "tw" ? "本地資源賦能 · 全周期落地服務" : "本地资源赋能 · 全周期落地服务" }}</h2>
           </div>
           <p v-if="$i18n.locale === 'zh'">
-            <span>彼岸投资</span
-            >一直致力于为投资者提供专业的海外投资咨询服务。从投资学的角度来说，投资需要对市场深入了解，全面调查，综合行业动向，经济因素，风险与回报等多方面考量，以确保客户获得该行业必须提供的最佳服务和最真实的建议，找到最优的投资方案。
+            依托加彼岸国际丰富的本地资源与行业网络，寰球嘉途不仅关注申请结果，更注重客户未来在加拿大的长期发展，为客户提供从身份规划到落地安家的全周期服务支持。
           </p>
           <p v-if="$i18n.locale === 'tw'">
-            <span>彼岸投資</span
-            >一直致力於為投資者提供專業的海外投資諮詢服務。從投資學的角度來說，投資需要對市場深入了解，全面調查，綜合行業動向，經濟因素，風險與回報等多方面考量，以確保客戶獲得該行業必須提供的最佳服務和最真實的建議，找到最優的投資方案。
+            依托加彼岸国际丰富的本地资源与行业网络，寰球嘉途不仅关注申请结果，更注重客户未来在加拿大的长期发展，为客户提供从身份规划到落地安家的全周期服务支持。
           </p>
         </div>
         <div class="imgContainer">
@@ -148,11 +141,11 @@
           title="加盟招商"
           :titleEN="$i18n.locale === 'tw' ? '招商' : '招商'"
           titleColor="#fff"
-          titleENColor="#233369"
+          titleENColor="#a37b54"
         />
         <article v-if="$i18n.locale === 'zh'">
           <div class="title">
-            <img src="/img/logos/logo-small-white.png" alt="" />
+            <!-- <img src="/img/logos/logo-small-white.png" alt="" /> -->
             <h2>品牌优势：</h2>
           </div>
           <p>
@@ -160,14 +153,14 @@
             是中国连接加拿大重要的国际教育桥梁，拥有多年移民教育精英团队，现有100+所合作学校，帮助3000+以上的家庭获得加拿大永居身份，1000+世界性优质合作资源。目前在中国以及加拿大中心城市成功发展了众多合作伙伴。
           </p>
           <div class="title">
-            <img src="/img/logos/logo-small-white.png" alt="" />
+            <!-- <img src="/img/logos/logo-small-white.png" alt="" /> -->
             <h2>运营优势：</h2>
           </div>
           <p>
             寰球嘉途<sup>TM</sup>拥有众多一手，独家移民研学项目，是新型教育理念先驱者。寰球嘉途<sup>TM</sup>用多年累积的经验为加盟/合作商提供一套独创的运营销售方案。成功的运营模式是加盟商/合作伙伴盈利的保障。
           </p>
           <div class="title">
-            <img src="/img/logos/logo-small-white.png" alt="" />
+            <!-- <img src="/img/logos/logo-small-white.png" alt="" /> -->
             <h2>服务优势：</h2>
           </div>
           <p>
@@ -177,7 +170,7 @@
 
         <article v-if="$i18n.locale === 'tw'">
           <div class="title">
-            <img src="/img/logos/logo-small-white.png" alt="" />
+            <!-- <img src="/img/logos/logo-small-white.png" alt="" /> -->
             <h2>品牌優勢：</h2>
           </div>
           <p>
@@ -385,7 +378,7 @@ strong {
       font-size: 28px;
       color: #fff;
       margin-bottom: 0;
-      font-weight: 700;
+      font-weight: 500;
     }
   }
   p {
@@ -405,7 +398,7 @@ strong {
       padding-left: 7.5vw;
     }
     p {
-      color: #c4c4c4;
+      color: #ffffff;
     }
     span {
       font-weight: bold;
@@ -549,7 +542,7 @@ strong {
   margin-right: auto;
   p {
     font-size: 16px;
-    color: #c4c4c4;
+    color: #ffffff;
   }
   .title {
     display: flex;
@@ -563,7 +556,7 @@ strong {
       font-size: 24px;
       color: #fff;
       margin-bottom: 0;
-      font-weight: 700;
+      font-weight: 500;
     }
     margin-top: 30px;
   }
