@@ -84,7 +84,7 @@ nav {
 }
 .logo-wrap {
   img {
-    height: 80px;
+    height: 50px;
   }
 }
 .hamburger {
