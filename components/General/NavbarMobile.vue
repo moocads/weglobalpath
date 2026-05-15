@@ -4,7 +4,7 @@
       <div class="wrapper nav-wrap">
         <div class="logo-wrap">
           <NuxtLink :to="localePath('/')" style="background: transparent">
-            <img src="/img/logos/logo-blue.png" alt="" />
+            <img src="/img/weglobalpath-logo.svg" alt="" />
           </NuxtLink>
         </div>
         <div
