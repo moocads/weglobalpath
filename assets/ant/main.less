@@ -1,2 +1,37 @@
-@import '~ant-design-vue/dist/antd.less';
+/* Theme tokens (must come before component styles) */
+@import "~ant-design-vue/lib/style/themes/default.less";
+
 @primary-color: #c69c6d;
+
+/* Ant base: reset + typography shared by components */
+@import "~ant-design-vue/lib/style/core/index.less";
+
+/* Often pulled in as UI for selects/tables/messages */
+@import "~ant-design-vue/lib/dropdown/style/index.less";
+@import "~ant-design-vue/lib/empty/style/index.less";
+@import "~ant-design-vue/lib/spin/style/index.less";
+
+/* Components actually used in this project (see plugins/antd-ui.js) */
+@import "~ant-design-vue/lib/affix/style/index.less";
+@import "~ant-design-vue/lib/back-top/style/index.less";
+@import "~ant-design-vue/lib/breadcrumb/style/index.less";
+@import "~ant-design-vue/lib/button/style/index.less";
+@import "~ant-design-vue/lib/card/style/index.less";
+@import "~ant-design-vue/lib/carousel/style/index.less";
+@import "~ant-design-vue/lib/checkbox/style/index.less";
+@import "~ant-design-vue/lib/collapse/style/index.less";
+@import "~ant-design-vue/lib/date-picker/style/index.less";
+@import "~ant-design-vue/lib/form/style/index.less";
+@import "~ant-design-vue/lib/grid/style/index.less";
+@import "~ant-design-vue/lib/icon/style/index.less";
+@import "~ant-design-vue/lib/input/style/index.less";
+@import "~ant-design-vue/lib/input-number/style/index.less";
+@import "~ant-design-vue/lib/message/style/index.less";
+@import "~ant-design-vue/lib/notification/style/index.less";
+@import "~ant-design-vue/lib/pagination/style/index.less";
+@import "~ant-design-vue/lib/radio/style/index.less";
+@import "~ant-design-vue/lib/select/style/index.less";
+@import "~ant-design-vue/lib/table/style/index.less";
+@import "~ant-design-vue/lib/tabs/style/index.less";
+@import "~ant-design-vue/lib/timeline/style/index.less";
+@import "~ant-design-vue/lib/upload/style/index.less";
