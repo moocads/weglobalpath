@@ -158,6 +158,10 @@ export default {
     siteKey: "6LefjHAfAAAAAJLPpUuFaJkXEkOnXTQsWuuzxzds", // Site key for requests
     version: 2,
   },
+  // Used by `nuxt generate` → Vercel serves `dist/` (see vercel.json)
+  generate: {
+    fallback: true,
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     loaders: {
