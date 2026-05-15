@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "node --max_old_space_size=2560 node_modules/.bin/nuxt build",
-    "start": "node --max_old_space_size=2560 node_modules/.bin/nuxt start",
-    "generate": "nuxt generate"
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider node --max_old_space_size=2560 node_modules/.bin/nuxt build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider node --max_old_space_size=2560 node_modules/.bin/nuxt start",
+    "generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
@@ -33,6 +33,6 @@
     "less-loader": "^7.3.0"
   },
   "engines": {
-    "node": "16.x.x"
+    "node": "24.x"
   }
 }
