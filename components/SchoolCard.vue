@@ -35,13 +35,13 @@ export default {
 <style lang="scss" scoped>
 .school {
   border-radius: 5px;
-  border: 1px solid $red;
+  border: 1px solid $secondary;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   overflow: hidden;
   h2 {
     // border-top-right-radius: 5px;
     // border-top-left-radius: 5px;
-    background-color: $red;
+    background-color: $secondary;
     margin: 0;
     padding: 10px 0;
     font-size: 20px;

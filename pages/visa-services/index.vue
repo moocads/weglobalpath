@@ -43,12 +43,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: `签证服务 | 加彼岸出国咨询`,
+      title: `签证服务 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `签证服务 | 加彼岸出国咨询`,
+          content: `签证服务 | 寰球嘉途`,
         },
       ],
     };
@@ -83,11 +83,11 @@ export default {
     display: block;
     width: 0;
     height: 2px;
-    background: $red;
+    background: $secondary;
     transition: width 0.3s;
   }
   &:hover {
-    color: $red;
+    color: $secondary;
   }
   &:hover::after {
     width: 100%;

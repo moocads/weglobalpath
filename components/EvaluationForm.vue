@@ -12,7 +12,7 @@
           <div>
             <a-form-item label="检查签证移民申请Review">
               <p class="minor-text">
-                加彼岸™提供检查签证和移民案件的服务。如果您已经准备好全套申请及材料，我们可以为您检查签证或移民申请的完整性、逻辑和细节。检查服务会指出材料中存在的问题及缺失的材料，不会补充实质性的内容，不会修改或撰写解释信、雇主信等。
+                寰球嘉途™提供检查签证和移民案件的服务。如果您已经准备好全套申请及材料，我们可以为您检查签证或移民申请的完整性、逻辑和细节。检查服务会指出材料中存在的问题及缺失的材料，不会补充实质性的内容，不会修改或撰写解释信、雇主信等。
               </p>
               <a-select
                 v-decorator="['service']"
@@ -36,7 +36,7 @@
                 <a-checkbox value="移民咨询规划评估（30分钟）">
                   移民咨询规划评估（30分钟）100加元咨询费<br />
                   <span class="minor-text"
-                    >适用于已有明确移民计划及目标，希望就具体问题得到解答，或了解加彼岸签约和服务流程的客户。</span
+                    >适用于已有明确移民计划及目标，希望就具体问题得到解答，或了解寰球嘉途签约和服务流程的客户。</span
                   >
                 </a-checkbox>
                 <a-checkbox value="移民咨询规划评估（60分钟）">
@@ -178,7 +178,7 @@ export default {
   border-radius: 5px;
   height: auto;
   &:focus {
-    color: $red;
+    color: $secondary;
     background-color: #fff;
     border: 1px solid #fff;
   }
@@ -193,7 +193,7 @@ export default {
   margin-bottom: 20px;
   label {
     font-size: 16px;
-    color: $red;
+    color: $secondary;
     margin-bottom: 10px;
   }
   input {
@@ -211,7 +211,7 @@ export default {
 #evaluation-form {
   .minor-text {
     font-size: 12px;
-    color: $navy;
+    color: $primary;
     line-height: 1.5;
     font-weight: 300;
   }

@@ -1,5 +1,5 @@
 {
-  "name": "beyond-canada-staging",
+  "name": "weglobalpath",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -26,7 +26,6 @@
     "sass-loader": "^10.1.1",
     "swiper": "^7.3.1",
     "vue-markdown": "^2.2.4",
-    "vue2-google-maps": "^0.10.7",
     "qs": "^6.10.1"
   },
   "devDependencies": {

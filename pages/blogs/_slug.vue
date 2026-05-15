@@ -31,7 +31,7 @@
           :src="blog.header_img_cn && blog.header_img_cn.url"
           :alt="
             blog.header_img_cn.alternativeText ||
-            '加彼岸加拿大移民资讯头图 Beyond Canada Blogs Header Image'
+            '寰球嘉途加拿大移民资讯头图 Beyond Canada Blogs Header Image'
           "
           class="blog-thumbnail"
         />
@@ -57,12 +57,12 @@ import { marked } from "marked";
 export default {
   head() {
     return {
-      title: `加拿大移民 | ${this.blog.title_cn} | 加彼岸出国咨询`,
+      title: `加拿大移民 | ${this.blog.title_cn} | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加彼岸资讯 | " + this.blog.description_cn,
+          content: "寰球嘉途资讯 | " + this.blog.description_cn,
         },
       ],
     };
@@ -74,7 +74,7 @@ export default {
         policy: "政策解读",
         visa: "签证百科",
         edu: "留学指南",
-        aboutUs: "加彼岸动态",
+        aboutUs: "寰球嘉途动态",
       },
       selectedCategory: this.$route.query.category || "0",
     };
@@ -123,7 +123,7 @@ export default {
   h1 {
     font-size: 28px;
     font-weight: bold;
-    color: $navy;
+    color: $primary;
   }
   h2 {
     font-size: 20px;
@@ -143,7 +143,7 @@ export default {
     border-radius: 5px;
   }
   a {
-    color: $navy;
+    color: $primary;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -205,7 +205,7 @@ section {
 .blog-wrap {
   max-width: 900px;
   margin: 0 auto;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
   padding: 20px 40px;
   border-radius: 5px;
   img {
@@ -236,7 +236,7 @@ section {
   flex-wrap: wrap;
   li {
     color: #fff;
-    background-color: $red;
+    background-color: $secondary;
     padding: 5px 15px;
     border-radius: 15px;
     &::before {

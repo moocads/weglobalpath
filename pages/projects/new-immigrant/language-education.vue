@@ -18,10 +18,10 @@
         <div class="info-wrap">
           <img
             src="/img/logos/logo-small-white.png"
-            alt="加彼岸 加拿大移民 logo 白色"
+            alt="寰球嘉途 加拿大移民 logo 白色"
           />
           <p>
-            加彼岸™提供的新移民语言培训课程主要针对刚刚登陆加拿大的新移民，提高实用英语沟通能力，以方便他们更好地过渡和享受在加拿大的工作与生活。<span
+            寰球嘉途™提供的新移民语言培训课程主要针对刚刚登陆加拿大的新移民，提高实用英语沟通能力，以方便他们更好地过渡和享受在加拿大的工作与生活。<span
               >大多数新移民朋友在课程开始之前，词汇量极其欠缺，语法结构混乱。日常生活中，很难准确而有效的表达自己的意图，也难以听懂本地加拿大人的口语。
             </span>
           </p>
@@ -47,7 +47,7 @@
         <div class="info-wrap">
           <img
             src="/img/logos/logo-small-blue.png"
-            alt="加彼岸 加拿大移民 logo 蓝色"
+            alt="寰球嘉途 加拿大移民 logo 蓝色"
           />
           <p>
             我们的新移民语言培训有专为成人设置的英语课程，将帮助您扩大高频单词词汇量，以满足日常生活和新工作中所涉及到的英语词汇。
@@ -65,7 +65,7 @@
         <div class="info-wrap">
           <img
             src="/img/logos/logo-small-blue.png"
-            alt="加彼岸 加拿大移民 logo 蓝色"
+            alt="寰球嘉途 加拿大移民 logo 蓝色"
           />
 
           <p>
@@ -88,12 +88,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 新移民语言培训 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 新移民语言培训 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 |加彼岸™提供的新移民语言培训课程主要针对刚刚登陆加拿大的新移民，提高实用英语沟通能力，以方便他们更好地过渡和享受在加拿大的工作与生活。| 加彼岸出国咨询`,
+          content: `加拿大移民 |寰球嘉途™提供的新移民语言培训课程主要针对刚刚登陆加拿大的新移民，提高实用英语沟通能力，以方便他们更好地过渡和享受在加拿大的工作与生活。| 寰球嘉途`,
         },
       ],
     };
@@ -148,7 +148,7 @@ export default {
   }
 }
 .sec-1 {
-  background-color: $navy;
+  background-color: $primary;
   .row-grid {
     grid-template-columns: 60% 40%;
     .info-wrap {
@@ -163,14 +163,14 @@ export default {
     grid-template-columns: 40% 60%;
     .title {
       h2 {
-        color: $navy;
+        color: $primary;
       }
     }
     .info-wrap {
       padding-left: 80px;
       padding-right: 7.5vw;
       p {
-        color: $navy;
+        color: $primary;
       }
       span {
         color: #707070;
@@ -190,7 +190,7 @@ export default {
         font-weight: normal;
       }
       span {
-        color: $navy;
+        color: $primary;
         font-weight: bold;
       }
     }
@@ -237,7 +237,7 @@ export default {
     }
   }
   .divider {
-    background-color: $red;
+    background-color: $secondary;
     padding: 30px 0;
     display: flex;
     flex-direction: column;

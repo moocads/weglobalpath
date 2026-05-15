@@ -7,7 +7,10 @@
     </header>
     <section class="investment-sec">
       <div class="wrapper">
-        <MainTitle title="我们的投资服务涵盖" titleEN="investment" />
+        <MainTitle
+          title="我们的投资服务涵盖"
+          :titleEN="$i18n.locale === 'tw' ? '投資' : '投资'"
+        />
         <ul class="investment-grid">
           <li v-for="(item, index) in investmentLists" :key="index">
             {{ item }}
@@ -20,7 +23,10 @@
     </div>
     <section class="investment-cases-sec">
       <div class="wrapper">
-        <MainTitle title="我们投资过的项目" titleEN="study cases" />
+        <MainTitle
+          title="我们投资过的项目"
+          :titleEN="$i18n.locale === 'tw' ? '案例' : '案例'"
+        />
         <ul>
           <li v-for="(caseItem, index) in caseLists" :key="index">
             <img :src="caseItem.imgUrl" alt="" />
@@ -36,12 +42,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 加拿大投资 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 加拿大投资 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 加拿大投资 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 加拿大投资 | 寰球嘉途`,
         },
       ],
     };
@@ -139,7 +145,7 @@ header {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }
@@ -162,7 +168,7 @@ section {
   transition: all 0.2s ease-in-out;
   &:hover {
     color: #fff;
-    background-color: $navy;
+    background-color: $primary;
   }
 }
 .investment-cases-sec {

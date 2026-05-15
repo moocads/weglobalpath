@@ -25,9 +25,9 @@
               </div>
             </div>
           </NuxtLink>
-          <NuxtLink v-if="$i18n.locale === 'zh'" to="/self-test">
+          <NuxtLink v-if="$i18n.locale === 'zh' || $i18n.locale === 'tw'" to="/self-test">
             <button class="main-btn main-btn_blue main-btn_round">
-              {{ $i18n.locale === "zh" ? "移民自测" : "Self Testing" }}
+              {{ $i18n.locale === "tw" ? "移民自測" : "移民自测" }}
             </button>
           </NuxtLink>
         </div>

@@ -194,12 +194,12 @@ import { portugal50wFundFee } from "~/utils";
 export default {
   head() {
     return {
-      title: `欧洲移民 | ${this.data.project_name} | 加彼岸出国咨询`,
+      title: `欧洲移民 | ${this.data.project_name} | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `欧洲移民 | ${this.data.project_name} | 加彼岸出国咨询`,
+          content: `欧洲移民 | ${this.data.project_name} | 寰球嘉途`,
         },
       ],
     };

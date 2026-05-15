@@ -34,7 +34,7 @@ h1, p {
 h1 {
   font-size: 50px;
   font-weight: bold;
-  color: $navy;
+  color: $primary;
 }
 
 p {

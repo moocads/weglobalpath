@@ -66,7 +66,7 @@ export default {
     padding: 10px 20px;
     width: 100%;
     height: 120px;
-    background-color: $navy;
+    background-color: $primary;
     display: flex;
     flex-direction: column;
     justify-content: center;

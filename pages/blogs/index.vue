@@ -44,12 +44,12 @@
 export default {
   head() {
     return {
-      title: "加拿大移民 | 最新资讯 | 加彼岸出国咨询",
+      title: "加拿大移民 | 最新资讯 | 寰球嘉途",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "加拿大移民 | 最新资讯 | 加彼岸出国咨询",
+          content: "加拿大移民 | 最新资讯 | 寰球嘉途",
         },
       ],
     };
@@ -96,7 +96,7 @@ export default {
       政策解读: policy,
       签证百科: visa,
       留学指南: edu,
-      加彼岸动态: aboutUs,
+      寰球嘉途动态: aboutUs,
     };
     // hide categories which have 0 blog
     const arr = Object.entries(data);
@@ -137,7 +137,7 @@ header {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }
@@ -153,11 +153,11 @@ section {
 .blogs-item {
   display: flex;
   padding: 10px;
-  border: 1px solid rgba(27, 40, 84, 0.5);
+  border: 1px solid rgba(198, 156, 109, 0.5);
   border-radius: 3px;
-  // box-shadow: rgba(27, 40, 84, 0.5) 0px 0px 0px 3px;
-  box-shadow: rgba(27, 40, 84, 0.2) 0px 4px 6px -1px,
-    rgba(27, 40, 84, 0.06) 0px 2px 4px -1px;
+  // box-shadow: rgba(198, 156, 109, 0.5) 0px 0px 0px 3px;
+  box-shadow: rgba(198, 156, 109, 0.2) 0px 4px 6px -1px,
+    rgba(198, 156, 109, 0.06) 0px 2px 4px -1px;
   transition: all 0.3s ease-in-out;
 }
 .blogs-item figure {
@@ -179,7 +179,7 @@ section {
   justify-content: space-between;
   flex-grow: 1;
   h2 {
-    color: $navy;
+    color: $primary;
     font-size: 16px;
     line-height: 1.5;
     overflow: hidden;
@@ -206,7 +206,7 @@ section {
   span:last-child {
     transition: all 0.2s ease;
     &:hover {
-      color: $red;
+      color: $secondary;
     }
   }
 }
@@ -218,7 +218,7 @@ section {
       display: flex;
       flex-direction: column;
       padding: 10px;
-      border: 1px solid rgba(27, 40, 84, 0.5);
+      border: 1px solid rgba(198, 156, 109, 0.5);
       border-radius: 3px;
     }
     .blogs-item figure {
@@ -250,7 +250,7 @@ section {
       span:last-child {
         transition: all 0.2s ease;
         &:hover {
-          color: $red;
+          color: $secondary;
         }
       }
     }

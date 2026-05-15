@@ -11,11 +11,11 @@
         <div class="wrapper">
           <MainTitle
             title="项目介绍"
-            titleEN="INTRODUCTION"
-            titleColor="#1b2854"
+            :titleEN="$i18n.locale === 'tw' ? '簡介' : '简介'"
+            titleColor="#c69c6d"
             titleENColor="#DADADA"
           />
-          加拿大的移民趋势永远是跟着劳动力市场需求走的，准移民申请人们想要成功申请枫叶卡，了解加拿大的人才需求至关重要。加彼岸™独家启动曼省人才管培项目，能够让更多的人才通过紧缺专业学习进入到加拿大本地市场发展。该项目提供紧缺职业的加拿大公立院校一年专业课程且与紧缺行业相关的工作职位。
+          加拿大的移民趋势永远是跟着劳动力市场需求走的，准移民申请人们想要成功申请枫叶卡，了解加拿大的人才需求至关重要。寰球嘉途™独家启动曼省人才管培项目，能够让更多的人才通过紧缺专业学习进入到加拿大本地市场发展。该项目提供紧缺职业的加拿大公立院校一年专业课程且与紧缺行业相关的工作职位。
         </div>
       </section>
       <section class="contactLink">
@@ -163,8 +163,8 @@
         <div class="wrapper">
           <MainTitle
             title="项目服务概括"
-            titleEN="SERVICES PROVIDED"
-            titleColor="#1b2854"
+            :titleEN="$i18n.locale === 'tw' ? '服務' : '服务'"
+            titleColor="#c69c6d"
           />
           <div class="content">
             <ul>
@@ -216,7 +216,11 @@
       </section>
       <section>
         <div class="wrapper">
-          <MainTitle title="项目细节" titleEN="DETAILS" titleColor="#1b2854" />
+          <MainTitle
+            title="项目细节"
+            :titleEN="$i18n.locale === 'tw' ? '細節' : '细节'"
+            titleColor="#c69c6d"
+          />
           <a-tabs defaultActiveKey="details1" class="detailsTabs">
             <a-tab-pane key="details1" class="detailsTab1">
               <div slot="tab">全包式服务</div>
@@ -230,7 +234,7 @@
 
               <h3>签证服务</h3>
               <p>
-                学生专享留学许可审批绿色通道，加彼岸™承诺签证不通过全额退费。
+                学生专享留学许可审批绿色通道，寰球嘉途™承诺签证不通过全额退费。
               </p>
 
               <h3>提供职业文化管理培训</h3>
@@ -493,7 +497,7 @@
         <div class="wrapper">
           <MainTitle
             title="申请流程"
-            titleEN="PROCESS"
+            :titleEN="$i18n.locale === 'tw' ? '流程' : '流程'"
             titleENColor="#E5E5E5"
           />
           <div class="process-wrap">
@@ -560,7 +564,7 @@
               目前，加拿大罗伯森学院在中国区合作学校以达24所。近些年来与中国合作院校保持着长期良好的合作关系。
             </p>
             <p>
-              加拿大罗伯森学院中国区招生计划－公立学院直通车项目，结合加彼岸移居咨询方面和职业培训方面的超强实力，目前已成为广大留学生快速获得就业机会及移居身份的最佳选择。罗伯森设有最短8个月的中国加拿大双认证的研究生文凭及大专学历，毕业后年即可获得加拿大工作签证并申请加拿大永居身份，首年年薪可高达20-30万人民币。该项目直属服务花费低、周期短，不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，陪读父母或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳快捷途径。
+              加拿大罗伯森学院中国区招生计划－公立学院直通车项目，结合寰球嘉途移居咨询方面和职业培训方面的超强实力，目前已成为广大留学生快速获得就业机会及移居身份的最佳选择。罗伯森设有最短8个月的中国加拿大双认证的研究生文凭及大专学历，毕业后年即可获得加拿大工作签证并申请加拿大永居身份，首年年薪可高达20-30万人民币。该项目直属服务花费低、周期短，不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，陪读父母或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳快捷途径。
             </p>
             <div class="files-download-wrap">
               <a
@@ -590,18 +594,18 @@
         <div class="wrapper">
           <div class="content">
             <!-- <MainTitle
-              title="加彼岸TM Beyondcanada是加拿大罗伯森学院指定招生代表"
-              titleEN="CERTIFICATE"
+              title="寰球嘉途TM Beyondcanada是加拿大罗伯森学院指定招生代表"
+              :titleEN="$i18n.locale === 'tw' ? '證書' : '证书'"
               titleSize="24px"
             /> -->
             <div class="certificate-title-wrap">
-              <h2>CERTIFICATE</h2>
+              <h2>{{ $i18n.locale === "tw" ? "證書" : "证书" }}</h2>
               <h1>
-                BeyondCanada加彼岸<sup>TM</sup> 是加拿大罗伯森学院指定招生代表
+                BeyondCanada寰球嘉途<sup>TM</sup> 是加拿大罗伯森学院指定招生代表
               </h1>
               <img
                 src="/img/logos/logo-small-blue.png"
-                alt="加彼岸 小型标题 Logo"
+                alt="寰球嘉途 小型标题 Logo"
               />
             </div>
             <figure>
@@ -619,7 +623,7 @@
               </div>
             </figure>
             <p>
-              BEYOND CANADA CONSULTING (加彼岸) 受 ROBERTSON COLLEGE
+              BEYOND CANADA CONSULTING (寰球嘉途) 受 ROBERTSON COLLEGE
               (罗伯森学院)
               委托，<span>是中国区唯一校方直属合作伙伴</span>，为学校处理一切中国区事宜，历经多年的紧密合作，被授予“Most
               Trusted Partner”最值得信赖的合作伙伴荣誉证书。
@@ -629,7 +633,10 @@
       </section>
       <section class="requirement-sec">
         <div class="wrapper">
-          <MainTitle title="申请要求" titleEN="REQUIREMENT" />
+          <MainTitle
+            title="申请要求"
+            :titleEN="$i18n.locale === 'tw' ? '要求' : '要求'"
+          />
           <div class="requirement-grid">
             <div class="table">
               <a-table
@@ -653,7 +660,10 @@
       </div>
       <section class="cn-coop-schools-sec">
         <div class="wrapper">
-          <MainTitle title="中国区合作院校" titleEN="partnership" />
+          <MainTitle
+            title="中国区合作院校"
+            :titleEN="$i18n.locale === 'tw' ? '合作' : '合作'"
+          />
           <ul class="cn-schools-grid">
             <li v-for="(school, index) in cnSchools" :key="index">
               {{ school }}
@@ -666,7 +676,10 @@
       </div>
       <section class="coop-schools-sec">
         <div class="wrapper">
-          <MainTitle title="加拿大其他合作院校" titleEN="COOP SCHOOLS" />
+          <MainTitle
+            title="加拿大其他合作院校"
+            :titleEN="$i18n.locale === 'tw' ? '院校' : '院校'"
+          />
           <div class="schools-grid">
             <div
               class="school-item"
@@ -686,12 +699,12 @@
 <script>
 export default {
   head: {
-    title: `加拿大移民 | 曼省人才管培项目 | 快速移民直通车 | 加彼岸出国咨询`,
+    title: `加拿大移民 | 曼省人才管培项目 | 快速移民直通车 | 寰球嘉途`,
     meta: [
       {
         hid: "description",
         name: "description",
-        content: `加拿大移民 | 曼省人才管培项目 | 快速移民直通车 | 加彼岸出国咨询`,
+        content: `加拿大移民 | 曼省人才管培项目 | 快速移民直通车 | 寰球嘉途`,
       },
     ],
   },
@@ -1067,7 +1080,7 @@ const schools = [
     text-align: center;
     color: #fff;
     letter-spacing: 2px;
-    background: $red;
+    background: $secondary;
   }
   .ant-table-thead {
     display: none;
@@ -1126,11 +1139,11 @@ const schools = [
     .ant-tabs-tab:hover,
     .ant-tabs-tab-active {
       text-shadow: none;
-      color: $red;
+      color: $secondary;
     }
 
     .ant-tabs-ink-bar {
-      background-color: $red;
+      background-color: $secondary;
       height: 5px;
     }
 
@@ -1138,7 +1151,7 @@ const schools = [
     .detailsTab2,
     .detailsTab3 {
       h3 {
-        color: $red;
+        color: $secondary;
         margin-top: 30px;
       }
 
@@ -1176,7 +1189,7 @@ const schools = [
         margin-top: 30px;
 
         span {
-          color: $red;
+          color: $secondary;
         }
       }
     }
@@ -1193,7 +1206,7 @@ const schools = [
       text-align: center;
       color: #fff;
       letter-spacing: 1px;
-      background: $red;
+      background: $secondary;
     }
     .ant-table-row {
       font-size: 14px;
@@ -1237,7 +1250,7 @@ header {
   background-blend-mode: multiply;
   background-color: #e9e9e9;
   h1 {
-    color: $navy;
+    color: $primary;
     font-size: 60px;
     font-weight: bold;
     position: relative;
@@ -1249,7 +1262,7 @@ header {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }
@@ -1265,7 +1278,7 @@ header {
 }
 
 .redDivider {
-  background-color: $red;
+  background-color: $secondary;
   font-size: 16px;
   color: white;
   text-align: center;
@@ -1297,7 +1310,7 @@ header {
     font-size: 16px;
 
     h3 {
-      color: $navy;
+      color: $primary;
       font-size: 22px;
       font-weight: bold;
     }
@@ -1305,7 +1318,7 @@ header {
 }
 
 .sec-requirements {
-  background-color: $navy;
+  background-color: $primary;
   padding-top: 30px;
   padding-bottom: 100px;
 
@@ -1447,7 +1460,7 @@ header {
 
       li {
         margin-left: 15px;
-        color: $navy;
+        color: $primary;
         font-size: 16px;
         margin-bottom: 10px;
 
@@ -1480,7 +1493,7 @@ header {
     padding: 50px;
     padding-bottom: 0;
     border-radius: 10px;
-    border: 1px solid $navy;
+    border: 1px solid $primary;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -1503,7 +1516,7 @@ header {
     .step-num {
       width: 25px;
       height: 25px;
-      background-color: $navy;
+      background-color: $primary;
       color: #fff;
       display: flex;
       justify-content: center;
@@ -1523,7 +1536,7 @@ header {
     }
 
     a {
-      color: $red;
+      color: $secondary;
     }
   }
   @media all and (max-width: 768px) {
@@ -1561,7 +1574,7 @@ header {
   .info-box {
     background-color: #e9e9e9;
     padding: 20px 40px;
-    border-left: 5px solid $red;
+    border-left: 5px solid $secondary;
     margin-left: 100px;
   }
   p {
@@ -1587,7 +1600,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: $red;
+    background-color: $secondary;
     border-radius: 50%;
     padding: 0 40px;
     aspect-ratio: 1/1;
@@ -1604,7 +1617,7 @@ header {
 }
 .certificate-sec {
   margin-top: 450px;
-  background-color: $navy;
+  background-color: $primary;
   position: relative;
   height: 400px;
 }
@@ -1694,7 +1707,7 @@ header {
   align-items: center;
 }
 .plan-sec {
-  background-color: $navy;
+  background-color: $primary;
 }
 .plan-content {
   display: flex;
@@ -1720,10 +1733,10 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    color: $red;
+    color: $secondary;
     padding: 8px 15px;
     background-color: #dadada;
-    border: 1px solid $red;
+    border: 1px solid $secondary;
     border-radius: 5px;
     img {
       margin-right: 9px;
@@ -1939,7 +1952,7 @@ header {
   h3 {
     font-size: 20px;
     font-weight: 500;
-    color: $red;
+    color: $secondary;
   }
 }
 .coop-grid {

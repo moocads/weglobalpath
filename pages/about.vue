@@ -3,9 +3,9 @@
     <header>
       <Wrapper>
         <PageHeroTitle>
-          {{ $i18n.locale === "zh" ? "关于我们" : "About Us" }}
+          {{ $i18n.locale === "tw" ? "關於我們" : "关于我们" }}
           <template #subtitle>
-            {{ $i18n.locale === "zh" ? "ABOUT" : "" }}
+            {{ $i18n.locale === "tw" ? "簡介" : "简介" }}
           </template>
         </PageHeroTitle>
       </Wrapper>
@@ -17,21 +17,8 @@
             <img src="/img/logos/logo-small-white.png" alt="" />
             <h2>{{ $t("About.row-1-title") }}</h2>
           </div>
-          <p v-if="$i18n.locale === 'zh'">
-            <span>
-              加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
-              CONSULTING），彼森教育（BISON INTERNATIONAL
-              EDUCATION）和彼岸投资（BEYOND CANADA INVESTMENT）三家子公司 </span
-            >，均为加拿大联邦注册公司，分别由资深移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
-          </p>
-          <p v-if="$i18n.locale === 'zh'">
-            加彼岸出国咨询是权威办理加拿大省提名移民项目的加拿大本地公司。作为加拿大项目方，我们保持独家项目优势，始终保持高市场份额占有率，每位顾问都有多年的在海外的留学生活经验及海外工作经验。最重要的是，我们把每一位客户当作自己亲人来服务，在全加拿大境内的省提名项目中协助您评估现实状况并作出最合适的规划建议。加彼岸出国咨询将一如既往地与国内合作伙伴紧密合作，客户至上的精神，为客户提供最优质最专业的移民咨询服务。
-          </p>
-          <p v-if="$i18n.locale === 'en'">
-            <span
-              >Beyond Canada includes BEYOND CANADA CONSULTING, BISON EDUCATION and BEYONDCANADA INCESTMENT </span
-            >which are all federally registered companies in Canada and are partnered with the immigration lawyers, RCIC (Regulatory Council of Immigration Consultants of Canada) licensed immigration consultants, education consultants, vocational trainers, real estate agents, accountants and business experts. 
-          </p>
+          <p>{{ $t("homeAbout.content-1") }}</p>
+          <p>{{ $t("homeAbout.content-2") }}</p>
         </div>
         <div class="imgContainer">
           <img src="/img/About/sec1.png" alt="" class="sec-img" />
@@ -46,36 +33,21 @@
         <div class="info-wrap">
           <div class="title">
             <img src="/img/logos/logo-small-blue.png" alt="" />
-            <h2>
-              {{ $i18n.locale === "zh" ? "彼森教育" : "Bison Education" }}
-            </h2>
+            <h2>彼森教育</h2>
           </div>
           <p v-if="$i18n.locale === 'zh'">
             <span>彼森教育</span
-            >致力于为中国的学子提供高质量的海外留学申请，出国考试咨询及职业规划咨询服务。自2017年与加拿大罗伯森学院深度合作起，我们已为上百名学生办理签证至拿到枫叶卡的所有手续。2021年加彼岸受加拿大罗伯森学院委托，是中国区唯一校方直属合作伙伴，为学校处理一切中国事宜。
+            >致力于为中国的学子提供高质量的海外留学申请，出国考试咨询及职业规划咨询服务。自2017年与加拿大罗伯森学院深度合作起，我们已为上百名学生办理签证至拿到枫叶卡的所有手续。2021年寰球嘉途受加拿大罗伯森学院委托，是中国区唯一校方直属合作伙伴，为学校处理一切中国事宜。
           </p>
           <p v-if="$i18n.locale === 'zh'">
-            结合加彼岸移居咨询方面和职业培训方面的超强实力，加拿大罗伯森学院与加彼岸出国咨询联合推出的公立学院直通车项目已成为广大留学生快速获得就业机会及移居身份的最佳选择。该项目不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳途径。
+            结合寰球嘉途移居咨询方面和职业培训方面的超强实力，加拿大罗伯森学院与寰球嘉途联合推出的公立学院直通车项目已成为广大留学生快速获得就业机会及移居身份的最佳选择。该项目不仅适合于即将高中或职高毕业的莘莘学子，对于过去已经完成过大学或大专课程，或已有多年工作经验的群体来说，该项目亦是您获得加拿大就业移居身份的绝佳途径。
           </p>
-          <p v-if="$i18n.locale === 'en'">
-            <strong>Bison Education</strong> is committed to providing high
-            quality overseas study application, examination abroad consultation
-            and career planning consulting services to students in China. Since
-            2018, we have been working with Robertson College in Canada and have
-            helped hundreds of students from visa to maple leaf card. 2021,
-            Beyond Canada is the only direct partner of Robertson College in
-            China and will handle all Chinese matters for the school.
+          <p v-if="$i18n.locale === 'tw'">
+            <span>彼森教育</span
+            >致力於為中國的學子提供高質量的海外留學申請，出國考試諮詢及職業規劃諮詢服務。自2017年與加拿大羅伯森學院深度合作起，我們已為上百名學生辦理簽證至拿到楓葉卡的所有手續。2021年寰球嘉途受加拿大羅伯森學院委託，是中國區唯一校方直屬合作夥伴，為學校處理一切中國事宜。
           </p>
-          <p v-if="$i18n.locale === 'en'">
-            Combined with the strong strengths in immigration consulting and
-            vocational training, the public college through-train program
-            jointly launched by Robeson College and Beyond Canada Consulting has
-            become the best choice for international students to quickly obtain
-            employment and immigration status. The program is not only suitable
-            for students who are about to graduate from high school or
-            vocational high school, but also for those who have completed
-            university or college courses in the past, or have many years of
-            work experience.
+          <p v-if="$i18n.locale === 'tw'">
+            結合寰球嘉途移居諮詢方面和職業培訓方面的超強實力，加拿大羅伯森學院與寰球嘉途出國諮詢聯合推出的公立學院直通車項目已成為廣大留學生快速獲得就業機會及移居身份的最佳選擇。該項目不僅適合於即將高中或職高畢業的莘莘學子，對於過去已經完成過大學或大專課程，或已有多年工作經驗的群體來說，該項目亦是您獲得加拿大就業移居身份的絕佳途徑。
           </p>
         </div>
       </div>
@@ -87,23 +59,15 @@
         <div class="info-wrap">
           <div class="title">
             <img src="/img/logos/logo-small-blue.png" alt="" />
-            <h2>
-              {{ $i18n.locale === "zh" ? "彼岸投资" : "Beyond Investment" }}
-            </h2>
+            <h2>{{ $i18n.locale === "tw" ? "彼岸投資" : "彼岸投资" }}</h2>
           </div>
           <p v-if="$i18n.locale === 'zh'">
             <span>彼岸投资</span
             >一直致力于为投资者提供专业的海外投资咨询服务。从投资学的角度来说，投资需要对市场深入了解，全面调查，综合行业动向，经济因素，风险与回报等多方面考量，以确保客户获得该行业必须提供的最佳服务和最真实的建议，找到最优的投资方案。
           </p>
-          <p v-if="$i18n.locale === 'en'">
-            <strong>Beyond Investment</strong> has been committed to providing
-            professional overseas investment advisory services to investors.
-            From the perspective of investment science, investment requires
-            in-depth understanding of the market, comprehensive investigation,
-            and a combination of industry trends, economic factors, risks and
-            rewards, etc., to ensure that clients receive the best service and
-            the most authentic advice that the industry must provide to find the
-            optimal investment solution.
+          <p v-if="$i18n.locale === 'tw'">
+            <span>彼岸投資</span
+            >一直致力於為投資者提供專業的海外投資諮詢服務。從投資學的角度來說，投資需要對市場深入了解，全面調查，綜合行業動向，經濟因素，風險與回報等多方面考量，以確保客戶獲得該行業必須提供的最佳服務和最真實的建議，找到最優的投資方案。
           </p>
         </div>
         <div class="imgContainer">
@@ -116,16 +80,14 @@
     <section class="divider">
       <h3>
         {{
-          $i18n.locale === "zh"
-            ? "连接彼岸，用心服务，帮助海外客户和学生。"
-            : "Connecting the other side and serving with heart to help overseas clients and students."
+          $i18n.locale === "tw"
+            ? "連接彼岸，用心服務，幫助海外客戶和學生。"
+            : "连接彼岸，用心服务，帮助海外客户和学生。"
         }}
       </h3>
       <h3>
         {{
-          $i18n.locale === "zh"
-            ? "我们，不忘初心。"
-            : "We do not forget the original intention."
+          $i18n.locale === "tw" ? "我們，不忘初心。" : "我们，不忘初心。"
         }}
       </h3>
     </section>
@@ -161,14 +123,12 @@
     <section class="sec-5">
       <div class="wrapper">
         <MainTitle
-          :title="
-            $i18n.locale === 'zh' ? '加彼岸历程' : 'Beyond Canada Milestone'
-          "
-          titleEN="History"
+          :title="$i18n.locale === 'tw' ? '寰球嘉途歷程' : '寰球嘉途历程'"
+          :titleEN="$i18n.locale === 'tw' ? '歷程' : '历程'"
         />
         <a-timeline id="aboutTimeline" mode="alternate">
           <a-timeline-item
-            v-for="(item, index) in $i18n.locale === 'zh' ? steps : stepsEN"
+            v-for="(item, index) in $i18n.locale === 'tw' ? stepsTW : steps"
             :key="index"
           >
             <div slot="dot" class="dot">
@@ -181,13 +141,12 @@
         </a-timeline>
       </div>
     </section>
-    <!-- <Construction /> -->
     <a id="anchor-franchise"></a>
     <section class="sec-franchise">
       <div class="wrapper">
         <MainTitle
-          :title="$i18n.locale === 'zh' ? '加盟招商' : 'Investment'"
-          titleEN="franchise"
+          title="加盟招商"
+          :titleEN="$i18n.locale === 'tw' ? '招商' : '招商'"
           titleColor="#fff"
           titleENColor="#233369"
         />
@@ -197,7 +156,7 @@
             <h2>品牌优势：</h2>
           </div>
           <p>
-            加彼岸<sup>TM</sup>
+            寰球嘉途<sup>TM</sup>
             是中国连接加拿大重要的国际教育桥梁，拥有多年移民教育精英团队，现有100+所合作学校，帮助3000+以上的家庭获得加拿大永居身份，1000+世界性优质合作资源。目前在中国以及加拿大中心城市成功发展了众多合作伙伴。
           </p>
           <div class="title">
@@ -205,53 +164,39 @@
             <h2>运营优势：</h2>
           </div>
           <p>
-            加彼岸<sup>TM</sup>拥有众多一手，独家移民研学项目，是新型教育理念先驱者。加彼岸<sup>TM</sup>用多年累积的经验为加盟/合作商提供一套独创的运营销售方案。成功的运营模式是加盟商/合作伙伴盈利的保障。
+            寰球嘉途<sup>TM</sup>拥有众多一手，独家移民研学项目，是新型教育理念先驱者。寰球嘉途<sup>TM</sup>用多年累积的经验为加盟/合作商提供一套独创的运营销售方案。成功的运营模式是加盟商/合作伙伴盈利的保障。
           </p>
           <div class="title">
             <img src="/img/logos/logo-small-white.png" alt="" />
             <h2>服务优势：</h2>
           </div>
           <p>
-            加彼岸<sup>TM</sup>一直致力于为每一个合作伙伴提供专业化定制服务。加彼岸<sup>TM</sup>拥有强大的技术售后支持团队。合作伙伴从前期公司运营到后期的维护售后我们都将提供免费服务，让合作伙伴运营公司无后顾之忧。
+            寰球嘉途<sup>TM</sup>一直致力于为每一个合作伙伴提供专业化定制服务。寰球嘉途<sup>TM</sup>拥有强大的技术售后支持团队。合作伙伴从前期公司运营到后期的维护售后我们都将提供免费服务，让合作伙伴运营公司无后顾之忧。
           </p>
         </article>
 
-        <article v-if="$i18n.locale === 'en'">
+        <article v-if="$i18n.locale === 'tw'">
           <div class="title">
             <img src="/img/logos/logo-small-white.png" alt="" />
-            <h2>Brand Advantages:</h2>
+            <h2>品牌優勢：</h2>
           </div>
           <p>
-            Beyond Canada<sup>TM</sup> is an important international education
-            bridge between China and Canada, with an elite team of immigrant
-            educators for many years, 100+ partner schools, helping more than
-            3,000+ families to obtain permanent residence status in Canada, and
-            1,000+ worldwide quality partner resources. We have successfully
-            developed many partners in China and central cities in Canada.
+            寰球嘉途<sup>TM</sup>
+            是中國連接加拿大重要的國際教育橋樑，擁有多年移民教育精英團隊，現有100+所合作學校，幫助3000+以上的家庭獲得加拿大永居身份，1000+世界性優質合作資源。目前在中國以及加拿大中心城市成功發展了眾多合作夥伴。
           </p>
           <div class="title">
             <img src="/img/logos/logo-small-white.png" alt="" />
-            <h2>Operational Advantages:</h2>
+            <h2>運營優勢：</h2>
           </div>
           <p>
-            Beyond Canada <sup>TM</sup> has many first-hand, exclusive
-            immigration study programs and am a pioneer of new educational
-            concepts. Beyond Canada<sup>TM</sup> uses my years of accumulated
-            experience to provide franchisees/partners with an original set of
-            operational sales programs. The successful operation model is the
-            guarantee of profitability for the franchisee/partner.
+            寰球嘉途<sup>TM</sup>擁有眾多一手，獨家移民研學項目，是新型教育理念先驅者。寰球嘉途<sup>TM</sup>用多年累積的經驗為加盟/合作商提供一套獨創的運營銷售方案。成功的運營模式是加盟商/合作夥伴盈利的保障。
           </p>
           <div class="title">
             <img src="/img/logos/logo-small-white.png" alt="" />
-            <h2>Service Advantages:</h2>
+            <h2>服務優勢：</h2>
           </div>
           <p>
-            Beyond Canada <sup>TM</sup>has been committed to providing
-            specialized and customized services to each partner. Beyond
-            Canada<sup>TM</sup> has a strong technical after-sales support team.
-            We will provide free services for partners from the initial
-            operation to the maintenance of the company, so that partners can
-            operate the company without worries.
+            寰球嘉途<sup>TM</sup>一直致力於為每一個合作夥伴提供專業化定制服務。寰球嘉途<sup>TM</sup>擁有強大的技術售後支持團隊。合作夥伴從前期公司運營到後期的維護售後我們都將提供免費服務，讓合作夥伴運營公司無後顧之憂。
           </p>
         </article>
       </div>
@@ -264,12 +209,12 @@
 <script>
 export default {
   head: {
-    title: `加拿大移民 | 关于我们 | 加彼岸出国咨询`,
+    title: `加拿大移民 | 关于我们 | 寰球嘉途`,
     meta: [
       {
         hid: "description",
         name: "description",
-        content: `加拿大移民 | 关于我们 | 加彼岸出国咨询`,
+        content: `加拿大移民 | 关于我们 | 寰球嘉途`,
       },
     ],
   },
@@ -277,78 +222,78 @@ export default {
     return {
       steps: [
         {
-          label: "加彼岸™历程: 1",
+          label: "寰球嘉途™历程: 1",
           step: "建立中国与北美第一家鲁班工坊桥梁",
         },
         {
-          label: "加彼岸™历程: 15",
+          label: "寰球嘉途™历程: 15",
           step: "缔结多所中加友好学校",
         },
         {
-          label: "加彼岸™历程: 98.1",
+          label: "寰球嘉途™历程: 98.1",
           step: "98.1%+的移民申请通过率",
         },
         {
-          label: "加彼岸™历程: 100",
+          label: "寰球嘉途™历程: 100",
           step: "代理加拿大百所院校",
         },
         {
-          label: "加彼岸™历程: 1000",
+          label: "寰球嘉途™历程: 1000",
           step: "1000+海外优质雇主",
         },
         {
-          label: "加彼岸™历程: 2000",
+          label: "寰球嘉途™历程: 2000",
           step: "输送上千名学子海外深造",
         },
         {
-          label: "加彼岸™历程: 6000",
+          label: "寰球嘉途™历程: 6000",
           step: "6000+各类移民申请成功案例",
         },
         {
-          label: "加彼岸™历程:",
+          label: "寰球嘉途™历程:",
           step: "实现海外资产配置",
         },
         {
-          label: "加彼岸™历程:",
+          label: "寰球嘉途™历程:",
           step: "未来给所有人选择国际化教育的机会",
         },
       ],
-      stepsEN: [
+      stepsTW: [
         {
-          label: "Beyond Canada Milestone: 1",
-          step: "Building the first Lupin workshop bridge between China and North America",
+          label: "寰球嘉途™歷程: 1",
+          step: "建立中國與北美第一家魯班工坊橋樑",
         },
         {
-          label: "Beyond Canada Milestone: 15",
-          step: "Concluded several Sino-Canadian friendship schools",
+          label: "寰球嘉途™歷程: 15",
+          step: "締結多所中加友好學校",
         },
         {
-          label: "Beyond Canada Milestone: 98.1",
-          step: "98.1% Immigration Application Pass Rate",
+          label: "寰球嘉途™歷程: 98.1",
+          step: "98.1%+的移民申請通過率",
         },
         {
-          label: "Beyond Canada Milestone: 100",
-          step: "Representing 100 colleges in Canada",
+          label: "寰球嘉途™歷程: 100",
+          step: "代理加拿大百所院校",
         },
         {
-          label: "Beyond Canada Milestone: 1000",
-          step: "1000+ Overseas Quality Employer Resources",
+          label: "寰球嘉途™歷程: 1000",
+          step: "1000+海外優質雇主",
         },
         {
-          label: "Beyond Canada Milestone: 2000",
-          step: "Sending thousands of students overseas for further study",
+          label: "寰球嘉途™歷程: 2000",
+          step: "輸送上千名學子海外深造",
         },
         {
-          label: "Beyond Canada Milestone: 6000",
-          step: "6000+ Immigration Application Success Stories",
+          label: "寰球嘉途™歷程: 6000",
+          step: "6000+各類移民申請成功案例",
         },
         {
-          label: "Beyond Canada Milestone:",
-          step: "Realize overseas asset allocation",
+          label: "寰球嘉途™歷程:",
+          step: "實現海外資產配置",
         },
         {
-          label: "Beyond Canada Milestone:",
-          step: "The future gives everyone the opportunity to choose an international education",
+          label: "寰球嘉途™歷程:",
+          step: "未來給所有人選擇國際化教育的機會",
         },
       ],
     };
@@ -363,7 +308,7 @@ export default {
     border-color: $lightGrey;
   }
   .label {
-    color: $red;
+    color: $secondary;
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 16px;
@@ -376,7 +321,7 @@ export default {
     color: $grey;
   }
   .dot .circle {
-    background-color: $red;
+    background-color: $secondary;
     height: 15px;
     width: 15px;
     border-radius: 50%;
@@ -387,7 +332,7 @@ export default {
   margin: 18px 0;
   h3 {
     font-size: 16px;
-    color: $navy;
+    color: $primary;
     font-weight: bold;
   }
   img {
@@ -411,7 +356,7 @@ header {
   position: relative;
 }
 strong {
-  color: $navy;
+  color: $primary;
 }
 .sec-img {
   width: 100%;
@@ -452,7 +397,7 @@ strong {
   // }
 }
 .sec-1 {
-  background-color: $navy;
+  background-color: $primary;
   .row-grid {
     grid-template-columns: 65% 35%;
     .info-wrap {
@@ -474,7 +419,7 @@ strong {
     grid-template-columns: 35% 65%;
     .title {
       h2 {
-        color: $navy;
+        color: $primary;
       }
     }
     .info-wrap {
@@ -487,7 +432,7 @@ strong {
   }
   span {
     font-weight: bold;
-    color: $navy;
+    color: $primary;
   }
 }
 
@@ -513,7 +458,7 @@ strong {
     }
     h2 {
       font-size: 28px;
-      color: $navy;
+      color: $primary;
       margin-bottom: 0;
     }
   }
@@ -523,14 +468,14 @@ strong {
   }
   span {
     font-weight: bold;
-    color: $navy;
+    color: $primary;
   }
   .imgContainer img {
     object-fit: cover;
   }
 }
 .divider {
-  background-color: $red;
+  background-color: $secondary;
   padding: 50px 0;
   display: flex;
   flex-direction: column;
@@ -561,13 +506,13 @@ strong {
     }
     article {
       h2 {
-        color: $navy;
+        color: $primary;
         font-size: 28px;
         margin-bottom: 15px;
         font-weight: bold;
       }
       p {
-        color: $navy;
+        color: $primary;
         font-size: 16px;
         font-weight: bold;
       }
@@ -596,7 +541,7 @@ strong {
 // ANCHOR 加盟招商 section
 .sec-franchise {
   padding: 50px 0 80px;
-  background-color: $navy;
+  background-color: $primary;
 }
 .sec-franchise article {
   max-width: 800px;
@@ -637,7 +582,7 @@ strong {
     font-size: 20px;
   }
   a {
-    color: $red;
+    color: $secondary;
   }
 }
 .joinUs-table-wrap {
@@ -682,7 +627,7 @@ strong {
     }
   }
   .divider {
-    background-color: $red;
+    background-color: $secondary;
     padding: 30px 0;
     display: flex;
     flex-direction: column;
@@ -763,7 +708,7 @@ strong {
       text-align: center;
     }
     a {
-      color: $red;
+      color: $secondary;
     }
   }
 }

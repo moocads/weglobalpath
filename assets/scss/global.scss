@@ -14,7 +14,7 @@ a:hover {
 /* ------------------ Main Button Style ----------------- */
 .main-btn {
   color: #fff;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 20px;
   padding: 15px 80px;
   margin-bottom: 8px;
@@ -27,14 +27,14 @@ a:hover {
 }
 // Button Color
 .main-btn_blue {
-  background-color: $navy;
+  background-color: $primary;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: $red;
+    background-color: $secondary;
   }
 }
 .main-btn_red {
-  background-color: $red;
+  background-color: $secondary;
   transition: all 0.2s ease-in-out;
   &:hover {
     background-color: #c42222;
@@ -59,7 +59,7 @@ a:hover {
 }
 
 .ant-timeline-item-tail {
-  border-color: $navy;
+  border-color: $primary;
   left: 0;
 }
 
@@ -82,7 +82,7 @@ a:hover {
     margin-bottom: 10px;
   }
   h2 {
-    color: $navy;
+    color: $primary;
   }
 }
 .codex-section {
@@ -119,7 +119,7 @@ a:hover {
   background-size: cover;
   background-blend-mode: multiply;
   h1 {
-    color: $navy;
+    color: $primary;
     font-size: 60px;
     font-weight: bold;
     position: relative;
@@ -131,7 +131,7 @@ a:hover {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }
@@ -172,7 +172,7 @@ a:hover {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }
@@ -192,7 +192,7 @@ a:hover {
 .additional-link {
   font-size: 14px;
   text-decoration: underline;
-  color: $navy;
+  color: $primary;
   text-underline-offset: 3px;
 }
 .additional-info {
@@ -246,13 +246,13 @@ a:hover {
   }
   .ant-tabs-nav-scroll {
     .ant-tabs-ink-bar {
-      background-color: $navy;
+      background-color: $primary;
     }
     .ant-tabs-tab:hover {
-      color: $navy;
+      color: $primary;
     }
     .ant-tabs-tab-active {
-      color: $navy;
+      color: $primary;
     }
   }
   &.mb-0 .ant-tabs-bar {
@@ -269,7 +269,7 @@ a:hover {
 #evaluation-form {
   .ant-form-item-label > label {
     font-size: 16px;
-    color: $red;
+    color: $secondary;
   }
   .ant-checkbox-group {
     display: flex;
@@ -296,7 +296,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
   margin-bottom: 30px;
   font-size: 16px;
   padding: 24px;

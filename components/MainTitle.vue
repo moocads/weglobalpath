@@ -3,7 +3,7 @@
     <div class="main-title-wrap">
       <p :style="{ color: titleENColor }">{{ titleEN }}</p>
       <h1 :style="{ fontSize: titleSize, color: titleColor }">{{ title }}</h1>
-      <img src="/img/logos/logo-small-blue.png" alt="加彼岸 小型标题 Logo" />
+      <img src="/img/logos/logo-small-blue.png" alt="寰球嘉途 小型标题 Logo" />
     </div>
   </div>
 </template>

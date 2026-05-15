@@ -21,7 +21,7 @@ export default {
 .recent-scores {
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
   margin-bottom: 30px;
   font-size: 16px;
   padding: 24px;

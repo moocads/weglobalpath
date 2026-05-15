@@ -262,12 +262,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: `加拿大移民 | 联邦EE移民项目 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 联邦EE移民项目 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 联邦EE移民项目 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 联邦EE移民项目 | 寰球嘉途`,
         },
       ],
     };
@@ -467,13 +467,13 @@ export default {
     }
 
     .ant-tabs-tab {
-      background-color: $navy;
+      background-color: $primary;
       color: white;
       margin-right: 10px;
       padding: 0;
 
       &.ant-tabs-tab-active {
-        background-color: $red;
+        background-color: $secondary;
       }
 
       .customTab {
@@ -526,7 +526,7 @@ section {
     }
 
     span {
-      color: $navy;
+      color: $primary;
     }
   }
 }
@@ -563,7 +563,7 @@ section {
 /*               ANCHOR Requirement Section               */
 /* ------------------------------------------------------ */
 .sec-requirements {
-  background-color: $navy;
+  background-color: $primary;
   .title-wrap {
     display: flex;
     flex-direction: column;
@@ -616,7 +616,7 @@ section {
       content: "";
       position: absolute;
       z-index: 10;
-      background: linear-gradient(0deg, #1b2854 0%, rgba(27, 40, 84, 0) 100%);
+      background: linear-gradient(0deg, #c69c6d 0%, rgba(198, 156, 109, 0) 100%);
       height: 20px;
       width: 100%;
       left: 0;
@@ -674,7 +674,7 @@ section {
 }
 @media all and (max-width: 768px) {
   .sec-requirements {
-    background-color: $navy;
+    background-color: $primary;
     .title-wrap {
       align-items: center;
       position: relative;
@@ -719,7 +719,7 @@ section {
   h3 {
     text-align: center;
     font-size: 28px;
-    color: $red;
+    color: $secondary;
     margin-bottom: 0;
     font-weight: 700;
   }
@@ -743,11 +743,11 @@ section {
   gap: 30px;
 }
 .fee-card {
-  border: 1px solid $red;
+  border: 1px solid $secondary;
   border-radius: 5px;
   padding: 20px 40px;
 
-  color: $red;
+  color: $secondary;
   font-size: 16px;
   span {
     font-weight: bold;
@@ -814,7 +814,7 @@ section {
       font-size: 16px;
     }
     h4 {
-      color: $red;
+      color: $secondary;
       width: 120px;
     }
   }
@@ -834,7 +834,7 @@ section {
       }
       h4 {
         flex-shrink: 0;
-        color: $red;
+        color: $secondary;
         width: 85px;
       }
     }
@@ -855,7 +855,7 @@ section {
       }
       h4 {
         flex-shrink: 0;
-        color: $red;
+        color: $secondary;
         width: 85px;
       }
     }

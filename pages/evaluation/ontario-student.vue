@@ -240,12 +240,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 安省提名 境内留学生 EOI评分系统 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 安省提名 境内留学生 EOI评分系统 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 安省提名 境内留学生 EOI评分系统 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 安省提名 境内留学生 EOI评分系统 | 寰球嘉途`,
         },
       ],
     };

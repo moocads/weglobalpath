@@ -2,15 +2,17 @@
   <div>
     <HomeHeroBanner />
     <HomeServices />
-    <HomeDrawer v-if="$i18n.locale === 'zh'" :data="drawerData" />
-    <HomeDrawerEN v-if="$i18n.locale === 'en'" :data="drawerDataEN" />
+    <HomeDrawer
+      v-if="$i18n.locale === 'zh' || $i18n.locale === 'tw'"
+      :data="$i18n.locale === 'tw' ? drawerDataTW : drawerData"
+    />
     <HomeProcess />
     <HomeAbout />
-    <section v-if="$i18n.locale === 'zh'" id="home-blogs">
+    <section v-if="$i18n.locale === 'zh' || $i18n.locale === 'tw'" id="home-blogs">
       <div class="wrapper">
         <MainTitle
-          title="加彼岸热讯"
-          titleEN="ARTICLES"
+          title="寰球嘉途热讯"
+          :titleEN="$i18n.locale === 'tw' ? '熱訊' : '热讯'"
           titleENColor="#f1f1f1"
         />
         <a-tabs class="blog-tabs" default-active-key="tab-0">
@@ -39,8 +41,12 @@
         </a-tabs>
       </div>
     </section>
-    <section v-if="$i18n.locale === 'zh'" id="home-cases">
-      <MainTitle title="成功案例" titleEN="OUR CASES" titleENColor="#c4c4c4" />
+    <!-- <section v-if="$i18n.locale === 'zh' || $i18n.locale === 'tw'" id="home-cases">
+      <MainTitle
+        title="成功案例"
+        :titleEN="$i18n.locale === 'tw' ? '案例' : '案例'"
+        titleENColor="#c4c4c4"
+      />
       <div class="wrapper">
         <div class="cases-grid">
           <div
@@ -58,59 +64,19 @@
           </button>
         </NuxtLink>
       </div>
-    </section>
-    <!-- <section id="home-testimonial">
-      <div class="wrapper">
-        <MainTitle title="客户评价" titleEN="FEEDBACK" />
-        <a-carousel arrows :slidesToShow="2" :autoplay="true" class="slider-lg">
-          <div slot="prevArrow" class="custom-slick-arrow">
-            <img src="/img/Home/left-arrow.png" alt="" />
-          </div>
-          <div slot="nextArrow" class="custom-slick-arrow">
-            <img src="/img/Home/right-arrow.png" alt="" />
-          </div>
-          <div v-for="(fb, index) in feedbackData" :key="index">
-            <TestimonialCard
-              :name="fb.name"
-              :avatar="fb.avatar"
-              :content="fb.content"
-            />
-          </div>
-        </a-carousel>
-        <a-carousel :slidesToShow="1" :autoplay="true" class="slider-sm">
-          <div v-for="(fb, index) in feedbackData" :key="index">
-            <TestimonialCard
-              :name="fb.name"
-              :avatar="fb.avatar"
-              :content="fb.content"
-            />
-          </div>
-        </a-carousel>
-      </div>
     </section> -->
-    <!-- <HomeCounter /> -->
     <HomeSlogan />
 
     <section id="home-evaluation">
       <div class="wrapper">
         <div class="content">
           <div class="title">
-            <h1>
-              {{
-                $i18n.locale === "zh"
-                  ? "加彼岸，家彼岸"
-                  : $i18n.locale === "tw"
-                  ? "加彼岸，家彼岸"
-                  : "Beyond Canada，Your Family"
-              }}
-            </h1>
+            <h1>寰球嘉途，家彼岸</h1>
             <h2>
               {{
-                $i18n.locale === "zh"
-                  ? "为您量身定制整体移居方案"
-                  : $i18n.locale === "tw"
+                $i18n.locale === "tw"
                   ? "為您量身定制整體移居方案"
-                  : "Customized total relocation solutions for you"
+                  : "为您量身定制整体移居方案"
               }}
             </h2>
           </div>
@@ -119,21 +85,15 @@
               type="text"
               v-model="contactInfo"
               :placeholder="
-                $i18n.locale === 'zh'
-                  ? '输入邮箱或微信号'
-                  : $i18n.locale === 'tw'
+                $i18n.locale === 'tw'
                   ? '輸入郵箱或微信號'
-                  : 'Email or WeChat'
+                  : '输入邮箱或微信号'
               "
               required
             />
             <button type="submit" class="submit-btn main-btn main-btn_blue">
               {{
-                $i18n.locale === "zh"
-                  ? "免费评估"
-                  : $i18n.locale === "tw"
-                  ? "免費評估"
-                  : "Enter"
+                $i18n.locale === "tw" ? "免費評估" : "免费评估"
               }}
             </button>
           </form>
@@ -147,12 +107,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 首页 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 首页 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 首页 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 首页 | 寰球嘉途`,
         },
       ],
     };
@@ -206,10 +166,9 @@ export default {
       政策解读: policy,
       签证百科: visa,
       留学指南: edu,
-      加彼岸动态: aboutUs,
+      寰球嘉途动态: aboutUs,
     };
     const cases = casesData;
-    // const blogs = blogsData;
     const arr = Object.entries(data);
     const filtered = arr.filter(([key, value]) => value.length > 0);
     const blogs = Object.fromEntries(filtered);
@@ -220,72 +179,10 @@ export default {
   },
   data() {
     return {
-      feedbackData: [
-        {
-          name: "张同学",
-          avatar: "/img/Home/avatar.png",
-          content:
-            "非常感谢加彼岸出国咨询公司，办事效率高，认真负责，让我和我老婆顺利拿到PR。在办理的过程中，对材料的整理和格式文件的要求认真负责，细心到位，他们的公司的工作效率高，文案能力强，公司的实力和能力，也让我着实放心，让我毫无困扰，轻轻松松走上移民之路。",
-        },
-        {
-          name: "王女士",
-          avatar: "/img/Home/avatar.png",
-          content:
-            "非常感谢Luna和Lisa对我和女儿签证的帮助。先给出了准确的移民方案，然后帮我们一步步操作，从陪读签到我小女儿的学签，准备材料很充分，申请步骤很清晰，解答问题很耐心。由于疫情，被拒签的情况很多，我当时非常焦虑，Luna和Lisa会解除我的顾虑，在她们的帮助下，我们的签证不到1个月全部顺利获批，非常感谢加彼岸，让我们能够快速顺利入境加拿大。",
-        },
-        {
-          name: "戴同学",
-          avatar: "/img/Home/avatar.png",
-          content:
-            "在我毕业后第一时间金老师就帮我安排工作培训，在提交毕业工签后我就开始正式工作积累移民要求的工作时间，而且那时我已经对工作内容都已经熟悉，工作起来得心应手。雇主资源这一块的保障是非常重要的，在我的省提名审理中只有雇主接到电话，自己没被要求过任何材料。我的移民之路上，从未有过任何烦恼。衷心感谢加彼岸！",
-        },
-        {
-          name: "张女士",
-          avatar: "/img/Home/avatar.png",
-          content:
-            "收到COPR的第二天，还是感觉很惊喜。走完这全程，只能说难以置信的顺利，感谢加彼岸为我保驾护航! 雇主担保当时咨询了很多人，遇到Luna觉得很幸运，经验丰富、做事极有效率且为人真诚的人。在她耐心地帮助下，当时不到一个月就拿到了雇主担保的省提名信，顺利完成人生中的一件重要的事，我真的很幸运，感谢无以言表。",
-        },
-        {
-          name: "陈先生",
-          avatar: "/img/Home/avatar.png",
-          content:
-            "我们全家通过加拿大投资移民上周已经顺利登陆，感谢加彼岸投资团队的服务精神，全程从项目定向，注册公司，选址到后续会计报税，可以说事无巨细的帮我把项目在加拿大境内落地，每个月参加一次视频会议，大家会和我汇报目前企业运营的情况和状态，我基本没有操心，能安心在国内，想说一句你们辛苦了！",
-        },
-      ],
-      blogsData: [
-        {
-          thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "中文文章标题测试",
-          date: "2021-11-13",
-          description:
-            "加拿大在不同省份都有相对的紧缺行业，医护、科技、护工等等的就不用多说，但相信你最没想到的，是卡车司机！加拿大和美国面临着大量的货柜车司机短缺，在未来五年内的缺口达到5万个工作岗位之上。卡车司机属于C类岗位（NOC 7511），在很多省份中都属于紧缺职业，可以通过获得省提名后递交联邦移民申请，获得永久居民身份。",
-        },
-        {
-          thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "中文文章标题测试",
-          date: "2021-11-13",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
-        },
-        {
-          thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "English Blogs Title",
-          date: "2021-11-13",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
-        },
-        {
-          thumbnail: "url('/img/Home/about-img.jpg')",
-          title: "English Blogs Title",
-          date: "2021-11-13",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id scelerisque aenean conse",
-        },
-      ],
       drawerData: [
         {
           category: "技术类",
-          categoryEN: "Skilled Worker",
+          categoryEN: "雇主担保 · 快速通道",
           items: [
             {
               title: "省提名雇主担保",
@@ -306,7 +203,7 @@ export default {
         },
         {
           category: "商业类",
-          categoryEN: "Business",
+          categoryEN: "创投 · 工签 · 投资",
           items: [
             {
               title: "联邦创投（SUV）",
@@ -327,7 +224,7 @@ export default {
         },
         {
           category: "留学类",
-          categoryEN: "Experience",
+          categoryEN: "留学 · 就业移民",
           items: [
             {
               title: "曼省留学移民",
@@ -347,66 +244,66 @@ export default {
           ],
         },
       ],
-      drawerDataEN: [
+      drawerDataTW: [
         {
-          category: "Skilled Worker",
-          categoryEN: "",
+          category: "技術類",
+          categoryEN: "雇主擔保 · 快速通道",
           items: [
             {
-              title: "Immigration Nominee Program",
-              des: ["Simple Requirements", "Fast Approval"],
+              title: "省提名雇主擔保",
+              des: ["要求簡", "獲批快"],
               url: "/projects/nominee",
             },
             {
-              title: "Express Entry",
-              des: ["Fast Review", "Low Cost"],
+              title: "聯邦快速通道",
+              des: ["審核快", "費用低"],
               url: "/projects/ee",
             },
             {
-              title: "Agri-Food Immigration Pilot",
-              des: ["No Age Restriction", "Fast Review"],
+              title: "聯邦農業試點",
+              des: ["無年齡限制", "審核快"],
               url: "/projects/nominee/agri-food-immigration-pilot",
             },
           ],
         },
         {
-          category: "Business",
-          categoryEN: "",
+          category: "商業類",
+          categoryEN: "創投 · 工簽 · 投資",
           items: [
             {
-              title: "Start-up Program",
-              des: ["Short Cycle Time", "Low Risk"],
+              title: "聯邦創投（SUV）",
+              des: ["週期短", "風險低"],
               url: "/projects/startup/start-up-visa",
             },
             {
-              title: "Owner Operator Work Permit",
-              des: ["No Quota", "Fast Speed"],
+              title: "企業主工簽",
+              des: ["無名額限制", "速度快"],
               url: "/projects/startup/owner-operator-work-permit",
             },
             {
-              title: "Saskatchewan Immigrant Investor",
-              des: ["Low requirements", "Short Cycle Time"],
+              title: "薩省投資移民",
+              des: ["要求低", "週期短"],
               url: "/projects/entrepreneur/saskatchewan-investment",
             },
           ],
         },
         {
-          category: "Experience",
-          categoryEN: "",
+          category: "留學類",
+          categoryEN: "留學 · 就業移民",
           items: [
             {
-              title: "Studying in Manitoba",
-              des: ["Low Threshold", "Low Cost"],
+              title: "曼省留學移民",
+              des: ["門檻低", "費用低"],
               url: "/projects/education/manitoba-education",
             },
             {
-              title: "Studying in Ontario",
-              des: ["Low Requirements", "Whole Family Immigration"],
+              title: "安省留學移民",
+              des: ["要求低", "全家移民"],
               url: "/projects/education/ontario-master-education",
             },
             {
-              title: "Studying in BC",
-              des: ["No Restriction", "Fast Speed"],
+              title: "BC省留學移民",
+              des: ["無限制", "速度快"],
               url: "/projects/education/BC-education",
             },
           ],
@@ -468,7 +365,7 @@ export default {
     border-radius: 50%;
   }
   .ant-carousel .slick-active button {
-    background: $red !important;
+    background: $secondary !important;
   }
 }
 @media all and (max-width: 768px) {
@@ -589,7 +486,7 @@ export default {
     h1,
     h2 {
       margin: 0;
-      color: $navy;
+      color: $primary;
     }
     @media all and (max-width: $sm) {
       width: 100%;

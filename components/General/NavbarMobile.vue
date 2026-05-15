@@ -3,7 +3,7 @@
     <nav>
       <div class="wrapper nav-wrap">
         <div class="logo-wrap">
-          <NuxtLink to="/" style="background: transparent">
+          <NuxtLink :to="localePath('/')" style="background: transparent">
             <img src="/img/logos/logo-blue.png" alt="" />
           </NuxtLink>
         </div>
@@ -20,41 +20,25 @@
       <div class="mobile-nav" :class="[{ showMenu: isToggle }]">
         <div class="nav-links-wrap">
           <ul>
-            <NuxtLink to="/">
-              <li @click="isToggle = !isToggle">首页</li>
+            <NuxtLink :to="localePath('/')">
+              <li @click="isToggle = !isToggle">{{ $t("navbar.home") }}</li>
             </NuxtLink>
-            <NuxtLink to="/visa-services">
-              <li @click="isToggle = !isToggle">签证服务</li>
+            <NuxtLink :to="localePath('/visa-services')">
+              <li @click="isToggle = !isToggle">{{ $t("navbar.visa-services") }}</li>
             </NuxtLink>
-
-            <NuxtLink to="/recruiting">
-              <li @click="isToggle = !isToggle">快速移民直通车</li>
+            <NuxtLink :to="localePath('/projects')">
+              <li @click="isToggle = !isToggle">{{ $t("navbar.projects") }}</li>
             </NuxtLink>
-            <NuxtLink to="/projects">
-              <li @click="isToggle = !isToggle">热门项目</li>
+            <NuxtLink :to="localePath('/about')">
+              <li @click="isToggle = !isToggle">{{ $t("navbar.about") }}</li>
             </NuxtLink>
-            <NuxtLink to="/cases">
-              <li @click="isToggle = !isToggle">成功案例</li>
-            </NuxtLink>
-            <NuxtLink to="/provinces">
-              <li @click="isToggle = !isToggle">移民省份</li>
-            </NuxtLink>
-            <NuxtLink to="/about">
-              <li @click="isToggle = !isToggle">关于我们</li>
-            </NuxtLink>
-            <NuxtLink to="/blogs">
-              <li @click="isToggle = !isToggle">最新资讯</li>
-            </NuxtLink>
-            <NuxtLink to="/contact">
-              <li @click="isToggle = !isToggle">联系我们</li>
-            </NuxtLink>
-            <NuxtLink :to="{ path: '/about', hash: '#anchor-joinUs' }">
-              <li @click="isToggle = !isToggle">加入我们</li>
+            <NuxtLink :to="localePath('/contact')">
+              <li @click="isToggle = !isToggle">{{ $t("navbar.contact") }}</li>
             </NuxtLink>
           </ul>
           <div class="lang-switch-wrap">
-            <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
-            <nuxt-link :to="switchLocalePath('zh')">中</nuxt-link>
+            <nuxt-link :to="switchLocalePath('zh')">简</nuxt-link>
+            <nuxt-link :to="switchLocalePath('tw')">繁</nuxt-link>
           </div>
         </div>
       </div>
@@ -129,7 +113,7 @@ nav {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: $navy;
+  background-color: $primary;
 }
 .mobile-nav {
   z-index: 999;
@@ -138,7 +122,7 @@ nav {
   right: -100%;
   width: 100%;
   height: 100%;
-  background-color: $navy;
+  background-color: $primary;
   // background-image: url("/img/home/marble-bg.png");
   background-blend-mode: multiply;
   display: flex;

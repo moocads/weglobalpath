@@ -4,13 +4,13 @@
       <br />
       <br />
       <MainTitle
-        :title="$i18n.locale === 'zh' ? '加入我们' : 'Join Us'"
-        :titleEN="$i18n.locale === 'zh' ? 'Join Us' : 'Occupation'"
+        :title="loc('加入我们', '加入我們')"
+        :titleEN="loc('诚聘英才', '誠聘英才')"
       />
       <a-form :form="form" @submit="handleSubmit" id="joinUsForm">
         <a-form-item
           class="contact-input join-us-position"
-          :label="$i18n.locale === 'zh' ? '申请职位' : 'Position'"
+          :label="loc('申请职位', '申請職位')"
         >
           <a-select
             v-decorator="[
@@ -19,35 +19,28 @@
                 rules: [
                   {
                     required: true,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请选择想申请的职位'
-                        : 'Select your position',
+                    message: loc('请选择想申请的职位', '請選擇想申請的職位'),
                   },
                 ],
               },
             ]"
-            :placeholder="
-              $i18n.locale === 'zh'
-                ? '请选择申请的职位'
-                : 'Select Your Position'
-            "
+            :placeholder="loc('请选择申请的职位', '請選擇申請的職位')"
             style="margin-bottom: 20px"
           >
             <a-select-option value="持牌顾问">{{
-              $i18n.locale === "zh" ? "持牌顾问" : "Licensed Advisor"
+              loc("持牌顾问", "持牌顧問")
             }}</a-select-option>
             <a-select-option value="销售">{{
-              $i18n.locale === "zh" ? "销售" : "Sales"
+              loc("销售", "銷售")
             }}</a-select-option>
             <a-select-option value="市场">{{
-              $i18n.locale === "zh" ? "市场" : "Marketing"
+              loc("市场", "市場")
             }}</a-select-option>
           </a-select>
         </a-form-item>
         <a-form-item
           class="contact-input join-us-name"
-          :label="$i18n.locale === 'zh' ? '名字' : 'Name'"
+          :label="loc('名字', '名字')"
         >
           <a-input
             v-decorator="[
@@ -56,10 +49,7 @@
                 rules: [
                   {
                     required: true,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请输入你的名字'
-                        : 'Please enter your Name',
+                    message: loc('请输入你的名字', '請輸入你的名字'),
                   },
                 ],
               },
@@ -68,7 +58,7 @@
         </a-form-item>
         <a-form-item
           class="contact-input join-us-phone"
-          :label="$i18n.locale === 'zh' ? '电话' : 'Phone'"
+          :label="loc('电话', '電話')"
         >
           <a-input
             v-decorator="[
@@ -77,17 +67,11 @@
                 rules: [
                   {
                     required: true,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请输入你的联系电话'
-                        : 'Please enter your Phone Number',
+                    message: loc('请输入你的联系电话', '請輸入你的聯繫電話'),
                   },
                   {
                     pattern: numRegex,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请输入有效的电话号码'
-                        : 'Please enter your Valid Phone Number',
+                    message: loc('请输入有效的电话号码', '請輸入有效的電話號碼'),
                   },
                 ],
               },
@@ -96,7 +80,7 @@
         </a-form-item>
         <a-form-item
           class="contact-input join-us-email"
-          :label="$i18n.locale === 'zh' ? '邮箱' : 'Email'"
+          :label="loc('邮箱', '郵箱')"
         >
           <a-input
             v-decorator="[
@@ -105,17 +89,11 @@
                 rules: [
                   {
                     required: true,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请输入你的邮箱'
-                        : 'Please enter your Email',
+                    message: loc('请输入你的邮箱', '請輸入你的郵箱'),
                   },
                   {
                     pattern: emailRegex,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请输入有效的邮箱'
-                        : 'Please enter valid Email',
+                    message: loc('请输入有效的邮箱', '請輸入有效的郵箱'),
                   },
                 ],
               },
@@ -124,7 +102,7 @@
         </a-form-item>
         <a-form-item
           class="contact-input join-us-dob"
-          :label="$i18n.locale === 'zh' ? '出生日期' : 'DOB'"
+          :label="loc('出生日期', '出生日期')"
         >
           <a-date-picker
             style="width: 100%"
@@ -134,30 +112,28 @@
                 rules: [
                   {
                     required: true,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请选择你的生日'
-                        : 'Please enter your DOB',
+                    message: loc('请选择你的生日', '請選擇你的生日'),
                   },
                 ],
               },
             ]"
-            :placeholder="$i18n.locale === 'zh' ? '选择日期' : 'Select DOB'"
+            :placeholder="loc('选择日期', '選擇日期')"
           />
         </a-form-item>
         <a-form-item
           class="contact-input join-us-edu"
-          :label="$i18n.locale === 'zh' ? '毕业院校' : 'Graduated School'"
+          :label="loc('毕业院校', '畢業院校')"
         >
           <a-input v-decorator="['school', { initialValue: '' }]" />
         </a-form-item>
         <a-form-item
           class="contact-input join-us-resume"
-          :label="$i18n.locale === 'zh' ? '简历' : 'Resume'"
+          :label="loc('简历', '簡歷')"
           :extra="
-            $i18n.locale === 'zh'
-              ? '仅限一个PDF文件，其大小不可大于5MB'
-              : 'Only one file under 5mb'
+            loc(
+              '仅限一个PDF文件，其大小不可大于5MB',
+              '僅限一個PDF文件，其大小不可大於5MB'
+            )
           "
         >
           <a-upload
@@ -167,10 +143,7 @@
                 rules: [
                   {
                     required: true,
-                    message:
-                      $i18n.locale === 'zh'
-                        ? '请上传你的简历'
-                        : 'Please upload your resume',
+                    message: loc('请上传你的简历', '請上傳你的簡歷'),
                   },
                 ],
               },
@@ -183,17 +156,17 @@
           >
             <a-button>
               <a-icon type="upload" />
-              {{ $i18n.locale === "zh" ? "点击上传" : "Upload" }}
+              {{ loc("点击上传", "點擊上傳") }}
             </a-button>
           </a-upload>
         </a-form-item>
         <a-form-item
           class="contact-input join-us-message"
-          :label="$i18n.locale === 'zh' ? '留言' : 'Message'"
+          :label="loc('留言', '留言')"
         >
           <a-textarea
             v-decorator="['message', { initialValue: '' }]"
-            :placeholder="$i18n.locale === 'zh' ? '输入你的留言' : 'Message'"
+            :placeholder="loc('输入你的留言', '輸入你的留言')"
             :auto-size="{ minRows: 2, maxRows: 7 }"
           />
         </a-form-item>
@@ -203,7 +176,7 @@
             class="submit-btn main-btn main-btn_blue join-us-submit"
             :disabled="isSubmitting"
           >
-            {{ $i18n.locale === "zh" ? "发送" : "Submit" }}
+            {{ loc("发送", "發送") }}
           </button>
         </a-form-item>
         <!-- <recaptcha /> -->
@@ -231,6 +204,9 @@ export default {
   },
   methods: {
     moment,
+    loc(zh, tw) {
+      return this.$i18n.locale === "tw" ? tw : zh;
+    },
     handleFileChange({ fileList, file }) {
       const isOversize = file.size / 1024 / 1024 > 5;
       if (!isOversize) {
@@ -411,13 +387,13 @@ const joinUsData = [
   .ant-checkbox-wrapper:hover .ant-checkbox-inner,
   .ant-checkbox:hover .ant-checkbox-inner,
   .ant-checkbox-input:focus + .ant-checkbox-inner {
-    border-color: $navy;
+    border-color: $primary;
   }
   .ant-form-item-label {
     text-align: left;
     label {
       font-size: 16px;
-      color: $navy;
+      color: $primary;
       margin-bottom: 10px;
       @media all and (max-width: $sm) {
         font-size: 14px;
@@ -464,7 +440,7 @@ const joinUsData = [
 }
 .joinUs-table-wrap {
   .ant-table-bordered .ant-table-thead > tr > th {
-    background-color: $navy;
+    background-color: $primary;
     color: #fff;
     text-align: center;
     font-size: 16px;
@@ -481,7 +457,7 @@ const joinUsData = [
   // margin-bottom: 20px;
   label {
     font-size: 16px;
-    color: $navy;
+    color: $primary;
     margin-bottom: 10px;
   }
   input {

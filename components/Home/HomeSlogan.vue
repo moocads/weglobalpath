@@ -30,7 +30,7 @@ export default {
 #home-slogan {
   padding: 100px 0;
   background-color: #fff;
-  color: $navy;
+  color: $primary;
   font-size: 18px;
   text-align: center;
   .wrapper {
@@ -72,7 +72,7 @@ export default {
   .small {
     font-size: 13px;
     a {
-      border-bottom: 1px solid $navy;
+      border-bottom: 1px solid $primary;
     }
   }
 }

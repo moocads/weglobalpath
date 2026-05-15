@@ -3,22 +3,16 @@
     <div class="wrapper">
       <MainTitle
         :title="
-          $i18n.locale === 'zh'
-            ? '移民服务流程'
-            : $i18n.locale === 'tw'
-            ? '移民服務流程'
-            : 'Service Process'
+          $i18n.locale === 'tw' ? '移民服務流程' : '移民服务流程'
         "
-        titleEN="SERVICE PROCESS"
+        :titleEN="$i18n.locale === 'tw' ? '流程' : '流程'"
       />
       <ul class="service-process-grid">
         <li
           class="service-process-item"
-          v-for="(step, index) in $i18n.locale === 'zh'
-            ? serviceSteps
-            : $i18n.locale === 'tw'
+          v-for="(step, index) in $i18n.locale === 'tw'
             ? serviceStepsTW
-            : serviceStepsEN"
+            : serviceSteps"
           :key="index"
         >
           <h4>
@@ -41,7 +35,6 @@ export default {
   data() {
     return {
       serviceSteps,
-      serviceStepsEN,
       serviceStepsTW,
     };
   },
@@ -55,7 +48,7 @@ const serviceSteps = [
   {
     title: "提交简历",
     iconUrl: "/img/icons/process/upload_file_icon.SVG",
-    content: " 提交您的简历至加彼岸，我司严格遵守保密协议",
+    content: " 提交您的简历至寰球嘉途，我司严格遵守保密协议",
   },
   {
     title: "个案评估",
@@ -97,7 +90,7 @@ const serviceStepsTW = [
   {
     title: "提交簡歷",
     iconUrl: "/img/icons/process/upload_file_icon.SVG",
-    content: " 提交您的簡歷至加彼岸，我司嚴格遵守保密協議",
+    content: " 提交您的簡歷至寰球嘉途，我司嚴格遵守保密協議",
   },
   {
     title: "個案評估",
@@ -130,55 +123,6 @@ const serviceStepsTW = [
     content: " 加拿大直營公司提供一站式登陸安家置業服務",
   },
 ];
-const serviceStepsEN = [
-  {
-    title: "Expert Consultation",
-    iconUrl: "/img/icons/process/chat_icon.SVG",
-    content:
-      "Senior immigration consultants provide intimate 1-to-1 consulting services",
-  },
-  {
-    title: "Submit Your Resume",
-    iconUrl: "/img/icons/process/upload_file_icon.SVG",
-    content:
-      "Submit your resume to Beyond Canada, we strictly adhere to the confidentiality agreement",
-  },
-  {
-    title: "Case Assessment",
-    iconUrl: "/img/icons/process/assessment_icon.SVG",
-    content:
-      "Licensed immigration attorneys review client information and match with suitable projects",
-  },
-  {
-    title: "Program Customization",
-    iconUrl: "/img/icons/process/submit_doc_icon.SVG",
-    content:
-      "Our immigration consultants will customize a detailed application plan",
-  },
-  {
-    title: "Preparation of Documents",
-    iconUrl: "/img/icons/process/prepare_materials_icon.SVG",
-    content:
-      "Customer Service Manager collects the required documents for the application, so that nothing is left out",
-  },
-  {
-    title: "Submission of application",
-    iconUrl: "/img/icons/process/plan_icon.SVG",
-    content:
-      "Senior copywriters & lawyers organize the application documents and submit them after multiple reviews",
-  },
-  {
-    title: "Visa approval",
-    iconUrl: "/img/icons/process/approve_icon.SVG",
-    content:
-      "Obtain immigration approval letter, and in case of rejection, the lawyer will assist in reconsideration",
-  },
-  {
-    title: "Arrival and settle down",
-    iconUrl: "/img/icons/process/done_icon.SVG",
-    content: "One-stop services to settle down in Canada",
-  },
-];
 </script>
 
 <style lang="scss" scoped>
@@ -206,7 +150,7 @@ const serviceStepsEN = [
     text-align: center;
   }
   .icon-wrap {
-    background-color: $navy;
+    background-color: $primary;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -230,7 +174,7 @@ const serviceStepsEN = [
     border-radius: 5px;
     -webkit-box-shadow: 7px 5px 15px 4px #d1d1d1;
     box-shadow: 7px 5px 15px 4px #d1d1d1;
-    border-top: 3px solid $navy;
+    border-top: 3px solid $primary;
     letter-spacing: 1px;
   }
   .content::before {
@@ -245,11 +189,7 @@ const serviceStepsEN = [
     border-right: 8px solid transparent;
     border-bottom: 8px solid #2f2f2f;
   }
-  &:lang(en) {
-    grid-template-rows: 70px 60px auto;
-  }
 }
-
 .service-process-grid .service-process-item:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -257,11 +197,8 @@ const serviceStepsEN = [
   top: 70px;
   width: 100%;
   height: 0;
-  border-top: 1px solid #1b285450;
+  border-top: 1px solid #c69c6d50;
   z-index: -1;
-}
-.service-process-grid .service-process-item:lang(en):not(:last-child)::before {
-  top: 105px;
 }
 @media all and (max-width: 768px) {
   .service-process-grid {

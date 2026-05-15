@@ -39,12 +39,12 @@ import qs from "qs";
 export default {
   head() {
     return {
-      title: `加拿大移民 | 成功案例 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 成功案例 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 成功案例 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 成功案例 | 寰球嘉途`,
         },
       ],
     };
@@ -149,7 +149,7 @@ header {
     top: 70%;
     left: 0;
     font-size: 85px;
-    // background-color: $red;
+    // background-color: $secondary;
     width: 200px;
     height: 0px;
   }

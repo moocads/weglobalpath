@@ -102,7 +102,7 @@ h2 {
       content: '';
       width: 100%;
       height: 30px;
-      background-image: linear-gradient(to top, $navy, transparent);
+      background-image: linear-gradient(to top, $primary, transparent);
       position: absolute;
       bottom: 100%;
       pointer-events: none;

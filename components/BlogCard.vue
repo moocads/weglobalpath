@@ -62,7 +62,7 @@ export default {
     font-size: 18px;
     margin: 0;
     margin-bottom: 5px;
-    color: $navy;
+    color: $primary;
     display: -webkit-box;
     line-height: 1.5;
     overflow: hidden;
@@ -76,7 +76,7 @@ export default {
     margin: 0;
     margin-bottom: 10px;
     font-weight: 400;
-    color: $navy;
+    color: $primary;
     display: -webkit-box;
     line-height: 1.5;
     overflow: hidden;
@@ -89,7 +89,7 @@ export default {
     color: #c4c4c4;
     margin: 0;
     font-weight: 300;
-    color: $navy;
+    color: $primary;
   }
 }
 @media all and (max-width: 768px) {

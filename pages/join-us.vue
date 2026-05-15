@@ -4,7 +4,7 @@
       <header>
         <div class="wrapper">
           <h1>加入我们</h1>
-          <p>加彼岸团队欢迎你的加入。</p>
+          <p>寰球嘉途团队欢迎你的加入。</p>
         </div>
       </header>
       <div class="wrapper">
@@ -64,7 +64,6 @@
               </div>
 
               <div class="gmap-wrap info-wrap" v-if="location === 1">
-                <!-- <GMap /> -->
                 <iframe
                   style="border: 0"
                   loading="lazy"
@@ -230,12 +229,12 @@ import moment from "moment";
 export default {
   head() {
     return {
-      title: `加拿大移民 | 加入我们 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 加入我们 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 加入我们 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 加入我们 | 寰球嘉途`,
         },
       ],
     };
@@ -343,7 +342,7 @@ export default {
   .ant-checkbox-checked .ant-checkbox-inner::after {
     position: absolute;
     display: table;
-    border: 2px solid $navy;
+    border: 2px solid $primary;
     border-top: 0;
     border-left: 0;
     transform: rotate(45deg) scale(1) translate(-50%, -50%);
@@ -354,13 +353,13 @@ export default {
   nt-checkbox-wrapper:hover .ant-checkbox-inner,
   .ant-checkbox:hover .ant-checkbox-inner,
   .ant-checkbox-input:focus + .ant-checkbox-inner {
-    border-color: $navy;
+    border-color: $primary;
   }
   .ant-form-item-label {
     text-align: left;
     label {
       font-size: 16px;
-      color: $navy;
+      color: $primary;
       margin-bottom: 10px;
       @media all and (max-width: $sm) {
         font-size: 14px;
@@ -386,7 +385,7 @@ export default {
 <style lang="scss" scoped>
 .resume {
   font-size: 16px;
-  color: #1b2854;
+  color: #c69c6d;
   margin-bottom: 10px;
 }
 header {
@@ -429,7 +428,7 @@ header {
 }
 .contact-wrap {
   border-radius: 5px;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
   padding: 50px 75px;
   background-color: #fff;
   margin-top: -100px;
@@ -470,7 +469,7 @@ header {
   h2 {
     font-size: 18px;
     font-weight: bold;
-    color: $navy;
+    color: $primary;
     position: relative;
   }
   a {
@@ -480,7 +479,7 @@ header {
 
     &.active,
     &:hover {
-      color: $red;
+      color: $secondary;
     }
   }
   .info {
@@ -495,7 +494,7 @@ header {
   h2 {
     font-size: 18px;
     font-weight: bold;
-    color: #1b2854;
+    color: #c69c6d;
     position: relative;
   }
 }
@@ -550,7 +549,7 @@ form {
   margin-bottom: 20px;
   label {
     font-size: 16px;
-    color: $navy;
+    color: $primary;
     margin-bottom: 10px;
   }
   input {
@@ -571,7 +570,7 @@ form {
   }
 }
 .contact-checkbox {
-  color: $navy;
+  color: $primary;
   font-size: 14px;
   display: flex;
   input {

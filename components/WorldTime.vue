@@ -98,7 +98,7 @@ export default {
 <style lang="scss">
 .world-time-wrap {
   .nuxt-link-active {
-    color: $navy;
+    color: $primary;
   }
   a {
     color: #b0b0b0;

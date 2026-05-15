@@ -79,7 +79,7 @@ export default {
 aside {
   height: 60px;
   width: 100%;
-  background-color: $navy;
+  background-color: $primary;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -116,6 +116,6 @@ aside {
   transform: translateX(-50%);
   border-radius: 5px;
   z-index: 999;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
 }
 </style>

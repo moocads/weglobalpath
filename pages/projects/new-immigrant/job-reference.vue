@@ -17,11 +17,11 @@
       <div class="wrapper">
         <MainTitle
           title="项目介绍"
-          titleEN="INTRODUCTION"
+          :titleEN="$i18n.locale === 'tw' ? '簡介' : '简介'"
           titleENColor="#DADADA"
         />
         <p>
-          新移民初抵加拿大，面临西方社会和不同文化背景，您会因为不适感而产生焦虑吗？<br />加彼岸™为广大移民家庭带来了巨大的福音，加拿大本地五大银行职位为您进行内部推荐，我们懂您！
+          新移民初抵加拿大，面临西方社会和不同文化背景，您会因为不适感而产生焦虑吗？<br />寰球嘉途™为广大移民家庭带来了巨大的福音，加拿大本地五大银行职位为您进行内部推荐，我们懂您！
         </p>
       </div>
     </section>
@@ -31,7 +31,7 @@
           <div class="title">
             <img
               src="/img/logos/logo-small-white.png"
-              alt="加彼岸 加拿大移民 logo 白色"
+              alt="寰球嘉途 加拿大移民 logo 白色"
             />
             <h2>进入加拿大五大银行优势</h2>
           </div>
@@ -78,7 +78,7 @@
           <div class="title">
             <img
               src="/img/logos/logo-small-blue.png"
-              alt="加彼岸 加拿大移民 logo 蓝色"
+              alt="寰球嘉途 加拿大移民 logo 蓝色"
             />
             <h2>加拿大五大银行导师</h2>
           </div>
@@ -107,9 +107,9 @@
           <div class="title">
             <img
               src="/img/logos/logo-small-blue.png"
-              alt="加彼岸 加拿大移民 logo 蓝色"
+              alt="寰球嘉途 加拿大移民 logo 蓝色"
             />
-            <h2 style="color: rgb(27, 40, 84)">为什么选择我们？</h2>
+            <h2 style="color: rgb(198, 156, 109)">为什么选择我们？</h2>
           </div>
 
           <p>
@@ -146,7 +146,7 @@
           <div class="title">
             <img
               src="/img/logos/logo-small-blue.png"
-              alt="加彼岸 加拿大移民 logo 蓝色"
+              alt="寰球嘉途 加拿大移民 logo 蓝色"
             />
             <h2>加拿大友情内推</h2>
           </div>
@@ -173,7 +173,7 @@
         <div class="title-wrap">
           <div class="title">
             <img src="/img/logos/logo-trans.png" alt="" />
-            <p>SERVICES</p>
+            <p>{{ $i18n.locale === "tw" ? "服務" : "服务" }}</p>
           </div>
           <h1>新移民可以获得的服务</h1>
         </div>
@@ -205,7 +205,7 @@
       <div class="wrapper">
         <MainTitle
           title="加拿大常用招聘网站"
-          titleEN="RESOURCES"
+          :titleEN="$i18n.locale === 'tw' ? '資源' : '资源'"
           titleENColor="#DADADA"
         />
         <ul class="resources-grid">
@@ -252,12 +252,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 新移民职业内部推荐 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 新移民职业内部推荐 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加彼岸出国咨询 | 新移民初抵加拿大，面临西方社会和不同文化背景，您会因为不适感而产生焦虑吗？加彼岸™为广大移民家庭带来了巨大的福音，加拿大本地五大银行职位为您进行内部推荐，我们懂您！| 加彼岸出国咨询`,
+          content: `寰球嘉途 | 新移民初抵加拿大，面临西方社会和不同文化背景，您会因为不适感而产生焦虑吗？寰球嘉途™为广大移民家庭带来了巨大的福音，加拿大本地五大银行职位为您进行内部推荐，我们懂您！| 寰球嘉途`,
         },
       ],
     };
@@ -418,7 +418,7 @@ const governmentResources = [
   }
 }
 .sec-1 {
-  background-color: $navy;
+  background-color: $primary;
   .row-grid {
     grid-template-columns: 60% 40%;
     .info-wrap {
@@ -433,14 +433,14 @@ const governmentResources = [
     grid-template-columns: 40% 60%;
     .title {
       h2 {
-        color: $navy;
+        color: $primary;
       }
     }
     .info-wrap {
       padding-left: 80px;
       padding-right: 7.5vw;
       p {
-        color: $navy;
+        color: $primary;
       }
       span {
         color: #707070;
@@ -460,7 +460,7 @@ const governmentResources = [
         font-weight: normal;
       }
       span {
-        color: $navy;
+        color: $primary;
         font-weight: bold;
       }
     }
@@ -471,7 +471,7 @@ const governmentResources = [
 /* ------------------------------------------------------ */
 
 .sec-requirements {
-  background-color: $navy;
+  background-color: $primary;
   padding: 40px 0 80px;
   .title-wrap {
     display: flex;
@@ -587,7 +587,7 @@ const governmentResources = [
   p {
     font-size: 16px;
     text-align: center;
-    color: $navy;
+    color: $primary;
     padding: 0 200px;
   }
 }
@@ -632,7 +632,7 @@ const governmentResources = [
     }
   }
   .divider {
-    background-color: $red;
+    background-color: $secondary;
     padding: 30px 0;
     display: flex;
     flex-direction: column;
@@ -695,7 +695,7 @@ const governmentResources = [
     p {
       font-size: 16px;
       text-align: center;
-      color: $navy;
+      color: $primary;
       padding: 0px;
       margin: 0;
     }

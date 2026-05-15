@@ -51,12 +51,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: `加拿大移民 | 加拿大移民省份 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 加拿大移民省份 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 加拿大移民省份 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 加拿大移民省份 | 寰球嘉途`,
         },
       ],
     };
@@ -123,7 +123,7 @@ export default {
     width: 100%;
   }
   a {
-    color: $navy;
+    color: $primary;
     text-decoration: underline;
   }
 }
@@ -141,21 +141,21 @@ export default {
     }
   }
   .outer-collapse {
-    background-color: $navy;
+    background-color: $primary;
     svg {
       fill: #fff;
     }
   }
   .inner-collapse {
     svg {
-      fill: $red;
+      fill: $secondary;
     }
   }
   .outer-collapse > .ant-collapse-header {
     color: #fff;
   }
   .inner-collapse > .ant-collapse-header {
-    color: $navy;
+    color: $primary;
     padding-left: 50px;
   }
   .inner-collapse .ant-collapse-header i {
@@ -207,7 +207,7 @@ header {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }
@@ -230,7 +230,7 @@ header {
   align-items: center;
   h2 {
     font-size: 16px;
-    color: $navy;
+    color: $primary;
     margin: 0;
   }
   transition: background-color 0.3s ease-in-out;
@@ -239,14 +239,14 @@ header {
     h2 {
       color: #fff;
     }
-    background-color: $red;
+    background-color: $secondary;
   }
 }
 .tab-active {
   h2 {
     color: #fff;
   }
-  background-color: $red;
+  background-color: $secondary;
 }
 @media all and (max-width: 768px) {
   section {

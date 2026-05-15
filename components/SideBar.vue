@@ -13,29 +13,22 @@
       </NuxtLink>
       <NuxtLink to="/self-test" class="sidebar-link sidebar-evaluation">
         <img src="/img/icons/aplus.png" />
-        <p v-if="$i18n.locale === 'zh'">移民自测</p>
-        <p v-if="$i18n.locale === 'en'">
-          Immigration <br />
-          Scoring
-        </p>
+        <p>{{ $t("sidebar.immi-scroe") }}</p>
       </NuxtLink>
       <a href="tel:16475233555" class="sidebar-link ga-phone-trigger">
         <img src="/img/icons/sidebar-phone.svg" class="contact-icon" />
-        <p v-if="$i18n.locale === 'zh'">立即致电</p>
-        <p v-if="$i18n.locale === 'en'">Call</p>
+        <p>{{ $i18n.locale === "tw" ? "立即致電" : "立即致电" }}</p>
       </a>
       <a href="mailto:info@beyondcanada.ca" class="sidebar-link">
         <img src="/img/icons/sidebar-mail.svg" class="contact-icon" />
-        <p v-if="$i18n.locale === 'zh'">邮件咨询</p>
-        <p v-if="$i18n.locale === 'en'">Email</p>
+        <p>{{ $i18n.locale === "tw" ? "郵件諮詢" : "邮件咨询" }}</p>
       </a>
       <a
         class="sidebar-link sidebar-link_wechat"
         @click="wechatShow = !wechatShow"
       >
         <img src="/img/icons/sidebar-wechat.svg" class="contact-icon" />
-        <p v-if="$i18n.locale === 'zh'">微信咨询</p>
-        <p v-if="$i18n.locale === 'en'">Wechat</p>
+        <p>{{ $i18n.locale === "tw" ? "微信諮詢" : "微信咨询" }}</p>
       </a>
       <a class="sidebar-link top">
         <a-back-top>
@@ -80,11 +73,11 @@ export default {
       text-align: center;
       padding: 5px;
       transition: all 0.3s ease;
-      color: $navy;
-      background: $navy;
+      color: $primary;
+      background: $primary;
       font-size: 20px;
       &.top {
-        background: $navy;
+        background: $primary;
         padding: 0;
         display: flex;
         justify-content: center;
@@ -109,7 +102,7 @@ export default {
     }
 
     a:hover {
-      background-color: $red;
+      background-color: $secondary;
     }
   }
 }

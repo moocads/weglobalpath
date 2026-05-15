@@ -184,12 +184,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 萨省省提名（SINP）EOI评分系统 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 萨省省提名（SINP）EOI评分系统 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 萨省省提名（SINP）EOI评分系统 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 萨省省提名（SINP）EOI评分系统 | 寰球嘉途`,
         },
       ],
     };
@@ -370,7 +370,7 @@ $boxBorder: 1px solid #efefef;
   background-color: #efefef;
 
   .pointsCounter {
-    background-color: $navy;
+    background-color: $primary;
     padding: 15px 0;
     margin-left: -24px;
     margin-right: -24px;

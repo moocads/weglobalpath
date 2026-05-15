@@ -48,7 +48,7 @@
                       enable-background="new 0 0 2499.7 2024.2"
                       viewBox="0 0 2499.7 2024.2"
                       xmlns="http://www.w3.org/2000/svg"
-                      style="fill: #a31c1c"
+                      style="fill: #a37b54"
                     >
                       <path
                         d="m2499.7 1313.8c0-347.3-335.9-630.6-749.5-630.6s-747.2 283.3-747.2 630.6 335.9 630.6 749.5 630.6c80 0 155.4-9.1 226.2-29.7 20.6-4.6 43.4-2.3 64 6.9l185.1 100.5c11.4 6.9 27.4-4.6 22.8-18.3l-36.6-148.5c-4.6-22.8 2.3-45.7 22.8-59.4 160.1-116.5 262.9-287.9 262.9-482.1zm-1016.8-82.2c-57.1 0-102.8-45.7-102.8-102.8s45.7-102.8 102.8-102.8 102.8 45.7 102.8 102.8-45.7 102.8-102.8 102.8zm505 0c-57.1 0-102.8-45.7-102.8-102.8s45.7-102.8 102.8-102.8 102.8 45.7 102.8 102.8-48 102.8-102.8 102.8z"
@@ -94,7 +94,6 @@
               </div>
 
               <div class="gmap-wrap info-wrap" v-if="location === 1">
-                <!-- <GMap /> -->
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6015.331087046446!2d-79.35067665826269!3d43.81475003183979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d36f08f032ad%3A0x85ba282d66de5e6b!2s7050%20Woodbine%20Ave%20Suite%20300%2C%20Markham%2C%20ON%20L3R%204G8!5e0!3m2!1sen!2sca!4v1737688772258!5m2!1sen!2sca" style="border: 0"
                   loading="lazy"
                   allowfullscreen></iframe>
@@ -158,12 +157,12 @@ import axios from "axios";
 export default {
   head() {
     return {
-      title: `加拿大移民 | 联系我们 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 联系我们 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 联系我们 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 联系我们 | 寰球嘉途`,
         },
       ],
     };
@@ -226,7 +225,7 @@ export default {
   .ant-checkbox-checked .ant-checkbox-inner::after {
     position: absolute;
     display: table;
-    border: 2px solid $navy;
+    border: 2px solid $primary;
     border-top: 0;
     border-left: 0;
     transform: rotate(45deg) scale(1) translate(-50%, -50%);
@@ -237,7 +236,7 @@ export default {
   nt-checkbox-wrapper:hover .ant-checkbox-inner,
   .ant-checkbox:hover .ant-checkbox-inner,
   .ant-checkbox-input:focus + .ant-checkbox-inner {
-    border-color: $navy;
+    border-color: $primary;
   }
 }
 </style>
@@ -282,7 +281,7 @@ header {
 }
 .contact-wrap {
   border-radius: 5px;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
   padding: 50px 75px;
   background-color: #fff;
   margin-top: -100px;
@@ -323,7 +322,7 @@ header {
   h2 {
     font-size: 18px;
     font-weight: bold;
-    color: $navy;
+    color: $primary;
     position: relative;
   }
   a {
@@ -333,7 +332,7 @@ header {
 
     &.active,
     &:hover {
-      color: $red;
+      color: $secondary;
     }
   }
   .info {
@@ -348,7 +347,7 @@ header {
   h2 {
     font-size: 18px;
     font-weight: bold;
-    color: #1b2854;
+    color: #c69c6d;
     position: relative;
   }
 }
@@ -403,7 +402,7 @@ form {
   margin-bottom: 20px;
   label {
     font-size: 16px;
-    color: $navy;
+    color: $primary;
     margin-bottom: 10px;
   }
   input {
@@ -424,7 +423,7 @@ form {
   }
 }
 .contact-checkbox {
-  color: $navy;
+  color: $primary;
   font-size: 14px;
   display: flex;
   input {

@@ -32,7 +32,7 @@
       top: 55%;
       left: -20px;
       transform: translateY(-50%);
-      background-color: $red;
+      background-color: $secondary;
       width: 6px;
       height: 70px;
     }
@@ -148,7 +148,7 @@
       font-size: 16px;
     }
     h4 {
-      color: $red;
+      color: $secondary;
       width: 120px;
       flex-shrink: 0;
     }
@@ -168,7 +168,7 @@
       }
       h4 {
         flex-shrink: 0;
-        color: $red;
+        color: $secondary;
         width: 85px;
       }
     }
@@ -192,7 +192,7 @@
       }
       h4 {
         flex-shrink: 0;
-        color: $red;
+        color: $secondary;
         width: 85px;
       }
     }
@@ -202,7 +202,7 @@
   padding: 50px 0;
   h2 {
     font-size: 20px;
-    color: $navy;
+    color: $primary;
     position: relative;
     padding-left: 20px;
     margin-bottom: 30px;
@@ -212,12 +212,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 30px;
   }
   .declaration {
-    background-color: $navy;
+    background-color: $primary;
     color: white;
     border-radius: 10px;
     padding: 20px;
@@ -313,7 +313,7 @@
     .step-num {
       width: 22px;
       height: 22px;
-      background-color: $red;
+      background-color: $secondary;
       color: #fff;
       display: flex;
       justify-content: center;
@@ -323,7 +323,7 @@
     }
   }
   .ant-timeline-item-tail {
-    border-color: $navy;
+    border-color: $primary;
     left: 0;
   }
   .ant-timeline-item {
@@ -359,11 +359,11 @@
     gap: 30px;
   }
   .fee-card {
-    border: 1px solid $red;
+    border: 1px solid $secondary;
     border-radius: 5px;
     padding: 20px 40px;
 
-    color: $red;
+    color: $secondary;
     font-size: 16px;
     span {
       font-weight: bold;
@@ -393,7 +393,7 @@
   }
 }
 .tabActive {
-  border-bottom: 3px solid $red;
+  border-bottom: 3px solid $secondary;
 }
 // 热门项目scroll anchor top margin
 .hot-projects-detail-page .anchor {
@@ -403,7 +403,7 @@
 .breadcrumb-wrap {
   margin-top: 30px;
   .ant-breadcrumb a:hover {
-    color: $navy;
+    color: $primary;
   }
 }
 .mobile-only {
@@ -421,7 +421,7 @@
   &,
   th,
   td {
-    border: 0.5px solid $navy;
+    border: 0.5px solid $primary;
     border-collapse: collapse;
   }
   th,
@@ -435,7 +435,7 @@
   .table-section-title {
     text-align: center;
     padding: 20px 0;
-    background-color: $red;
+    background-color: $secondary;
     color: white;
   }
   .wrap {
@@ -444,7 +444,7 @@
 }
 
 .detail-highlight {
-  color: $red;
+  color: $secondary;
 }
 
 @media all and (max-width: $sm) {
@@ -479,7 +479,7 @@
     margin-left: 1em;
     li::before {
       content: "\2022";
-      color: $red;
+      color: $secondary;
       font-weight: bold;
       display: inline-block;
       width: 1em;
@@ -502,7 +502,7 @@
     &,
     th,
     td {
-      border: 0.5px solid $navy;
+      border: 0.5px solid $primary;
       border-collapse: collapse;
     }
     th,
@@ -518,7 +518,7 @@
     }
   }
   a {
-    color: $red;
+    color: $secondary;
   }
   a:hover {
     text-decoration: underline;

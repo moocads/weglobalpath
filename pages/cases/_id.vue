@@ -64,12 +64,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | ${this.data.title} - ${this.data.client_name}| 加彼岸出国咨询`,
+      title: `加拿大移民 | ${this.data.title} - ${this.data.client_name}| 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | ${this.data.title} - ${this.data.client_name} | 加彼岸出国咨询 - 加彼岸成功案例展示`,
+          content: `加拿大移民 | ${this.data.title} - ${this.data.client_name} | 寰球嘉途 - 寰球嘉途成功案例展示`,
         },
       ],
     };
@@ -116,7 +116,7 @@ header {
     top: 70%;
     left: 0;
     font-size: 85px;
-    // background-color: $red;
+    // background-color: $secondary;
     width: auto;
     height: 0px;
   }
@@ -126,7 +126,7 @@ header {
 }
 .case-wrap {
   padding: 20px 35px;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
   border-radius: 10px;
 
   figure {
@@ -148,7 +148,7 @@ header {
     margin-left: 10px;
     margin-bottom: 0;
     font-weight: bold;
-    color: $navy;
+    color: $primary;
   }
   img {
     width: 22px;
@@ -160,7 +160,7 @@ header {
   margin-bottom: 15px;
   h3 {
     font-size: 24px;
-    color: $navy;
+    color: $primary;
     margin-left: 10px;
     margin-bottom: 0;
   }

@@ -71,7 +71,7 @@
       </a-breadcrumb>
       <MainTitleSide
         title="加拿大移民条件自测"
-        titleEN="SELF ASSESSMENT"
+        :titleEN="$i18n.locale === 'tw' ? '自測' : '自测'"
         titleENColor="rgb(218, 218, 218)"
       />
       <div class="self-test-grid">
@@ -233,12 +233,12 @@ var _ = require("lodash");
 export default {
   head() {
     return {
-      title: `加拿大移民 | 加拿大移民条件自测 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 加拿大移民条件自测 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 加拿大移民条件自测 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 加拿大移民条件自测 | 寰球嘉途`,
         },
       ],
     };
@@ -791,7 +791,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1b285469;
+  background-color: #c69c6d69;
   z-index: 20;
   .popup-form {
     width: 350px;
@@ -807,12 +807,12 @@ export default {
       position: absolute;
       right: 20px;
       top: 15px;
-      color: $navy;
+      color: $primary;
       font-weight: bold;
       font-size: 30px;
     }
     h3 {
-      color: $navy;
+      color: $primary;
       font-size: 20px;
     }
     .main-btn_blue {
@@ -848,13 +848,13 @@ section {
 }
 
 .self-test-wrap h3 {
-  color: $red;
+  color: $secondary;
 }
 .self-test-results {
   h3 {
     font-size: 22px;
     font-weight: bold;
-    color: $navy;
+    color: $primary;
     margin-bottom: 3px;
   }
   h4 {
@@ -910,12 +910,12 @@ section {
     font-size: 16px;
   }
   label span {
-    color: $red;
+    color: $secondary;
   }
 }
 .reset-btn {
   margin-top: 15px;
-  background-color: $navy;
+  background-color: $primary;
   color: #fff;
 }
 .reset-btn:hover {

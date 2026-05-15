@@ -35,7 +35,7 @@ export default {
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid $navy;
+  border: 1px solid $primary;
 }
 .info-box {
   position: absolute;
@@ -47,7 +47,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  background-color: $navy;
+  background-color: $primary;
   h1,
   p {
     color: #fff;

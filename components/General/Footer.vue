@@ -4,12 +4,9 @@
       <div class="wrapper">
         <a-row>
           <a-col :md="{ span: 7, offset: 0 }" :xs="24">
-            <img src="/img/logos/logo-white.png" alt="" class="footer-logo" />
+            <img src="/img/weglobalpath-logo-white.svg" alt="" class="footer-logo" />
             <p>
-              加彼岸旗下有加彼岸出国咨询（BEYOND CANADA
-              CONSULTING），彼森教育（BISON INTERNATIONAL
-              EDUCATION）和彼岸投资（BEYOND CANADA INVESTMENT
-              ）三家子公司，均为加拿大联邦注册公司，分别由资深移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
+              寰球嘉途（Weglobalpath）为加拿大联邦注册公司，分别由资深移民律师，RCIC（加拿大移民顾问监管委员会）持牌移民顾问，教育顾问，职业培训师，地产经纪，会计师及商务专家组成的强大专业服务团队。
             </p>
           </a-col>
           <a-col :md="{ span: 7, offset: 2 }" :xs="24">
@@ -38,13 +35,11 @@
                   >
                 </p>
               </li>
+         
               <!-- <li>
-                <img src="/img/icons/phone.svg" alt="" />
-              </li> -->
-              <li>
                 <img src="/img/icons/email.svg" alt="" />
                 <a href="mailto:info@beyondcanada.ca">info@beyondcanada.ca</a>
-              </li>
+              </li> -->
             </ul>
           </a-col>
           <a-col :md="{ span: 7, offset: 1 }" :xs="24">
@@ -98,11 +93,9 @@
         </a-row>
       </div>
       <small class="copy-right"
-        >© {{ new Date().getFullYear() }} BEYOND CANADA CONSULTING All Rights
+        >© {{ new Date().getFullYear() }} Weglobalpath All Rights
         Reserved.<br/>
-        <span> <a style="color:#3e539a;" href="https://moocads.com/">Designed by Mooc Creative Lab</a></span
-        ></small
-      >
+     </small>
     </footer>
   </div>
 </template>
@@ -116,7 +109,7 @@ export default {
 <style lang="scss" scoped>
 footer {
   position: relative;
-  background-color: $navy;
+  background-color: $primary;
   display: flex;
   justify-content: space-between;
   align-items: center;

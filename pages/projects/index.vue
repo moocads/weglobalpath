@@ -24,12 +24,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 热门项目 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 热门项目 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 热门项目 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 热门项目 | 寰球嘉途`,
         },
       ],
     };
@@ -132,7 +132,7 @@ header {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }

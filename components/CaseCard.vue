@@ -63,7 +63,7 @@ export default {
   padding: 20px;
   width: 100%;
   font-size: 18px;
-  background-color: $navy;
+  background-color: $primary;
   h1 {
     font-size: 16px;
     margin: 0;

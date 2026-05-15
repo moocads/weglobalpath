@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "beyond-canada-staging",
+    title: "weglobalpath",
     meta: [
       { charset: "utf-8" },
       {
@@ -83,7 +83,6 @@ export default {
     { src: "~/plugins/lazysizes", ssr: false },
     { src: "~/plugins/click-outside", ssr: false },
     "@/plugins/antd-ui",
-    { src: "~/plugins/gmap", ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -91,7 +90,6 @@ export default {
     "~/components",
     { path: "~/components/Home", extensions: ["vue"] },
     { path: "~/components/ui", extensions: ["vue"] },
-    { path: "~/components/stepForm", extensions: ["vue"] },
     { path: "~/components/General", extensions: ["vue"] },
     { path: "~/components/utils", extensions: ["vue"] },
     { path: "~/components/Form", extensions: ["vue"] },
@@ -117,11 +115,6 @@ export default {
         code: "zh",
         iso: "zh-CN",
         file: "zh/index.json",
-      },
-      {
-        code: "en",
-        iso: "en-US",
-        file: "en/index.json",
       },
       {
         code: "tw",

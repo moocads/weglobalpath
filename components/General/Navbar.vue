@@ -4,8 +4,8 @@
       <div class="logo-wrap">
         <NL18 to="/">
           <img
-            src="/img/logos/logo-blue.png"
-            alt="加彼岸 Navbar Logo"
+            src="/img/weglobalpath-logo.svg"
+            alt="寰球嘉途 Navbar Logo"
             class="nav_logo"
           />
         </NL18>
@@ -46,11 +46,6 @@
                 </li>
               </ul>
             </div>
-          </li>
-          <li>
-            <NL18 to="/recruiting">
-              {{ $t("navbar.recruiting") }}
-            </NL18>
           </li>
           <li class="hot-project-link">
             <NL18 to="/projects">
@@ -201,79 +196,6 @@
               </div>
             </div>
           </li>
-          <li class="euro-usa-link">
-            <NL18 to="/euro-and-usa">
-              {{ $t("navbar.euro-usa") }}
-              <a-icon
-                type="down"
-                class="dropdown-arrow"
-                alt="dropdown arrow icon"
-              />
-            </NL18>
-            <div class="hot-project-dropdown dropdown-wrap">
-              <div class="project-col">
-                <NL18 to="/projects/euro" class="main-cate">
-                  {{ $t("navbar.euro") }}
-                </NL18>
-                <ul>
-                  <li v-for="(euro, index) in euroProjects" :key="index">
-                    <NL18 :to="euro.url">
-                      {{ euro.title }}
-                    </NL18>
-                  </li>
-                </ul>
-              </div>
-              <div class="project-col">
-                <NL18 to="/projects/usa" class="main-cate">
-                  {{ $t("navbar.usa") }}
-                </NL18>
-                <ul>
-                  <li
-                    v-for="subItem in hotProjects[6].second_cate"
-                    :key="subItem.id"
-                  >
-                    <NL18 :to="`${hotProjects[6].url}/${subItem.id}`">
-                      {{ subItem.name }}
-                    </NL18>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          <li class="hot-project-link">
-            <NL18 to="/provinces">
-              {{ $t("navbar.provinces") }}
-              <a-icon
-                type="down"
-                class="dropdown-arrow"
-                alt="dropdown arrow icon"
-              />
-            </NL18>
-            <div class="hot-project-dropdown dropdown-wrap">
-              <div
-                class="project-col"
-                v-for="(province, index) in provinces"
-                :key="index"
-              >
-                <NuxtLink :to="localePath(`/provinces`)" class="main-cate">
-                  {{
-                    $i18n.locale === "zh"
-                      ? province.main_cate
-                      : province.main_cate_tw
-                  }}
-                </NuxtLink>
-                <ul class="province-list">
-                  <li v-for="subItem in province.second_cate" :key="subItem.id">
-                    <a @click="provinceLink(subItem.id)">
-                      {{
-                        $i18n.locale === "zh" ? subItem.name : subItem.name_tw
-                      }}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
           <li>
             <NL18 to="/about">
               {{ $t("navbar.about") }}
@@ -306,11 +228,6 @@
             </div>
           </li>
           <li>
-            <NL18 to="/blogs">
-              {{ $t("navbar.blog") }}
-            </NL18>
-          </li>
-          <li>
             <NL18 to="/contact">
               {{ $t("navbar.contact") }}
             </NL18>
@@ -322,68 +239,22 @@
 </template>
 
 <script>
-import { hotProjectsNavMap, provincesMap } from "~/utils";
+import { hotProjectsNavMap } from "~/utils";
 export default {
   data() {
     return {
       isActive: false,
       hotProjects: hotProjectsNavMap,
-      provinces: provincesMap,
     };
   },
   methods: {
     // navbarActive:function(){
     //   this.isActive = !
     // }
-    provinceLink(id) {
-      this.$store.commit("setProvince", id);
-      // console.log(this.$store.state.province)
-      this.$router.push("/provinces");
-    },
     eeLink(id) {
       this.$store.commit("setEe", id);
       // console.log(this.$store.state.province)
       this.$router.push("/projects/ee");
-    },
-  },
-  computed: {
-    euroProjects() {
-      return [
-        {
-          url: "/projects/euro/portugal-golden-plan-28w",
-          title: this.$t("navbar.portugal-golden-plan-28w"),
-        },
-        {
-          url: "/projects/euro/portugal-golden-plan-50w",
-          title: this.$t("navbar.portugal-golden-plan-50w"),
-        },
-        {
-          url: "/projects/euro/portugal-golden-plan-50w-fund",
-          title: this.$t("navbar.portugal-golden-plan-50w-fund"),
-        },
-        {
-          url: "/projects/euro/ireland-investment",
-          title: this.$t("navbar.ireland-investment"),
-        },
-        {
-          url: "/projects/euro/turkey-investment-passport-program-for-40w-property",
-          title: this.$t(
-            "navbar.turkey-investment-passport-program-for-40w-property"
-          ),
-        },
-        {
-          url: "/projects/euro/malta-permanent-residency-program",
-          title: this.$t("navbar.malta-permanent-residency-program"),
-        },
-        {
-          url: "/projects/euro/greece-permanent-residence-program",
-          title: this.$t("navbar.greece-permanent-residence-program"),
-        },
-        {
-          url: "/projects/euro/spain-permanent-residence-50w",
-          title: this.$t("navbar.spain-permanent-residence-50w"),
-        },
-      ];
     },
   },
 };
@@ -393,7 +264,7 @@ export default {
   .nuxt-link-active,
   .nuxt-link-exact-active {
     background-color: transparent;
-    color: $navy !important;
+    color: $primary !important;
   }
 }
 .hot-project-dropdown,
@@ -402,7 +273,7 @@ export default {
   .nuxt-link-exact-active {
     background-color: transparent;
     color: rgba(0, 0, 0, 0.5) !important;
-    // border-bottom: 3px solid $red;
+    // border-bottom: 3px solid $secondary;
   }
 }
 </style>
@@ -427,7 +298,7 @@ nav {
 .logo-wrap {
   img {
     height: auto;
-    width: 180px;
+    width: 240px;
   }
 }
 .navbar-wrap {
@@ -550,8 +421,7 @@ nav {
   }
 }
 
-.hot-project-link,
-.euro-usa-link {
+.hot-project-link {
   position: relative;
   .hot-project-dropdown {
     position: absolute;

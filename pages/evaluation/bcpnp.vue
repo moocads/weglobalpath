@@ -212,12 +212,12 @@ var _ = require("lodash");
 export default {
   head() {
     return {
-      title: `加拿大移民 | 不列颠哥伦比亚省省提名(BCPNP)评分表 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 不列颠哥伦比亚省省提名(BCPNP)评分表 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 不列颠哥伦比亚省省提名(BCPNP)评分表 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 不列颠哥伦比亚省省提名(BCPNP)评分表 | 寰球嘉途`,
         },
       ],
     };

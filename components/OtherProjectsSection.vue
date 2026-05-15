@@ -2,7 +2,10 @@
   <div>
     <section :class="{ 'bg-white': bgWhite === 'true' }">
       <div class="wrapper">
-        <MainTitle title="其他项目" titleEN="OTHER projects" />
+        <MainTitle
+          title="其他项目"
+          :titleEN="$i18n.locale === 'tw' ? '其他' : '其他'"
+        />
         <a-row :gutter="[16, 16]">
           <a-col
             :sm="12"

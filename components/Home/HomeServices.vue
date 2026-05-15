@@ -3,13 +3,9 @@
     <div class="wrapper">
       <MainTitle
         :title="
-          $i18n.locale === 'zh'
-            ? '热门项目'
-            : $i18n.locale === 'tw'
-            ? '熱門項目'
-            : 'Our Services'
+          $i18n.locale === 'tw' ? '熱門項目' : '热门项目'
         "
-        titleEN="SERVICES"
+        :titleEN="$i18n.locale === 'tw' ? '服務' : '服务'"
       />
       <div class="projects-wrap">
         <div class="project-item project-1">
@@ -132,8 +128,8 @@ export default {};
 .project-item .content-wrap {
   h2 {
     font-size: 24px;
-    color: $navy;
-    font-weight: bold;
+    color: $grey;
+    font-weight: 500;
   }
   p {
     font-size: 16px;
@@ -142,7 +138,7 @@ export default {};
   a {
     display: block;
     width: fit-content;
-    background-color: $red;
+    background-color: $secondary;
     color: #fff;
     padding: 5px 15px;
     border-radius: 25px;

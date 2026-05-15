@@ -46,12 +46,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 新移民服务 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 新移民服务 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 新移民服务 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 新移民服务 | 寰球嘉途`,
         },
       ],
     };

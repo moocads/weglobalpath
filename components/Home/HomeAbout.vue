@@ -5,13 +5,9 @@
         <a-col :lg="12">
           <MainTitleSide
             :title="
-              $i18n.locale === 'zh'
-                ? '关于加彼岸'
-                : $i18n.locale === 'tw'
-                ? '關於加彼岸'
-                : 'About Beyond Canada'
+              $i18n.locale === 'tw' ? '關於寰球嘉途' : '关于寰球嘉途'
             "
-            titleEN="ABOUT US"
+            :titleEN="$i18n.locale === 'tw' ? '關於' : '关于'"
             titleENColor="#e9e9e9"
           />
           <p>
@@ -23,24 +19,12 @@
           <div class="button-wrap">
             <NuxtLink :to="localePath('/about')">
               <button class="about-btn main-btn main-btn_red main-btn_round-5">
-                {{
-                  $i18n.locale === "zh"
-                    ? "了解更多"
-                    : $i18n.locale === "tw"
-                    ? "了解更多"
-                    : "Learn More"
-                }}
+                了解更多
               </button>
             </NuxtLink>
             <NuxtLink :to="localePath('/contact')">
               <button class="about-btn main-btn main-btn_red main-btn_round-5">
-                {{
-                  $i18n.locale === "zh"
-                    ? "联系我们"
-                    : $i18n.locale === "tw"
-                    ? "聯繫我們"
-                    : "Contact Us"
-                }}
+                {{ $i18n.locale === "tw" ? "聯繫我們" : "联系我们" }}
               </button>
             </NuxtLink>
           </div>
@@ -76,7 +60,7 @@ export default {
   .slogen {
     margin-bottom: 30px;
     font-size: 18px;
-    background-color: $navy;
+    background-color: $primary;
     color: #fff;
   }
 }

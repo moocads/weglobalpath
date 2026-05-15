@@ -34,12 +34,12 @@
 export default {
   head() {
     return {
-      title: `加拿大移民 | 加拿大企业家投资移民 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 加拿大企业家投资移民 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 加拿大企业家投资移民 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 加拿大企业家投资移民 | 寰球嘉途`,
         },
       ],
     };
@@ -69,7 +69,7 @@ header {
   background-size: cover;
   background-blend-mode: multiply;
   h1 {
-    color: $navy;
+    color: $primary;
     font-size: 60px;
     font-weight: bold;
     position: relative;
@@ -81,7 +81,7 @@ header {
     top: 55%;
     left: -20px;
     transform: translateY(-50%);
-    background-color: $red;
+    background-color: $secondary;
     width: 6px;
     height: 70px;
   }

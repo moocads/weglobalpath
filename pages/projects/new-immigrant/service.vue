@@ -26,19 +26,23 @@
       </div>
       <MainTitle
         title="项目介绍"
-        titleEN="INTRODUCTION"
+        :titleEN="$i18n.locale === 'tw' ? '簡介' : '简介'"
         titleENColor="#DADADA"
       />
       <div class="wrapper">
         <p>
           移民加拿大对国内申请人而言最具吸引力的方面之一就在于北美优质全面的教学质量。对拖儿带女初到加拿大的新移民来说，孩子的入学问题往往很头痛。
           新移民缺乏对加拿大教育体系的认识，对学校类型的了解，以及学校教学水平高低的判断。
-          加彼岸为您提供各地学区的申请服务，联络院校，评估孩子的英语水平，帮您筛选最适合孩子的学校。
+          寰球嘉途为您提供各地学区的申请服务，联络院校，评估孩子的英语水平，帮您筛选最适合孩子的学校。
         </p>
       </div>
     </section>
     <section class="sec-introduction2">
-      <MainTitle title="入学介绍" titleEN="BEGINNING" titleENColor="#DADADA" />
+      <MainTitle
+        title="入学介绍"
+        :titleEN="$i18n.locale === 'tw' ? '入學' : '入学'"
+        titleENColor="#DADADA"
+      />
       <div class="wrapper">
         <p>
           孩子年满4岁即可免费进入小学学习。加拿大的初中和小学合在一起共八年级，高中从九年级到十二年级，加拿大的中小学教育特点与东方国家有很大不同。主要体现在年级分配与教学方法及教育思想上，各校对教材的选择也有一定的自主权和灵活性。
@@ -50,7 +54,7 @@
         <div class="title-wrap">
           <div class="title">
             <img src="/img/logos/logo-trans.png" alt="" />
-            <p>SCHOOLS</p>
+            <p>{{ $i18n.locale === "tw" ? "學校" : "学校" }}</p>
           </div>
           <h1>学校类型</h1>
         </div>
@@ -81,12 +85,12 @@
       </div>
       <MainTitle
         title="项目介绍"
-        titleEN="INTRODUCTION"
+        :titleEN="$i18n.locale === 'tw' ? '簡介' : '简介'"
         titleENColor="#DADADA"
       />
       <div class="wrapper">
         <p style="text-align: center">
-          加彼岸为新移民安排贴心的安家服务。让您不会在初次登陆时对陌生环境无从下手。
+          寰球嘉途为新移民安排贴心的安家服务。让您不会在初次登陆时对陌生环境无从下手。
         </p>
       </div>
     </section>
@@ -95,7 +99,7 @@
         <div class="title-wrap">
           <div class="title">
             <img src="/img/logos/logo-trans.png" alt="" />
-            <p>SERVICES</p>
+            <p>{{ $i18n.locale === "tw" ? "服務" : "服务" }}</p>
           </div>
           <h1>各类服务为您保驾护航</h1>
         </div>
@@ -148,12 +152,12 @@ import VueMarkdown from "vue-markdown";
 export default {
   head() {
     return {
-      title: `加拿大移民 | 加拿大新移民服务 | 加彼岸出国咨询`,
+      title: `加拿大移民 | 加拿大新移民服务 | 寰球嘉途`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `加拿大移民 | 加拿大新移民服务 | 加彼岸出国咨询`,
+          content: `加拿大移民 | 加拿大新移民服务 | 寰球嘉途`,
         },
       ],
     };
@@ -397,7 +401,7 @@ section {
     display: flex;
     height: 100%;
     align-items: center;
-    background-color: $navy;
+    background-color: $primary;
     color: white;
     padding: 0 20px;
     // display: inline-block;
@@ -408,7 +412,7 @@ section {
     width: 40px;
     background-image: linear-gradient(
       to top right,
-      $navy 49.9%,
+      $primary 49.9%,
       transparent 50.1%
     );
   }
@@ -453,7 +457,7 @@ section {
 /*               ANCHOR Requirement Section               */
 /* ------------------------------------------------------ */
 .sec-requirements {
-  background-color: $navy;
+  background-color: $primary;
   .title-wrap {
     display: flex;
     flex-direction: column;
@@ -508,7 +512,7 @@ section {
   h3 {
     font-size: 24px;
     font-weight: bold;
-    color: $navy;
+    color: $primary;
   }
   ul {
     list-style-type: disc;
@@ -539,7 +543,7 @@ section {
 }
 @media all and (max-width: 768px) {
   .sec-requirements {
-    background-color: $navy;
+    background-color: $primary;
     .title-wrap {
       align-items: center;
       position: relative;
@@ -584,7 +588,7 @@ section {
   h3 {
     text-align: center;
     font-size: 28px;
-    color: $red;
+    color: $secondary;
     margin-bottom: 0;
     font-weight: 700;
   }
